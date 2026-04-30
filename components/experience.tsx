@@ -10,19 +10,19 @@ const experiences = [
     title: "Sacred Temples",
     description:
       "Witness the sunrise over Angkor Wat, explore ancient Khmer ruins, and discover hidden pagodas that have witnessed centuries of history.",
-    image: "/images/sacred-temples.jpg",
+    image: "/images/sacred-temples.avif",
   },
   {
     title: "Floating Markets",
     description:
       "Glide through vibrant morning markets where local life unfolds on the water, sampling exotic fruits and witnessing age-old trading traditions.",
-    image: "/images/floating-markets.jpg",
+    image: "/images/floating-markets-v2.avif",
   },
   {
     title: "Cultural Encounters",
     description:
       "Meet silk weavers, visit Buddhist monasteries, and share meals with local families for authentic connections that last a lifetime.",
-    image: "/images/cultural-encounters.jpg",
+    image: "/images/cultural-encounters-v2.avif",
   },
 ]
 
