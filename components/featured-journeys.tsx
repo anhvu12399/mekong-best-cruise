@@ -94,9 +94,7 @@ export function FeaturedJourneys() {
 
                 <div className="flex items-end justify-between">
                   <div>
-                    <span className="text-xs text-navy/50 uppercase tracking-wider">From</span>
-                    <p className="font-serif text-2xl text-gold">${journey.price.toLocaleString()}</p>
-                    <span className="text-xs text-navy/50">per person</span>
+                    <p className="font-serif text-xl text-gold">Request a Quote</p>
                   </div>
 
                   <button

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 const REDIRECT_URL = "https://www.toursmekong.com/"
@@ -30,22 +31,21 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-navy shadow-lg" : "bg-navy/95"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-navy shadow-lg" : "bg-transparent"
+        }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-24 items-center justify-between">
           {/* Logo */}
           <button onClick={handleLinkClick} className="flex items-center gap-3 text-left">
-            <div className="flex flex-col">
-              <span className="font-serif text-xl tracking-wide text-white">
-                Mekong River
-              </span>
-              <span className="text-xs tracking-[0.3em] text-gold uppercase">
-                Cruise
-              </span>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Mekong River Cruise Logo"
+              width={300}
+              height={140}
+              className="h-20 w-auto object-contain"
+              priority
+            />
           </button>
 
           {/* Desktop Navigation */}

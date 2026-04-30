@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
 
 const REDIRECT_URL = "https://www.toursmekong.com/"
@@ -82,8 +83,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
             <button onClick={handleLinkClick} className="inline-block mb-8 text-left">
-              <span className="font-serif text-2xl text-white">Mekong River</span>
-              <span className="block text-xs tracking-[0.3em] text-gold uppercase">Cruise</span>
+              <Image 
+                src="/logo.png" 
+                alt="Mekong River Cruise Logo" 
+                width={300} 
+                height={140} 
+                className="h-24 w-auto object-contain" 
+              />
             </button>
             <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm">
               Crafting extraordinary river journeys through Southeast Asia&apos;s 

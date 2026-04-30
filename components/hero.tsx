@@ -1,15 +1,16 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Search, ChevronDown } from "lucide-react"
 
 const REDIRECT_URL = "https://www.toursmekong.com/"
 
 const heroImages = [
-  "/images/hero-1.jpg",
-  "/images/hero-2.jpg",
-  "/images/hero-3.jpg",
-  "/images/hero-4.jpg",
+  "/images/hero-1.avif",
+  "/images/hero-2.avif",
+  "/images/hero-3.avif",
+  "/images/hero-4.avif",
 ]
 
 const destinations = ["All Destinations", "Vietnam", "Cambodia", "Thailand", "Laos"]
@@ -44,11 +45,17 @@ export function Hero() {
       {heroImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
-          style={{ backgroundImage: `url('${image}')` }}
         >
+          <Image
+            src={image}
+            alt={`Mekong River Cruise Banner ${index + 1}`}
+            fill
+            className="object-cover"
+            priority
+          />
           <div className="absolute inset-0 bg-navy/50" />
         </div>
       ))}
