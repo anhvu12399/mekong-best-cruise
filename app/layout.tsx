@@ -18,14 +18,89 @@ const inter = Inter({
   display: 'swap',
 })
 
+const BASE_URL = 'https://mekongbestcruise.com'
+
 export const metadata: Metadata = {
-  title: 'Mekong River Cruise | Luxury River Journeys',
-  description: 'Experience the ultimate in luxury river cruising through the heart of Southeast Asia. Bespoke journeys, expert guides, and unparalleled service.',
-  icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+    template: '%s | Mekong Best Cruise',
   },
-  // Thêm mã xác minh Google Search Console tại đây
+  description:
+    'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
+  keywords: [
+    'Mekong River Cruise',
+    'luxury river cruise Southeast Asia',
+    'Mekong luxury cruise',
+    'Vietnam river cruise',
+    'Cambodia cruise',
+    'Laos cruise',
+    'Mekong Delta tour',
+    'Aqua Mekong',
+    'Jayavarman cruise',
+    'Mekong Jewel',
+    'tailor made Mekong tour',
+    'private Mekong cruise',
+    'luxury cruise Vietnam Cambodia',
+    'Southeast Asia river journey',
+    'bespoke river cruise Asia',
+  ],
+  authors: [{ name: 'Mekong Best Cruise', url: BASE_URL }],
+  creator: 'Mekong Best Cruise',
+  publisher: 'Mekong Best Cruise',
+  category: 'Travel & Tourism',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: BASE_URL,
+    languages: {
+      'en-US': BASE_URL,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: BASE_URL,
+    siteName: 'Mekong Best Cruise',
+    title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+    description:
+      'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Mekong Best Cruise — Luxury River Journeys',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+    description:
+      'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand & more.',
+    images: ['/images/og-image.jpg'],
+    creator: '@mekongbestcruise',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico',
+  },
+  manifest: '/site.webmanifest',
   verification: {
     google: 'googlea14662f463f82247',
   },
@@ -33,6 +108,9 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: '#0f172a',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -40,8 +118,95 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'TravelAgency',
+        '@id': `${BASE_URL}/#organization`,
+        name: 'Mekong Best Cruise',
+        url: BASE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${BASE_URL}/logo.png`,
+          width: 300,
+          height: 140,
+        },
+        description:
+          'Luxury river cruise operator offering bespoke journeys along the Mekong River through Vietnam, Cambodia, Laos, Thailand, Myanmar and China.',
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'VN',
+          addressRegion: 'Ho Chi Minh City',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'customer service',
+          availableLanguage: ['English', 'Vietnamese'],
+          url: 'https://www.toursmekong.com/tailor-made-tours/',
+        },
+        sameAs: [
+          'https://www.toursmekong.com/',
+        ],
+        areaServed: [
+          { '@type': 'Country', name: 'Vietnam' },
+          { '@type': 'Country', name: 'Cambodia' },
+          { '@type': 'Country', name: 'Laos' },
+          { '@type': 'Country', name: 'Thailand' },
+          { '@type': 'Country', name: 'Myanmar' },
+          { '@type': 'Country', name: 'China' },
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Mekong Luxury Cruise Packages',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'TouristTrip',
+                name: 'Mekong Delta Vietnam Luxury Cruise',
+                description: 'Explore the iconic floating markets, hidden canals and rich culture of the Mekong Delta on a private luxury river cruise.',
+                touristType: 'Luxury Travelers',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'TouristTrip',
+                name: 'Cambodia & Angkor Mekong Cruise',
+                description: 'Sail from Phnom Penh to Siem Reap and discover Angkor Wat, Tonle Sap Lake and the ancient Khmer civilization on the Mekong.',
+                touristType: 'Luxury Travelers',
+              },
+            },
+          ],
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: BASE_URL,
+        name: 'Mekong Best Cruise',
+        publisher: { '@id': `${BASE_URL}/#organization` },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${BASE_URL}/destinations/{destination}`,
+          },
+          'query-input': 'required name=destination',
+        },
+      },
+    ],
+  }
+
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`scroll-smooth ${playfair.variable} ${inter.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased bg-background">
         <Header />
         {children}
