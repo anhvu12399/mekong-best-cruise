@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function ArtOfCruising() {
   return (
-    <section className="py-40 lg:py-56 bg-cream">
+    <section className="py-20 lg:py-24 bg-cream">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image - Asymmetric placement */}

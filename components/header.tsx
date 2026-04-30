@@ -6,11 +6,24 @@ import { Menu, X } from "lucide-react"
 
 const REDIRECT_URL = "https://www.toursmekong.com/"
 
+import Link from "next/link"
+
 const navLinks = [
-  { label: "Journeys" },
-  { label: "Experience" },
-  { label: "Destinations" },
-  { label: "About" },
+  { label: "Journeys", href: "/journeys" },
+  { label: "Experience", href: "/experiences" },
+  { 
+    label: "Destinations", 
+    href: "/destinations/vietnam",
+    subLinks: [
+      { label: "Vietnam", href: "/destinations/vietnam" },
+      { label: "Cambodia", href: "/destinations/cambodia" },
+      { label: "Laos", href: "/destinations/laos" },
+      { label: "Thailand", href: "/destinations/thailand" },
+      { label: "Myanmar", href: "/destinations/myanmar" },
+      { label: "China", href: "/destinations/china" }
+    ]
+  },
+  { label: "About", href: "/" },
 ]
 
 export function Header() {
@@ -37,7 +50,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-24 items-center justify-between">
           {/* Logo */}
-          <button onClick={handleLinkClick} className="flex items-center gap-3 text-left">
+          <Link href="/" className="flex items-center gap-3 text-left">
             <Image
               src="/logo.png"
               alt="Mekong River Cruise Logo"
@@ -46,28 +59,42 @@ export function Header() {
               className="h-20 w-auto object-contain"
               priority
             />
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={handleLinkClick}
-                className="text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200"
-              >
-                {link.label}
-              </button>
+              <div key={link.label} className="relative group">
+                <Link
+                  href={link.href}
+                  className="text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200 py-4 block"
+                >
+                  {link.label}
+                </Link>
+                {link.subLinks && (
+                  <div className="absolute top-full left-0 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-navy/95 backdrop-blur-md border border-white/10 shadow-2xl flex flex-col py-3 z-50 transform translate-y-2 group-hover:translate-y-0">
+                    {link.subLinks.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        className="px-6 py-3 text-sm tracking-wider text-white/70 hover:text-gold hover:bg-white/5 transition-colors block"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
-          {/* CTA Button - Redirects to external URL */}
+          {/* CTA Button */}
           <div className="hidden lg:block">
             <button
-              onClick={handleLinkClick}
+              onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
               className="inline-flex items-center px-6 py-3 bg-gold text-navy text-sm font-medium tracking-wide hover:bg-gold-light transition-colors duration-200"
             >
-              Speak to a Specialist
+              ENQUIRE NOW
             </button>
           </div>
 
@@ -86,25 +113,38 @@ export function Header() {
           <div className="lg:hidden py-6 border-t border-white/10">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <button
-                  key={link.label}
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                    handleLinkClick()
-                  }}
-                  className="text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200 py-2 text-left"
-                >
-                  {link.label}
-                </button>
+                <div key={link.label} className="flex flex-col">
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-sm tracking-wide text-white/80 hover:text-gold transition-colors duration-200 py-2 text-left"
+                  >
+                    {link.label}
+                  </Link>
+                  {link.subLinks && (
+                    <div className="flex flex-col pl-4 mt-1 space-y-1 border-l-2 border-white/10">
+                      {link.subLinks.map(sub => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="text-sm tracking-wide text-white/60 hover:text-gold py-2 text-left"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <button
                 onClick={() => {
-                  setIsMobileMenuOpen(false)
-                  handleLinkClick()
+                  setIsMobileMenuOpen(false);
+                  window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank");
                 }}
                 className="inline-flex items-center justify-center px-6 py-3 bg-gold text-navy text-sm font-medium tracking-wide hover:bg-gold-light transition-colors duration-200 mt-4"
               >
-                Speak to a Specialist
+                ENQUIRE NOW
               </button>
             </nav>
           </div>

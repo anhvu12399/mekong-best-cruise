@@ -3,8 +3,8 @@ import { Hero } from "@/components/hero"
 import { AboutMekong } from "@/components/about-mekong"
 import { ExploreMekong } from "@/components/explore-mekong"
 import { ArtOfCruising } from "@/components/art-of-cruising"
-import { FeaturedJourneys } from "@/components/featured-journeys"
-import { Experience } from "@/components/experience"
+import { FeaturedDestinations } from "@/components/featured-destinations"
+import { ExpeditionCruises } from "@/components/expedition-cruises"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -12,18 +12,15 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
         <Hero />
         <AboutMekong />
         <ExploreMekong />
         <ArtOfCruising />
-        <FeaturedJourneys />
-        <Experience />
+        <FeaturedDestinations />
+        <ExpeditionCruises />
         <WhyChooseUs />
       </main>
-      <Footer />
-      <WhatsAppButton />
     </>
   )
 }
