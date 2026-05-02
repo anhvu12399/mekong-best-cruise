@@ -13,7 +13,7 @@ export function AboutMekong() {
   }
 
   return (
-    <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[600px] flex items-center justify-center overflow-hidden reveal-image-container">
       {/* Background Image */}
       <Image
         src="/images/about-mekong-bg.jpg"
@@ -27,7 +27,7 @@ export function AboutMekong() {
       <div className="absolute inset-0 bg-black/55" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 py-20 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 py-20 text-center reveal-on-scroll">
         {/* Subtitle */}
         <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-6">
           Southeast Asia&apos;s Finest River Journey

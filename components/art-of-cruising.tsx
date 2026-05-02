@@ -7,7 +7,7 @@ export function ArtOfCruising() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image - Asymmetric placement */}
-          <div className="relative order-2 lg:order-1">
+          <div className="relative order-2 lg:order-1 reveal-image-container overflow-hidden">
             <div className="relative aspect-[4/5] lg:aspect-[3/4]">
               <Image
                 src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?q=80&w=1980&auto=format&fit=crop"
@@ -21,7 +21,7 @@ export function ArtOfCruising() {
           </div>
 
           {/* Content */}
-          <div className="order-1 lg:order-2 lg:pl-8">
+          <div className="order-1 lg:order-2 lg:pl-8 reveal-on-scroll">
             <span className="inline-block text-gold text-sm tracking-[0.3em] uppercase mb-6">
               The Art of Cruising
             </span>
