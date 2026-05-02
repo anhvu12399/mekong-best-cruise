@@ -5,22 +5,22 @@ const decisions = [
   {
     title: "3–4 Day Mekong Delta",
     cta: "View itinerary",
-    href: "/destinations/vietnam"
+    href: "/itineraries/mekong-delta"
   },
   {
     title: "7–8 Day Vietnam – Cambodia",
     cta: "View itinerary",
-    href: "/destinations/cambodia"
+    href: "/itineraries/vietnam-cambodia"
   },
   {
     title: "Private Charter",
     cta: "Plan my journey",
-    href: "/journeys"
+    href: "/itineraries/private-charter"
   },
   {
     title: "Small Ship Expeditions",
     cta: "Explore vessels",
-    href: "/experiences"
+    href: "/itineraries/small-ship"
   }
 ]
 
