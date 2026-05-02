@@ -14,35 +14,45 @@ const heroImages = [
 export function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Auto-play carousel - cycle every 4 seconds
+  // 14 seconds per slide (long cinematic shot, slow pacing)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
-    }, 4000)
+    }, 14000)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center">
-      {/* Background Image Carousel */}
-      {heroImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentImageIndex ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Image
-            src={image}
-            alt={`Mekong River Cruise Banner ${index + 1}`}
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* A gradient overlay to make text pop and mimic the screenshot's mood */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-        </div>
-      ))}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      {/* Background Cinematic Sequence (Ken Burns Effect) */}
+      {heroImages.map((image, index) => {
+        // We use a combination of opacity and scale to simulate slow camera movement
+        const isActive = index === currentImageIndex;
+        return (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-[3000ms] ease-in-out ${
+              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <div 
+              className={`relative w-full h-full transform transition-transform ease-linear ${
+                isActive ? "scale-110 duration-[18000ms]" : "scale-100 duration-0"
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`Mekong River Cinematic Scene ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+            </div>
+            {/* A gradient overlay to make text pop and mimic the screenshot's mood */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+          </div>
+        )
+      })}
 
       {/* Content */}
       <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-20 flex flex-col items-start text-left">
