@@ -10,11 +10,10 @@ gsap.registerPlugin(ScrollTrigger)
 export function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.05, // Low lerp creates the signature "heavy & fluid" momentum (like Aqua Expeditions)
-      wheelMultiplier: 0.8, // Slightly reduces scroll speed per tick, adding to the "weight"
+      duration: 1.0, // Stops almost immediately after wheel stops
+      wheelMultiplier: 1.0, // Standard scroll distance
       touchMultiplier: 2.0,
       infinite: false,
-      smoothWheel: true,
     })
 
     lenis.on('scroll', ScrollTrigger.update)
