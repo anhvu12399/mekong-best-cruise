@@ -8,46 +8,46 @@ const playfair = Playfair_Display({ subsets: ["latin"] })
 
 const destinations = [
   {
-    id: "vietnam",
-    title: "VIETNAM",
-    subtitle: "DELTA DELIGHT",
-    image: "/images/dest_vietnam.png",
-    href: "/destinations/vietnam"
-  },
-  {
-    id: "cambodia",
-    title: "CAMBODIA",
-    subtitle: "KHMER KINGDOM",
-    image: "/images/dest_cambodia.png",
-    href: "/destinations/cambodia"
-  },
-  {
-    id: "laos",
-    title: "LAOS",
-    subtitle: "SERENE WATERS",
+    id: "luang-prabang",
+    title: "LUANG PRABANG",
+    subtitle: "SPIRITUAL SANCTUARY",
     image: "/images/dest_laos.png",
-    href: "/destinations/laos"
+    href: "/destinations/luang-prabang"
   },
   {
-    id: "thailand",
-    title: "THAILAND",
-    subtitle: "BORDER PANORAMAS",
+    id: "siem-reap",
+    title: "SIEM REAP",
+    subtitle: "ANCIENT EMPIRE",
+    image: "/images/dest_cambodia.png",
+    href: "/destinations/siem-reap"
+  },
+  {
+    id: "phnom-penh",
+    title: "PHNOM PENH",
+    subtitle: "PEARL OF ASIA",
+    image: "/images/banner_1.png",
+    href: "/destinations/phnom-penh"
+  },
+  {
+    id: "ho-chi-minh-city",
+    title: "SAIGON",
+    subtitle: "VIBRANT METROPOLIS",
+    image: "/images/dest_vietnam.png",
+    href: "/destinations/ho-chi-minh-city"
+  },
+  {
+    id: "can-tho",
+    title: "CAN THO",
+    subtitle: "DELTA HEART",
+    image: "/images/banner_2.png",
+    href: "/destinations/can-tho"
+  },
+  {
+    id: "chiang-rai",
+    title: "CHIANG RAI",
+    subtitle: "NORTHERN FRONTIER",
     image: "/images/dest_thailand.png",
-    href: "/destinations/thailand"
-  },
-  {
-    id: "myanmar",
-    title: "MYANMAR",
-    subtitle: "GOLDEN TRIANGLE",
-    image: "/images/dest_myanmar.png",
-    href: "/destinations/myanmar"
-  },
-  {
-    id: "china",
-    title: "CHINA",
-    subtitle: "UPPER LANCANG",
-    image: "/images/dest_china.png",
-    href: "/destinations/china"
+    href: "/destinations/chiang-rai"
   }
 ]
 

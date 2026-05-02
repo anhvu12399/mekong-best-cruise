@@ -151,14 +151,13 @@ export function ExploreMekong() {
                 <ul className="space-y-3">
                   {dest.stops.map((stop) => (
                     <li key={stop}>
-                      <a
-                        href="#"
-                        onClick={(e) => { e.preventDefault(); window.open(REDIRECT_URL, "_blank") }}
-                        className="flex items-center gap-3 text-navy/65 hover:text-gold transition-colors duration-200 group"
+                      <button
+                        onClick={(e) => { e.preventDefault(); router.push(`/destinations/${stop.toLowerCase().replace(/ /g, '-')}`) }}
+                        className="flex items-center gap-3 text-navy/65 hover:text-gold transition-colors duration-200 group w-full text-left"
                       >
                         <span className="w-1 h-1 rounded-full bg-gold/60 group-hover:bg-gold transition-colors shrink-0" />
                         <span className="text-sm tracking-[0.05em] uppercase">{stop}</span>
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -166,13 +165,12 @@ export function ExploreMekong() {
             ))}
 
             {/* CTA */}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.open(REDIRECT_URL, "_blank") }}
+            <button
+              onClick={(e) => { e.preventDefault(); router.push('/discover') }}
               className="inline-flex items-center gap-3 px-8 py-3 border border-navy text-navy text-xs font-medium tracking-[0.2em] uppercase hover:bg-navy hover:text-cream transition-all duration-300 mt-6"
             >
               View All Itineraries
-            </a>
+            </button>
           </div>
 
         </div>
