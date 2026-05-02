@@ -10,11 +10,12 @@ export function generateStaticParams() {
 }
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const dest = destinationsData.find((d) => d.slug === params.slug)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const dest = destinationsData.find((d) => d.slug === slug)
   if (!dest) return { title: 'Not Found' }
 
   return {
@@ -23,8 +24,9 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function DestinationPage({ params }: Props) {
-  const dest = destinationsData.find((d) => d.slug === params.slug)
+export default async function DestinationPage({ params }: Props) {
+  const { slug } = await params
+  const dest = destinationsData.find((d) => d.slug === slug)
 
   if (!dest) {
     notFound()
