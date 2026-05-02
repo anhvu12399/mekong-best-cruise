@@ -10,7 +10,8 @@ gsap.registerPlugin(ScrollTrigger)
 export function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.0,
+      duration: 1.5, // Increased duration creates "khối lượng" (mass)
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth Expo easing for inertia
       wheelMultiplier: 1.0,
       touchMultiplier: 2.0,
       infinite: false,
@@ -66,6 +67,22 @@ export function SmoothScroll() {
             }
           )
         }
+      })
+
+      // 3. Vertical Parallax (Images trôi chậm hơn văn bản)
+      const parallaxElements = document.querySelectorAll('[data-parallax]')
+      parallaxElements.forEach((el) => {
+        const speed = parseFloat(el.getAttribute('data-parallax-speed') || "0.2")
+        gsap.to(el, {
+          yPercent: speed * 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: el.parentElement, 
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.5, // Scrubbing mượt mà
+          }
+        })
       })
     }
 
