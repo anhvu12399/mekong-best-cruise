@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Playfair_Display } from "next/font/google"
 import { ArrowRight, MapPin } from "lucide-react"
+import { destinationsData } from "@/lib/destinations-data"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -13,6 +14,7 @@ export interface JourneyRef {
 }
 
 export interface DestinationProps {
+  slug: string;
   heroImage: string;
   name: string;
   tagline: string;
@@ -23,6 +25,12 @@ export interface DestinationProps {
 }
 
 export function DestinationTemplate(props: DestinationProps) {
+  const currentIndex = destinationsData.findIndex(d => d.slug === props.slug)
+  const otherDestinations = [
+    ...destinationsData.slice(currentIndex + 1),
+    ...destinationsData.slice(0, currentIndex)
+  ].slice(0, 3)
+
   return (
     <main className="min-h-screen bg-[#fbfaf8]">
       {/* 1. HERO IMAGE LỚN */}
@@ -141,6 +149,43 @@ export function DestinationTemplate(props: DestinationProps) {
               <span>Design Your bespoke journey</span>
               <ArrowRight size={16} />
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. EXPLORE OTHER DESTINATIONS */}
+      <section className="bg-cream py-24 border-t border-navy/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-navy/40 text-xs tracking-[0.3em] uppercase font-bold block mb-4">
+              Continue Exploring
+            </span>
+            <h2 className={`text-3xl md:text-5xl text-navy ${playfair.className}`}>Other Destinations</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {otherDestinations.map((dest, idx) => (
+              <a 
+                key={idx}
+                href={`/destinations/${dest.slug}`}
+                className="group block relative aspect-[4/5] overflow-hidden"
+              >
+                <Image
+                  src={dest.heroImage}
+                  alt={dest.name}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <h4 className={`text-2xl text-white mb-2 ${playfair.className}`}>{dest.name}</h4>
+                  <div className="flex items-center gap-2 text-gold text-xs font-bold tracking-[0.2em] uppercase">
+                    <span>Explore</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
