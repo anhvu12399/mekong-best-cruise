@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Playfair_Display } from "next/font/google"
 import { QuickDecision } from "@/components/quick-decision"
 import { ExpeditionCruises } from "@/components/expedition-cruises"
+import { OurHeritage } from "@/components/our-heritage"
 import { ArrowRight } from "lucide-react"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
@@ -22,7 +23,7 @@ const highlights = [
   {
     title: "Ancient Temples",
     desc: "Explore forgotten Khmer ruins and receive sacred water blessings from senior Buddhist monks.",
-    image: "/images/dest_cambodia.png"
+    image: "/images/highlights_journey.png"
   },
   {
     title: "Hidden Waterways",
@@ -86,7 +87,7 @@ export default function DiscoverClient() {
         <div className="grid lg:grid-cols-2">
           <div className="relative h-[500px] lg:h-auto">
             <Image
-              src="/images/dest_laos.png"
+              src="/images/pulse_delta.png"
               alt="Mekong lifestyle"
               fill
               className="object-cover"
@@ -131,6 +132,9 @@ export default function DiscoverClient() {
           </div>
         </div>
       </section>
+
+      {/* 6.5. Heritage / Sticky Scroll section */}
+      <OurHeritage />
 
       {/* 7. Large breathing image — section visual tạo nhịp nghỉ */}
       <section className="relative h-[60vh] lg:h-[80vh] flex items-center justify-center">
