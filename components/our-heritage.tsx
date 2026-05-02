@@ -35,44 +35,51 @@ const sections = [
 
 export function OurHeritage() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const textRefs = useRef<(HTMLDivElement | null)[]>([])
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = textRefs.current.findIndex((ref) => ref === entry.target)
-            if (index !== -1) {
-              setActiveIndex(index)
-            }
-          }
-        })
-      },
-      {
-        root: null,
-        rootMargin: "-40% 0px -40% 0px", // Trigger when element is near the middle of the viewport
-        threshold: 0
+    const handleScroll = () => {
+      if (!containerRef.current) return
+      
+      const { top, height } = containerRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      
+      // Calculate how far we've scrolled within the container
+      const scrollDistance = -top
+      const maxScroll = height - windowHeight
+      
+      let progress = 0
+      if (maxScroll > 0) {
+        progress = Math.max(0, Math.min(1, scrollDistance / maxScroll))
       }
-    )
+      
+      const numSections = sections.length
+      // Calculate active index based on scroll progress
+      let index = Math.floor(progress * numSections)
+      if (index >= numSections) index = numSections - 1
+      
+      setActiveIndex(index)
+    }
 
-    textRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref)
-    })
-
-    return () => observer.disconnect()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll() // initial check
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <section className="relative bg-[#fbfaf8] border-t border-navy/10">
-      <div className="flex flex-col lg:flex-row">
+    <section 
+      ref={containerRef} 
+      className="relative bg-[#fbfaf8] border-t border-navy/10"
+      style={{ height: `${sections.length * 100}vh` }}
+    >
+      <div className="sticky top-0 h-screen flex flex-col lg:flex-row overflow-hidden">
         
-        {/* Sticky Left - Images */}
-        <div className="lg:w-1/2 lg:sticky lg:top-0 h-[60vh] lg:h-screen relative overflow-hidden order-1">
+        {/* Left Side - Images */}
+        <div className="lg:w-1/2 h-[50vh] lg:h-screen relative order-1">
           {sections.map((section, idx) => (
             <div 
               key={section.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
                 activeIndex === idx ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105"
               }`}
             >
@@ -89,15 +96,16 @@ export function OurHeritage() {
           <div className="absolute inset-0 bg-black/5 z-20 pointer-events-none" />
         </div>
 
-        {/* Scrolling Right - Text */}
-        <div className="lg:w-1/2 py-12 lg:py-0 order-2">
+        {/* Right Side - Text */}
+        <div className="lg:w-1/2 relative h-[50vh] lg:h-screen order-2">
           {sections.map((section, idx) => (
             <div 
               key={section.id}
-              ref={(el) => {
-                textRefs.current[idx] = el
-              }}
-              className="lg:h-screen flex flex-col justify-center px-8 lg:px-24 py-24 lg:py-0"
+              className={`absolute inset-0 flex flex-col justify-center px-8 lg:px-24 transition-all duration-1000 ease-in-out ${
+                activeIndex === idx 
+                  ? "opacity-100 translate-y-0 z-10 pointer-events-auto" 
+                  : "opacity-0 translate-y-8 z-0 pointer-events-none"
+              }`}
             >
               <h2 className={`text-3xl md:text-5xl text-navy mb-8 leading-tight ${playfair.className}`}>
                 {section.title}
