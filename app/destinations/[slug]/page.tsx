@@ -1,0 +1,34 @@
+import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
+import { destinationsData } from '@/lib/destinations-data'
+import { DestinationTemplate } from '@/components/destination-template'
+
+export function generateStaticParams() {
+  return destinationsData.map((dest) => ({
+    slug: dest.slug,
+  }))
+}
+
+type Props = {
+  params: { slug: string }
+}
+
+export function generateMetadata({ params }: Props): Metadata {
+  const dest = destinationsData.find((d) => d.slug === params.slug)
+  if (!dest) return { title: 'Not Found' }
+
+  return {
+    title: `${dest.name} | Mekong River Destinations`,
+    description: dest.narrative,
+  }
+}
+
+export default function DestinationPage({ params }: Props) {
+  const dest = destinationsData.find((d) => d.slug === params.slug)
+
+  if (!dest) {
+    notFound()
+  }
+
+  return <DestinationTemplate {...dest} />
+}

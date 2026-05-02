@@ -5,6 +5,8 @@ import { useState, useEffect } from "react"
 
 const REDIRECT_URL = "https://www.toursmekong.com/"
 
+import { useRouter } from "next/navigation"
+
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
 const mekongStops = [
@@ -26,6 +28,7 @@ const destinations = [
 export function ExploreMekong() {
   const [activeStop, setActiveStop] = useState<string | null>(null)
   const [mounted, setMounted] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -92,7 +95,7 @@ export function ExploreMekong() {
                         coordinates={stop.coordinates}
                         onMouseEnter={() => setActiveStop(stop.name)}
                         onMouseLeave={() => setActiveStop(null)}
-                        onClick={() => window.open(REDIRECT_URL, "_blank")}
+                        onClick={() => router.push(`/destinations/${stop.name.toLowerCase().replace(/ /g, '-')}`)}
                         style={{ cursor: "pointer" }}
                       >
                         <circle
