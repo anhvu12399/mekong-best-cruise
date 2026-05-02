@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
+import { QuickDecision } from "@/components/quick-decision"
 import { AboutMekong } from "@/components/about-mekong"
 import { ExploreMekong } from "@/components/explore-mekong"
 import { ArtOfCruising } from "@/components/art-of-cruising"
@@ -52,6 +53,7 @@ export default function Home() {
       />
       <main>
         <Hero />
+        <QuickDecision />
         <AboutMekong />
         <ExploreMekong />
         <ArtOfCruising />

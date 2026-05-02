@@ -97,6 +97,9 @@ export function FeaturedDestinations() {
                 <p className="text-white/80 text-[10px] md:text-xs tracking-[0.2em] uppercase font-medium">
                   {dest.subtitle}
                 </p>
+                <div className="mt-4 opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                  <span className="text-[10px] text-gold uppercase tracking-[0.2em] border-b border-gold/50 pb-0.5 font-bold">Explore Routes</span>
+                </div>
               </div>
             </Link>
           ))}

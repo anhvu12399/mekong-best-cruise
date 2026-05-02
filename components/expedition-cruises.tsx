@@ -129,7 +129,7 @@ export function ExpeditionCruises() {
                     onClick={() => window.open(REDIRECT_URL, "_blank")}
                     className="group inline-flex items-center gap-3 text-sm font-bold tracking-[0.15em] uppercase text-navy hover:text-gold transition-colors"
                   >
-                    <span>Discover {ship.name}</span>
+                    <span>Request Availability</span>
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </button>
                 </div>

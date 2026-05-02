@@ -92,9 +92,9 @@ export function Header() {
           <div className="hidden lg:block">
             <button
               onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
-              className="inline-flex items-center px-6 py-3 bg-gold text-navy text-sm font-medium tracking-wide hover:bg-gold-light transition-colors duration-200"
+              className="inline-flex items-center px-6 py-3 bg-gold text-navy text-sm font-medium tracking-wide hover:bg-gold-light transition-colors duration-200 uppercase"
             >
-              ENQUIRE NOW
+              Plan Your Journey
             </button>
           </div>
 
@@ -144,7 +144,7 @@ export function Header() {
                 }}
                 className="inline-flex items-center justify-center px-6 py-3 bg-gold text-navy text-sm font-medium tracking-wide hover:bg-gold-light transition-colors duration-200 mt-4"
               >
-                ENQUIRE NOW
+                PLAN YOUR JOURNEY
               </button>
             </nav>
           </div>

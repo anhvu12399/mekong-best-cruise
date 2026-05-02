@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 
 export function ArtOfCruising() {
   return (
@@ -66,6 +67,17 @@ export function ArtOfCruising() {
                 <span className="font-serif text-3xl md:text-4xl text-gold">98%</span>
                 <p className="text-sm text-navy/60 mt-2">Guest Satisfaction</p>
               </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-12">
+              <a 
+                href="/experiences"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-navy text-white text-xs font-medium tracking-[0.2em] uppercase hover:bg-gold hover:text-navy transition-all duration-300"
+              >
+                <span>View Deck Plans</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
         </div>
