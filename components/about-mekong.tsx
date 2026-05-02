@@ -3,11 +3,13 @@
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
-const REDIRECT_URL = "https://www.toursmekong.com/"
+import { useRouter } from "next/navigation"
 
 export function AboutMekong() {
+  const router = useRouter()
+  
   const handleButtonClick = () => {
-    window.open(REDIRECT_URL, "_blank")
+    router.push("/discover")
   }
 
   return (
