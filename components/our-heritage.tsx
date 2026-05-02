@@ -1,8 +1,13 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 import Image from "next/image"
 import { Playfair_Display } from "next/font/google"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useGSAP } from "@gsap/react"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -34,54 +39,51 @@ const sections = [
 ]
 
 export function OurHeritage() {
-  const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return
-      
-      const { top, height } = containerRef.current.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-      
-      // Calculate how far we've scrolled within the container
-      const scrollDistance = -top
-      const maxScroll = height - windowHeight
-      
-      let progress = 0
-      if (maxScroll > 0) {
-        progress = Math.max(0, Math.min(1, scrollDistance / maxScroll))
-      }
-      
-      const numSections = sections.length
-      // Calculate active index based on scroll progress
-      let index = Math.floor(progress * numSections)
-      if (index >= numSections) index = numSections - 1
-      
-      setActiveIndex(index)
-    }
+  useGSAP(() => {
+    const images = gsap.utils.toArray(".heritage-image") as HTMLElement[]
+    const texts = gsap.utils.toArray(".heritage-text") as HTMLElement[]
+    
+    // Set initial states: all except first are hidden
+    gsap.set(images.slice(1), { opacity: 0, scale: 1.05 })
+    gsap.set(texts.slice(1), { opacity: 0, y: 50 })
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // initial check
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "+=300%", // 4 sections = 300% scroll distance to complete animation
+        pin: true,
+        scrub: 0.5, // The exact value user requested for scrubbing
+      }
+    })
+
+    // Create steps for scrubbing
+    sections.forEach((_, i) => {
+      if (i === 0) return
+
+      // Animate out previous
+      tl.to(images[i - 1], { opacity: 0, scale: 1.0, duration: 1 }, `step${i}`)
+        .to(texts[i - 1], { opacity: 0, y: -50, duration: 1 }, `step${i}`)
+      
+      // Animate in current
+      tl.to(images[i], { opacity: 1, scale: 1, duration: 1 }, `step${i}`)
+        .to(texts[i], { opacity: 1, y: 0, duration: 1 }, `step${i}`)
+    })
+
+  }, { scope: containerRef })
 
   return (
-    <section 
-      ref={containerRef} 
-      className="relative bg-[#fbfaf8] border-t border-navy/10"
-      style={{ height: `${sections.length * 100}vh` }}
-    >
-      <div className="sticky top-0 h-screen flex flex-col lg:flex-row overflow-hidden">
+    <section ref={containerRef} className="relative bg-[#fbfaf8] border-t border-navy/10 h-screen overflow-hidden">
+      <div className="flex flex-col lg:flex-row h-full">
         
         {/* Left Side - Images */}
-        <div className="lg:w-1/2 h-[50vh] lg:h-screen relative order-1">
+        <div className="lg:w-1/2 h-[50vh] lg:h-full relative order-1">
           {sections.map((section, idx) => (
             <div 
               key={section.id}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                activeIndex === idx ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105"
-              }`}
+              className="heritage-image absolute inset-0 z-10"
             >
               <Image
                 src={section.image}
@@ -97,15 +99,11 @@ export function OurHeritage() {
         </div>
 
         {/* Right Side - Text */}
-        <div className="lg:w-1/2 relative h-[50vh] lg:h-screen order-2">
+        <div className="lg:w-1/2 relative h-[50vh] lg:h-full order-2 bg-[#fbfaf8]">
           {sections.map((section, idx) => (
             <div 
               key={section.id}
-              className={`absolute inset-0 flex flex-col justify-center px-8 lg:px-24 transition-all duration-1000 ease-in-out ${
-                activeIndex === idx 
-                  ? "opacity-100 translate-y-0 z-10 pointer-events-auto" 
-                  : "opacity-0 translate-y-8 z-0 pointer-events-none"
-              }`}
+              className="heritage-text absolute inset-0 flex flex-col justify-center px-8 lg:px-24 bg-[#fbfaf8] z-10"
             >
               <h2 className={`text-3xl md:text-5xl text-navy mb-8 leading-tight ${playfair.className}`}>
                 {section.title}
