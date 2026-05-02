@@ -20,6 +20,7 @@ export interface DestinationProps {
   tagline: string;
   narrative: string;
   defines: string[];
+  story?: string[];
   editorialImages: string[];
   journeys: JourneyRef[];
 }
@@ -89,6 +90,29 @@ export function DestinationTemplate(props: DestinationProps) {
           </div>
         </div>
       </section>
+
+      {/* 2.5. EDITORIAL STORY (THE DEEP DIVE) */}
+      {props.story && props.story.length > 0 && (
+        <section className="bg-white py-16 lg:py-24 border-t border-navy/5">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+            <div className="flex justify-center mb-12">
+              <div className="w-px h-16 bg-gold/50"></div>
+            </div>
+            <div className="space-y-8">
+              {props.story.map((paragraph, idx) => (
+                <p 
+                  key={idx} 
+                  className={`font-serif text-lg md:text-xl text-navy/80 leading-relaxed text-justify md:text-left
+                    ${idx === 0 ? 'first-letter:text-6xl first-letter:font-bold first-letter:text-gold first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8]' : ''}
+                  `}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 3. EDITORIAL IMAGE SECTION */}
       <section className="py-12 pb-24 lg:pb-32 bg-[#fbfaf8]">
