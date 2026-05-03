@@ -5,10 +5,9 @@ import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
 const heroImages = [
-  "/images/banner_1.png",
-  "/images/banner_2.png",
-  "/images/banner_3.png",
-  "/images/banner_4.png",
+  "/images/hero_1.avif",
+  "/images/hero_2.avif",
+  "/images/hero_3.avif",
 ]
 
 export function Hero() {
@@ -23,7 +22,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative h-[85vh] flex items-center overflow-hidden bg-black">
       {/* Background Cinematic Sequence (Ken Burns Effect) */}
       {heroImages.map((image, index) => {
         // We use a combination of opacity and scale to simulate slow camera movement
