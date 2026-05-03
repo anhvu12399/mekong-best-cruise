@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import JourneysClient from './page-client'
 
-const BASE_URL = 'https://mekongbestcruise.com'
+const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
   title: 'Exclusive Mekong Journeys | The Clockless Voyage, Lost Canals & More',

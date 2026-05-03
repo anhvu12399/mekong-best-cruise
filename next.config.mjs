@@ -18,6 +18,80 @@ const nextConfig = {
   compress: true,
   // Tắt X-Powered-By header (bảo mật + nhẹ hơn)
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/tours/cambodias-lake-rivers-mountains/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/family-cruises/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cruises/gypsy/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cruises/the-jahan/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/what-countries-does-the-mekong-river-pass-through/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/deals/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/travel-insurance/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cruises/mekong-navigator/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/tours/family-adventure-holiday-vietnam/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cruises/family-adventure-holiday-vietnam/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cruises/stellar-of-the-seas/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/cgi-sys/suspendedpage.cgi',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/charter-cruises/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/family-private-cruise.html',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

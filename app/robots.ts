@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://mekongbestcruise.com/sitemap.xml',
-    host: 'https://mekongbestcruise.com',
+    sitemap: 'https://www.mekongrivercruise.com/sitemap.xml',
+    host: 'https://www.mekongrivercruise.com',
   }
 }

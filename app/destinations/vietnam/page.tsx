@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import VietnamClient from './page-client'
 
-const BASE_URL = 'https://mekongbestcruise.com'
+const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/vietnam`
 
 export const metadata: Metadata = {

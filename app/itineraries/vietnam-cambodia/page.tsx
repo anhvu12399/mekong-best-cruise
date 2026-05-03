@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ItineraryTemplate } from '@/components/itinerary-template'
 
-const BASE_URL = 'https://mekongbestcruise.com'
+const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/itineraries/vietnam-cambodia`
 
 export const metadata: Metadata = {

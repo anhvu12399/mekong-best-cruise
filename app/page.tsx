@@ -9,7 +9,7 @@ import { FeaturedDestinations } from "@/components/featured-destinations"
 import { ExpeditionCruises } from "@/components/expedition-cruises"
 import { WhyChooseUs } from "@/components/why-choose-us"
 
-const BASE_URL = 'https://mekongbestcruise.com'
+const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
   title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',

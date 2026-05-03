@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import ExperiencesClient from './page-client'
 
-const BASE_URL = 'https://mekongbestcruise.com'
+const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
   title: 'Bespoke Experiences | Astrology, Silent Drift & Sensory Dining on the Mekong',

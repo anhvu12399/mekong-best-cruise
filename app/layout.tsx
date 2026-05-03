@@ -20,7 +20,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-const BASE_URL = 'https://mekongbestcruise.com'
+const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
