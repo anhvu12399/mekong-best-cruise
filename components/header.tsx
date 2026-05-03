@@ -58,6 +58,7 @@ export function Header() {
               height={140}
               className="h-20 w-auto object-contain"
               priority
+              quality={60}
             />
           </Link>
 

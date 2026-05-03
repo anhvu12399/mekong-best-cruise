@@ -111,6 +111,7 @@ export function ExpeditionCruises() {
                     fill
                     className={`object-cover ${index === currentSlide ? "animate-[slowZoom_20s_ease-in-out_infinite_alternate]" : ""}`}
                     priority={index === 0}
+                    quality={60}
                     sizes="(max-width: 1024px) 100vw, 75vw"
                   />
                   <div className="absolute inset-0 bg-black/10 lg:bg-transparent" />
