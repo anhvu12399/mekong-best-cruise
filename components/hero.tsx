@@ -94,7 +94,7 @@ export function Hero() {
                 fill
                 className="object-cover"
                 priority={index === 0}
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               />
             </div>
             {/* Gradient overlays to ensure text readability */}

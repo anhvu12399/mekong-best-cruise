@@ -42,6 +42,7 @@ export function DestinationTemplate(props: DestinationProps) {
           fill
           className="object-cover transition-transform duration-1000 hover:scale-105"
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         

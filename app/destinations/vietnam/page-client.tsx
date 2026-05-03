@@ -100,7 +100,7 @@ export default function VietnamClient() {
                 alt={slide.title.replace('\n', ' ')}
                 fill
                 priority={index === 0}
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                 className={`object-cover ${index === currentSlide ? "animate-[slowZoom_20s_ease-in-out_infinite_alternate]" : ""}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30" />
