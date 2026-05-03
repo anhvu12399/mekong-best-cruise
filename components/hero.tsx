@@ -34,8 +34,6 @@ export function Hero() {
             className={`absolute inset-0 transition-opacity duration-[3000ms] ease-in-out ${
               isActive ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
-            data-parallax="true"
-            data-parallax-speed="0.25"
           >
             <div 
               className={`relative w-full h-full transform transition-transform ease-linear ${
