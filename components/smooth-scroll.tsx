@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from 'react'
-import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -9,21 +8,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export function SmoothScroll() {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.0, // Stops almost immediately after wheel stops
-      wheelMultiplier: 1.0, // Standard scroll distance
-      touchMultiplier: 2.0,
-      infinite: false,
-    })
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-
     // Scroll Reveal Luxury Animations
     const applyRevealAnimations = () => {
       // 1. Fade up for generic sections
@@ -92,7 +76,6 @@ export function SmoothScroll() {
     }, 100)
 
     return () => {
-      lenis.destroy()
       ScrollTrigger.getAll().forEach(t => t.kill())
     }
   }, [])
