@@ -1,11 +1,14 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import Image from "next/image"
 import { Playfair_Display } from "next/font/google"
 import { QuickDecision } from "@/components/quick-decision"
 import { ExpeditionCruises } from "@/components/expedition-cruises"
 import { OurHeritage } from "@/components/our-heritage"
 import { ArrowRight } from "lucide-react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -33,18 +36,44 @@ const highlights = [
 ]
 
 export default function DiscoverClient() {
+  const containerRef = useRef<HTMLElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    
+    const ctx = gsap.context(() => {
+      // Parallax & Scale effect: as you scroll down, move Y by 20% and scale up to 1.1
+      gsap.to(imageRef.current, {
+        yPercent: 20,
+        scale: 1.1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        }
+      })
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
     <main className="min-h-screen bg-[#fbfaf8] overflow-hidden">
       {/* 1. Hero image lớn — headline + 1 đoạn ngắn */}
-      <section className="relative h-screen flex items-center justify-center pt-20">
-        <Image
-          src="/images/about-mekong-bg.jpg"
-          alt="Discover the Mekong"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/50" />
+      <section ref={containerRef} className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div ref={imageRef} className="absolute inset-0 w-full h-full transform origin-center">
+          <Image
+            src="/images/about-mekong-bg.jpg"
+            alt="Discover the Mekong"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/40 z-0" />
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-10">
           <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-6 drop-shadow-md">
             The Mother of Water
