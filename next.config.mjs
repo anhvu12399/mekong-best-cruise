@@ -18,6 +18,10 @@ const nextConfig = {
   compress: true,
   // Tắt X-Powered-By header (bảo mật + nhẹ hơn)
   poweredByHeader: false,
+  // Tối ưu CSS để tránh render blocking (yêu cầu gói critters)
+  experimental: {
+    optimizeCss: true,
+  },
   async redirects() {
     return [
       {
