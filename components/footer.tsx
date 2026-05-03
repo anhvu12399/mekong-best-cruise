@@ -29,10 +29,29 @@ const footerLinks = {
 
 export function Footer() {
   const [email, setEmail] = useState("")
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    window.open(REDIRECT_URL, "_blank")
+    if (!email || status === "loading") return
+
+    setStatus("loading")
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+
+      if (res.ok) {
+        setStatus("success")
+        setEmail("")
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
+    }
   }
 
   const handleLinkClick = () => {
@@ -56,23 +75,54 @@ export function Footer() {
               inspiring stories from the Mekong.
             </p>
 
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                onClick={handleLinkClick}
-                className="flex-1 h-14 px-4 bg-white border border-navy/20 text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold transition-colors duration-200"
-              />
-              <button
-                type="submit"
-                className="h-14 px-8 bg-navy text-cream font-medium hover:bg-navy/80 transition-colors duration-200 flex items-center justify-center gap-2"
-              >
-                <span>Subscribe</span>
-                <ArrowRight size={18} />
-              </button>
-            </form>
+            {status === "success" ? (
+              <div className="flex flex-col items-center gap-3 py-4">
+                <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p className="text-navy font-medium">Thank you! You're on our exclusive list.</p>
+                <p className="text-navy/50 text-sm">Check your inbox for a confirmation email.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  disabled={status === "loading"}
+                  className="flex-1 h-14 px-4 bg-white border border-navy/20 text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold transition-colors duration-200 disabled:opacity-60"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading" || !email}
+                  className="h-14 px-8 bg-navy text-cream font-medium hover:bg-navy/80 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === "loading" ? (
+                    <>
+                      <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+                      </svg>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Subscribe</span>
+                      <ArrowRight size={18} />
+                    </>
+                  )}
+                </button>
+                {status === "error" && (
+                  <p className="text-red-500 text-sm text-center w-full mt-2">
+                    Something went wrong. Please try again.
+                  </p>
+                )}
+              </form>
+            )}
           </div>
         </div>
       </div>
