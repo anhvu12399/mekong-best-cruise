@@ -14,58 +14,56 @@ export function WhatsAppButton() {
   }
 
   return (
-    <div className="fixed bottom-8 left-8 z-50 flex flex-col items-start gap-3">
+    <div className="fixed bottom-8 left-8 z-50 flex flex-col items-start">
       {/* Expanded tooltip card */}
       {expanded && (
-        <div className="relative bg-[#0f172a] border border-[#c9a962]/30 text-white shadow-2xl p-5 w-64">
+        <div className="absolute bottom-16 left-0 bg-[#0f172a] border border-[#c9a962]/30 text-white shadow-2xl p-5 w-64 mb-4 origin-bottom-left animate-in fade-in zoom-in-95 duration-200">
           <button
             onClick={() => setExpanded(false)}
             className="absolute top-3 right-3 text-white/40 hover:text-white transition-colors"
             aria-label="Close"
           >
-            <X size={14} />
+            <X size={16} />
           </button>
+          
           <p className="text-[#c9a962] text-[10px] tracking-[0.25em] uppercase mb-1 font-medium">
             Speak to a Specialist
           </p>
-          <p className="font-serif text-base text-white mb-2 leading-snug">
+          <p className="font-serif text-base text-white mb-4 leading-snug">
             Plan your perfect Mekong journey
           </p>
-          <p className="text-white/50 text-xs mb-5 leading-relaxed">
-            Our river experts are available daily to craft your bespoke itinerary.
-          </p>
+          
+          <div className="mb-5 bg-white/5 p-3 border-l-2 border-[#c9a962]">
+            <p className="text-[#c9a962] text-[10px] tracking-[0.15em] uppercase mb-1 font-semibold">
+              Direct Line / WhatsApp
+            </p>
+            <p className="text-white text-lg font-medium tracking-wide">
+              +1 315 998 1998
+            </p>
+          </div>
+
           <button
             onClick={handleChat}
             className="w-full flex items-center justify-center gap-2 bg-[#c9a962] text-[#0f172a] text-xs font-bold tracking-[0.15em] uppercase py-3 px-4 hover:bg-[#d4b978] transition-colors duration-200"
           >
-            <MessageCircle size={14} />
+            <MessageCircle size={16} />
             <span>Chat on WhatsApp</span>
           </button>
         </div>
       )}
 
-      {/* Floating pill button */}
+      {/* Floating circular button */}
       <button
         onClick={() => setExpanded((prev) => !prev)}
         aria-label="Contact us on WhatsApp"
-        className="relative flex items-center gap-3 bg-[#0f172a] border border-[#c9a962]/50 text-white pl-4 pr-5 py-3.5 shadow-2xl hover:border-[#c9a962] hover:shadow-[0_0_24px_rgba(201,169,98,0.15)] transition-all duration-300"
+        className={`relative flex items-center justify-center w-14 h-14 rounded-full bg-[#0f172a] border border-[#c9a962]/50 text-[#c9a962] shadow-2xl hover:bg-[#c9a962] hover:text-[#0f172a] hover:shadow-[0_0_24px_rgba(201,169,98,0.3)] transition-all duration-300 ${expanded ? 'scale-90 bg-[#c9a962] text-[#0f172a]' : 'scale-100'}`}
       >
         {/* Subtle pulse */}
-        <span className="absolute inset-0 border border-[#c9a962]/15 animate-ping pointer-events-none" />
+        {!expanded && (
+          <span className="absolute inset-0 rounded-full border border-[#c9a962]/50 animate-ping pointer-events-none duration-1000" />
+        )}
 
-        {/* Gold icon badge */}
-        <span className="flex items-center justify-center w-8 h-8 bg-[#c9a962] text-[#0f172a] rounded-full shrink-0">
-          <Phone size={15} strokeWidth={2.5} />
-        </span>
-
-        <div className="text-left leading-tight">
-          <p className="text-[#c9a962] text-[10px] tracking-[0.22em] uppercase font-semibold">
-            Enquire Now
-          </p>
-          <p className="text-white text-xs font-medium tracking-wide mt-0.5">
-            +1 315 998 1998
-          </p>
-        </div>
+        {expanded ? <X size={24} strokeWidth={2} /> : <Phone size={22} strokeWidth={2} />}
       </button>
     </div>
   )

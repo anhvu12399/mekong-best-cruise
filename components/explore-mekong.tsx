@@ -64,7 +64,7 @@ export function ExploreMekong() {
                   projectionConfig={{ center: [103, 15], scale: 900 }}
                   style={{ width: "100%", height: "100%" }}
                 >
-                  <ZoomableGroup>
+                  <g>
                     <Geographies geography={geoUrl}>
                       {({ geographies }) =>
                         geographies.map((geo) => {
@@ -105,9 +105,18 @@ export function ExploreMekong() {
                           strokeWidth={1.5}
                           style={{ transition: "r 0.2s ease" }}
                         />
+                        {/* Pulse effect to show it's interactive */}
+                        <circle
+                          r={12}
+                          fill="none"
+                          stroke="#c9a962"
+                          strokeWidth={1}
+                          className="animate-ping opacity-50 origin-center"
+                          style={{ transformOrigin: 'center' }}
+                        />
                         <text
                           textAnchor="middle"
-                          y={-12}
+                          y={-14}
                           style={{
                             fontFamily: "sans-serif",
                             fontSize: "9px",
@@ -119,9 +128,26 @@ export function ExploreMekong() {
                         >
                           {stop.name.toUpperCase()}
                         </text>
+                        {/* Click indicator on hover */}
+                        {activeStop === stop.name && (
+                          <text
+                            textAnchor="middle"
+                            y={16}
+                            style={{
+                              fontFamily: "sans-serif",
+                              fontSize: "7px",
+                              fill: "#c9a962",
+                              fontWeight: "bold",
+                              pointerEvents: "none",
+                              letterSpacing: "0.1em",
+                            }}
+                          >
+                            CLICK TO EXPLORE
+                          </text>
+                        )}
                       </Marker>
                     ))}
-                  </ZoomableGroup>
+                  </g>
                 </ComposableMap>
               )}
             </div>
