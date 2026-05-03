@@ -2,30 +2,48 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
-const heroImages = [
-  "/images/hero_1.avif",
-  "/images/hero_2.avif",
-  "/images/hero_3.avif",
+const heroSlides = [
+  {
+    image: "/images/hero_1.avif",
+    title: "The Golden Hour on the Mekong",
+  },
+  {
+    image: "/images/hero_2.avif",
+    title: "Vibrant Floating Markets of the Delta",
+  },
+  {
+    image: "/images/hero_3.avif",
+    title: "Serene Canals & Private Sampan Journeys",
+  },
 ]
 
 export function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // 14 seconds per slide (long cinematic shot, slow pacing)
+  // 14 seconds per slide, resets when currentImageIndex changes manually
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+      setCurrentImageIndex((prev) => (prev + 1) % heroSlides.length)
     }, 14000)
     return () => clearInterval(interval)
-  }, [])
+  }, [currentImageIndex])
+
+  const nextSlide = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % heroSlides.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))
+  }
+
+  const nextSlideInfo = heroSlides[(currentImageIndex + 1) % heroSlides.length]
 
   return (
-    <section className="relative h-[85vh] flex items-center overflow-hidden bg-black">
+    <section className="relative h-[85vh] flex items-center overflow-hidden bg-black group">
       {/* Background Cinematic Sequence (Ken Burns Effect) */}
-      {heroImages.map((image, index) => {
-        // We use a combination of opacity and scale to simulate slow camera movement
+      {heroSlides.map((slide, index) => {
         const isActive = index === currentImageIndex;
         return (
           <div
@@ -40,21 +58,22 @@ export function Hero() {
               }`}
             >
               <Image
-                src={image}
+                src={slide.image}
                 alt={`Mekong River Cinematic Scene ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}
               />
             </div>
-            {/* A gradient overlay to make text pop and mimic the screenshot's mood */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+            {/* Gradient overlays to ensure text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
           </div>
         )
       })}
 
-      {/* Content */}
-      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-20 flex flex-col items-start text-left">
+      {/* Main Center Content */}
+      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-start text-left h-full justify-center">
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] mb-4 drop-shadow-lg tracking-wide">
           <span className="uppercase tracking-widest text-[0.85em]">ARTISANS of</span>
           <br />
@@ -66,19 +85,44 @@ export function Hero() {
           Riverboat & Small Ship Adventure Cruises
         </p>
         
-        {/* Practical reassurance block */}
-        <p className="text-xs md:text-sm text-gold font-medium tracking-widest uppercase mb-10 drop-shadow-md">
+        <p className="text-xs md:text-sm text-gold font-medium tracking-widest uppercase drop-shadow-md">
           3–8 day journeys · intimate vessels · curated private departures
         </p>
+      </div>
 
-        {/* CTA Button */}
-        <button
-          onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
-          className="group inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-white/50 text-white text-xs md:text-sm font-medium tracking-[0.2em] uppercase hover:bg-white hover:text-navy hover:border-white transition-all duration-300 backdrop-blur-sm"
-        >
-          <span>Plan your Mekong journey</span>
-          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-        </button>
+      {/* Next Up Slider Indicator at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full flex items-end justify-between pb-6">
+          {/* Next Up Text */}
+          <div className="flex flex-col">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-white/70 mb-2">Next Up</span>
+            <span className="text-sm md:text-base font-serif text-white tracking-wide">{nextSlideInfo.title}</span>
+          </div>
+
+          {/* Navigation Controls */}
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={prevSlide}
+              className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-black/70 hover:border-white/50 transition-all"
+            >
+              <ChevronLeft size={18} strokeWidth={1.5} />
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-black/70 hover:border-white/50 transition-all"
+            >
+              <ChevronRight size={18} strokeWidth={1.5} />
+            </button>
+          </div>
+        </div>
+
+        {/* Animated Progress Bar */}
+        <div className="w-full h-[2px] bg-white/10">
+          <div 
+            key={currentImageIndex} // Important: Resets animation when slide changes
+            className="h-full bg-white/70 animate-[progress_14s_linear_forwards]"
+          />
+        </div>
       </div>
     </section>
   )
