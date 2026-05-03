@@ -45,7 +45,7 @@ export function Header() {
           isScrolled ? "bg-navy shadow-lg" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
+        <div className="w-full px-6 lg:px-10 relative">
           <div className="flex h-24 items-center justify-between">
             
             {/* Left: Hamburger & Desktop Navigation */}
