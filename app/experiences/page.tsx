@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       'Ultra-luxury, one-of-a-kind encounters designed to awaken the senses and connect you with the soul of the Mekong.',
     images: [{
-      url: '/images/exp_astrology.png',
+      url: '/images/exp_astrology.avif',
       width: 1200,
       height: 630,
       alt: 'Private Astrology & Tea Session on the Mekong River',

@@ -45,11 +45,11 @@ export function AboutMekong() {
       {/* Background Image Container (larger than section for parallax movement) */}
       <div ref={imageRef} className="absolute inset-0 w-full h-[130%] -top-[15%] transform origin-center">
         <Image
-          src="/images/about-mekong-bg.jpg"
+          src="/images/about-mekong-bg.avif"
           alt="Mekong River landscape"
           fill
           className="object-cover"
-          priority
+          sizes="100vw"
         />
       </div>
       

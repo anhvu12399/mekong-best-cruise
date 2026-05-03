@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Exclusive, unscripted journeys that redefine the concept of exploration and luxury on the Mekong River.',
     images: [{
-      url: '/images/banner_1.png',
+      url: '/images/banner_1.avif',
       width: 1200,
       height: 630,
       alt: 'Luxury Mekong River Journey at Golden Hour',

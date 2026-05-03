@@ -12,7 +12,7 @@ const destinationSlides = [
     title: "SKYWALK\nPANORAMAS",
     description: "Take in sweeping, breathtaking views of the mighty Mekong from the soaring glass Skywalks in Nong Khai, perched high above the riverbanks.",
     linkText: "VIEW PANORAMAS",
-    image: "/images/dest_thailand.png"
+    image: "/images/dest_thailand.avif"
   },
   {
     title: "BORDER\nMARKETS",

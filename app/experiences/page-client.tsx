@@ -10,31 +10,31 @@ const experiences = [
     title: "Decoding the Self",
     subtitle: "A Private Astrology Reading",
     description: "Transcend traditional entertainment with an exclusive high-end tea tasting and private palmistry or Eastern astrology session on the upper deck. Under the canopy of the Mekong's starlit sky, discover profound insights into your life's path and career in a deeply personal, mystical, and uncompromisingly luxurious setting.",
-    image: "/images/exp_astrology.png",
+    image: "/images/exp_astrology.avif",
   },
   {
     title: "The Silent Drift",
     subtitle: "A Symphony of Silence",
     description: "For 45 minutes at the delicate hours of dawn or dusk, we cut the engines entirely. Without the hum of machinery, immerse yourself in the authentic sounds of the river—the gentle rhythm of oars breaking the water and the distant calls of native birds. Complete with noise-canceling headphones upon request, this is a moment of absolute, meditative tranquility.",
-    image: "/images/exp_silent_drift.png",
+    image: "/images/exp_silent_drift.avif",
   },
   {
     title: "The Blindfolded Tasting",
     subtitle: "A Sensory Awakening",
     description: "Deprived of sight by premium silk blindfolds, your remaining senses are powerfully awakened. Feel the gentle sway of the vessel and the river breeze as you embark on a mysterious fine dining journey, where the complex profiles of indigenous spices and Michelin-inspired culinary artistry come alive on the palate.",
-    image: "/images/banner_2.png",
+    image: "/images/banner_2.avif",
   },
   {
     title: "A Monk's Blessing at Dawn",
     subtitle: "The Dawn Awakening",
     description: "Before the rest of the ship wakes, experience a profoundly moving, private water blessing ceremony led by senior Buddhist monks from a secluded riverside temple. Accompanied only by morning chanting and the rising sun, this spiritual encounter offers deep cultural immersion and absolute tranquility.",
-    image: "/images/monk-temple.jpg",
+    image: "/images/monk-temple.avif",
   },
   {
     title: "Submerged Sommelier",
     subtitle: "The River Cellar",
     description: "Descend into the ship's climate-controlled pontoon cellar, surrounded by the cool, dark waters of the Mekong. Here, our Master Sommelier conducts an exclusive tasting of rare vintages perfectly paired with regional delicacies—an intimate, subterranean experience unlike any other on the river.",
-    image: "/images/fine-dining-deck.jpg",
+    image: "/images/fine-dining-deck.avif",
   }
 ]
 

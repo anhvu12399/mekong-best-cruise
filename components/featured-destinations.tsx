@@ -11,42 +11,42 @@ const destinations = [
     id: "luang-prabang",
     title: "LUANG PRABANG",
     subtitle: "SPIRITUAL SANCTUARY",
-    image: "/images/dest_laos.png",
+    image: "/images/dest_laos.avif",
     href: "/destinations/luang-prabang"
   },
   {
     id: "siem-reap",
     title: "SIEM REAP",
     subtitle: "ANCIENT EMPIRE",
-    image: "/images/dest_cambodia.png",
+    image: "/images/dest_cambodia.avif",
     href: "/destinations/siem-reap"
   },
   {
     id: "phnom-penh",
     title: "PHNOM PENH",
     subtitle: "PEARL OF ASIA",
-    image: "/images/banner_1.png",
+    image: "/images/banner_1.avif",
     href: "/destinations/phnom-penh"
   },
   {
     id: "ho-chi-minh-city",
     title: "SAIGON",
     subtitle: "VIBRANT METROPOLIS",
-    image: "/images/dest_vietnam.png",
+    image: "/images/dest_vietnam.avif",
     href: "/destinations/ho-chi-minh-city"
   },
   {
     id: "can-tho",
     title: "CAN THO",
     subtitle: "DELTA HEART",
-    image: "/images/banner_2.png",
+    image: "/images/banner_2.avif",
     href: "/destinations/can-tho"
   },
   {
     id: "chiang-rai",
     title: "CHIANG RAI",
     subtitle: "NORTHERN FRONTIER",
-    image: "/images/dest_thailand.png",
+    image: "/images/dest_thailand.avif",
     href: "/destinations/chiang-rai"
   }
 ]

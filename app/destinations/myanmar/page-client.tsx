@@ -12,7 +12,7 @@ const destinationSlides = [
     title: "GOLDEN\nTRIANGLE",
     description: "Sail the upper reaches to witness the legendary convergence of three nations. Explore the vibrant border hubs where Myanmar meets Thailand and Laos.",
     linkText: "EXPLORE THE BORDER",
-    image: "/images/dest_myanmar.png"
+    image: "/images/dest_myanmar.avif"
   },
   {
     title: "IRRAWADDY\nCRUISES",

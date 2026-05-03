@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function MekongDeltaItinerary() {
   return (
     <ItineraryTemplate
-      heroImage="/images/dest_vietnam.png"
+      heroImage="/images/dest_vietnam.avif"
       title="The Delta Discovery"
       duration="4 Days / 3 Nights"
       route="HCMC – Cai Be – Can Tho – HCMC"

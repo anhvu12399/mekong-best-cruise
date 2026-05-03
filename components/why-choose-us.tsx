@@ -35,7 +35,7 @@ export function WhyChooseUs() {
           <div className="lg:col-span-5 relative">
             <div className="aspect-[3/4] relative overflow-hidden bg-navy/5">
               <Image
-                src="/images/why-choose-us-bg.jpg"
+                src="/images/why-choose-us-bg.avif"
                 alt="Luxury cruise on Mekong River"
                 fill
                 className="object-cover transition-transform duration-1000 hover:scale-105"

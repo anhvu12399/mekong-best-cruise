@@ -16,22 +16,22 @@ const highlights = [
   {
     title: "Floating Markets",
     desc: "Witness the vibrant dawn trading on the water, where boats overflow with fresh tropical produce.",
-    image: "/images/dest_vietnam.png"
+    image: "/images/dest_vietnam.avif"
   },
   {
     title: "Riverside Villages",
     desc: "Step ashore into timeless communities where traditional silk weaving and pottery are still practiced.",
-    image: "/images/banner_3.png"
+    image: "/images/banner_3.avif"
   },
   {
     title: "Ancient Temples",
     desc: "Explore forgotten Khmer ruins and receive sacred water blessings from senior Buddhist monks.",
-    image: "/images/highlights_journey.png"
+    image: "/images/highlights_journey.avif"
   },
   {
     title: "Hidden Waterways",
     desc: "Navigate through impossibly narrow canals shaded by lush nipa palms, far from the tourist trail.",
-    image: "/images/banner_4.png"
+    image: "/images/banner_4.avif"
   }
 ]
 
@@ -66,11 +66,12 @@ export default function DiscoverClient() {
       <section ref={containerRef} className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div ref={imageRef} className="absolute inset-0 w-full h-full transform origin-center">
           <Image
-            src="/images/about-mekong-bg.jpg"
+            src="/images/about-mekong-bg.avif"
             alt="Discover the Mekong"
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 bg-black/40 z-0" />
@@ -116,7 +117,7 @@ export default function DiscoverClient() {
         <div className="grid lg:grid-cols-2">
           <div className="relative h-[500px] lg:h-auto">
             <Image
-              src="/images/pulse_delta.png"
+              src="/images/pulse_delta.avif"
               alt="Mekong lifestyle"
               fill
               className="object-cover"
@@ -168,7 +169,7 @@ export default function DiscoverClient() {
       {/* 7. Large breathing image — section visual tạo nhịp nghỉ */}
       <section className="relative h-[60vh] lg:h-[80vh] flex items-center justify-center">
         <Image
-          src="/images/banner_1.png"
+          src="/images/banner_1.avif"
           alt="Mekong Sunset Breathing Image"
           fill
           className="object-cover"

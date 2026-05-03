@@ -12,7 +12,7 @@ const destinationSlides = [
     title: "FLOATING\nMARKETS",
     description: "Explore iconic floating markets like Cai Rang in Can Tho—a bustling, colorful hub of agricultural trade unfolding entirely on wooden boats at dawn.",
     linkText: "EXPLORE MARKETS",
-    image: "/images/dest_vietnam.png"
+    image: "/images/dest_vietnam.avif"
   },
   {
     title: "LUXURY\nCRUISING",
@@ -100,6 +100,7 @@ export default function VietnamClient() {
                 alt={slide.title.replace('\n', ' ')}
                 fill
                 priority={index === 0}
+                sizes="100vw"
                 className={`object-cover ${index === currentSlide ? "animate-[slowZoom_20s_ease-in-out_infinite_alternate]" : ""}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30" />

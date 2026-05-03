@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
     description:
       'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China.',
-    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Mekong Best Cruise' }],
+    images: [{ url: '/images/og-image.avif', width: 1200, height: 630, alt: 'Mekong Best Cruise' }],
   },
 }
 

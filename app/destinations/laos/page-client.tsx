@@ -12,7 +12,7 @@ const destinationSlides = [
     title: "THE SLOW\nBOAT",
     description: "Embark on an iconic two-day journey from the Thai border at Huay Xai to Luang Prabang, resting overnight in Pak Beng while soaking in breathtaking, untouched riverside panoramas.",
     linkText: "VIEW ITINERARY",
-    image: "/images/dest_laos.png"
+    image: "/images/dest_laos.avif"
   },
   {
     title: "PAK OU\nCAVES",

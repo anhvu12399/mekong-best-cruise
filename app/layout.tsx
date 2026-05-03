@@ -78,7 +78,7 @@ export const metadata: Metadata = {
       'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-image.avif',
         width: 1200,
         height: 630,
         alt: 'Mekong Best Cruise — Luxury River Journeys',
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
     description:
       'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand & more.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-image.avif'],
     creator: '@mekongbestcruise',
   },
   icons: {

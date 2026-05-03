@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function VietnamCambodiaItinerary() {
   return (
     <ItineraryTemplate
-      heroImage="/images/dest_cambodia.png"
+      heroImage="/images/dest_cambodia.avif"
       title="The Imperial River"
       duration="8 Days / 7 Nights"
       route="HCMC – Phnom Penh – Siem Reap"

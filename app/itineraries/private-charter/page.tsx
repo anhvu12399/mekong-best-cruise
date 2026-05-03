@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function PrivateCharterItinerary() {
   return (
     <ItineraryTemplate
-      heroImage="/images/banner_3.png"
+      heroImage="/images/banner_3.avif"
       title="The Ultimate Sanctuary"
       duration="Tailored (Custom Days)"
       route="Fully Customized Routing"

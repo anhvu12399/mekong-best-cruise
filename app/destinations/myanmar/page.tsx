@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     title: 'Myanmar Luxury River Cruise | Mekong Best Cruise',
     description: 'Discover Bagan\'s 2,000 ancient temples and Mandalay\'s royal courts on a bespoke luxury river cruise through Myanmar.',
-    images: [{ url: '/images/dest_myanmar.png', width: 1200, height: 630, alt: 'Bagan Myanmar Luxury River Cruise' }],
+    images: [{ url: '/images/dest_myanmar.avif', width: 1200, height: 630, alt: 'Bagan Myanmar Luxury River Cruise' }],
   },
 }
 

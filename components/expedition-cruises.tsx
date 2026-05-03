@@ -14,31 +14,31 @@ const ships = [
     name: "Aqua Mekong",
     subtitle: "The Pinnacle of Modern Elegance",
     description: "Setting the gold standard for contemporary luxury, the Aqua Mekong features architectural brilliance, Michelin-inspired dining, and panoramic floor-to-ceiling windows that seamlessly blend your opulent suite with the untamed beauty of the river.",
-    image: "/images/aqua_mekong.png"
+    image: "/images/aqua_mekong.avif"
   },
   {
     name: "Mekong Jewel",
     subtitle: "The Crown Jewel of the Delta",
     description: "A masterpiece of sustainable opulence. The Mekong Jewel redefines boutique cruising with its sophisticated eco-friendly design, lavish private balconies, and an atmosphere of exclusive intimacy as you sail through the heart of Southeast Asia.",
-    image: "/images/mekong_jewel.png"
+    image: "/images/mekong_jewel.avif"
   },
   {
     name: "Jayavarman",
     subtitle: "A Journey Through Time",
     description: "Inspired by the golden age of French colonial grace and traditional Khmer artistry, the Jayavarman is a floating boutique gallery. Step aboard and surrender to a deeply romantic, nostalgic voyage across the majestic waterways.",
-    image: "/images/jayavarman.png"
+    image: "/images/jayavarman.avif"
   },
   {
     name: "Victoria Mekong",
     subtitle: "Vibrant Cultural Immersion",
     description: "With its sleek design and vibrant cultural ethos, the Victoria Mekong is your passport to the delta's soul. Experience unparalleled comfort on the sun deck while soaking in the mesmerizing daily rhythms of vibrant river life.",
-    image: "/images/victoria_mekong.png"
+    image: "/images/victoria_mekong.avif"
   },
   {
     name: "Mekong Navigator",
     subtitle: "Grandeur on the River",
     description: "Evoking the sophisticated grandeur of the French Indochina era, the Mekong Navigator offers all-suite accommodations and unmatched personalized service. Retreat to your sumptuous sanctuary after days filled with profound cultural encounters.",
-    image: "/images/mekong_navigator.png"
+    image: "/images/mekong_navigator.avif"
   }
 ]
 
@@ -107,8 +107,9 @@ export function ExpeditionCruises() {
                     src={ship.image}
                     alt={ship.name}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${index === currentSlide ? "animate-[slowZoom_20s_ease-in-out_infinite_alternate]" : ""}`}
                     priority={index === 0}
+                    sizes="(max-width: 1024px) 100vw, 75vw"
                   />
                   <div className="absolute inset-0 bg-black/10 lg:bg-transparent" />
                 </div>

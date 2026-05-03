@@ -12,7 +12,7 @@ const destinationSlides = [
     title: "THE UPPER\nLANCANG",
     description: "Witness the mighty Mekong at its very genesis. Flowing rapidly through dramatic highland plateaus and steep gorges, the upper river presents a stark, thrilling contrast to the languid lower delta.",
     linkText: "EXPLORE THE SOURCE",
-    image: "/images/dest_china.png"
+    image: "/images/dest_china.avif"
   },
   {
     title: "YUNNAN'S\nWONDERS",

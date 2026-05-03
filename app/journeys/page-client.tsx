@@ -10,31 +10,31 @@ const journeys = [
     title: "The Clockless Voyage",
     subtitle: "Dictated by the Tide",
     description: "Abandon rigid itineraries and the constraints of time. Our daily voyage operates in perfect harmony with the water's natural rhythm and tidal shifts. \"We do not chase time; we drift with the breath of the river.\" This is the ultimate declaration of true luxury—absolute freedom.",
-    image: "/images/banner_1.png",
+    image: "/images/banner_1.avif",
   },
   {
     title: "The Floating Market Trader",
     subtitle: "An Authentic Exchange",
     description: "Step off the main vessel and board a traditional wooden sampan equipped with local currency. Engage directly with river vendors, haggling and hand-selecting the freshest tropical produce from the vibrant floating markets. Later, your private chef will transform your curated ingredients into a highly personalized, exquisite luncheon.",
-    image: "/images/dest_vietnam.png",
+    image: "/images/dest_vietnam.avif",
   },
   {
     title: "The Lost Canals",
     subtitle: "Uncharted Waters",
     description: "Venture into the pristine, impossibly narrow waterways completely inaccessible to standard cruise ships. Leave the tourist trails far behind to witness the untouched, serene daily life of local communities in a beautifully raw and authentically tranquil setting.",
-    image: "/images/banner_3.png",
+    image: "/images/banner_3.avif",
   },
   {
     title: "Echoes of Empire",
     subtitle: "The Ruined Palaces",
     description: "Journey deep into the Cambodian interior to explore overgrown, pre-Angkorian temple ruins where no other tourist vessels venture. Wander through ancient stone courtyards before enjoying a surprise pop-up champagne picnic right amidst the majestic, forgotten architecture.",
-    image: "/images/coconut-forest-boat.jpg",
+    image: "/images/coconut-forest-boat.avif",
   },
   {
     title: "The Monsoon Symphony",
     subtitle: "A Seasonal Spectacle",
     description: "Embrace the dramatic beauty of the tropical rainy season. From the comfort of our glass-walled observation lounges, sip hot spiced teas and watch awe-inspiring monsoon storms roll over the vast river—a powerful, cinematic display of nature's raw magnificence.",
-    image: "/images/luxury-balcony-sunset.jpg",
+    image: "/images/luxury-balcony-sunset.avif",
   }
 ]
 

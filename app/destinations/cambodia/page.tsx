@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     title: 'Cambodia Mekong Cruise | Mekong Best Cruise',
     description: 'Explore Angkor Wat, Phnom Penh, and the floating villages of Tonle Sap on a bespoke luxury Mekong river cruise through Cambodia.',
-    images: [{ url: '/images/dest_cambodia.png', width: 1200, height: 630, alt: 'Cambodia Mekong Cruise — Angkor Wat' }],
+    images: [{ url: '/images/dest_cambodia.avif', width: 1200, height: 630, alt: 'Cambodia Mekong Cruise — Angkor Wat' }],
   },
 }
 

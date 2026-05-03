@@ -12,7 +12,7 @@ const destinationSlides = [
     title: "PHNOM\nPENH",
     description: "Watch the sun dip below the Mekong in the capital city. Explore the majestic Royal Palace and uncover profound, sobering history at the Tuol Sleng Genocide Museum.",
     linkText: "EXPLORE THE CAPITAL",
-    image: "/images/dest_cambodia.png"
+    image: "/images/dest_cambodia.avif"
   },
   {
     title: "IRRAWADDY\nDOLPHINS",

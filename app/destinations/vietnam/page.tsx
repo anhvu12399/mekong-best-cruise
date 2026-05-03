@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     title: 'Vietnam Mekong River Cruise | Mekong Best Cruise',
     description: 'Discover the Mekong Delta\'s floating markets, hidden canals, and silk weaving villages on a bespoke luxury river cruise in Vietnam.',
-    images: [{ url: '/images/dest_vietnam.png', width: 1200, height: 630, alt: 'Vietnam Mekong Delta Luxury Cruise' }],
+    images: [{ url: '/images/dest_vietnam.avif', width: 1200, height: 630, alt: 'Vietnam Mekong Delta Luxury Cruise' }],
   },
 }
 

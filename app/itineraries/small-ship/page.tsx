@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function SmallShipItinerary() {
   return (
     <ItineraryTemplate
-      heroImage="/images/dest_laos.png"
+      heroImage="/images/dest_laos.avif"
       title="The Hidden Tributaries"
       duration="5 Days / 4 Nights"
       route="Luang Prabang – Golden Triangle"
