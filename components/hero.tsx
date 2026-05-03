@@ -2,20 +2,51 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 
 const heroSlides = [
   {
     image: "/images/hero_1.avif",
     title: "The Golden Hour on the Mekong",
+    heading: (
+      <>
+        <span className="uppercase tracking-widest text-[0.85em]">ARTISANS of</span>
+        <br />
+        <span className="uppercase tracking-widest">ADVENTURE TRAVEL</span>
+        <span className="text-lg lg:text-xl font-sans align-top ml-1 tracking-normal">™</span>
+      </>
+    ),
+    subheading: "Riverboat & Small Ship Adventure Cruises",
+    details: "3–8 DAY JOURNEYS · INTIMATE VESSELS · CURATED PRIVATE DEPARTURES",
+    link: "https://www.toursmekong.com/tailor-made-tours/",
   },
   {
     image: "/images/hero_2.avif",
     title: "Vibrant Floating Markets of the Delta",
+    heading: (
+      <>
+        <span className="uppercase tracking-widest text-[0.85em]">THE PULSE of</span>
+        <br />
+        <span className="uppercase tracking-widest">THE MEKONG DELTA</span>
+      </>
+    ),
+    subheading: "Discover Vibrant Floating Markets and Local Life",
+    details: "CULTURAL ENCOUNTERS · AUTHENTIC EXPERIENCES · EXPERT GUIDES",
+    link: "/discover",
   },
   {
     image: "/images/hero_3.avif",
     title: "Serene Canals & Private Sampan Journeys",
+    heading: (
+      <>
+        <span className="uppercase tracking-widest text-[0.85em]">SERENE &</span>
+        <br />
+        <span className="uppercase tracking-widest">PRIVATE JOURNEYS</span>
+      </>
+    ),
+    subheading: "Navigate Hidden Canals on a Luxury Sampan",
+    details: "EXCLUSIVE ACCESS · QUIET LUXURY · BESPOKE ITINERARIES",
+    link: "/experiences",
   },
 ]
 
@@ -42,14 +73,14 @@ export function Hero() {
 
   return (
     <section className="relative h-[85vh] flex items-center overflow-hidden bg-black group">
-      {/* Background Cinematic Sequence (Ken Burns Effect) */}
+      {/* Background Cinematic Sequence & Content */}
       {heroSlides.map((slide, index) => {
         const isActive = index === currentImageIndex;
         return (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-[3000ms] ease-in-out ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+              isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
             }`}
           >
             <div 
@@ -68,27 +99,34 @@ export function Hero() {
             {/* Gradient overlays to ensure text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+
+            {/* Slide-Specific Center Content */}
+            <div className="absolute inset-0 z-10 flex flex-col justify-center">
+              <a 
+                href={slide.link} 
+                className="w-full mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-start text-left cursor-pointer group"
+              >
+                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] mb-4 drop-shadow-lg tracking-wide group-hover:text-gold transition-colors duration-500">
+                  {slide.heading}
+                </h1>
+                
+                <p className="text-base md:text-lg text-white/90 font-serif mb-6 drop-shadow-md tracking-wide">
+                  {slide.subheading}
+                </p>
+                
+                <p className="text-xs md:text-sm text-gold font-medium tracking-widest uppercase drop-shadow-md">
+                  {slide.details}
+                </p>
+                
+                <div className="mt-8 inline-flex items-center gap-2 text-white/80 text-xs font-bold tracking-[0.2em] uppercase group-hover:text-gold transition-colors duration-300">
+                   <span>Explore</span>
+                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            </div>
           </div>
         )
       })}
-
-      {/* Main Center Content */}
-      <div className="relative z-10 w-full mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-start text-left h-full justify-center">
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] mb-4 drop-shadow-lg tracking-wide">
-          <span className="uppercase tracking-widest text-[0.85em]">ARTISANS of</span>
-          <br />
-          <span className="uppercase tracking-widest">ADVENTURE TRAVEL</span>
-          <span className="text-lg lg:text-xl font-sans align-top ml-1 tracking-normal">™</span>
-        </h1>
-        
-        <p className="text-base md:text-lg text-white/90 font-serif mb-6 drop-shadow-md tracking-wide">
-          Riverboat & Small Ship Adventure Cruises
-        </p>
-        
-        <p className="text-xs md:text-sm text-gold font-medium tracking-widest uppercase drop-shadow-md">
-          3–8 day journeys · intimate vessels · curated private departures
-        </p>
-      </div>
 
       {/* Next Up Slider Indicator at the bottom */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
