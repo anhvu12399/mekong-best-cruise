@@ -1,30 +1,60 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-
 import { useRouter } from "next/navigation"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export function AboutMekong() {
   const router = useRouter()
+  const containerRef = useRef<HTMLElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
   
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    
+    const ctx = gsap.context(() => {
+      // Parallax & Scale effect: as you scroll past this section, move Y and scale up to 1.1
+      gsap.fromTo(imageRef.current,
+        { yPercent: -15, scale: 1 },
+        {
+          yPercent: 15,
+          scale: 1.1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          }
+        }
+      )
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   const handleButtonClick = () => {
     router.push("/discover")
   }
 
   return (
-    <section className="relative h-[600px] flex items-center justify-center overflow-hidden reveal-image-container">
-      {/* Background Image */}
-      <Image
-        src="/images/about-mekong-bg.jpg"
-        alt="Mekong River landscape"
-        fill
-        className="object-cover"
-        priority
-      />
+    <section ref={containerRef} className="relative h-[600px] flex items-center justify-center overflow-hidden reveal-image-container">
+      {/* Background Image Container (larger than section for parallax movement) */}
+      <div ref={imageRef} className="absolute inset-0 w-full h-[130%] -top-[15%] transform origin-center">
+        <Image
+          src="/images/about-mekong-bg.jpg"
+          alt="Mekong River landscape"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
       
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/55 z-0" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 py-20 text-center reveal-on-scroll">
