@@ -2,9 +2,12 @@ import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import dynamic from 'next/dynamic'
+
+// Lazy-load below-fold layout components
+const Footer = dynamic(() => import('@/components/footer').then(m => ({ default: m.Footer })))
+const WhatsAppButton = dynamic(() => import('@/components/whatsapp-button').then(m => ({ default: m.WhatsAppButton })))
 
 import './globals.css'
 
@@ -204,13 +207,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${playfair.variable} ${inter.variable}`}>
       <head>
-        {/* Preload LCP Image for performance */}
+        {/* Preconnect to speed up Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload LCP hero banner image */}
         <link 
           rel="preload" 
           as="image" 
           href="/images/hero_1.avif" 
-          fetchpriority="high" 
+          fetchPriority="high" 
         />
+        {/* Preload logo AVIF */}
+        <link rel="preload" as="image" href="/logo.avif" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

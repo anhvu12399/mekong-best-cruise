@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
-import { Header } from "@/components/header"
+import dynamic from 'next/dynamic'
 import { Hero } from "@/components/hero"
 import { QuickDecision } from "@/components/quick-decision"
-import { AboutMekong } from "@/components/about-mekong"
-import { ExploreMekong } from "@/components/explore-mekong"
-import { ArtOfCruising } from "@/components/art-of-cruising"
-import { FeaturedDestinations } from "@/components/featured-destinations"
-import { ExpeditionCruises } from "@/components/expedition-cruises"
-import { WhyChooseUs } from "@/components/why-choose-us"
+
+// Below-the-fold components: lazy loaded to reduce initial JS bundle
+const AboutMekong = dynamic(() => import("@/components/about-mekong").then(m => ({ default: m.AboutMekong })))
+const ExploreMekong = dynamic(() => import("@/components/explore-mekong").then(m => ({ default: m.ExploreMekong })))
+const ArtOfCruising = dynamic(() => import("@/components/art-of-cruising").then(m => ({ default: m.ArtOfCruising })))
+const FeaturedDestinations = dynamic(() => import("@/components/featured-destinations").then(m => ({ default: m.FeaturedDestinations })))
+const ExpeditionCruises = dynamic(() => import("@/components/expedition-cruises").then(m => ({ default: m.ExpeditionCruises })))
+const WhyChooseUs = dynamic(() => import("@/components/why-choose-us").then(m => ({ default: m.WhyChooseUs })))
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 

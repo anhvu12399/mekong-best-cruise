@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000, // Cache ảnh 1 năm
+    // Các breakpoints cho Mobile/Tablet/Desktop
+    deviceSizes: [390, 768, 1024, 1280, 1440, 1920],
+    imageSizes: [64, 128, 256, 384, 640],
     remotePatterns: [
       {
         protocol: 'https',

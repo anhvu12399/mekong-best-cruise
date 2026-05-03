@@ -121,6 +121,8 @@ export default function DiscoverClient() {
               alt="Mekong lifestyle"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={65}
             />
           </div>
           <div className="bg-navy text-white px-8 py-20 lg:p-32 flex flex-col justify-center">
@@ -153,6 +155,8 @@ export default function DiscoverClient() {
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                    quality={65}
                   />
                 </div>
                 <h4 className="font-serif text-xl text-navy mb-3">{item.title}</h4>
@@ -173,6 +177,8 @@ export default function DiscoverClient() {
           alt="Mekong Sunset Breathing Image"
           fill
           className="object-cover"
+          sizes="100vw"
+          quality={60}
         />
         <div className="absolute inset-0 bg-black/20" />
       </section>

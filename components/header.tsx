@@ -52,13 +52,14 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 text-left">
             <Image
-              src="/logo.png"
+              src="/logo.avif"
               alt="Mekong River Cruise Logo"
               width={300}
               height={140}
               className="h-20 w-auto object-contain"
               priority
-              quality={60}
+              fetchPriority="high"
+              sizes="300px"
             />
           </Link>
 
