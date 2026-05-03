@@ -204,6 +204,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${playfair.variable} ${inter.variable}`}>
       <head>
+        {/* Preload LCP Image for performance */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/images/hero_1.avif" 
+          fetchpriority="high" 
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -48,7 +48,7 @@ export function WhyChooseUs() {
 
           {/* Content Column - Airy Text */}
           <div className="lg:col-span-7 lg:pl-6">
-            <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-6">
+            <span className="text-[#9B7B3B] text-xs tracking-[0.3em] uppercase font-medium block mb-6">
               Premium Experience
             </span>
             <h2 className={`text-3xl md:text-4xl lg:text-5xl text-navy leading-tight mb-14 ${playfair.className}`}>
@@ -77,7 +77,7 @@ export function WhyChooseUs() {
             <div className="mt-16">
               <button
                 onClick={() => window.open(REDIRECT_URL, "_blank")}
-                className="text-xs tracking-[0.2em] uppercase font-bold text-navy border-b border-gold pb-1 hover:text-gold transition-colors"
+                className="text-xs tracking-[0.2em] uppercase font-bold text-[#9B7B3B] border-b border-[#9B7B3B] pb-1 hover:text-gold transition-colors"
               >
                 Learn More About Us
               </button>

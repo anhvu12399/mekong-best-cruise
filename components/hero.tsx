@@ -142,12 +142,14 @@ export function Hero() {
           <div className="flex items-center gap-3">
             <button 
               onClick={prevSlide}
+              aria-label="Previous Slide"
               className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-black/70 hover:border-white/50 transition-all"
             >
               <ChevronLeft size={18} strokeWidth={1.5} />
             </button>
             <button 
               onClick={nextSlide}
+              aria-label="Next Slide"
               className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-black/70 hover:border-white/50 transition-all"
             >
               <ChevronRight size={18} strokeWidth={1.5} />

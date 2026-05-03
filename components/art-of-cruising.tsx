@@ -22,7 +22,7 @@ export function ArtOfCruising() {
 
           {/* Content */}
           <div className="order-1 lg:order-2 lg:pl-8 reveal-on-scroll">
-            <span className="inline-block text-gold text-sm tracking-[0.3em] uppercase mb-6">
+            <span className="inline-block text-[#9B7B3B] text-sm tracking-[0.3em] uppercase mb-6">
               The Art of Cruising
             </span>
             
@@ -56,15 +56,15 @@ export function ArtOfCruising() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border">
               <div>
-                <span className="font-serif text-3xl md:text-4xl text-gold">25+</span>
+                <span className="font-serif text-3xl md:text-4xl text-[#9B7B3B]">25+</span>
                 <p className="text-sm text-navy/60 mt-2">Years of Excellence</p>
               </div>
               <div>
-                <span className="font-serif text-3xl md:text-4xl text-gold">12</span>
+                <span className="font-serif text-3xl md:text-4xl text-[#9B7B3B]">12</span>
                 <p className="text-sm text-navy/60 mt-2">Unique Itineraries</p>
               </div>
               <div>
-                <span className="font-serif text-3xl md:text-4xl text-gold">98%</span>
+                <span className="font-serif text-3xl md:text-4xl text-[#9B7B3B]">98%</span>
                 <p className="text-sm text-navy/60 mt-2">Guest Satisfaction</p>
               </div>
             </div>

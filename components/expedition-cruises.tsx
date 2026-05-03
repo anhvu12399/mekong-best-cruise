@@ -77,6 +77,7 @@ export function ExpeditionCruises() {
           <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-12 z-20 hidden md:block">
             <button 
               onClick={prevSlide}
+              aria-label="Previous ship"
               className="w-12 h-12 rounded-full border border-navy/20 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all bg-white shadow-sm"
             >
               <ChevronLeft size={20} />
@@ -85,6 +86,7 @@ export function ExpeditionCruises() {
           <div className="absolute top-1/2 -translate-y-1/2 -right-4 lg:-right-12 z-20 hidden md:block">
             <button 
               onClick={nextSlide}
+              aria-label="Next ship"
               className="w-12 h-12 rounded-full border border-navy/20 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all bg-white shadow-sm"
             >
               <ChevronRight size={20} />
@@ -116,7 +118,7 @@ export function ExpeditionCruises() {
 
                 {/* Overlapping Text Card (Left aligned) */}
                 <div className="relative z-10 w-[90%] md:w-[80%] lg:w-[45%] mt-[280px] lg:mt-0 mx-auto lg:mx-0 lg:ml-8 bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-t-4 border-gold">
-                  <span className="block text-gold text-xs tracking-[0.2em] uppercase font-bold mb-4">
+                  <span className="block text-[#9B7B3B] text-xs tracking-[0.2em] uppercase font-bold mb-4">
                     {ship.name}
                   </span>
                   <h3 className={`text-3xl md:text-4xl text-navy mb-6 leading-tight ${playfair.className}`}>
@@ -142,6 +144,7 @@ export function ExpeditionCruises() {
           <div className="flex items-center justify-center gap-4 mt-8 md:hidden">
             <button 
               onClick={prevSlide}
+              aria-label="Previous ship mobile"
               className="w-12 h-12 rounded-full border border-navy/20 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all bg-white"
             >
               <ChevronLeft size={20} />
@@ -156,6 +159,7 @@ export function ExpeditionCruises() {
             </div>
             <button 
               onClick={nextSlide}
+              aria-label="Next ship mobile"
               className="w-12 h-12 rounded-full border border-navy/20 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all bg-white"
             >
               <ChevronRight size={20} />

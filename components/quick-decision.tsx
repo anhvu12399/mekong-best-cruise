@@ -35,8 +35,8 @@ export function QuickDecision() {
               href={item.href}
               className="py-10 lg:px-8 flex flex-col items-start group cursor-pointer hover:bg-white/5 transition-colors duration-300"
             >
-              <h3 className="font-serif text-lg md:text-xl text-white tracking-wide mb-6">{item.title}</h3>
-              <div className="text-[11px] uppercase tracking-[0.2em] font-medium text-gold/80 flex items-center gap-3 group-hover:text-gold transition-colors mt-auto">
+              <h2 className="font-serif text-lg md:text-xl text-white tracking-wide mb-6">{item.title}</h2>
+              <div className="text-[11px] uppercase tracking-[0.2em] font-medium text-gold flex items-center gap-3 group-hover:text-gold transition-colors mt-auto">
                 <span>{item.cta}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </div>
