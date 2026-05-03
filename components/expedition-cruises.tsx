@@ -91,18 +91,18 @@ export function ExpeditionCruises() {
             </button>
           </div>
 
-          <div className="relative h-[650px] lg:h-[550px] flex items-center">
+          <div className="relative h-[750px] md:h-[700px] lg:h-[550px] flex items-center">
             {ships.map((ship, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-all duration-1000 ease-in-out flex flex-col lg:flex-row items-center ${
+                className={`absolute inset-0 transition-all duration-1000 ease-in-out flex flex-col lg:flex-row items-center lg:items-center ${
                   index === currentSlide 
                     ? "opacity-100 translate-x-0 z-10 visible" 
                     : "opacity-0 translate-x-10 -z-10 invisible"
                 }`}
               >
                 {/* Background Image Container (Right aligned on desktop) */}
-                <div className="absolute right-0 top-0 w-full lg:w-3/4 h-[400px] lg:h-full overflow-hidden">
+                <div className="absolute right-0 top-0 w-full lg:w-3/4 h-[350px] lg:h-full overflow-hidden">
                   <Image
                     src={ship.image}
                     alt={ship.name}
@@ -114,7 +114,7 @@ export function ExpeditionCruises() {
                 </div>
 
                 {/* Overlapping Text Card (Left aligned) */}
-                <div className="relative z-10 w-[90%] md:w-[80%] lg:w-[45%] mt-auto lg:mt-0 mb-8 lg:mb-0 mx-auto lg:mx-0 lg:ml-8 bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-t-4 border-gold">
+                <div className="relative z-10 w-[90%] md:w-[80%] lg:w-[45%] mt-[280px] lg:mt-0 mx-auto lg:mx-0 lg:ml-8 bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-t-4 border-gold">
                   <span className="block text-gold text-xs tracking-[0.2em] uppercase font-bold mb-4">
                     {ship.name}
                   </span>
