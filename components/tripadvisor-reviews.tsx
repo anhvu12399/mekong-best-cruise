@@ -87,10 +87,9 @@ export function TripAdvisorReviews() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity"
             >
-              {/* Custom SVG for TripAdvisor logo approximation to avoid external image dependencies */}
-              <div className="bg-[#00aa6c] text-white p-2 rounded-full">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 2.82 1.18 5.37 3.06 7.18l-1.06 2.82h3.88c1.94 1.25 4.25 2 6.75 2 5.52 0 10-4.48 10-10zm-6.5 1.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm-7 0c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm3.5 3.5c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
+              <div className="bg-[#00aa6c] text-white p-2.5 rounded-full flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+                  <path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 4.075-1.6L12 19.705l1.922-2.09a5.972 5.972 0 0 0 4.072 1.598 6 6 0 0 0 6-5.998 5.982 5.982 0 0 0-1.957-4.432L24 6.648h-4.35a13.573 13.573 0 0 0-7.644-2.353zM12 6.255c1.531 0 3.063.303 4.504.903C13.943 8.138 12 10.43 12 13.1c0-2.671-1.942-4.962-4.504-5.942A11.72 11.72 0 0 1 12 6.256zM6.002 9.157a4.059 4.059 0 1 1 0 8.118 4.059 4.059 0 0 1 0-8.118zm11.992.002a4.057 4.057 0 1 1 .003 8.115 4.057 4.057 0 0 1-.003-8.115zm-11.992 1.93a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256zm11.992 0a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256z"/>
                 </svg>
               </div>
               <h2 className="font-serif text-3xl text-navy">Reviews on TripAdvisor</h2>
@@ -102,7 +101,8 @@ export function TripAdvisorReviews() {
                 ))}
               </div>
               <p className="text-navy/70 text-sm font-medium border-b border-navy/20 pb-0.5">
-                Excellent based on multiple reviews
+                <span className="font-bold text-navy">4.8</span> <a href={TRIPADVISOR_LINK} target="_blank" rel="noopener noreferrer" className="underline hover:text-navy">(53 reviews)</a>
+                <span className="hidden sm:inline"> &bull; #47 of 255 Boat Tours & Water Sports in Ho Chi Minh City</span>
               </p>
             </div>
           </div>
@@ -156,7 +156,7 @@ export function TripAdvisorReviews() {
               <h4 className="font-medium text-navy text-lg mb-2">{review.title}</h4>
               <p className="text-sm text-navy/50 mb-4">{review.date}</p>
               
-              <p className="text-navy/70 leading-relaxed text-sm">
+              <p className="text-navy/70 leading-relaxed text-sm line-clamp-6">
                 "{review.text}"
               </p>
             </div>
