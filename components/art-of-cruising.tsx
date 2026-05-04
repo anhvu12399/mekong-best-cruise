@@ -36,22 +36,25 @@ export function ArtOfCruising() {
             
             <div className="space-y-8 text-navy/70 leading-relaxed text-lg">
               <p>
-                For over two decades, Mekong River Cruise has been the definitive choice 
-                for discerning travellers seeking an intimate encounter with Southeast 
-                Asia&apos;s most captivating waterway.
+                Twenty-five years ago, we made a quiet promise: that the Mekong 
+                deserved to be experienced slowly. Not ticked off a list, not rushed 
+                between photo stops — but truly felt. That promise still shapes every 
+                single journey we create today.
               </p>
               
               <p>
-                Our boutique vessels, each carrying no more than 28 guests, navigate 
-                the legendary river with the grace and elegance befitting its ancient 
-                heritage. Every journey is meticulously crafted by our team of regional 
-                experts, ensuring moments of wonder at every bend.
+                Our ships are small by design. With never more than 28 guests aboard, 
+                there are no crowds at the railing, no strangers at your dinner table. 
+                Just the river, the silence of dusk over the water, and the kind of 
+                unhurried conversation that only happens when time isn&apos;t a constraint.
               </p>
               
               <p>
-                From the floating markets of the Mekong Delta to the sacred temples of 
-                Angkor, we reveal the authentic soul of this remarkable region—far from 
-                the crowds, deep into the heart of local life.
+                We&apos;ve spent decades building trust with the communities along this river — 
+                the fishermen who still cast nets by moonlight, the monks who open 
+                their temple doors at dawn, the market women who&apos;ve been cooking the 
+                same recipes for generations. They are the reason we sail. Their world 
+                is what we come to share with you.
               </p>
             </div>
 
