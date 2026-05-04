@@ -362,3 +362,44 @@ export const SHIPS_BY_DESTINATION: Record<string, { ships: Ship[]; heroImage: st
       "The upper Mekong through Laos is the river at its most itself — slow, golden, utterly unhurried. Eight ships. Eight ways to fall quiet in a landscape that rewards patience.",
   },
 }
+
+const allShips = [...ALL_VIETNAM_CAMBODIA_SHIPS, ...LAOS_SHIPS]
+
+export const SHIPS_BY_STYLE: Record<string, { ships: Ship[]; heroImage: string; description: string; title: string }> = {
+  luxury: {
+    title: "Luxury Cruises",
+    ships: Array.from(new Set([...allShips.filter(s => s.type.includes('Luxury') || s.type.includes('Boutique')), ...allShips])).slice(0, 11),
+    heroImage: "/images/aqua_mekong.avif",
+    description: "For those who know exactly what they want. Michelin-trained chefs, private infinity pools, and a level of service that anticipates your next thought. The river's finest floating addresses."
+  },
+  family: {
+    title: "Family Voyages",
+    ships: Array.from(new Set([...allShips.filter(s => s.cabins >= 15), ...allShips])).slice(0, 17),
+    heroImage: "/images/dest_cambodia.avif",
+    description: "Stories your kids will tell their kids. Spacious connecting cabins, engaging activities from village cycling to cooking classes, and ships large enough to give everyone their own space."
+  },
+  adventure: {
+    title: "Adventure Cruises",
+    ships: Array.from(new Set([...allShips.filter(s => s.type.includes('Expedition') || s.id.includes('pandaw')), ...allShips])).slice(0, 15),
+    heroImage: "/images/dest_myanmar.avif",
+    description: "Off the map, on the water. For travellers who prefer backwaters to main channels. We navigate shallower, quieter tributaries where larger vessels simply cannot go."
+  },
+  honeymoon: {
+    title: "Honeymoon Escapes",
+    ships: Array.from(new Set([...allShips.filter(s => s.cabins <= 15), ...allShips])).slice(0, 11),
+    heroImage: "/images/dest_laos.avif",
+    description: "The most romantic river on Earth. Private sunset sampan rides, candlelit deck dinners, and waking up to the mist lifting off the Mekong. Intimate vessels built for two."
+  },
+  charter: {
+    title: "Private Charters",
+    ships: Array.from(new Set([...allShips.filter(s => s.cabins <= 14), ...allShips])).slice(0, 6),
+    heroImage: "/images/jayavarman.avif",
+    description: "The entire ship. Just yours. Gather your family or closest friends and take over a boutique vessel. You set the pace, you choose the stops, and the river is yours alone."
+  },
+  solo: {
+    title: "Solo Journeys",
+    ships: Array.from(new Set([...allShips.filter(s => s.guests <= 30), ...allShips])).slice(0, 5),
+    heroImage: "/images/dest_vietnam.avif",
+    description: "Go alone. Come back changed. The Mekong is profoundly safe and welcoming for solo travellers. Single-occupancy rates available on vessels where the crew becomes family."
+  }
+}

@@ -28,14 +28,7 @@ const destinations = [
     desc: "The slowest, most beautiful part of the Mekong. Golden temples at dusk, monks crossing wooden bridges, the river turning copper in the evening light.",
     image: "/images/dest_laos.avif",
     href: "/cruises/laos",
-  },
-  {
-    name: "Thailand Mekong Cruises",
-    tag: "The Northern River",
-    desc: "Where the Mekong forms the border with Laos, Thailand offers hill tribe encounters, remote villages, and landscapes that feel entirely untouched.",
-    image: "/images/dest_thailand.avif",
-    href: "/destinations/thailand",
-  },
+  }
 ]
 
 const styles = [
@@ -43,37 +36,37 @@ const styles = [
     title: "Luxury Cruises",
     sub: "For those who know what they want",
     image: "/images/aqua_mekong.avif",
-    href: "/plan-your-journey",
+    href: "/cruises/styles/luxury",
   },
   {
     title: "Family Voyages",
     sub: "Stories your kids will tell their kids",
     image: "/images/dest_cambodia.avif",
-    href: "/plan-your-journey",
+    href: "/cruises/styles/family",
   },
   {
     title: "Honeymoon Escapes",
     sub: "The most romantic river on Earth",
     image: "/images/dest_laos.avif",
-    href: "/plan-your-journey",
+    href: "/cruises/styles/honeymoon",
   },
   {
     title: "Private Charters",
     sub: "The entire ship. Just yours.",
     image: "/images/jayavarman.avif",
-    href: "/plan-your-journey",
+    href: "/cruises/styles/charter",
   },
   {
     title: "Adventure Cruises",
     sub: "Off the map, on the water",
     image: "/images/dest_myanmar.avif",
-    href: "/plan-your-journey",
+    href: "/cruises/styles/adventure",
   },
   {
     title: "Solo Journeys",
     sub: "Go alone. Come back changed.",
     image: "/images/dest_vietnam.avif",
-    href: "/plan-your-journey",
+    href: "/cruises/styles/solo",
   },
 ]
 
