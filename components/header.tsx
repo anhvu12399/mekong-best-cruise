@@ -108,12 +108,12 @@ export function Header() {
 
             {/* Right: CTA */}
             <div className="flex items-center">
-              <button
-                onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
+              <Link
+                href="/plan-your-journey"
                 className="hidden lg:inline-flex items-center px-6 py-3 bg-gold text-navy text-sm font-bold tracking-wide hover:bg-gold-light transition-colors duration-200 uppercase"
               >
                 Plan Your Journey
-              </button>
+              </Link>
             </div>
           </div>
         </div>
