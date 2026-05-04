@@ -68,11 +68,14 @@ export function TripAdvisorReviews() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth > 768 ? 600 : 300
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth"
-      })
+      const firstChild = scrollRef.current.firstElementChild as HTMLElement
+      if (firstChild) {
+        const itemWidth = firstChild.offsetWidth + 24 // 24px is gap-6
+        scrollRef.current.scrollBy({
+          left: direction === "left" ? -itemWidth : itemWidth,
+          behavior: "smooth"
+        })
+      }
     }
   }
 
@@ -101,8 +104,7 @@ export function TripAdvisorReviews() {
                 ))}
               </div>
               <p className="text-navy/70 text-sm font-medium border-b border-navy/20 pb-0.5">
-                <span className="font-bold text-navy">4.8</span> <a href={TRIPADVISOR_LINK} target="_blank" rel="noopener noreferrer" className="underline hover:text-navy">(53 reviews)</a>
-                <span className="hidden sm:inline"> &bull; #47 of 255 Boat Tours & Water Sports in Ho Chi Minh City</span>
+                <span className="font-bold text-navy text-lg">4.8</span>
               </p>
             </div>
           </div>
@@ -135,7 +137,7 @@ export function TripAdvisorReviews() {
           {REVIEWS.map((review) => (
             <div 
               key={review.id} 
-              className="min-w-[320px] md:min-w-[400px] bg-[#faf8f5] p-8 rounded-xl snap-start border border-navy/5 flex-shrink-0"
+              className="w-[85vw] sm:w-[360px] md:w-[400px] bg-[#faf8f5] p-8 rounded-xl snap-start border border-navy/5 flex-shrink-0 whitespace-normal"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center text-lg font-serif">
