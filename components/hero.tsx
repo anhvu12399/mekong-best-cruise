@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 
 const heroSlides = [
@@ -18,7 +19,7 @@ const heroSlides = [
     ),
     subheading: "Some journeys are taken. This one stays with you.",
     details: "3–8 NIGHT VOYAGES · MAXIMUM 28 GUESTS · CRAFTED FOR THE FEW",
-    link: "https://www.toursmekong.com/tailor-made-tours/",
+    link: "/cruises",
   },
   {
     image: "/images/hero_2.avif",
@@ -32,7 +33,7 @@ const heroSlides = [
     ),
     subheading: "The river doesn't wait — and neither should you.",
     details: "LIVING MARKETS · BOAT LIFE · MOMENTS MONEY CAN'T MANUFACTURE",
-    link: "/discover",
+    link: "/cruises/vietnam",
   },
   {
     image: "/images/hero_3.avif",
@@ -46,7 +47,7 @@ const heroSlides = [
     ),
     subheading: "Where stillness becomes the rarest luxury of all.",
     details: "PRIVATE WATERWAYS · NO TWO DAYS THE SAME · YOURS ALONE",
-    link: "/experiences",
+    link: "/discover",
   },
 ]
 
@@ -105,7 +106,7 @@ export function Hero() {
 
             {/* Slide-Specific Center Content */}
             <div className="absolute inset-0 z-10 flex flex-col justify-center">
-              <a 
+              <Link 
                 href={slide.link} 
                 className="w-full mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-start text-left cursor-pointer group"
               >
@@ -125,7 +126,7 @@ export function Hero() {
                    <span>Explore</span>
                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         )
