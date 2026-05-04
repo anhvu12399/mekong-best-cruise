@@ -28,8 +28,10 @@ const footerLinks = {
 }
 
 export function Footer() {
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [resendCooldown, setResendCooldown] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -40,12 +42,11 @@ export function Footer() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim() }),
       })
 
       if (res.ok) {
         setStatus("success")
-        setEmail("")
       } else {
         setStatus("error")
       }
@@ -54,16 +55,32 @@ export function Footer() {
     }
   }
 
+  const handleResend = async () => {
+    if (resendCooldown) return
+    setResendCooldown(true)
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name.trim(), email: email.trim() }),
+      })
+    } catch {}
+    // Block resend for 30 seconds
+    setTimeout(() => setResendCooldown(false), 30000)
+  }
+
   const handleLinkClick = () => {
     window.open(REDIRECT_URL, "_blank")
   }
+
+  const firstName = name ? name.trim().split(" ")[0] : ""
 
   return (
     <footer id="contact" className="bg-navy">
       {/* Newsletter Section — Cream background */}
       <div className="bg-[#faf8f5] border-b border-navy/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20 lg:py-24">
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-xl mx-auto text-center">
             <span className="inline-block text-gold text-sm tracking-[0.3em] uppercase mb-6">
               Stay Inspired
             </span>
@@ -71,56 +88,106 @@ export function Footer() {
               Join Our Exclusive Mailing List
             </h3>
             <p className="text-navy/55 mb-10">
-              Be the first to receive new itineraries, exclusive offers, and 
+              Be the first to receive new itineraries, exclusive offers, and
               inspiring stories from the Mekong.
             </p>
 
             {status === "success" ? (
-              <div className="flex flex-col items-center gap-3 py-4">
-                <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
+              /* ── Thank You Card ── */
+              <div className="bg-white border border-navy/10 shadow-sm p-10 flex flex-col items-center gap-4">
+                {/* Animated checkmark */}
+                <div className="relative w-16 h-16 mb-2">
+                  <div className="absolute inset-0 bg-gold/10 rounded-full animate-ping" />
+                  <div className="relative w-16 h-16 bg-navy rounded-full flex items-center justify-center">
+                    <svg className="w-7 h-7 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
                 </div>
-                <p className="text-navy font-medium">Thank you! You're on our exclusive list.</p>
-                <p className="text-navy/50 text-sm">Check your inbox for a confirmation email.</p>
+
+                <div className="space-y-2">
+                  <p className="font-serif text-xl text-navy">
+                    {firstName ? `Welcome aboard, ${firstName}!` : "You're on the list!"}
+                  </p>
+                  <p className="text-navy/55 text-sm leading-relaxed">
+                    A confirmation email has been sent to{" "}
+                    <span className="font-semibold text-navy">{email}</span>.
+                    <br />Please check your inbox (and spam folder, just in case).
+                  </p>
+                </div>
+
+                {/* Thin gold divider */}
+                <div className="w-16 h-px bg-gold/40 my-1" />
+
+                <div className="flex flex-col sm:flex-row items-center gap-3 text-sm">
+                  <button
+                    onClick={handleResend}
+                    disabled={resendCooldown}
+                    className="text-navy/50 hover:text-navy underline underline-offset-2 transition-colors disabled:cursor-not-allowed disabled:no-underline disabled:text-navy/30"
+                  >
+                    {resendCooldown ? "Email sent ✓" : "Resend confirmation email"}
+                  </button>
+                  <span className="hidden sm:inline text-navy/20">·</span>
+                  <button
+                    onClick={() => { setStatus("idle"); setName(""); setEmail("") }}
+                    className="text-navy/50 hover:text-navy underline underline-offset-2 transition-colors"
+                  >
+                    Subscribe another address
+                  </button>
+                </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              /* ── Subscription Form ── */
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
+                {/* Row 1: Name */}
                 <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your name"
                   disabled={status === "loading"}
-                  className="flex-1 h-14 px-4 bg-white border border-navy/20 text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold transition-colors duration-200 disabled:opacity-60"
+                  className="w-full h-14 px-4 bg-white border border-navy/20 text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold transition-colors duration-200 disabled:opacity-60"
                 />
-                <button
-                  type="submit"
-                  disabled={status === "loading" || !email}
-                  className="h-14 px-8 bg-navy text-cream font-medium hover:bg-navy/80 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {status === "loading" ? (
-                    <>
-                      <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
-                      </svg>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Subscribe</span>
-                      <ArrowRight size={18} />
-                    </>
-                  )}
-                </button>
+                {/* Row 2: Email + Button */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Your email address"
+                    required
+                    disabled={status === "loading"}
+                    className="flex-1 h-14 px-4 bg-white border border-navy/20 text-navy placeholder:text-navy/40 focus:outline-none focus:border-gold transition-colors duration-200 disabled:opacity-60"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === "loading" || !email}
+                    className="h-14 px-8 bg-navy text-cream font-medium hover:bg-navy/80 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+                  >
+                    {status === "loading" ? (
+                      <>
+                        <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                        </svg>
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Subscribe</span>
+                        <ArrowRight size={18} />
+                      </>
+                    )}
+                  </button>
+                </div>
                 {status === "error" && (
-                  <p className="text-red-500 text-sm text-center w-full mt-2">
+                  <p className="text-red-500 text-sm text-center">
                     Something went wrong. Please try again.
                   </p>
                 )}
+                <p className="text-navy/35 text-xs mt-1">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
               </form>
             )}
           </div>
