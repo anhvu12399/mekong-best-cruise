@@ -6,10 +6,10 @@ import { QuickDecision } from "@/components/quick-decision"
 // Below-the-fold components: lazy loaded to reduce initial JS bundle
 const AboutMekong = dynamic(() => import("@/components/about-mekong").then(m => ({ default: m.AboutMekong })))
 const ExploreMekong = dynamic(() => import("@/components/explore-mekong").then(m => ({ default: m.ExploreMekong })))
-const ArtOfCruising = dynamic(() => import("@/components/art-of-cruising").then(m => ({ default: m.ArtOfCruising })))
 const FeaturedDestinations = dynamic(() => import("@/components/featured-destinations").then(m => ({ default: m.FeaturedDestinations })))
 const ExpeditionCruises = dynamic(() => import("@/components/expedition-cruises").then(m => ({ default: m.ExpeditionCruises })))
 const WhyChooseUs = dynamic(() => import("@/components/why-choose-us").then(m => ({ default: m.WhyChooseUs })))
+const TripAdvisorReviews = dynamic(() => import("@/components/tripadvisor-reviews").then(m => ({ default: m.TripAdvisorReviews })))
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
@@ -58,10 +58,10 @@ export default function Home() {
         <QuickDecision />
         <AboutMekong />
         <ExploreMekong />
-        <ArtOfCruising />
         <FeaturedDestinations />
         <ExpeditionCruises />
         <WhyChooseUs />
+        <TripAdvisorReviews />
       </main>
     </>
   )
