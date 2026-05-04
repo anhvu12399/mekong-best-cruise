@@ -76,16 +76,10 @@ export function Header() {
                   Destinations
                 </Link>
                 <Link
-                  href="/journeys"
+                  href="/cruises"
                   className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
                 >
-                  Our Journeys
-                </Link>
-                <Link
-                  href="/experiences"
-                  className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
-                >
-                  Experiences
+                  Cruises
                 </Link>
               </nav>
             </div>
@@ -151,11 +145,8 @@ export function Header() {
               <button onClick={() => setActiveView('destinations')} className="flex justify-between items-center text-[28px] font-serif text-white hover:text-gold transition-colors group text-left">
                 Destinations <ChevronRight size={20} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
               </button>
-              <Link href="/journeys" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
-                Our Journeys
-              </Link>
-              <Link href="/experiences" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
-                Experiences
+              <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
+                Cruises
               </Link>
             </div>
 
@@ -169,11 +160,11 @@ export function Header() {
                 <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
                   Expedition Cruises
                 </Link>
-                <Link href="/journeys" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Private Ready-to-book Journeys
+                <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  Luxury Cruises
                 </Link>
-                <Link href="/family-private-cruise" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Family Private Cruise
+                <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  Private Charters
                 </Link>
                 <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
                   Luxury River Cruises
