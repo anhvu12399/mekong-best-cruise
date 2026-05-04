@@ -96,7 +96,7 @@ export function ExploreMekong() {
                         onMouseEnter={() => setActiveStop(stop.name)}
                         onMouseLeave={() => setActiveStop(null)}
                         onClick={() => router.push(`/destinations/${stop.name.toLowerCase().replace(/ /g, '-')}`)}
-                        style={{ cursor: "pointer" }}
+                        className="cursor-pointer"
                       >
                         <circle
                           r={activeStop === stop.name ? 7 : 5}
