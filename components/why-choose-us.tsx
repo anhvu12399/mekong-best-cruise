@@ -10,18 +10,18 @@ const REDIRECT_URL = "https://www.toursmekong.com/"
 const pillars = [
   {
     id: 1,
-    title: "Expert Local Guides",
-    description: "Our guides are passionate storytellers who bring the Mekong to life. With deep knowledge of history, culture, and hidden gems, they ensure every moment is meaningful and memorable.",
+    title: "People Who Actually Know the River",
+    description: "Our guides grew up here. They know which temple opens at dawn before the crowds arrive, which family still makes silk by hand, and exactly when the river mist burns off the water. You can't learn that from a textbook.",
   },
   {
     id: 2,
-    title: "Luxury Accommodations",
-    description: "Travel in style aboard our handpicked fleet of premium river cruises. Spacious suites, fine dining, and world-class amenities create an unforgettable floating sanctuary.",
+    title: "Small Ships. On Purpose.",
+    description: "We cap every voyage at 28 guests. Not because we have to — because we choose to. Smaller means slower. Slower means you actually see things. It's a deliberate choice, and our guests feel the difference from the first morning.",
   },
   {
     id: 3,
-    title: "Authentic Experiences",
-    description: "From intimate village visits to exclusive cultural encounters, we craft bespoke journeys that connect you deeply with the Mekong's people, traditions, and landscapes.",
+    title: "No Two Trips Are Ever The Same",
+    description: "We don't do cookie-cutter itineraries. Every journey is shaped around you — your pace, your curiosity, your idea of a perfect evening. Some guests want to cook with a local family. Others just want to sit on the deck and watch the world drift by. Both are right.",
   },
 ]
 
@@ -52,7 +52,7 @@ export function WhyChooseUs() {
               Premium Experience
             </span>
             <h2 className={`text-3xl md:text-4xl lg:text-5xl text-navy leading-tight mb-14 ${playfair.className}`}>
-              Why Travel With Mekong River Cruise?
+              What Makes the Difference
             </h2>
 
             <div className="space-y-12">
@@ -79,7 +79,7 @@ export function WhyChooseUs() {
                 onClick={() => window.open(REDIRECT_URL, "_blank")}
                 className="text-xs tracking-[0.2em] uppercase font-bold text-[#9B7B3B] border-b border-[#9B7B3B] pb-1 hover:text-gold transition-colors"
               >
-                Learn More About Us
+                Read Our Story
               </button>
             </div>
           </div>

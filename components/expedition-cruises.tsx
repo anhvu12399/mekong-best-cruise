@@ -12,32 +12,32 @@ const REDIRECT_URL = "https://www.toursmekong.com/"
 const ships = [
   {
     name: "Aqua Mekong",
-    subtitle: "The Pinnacle of Modern Elegance",
-    description: "Setting the gold standard for contemporary luxury, the Aqua Mekong features architectural brilliance, Michelin-inspired dining, and panoramic floor-to-ceiling windows that seamlessly blend your opulent suite with the untamed beauty of the river.",
+    subtitle: "Where the River Meets the Future",
+    description: "The Aqua Mekong is unlike anything else on the water. Floor-to-ceiling glass, Michelin-trained chefs, and a design so considered it feels almost architectural. But step outside at sunrise and the river has the last word.",
     image: "/images/aqua_mekong.avif"
   },
   {
     name: "Mekong Jewel",
-    subtitle: "The Crown Jewel of the Delta",
-    description: "A masterpiece of sustainable opulence. The Mekong Jewel redefines boutique cruising with its sophisticated eco-friendly design, lavish private balconies, and an atmosphere of exclusive intimacy as you sail through the heart of Southeast Asia.",
+    subtitle: "Quiet Luxury. No Compromise.",
+    description: "Not everything beautiful needs to announce itself. The Mekong Jewel earns its name slowly — in the quality of the silence on the sundeck, the way the light falls through your balcony door, the unhurried pace that reminds you why you came.",
     image: "/images/mekong_jewel.avif"
   },
   {
     name: "Jayavarman",
-    subtitle: "A Journey Through Time",
-    description: "Inspired by the golden age of French colonial grace and traditional Khmer artistry, the Jayavarman is a floating boutique gallery. Step aboard and surrender to a deeply romantic, nostalgic voyage across the majestic waterways.",
+    subtitle: "Built for Those Who Read Between the Lines",
+    description: "Named after the great Khmer king who built Angkor Wat, the Jayavarman carries that weight with grace. Colonial teak, hand-stitched fabrics, the smell of frangipani at dusk. History doesn't feel distant here — it feels like it's in the next room.",
     image: "/images/jayavarman.avif"
   },
   {
     name: "Victoria Mekong",
-    subtitle: "Vibrant Cultural Immersion",
-    description: "With its sleek design and vibrant cultural ethos, the Victoria Mekong is your passport to the delta's soul. Experience unparalleled comfort on the sun deck while soaking in the mesmerizing daily rhythms of vibrant river life.",
+    subtitle: "For the Ones Who Want to Feel It All",
+    description: "The Victoria Mekong doesn't let you stay passive. Markets at dawn, cooking classes by afternoon, the best seat on the sundeck for golden hour. If you travel to be changed rather than just impressed, this is your ship.",
     image: "/images/victoria_mekong.avif"
   },
   {
     name: "Mekong Navigator",
-    subtitle: "Grandeur on the River",
-    description: "Evoking the sophisticated grandeur of the French Indochina era, the Mekong Navigator offers all-suite accommodations and unmatched personalized service. Retreat to your sumptuous sanctuary after days filled with profound cultural encounters.",
+    subtitle: "The Grand One. For Good Reason.",
+    description: "All-suite. All-inclsive. All yours. The Mekong Navigator is for guests who have seen enough of the world to know exactly what they want from it. Sweeping decks, impeccable service, and a kind of calm that only comes when everything has been thought of.",
     image: "/images/mekong_navigator.avif"
   }
 ]
@@ -67,7 +67,8 @@ export function ExpeditionCruises() {
             <div className="h-px bg-[#2B3A36]/30 w-16 md:w-40"></div>
           </div>
           <p className="text-[#555] max-w-4xl mx-auto leading-relaxed text-base md:text-lg font-serif">
-            Embark on an epic voyage of unparalleled luxury along the world's most evocative waterways. Our curated collection of world-class riverboats transforms the legendary Mekong into an immersive sanctuary of refined elegance, breathtaking discovery, and legendary service.
+            Five ships. Five personalities. Each one designed around a different way of loving the river.
+            The question isn&apos;t which is best — it&apos;s which one feels like you.
           </p>
         </div>
 
@@ -133,7 +134,7 @@ export function ExpeditionCruises() {
                     onClick={() => window.open(REDIRECT_URL, "_blank")}
                     className="group inline-flex items-center gap-3 text-sm font-bold tracking-[0.15em] uppercase text-navy hover:text-gold transition-colors"
                   >
-                    <span>Request Availability</span>
+                    <span>Check Availability</span>
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </button>
                 </div>

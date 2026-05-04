@@ -60,7 +60,7 @@ export function AboutMekong() {
       <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 py-20 text-center reveal-on-scroll">
         {/* Subtitle */}
         <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-6">
-          Southeast Asia&apos;s Finest River Journey
+          A River That Changes You
         </span>
 
         {/* Main Title */}
@@ -73,7 +73,9 @@ export function AboutMekong() {
 
         {/* Descriptive Text — short & punchy */}
         <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-          Where ancient waterways meet modern luxury. Sail through the heart of Southeast Asia in timeless elegance.
+          The Mekong isn&apos;t a backdrop. It&apos;s a character. Travel slowly enough and it reveals itself — 
+          the fishermen before dawn, the temples at dusk, the children waving from the bank. 
+          This is Southeast Asia as it was meant to be seen.
         </p>
 
         {/* CTA Button */}
@@ -82,7 +84,7 @@ export function AboutMekong() {
             onClick={handleButtonClick}
             className="inline-flex items-center gap-3 px-8 py-3 border border-gold/80 text-gold text-xs font-medium tracking-[0.2em] uppercase hover:bg-gold hover:text-navy transition-all duration-300"
           >
-            <span>Discover More</span>
+            <span>Take Me There</span>
             <ArrowRight size={14} />
           </button>
         </div>

@@ -16,8 +16,8 @@ const heroSlides = [
         <span className="text-lg lg:text-xl font-sans align-top ml-1 tracking-normal">™</span>
       </>
     ),
-    subheading: "Riverboat & Small Ship Adventure Cruises",
-    details: "3–8 DAY JOURNEYS · INTIMATE VESSELS · CURATED PRIVATE DEPARTURES",
+    subheading: "Some journeys are taken. This one stays with you.",
+    details: "3–8 NIGHT VOYAGES · MAXIMUM 28 GUESTS · CRAFTED FOR THE FEW",
     link: "https://www.toursmekong.com/tailor-made-tours/",
   },
   {
@@ -30,8 +30,8 @@ const heroSlides = [
         <span className="uppercase tracking-widest">THE MEKONG DELTA</span>
       </>
     ),
-    subheading: "Discover Vibrant Floating Markets and Local Life",
-    details: "CULTURAL ENCOUNTERS · AUTHENTIC EXPERIENCES · EXPERT GUIDES",
+    subheading: "The river doesn't wait — and neither should you.",
+    details: "LIVING MARKETS · BOAT LIFE · MOMENTS MONEY CAN'T MANUFACTURE",
     link: "/discover",
   },
   {
@@ -44,8 +44,8 @@ const heroSlides = [
         <span className="uppercase tracking-widest">PRIVATE JOURNEYS</span>
       </>
     ),
-    subheading: "Navigate Hidden Canals on a Luxury Sampan",
-    details: "EXCLUSIVE ACCESS · QUIET LUXURY · BESPOKE ITINERARIES",
+    subheading: "Where stillness becomes the rarest luxury of all.",
+    details: "PRIVATE WATERWAYS · NO TWO DAYS THE SAME · YOURS ALONE",
     link: "/experiences",
   },
 ]
