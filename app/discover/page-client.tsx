@@ -63,7 +63,7 @@ export default function DiscoverClient() {
   return (
     <main className="min-h-screen bg-[#fbfaf8] overflow-hidden">
       {/* 1. Hero image lớn — headline + 1 đoạn ngắn */}
-      <section ref={containerRef} className="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <section ref={containerRef} className="relative h-screen flex items-center justify-center pt-32 overflow-hidden">
         <div ref={imageRef} className="absolute inset-0 w-full h-full transform origin-center">
           <Image
             src="/images/about-mekong-bg.avif"
