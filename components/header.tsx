@@ -54,7 +54,7 @@ export function Header() {
         }`}
       >
         <div className="w-full px-6 lg:px-10 relative">
-          <div className="flex h-24 items-center justify-between">
+          <div className="flex h-16 lg:h-20 items-center justify-between">
             
             {/* Left: Hamburger & Desktop Navigation */}
             <div className="flex items-center gap-4 lg:gap-8">
@@ -98,7 +98,7 @@ export function Header() {
                   alt="Mekong River Cruise Logo"
                   width={300}
                   height={140}
-                  className="h-16 lg:h-20 w-auto object-contain"
+                  className="h-10 lg:h-14 w-auto object-contain"
                   priority
                   fetchPriority="high"
                   sizes="300px"
@@ -110,7 +110,7 @@ export function Header() {
             <div className="flex items-center">
               <Link
                 href="/plan-your-journey"
-                className="hidden lg:inline-flex items-center px-6 py-3 bg-gold text-navy text-sm font-bold tracking-wide hover:bg-gold-light transition-colors duration-200 uppercase"
+                className="hidden lg:inline-flex items-center px-5 py-2.5 bg-gold text-navy text-[11px] font-bold tracking-wide hover:bg-gold-light transition-colors duration-200 uppercase"
               >
                 Plan Your Journey
               </Link>
