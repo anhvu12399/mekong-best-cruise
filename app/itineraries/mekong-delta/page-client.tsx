@@ -23,6 +23,14 @@ const WHY_ITEMS = [
   { icon: "⏱️", title: "Slow by design", desc: "Empty time is built in. Sit. Photograph. Talk. Drink sugarcane juice and do nothing." },
 ]
 
+// Map stops: [x%, y%] relative to the SVG viewBox
+const MAP_STOPS = [
+  { label: "Ho Chi Minh City", x: 72, y: 62 },
+  { label: "Bến Tre / Vĩnh Long", x: 62, y: 72 },
+  { label: "Cần Thơ", x: 55, y: 78 },
+  { label: "Return", x: 72, y: 62 },
+]
+
 const DAYS = [
   {
     key: "day1",
@@ -237,84 +245,138 @@ export function MekongDeltaClient() {
             <p className="text-navy/50 mt-4 font-serif text-lg">Our experts designed this to inspire you — then adjust it entirely to suit you.</p>
           </div>
 
-          {/* Day selector tabs */}
-          <div className="flex items-center gap-2 mb-12 overflow-x-auto scrollbar-hide pb-1">
-            {DAYS.map((d, i) => (
-              <button
-                key={d.key}
-                onClick={() => setActiveDay(i)}
-                className={`flex-shrink-0 px-6 py-3 text-[11px] font-bold tracking-[0.15em] uppercase transition-all ${
-                  activeDay === i
-                    ? "bg-navy text-white"
-                    : "bg-white border border-[#e0d9ce] text-navy/60 hover:border-navy/30"
-                }`}
-              >
-                {d.label}
-                {d.optional && <span className="ml-2 text-[#c9a962]">Optional</span>}
-              </button>
-            ))}
-          </div>
-
-          {/* Active Day Content */}
-          {DAYS.map((day, i) => (
-            <div
-              key={day.key}
-              className={`transition-all duration-500 ${activeDay === i ? "block" : "hidden"}`}
-            >
-              <div className="grid lg:grid-cols-5 gap-0 overflow-hidden bg-white shadow-sm border border-[#e0d9ce]">
-                {/* Image */}
-                <div className="lg:col-span-2 relative aspect-[4/3] lg:aspect-auto min-h-[300px]">
-                  <Image src={day.image} alt={day.place} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-8">
-                    <p className="text-gold text-[10px] tracking-widest uppercase font-bold mb-2">{day.label}</p>
-                    <h3 className="font-serif text-2xl text-white">{day.place}</h3>
-                    <p className="text-white/70 text-sm font-serif mt-1 italic">{day.tagline}</p>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="lg:col-span-3 p-10 lg:p-14 space-y-10">
-                  {[day.morning, day.afternoon, day.evening].map((segment, si) => (
-                    <div key={si} className={si > 0 ? "pt-8 border-t border-[#e8e2d9]" : ""}>
-                      <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-3">
-                        {si === 0 ? "Morning" : si === 1 ? "Afternoon" : "Evening"}
-                      </p>
-                      <h4 className="font-serif text-xl text-navy mb-3">{segment.title}</h4>
-                      <p className="text-navy/65 font-serif leading-relaxed">{segment.body}</p>
-                    </div>
+          {/* Map + Days side by side */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+            {/* Interactive Route Map */}
+            <div className="bg-white border border-[#e0d9ce] p-8 flex flex-col items-center">
+              <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-navy/40 mb-6">Route Map</p>
+              <div className="relative w-full max-w-sm">
+                {/* SVG Vietnam outline simplified */}
+                <svg viewBox="0 0 120 140" className="w-full" xmlns="http://www.w3.org/2000/svg">
+                  {/* Vietnam silhouette path (simplified) */}
+                  <path d="M70,5 L78,12 L82,20 L80,30 L76,38 L80,46 L84,54 L82,62 L78,68 L74,74 L70,80 L65,86 L58,90 L52,94 L48,98 L44,104 L42,110 L46,114 L52,116 L58,114 L62,118 L60,124 L56,128 L50,130 L44,126 L40,120 L38,112 L36,104 L38,96 L42,88 L48,82 L54,76 L60,70 L64,64 L68,58 L72,50 L74,42 L72,34 L68,26 L66,18 L70,5Z" fill="#e8e2d9" stroke="#c9b99a" strokeWidth="0.8"/>
+                  {/* Route line */}
+                  <polyline
+                    points={MAP_STOPS.map(s => `${s.x},${s.y}`).join(' ')}
+                    fill="none" stroke="#c9a962" strokeWidth="1.2" strokeDasharray="3,2"
+                  />
+                  {/* Stop dots */}
+                  {MAP_STOPS.map((stop, i) => (
+                    <g key={i} onClick={() => setActiveDay(i < DAYS.length ? i : DAYS.length - 1)} className="cursor-pointer">
+                      <circle
+                        cx={stop.x} cy={stop.y} r={activeDay >= i ? 5 : 3}
+                        fill={activeDay >= i ? '#8B4A2A' : '#c9a962'}
+                        stroke="white" strokeWidth="1.2"
+                        style={{ transition: 'all 0.3s' }}
+                      />
+                      {activeDay >= i && (
+                        <circle cx={stop.x} cy={stop.y} r={8} fill="#8B4A2A" fillOpacity="0.15" />
+                      )}
+                      <text x={stop.x + 7} y={stop.y + 1} fontSize="5" fill="#2B3A57" fontFamily="serif">{stop.label}</text>
+                    </g>
                   ))}
-                </div>
+                </svg>
               </div>
-
-              {/* Day nav arrows */}
-              <div className="flex items-center justify-between mt-6">
-                <button
-                  onClick={() => setActiveDay(Math.max(0, i - 1))}
-                  disabled={i === 0}
-                  className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy transition-colors disabled:opacity-0"
-                >
-                  <ChevronLeft size={16} /> Previous day
-                </button>
-                <div className="flex gap-2">
-                  {DAYS.map((_, di) => (
-                    <button
-                      key={di}
-                      onClick={() => setActiveDay(di)}
-                      className={`w-2 h-2 rounded-full transition-all ${di === i ? "bg-[#8B4A2A] w-6" : "bg-navy/20"}`}
-                    />
-                  ))}
-                </div>
-                <button
-                  onClick={() => setActiveDay(Math.min(DAYS.length - 1, i + 1))}
-                  disabled={i === DAYS.length - 1}
-                  className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy transition-colors disabled:opacity-0"
-                >
-                  Next day <ChevronRight size={16} />
-                </button>
+              {/* Active day location label */}
+              <div className="mt-6 text-center border-t border-[#e0d9ce] pt-6 w-full">
+                <p className="text-[10px] tracking-widest uppercase font-bold text-[#8B4A2A] mb-1">Now viewing</p>
+                <p className="font-serif text-lg text-navy">{MAP_STOPS[Math.min(activeDay, MAP_STOPS.length-1)].label}</p>
               </div>
             </div>
-          ))}
+
+            {/* Day tabs + content */}
+            <div>
+              <div className="flex items-center gap-2 mb-6 flex-wrap">
+                {DAYS.map((d, i) => (
+                  <button
+                    key={d.key}
+                    onClick={() => setActiveDay(i)}
+                    className={`flex-shrink-0 px-5 py-2.5 text-[11px] font-bold tracking-[0.15em] uppercase transition-all ${
+                      activeDay === i ? 'bg-navy text-white' : 'bg-white border border-[#e0d9ce] text-navy/60 hover:border-navy/30'
+                    }`}
+                  >
+                    {d.label}{(d as any).optional && <span className="ml-2 text-[#c9a962]">Optional</span>}
+                  </button>
+                ))}
+              </div>
+
+              {DAYS.map((day, i) => (
+                <div key={day.key} className={activeDay === i ? 'block' : 'hidden'}>
+                  <div className="bg-white border border-[#e0d9ce] overflow-hidden">
+                    <div className="relative aspect-[16/7] w-full">
+                      <Image src={day.image} alt={day.place} fill className="object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-0 left-0 p-6">
+                        <p className="text-gold text-[10px] tracking-widest uppercase font-bold mb-1">{day.label}</p>
+                        <h3 className="font-serif text-xl text-white">{day.place}</h3>
+                        <p className="text-white/70 text-sm font-serif italic">{day.tagline}</p>
+                      </div>
+                    </div>
+                    <div className="p-8 space-y-6">
+                      {[day.morning, day.afternoon, day.evening].map((seg, si) => (
+                        <div key={si} className={si > 0 ? 'pt-6 border-t border-[#e8e2d9]' : ''}>
+                          <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-2">
+                            {si === 0 ? 'Morning' : si === 1 ? 'Afternoon' : 'Evening'}
+                          </p>
+                          <h4 className="font-serif text-lg text-navy mb-2">{seg.title}</h4>
+                          <p className="text-navy/65 font-serif leading-relaxed text-sm">{seg.body}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <button onClick={() => setActiveDay(Math.max(0,i-1))} disabled={i===0} className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy disabled:opacity-0">
+                      <ChevronLeft size={14}/> Prev
+                    </button>
+                    <div className="flex gap-1.5">{DAYS.map((_,di)=>(<button key={di} onClick={()=>setActiveDay(di)} className={`h-1.5 rounded-full transition-all ${di===i?'w-6 bg-[#8B4A2A]':'w-1.5 bg-navy/20'}`}/>))}</div>
+                    <button onClick={() => setActiveDay(Math.min(DAYS.length-1,i+1))} disabled={i===DAYS.length-1} className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy disabled:opacity-0">
+                      Next <ChevronRight size={14}/>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* ── FEATURED CRUISES ── */}
+      <section className="py-24 bg-white border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-16">
+            <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-4">Continue by River</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-navy mb-4">Ships for This Journey</h2>
+            <p className="text-navy/55 font-serif max-w-xl mx-auto">Extend your delta experience aboard one of these vessels — each chosen for their intimate scale and deep connection to the Vietnamese Mekong.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              { name: 'Mekong Princess', type: 'Romantic Boutique', tagline: 'The river\'s most intimate address.', desc: 'Fourteen cabins. The crew knows your coffee order by morning two.', image: '/images/mekong_princess.png', guests: 28, cabins: 14 },
+              { name: 'Lan Diep', type: 'Traditional Sampan', tagline: 'Eight cabins. The whole delta to yourselves.', desc: 'A traditional Vietnamese sampan into channels that appear on no tourist map.', image: '/images/lan_diep.png', guests: 16, cabins: 8 },
+              { name: 'Victoria Mekong', type: 'Cultural Immersion', tagline: 'If you travel to be changed — this is your ship.', desc: 'Markets at dawn. Cooking classes. The best sunset seat on the delta.', image: '/images/victoria_mekong.avif', guests: 36, cabins: 18 },
+            ].map(ship => (
+              <div key={ship.name} className="group border border-[#e0d9ce] overflow-hidden bg-[#f7f4ef]">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image src={ship.image} alt={ship.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw"/>
+                </div>
+                <div className="p-7">
+                  <p className="text-[10px] tracking-widest uppercase font-bold text-[#c9a962] mb-2">{ship.type}</p>
+                  <h3 className="font-serif text-xl text-navy mb-2">{ship.name}</h3>
+                  <p className="text-navy/60 text-sm font-serif mb-5 leading-relaxed">{ship.desc}</p>
+                  <div className="flex justify-between text-[10px] tracking-widest uppercase font-bold text-navy/40 border-t border-[#e8e2d9] pt-4">
+                    <span>{ship.guests} Guests</span>
+                    <span>{ship.cabins} Cabins</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <a href="/cruises/vietnam" className="inline-flex items-center gap-3 px-8 py-3 border border-navy text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-navy hover:text-white transition-all duration-300">
+              View All Vietnam Cruises <ArrowRight size={14}/>
+            </a>
+          </div>
         </div>
       </section>
 
