@@ -13,7 +13,7 @@ const DAYS = [
     label: "Day 1",
     place: "HCMC — Cần Thơ",
     tagline: "Luxury river lifestyle",
-    image: "https://images.unsplash.com/photo-1596422846543-74c6e9821811?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day1.png",
     morning: {
       title: "Departure & Spiritual Peace",
       body: "A 7–9 seater limousine greets you at your Ho Chi Minh City hotel. We leave the city behind and head towards Mỹ Tho. Along the way, we stop at Vinh Trang Pagoda. Here, you'll sit quietly in the temple grounds, accompanied by gentle spiritual guidance on Buddhist philosophy and inner peace."
@@ -32,7 +32,7 @@ const DAYS = [
     label: "Day 2",
     place: "Cần Thơ",
     tagline: "Floating market & Luxury rural vibe",
-    image: "https://images.unsplash.com/photo-1542323326-646e7f2de892?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day2.png",
     morning: {
       title: "Cái Răng Floating Market",
       body: "Depart early (5:30 AM) on a private boat to Cái Răng Floating Market. We carefully time our visit to avoid the heaviest crowds, stopping our boat to quietly observe the vibrant trading rather than pushing through the congestion. Afterwards, visit a private fruit orchard and a traditional craft village without the usual rush."
@@ -51,7 +51,7 @@ const DAYS = [
     label: "Day 3",
     place: "Cần Thơ — Phnom Penh",
     tagline: "Luxury border crossing",
-    image: "https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day3.png",
     morning: {
       title: "Journey to the Border",
       body: "A private car returns you to Ho Chi Minh City for a brief rest (no mandatory shopping stops). A luxury 9-seater limousine then takes the group towards the Tây Ninh - Mộc Bài - Xoài Mút border crossing into Cambodia."
@@ -70,7 +70,7 @@ const DAYS = [
     label: "Day 4",
     place: "Phnom Penh",
     tagline: "Our Lady of Mekong & Luxury pilgrimage",
-    image: "https://images.unsplash.com/photo-1627885061327-0cfd68f7a9df?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day4.png",
     morning: {
       title: "Pilgrimage to Bãi Cải",
       body: "A private vehicle takes the group to Our Lady of the Mekong (Bãi Cải Church) at an unhurried pace, with time to stop for photography along the river. If desired, a private pilgrimage mass can be arranged, complete with flowers, candles, and a serene, organized environment free from chaos."
@@ -89,7 +89,7 @@ const DAYS = [
     label: "Day 5",
     place: "Phnom Penh — Siem Reap",
     tagline: "Luxury culture & history",
-    image: "https://images.unsplash.com/photo-1600810146394-1a9807fa36df?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day5.png",
     morning: {
       title: "Royal Palace & Silver Pagoda",
       body: "Take a privately guided tour of the Royal Palace and Silver Pagoda. Your guide focuses on the deep history and artistry of the site, ensuring a relaxed pace without the pressure of a rigid photography schedule."
@@ -108,7 +108,7 @@ const DAYS = [
     label: "Day 6",
     place: "Siem Reap",
     tagline: "Angkor sunrise & spiritual feel",
-    image: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day6.png",
     morning: {
       title: "Angkor Wat in Silence",
       body: "Your private car brings you to Angkor Wat before dawn. Avoiding the noisy crowds, your guide leads you to a quiet vantage point for sunrise. The tour focuses on the spiritual essence and cosmology of the temple, moving beyond mere architectural facts. Later, explore Angkor Thom, Bayon, and Ta Prohm at a meditative pace."
@@ -127,7 +127,7 @@ const DAYS = [
     label: "Day 7",
     place: "Siem Reap — HCMC",
     tagline: "Tonlé Sap & Luxury journey home",
-    image: "https://images.unsplash.com/photo-1599818815152-32aeb41dff7f?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day7.png",
     morning: {
       title: "Life on the Water",
       body: "Board a small, private wooden boat to explore the Tonlé Sap lake, visiting the floating villages of Kompong Phluk or Kompong Khleang. The focus is on the stories of waterborne life and the spiritual practice of acceptance and simplicity."
@@ -147,7 +147,7 @@ const DAYS = [
     optional: true,
     place: "Ho Chi Minh City",
     tagline: "Final spiritual connection",
-    image: "https://images.unsplash.com/photo-1583417311718-c91721b033da?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/vc_day8.png",
     morning: {
       title: "Cathedral & Prayer",
       body: "For those extending to 8 days, the morning is dedicated to visiting the Notre-Dame Cathedral Basilica of Saigon or Tân Định Church. A short prayer session can be organized, allowing plenty of unhurried time for personal reflection and photography."
@@ -207,7 +207,7 @@ export function VietnamCambodiaClient() {
       {/* ── HERO ── */}
       <section className="relative h-[85vh] w-full flex items-end pb-24 justify-center text-center">
         <Image 
-          src="https://images.unsplash.com/photo-1596422846543-74c6e9821811?auto=format&fit=crop&q=80&w=2000" 
+          src="/images/vc_hero.png" 
           alt="Vietnam to Cambodia" 
           fill 
           className="object-cover" 
@@ -419,9 +419,9 @@ export function VietnamCambodiaClient() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Private Mass & Prayer", desc: "Arranged hours of prayer at Catholic sanctuaries or quiet meditation in Buddhist temples.", img: "https://images.unsplash.com/photo-1548625361-ec85cb2be16e?auto=format&fit=crop&q=80&w=800" },
-              { title: "Meditation Dinners", desc: "Dine in complete serenity with soft candlelight and purposeful quiet.", img: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800" },
-              { title: "Silent Sunrises", desc: "Experience the magic of Angkor Wat at dawn, far from the crowds.", img: "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&q=80&w=800" }
+              { title: "Private Mass & Prayer", desc: "Arranged hours of prayer at Catholic sanctuaries or quiet meditation in Buddhist temples.", img: "/images/vc_exp1.png" },
+              { title: "Meditation Dinners", desc: "Dine in complete serenity with soft candlelight and purposeful quiet.", img: "/images/vc_exp2.png" },
+              { title: "Silent Sunrises", desc: "Experience the magic of Angkor Wat at dawn, far from the crowds.", img: "/images/vc_exp3.png" }
             ].map(exp => (
               <div key={exp.title} className="group relative aspect-[4/5] overflow-hidden">
                 <Image src={exp.img} alt={exp.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
