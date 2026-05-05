@@ -1,18 +1,13 @@
 "use client"
 
-// Mekong Delta route stops
-const ROUTE_STOPS = [
-  { label: "Ho Chi Minh City", x: 75, y: 35, id: "hcmc" },
-  { label: "Bến Tre / Vĩnh Long", x: 60, y: 55, id: "bentre" },
-  { label: "Cần Thơ", x: 45, y: 70, id: "cantho" },
-]
+import { useEffect, useRef } from "react"
 
-// Mapping from day index to the stop it corresponds to
-// Day 0: HCMC
-// Day 1: Ben Tre
-// Day 2: Can Tho
-// Day 3: HCMC (Return)
-const DAY_TO_STOP = [0, 1, 2, 0]
+export const ROUTE_STOPS = [
+  { label: "Ho Chi Minh City", lat: 10.8231, lng: 106.6297 },
+  { label: "Bến Tre / Vĩnh Long", lat: 10.2434, lng: 106.3752 },
+  { label: "Cần Thơ", lat: 10.0341, lng: 105.7922 },
+  { label: "Ho Chi Minh City", lat: 10.8231, lng: 106.6297 },
+]
 
 interface Props {
   activeDay: number
@@ -20,104 +15,213 @@ interface Props {
 }
 
 export function MekongDeltaMap({ activeDay, onDayChange }: Props) {
-  // activeStopIndex is the index in ROUTE_STOPS (0 to 2)
-  const activeStopIndex = DAY_TO_STOP[Math.min(activeDay, DAY_TO_STOP.length - 1)]
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+
+  // We communicate activeDay to the iframe
+  useEffect(() => {
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.contentWindow.postMessage({ type: 'UPDATE_DAY', activeDay }, '*')
+    }
+  }, [activeDay])
+
+  // Receive clicks from iframe
+  useEffect(() => {
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data?.type === 'DAY_CLICKED') {
+        onDayChange(e.data.day)
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [onDayChange])
+
+  // Using CartoDB Voyager NoLabels which provides an incredibly clean, 
+  // luxury pastel map style exactly like Mapbox/Abercrombie & Kent
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <style>
+        body { margin: 0; padding: 0; background: #f4f1ea; font-family: ui-serif, Georgia, serif; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; background: #e8e4db; }
+        
+        .custom-marker {
+          transition: all 0.3s;
+        }
+        
+        .marker-dot {
+          width: 10px;
+          height: 10px;
+          background: #555;
+          border: 1.5px solid white;
+          border-radius: 50%;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+          transition: all 0.3s;
+        }
+        
+        .marker-dot.active {
+          background: #8B4A2A;
+          transform: scale(1.4);
+          border: 2px solid white;
+          z-index: 1000;
+        }
+        
+        .marker-label {
+          position: absolute;
+          left: 15px;
+          top: -5px;
+          white-space: nowrap;
+          font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+          font-size: 13px;
+          color: #2B3A57;
+          text-shadow: 
+            2px 0 2px #fff, -2px 0 2px #fff, 0 2px 2px #fff, 0 -2px 2px #fff,
+            1px 1px 2px #fff, -1px -1px 2px #fff, 1px -1px 2px #fff, -1px 1px 2px #fff;
+          transition: all 0.3s;
+          cursor: pointer;
+        }
+        
+        .marker-label.active {
+          font-weight: bold;
+          color: #8B4A2A;
+        }
+        
+        .marker-label:hover {
+          color: #8B4A2A;
+        }
+
+        .leaflet-control-attribution {
+          display: none !important;
+        }
+        
+        .leaflet-container {
+          background: #e8e4db !important;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="map"></div>
+      <script>
+        const STOPS = ${JSON.stringify(ROUTE_STOPS)};
+        let activeDay = ${activeDay};
+        let markers = [];
+
+        const map = L.map('map', {
+          zoomControl: false,
+          scrollWheelZoom: false,
+          dragging: false,
+          doubleClickZoom: false,
+          boxZoom: false
+        });
+        
+        // CartoDB Voyager tiles (beige land, pale blue water, no labels)
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+          maxZoom: 19
+        }).addTo(map);
+
+        // Fit map bounds to stops
+        const bounds = L.latLngBounds(STOPS.map(s => [s.lat, s.lng]));
+        map.fitBounds(bounds, { padding: [80, 80], animate: false });
+
+        // Draw dotted lines
+        const lineCoords = STOPS.map(s => [s.lat, s.lng]);
+        
+        // Outward journey
+        L.polyline(lineCoords.slice(0, 3), {
+          color: '#4a4a4a',
+          weight: 1.5,
+          dashArray: '3, 6',
+          opacity: 0.8
+        }).addTo(map);
+
+        // Return journey (slight offset to differentiate if desired, or straight back)
+        L.polyline([lineCoords[2], lineCoords[3]], {
+          color: '#4a4a4a',
+          weight: 1.5,
+          dashArray: '3, 6',
+          opacity: 0.8
+        }).addTo(map);
+
+        // Render Markers
+        STOPS.forEach((stop, i) => {
+          // Skip drawing a duplicate dot for HCMC at the end (Day 3 uses Day 0's dot)
+          if (i === 3) return; 
+
+          const icon = L.divIcon({
+            className: 'custom-marker',
+            html: \`
+              <div class="marker-dot" id="dot-\${i}"></div>
+              <div class="marker-label" id="label-\${i}" onclick="window.parent.postMessage({type:'DAY_CLICKED', day:\${i}}, '*')">\${stop.label}</div>
+            \`,
+            iconSize: [10, 10],
+            iconAnchor: [5, 5]
+          });
+
+          const marker = L.marker([stop.lat, stop.lng], { icon }).addTo(map);
+          markers.push(marker);
+        });
+
+        function updateActive() {
+          const activeIndex = activeDay === 3 ? 0 : activeDay;
+          
+          markers.forEach((m, i) => {
+            const dot = document.getElementById('dot-' + i);
+            const label = document.getElementById('label-' + i);
+            if (dot && label) {
+              if (i === activeIndex) {
+                dot.classList.add('active');
+                label.classList.add('active');
+              } else {
+                dot.classList.remove('active');
+                label.classList.remove('active');
+              }
+            }
+          });
+        }
+
+        updateActive();
+
+        window.addEventListener('message', (e) => {
+          if (e.data && e.data.type === 'UPDATE_DAY') {
+            activeDay = e.data.activeDay;
+            updateActive();
+          }
+        });
+      </script>
+    </body>
+    </html>
+  `
+
+  const getActiveLabel = () => {
+    if (activeDay === 3) return "Return — Ho Chi Minh City"
+    return ROUTE_STOPS[activeDay]?.label || "Ho Chi Minh City"
+  }
 
   return (
-    <div className="relative w-full h-full bg-[#f4ebd9] overflow-hidden flex items-center justify-center">
-      {/* Subtle topographic / grid / river background styling */}
-      <div className="absolute inset-0 opacity-30">
-         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#d5c8b5" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-            
-            {/* Abstract river lines */}
-            <path d="M -10,80 Q 30,70 40,90 T 80,110 T 120,90" fill="none" stroke="#a3b8c7" strokeWidth="2" strokeOpacity="0.8" transform="scale(5) translate(0, -30) rotate(-15)" />
-            <path d="M -10,80 Q 30,70 40,90 T 80,110 T 120,90" fill="none" stroke="#a3b8c7" strokeWidth="1.5" strokeOpacity="0.5" transform="scale(5) translate(5, -25) rotate(-15)" />
-            <path d="M -10,80 Q 30,70 40,90 T 80,110 T 120,90" fill="none" stroke="#a3b8c7" strokeWidth="1" strokeOpacity="0.3" transform="scale(5) translate(-5, -35) rotate(-15)" />
-         </svg>
-      </div>
-
-      {/* Map Content */}
-      <div className="relative w-full max-w-lg aspect-square">
-        {/* Route Line */}
-        <svg className="absolute inset-0 w-full h-full" style={{ overflow: "visible" }}>
-           {/* Outward journey line */}
-           <path 
-             d={`M ${ROUTE_STOPS[0].x}% ${ROUTE_STOPS[0].y}% L ${ROUTE_STOPS[1].x}% ${ROUTE_STOPS[1].y}% L ${ROUTE_STOPS[2].x}% ${ROUTE_STOPS[2].y}%`}
-             fill="none"
-             stroke="#8B4A2A"
-             strokeWidth="1.5"
-             strokeDasharray="5,4"
-             className={`transition-opacity duration-500 ${activeDay >= 1 ? 'opacity-60' : 'opacity-20'}`}
-           />
-           {/* Return journey line (curved to differentiate) */}
-           <path 
-             d={`M ${ROUTE_STOPS[2].x}% ${ROUTE_STOPS[2].y}% Q 85% 85% ${ROUTE_STOPS[0].x}% ${ROUTE_STOPS[0].y}%`}
-             fill="none"
-             stroke="#8B4A2A"
-             strokeWidth="1.5"
-             strokeDasharray="5,4"
-             className={`transition-opacity duration-500 ${activeDay === 3 ? 'opacity-60' : 'opacity-0'}`}
-           />
-        </svg>
-
-        {/* Stops */}
-        {ROUTE_STOPS.map((stop, i) => {
-          const isCurrent = activeStopIndex === i
-          const hasPassed = DAY_TO_STOP.slice(0, activeDay + 1).includes(i)
-          
-          return (
-            <div 
-              key={stop.id}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer group"
-              style={{ left: `${stop.x}%`, top: `${stop.y}%`, zIndex: isCurrent ? 20 : 10 }}
-              onClick={() => {
-                if (i === 0) {
-                  onDayChange(activeDay === 3 ? 3 : 0)
-                } else {
-                  onDayChange(i)
-                }
-              }}
-            >
-              {/* Pin / Dot */}
-              <div className="relative flex items-center justify-center mt-2">
-                {isCurrent && (
-                  <div className="absolute w-10 h-10 bg-[#8B4A2A] rounded-full opacity-20 animate-ping" />
-                )}
-                <div className={`w-3.5 h-3.5 rounded-full border-[2.5px] border-white shadow-md transition-colors duration-300 ${
-                  isCurrent ? 'bg-[#8B4A2A]' : hasPassed ? 'bg-[#8B4A2A]/60' : 'bg-[#c9a962]'
-                }`} />
-              </div>
-              
-              {/* Label */}
-              <div className={`px-3 py-1.5 whitespace-nowrap text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
-                isCurrent 
-                  ? 'bg-[#8B4A2A] text-white shadow-lg scale-105' 
-                  : 'bg-white/95 text-navy shadow group-hover:bg-[#8B4A2A]/10'
-              }`}>
-                {stop.label}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-
-      {/* Day indicator pill */}
-      <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-sm shadow-xl px-6 py-4 z-20 border-l-4 border-[#8B4A2A]">
+    <div className="relative w-full h-full bg-[#e8e4db]">
+      <iframe
+        ref={iframeRef}
+        srcDoc={htmlContent}
+        className="absolute inset-0 w-full h-full border-0"
+        title="Mekong Delta Route Map"
+        // Allow scripts so Leaflet works in the iframe
+        sandbox="allow-scripts allow-same-origin"
+      />
+      
+      {/* Day indicator pill overlay */}
+      <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-sm shadow-xl px-6 py-4 z-20 border-l-4 border-[#8B4A2A] pointer-events-none">
         <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-navy/40 mb-1">Currently at</p>
         <p className="text-lg font-serif text-navy">
-          {activeDay === 3 ? "Return — HCMC" : ROUTE_STOPS[activeStopIndex].label}
+          {getActiveLabel()}
         </p>
       </div>
 
-      {/* Compass / Decorative element */}
-      <div className="absolute top-8 right-8 text-navy/20 font-serif text-4xl italic select-none">
-        N
+      {/* Decorative controls */}
+      <div className="absolute top-6 left-6 flex flex-col shadow border border-gray-200 z-20">
+        <div className="w-8 h-8 bg-white flex items-center justify-center text-navy font-bold text-lg border-b border-gray-200 cursor-not-allowed">+</div>
+        <div className="w-8 h-8 bg-white flex items-center justify-center text-navy font-bold text-lg cursor-not-allowed">−</div>
       </div>
     </div>
   )
