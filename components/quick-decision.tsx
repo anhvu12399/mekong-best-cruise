@@ -13,14 +13,14 @@ const decisions = [
     href: "/itineraries/vietnam-cambodia"
   },
   {
-    title: "Private Charter",
-    cta: "Plan my journey",
-    href: "/itineraries/private-charter"
+    title: "1-Day Mindful Mekong",
+    cta: "View itinerary",
+    href: "/itineraries/1-day"
   },
   {
-    title: "Small Ship Expeditions",
-    cta: "Explore vessels",
-    href: "/itineraries/small-ship"
+    title: "2-Day River Pulse",
+    cta: "View itinerary",
+    href: "/itineraries/2-days"
   }
 ]
 
