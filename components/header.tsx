@@ -69,12 +69,15 @@ export function Header() {
 
               {/* Desktop Nav Links */}
               <nav className="hidden lg:flex items-center gap-8">
-                <Link
-                  href="/destinations/vietnam"
+                <button
+                  onClick={() => {
+                    setIsSidebarOpen(true)
+                    setActiveView('destinations')
+                  }}
                   className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
                 >
                   Destinations
-                </Link>
+                </button>
                 <Link
                   href="/cruises"
                   className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
