@@ -229,7 +229,7 @@ export function VietnamCambodiaClient() {
       </section>
 
       {/* ── STICKY NAV ── */}
-      <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#2B3A57] shadow-lg py-4" : "bg-[#2B3A57] py-6"}`}>
+      <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#ede9e2]/95 shadow-lg py-4" : "bg-[#ede9e2]/95 py-6"}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex justify-between items-center">
           <div className="hidden md:flex gap-8">
             {NAV_ITEMS.map((item) => (
@@ -237,7 +237,7 @@ export function VietnamCambodiaClient() {
                 key={item}
                 onClick={() => scrollToSection(item)}
                 className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${
-                  activeTab === item ? "text-[#c9a962]" : "text-white hover:text-white/70"
+                  activeTab === item ? "text-[#8B4A2A] border-b-2 border-[#8B4A2A]" : "text-navy/50 hover:text-navy"
                 }`}
               >
                 {item}
@@ -250,7 +250,7 @@ export function VietnamCambodiaClient() {
                 key={item}
                 onClick={() => scrollToSection(item)}
                 className={`text-[10px] whitespace-nowrap font-bold tracking-[0.2em] uppercase ${
-                  activeTab === item ? "text-[#c9a962]" : "text-white"
+                  activeTab === item ? "text-[#8B4A2A]" : "text-navy/50"
                 }`}
               >
                 {item}
@@ -265,34 +265,34 @@ export function VietnamCambodiaClient() {
 
       {/* ── OVERVIEW ── */}
       <div ref={overviewRef} className="scroll-mt-24" />
-      <section className="py-24 bg-[#2B3A57] text-white">
+      <section className="py-24 bg-[#f7f4ef] text-navy">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight">
             A Journey of Deep Connection <br /> Across Two Kingdoms
           </h2>
-          <p className="text-white/70 text-lg md:text-xl font-serif leading-relaxed mb-16">
+          <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed mb-16">
             This isn't a standard tourist trail. This is a carefully curated luxury pilgrimage designed to connect you with the profound spiritual heritage of the Mekong and the Khmer Empire. From private masses at Our Lady of the Mekong to silent sunrises over Angkor Wat, experience Indochina at an unhurried, deeply emotional pace.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-navy/10 pt-12">
             <div>
               <Clock className="w-6 h-6 mx-auto mb-4 text-[#c9a962]" />
-              <p className="text-[10px] tracking-widest uppercase font-bold text-white/50 mb-1">Duration</p>
+              <p className="text-[10px] tracking-widest uppercase font-bold text-navy/50 mb-1">Duration</p>
               <p className="font-serif text-lg">7–8 Days</p>
             </div>
             <div>
               <Users className="w-6 h-6 mx-auto mb-4 text-[#c9a962]" />
-              <p className="text-[10px] tracking-widest uppercase font-bold text-white/50 mb-1">Group Size</p>
+              <p className="text-[10px] tracking-widest uppercase font-bold text-navy/50 mb-1">Group Size</p>
               <p className="font-serif text-lg">Max 6–10</p>
             </div>
             <div>
               <MapPin className="w-6 h-6 mx-auto mb-4 text-[#c9a962]" />
-              <p className="text-[10px] tracking-widest uppercase font-bold text-white/50 mb-1">Pace</p>
+              <p className="text-[10px] tracking-widest uppercase font-bold text-navy/50 mb-1">Pace</p>
               <p className="font-serif text-lg">Unrushed & Spiritual</p>
             </div>
             <div>
               <ArrowRight className="w-6 h-6 mx-auto mb-4 text-[#c9a962]" />
-              <p className="text-[10px] tracking-widest uppercase font-bold text-white/50 mb-1">Start/End</p>
+              <p className="text-[10px] tracking-widest uppercase font-bold text-navy/50 mb-1">Start/End</p>
               <p className="font-serif text-lg">HCMC</p>
             </div>
           </div>
@@ -386,8 +386,8 @@ export function VietnamCambodiaClient() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { name: 'Aqua Mekong', type: 'Modern Luxury', tagline: 'A floating sanctuary.', desc: 'Floor-to-ceiling windows and spa facilities to complement your spiritual retreat.', image: '/images/aqua_mekong.jpg', guests: 40, cabins: 20 },
-              { name: 'The Jayavarman', type: 'French Colonial', tagline: 'Travel back in time.', desc: 'Boutique luxury with deep roots in Indochine aesthetics and quiet elegance.', image: '/images/jayavarman.jpg', guests: 54, cabins: 27 },
+              { name: 'Aqua Mekong', type: 'Modern Luxury', tagline: 'A floating sanctuary.', desc: 'Floor-to-ceiling windows and spa facilities to complement your spiritual retreat.', image: '/images/aqua_mekong.png', guests: 40, cabins: 20 },
+              { name: 'The Jayavarman', type: 'French Colonial', tagline: 'Travel back in time.', desc: 'Boutique luxury with deep roots in Indochine aesthetics and quiet elegance.', image: '/images/jayavarman.png', guests: 54, cabins: 27 },
               { name: 'Mekong Princess', type: 'Intimate Scale', tagline: 'Exclusive privacy.', desc: 'Only 14 cabins, ensuring the utmost tranquility during your journey.', image: '/images/mekong_princess.png', guests: 28, cabins: 14 },
             ].map(ship => (
               <div key={ship.name} className="group border border-[#e0d9ce] overflow-hidden bg-[#f7f4ef]">
