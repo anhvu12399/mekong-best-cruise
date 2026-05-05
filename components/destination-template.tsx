@@ -2,8 +2,16 @@
 
 import Image from "next/image"
 import { Playfair_Display } from "next/font/google"
-import { ArrowRight, MapPin } from "lucide-react"
+import { ArrowRight, MapPin, Anchor } from "lucide-react"
 import { destinationsData } from "@/lib/destinations-data"
+import { SHIPS_BY_DESTINATION } from "@/lib/ships-data"
+
+function getRegionForDestination(slug: string): string | null {
+  if (["ho-chi-minh-city", "can-tho", "my-tho", "sa-dec"].includes(slug)) return "vietnam"
+  if (["phnom-penh", "siem-reap", "kampong-cham"].includes(slug)) return "cambodia"
+  if (["luang-prabang", "vientiane", "pakse", "chiang-rai", "golden-triangle"].includes(slug)) return "laos"
+  return null
+}
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
@@ -179,6 +187,71 @@ export function DestinationTemplate(props: DestinationProps) {
           </div>
         </div>
       </section>
+
+      {/* 4.5. SHIPS IN THIS REGION */}
+      {(() => {
+        const region = getRegionForDestination(props.slug)
+        if (!region || !SHIPS_BY_DESTINATION[region]) return null
+        
+        const regionData = SHIPS_BY_DESTINATION[region]
+        // Get 4 ships
+        const displayShips = regionData.ships.slice(0, 4)
+        const regionName = region.charAt(0).toUpperCase() + region.slice(1)
+        
+        return (
+          <section className="py-24 bg-white border-t border-navy/5">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <span className="text-navy/40 text-xs tracking-[0.3em] uppercase font-bold block mb-4 flex items-center justify-center gap-2">
+                  <Anchor size={14}/> Fleet
+                </span>
+                <h2 className={`text-3xl md:text-5xl text-navy mb-6 ${playfair.className}`}>Ships Sailing {props.name}</h2>
+                <p className="text-navy/60 font-serif max-w-2xl mx-auto">
+                  Discover the exquisite vessels that navigate these waters, offering unparalleled luxury and intimate access to the region's hidden wonders.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                {displayShips.map((ship) => (
+                  <div key={ship.id} className="group flex flex-col border border-navy/5 bg-[#fbfaf8] overflow-hidden">
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={ship.image}
+                        alt={ship.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-grow">
+                      <div className="text-xs text-gold tracking-widest uppercase font-bold mb-2">
+                        {ship.style}
+                      </div>
+                      <h3 className={`text-xl text-navy mb-3 ${playfair.className}`}>{ship.name}</h3>
+                      <p className="text-navy/60 text-sm mb-6 line-clamp-3">
+                        {ship.description}
+                      </p>
+                      <div className="mt-auto pt-4 border-t border-navy/10 flex justify-between items-center text-xs text-navy/50 font-medium">
+                        <span>{ship.guests} GUESTS</span>
+                        <span>{ship.cabins} CABINS</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex justify-center">
+                <a 
+                  href={`/cruises/${region}`}
+                  className="inline-flex items-center gap-3 px-8 py-3 border border-navy text-navy text-xs font-medium tracking-[0.2em] uppercase hover:bg-navy hover:text-white transition-all duration-300"
+                >
+                  View More {regionName} Cruises
+                </a>
+              </div>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* 5. EXPLORE OTHER DESTINATIONS */}
       <section className="bg-cream py-24 border-t border-navy/10">
