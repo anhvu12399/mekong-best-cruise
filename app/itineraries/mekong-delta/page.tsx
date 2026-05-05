@@ -1,67 +1,22 @@
 import type { Metadata } from 'next'
-import { ItineraryTemplate } from '@/components/itinerary-template'
+import { MekongDeltaClient } from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/itineraries/mekong-delta`
 
 export const metadata: Metadata = {
-  title: '3-4 Day Mekong Delta Discovery | Luxury Short Cruise',
-  description: 'An immersive 4-day luxury journey into the heart of the Mekong Delta. Explore floating markets, historic mansions, and vibrant local life.',
+  title: 'Mekong By Locals: 3–4 Day Immersive Delta Journey | Mekong Best Cruise',
+  description:
+    'Not a tour. A way of living the delta — for 3 or 4 days. Private groups of 6–10, bilingual guides, farmhouse homestays, hands-on cooking, canal kayaking, and meals with families who have lived on this river for generations.',
   alternates: { canonical: PAGE_URL },
+  openGraph: {
+    url: PAGE_URL,
+    title: 'Mekong By Locals: 3–4 Day Immersive Delta Journey',
+    description: 'Private, small-group travel into the Mekong Delta as locals live it.',
+    images: [{ url: '/images/dest_vietnam.avif', width: 1200, height: 630, alt: 'Mekong Delta' }],
+  },
 }
 
-export default function MekongDeltaItinerary() {
-  return (
-    <ItineraryTemplate
-      heroImage="/images/dest_vietnam.avif"
-      title="The Delta Discovery"
-      duration="4 Days / 3 Nights"
-      route="HCMC – Cai Be – Can Tho – HCMC"
-      type="Small Ship Expedition"
-      intro="An immersive short journey into the heart of the Mekong Delta. Wake up to the vibrant chaos of floating markets and drift through impossibly narrow, palm-fringed canals."
-      highlights={[
-        "Cai Rang Floating Market at dawn",
-        "Sa Dec flower villages and colonial history",
-        "Historic French-Indochine mansions",
-        "Traditional silk weaving and artisan crafts"
-      ]}
-      days={[
-        {
-          day: "Day 1",
-          title: "Embarkation in Cai Be",
-          morning: "Transfer from Ho Chi Minh City to the Cai Be pier. Settle into your luxurious suite.",
-          afternoon: "Cycle or take a small sampan through local fruit orchards and artisan workshops.",
-          experience: "Sunset cocktail reception on the observation deck as we cast off into the twilight."
-        },
-        {
-          day: "Day 2",
-          title: "The Marguerite Duras Connection",
-          morning: "Explore the bustling Sa Dec town and visit the historic Lover's House.",
-          afternoon: "A tranquil cruise upstream towards Can Tho, passing vibrant river commerce.",
-          experience: "Exclusive blindfolded sensory dining experience, highlighting delta spices."
-        },
-        {
-          day: "Day 3",
-          title: "The Floating Market",
-          morning: "Early start to witness the spectacular Cai Rang Floating Market at its peak.",
-          afternoon: "Visit hidden traditional craft villages and learn about sustainable river farming.",
-          experience: "Private performance of 'Don Ca Tai Tu', the UNESCO-recognized local folk music."
-        },
-        {
-          day: "Day 4",
-          title: "Farewell to the River",
-          morning: "Final sunrise cruise over the delta before a decadent farewell breakfast.",
-          afternoon: "Disembarkation in Can Tho and private transfer back to Ho Chi Minh City.",
-          experience: "A lingering final moment of pure river tranquility."
-        }
-      ]}
-      practicalInfo={{
-        season: "September to April (High Water Season)",
-        departure: "Ho Chi Minh City, Vietnam",
-        arrival: "Ho Chi Minh City, Vietnam",
-        private: "Available for full charter",
-        customization: "This itinerary is a baseline. We can seamlessly add pre-cruise stays in Saigon or helicopter transfers to the pier to match your precise preferences."
-      }}
-    />
-  )
+export default function MekongDeltaPage() {
+  return <MekongDeltaClient />
 }
