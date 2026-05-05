@@ -1,28 +1,18 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-
-// Mekong Delta route stops with [lat, lng] and label
-export const ROUTE_STOPS = [
-  { label: "Ho Chi Minh City", lat: 10.8231, lng: 106.6297, day: 0 },
-  { label: "Bến Tre / Vĩnh Long", lat: 10.2434, lng: 106.3752, day: 1 },
-  { label: "Cần Thơ", lat: 10.0341, lng: 105.7922, day: 2 },
-  { label: "Return — HCMC", lat: 10.8231, lng: 106.6297, day: 3 },
+// Mekong Delta route stops
+const ROUTE_STOPS = [
+  { label: "Ho Chi Minh City", x: 75, y: 35, id: "hcmc" },
+  { label: "Bến Tre / Vĩnh Long", x: 60, y: 55, id: "bentre" },
+  { label: "Cần Thơ", x: 45, y: 70, id: "cantho" },
 ]
 
-// Map bounds for our region
-const MAP = {
-  minLat: 9.3,
-  maxLat: 11.5,
-  minLng: 105.0,
-  maxLng: 107.5,
-}
-
-function latLngToPercent(lat: number, lng: number) {
-  const x = ((lng - MAP.minLng) / (MAP.maxLng - MAP.minLng)) * 100
-  const y = ((MAP.maxLat - lat) / (MAP.maxLat - MAP.minLat)) * 100
-  return { x, y }
-}
+// Mapping from day index to the stop it corresponds to
+// Day 0: HCMC
+// Day 1: Ben Tre
+// Day 2: Can Tho
+// Day 3: HCMC (Return)
+const DAY_TO_STOP = [0, 1, 2, 0]
 
 interface Props {
   activeDay: number
@@ -30,112 +20,104 @@ interface Props {
 }
 
 export function MekongDeltaMap({ activeDay, onDayChange }: Props) {
-  const activeStop = ROUTE_STOPS[Math.min(activeDay, ROUTE_STOPS.length - 1)]
+  // activeStopIndex is the index in ROUTE_STOPS (0 to 2)
+  const activeStopIndex = DAY_TO_STOP[Math.min(activeDay, DAY_TO_STOP.length - 1)]
 
   return (
-    <div className="relative w-full h-full bg-[#d4e4bc] overflow-hidden">
-      {/* OpenStreetMap tile background via iframe */}
-      <iframe
-        src={`https://www.openstreetmap.org/export/embed.html?bbox=105.0%2C9.2%2C107.6%2C11.6&layer=mapnik`}
-        className="absolute inset-0 w-full h-full border-0 opacity-90"
-        style={{ pointerEvents: "none" }}
-        title="Mekong Delta Map"
-        loading="lazy"
-      />
-
-      {/* SVG overlay for route + dots */}
-      <svg
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        className="absolute inset-0 w-full h-full"
-        style={{ pointerEvents: "none" }}
-      >
-        {/* Dashed route line */}
-        <polyline
-          points={ROUTE_STOPS.map(s => {
-            const { x, y } = latLngToPercent(s.lat, s.lng)
-            return `${x},${y}`
-          }).join(" ")}
-          fill="none"
-          stroke="#2B3A57"
-          strokeWidth="0.6"
-          strokeDasharray="1.5,1"
-          strokeLinecap="round"
-        />
-
-        {/* Dots */}
-        {ROUTE_STOPS.map((stop, i) => {
-          const { x, y } = latLngToPercent(stop.lat, stop.lng)
-          const isActive = activeDay >= i
-          const isCurrent = activeDay === i
-          return (
-            <g key={i} style={{ pointerEvents: "all", cursor: "pointer" }} onClick={() => onDayChange(i)}>
-              {isCurrent && (
-                <circle cx={x} cy={y} r={4} fill="#8B4A2A" fillOpacity={0.2} />
-              )}
-              <circle
-                cx={x}
-                cy={y}
-                r={isCurrent ? 2.2 : 1.4}
-                fill={isActive ? "#8B4A2A" : "#9ca3af"}
-                stroke="white"
-                strokeWidth="0.5"
-                style={{ transition: "all 0.4s" }}
-              />
-              {/* Arrow indicator for current */}
-              {isCurrent && (
-                <polygon
-                  points={`${x},${y - 5} ${x - 1.4},${y - 3} ${x + 1.4},${y - 3}`}
-                  fill="#8B4A2A"
-                />
-              )}
-            </g>
-          )
-        })}
-      </svg>
-
-      {/* Floating labels for each stop */}
-      {ROUTE_STOPS.map((stop, i) => {
-        const { x, y } = latLngToPercent(stop.lat, stop.lng)
-        const isActive = activeDay >= i
-        const isCurrent = activeDay === i
-        return (
-          <button
-            key={i}
-            onClick={() => onDayChange(i)}
-            style={{
-              position: "absolute",
-              left: `calc(${x}% + 14px)`,
-              top: `calc(${y}% - 8px)`,
-              transition: "all 0.3s",
-            }}
-            className={`text-left z-10 ${isCurrent ? "opacity-100" : "opacity-70 hover:opacity-100"}`}
-          >
-            <span
-              className={`inline-block text-[10px] font-bold tracking-widest uppercase px-2 py-1 whitespace-nowrap
-                ${isCurrent
-                  ? "bg-[#8B4A2A] text-white shadow-lg"
-                  : isActive
-                  ? "bg-white/90 text-navy shadow"
-                  : "bg-white/70 text-navy/50"
-                }`}
-            >
-              {stop.label}
-            </span>
-          </button>
-        )
-      })}
-
-      {/* Day indicator pill */}
-      <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm shadow-lg px-4 py-3 z-20">
-        <p className="text-[9px] tracking-[0.25em] uppercase font-bold text-[#8B4A2A] mb-0.5">Currently at</p>
-        <p className="text-sm font-bold text-navy">{activeStop.label}</p>
+    <div className="relative w-full h-full bg-[#f4ebd9] overflow-hidden flex items-center justify-center">
+      {/* Subtle topographic / grid / river background styling */}
+      <div className="absolute inset-0 opacity-30">
+         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#d5c8b5" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            
+            {/* Abstract river lines */}
+            <path d="M -10,80 Q 30,70 40,90 T 80,110 T 120,90" fill="none" stroke="#a3b8c7" strokeWidth="2" strokeOpacity="0.8" transform="scale(5) translate(0, -30) rotate(-15)" />
+            <path d="M -10,80 Q 30,70 40,90 T 80,110 T 120,90" fill="none" stroke="#a3b8c7" strokeWidth="1.5" strokeOpacity="0.5" transform="scale(5) translate(5, -25) rotate(-15)" />
+            <path d="M -10,80 Q 30,70 40,90 T 80,110 T 120,90" fill="none" stroke="#a3b8c7" strokeWidth="1" strokeOpacity="0.3" transform="scale(5) translate(-5, -35) rotate(-15)" />
+         </svg>
       </div>
 
-      {/* Zoom-style controls (decorative, matching A&K style) */}
-      <div className="absolute top-4 left-4 flex flex-col gap-0 z-20 shadow">
-        <div className="w-8 h-8 bg-white flex items-center justify-center text-navy font-bold text-lg border-b border-gray-200 cursor-default select-none">+</div>
-        <div className="w-8 h-8 bg-white flex items-center justify-center text-navy font-bold text-lg cursor-default select-none">−</div>
+      {/* Map Content */}
+      <div className="relative w-full max-w-lg aspect-square">
+        {/* Route Line */}
+        <svg className="absolute inset-0 w-full h-full" style={{ overflow: "visible" }}>
+           {/* Outward journey line */}
+           <path 
+             d={`M ${ROUTE_STOPS[0].x}% ${ROUTE_STOPS[0].y}% L ${ROUTE_STOPS[1].x}% ${ROUTE_STOPS[1].y}% L ${ROUTE_STOPS[2].x}% ${ROUTE_STOPS[2].y}%`}
+             fill="none"
+             stroke="#8B4A2A"
+             strokeWidth="1.5"
+             strokeDasharray="5,4"
+             className={`transition-opacity duration-500 ${activeDay >= 1 ? 'opacity-60' : 'opacity-20'}`}
+           />
+           {/* Return journey line (curved to differentiate) */}
+           <path 
+             d={`M ${ROUTE_STOPS[2].x}% ${ROUTE_STOPS[2].y}% Q 85% 85% ${ROUTE_STOPS[0].x}% ${ROUTE_STOPS[0].y}%`}
+             fill="none"
+             stroke="#8B4A2A"
+             strokeWidth="1.5"
+             strokeDasharray="5,4"
+             className={`transition-opacity duration-500 ${activeDay === 3 ? 'opacity-60' : 'opacity-0'}`}
+           />
+        </svg>
+
+        {/* Stops */}
+        {ROUTE_STOPS.map((stop, i) => {
+          const isCurrent = activeStopIndex === i
+          const hasPassed = DAY_TO_STOP.slice(0, activeDay + 1).includes(i)
+          
+          return (
+            <div 
+              key={stop.id}
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer group"
+              style={{ left: `${stop.x}%`, top: `${stop.y}%`, zIndex: isCurrent ? 20 : 10 }}
+              onClick={() => {
+                if (i === 0) {
+                  onDayChange(activeDay === 3 ? 3 : 0)
+                } else {
+                  onDayChange(i)
+                }
+              }}
+            >
+              {/* Pin / Dot */}
+              <div className="relative flex items-center justify-center mt-2">
+                {isCurrent && (
+                  <div className="absolute w-10 h-10 bg-[#8B4A2A] rounded-full opacity-20 animate-ping" />
+                )}
+                <div className={`w-3.5 h-3.5 rounded-full border-[2.5px] border-white shadow-md transition-colors duration-300 ${
+                  isCurrent ? 'bg-[#8B4A2A]' : hasPassed ? 'bg-[#8B4A2A]/60' : 'bg-[#c9a962]'
+                }`} />
+              </div>
+              
+              {/* Label */}
+              <div className={`px-3 py-1.5 whitespace-nowrap text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
+                isCurrent 
+                  ? 'bg-[#8B4A2A] text-white shadow-lg scale-105' 
+                  : 'bg-white/95 text-navy shadow group-hover:bg-[#8B4A2A]/10'
+              }`}>
+                {stop.label}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Day indicator pill */}
+      <div className="absolute bottom-8 left-8 bg-white/95 backdrop-blur-sm shadow-xl px-6 py-4 z-20 border-l-4 border-[#8B4A2A]">
+        <p className="text-[10px] tracking-[0.3em] uppercase font-bold text-navy/40 mb-1">Currently at</p>
+        <p className="text-lg font-serif text-navy">
+          {activeDay === 3 ? "Return — HCMC" : ROUTE_STOPS[activeStopIndex].label}
+        </p>
+      </div>
+
+      {/* Compass / Decorative element */}
+      <div className="absolute top-8 right-8 text-navy/20 font-serif text-4xl italic select-none">
+        N
       </div>
     </div>
   )
