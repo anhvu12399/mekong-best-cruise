@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Playfair_Display } from "next/font/google"
 import { QuickDecision } from "@/components/quick-decision"
 import { ExpeditionCruises } from "@/components/expedition-cruises"
@@ -200,13 +201,13 @@ export default function DiscoverClient() {
           <p className="text-white/70 text-base md:text-lg mb-12 font-light max-w-xl mx-auto">
             Speak with our travel artisans to craft a bespoke journey perfectly tailored to your desires.
           </p>
-          <button
-            onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
+          <Link
+            href="/plan-your-journey"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300"
           >
             <span>Plan Your Journey</span>
             <ArrowRight size={16} />
-          </button>
+          </Link>
         </div>
       </section>
     </main>

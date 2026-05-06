@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 
 const NAV_ITEMS = ["Overview", "The Day", "Experiences", "Essentials"]
@@ -313,9 +314,9 @@ export function OneDayClient() {
             ))}
           </div>
           <div className="mt-20">
-            <button className="bg-navy text-white px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-navy/90 transition-colors">
+            <Link href="/plan-your-journey" className="inline-block bg-navy text-white px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-navy/90 transition-colors">
               Request This Journey
-            </button>
+            </Link>
           </div>
         </div>
       </section>

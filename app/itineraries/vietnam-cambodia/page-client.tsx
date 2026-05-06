@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import { VietnamCambodiaMap } from "@/components/vietnam-cambodia-map"
 
@@ -432,7 +433,17 @@ export function VietnamCambodiaClient() {
                 </div>
               </div>
             ))}
-          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="py-24 bg-[#f7f4ef] border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
+          <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-6">Begin Your Pilgrimage</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-navy mb-12">Ready to Plan Your Journey?</h2>
+          <Link href="/plan-your-journey" className="inline-block bg-navy text-white px-10 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#8B4A2A] transition-colors">
+            Request Availability
+          </Link>
         </div>
       </section>
     </div>

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import { MekongDeltaMap } from "@/components/mekong-delta-map"
 
@@ -425,15 +426,13 @@ export function MekongDeltaClient() {
                   <li>✦ Add a private cooking class with a professional chef</li>
                 </ul>
               </div>
-              <a
-                href="https://www.toursmekong.com/tailor-made-tours/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/plan-your-journey"
                 className="w-full inline-flex items-center justify-center gap-3 px-8 py-5 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300 group"
               >
                 <span>Request Availability</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
