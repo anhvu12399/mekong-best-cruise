@@ -73,7 +73,7 @@ export function AboutUsClient() {
       </section>
 
       {/* ── STICKY SUBNAV ── */}
-      <nav className="sticky top-0 z-50 bg-[#ede9e2]/95 backdrop-blur-sm border-b border-[#e0d9ce]">
+      <nav className="sticky top-16 lg:top-20 z-30 bg-[#ede9e2]/95 backdrop-blur-sm border-b border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-14 overflow-x-auto gap-2 no-scrollbar">
           <div className="flex gap-8 min-w-max">
             {NAV_ITEMS.map((item) => (
@@ -97,7 +97,7 @@ export function AboutUsClient() {
       </nav>
 
       {/* ── OUR STORY ── */}
-      <section id="story" ref={(el) => { sectionRefs.current.story = el }} className="scroll-mt-14 py-24 bg-[#f7f4ef]">
+      <section id="story" ref={(el) => { sectionRefs.current.story = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] py-24 bg-[#f7f4ef]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-[#8B4A2A] text-[11px] tracking-[0.3em] uppercase font-bold mb-6">Our Story</p>
           <h2 className="font-serif text-4xl md:text-6xl text-navy mb-8 leading-tight">
@@ -128,7 +128,7 @@ export function AboutUsClient() {
       </section>
 
       {/* ── OUR SPECIALISTS ── */}
-      <section id="specialist" ref={(el) => { sectionRefs.current.specialist = el }} className="scroll-mt-14 bg-white border-t border-[#e0d9ce]">
+      <section id="specialist" ref={(el) => { sectionRefs.current.specialist = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] bg-white border-t border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 min-h-[600px]">
             {/* Image side */}
@@ -177,7 +177,7 @@ export function AboutUsClient() {
       </section>
 
       {/* ── PHILOSOPHY / PROCESS ── */}
-      <section id="philosophy" ref={(el) => { sectionRefs.current.philosophy = el }} className="scroll-mt-14 relative">
+      <section id="philosophy" ref={(el) => { sectionRefs.current.philosophy = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] relative">
         {/* Full-bleed image with overlay */}
         <div className="relative h-[60vh] flex items-end">
           <Image src="/images/luxury-balcony-sunset.avif" alt="Meaningful connections" fill className="object-cover" />
@@ -220,7 +220,7 @@ export function AboutUsClient() {
       </section>
 
       {/* ── RESPONSIBLE TRAVEL ── */}
-      <section id="responsible" ref={(el) => { sectionRefs.current.responsible = el }} className="scroll-mt-14 bg-[#f7f4ef] border-t border-[#e0d9ce]">
+      <section id="responsible" ref={(el) => { sectionRefs.current.responsible = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] bg-[#f7f4ef] border-t border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-0">
             <div className="flex flex-col justify-center py-16 lg:py-24 lg:pr-16">
@@ -250,7 +250,7 @@ export function AboutUsClient() {
       </section>
 
       {/* ── REVIEWS ── */}
-      <section id="reviews" ref={(el) => { sectionRefs.current.reviews = el }} className="scroll-mt-14 py-24 bg-white border-t border-[#e0d9ce]">
+      <section id="reviews" ref={(el) => { sectionRefs.current.reviews = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] py-24 bg-white border-t border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-14">
             <p className="text-[#8B4A2A] text-[11px] tracking-[0.3em] uppercase font-bold mb-4">What Our Guests Say</p>
