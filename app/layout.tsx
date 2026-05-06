@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from "@/components/header"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import dynamic from 'next/dynamic'
@@ -232,7 +233,12 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
 
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   )
