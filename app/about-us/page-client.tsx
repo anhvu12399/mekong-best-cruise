@@ -140,9 +140,9 @@ export function AboutUsClient() {
                   &ldquo;What I love most is the moment a client sends me a photo from a canal I recommended — somewhere they never would have found on their own. That&apos;s when I know we got it right.&rdquo;
                 </p>
                 <p className="text-[10px] tracking-widest uppercase text-[#c9a962] font-bold">— Linh, Mekong Delta Specialist</p>
-                <button className="mt-4 text-[10px] tracking-[0.2em] uppercase font-bold border border-white/50 px-4 py-2 hover:bg-white hover:text-navy transition-colors">
+                <a href="/our-specialists" className="mt-4 text-[10px] tracking-[0.2em] uppercase font-bold border border-white/50 px-4 py-2 hover:bg-white hover:text-navy transition-colors inline-block">
                   Meet Our Team
-                </button>
+                </a>
               </div>
             </div>
             {/* Content side */}
