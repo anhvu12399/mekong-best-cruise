@@ -28,7 +28,7 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [activeView, setActiveView] = useState<'main' | 'destinations'>('main')
+  const [activeView, setActiveView] = useState<'main' | 'destinations' | 'about'>('main')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,6 +84,15 @@ export function Header() {
                 >
                   Cruises
                 </Link>
+                <button
+                  onClick={() => {
+                    setIsSidebarOpen(true)
+                    setActiveView('about')
+                  }}
+                  className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
+                >
+                  About Us
+                </button>
               </nav>
             </div>
 
@@ -151,6 +160,9 @@ export function Header() {
               <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
                 Cruises
               </Link>
+              <button onClick={() => setActiveView('about')} className="flex justify-between items-center text-[28px] font-serif text-white hover:text-gold transition-colors group text-left">
+                About Us <ChevronRight size={20} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
+              </button>
             </div>
 
             {/* 2. TRENDING */}
@@ -182,10 +194,10 @@ export function Header() {
                   Travel Ideas <ChevronRight size={18} strokeWidth={1.5} className="text-white/30 group-hover:text-gold" />
                 </Link>
                 <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Stories & Heritage
+                  Our Story
                 </Link>
-                <Link href="/about-us" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  About Us
+                <Link href="/our-specialists" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  Our Specialists
                 </Link>
               </div>
             </div>
@@ -238,6 +250,37 @@ export function Header() {
               ))}
             </div>
           </div>
+
+          {/* ABOUT US SUB-MENU VIEW */}
+          <div className={`absolute top-0 left-0 w-full h-full overflow-y-auto flex flex-col p-8 pt-10 text-white transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+            activeView === 'about' ? 'translate-x-0' : 'translate-x-full'
+          }`}>
+            <button 
+              onClick={() => setIsSidebarOpen(false)} 
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-10"
+            >
+              <X size={28} strokeWidth={1.5} />
+            </button>
+            <button onClick={() => setActiveView('main')} className="flex items-center gap-2 text-white/50 hover:text-white mb-10 w-fit group mt-2">
+              <ChevronLeft size={20} strokeWidth={1.5} className="group-hover:-translate-x-1 transition-transform" />
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase">Back</span>
+            </button>
+            <div className="flex flex-col gap-8 pr-2">
+              <Link href="/about-us" onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[22px] font-serif text-white/90 hover:text-gold transition-colors group">
+                About Us Overview <ChevronRight size={18} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
+              </Link>
+              <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[22px] font-serif text-white/90 hover:text-gold transition-colors group">
+                Our Story <ChevronRight size={18} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
+              </Link>
+              <Link href="/our-specialists" onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[22px] font-serif text-white/90 hover:text-gold transition-colors group">
+                Our Specialists <ChevronRight size={18} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
+              </Link>
+            </div>
+            <div className="mt-12 pt-12 border-t border-white/10">
+              <p className="text-[13px] text-white/50 leading-relaxed font-serif italic">
+                "Crafting extraordinary river journeys through Southeast Asia's most captivating landscapes since 1993."
+              </p>
+            </div>
 
         </div>
       </div>
