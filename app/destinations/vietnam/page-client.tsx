@@ -1,282 +1,248 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Playfair_Display } from "next/font/google"
-import { ArrowRight, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react"
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
-const destinationSlides = [
-  {
-    title: "FLOATING\nMARKETS",
-    description: "Explore iconic floating markets like Cai Rang in Can Tho—a bustling, colorful hub of agricultural trade unfolding entirely on wooden boats at dawn.",
-    linkText: "EXPLORE MARKETS",
-    image: "/images/dest_vietnam.avif"
-  },
-  {
-    title: "LUXURY\nCRUISING",
-    description: "Experience world-class luxury on vessels like the Victoria Mekong, sailing from Vietnam to Cambodia while taking in the serene vistas of fishing villages.",
-    linkText: "VIEW CRUISES",
-    image: "/images/hero-2.avif"
-  },
-  {
-    title: "RUSTIC\nCHARM",
-    description: "Navigate narrow canals on a traditional three-plank wooden sampan, cycle through quiet village lanes, and balance across a classic 'monkey bridge'.",
-    linkText: "RIVER EXPERIENCES",
-    image: "/images/cultural-encounters-v2.avif"
-  }
-]
-
 const faqs = [
   {
-    question: "When is the best time to visit the Vietnam Mekong Delta?",
-    answer: "The best time to visit is during the dry season from November to April, when the skies are clear and the water is calm. The floating markets are also exceptionally vibrant just before the Lunar New Year."
+    question: "When is the best time to visit the Mekong Delta?",
+    answer: "November through April is the dry season — skies clear, canals run still, and the markets throng with life. Arrive just before Tết and you'll catch the delta in full celebration: flower boats, lantern-lit evenings, families cooking bánh tét through the night.",
   },
   {
-    question: "Are the orchards open year-round?",
-    answer: "Yes, the fertile soil of the delta allows for year-round fruit production. However, summer (June to August) is the peak harvest season for many tropical fruits like rambutan, mangosteen, and durian."
+    question: "What's the difference between a cruise and a private day tour?",
+    answer: "A cruise puts you on the river overnight — mornings belong entirely to you, anchored somewhere quiet while the locals go about their day. A day tour is faster, sharper, more curated. We offer both, and most guests who try a cruise never go back to the day format.",
   },
   {
-    question: "Do I need to book floating market tours in advance?",
-    answer: "To secure the best private sampans and expert English-speaking guides for the early morning rush at Cai Rang, we highly recommend booking in advance."
+    question: "Do I need to book the floating market in advance?",
+    answer: "Yes — and it matters more than people think. Cai Rang peaks between 6 and 8am. A private sampan with a guide who knows exactly where to anchor makes the difference between watching the market and being inside it.",
   },
   {
-    question: "Are the 'monkey bridges' safe?",
-    answer: "Traditional monkey bridges are made of bamboo and can be tricky. While they are a fun rustic experience, we always ensure safe, alternative walking paths are available for all guests."
+    question: "Is it safe to eat at riverside kitchens and family homes?",
+    answer: "Absolutely, and honestly, it's one of the best meals you'll have. Our hosts have been welcoming guests for years. The food is fresh, cooked in front of you, and deeply local. We wouldn't send you anywhere we haven't eaten ourselves.",
   },
   {
-    question: "What is the dress code for visiting pagodas?",
-    answer: "When visiting spiritual landmarks like Vinh Trang Pagoda or Truc Lam Zen Monastery, conservative dress is required. Shoulders and knees must be covered."
-  }
+    question: "What should I pack for a delta journey?",
+    answer: "Light layers for the boat (mornings are cool, afternoons humid), comfortable walking shoes for village paths, and a small dry bag for your camera. Leave the rolling suitcase at the hotel — a soft bag fits better on the sampan.",
+  },
+]
+
+const experiences = [
+  {
+    label: "River Culture",
+    title: "Dawn on Cai Rang",
+    body: "You hear it before you see it — the low chug of a diesel engine, a vendor calling across the water. By the time your sampan rounds the bend into Cai Rang at first light, fifty boats are already trading. Dragon fruit, pomelo, jackfruit, green bananas. Women in conical hats balance on the prow, paddling sideways through the traffic. A stick of the goods they're selling hangs from a bamboo pole so buyers can spot them from fifty meters away. There are no price tags. Every transaction is a conversation. You buy a bag of rambutan for a few thousand dong and eat them warm, watching the whole chaotic ballet from your boat as the sun climbs.",
+    image: "/images/dest_vietnam.avif",
+    tag: "5:45am · Cai Rang, Can Tho",
+  },
+  {
+    label: "Hidden Waterways",
+    title: "The Canals Nobody Talks About",
+    body: "Every guidebook sends you to the same three waterways. We go somewhere else. On a three-plank sampan so narrow your knees almost touch the banks, your guide poles you into channels shaded completely by water coconut palms — a tunnel of green that filters the light into something quiet and cathedral-like. A farmhouse appears through the leaves. Someone waves from a hammock. Ducks scatter as you pass. There's no commentary, no schedule, no other boats. Just the sound of the pole entering the water and withdrawing, and the particular silence of a place where tourism hasn't quite arrived yet.",
+    image: "/images/cultural-encounters-v2.avif",
+    tag: "10:00am · Ben Tre waterways",
+  },
+  {
+    label: "Living Heritage",
+    title: "The Family Table",
+    body: "Lunch doesn't happen at a restaurant. It happens in someone's home — a garden house built on stilts at the river's edge, where the kitchen smells of galangal and fish sauce and something sweet caramelizing in an earthen pot. The meal is set without a menu: cá kho tộ in a clay pot, canh chua bong súng, rau sống with a dozen dipping herbs, plain white rice and a clay pot of nuoc mam. You eat the way they eat — a little of everything, nothing wasted, conversation happening in two languages at once. By the time the fruit plate arrives — local longan, still warm from the tree — you realize you've been here two hours and nobody is in any hurry to leave.",
+    image: "/images/floating-markets-v2.avif",
+    tag: "12:30pm · A family home, Vinh Long",
+  },
 ]
 
 export default function VietnamClient() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % destinationSlides.length)
-    setProgress(0)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + destinationSlides.length) % destinationSlides.length)
-    setProgress(0)
-  }
-
-  useEffect(() => {
-    const duration = 6000;
-    const interval = 50;
-    const step = (interval / duration) * 100;
-
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setCurrentSlide((curr) => (curr + 1) % destinationSlides.length);
-          return 0;
-        }
-        return prev + step;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [currentSlide]);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
 
   return (
-    <>
-      <main className="min-h-screen bg-[#fbfaf8]">
-        <section className="relative w-full h-screen overflow-hidden bg-navy">
-          {destinationSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100 z-0" : "opacity-0 -z-10"
-              }`}
+    <main className="min-h-screen bg-[#f7f4ef]">
+
+      {/* ── MAGAZINE HERO ── */}
+      <section className="relative w-full h-screen overflow-hidden">
+        <Image
+          src="/images/dest_vietnam_hero.jpg"
+          alt="Mekong Delta at dawn, Vietnam"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75" />
+
+        {/* Issue line */}
+        <div className="absolute top-0 left-0 right-0 z-10 flex justify-between items-center px-8 lg:px-16 py-8 border-b border-white/10">
+          <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Destinations</span>
+          <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Issue No. 01 · Vietnam</span>
+        </div>
+
+        <div className="absolute inset-0 flex flex-col justify-end pb-16 lg:pb-24 px-8 lg:px-16 z-10">
+          <p className="text-gold text-[11px] tracking-[0.4em] uppercase font-bold mb-4">The Mekong Delta</p>
+          <h1 className={`text-white text-5xl md:text-7xl lg:text-[6rem] leading-[0.95] mb-6 max-w-4xl ${playfair.className}`}>
+            Where the River<br />
+            <em className="not-italic text-white/80">Does the Talking</em>
+          </h1>
+          <div className="flex items-end justify-between">
+            <p className="text-white/75 text-lg md:text-xl font-serif max-w-xl leading-relaxed">
+              Nine mouths, one river, ten thousand stories — the Mekong Delta is Vietnam at its most unguarded.
+            </p>
+            <Link
+              href="/plan-your-journey"
+              className="hidden md:flex items-center gap-3 text-white text-xs tracking-[0.2em] uppercase font-bold border-b border-white/40 pb-1 hover:text-gold hover:border-gold transition-colors"
             >
-              <Image
-                src={slide.image}
-                alt={slide.title.replace('\n', ' ')}
-                fill
-                priority={index === 0}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                className={`object-cover ${index === currentSlide ? "animate-[slowZoom_20s_ease-in-out_infinite_alternate]" : ""}`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30" />
-            </div>
-          ))}
-          
-          <div className="absolute inset-0 flex flex-col justify-end pb-12 lg:pb-20 px-6 lg:px-16 max-w-[90rem] mx-auto w-full z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-16 lg:mb-24">
-              <div className="lg:col-span-7">
-                <h1 className={`text-white text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] uppercase tracking-widest drop-shadow-xl ${playfair.className}`}>
-                  {destinationSlides[currentSlide].title.split('\n').map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      {i === 0 && <br />}
-                    </span>
-                  ))}
-                </h1>
-                <div className="w-48 h-0.5 bg-white/80 mt-8 md:mt-12" />
-              </div>
+              Plan This Journey <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
-              <div className="lg:col-span-5 flex flex-col items-start text-left lg:pb-2">
-                <p className="text-white/95 text-base md:text-lg leading-relaxed mb-8 max-w-lg drop-shadow-md font-medium">
-                  {destinationSlides[currentSlide].description}
-                </p>
-                <button 
-                  onClick={() => window.open("https://www.toursmekong.com/", "_blank")}
-                  className="text-white text-sm tracking-[0.2em] uppercase flex items-center gap-3 hover:text-gold transition-colors font-semibold"
-                >
-                  {destinationSlides[currentSlide].linkText} <ArrowRight size={18} />
-                </button>
-              </div>
-            </div>
+      {/* ── OPENING DISPATCH ── */}
+      <section className="max-w-3xl mx-auto px-6 lg:px-8 py-24 md:py-32">
+        <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-8">Dispatch from the Delta</p>
+        <div className="font-serif text-navy/80 text-xl md:text-2xl leading-[1.8] space-y-6">
+          <p>
+            <span className="float-left text-8xl leading-[0.75] mr-4 text-navy font-bold">I</span>
+            t was 5:40 in the morning when the boat left the dock at Can Tho. No coffee. No breakfast. Just the sound of the diesel engine settling into a low, confident rhythm and the river coming toward us out of the dark. By the time the sky turned pink at Cai Rang, we were already in the middle of it — fifty boats, a hundred women, a thousand kilos of tropical fruit moving on the water like a slow, colorful tide.
+          </p>
+          <p>
+            The Mekong Delta doesn't ease you in. It just begins. One moment you're on a quiet, mist-covered river; the next you're watching a woman in a conical hat pole her sampan through a gap that doesn't seem wide enough — balancing a crate of dragon fruit with one hand, waving at a familiar buyer with the other. The transaction lasts four seconds. She's already moving.
+          </p>
+          <p>
+            This is the delta's great gift: it shows you a world that has been running itself, quietly and confidently, for centuries. The floating markets, the canal-side kitchens, the farmhouses on stilts where dinner is whatever the garden and the river gave that morning — none of it is arranged for your benefit. You're simply allowed to be present. And that changes things.
+          </p>
+          <p>
+            To travel the Vietnamese Mekong properly is to let go of the schedule. Leave the city at dawn, not because the itinerary says to, but because the river at 6am is one of the most alive places on earth. Eat when you're hungry — but only what's in season, only what the woman at the dock just sold you from her boat. Sleep somewhere the ceiling fan turns slowly and the sounds at night are frogs and water and something far away that might be music.
+          </p>
+          <p>
+            It is, in the truest sense, a slow journey. Not slow in the sense of boring, but slow in the sense of <em>deliberate</em> — the kind of travel that asks you to pay attention, because the details here are extraordinary and they happen quickly and they do not repeat.
+          </p>
+        </div>
+      </section>
 
-            <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/30 pt-8 gap-6 md:gap-0">
-              <div className="flex items-center gap-8 text-white/90 text-sm tracking-widest uppercase font-medium w-full md:w-auto justify-center md:justify-start">
-                <button className="hover:text-gold transition-colors">Ships</button>
-                <button className="hover:text-gold transition-colors">FAQ</button>
-              </div>
-              
-              <div className="flex items-center gap-6 text-white font-medium text-sm tracking-widest flex-1 justify-center md:ml-32">
-                <span>{String(currentSlide + 1).padStart(2, '0')}</span>
-                <div className="w-48 md:w-80 h-px bg-white/20 relative">
-                  <div 
-                    className="absolute top-0 left-0 h-full bg-white transition-all duration-75 ease-linear" 
-                    style={{ width: `${progress}%` }} 
-                  />
+      {/* ── PULL QUOTE ── */}
+      <section className="bg-navy py-20 px-8 text-center">
+        <p className={`text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-4xl mx-auto font-serif italic`}>
+          "The best meals in the delta happen at tables with no menu, in kitchens that open onto the river, served by people who have been cooking this way since before the roads arrived."
+        </p>
+        <p className="text-gold text-[11px] tracking-[0.3em] uppercase mt-8 font-bold">— Field Notes, Vinh Long Province</p>
+      </section>
+
+      {/* ── THREE EXPERIENCES ── */}
+      <section className="py-24 lg:py-32 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20">
+            <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">Three Dispatches</p>
+            <h2 className={`text-4xl md:text-5xl text-navy ${playfair.className}`}>What a Day on the Delta Feels Like</h2>
+          </div>
+
+          <div className="space-y-32">
+            {experiences.map((exp, i) => (
+              <div key={i} className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                <div className={`relative aspect-[4/5] ${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <Image src={exp.image} alt={exp.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2">
+                    <span className="text-white/80 text-[10px] tracking-[0.25em] uppercase font-bold">{exp.tag}</span>
+                  </div>
                 </div>
-                <span>{String(destinationSlides.length).padStart(2, '0')}</span>
-              </div>
-
-              <div className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-end">
-                <button onClick={prevSlide} className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white hover:text-navy transition-all group">
-                  <ChevronLeft size={18} className="group-hover:-translate-x-0.5 transition-transform" />
-                </button>
-                <button onClick={nextSlide} className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white hover:text-navy transition-all group">
-                  <ChevronRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto px-6 lg:px-8 py-24 md:py-32">
-          <div className="prose prose-lg md:prose-xl mx-auto prose-p:text-[#333] prose-p:leading-relaxed font-serif">
-            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-navy first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8] mt-2">
-              The Vietnamese Mekong Delta is a vibrant tapestry of lush orchards, sprawling rice paddies, and a labyrinth of waterways that pulse with life. Known locally as the "Nine Dragons" for its many river mouths, this incredibly fertile region is the undisputed agricultural heartland of Vietnam.
-            </p>
-            <p className="mt-8">
-              To journey here is to step into a watercolor painting where sampans gracefully glide under the canopy of water coconuts. It is a place defined by its river culture—from the chaotic beauty of the morning floating markets to the gentle, welcoming smiles of the locals who invite you into their ancient homes and serene gardens.
-            </p>
-          </div>
-        </section>
-
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
-          <div className="text-center mb-20">
-            <h2 className={`text-4xl md:text-5xl text-navy mb-6 ${playfair.className}`}>
-              Immersive Vietnam Experiences
-            </h2>
-            <p className="font-serif text-[#666] text-xl max-w-2xl mx-auto">
-              Discover the soul of the delta through authentic, carefully curated encounters.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex flex-col mt-0 md:mt-20">
-              <div className="relative aspect-[3/4] w-full mb-6">
-                <Image src="/images/floating-markets-v2.avif" alt="River Culture" fill className="object-cover" />
-              </div>
-              <h3 className={`text-2xl text-navy mb-3 ${playfair.className}`}>Vibrant River Culture</h3>
-              <p className="text-[#555] font-serif leading-relaxed">
-                Explore iconic floating markets like Cai Rang, where generations of merchants trade tropical fruits from wooden boats. In the evenings, soak in the cultural ambiance at lively riverside promenades like Hai Ba Trung.
-              </p>
-            </div>
-
-            <div className="flex flex-col">
-              <div className="relative aspect-[3/4] w-full mb-6">
-                <Image src="/images/cultural-encounters-v2.avif" alt="Rustic Experiences" fill className="object-cover" />
-              </div>
-              <h3 className={`text-2xl text-navy mb-3 ${playfair.className}`}>Rustic Adventures</h3>
-              <p className="text-[#555] font-serif leading-relaxed">
-                Navigate narrow, shaded canals on a traditional three-plank sampan. Cycle through quiet village lanes, balance bravely across a "monkey bridge," and try your hand at traditional ditch-fishing with the locals.
-              </p>
-            </div>
-
-            <div className="flex flex-col mt-0 md:mt-40">
-              <div className="relative aspect-[3/4] w-full mb-6">
-                <Image src="/images/sacred-temples.avif" alt="Heritage" fill className="object-cover" />
-              </div>
-              <h3 className={`text-2xl text-navy mb-3 ${playfair.className}`}>Orchards & Heritage</h3>
-              <p className="text-[#555] font-serif leading-relaxed">
-                Visit lush river islands to taste fresh tropical fruits straight from the branch. Discover spiritual and historical landmarks such as the ornate Vinh Trang Pagoda and the beautifully preserved Binh Thuy Ancient House.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto px-6 lg:px-8 py-20 border-t border-navy/10">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl text-navy mb-4 ${playfair.className}`}>
-              Vietnam FAQ
-            </h2>
-            <p className="text-[#666] font-serif text-xl">
-              Essential information for navigating the Vietnamese delta.
-            </p>
-          </div>
-          
-          <div className="flex flex-col gap-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-navy/10 pb-2">
-                <button
-                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                  className="flex justify-between items-center w-full text-left py-4 group"
-                >
-                  <span className={`text-xl text-navy group-hover:text-gold transition-colors ${playfair.className}`}>
-                    {faq.question}
-                  </span>
-                  <span className="text-navy/50 ml-4 flex-shrink-0 transition-transform duration-300">
-                    {openFaqIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </span>
-                </button>
-                <div 
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFaqIndex === index ? "max-h-96 opacity-100 mb-4" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-[#555] font-serif leading-relaxed pr-12 text-lg">
-                    {faq.answer}
-                  </p>
+                <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                  <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">{exp.label}</p>
+                  <h3 className={`text-3xl md:text-4xl text-navy mb-6 ${playfair.className}`}>{exp.title}</h3>
+                  <p className="font-serif text-navy/70 text-lg leading-[1.8]">{exp.body}</p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="max-w-3xl mx-auto text-center px-6 py-24 border-t border-navy/10 mt-12">
-          <h2 className={`text-4xl md:text-5xl text-navy mb-8 ${playfair.className}`}>
-            Ready to Write Your Own Chapter?
-          </h2>
-          <p className="text-[#555] font-serif text-lg md:text-xl mb-12">
-            Speak with our destination experts to curate a bespoke riverboat journey that transcends the ordinary.
-          </p>
-          <button
-            onClick={() => window.open("https://www.toursmekong.com/", "_blank")}
-            className="inline-block bg-navy text-white px-12 py-5 uppercase tracking-widest text-sm hover:bg-gold transition-colors duration-300"
-          >
-            Request a Quote
-          </button>
-        </section>
-      </main>
+      {/* ── FULL-BLEED SECONDARY IMAGE ── */}
+      <section className="relative h-[60vh] overflow-hidden">
+        <Image src="/images/dest_vietnam_hero.jpg" alt="Vietnam Mekong River" fill className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+          <div>
+            <p className="text-white/60 text-[10px] tracking-[0.4em] uppercase mb-4">The Detail That Stays With You</p>
+            <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>
+              "The sound of the pole going into still water, over and over, until it becomes a kind of meditation."
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes slowZoom {
-          from { transform: scale(1); }
-          to { transform: scale(1.1); }
-        }
-      `}} />
-    </>
+      {/* ── PRACTICAL NOTES ── */}
+      <section className="py-24 bg-white border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">What You Need to Know</p>
+              <h2 className={`text-4xl text-navy mb-10 ${playfair.className}`}>Before You Go</h2>
+              <div className="grid grid-cols-2 gap-x-10 gap-y-8">
+                {[
+                  { label: "Best Season", value: "November – April" },
+                  { label: "Entry", value: "30-day visa on arrival or e-visa available" },
+                  { label: "Currency", value: "Vietnamese Đồng (VND)" },
+                  { label: "Language", value: "Vietnamese · English widely spoken in tourism" },
+                  { label: "Base City", value: "Ho Chi Minh City or Cần Thơ" },
+                  { label: "Journey Length", value: "1 to 7 days, tailored to you" },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-gold mb-1">{item.label}</p>
+                    <p className="font-serif text-navy/80">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#f7f4ef] p-10 lg:p-12 flex flex-col justify-between">
+              <div>
+                <p className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#8B4A2A] mb-6">Begin Your Delta Journey</p>
+                <p className={`text-3xl text-navy mb-6 leading-tight ${playfair.className}`}>
+                  Every journey here starts with a single question: how much time do you have?
+                </p>
+                <p className="font-serif text-navy/65 leading-relaxed mb-8">
+                  One day gives you a taste. Three days gives you a rhythm. Seven days gives you the feeling — the one that makes you understand why people who come here keep returning.
+                </p>
+              </div>
+              <Link
+                href="/plan-your-journey"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-navy text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#8B4A2A] transition-colors duration-300 group"
+              >
+                <span>Plan This Journey</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="max-w-3xl mx-auto px-6 lg:px-8 py-24 border-t border-[#e0d9ce]">
+        <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">Questions & Answers</p>
+        <h2 className={`text-4xl text-navy mb-12 ${playfair.className}`}>What Travelers Ask</h2>
+        <div className="divide-y divide-[#e0d9ce]">
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              <button
+                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                className="flex justify-between items-center w-full text-left py-6 group"
+              >
+                <span className={`text-xl text-navy group-hover:text-[#8B4A2A] transition-colors pr-6 ${playfair.className}`}>
+                  {faq.question}
+                </span>
+                <span className="text-navy/40 flex-shrink-0">
+                  {openFaqIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </span>
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${openFaqIndex === index ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"}`}>
+                <p className="font-serif text-navy/65 leading-relaxed text-lg">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+    </main>
   )
 }

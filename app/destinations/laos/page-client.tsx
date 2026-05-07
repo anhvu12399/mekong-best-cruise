@@ -1,280 +1,141 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Playfair_Display } from "next/font/google"
-import { ArrowRight, ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react"
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
-const destinationSlides = [
-  {
-    title: "THE SLOW\nBOAT",
-    description: "Embark on an iconic two-day journey from the Thai border at Huay Xai to Luang Prabang, resting overnight in Pak Beng while soaking in breathtaking, untouched riverside panoramas.",
-    linkText: "VIEW ITINERARY",
-    image: "/images/dest_laos.avif"
-  },
-  {
-    title: "PAK OU\nCAVES",
-    description: "Explore legendary limestone caves dramatically set into the cliffs along the Mekong, serving as a sanctuary for thousands of miniature, gold-leafed Buddha statues.",
-    linkText: "EXPLORE THE CAVES",
-    image: "/images/sacred-temples.avif"
-  },
-  {
-    title: "LUANG\nPRABANG",
-    description: "The enchanting terminus of many voyages, famous for its elegant French colonial architecture, the magnificent Wat Xieng Thong, and cascading turquoise waterfalls.",
-    linkText: "DISCOVER THE CITY",
-    image: "/images/hero-1.avif"
-  }
+const faqs = [
+  { question: "What makes Luang Prabang so special?", answer: "It's a UNESCO World Heritage town where French colonial architecture meets golden Buddhist temples, surrounded by mountains and the confluence of the Mekong and Nam Khan rivers. The alms-giving ceremony at dawn — monks in saffron receiving offerings from kneeling townspeople — is one of the most quietly affecting things you'll experience anywhere." },
+  { question: "Is Laos a good destination for slow travel?", answer: "It's arguably the finest slow-travel destination in Southeast Asia. The infrastructure is intentionally unhurried. Life moves at the pace of the river. For travelers burned out by the efficiency of modernity, Laos provides something rare: genuine stillness." },
+  { question: "How do I reach Luang Prabang by river?", answer: "The classic route is the Slow Boat from the Thailand border at Huay Xai, a two-day journey through the upper Mekong's limestone gorges. It's one of the great river journeys in Asia, and we can arrange private or boutique cabin options far removed from the backpacker experience." },
+  { question: "What should I know about visiting temples in Laos?", answer: "Dress conservatively — shoulders and knees covered. Remove shoes at the entrance. Don't photograph monks without asking first, and during the dawn alms ceremony, observe from a respectful distance without flash photography. The morning ritual is not a tourist attraction; it is a living practice." },
 ]
 
-const faqs = [
-  {
-    question: "How long is the Slow Boat journey?",
-    answer: "The classic Slow Boat journey from Huay Xai to Luang Prabang takes two full days, with an overnight stop in the riverside town of Pak Beng. It is designed to be a relaxing, immersive experience."
-  },
-  {
-    question: "Is accommodation included in Pak Beng?",
-    answer: "Yes, our luxury slow boat packages include pre-arranged, premium accommodation in Pak Beng, ensuring a comfortable rest between cruising days."
-  },
-  {
-    question: "When is the best time to visit Laos?",
-    answer: "The dry season, from November to March, is ideal. The weather is cool and comfortable, and the Mekong River's flow is steady and perfect for cruising."
-  },
-  {
-    question: "What should I wear to the Pak Ou Caves?",
-    answer: "As the caves are a deeply sacred Buddhist site, respectful attire is required. Shoulders and knees must be covered, and comfortable walking shoes are recommended for the stone steps."
-  },
-  {
-    question: "Can I buy authentic souvenirs at Ban Xang Hai?",
-    answer: "Absolutely! Ban Xang Hai, the 'Whisky Village', is famous for its traditional rice wine (Lao Lao) and intricate, hand-woven silk textiles—perfect for authentic souvenirs."
-  }
+const experiences = [
+  { label: "Sacred Dawn", title: "The Alms Walk", body: "You wake at 5am in Luang Prabang without an alarm — the temple bells do that for you. Out on the street in the blue pre-dawn dark, barefoot monks in saffron move silently in single file, lacquered alms bowls open. Townspeople kneel at low tables, pressing balls of sticky rice into each bowl as it passes. The whole thing takes perhaps twenty minutes. Nobody speaks. When it's over, the monks dissolve back into their wats and the street goes quiet again. You walk back to the hotel through the empty morning not quite sure what you just witnessed, but certain it mattered.", image: "/images/dest_laos.avif", tag: "5:30am · Main Street, Luang Prabang" },
+  { label: "River Passage", title: "The Mekong's Limestone Corridor", body: "The upper Mekong between Thailand and Luang Prabang passes through country that makes you put your book down. Karst cliffs rise straight from the water. Villages appear on the bank — a cluster of teak houses, a dock, a dog watching the boat pass — then disappear behind a bend. The Pak Ou caves appear on the cliff face: two chambers filled with hundreds of wooden Buddha images left by pilgrims over centuries. You climb the stone steps, step into the cool interior, and stand very still for a moment. The river waits for you.", image: "/images/dest_laos.avif", tag: "All day · Upper Mekong River" },
+  { label: "Living Craft", title: "The Weaving Villages", body: "Ban Phanom sits three kilometers from Luang Prabang and has been weaving silk and cotton on hand looms for generations. In the early morning, you walk the village and the sound is unmistakable — the clack and thump of the loom, irregular but constant, coming from every second house. A weaver in her sixties shows you how the pattern is built, thread by thread, from memory. She doesn't need a chart. She learned this when she was eight and hasn't forgotten a single row since. The silk she's working will become a sinh — the traditional tubular skirt worn by Lao women — and it will take another three weeks. You buy a scarf that took three days. It seems inadequate.", image: "/images/dest_laos.avif", tag: "9:00am · Ban Phanom village" },
 ]
 
 export default function LaosClient() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [progress, setProgress] = useState(0)
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % destinationSlides.length)
-    setProgress(0)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + destinationSlides.length) % destinationSlides.length)
-    setProgress(0)
-  }
-
-  useEffect(() => {
-    const duration = 6000;
-    const interval = 50;
-    const step = (interval / duration) * 100;
-
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setCurrentSlide((curr) => (curr + 1) % destinationSlides.length);
-          return 0;
-        }
-        return prev + step;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [currentSlide]);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
 
   return (
-    <>
-      <main className="min-h-screen bg-[#fbfaf8]">
-        <section className="relative w-full h-screen overflow-hidden bg-navy">
-          {destinationSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100 z-0" : "opacity-0 -z-10"
-              }`}
-            >
-              <Image
-                src={slide.image}
-                alt={slide.title.replace('\n', ' ')}
-                fill
-                priority={index === 0}
-                className={`object-cover ${index === currentSlide ? "animate-[slowZoom_20s_ease-in-out_infinite_alternate]" : ""}`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30" />
-            </div>
-          ))}
-          
-          <div className="absolute inset-0 flex flex-col justify-end pb-12 lg:pb-20 px-6 lg:px-16 max-w-[90rem] mx-auto w-full z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-16 lg:mb-24">
-              <div className="lg:col-span-7">
-                <h1 className={`text-white text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] uppercase tracking-widest drop-shadow-xl ${playfair.className}`}>
-                  {destinationSlides[currentSlide].title.split('\n').map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      {i === 0 && <br />}
-                    </span>
-                  ))}
-                </h1>
-                <div className="w-48 h-0.5 bg-white/80 mt-8 md:mt-12" />
-              </div>
+    <main className="min-h-screen bg-[#f7f4ef]">
+      <section className="relative w-full h-screen overflow-hidden">
+        <Image src="/images/dest_laos_hero.jpg" alt="Buddhist monks at dawn, Laos" fill priority className="object-cover" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/30 to-black/80" />
+        <div className="absolute top-0 left-0 right-0 z-10 flex justify-between items-center px-8 lg:px-16 py-8 border-b border-white/10">
+          <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Destinations</span>
+          <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Issue No. 03 · Laos</span>
+        </div>
+        <div className="absolute inset-0 flex flex-col justify-end pb-16 lg:pb-24 px-8 lg:px-16 z-10">
+          <p className="text-gold text-[11px] tracking-[0.4em] uppercase font-bold mb-4">Land of a Million Elephants</p>
+          <h1 className={`text-white text-5xl md:text-7xl lg:text-[6rem] leading-[0.95] mb-6 max-w-4xl ${playfair.className}`}>
+            The Country<br /><em className="not-italic text-white/80">That Moves Slowly</em>
+          </h1>
+          <div className="flex items-end justify-between">
+            <p className="text-white/75 text-lg md:text-xl font-serif max-w-xl leading-relaxed">Laos is the Mekong at its most meditative — temple bells, saffron robes, and a river that has all the time in the world.</p>
+            <Link href="/plan-your-journey" className="hidden md:flex items-center gap-3 text-white text-xs tracking-[0.2em] uppercase font-bold border-b border-white/40 pb-1 hover:text-gold hover:border-gold transition-colors">Plan This Journey <ArrowRight size={14} /></Link>
+          </div>
+        </div>
+      </section>
 
-              <div className="lg:col-span-5 flex flex-col items-start text-left lg:pb-2">
-                <p className="text-white/95 text-base md:text-lg leading-relaxed mb-8 max-w-lg drop-shadow-md font-medium">
-                  {destinationSlides[currentSlide].description}
-                </p>
-                <button 
-                  onClick={() => window.open("https://www.toursmekong.com/", "_blank")}
-                  className="text-white text-sm tracking-[0.2em] uppercase flex items-center gap-3 hover:text-gold transition-colors font-semibold"
-                >
-                  {destinationSlides[currentSlide].linkText} <ArrowRight size={18} />
-                </button>
-              </div>
-            </div>
+      <section className="max-w-3xl mx-auto px-6 lg:px-8 py-24 md:py-32">
+        <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-8">Dispatch from Luang Prabang</p>
+        <div className="font-serif text-navy/80 text-xl md:text-2xl leading-[1.8] space-y-6">
+          <p><span className="float-left text-8xl leading-[0.75] mr-4 text-navy font-bold">L</span>aos is the only country in Southeast Asia where the word 'rush' genuinely doesn't apply. The Mekong here is wide and brown and largely untroubled. The towns that line its banks — Luang Prabang in particular — seem to operate on a schedule set by the river and the temple bells rather than any human urgency. If you've been traveling through the region and starting to feel the pace of it, Laos is where you slow down.</p>
+          <p>Luang Prabang is a small UNESCO World Heritage town at the confluence of the Mekong and the Nam Khan, and it is, by almost any measure, one of the most beautiful places in Asia. French colonial shophouses with their deep verandas face golden-spired temples across streets shaded by frangipani. The town is compact enough to walk anywhere in twenty minutes, and everywhere you walk reveals another courtyard, another spirit house draped in flowers, another old man sleeping in a rocking chair with his cat.</p>
+          <p>The Buddhist culture here is not background scenery. It is the actual functioning culture of the town. The monks — some as young as six or seven, sent by their families for education and merit — rise before dawn and walk the alms route in a ceremony that has happened every morning for centuries. Watching it, even once, changes how you think about time.</p>
+          <p>The river beyond Luang Prabang rewards patience even more. The upper Mekong passes through limestone country of extraordinary drama — gorges and caves and villages that have no road access, only the river. The Pak Ou caves, where centuries of pilgrims have left thousands of wooden Buddha images in two riverside chambers, are accessible only by boat. The Mekong is the infrastructure here. Always has been.</p>
+          <p>What Laos offers, above all else, is the experience of a culture that is deeply itself. Not performing for tourism. Not yet fully absorbed into the global economy. Genuinely, quietly, going about its business — and generous enough to let you watch, and sometimes to invite you in for a cup of tea and a conversation that lasts longer than either of you intended.</p>
+        </div>
+      </section>
 
-            <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/30 pt-8 gap-6 md:gap-0">
-              <div className="flex items-center gap-8 text-white/90 text-sm tracking-widest uppercase font-medium w-full md:w-auto justify-center md:justify-start">
-                <button className="hover:text-gold transition-colors">Ships</button>
-                <button className="hover:text-gold transition-colors">FAQ</button>
-              </div>
-              
-              <div className="flex items-center gap-6 text-white font-medium text-sm tracking-widest flex-1 justify-center md:ml-32">
-                <span>{String(currentSlide + 1).padStart(2, '0')}</span>
-                <div className="w-48 md:w-80 h-px bg-white/20 relative">
-                  <div 
-                    className="absolute top-0 left-0 h-full bg-white transition-all duration-75 ease-linear" 
-                    style={{ width: `${progress}%` }} 
-                  />
+      <section className="bg-navy py-20 px-8 text-center">
+        <p className="text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-4xl mx-auto font-serif italic">"In Luang Prabang, the temple bells don't mark the time. They mark the beginning and end of a particular quality of silence."</p>
+        <p className="text-gold text-[11px] tracking-[0.3em] uppercase mt-8 font-bold">— Field Notes, Luang Prabang</p>
+      </section>
+
+      <section className="py-24 lg:py-32 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20">
+            <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">Three Dispatches</p>
+            <h2 className={`text-4xl md:text-5xl text-navy ${playfair.className}`}>What Laos Feels Like</h2>
+          </div>
+          <div className="space-y-32">
+            {experiences.map((exp, i) => (
+              <div key={i} className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                <div className={`relative aspect-[4/5] ${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <Image src={exp.image} alt={exp.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2"><span className="text-white/80 text-[10px] tracking-[0.25em] uppercase font-bold">{exp.tag}</span></div>
                 </div>
-                <span>{String(destinationSlides.length).padStart(2, '0')}</span>
-              </div>
-
-              <div className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-end">
-                <button onClick={prevSlide} className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white hover:text-navy transition-all group">
-                  <ChevronLeft size={18} className="group-hover:-translate-x-0.5 transition-transform" />
-                </button>
-                <button onClick={nextSlide} className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center text-white hover:bg-white hover:text-navy transition-all group">
-                  <ChevronRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto px-6 lg:px-8 py-24 md:py-32">
-          <div className="prose prose-lg md:prose-xl mx-auto prose-p:text-[#333] prose-p:leading-relaxed font-serif">
-            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-navy first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8] mt-2">
-              In Laos, the Mekong reveals its most serene and untamed soul. Flowing languidly between towering karst mountains and impenetrable jungles, this stretch of the river invites travelers to disconnect from the modern world and embrace the profound luxury of slow travel.
-            </p>
-            <p className="mt-8">
-              From the spiritual sanctuary of the Pak Ou Caves to the enchanting, timeless charm of Luang Prabang, the Lao Mekong is a tapestry of golden temples, saffron-robed monks, and sleepy riverside villages. It is the ultimate retreat for those seeking peace, authentic heritage, and breathtaking natural beauty.
-            </p>
-          </div>
-        </section>
-
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
-          <div className="text-center mb-20">
-            <h2 className={`text-4xl md:text-5xl text-navy mb-6 ${playfair.className}`}>
-              The Lao Mekong Experience
-            </h2>
-            <p className="font-serif text-[#666] text-xl max-w-2xl mx-auto">
-              Embrace the ultimate luxury of time on the river's most tranquil stretches.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="flex flex-col mt-0 md:mt-20">
-              <div className="relative aspect-[3/4] w-full mb-6">
-                <Image src="/images/hero-2.avif" alt="The Slow Boat" fill className="object-cover" />
-              </div>
-              <h3 className={`text-2xl text-navy mb-3 ${playfair.className}`}>The Slow Boat Journey</h3>
-              <p className="text-[#555] font-serif leading-relaxed">
-                Embark on an iconic two-day voyage from the Thai border at Huay Xai down to Luang Prabang. Rest overnight in Pak Beng and spend your days soaking in the breathtaking, untouched riverside panoramas.
-              </p>
-            </div>
-
-            <div className="flex flex-col">
-              <div className="relative aspect-[3/4] w-full mb-6">
-                <Image src="/images/cultural-encounters-v2.avif" alt="Riverside Craft Villages" fill className="object-cover" />
-              </div>
-              <h3 className={`text-2xl text-navy mb-3 ${playfair.className}`}>Riverside Craft Villages</h3>
-              <p className="text-[#555] font-serif leading-relaxed">
-                Step ashore at Ban Xang Hai, a village celebrated for its traditional rice wine distillation and intricate silk weaving. Interact with local artisans preserving centuries-old techniques.
-              </p>
-            </div>
-
-            <div className="flex flex-col mt-0 md:mt-40">
-              <div className="relative aspect-[3/4] w-full mb-6">
-                <Image src="/images/hero-1.avif" alt="Luang Prabang Charm" fill className="object-cover" />
-              </div>
-              <h3 className={`text-2xl text-navy mb-3 ${playfair.className}`}>Luang Prabang Charm</h3>
-              <p className="text-[#555] font-serif leading-relaxed">
-                Conclude your journey in a UNESCO World Heritage city famous for its elegant French colonial architecture, the magnificent Wat Xieng Thong, and the cascading turquoise pools of Kuang Si Falls.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="max-w-4xl mx-auto px-6 lg:px-8 py-20 border-t border-navy/10">
-          <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl text-navy mb-4 ${playfair.className}`}>
-              Laos FAQ
-            </h2>
-            <p className="text-[#666] font-serif text-xl">
-              Essential information for navigating the serene waters of Laos.
-            </p>
-          </div>
-          
-          <div className="flex flex-col gap-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-navy/10 pb-2">
-                <button
-                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                  className="flex justify-between items-center w-full text-left py-4 group"
-                >
-                  <span className={`text-xl text-navy group-hover:text-gold transition-colors ${playfair.className}`}>
-                    {faq.question}
-                  </span>
-                  <span className="text-navy/50 ml-4 flex-shrink-0 transition-transform duration-300">
-                    {openFaqIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                  </span>
-                </button>
-                <div 
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFaqIndex === index ? "max-h-96 opacity-100 mb-4" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-[#555] font-serif leading-relaxed pr-12 text-lg">
-                    {faq.answer}
-                  </p>
+                <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                  <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">{exp.label}</p>
+                  <h3 className={`text-3xl md:text-4xl text-navy mb-6 ${playfair.className}`}>{exp.title}</h3>
+                  <p className="font-serif text-navy/70 text-lg leading-[1.8]">{exp.body}</p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="max-w-3xl mx-auto text-center px-6 py-24 border-t border-navy/10 mt-12">
-          <h2 className={`text-4xl md:text-5xl text-navy mb-8 ${playfair.className}`}>
-            Ready to Write Your Own Chapter?
-          </h2>
-          <p className="text-[#555] font-serif text-lg md:text-xl mb-12">
-            Speak with our destination experts to curate a bespoke riverboat journey that transcends the ordinary.
-          </p>
-          <button
-            onClick={() => window.open("https://www.toursmekong.com/", "_blank")}
-            className="inline-block bg-navy text-white px-12 py-5 uppercase tracking-widest text-sm hover:bg-gold transition-colors duration-300"
-          >
-            Request a Quote
-          </button>
-        </section>
-      </main>
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes slowZoom {
-          from { transform: scale(1); }
-          to { transform: scale(1.1); }
-        }
-      `}} />
-    </>
+      <section className="relative h-[60vh] overflow-hidden">
+        <Image src="/images/dest_laos_hero.jpg" alt="Laos monks" fill className="object-cover object-top" sizes="100vw" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+          <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>"Laos teaches you something the rest of Southeast Asia rarely does: that slowing down is not a compromise. It's the point."</p>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">What You Need to Know</p>
+              <h2 className={`text-4xl text-navy mb-10 ${playfair.className}`}>Before You Go</h2>
+              <div className="grid grid-cols-2 gap-x-10 gap-y-8">
+                {[{ label: "Best Season", value: "October – March" }, { label: "Entry", value: "Visa on arrival or e-visa, ~$35 USD" }, { label: "Currency", value: "Lao Kip (LAK)" }, { label: "Language", value: "Lao · English in tourist areas" }, { label: "Base City", value: "Luang Prabang" }, { label: "Journey Length", value: "3 to 7 days ideal" }].map((item) => (
+                  <div key={item.label}><p className="text-[10px] tracking-[0.25em] uppercase font-bold text-gold mb-1">{item.label}</p><p className="font-serif text-navy/80">{item.value}</p></div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#f7f4ef] p-10 lg:p-12 flex flex-col justify-between">
+              <div>
+                <p className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#8B4A2A] mb-6">Your Laos Journey</p>
+                <p className={`text-3xl text-navy mb-6 leading-tight ${playfair.className}`}>The Mekong, the temples, and the quality of silence between them.</p>
+                <p className="font-serif text-navy/65 leading-relaxed mb-8">We design Laos journeys that move at the pace of the country — by boat through the gorges, by foot through the temple town, by tuk-tuk to the weaving villages. No rushing. That's the entire point.</p>
+              </div>
+              <Link href="/plan-your-journey" className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-navy text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#8B4A2A] transition-colors duration-300 group">
+                <span>Plan This Journey</span><ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-3xl mx-auto px-6 lg:px-8 py-24 border-t border-[#e0d9ce]">
+        <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">Questions & Answers</p>
+        <h2 className={`text-4xl text-navy mb-12 ${playfair.className}`}>What Travelers Ask</h2>
+        <div className="divide-y divide-[#e0d9ce]">
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              <button onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)} className="flex justify-between items-center w-full text-left py-6 group">
+                <span className={`text-xl text-navy group-hover:text-[#8B4A2A] transition-colors pr-6 ${playfair.className}`}>{faq.question}</span>
+                <span className="text-navy/40 flex-shrink-0">{openFaqIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</span>
+              </button>
+              <div className={`overflow-hidden transition-all duration-300 ${openFaqIndex === index ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"}`}>
+                <p className="font-serif text-navy/65 leading-relaxed text-lg">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   )
 }
