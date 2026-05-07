@@ -6,43 +6,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   const destinations = ['vietnam', 'cambodia', 'laos', 'thailand', 'myanmar', 'china']
+  const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days']
+
+  const staticPages = [
+    { url: BASE_URL, priority: 1.0, changeFrequency: 'daily' },
+    { url: `${BASE_URL}/discover`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${BASE_URL}/about-us`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${BASE_URL}/our-specialists`, priority: 0.8, changeFrequency: 'monthly' },
+    { url: `${BASE_URL}/plan-your-journey`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${BASE_URL}/cruises`, priority: 0.9, changeFrequency: 'weekly' },
+  ]
+
+  const destinationPages = destinations.map((dest) => ({
+    url: `${BASE_URL}/destinations/${dest}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  const itineraryPages = itineraries.map((slug) => ({
+    url: `${BASE_URL}/itineraries/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  const cruiseDestinationPages = destinations.map((dest) => ({
+    url: `${BASE_URL}/cruises/${dest}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
+
+  const legalPages = [
+    { url: `${BASE_URL}/terms-conditions`, priority: 0.3, changeFrequency: 'monthly' },
+    { url: `${BASE_URL}/privacy-policy`, priority: 0.3, changeFrequency: 'monthly' },
+  ]
 
   return [
-    {
-      url: BASE_URL,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/experiences`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/journeys`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    ...destinations.map((dest) => ({
-      url: `${BASE_URL}/destinations/${dest}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    })),
-    {
-      url: `${BASE_URL}/terms-conditions`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: `${BASE_URL}/privacy-policy`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
+    ...staticPages.map(p => ({ ...p, lastModified: now, changeFrequency: p.changeFrequency as any })),
+    ...destinationPages,
+    ...itineraryPages,
+    ...cruiseDestinationPages,
+    ...legalPages.map(p => ({ ...p, lastModified: now, changeFrequency: p.changeFrequency as any })),
   ]
 }
