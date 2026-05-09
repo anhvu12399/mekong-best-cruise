@@ -96,7 +96,7 @@ export function Hero() {
                 className="object-cover"
                 priority={index === 0}
                 fetchPriority={index === 0 ? "high" : "auto"}
-                quality={60}
+                quality={90}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               />
             </div>

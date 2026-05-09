@@ -135,7 +135,7 @@ export function DestinationTemplate(props: DestinationProps) {
                   fill
                   className="object-cover transition-transform duration-[2000ms] group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={65}
+                  
                 />
               </div>
             ))}
@@ -276,7 +276,7 @@ export function DestinationTemplate(props: DestinationProps) {
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={60}
+                  
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">

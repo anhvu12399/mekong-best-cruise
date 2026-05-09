@@ -92,7 +92,6 @@ export function OurHeritage() {
                 className="object-cover"
                 priority={idx === 0}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={60}
               />
             </div>
           ))}

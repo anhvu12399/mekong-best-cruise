@@ -15,7 +15,7 @@ export function ArtOfCruising() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={70}
+                
               />
             </div>
             {/* Decorative gold border */}
