@@ -27,7 +27,7 @@ export default function MyanmarClient() {
   return (
     <main className="min-h-screen bg-[#f7f4ef]">
       <section className="relative w-full h-screen overflow-hidden">
-        <Image src="/images/dest_myanmar_hero.jpg" alt="Bagan temples at sunset, Myanmar" fill priority className="object-cover" sizes="100vw" />
+        <Image src="/images/dest_myanmar_hero.avif" alt="Bagan temples at sunset, Myanmar" fill priority className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/85" />
         <div className="absolute top-0 left-0 right-0 z-10 flex justify-between items-center px-8 lg:px-16 py-8 border-b border-white/10">
           <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Destinations</span>
@@ -86,7 +86,7 @@ export default function MyanmarClient() {
       </section>
 
       <section className="relative h-[60vh] overflow-hidden">
-        <Image src="/images/dest_myanmar_hero.jpg" alt="Myanmar temples" fill className="object-cover" sizes="100vw" />
+        <Image src="/images/dest_myanmar_hero.avif" alt="Myanmar temples" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>"A civilization buried in the earth and rising from it at the same time — Bagan refuses to be in the past."</p>

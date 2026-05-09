@@ -333,8 +333,8 @@ export function MekongDeltaClient() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { name: 'Mekong Princess', type: 'Romantic Boutique', tagline: 'The river\'s most intimate address.', desc: 'Fourteen cabins. The crew knows your coffee order by morning two.', image: '/images/mekong_princess.png', guests: 28, cabins: 14 },
-              { name: 'Lan Diep', type: 'Traditional Sampan', tagline: 'Eight cabins. The whole delta to yourselves.', desc: 'A traditional Vietnamese sampan into channels that appear on no tourist map.', image: '/images/lan_diep.png', guests: 16, cabins: 8 },
+              { name: 'Mekong Princess', type: 'Romantic Boutique', tagline: 'The river\'s most intimate address.', desc: 'Fourteen cabins. The crew knows your coffee order by morning two.', image: '/images/mekong_princess.avif', guests: 28, cabins: 14 },
+              { name: 'Lan Diep', type: 'Traditional Sampan', tagline: 'Eight cabins. The whole delta to yourselves.', desc: 'A traditional Vietnamese sampan into channels that appear on no tourist map.', image: '/images/lan_diep.avif', guests: 16, cabins: 8 },
               { name: 'Victoria Mekong', type: 'Cultural Immersion', tagline: 'If you travel to be changed — this is your ship.', desc: 'Markets at dawn. Cooking classes. The best sunset seat on the delta.', image: '/images/victoria_mekong.avif', guests: 36, cabins: 18 },
             ].map(ship => (
               <div key={ship.name} className="group border border-[#e0d9ce] overflow-hidden bg-[#f7f4ef]">

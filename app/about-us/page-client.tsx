@@ -59,7 +59,7 @@ export function AboutUsClient() {
 
       {/* ── HERO ── */}
       <section className="relative h-[90vh] flex items-end justify-center text-center pb-20">
-        <Image src="/images/about_hero.png" alt="The Mekong at Golden Hour" fill className="object-cover" priority />
+        <Image src="/images/about_hero.avif" alt="The Mekong at Golden Hour" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="relative z-10 max-w-3xl px-6">
           <p className="text-[#c9a962] text-[10px] tracking-[0.35em] uppercase font-bold mb-5">About Mekong Best Cruise</p>
@@ -133,7 +133,7 @@ export function AboutUsClient() {
           <div className="grid lg:grid-cols-2 min-h-[600px]">
             {/* Image side */}
             <div className="relative min-h-[400px] lg:min-h-0">
-              <Image src="/images/about_specialist.png" alt="Our Mekong Specialist" fill className="object-cover" />
+              <Image src="/images/about_specialist.avif" alt="Our Mekong Specialist" fill className="object-cover" />
               {/* Floating quote card */}
               <div className="absolute bottom-8 left-8 right-8 md:right-auto md:max-w-xs bg-[#1a3a4a]/90 backdrop-blur-sm p-6 text-white">
                 <p className="font-serif text-sm italic leading-relaxed mb-4">
@@ -243,7 +243,7 @@ export function AboutUsClient() {
               </button>
             </div>
             <div className="relative min-h-[400px] lg:min-h-0">
-              <Image src="/images/about_responsible.png" alt="Responsible travel on the Mekong" fill className="object-cover" />
+              <Image src="/images/about_responsible.avif" alt="Responsible travel on the Mekong" fill className="object-cover" />
             </div>
           </div>
         </div>

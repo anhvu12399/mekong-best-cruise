@@ -12,7 +12,7 @@ const SPECIALISTS = [
     role: "Mekong Delta Specialist",
     location: "Can Tho, Vietnam",
     years: 11,
-    img: "/images/specialist_linh.png",
+    img: "/images/specialist_linh.avif",
     highlight: "Born on the delta, returned to share it.",
     bio: "Linh grew up in Ben Tre, where the river was her backyard. After studying tourism in Ho Chi Minh City, she spent three years working on local fishing boats before joining our team. She knows which canal to take at 6am, which garden café serves the best ca phe sua da, and which family will invite you to lunch like you've known each other for years.",
     quote: "The Mekong isn't a destination — it's a rhythm. Once you feel it, you don't want to leave.",
@@ -24,7 +24,7 @@ const SPECIALISTS = [
     role: "Cambodia & Angkor Specialist",
     location: "Siem Reap, Cambodia",
     years: 9,
-    img: "/images/specialist_tom.png",
+    img: "/images/specialist_tom.avif",
     highlight: "Lived in Siem Reap for 9 years. Never stopped discovering.",
     bio: "Tom arrived in Cambodia 'for six months' and never left. A former archaeologist, he has spent hundreds of hours inside the Angkor complex, understanding every gallery, every bas-relief, and the stories they tell. He designs temple experiences for guests who want more than a photo at sunrise — he wants you to feel the weight of 900 years of civilization.",
     quote: "I've walked every corridor of Angkor. I still find something new. That's what I want to share.",
@@ -36,7 +36,7 @@ const SPECIALISTS = [
     role: "Floating Market & Tonle Sap Specialist",
     location: "Phnom Penh, Cambodia",
     years: 7,
-    img: "/images/specialist_mai.png",
+    img: "/images/specialist_mai.avif",
     highlight: "She grew up trading at dawn — now she shows you how.",
     bio: "Mai was raised on the Tonle Sap Lake, where floating villages aren't tourist attractions — they're simply home. She brings guests into the rhythms of market life before the tour buses arrive, negotiating for fresh dragonfruit and rambutan while sharing stories about the lake's seasonal floods that define life here.",
     quote: "Everyone photographs the market from a distance. I take you inside it.",
@@ -48,7 +48,7 @@ const SPECIALISTS = [
     role: "Khmer History & Temple Specialist",
     location: "Siem Reap, Cambodia",
     years: 15,
-    img: "/images/specialist_sokha.png",
+    img: "/images/specialist_sokha.avif",
     highlight: "15 years guiding at Angkor. A walking encyclopedia.",
     bio: "Sokha has dedicated his life to the ancient Khmer empire. A certified guide for 15 years, he has guided UNESCO researchers and royal guests alike through the temple complex. He speaks Khmer, English, French, and some Japanese — and he reads the old Sanskrit inscriptions on the walls like newspaper headlines.",
     quote: "These stones were carved by hands like ours. When I read them, I feel the builders speak.",
@@ -61,21 +61,21 @@ const PHILOSOPHY_PANELS = [
     title: "Our travels shape yours.",
     quote: "It starts with a conversation to understand what you want. I've lived along this river for over a decade, so when you ask 'What should we do?' — I already have ideas that are uniquely suited to you.",
     attr: "— Linh, Mekong Delta Specialist",
-    img: "/images/specialist_linh.png",
+    img: "/images/specialist_linh.avif",
     imgLeft: false,
   },
   {
     title: "The passion that drives us.",
     quote: "I've walked every inch of Angkor. And I pass that passion into every trip I design. When guests tell me they can't wait to go back, I feel it because I know I've managed to share my love for this land.",
     attr: "— Tom, Cambodia & Angkor Specialist",
-    img: "/images/specialist_tom.png",
+    img: "/images/specialist_tom.avif",
     imgLeft: true,
   },
   {
     title: "Meticulously crafted, for you.",
     quote: "I plan every aspect of your trip thoughtfully. Not only do I pick the right routes and the right moments — I take care of all the little details, like the best table at sunset and which market stall to visit first, to make your entire trip effortless.",
     attr: "— Mai, Floating Market Specialist",
-    img: "/images/specialist_mai.png",
+    img: "/images/specialist_mai.avif",
     imgLeft: false,
   },
 ]
@@ -85,10 +85,10 @@ export function SpecialistsClient() {
   const [galleryIdx, setGalleryIdx] = useState(0)
 
   const galleryImages = [
-    { src: "/images/specialist_linh.png", caption: "Linh on the Mekong canals, Ben Tre" },
-    { src: "/images/specialist_tom.png", caption: "Tom at Angkor Wat, dawn reconnaissance" },
-    { src: "/images/specialist_mai.png", caption: "Mai at the Tonle Sap floating market" },
-    { src: "/images/specialist_sokha.png", caption: "Sokha at Preah Khan Temple, Siem Reap" },
+    { src: "/images/specialist_linh.avif", caption: "Linh on the Mekong canals, Ben Tre" },
+    { src: "/images/specialist_tom.avif", caption: "Tom at Angkor Wat, dawn reconnaissance" },
+    { src: "/images/specialist_mai.avif", caption: "Mai at the Tonle Sap floating market" },
+    { src: "/images/specialist_sokha.avif", caption: "Sokha at Preah Khan Temple, Siem Reap" },
   ]
 
   return (
@@ -96,7 +96,7 @@ export function SpecialistsClient() {
 
       {/* ── HERO ── */}
       <section className="relative h-[85vh] overflow-hidden">
-        <Image src="/images/specialist_hero.png" alt="Our Specialists" fill className="object-cover object-top" priority />
+        <Image src="/images/specialist_hero.avif" alt="Our Specialists" fill className="object-cover object-top" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/75" />
         {/* Breadcrumb */}
         <div className="absolute top-24 left-6 lg:left-10 z-10 flex items-center gap-2 text-white/60 text-[10px] tracking-widest uppercase">

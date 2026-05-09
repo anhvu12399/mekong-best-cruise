@@ -27,7 +27,7 @@ export default function ThailandClient() {
   return (
     <main className="min-h-screen bg-[#f7f4ef]">
       <section className="relative w-full h-screen overflow-hidden">
-        <Image src="/images/dest_thailand_hero.jpg" alt="Mekong River market, Thailand" fill priority className="object-cover" sizes="100vw" />
+        <Image src="/images/dest_thailand_hero.avif" alt="Mekong River market, Thailand" fill priority className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/80" />
         <div className="absolute top-0 left-0 right-0 z-10 flex justify-between items-center px-8 lg:px-16 py-8 border-b border-white/10">
           <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Destinations</span>
@@ -86,7 +86,7 @@ export default function ThailandClient() {
       </section>
 
       <section className="relative h-[60vh] overflow-hidden">
-        <Image src="/images/dest_thailand_hero.jpg" alt="Thailand Mekong" fill className="object-cover" sizes="100vw" />
+        <Image src="/images/dest_thailand_hero.avif" alt="Thailand Mekong" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>"The most interesting part of Thailand is the part nobody bothers to visit. The Mekong will tell you why."</p>

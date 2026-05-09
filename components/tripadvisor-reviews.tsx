@@ -105,7 +105,7 @@ export function TripAdvisorReviews() {
           className="absolute inset-0 w-full h-full"
         >
           <Image
-            src="/images/reviews-parallax-bg.jpg"
+            src="/images/reviews-parallax-bg.avif"
             alt="Mekong River Sunset Parallax Background"
             fill
             sizes="100vw"

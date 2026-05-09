@@ -28,7 +28,7 @@ const TIMELINE = [
     label: "Morning",
     place: "HCMC → Hidden Delta",
     tagline: "Leaving the noise behind.",
-    image: "/images/1day_tea.png",
+    image: "/images/1day_tea.avif",
     part1: {
       title: "07:30 — The Story Begins",
       body: "Depart Ho Chi Minh City in a comfortable private vehicle. Along the way, your guide sets the tone: the Mekong is not just a river region, but a region of slow living."
@@ -51,7 +51,7 @@ const TIMELINE = [
     label: "Afternoon",
     place: "Mekong Lifestyle",
     tagline: "Slow food and silent sunsets.",
-    image: "/images/1day_lunch.png",
+    image: "/images/1day_lunch.avif",
     part1: {
       title: "11:30 — An Upgraded Rustic Feast",
       body: "Sit down to a beautifully presented 'mâm quê' (rustic tray). This isn't standard tour food; it's a curated menu featuring caramelized clay pot fish (cá kho tộ), sour soup with river hemp flowers (canh chua bông điên điển), and boiled vegetables with savory dip."
@@ -98,7 +98,7 @@ export function OneDayClient() {
       {/* ── HERO ── */}
       <section className="relative h-[85vh] w-full flex items-end pb-24 justify-center text-center">
         <Image 
-          src="/images/1day_hero.png" 
+          src="/images/1day_hero.avif" 
           alt="Mindful Mekong" 
           fill 
           className="object-cover" 
@@ -277,9 +277,9 @@ export function OneDayClient() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Local Tea Ritual", desc: "Sit with locals in their garden, sharing tea and stories of the river's changing seasons.", img: "/images/1day_tea.png" },
-              { title: "Craft Workshop", desc: "Learn to make a traditional folk cake or beautifully wrap a local gift, carrying a piece of the Mekong home.", img: "/images/1day_boat.png" },
-              { title: "Silent Listening", desc: "A guided minute of absolute silence by the riverbank to truly feel the heartbeat of the delta.", img: "/images/1day_lunch.png" }
+              { title: "Local Tea Ritual", desc: "Sit with locals in their garden, sharing tea and stories of the river's changing seasons.", img: "/images/1day_tea.avif" },
+              { title: "Craft Workshop", desc: "Learn to make a traditional folk cake or beautifully wrap a local gift, carrying a piece of the Mekong home.", img: "/images/1day_boat.avif" },
+              { title: "Silent Listening", desc: "A guided minute of absolute silence by the riverbank to truly feel the heartbeat of the delta.", img: "/images/1day_lunch.avif" }
             ].map(exp => (
               <div key={exp.title} className="group relative aspect-[4/5] overflow-hidden">
                 <Image src={exp.img} alt={exp.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />

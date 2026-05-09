@@ -64,7 +64,7 @@ export default function VietnamClient() {
       {/* ── MAGAZINE HERO ── */}
       <section className="relative w-full h-screen overflow-hidden">
         <Image
-          src="/images/dest_vietnam_hero.jpg"
+          src="/images/dest_vietnam_hero.avif"
           alt="Mekong Delta at dawn, Vietnam"
           fill
           priority
@@ -160,7 +160,7 @@ export default function VietnamClient() {
 
       {/* ── FULL-BLEED SECONDARY IMAGE ── */}
       <section className="relative h-[60vh] overflow-hidden">
-        <Image src="/images/dest_vietnam_hero.jpg" alt="Vietnam Mekong River" fill className="object-cover object-center" sizes="100vw" />
+        <Image src="/images/dest_vietnam_hero.avif" alt="Vietnam Mekong River" fill className="object-cover object-center" sizes="100vw" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
