@@ -35,21 +35,27 @@ export const metadata: Metadata = {
   description:
     'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
   keywords: [
-    'Mekong River Cruise',
-    'luxury river cruise Southeast Asia',
-    'Mekong luxury cruise',
-    'Vietnam river cruise',
-    'Cambodia cruise',
-    'Laos cruise',
-    'Mekong Delta tour',
-    'Aqua Mekong',
-    'Jayavarman cruise',
-    'Mekong Jewel',
-    'tailor made Mekong tour',
-    'private Mekong cruise',
-    'luxury cruise Vietnam Cambodia',
-    'Southeast Asia river journey',
-    'bespoke river cruise Asia',
+    // Core high-volume keywords
+    'Mekong River Cruise', 'luxury river cruise Southeast Asia', 'Mekong luxury cruise',
+    'Vietnam river cruise', 'Cambodia cruise', 'Laos river cruise', 'Mekong Delta tour',
+    
+    // Ships & specific products
+    'Aqua Mekong cruise', 'Jayavarman cruise', 'Mekong Jewel', 'Victoria Mekong', 
+    'The Jahan cruise', 'Heritage Line Mekong', 'Pandaw river expedition',
+    
+    // Niche & long-tail
+    'tailor made Mekong tour', 'private Mekong cruise charter', 'small ship Mekong cruise',
+    'luxury cruise Vietnam to Cambodia', 'Siem Reap to Ho Chi Minh cruise',
+    'bespoke river cruise Asia', 'Mekong river boat charter', 'boutique Mekong cruise',
+    '5 star Mekong river cruise', 'Mekong delta luxury sampan',
+    
+    // Thematic & experiential
+    'slow travel Southeast Asia', 'cultural river cruise Vietnam', 'Mekong sunset cruise',
+    'Angkor Wat to Mekong delta', 'Mekong floating market tour', 'authentic Mekong experience',
+    
+    // Geographic long-tail
+    'Saigon to Phnom Penh boat', 'Luang Prabang river cruise', 'Golden Triangle cruise Thailand',
+    'Upper Mekong China cruise', 'Irrawaddy river cruise Myanmar', 'Tonle Sap lake cruise'
   ],
   authors: [{ name: 'Mekong Best Cruise', url: BASE_URL }],
   creator: 'Mekong Best Cruise',

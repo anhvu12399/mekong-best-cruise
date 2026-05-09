@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   const destinations = ['vietnam', 'cambodia', 'laos', 'thailand', 'myanmar', 'china']
-  const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days']
+  const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days', 'small-ship', 'private-charter']
 
   const staticPages = [
     { url: BASE_URL, priority: 1.0, changeFrequency: 'daily' },

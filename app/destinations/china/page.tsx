@@ -10,13 +10,17 @@ export const metadata: Metadata = {
     'Embark on a rare luxury cruise through Yunnan Province on the Upper Mekong (Lancang River). Explore Lijiang\'s ancient town, Tiger Leaping Gorge, and the untouched ethnic minority villages of southwest China.',
   keywords: [
     'China Mekong cruise',
-    'Yunnan river cruise',
-    'Lancang River cruise',
-    'Lijiang luxury tour',
+    'Lancang river cruise',
+    'Yunnan luxury river tour',
     'Tiger Leaping Gorge cruise',
-    'Upper Mekong China',
-    'Yunnan luxury journey',
-  ],
+    'Upper Mekong expedition China',
+    'Xishuangbanna river cruise',
+    'China to Laos boat journey',
+    'Mekong source tour',
+    'Yunnan slow travel',
+    'Lancang Jiang luxury cruise',
+    'China boutique river expedition'
+],
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,

@@ -15,6 +15,33 @@ const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
   title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+  keywords: [
+    'Mekong River Cruise',
+    'luxury river cruise Southeast Asia',
+    'Mekong luxury cruise',
+    'best Mekong river cruise',
+    '5 star Mekong river cruise',
+    'Mekong river boat charter',
+    'boutique Mekong cruise',
+    'small ship Mekong cruise',
+    'bespoke river cruise Asia',
+    'tailor made Mekong tour',
+    'private Mekong cruise charter',
+    'Aqua Mekong cruise',
+    'Jayavarman cruise',
+    'Mekong Jewel',
+    'Victoria Mekong',
+    'Heritage Line Mekong',
+    'Pandaw river expedition',
+    'Vietnam to Cambodia river cruise',
+    'Siem Reap to Ho Chi Minh cruise',
+    'slow travel Southeast Asia',
+    'Mekong sunset cruise',
+    'Mekong floating market tour',
+    'exclusive Mekong cruise deals',
+    'Mekong cruise luxury suites',
+    'Mekong river journey'
+],
   description:
     'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
   alternates: {
