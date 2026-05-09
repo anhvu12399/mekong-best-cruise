@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
 
 const heroSlides = [
   {
-    image: "/images/hero_1.avif",
+    image: "/images/hero_1_sharp.png",
     title: "The Golden Hour on the Mekong",
     heading: (
       <>
@@ -22,7 +22,7 @@ const heroSlides = [
     link: "/cruises",
   },
   {
-    image: "/images/hero_2.avif",
+    image: "/images/hero_2_sharp.png",
     title: "Vibrant Floating Markets of the Delta",
     heading: (
       <>
@@ -36,7 +36,7 @@ const heroSlides = [
     link: "/cruises/vietnam",
   },
   {
-    image: "/images/hero_3.avif",
+    image: "/images/hero_3_sharp.png",
     title: "Serene Canals & Private Sampan Journeys",
     heading: (
       <>
