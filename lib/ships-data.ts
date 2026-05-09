@@ -309,7 +309,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "On the upper Mekong, the stars are worth staying up for.",
     description:
       "The Mekong Star earns her name every evening — when the lights go out along the riverbank and the Laotian sky opens up in a way that cities never allow. Days of temple visits and village walks. Nights of absolute stillness.",
-    image: "/images/hero_2.avif",
+    image: "/images/enhanced_hero_2_sharp_optimized.avif",
     highlights: ["Rooftop stargazing deck", "22 river-facing cabins", "Night sky photography guide", "Remote village access"],
   },
   {

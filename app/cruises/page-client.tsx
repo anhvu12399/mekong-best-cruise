@@ -194,7 +194,7 @@ export default function CruisesClient() {
       <section className="relative min-h-screen flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_1.avif"
+            src="/images/enhanced_hero_1_sharp_optimized.avif"
             alt="Mekong River cruise at golden hour"
             fill
             className="object-cover"
@@ -445,7 +445,7 @@ export default function CruisesClient() {
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero_2.avif"
+            src="/images/enhanced_hero_2_sharp_optimized.avif"
             alt="Mekong at golden hour"
             fill
             className="object-cover"

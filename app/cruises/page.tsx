@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Mekong River Cruises | Luxury Riverboat Voyages',
     description:
       'Boutique cruises on the legendary Mekong River. Explore Vietnam, Cambodia, Laos and more with never more than 28 guests aboard.',
-    images: [{ url: '/images/hero_1.avif', width: 1200, height: 630, alt: 'Mekong River Cruise' }],
+    images: [{ url: '/images/enhanced_hero_1_sharp_optimized.avif', width: 1200, height: 630, alt: 'Mekong River Cruise' }],
   },
 }
 

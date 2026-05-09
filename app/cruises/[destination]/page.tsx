@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${BASE_URL}/cruises/${destination}`,
       title: `${label} Mekong River Cruises`,
       description: `Boutique ships navigating the ${label} Mekong — intimate, curated, and never more than 28 guests.`,
-      images: [{ url: SHIPS_BY_DESTINATION[destination]?.heroImage ?? '/images/hero_1.avif', width: 1200, height: 630 }],
+      images: [{ url: SHIPS_BY_DESTINATION[destination]?.heroImage ?? '/images/enhanced_hero_1_sharp_optimized.avif', width: 1200, height: 630 }],
     },
   }
 }

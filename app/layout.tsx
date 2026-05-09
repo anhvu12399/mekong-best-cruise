@@ -222,7 +222,7 @@ export default function RootLayout({
         <link 
           rel="preload" 
           as="image" 
-          href="/images/hero_1.avif" 
+          href="/images/enhanced_hero_1_sharp_optimized.avif" 
           fetchPriority="high" 
         />
         {/* Preload logo AVIF */}
