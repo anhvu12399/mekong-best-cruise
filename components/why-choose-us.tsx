@@ -1,87 +1,128 @@
 "use client"
 
-import Image from "next/image"
+import Link from "next/link"
 import { Playfair_Display } from "next/font/google"
+import {
+  Shield,
+  Users,
+  Clock,
+  Heart,
+  ThumbsUp,
+  Headphones,
+} from "lucide-react"
 
 const playfair = Playfair_Display({ subsets: ["latin"] })
 
-const REDIRECT_URL = "https://www.toursmekong.com/"
+const features = [
+  {
+    icon: Shield,
+    title: "Complete Peace of Mind",
+    description:
+      "Every journey is fully backed by comprehensive travel protection and around-the-clock on-the-ground support from our local team in Southeast Asia.",
+  },
+  {
+    icon: Users,
+    title: "True Mekong Experts",
+    description:
+      "Every specialist on our team has lived on and explored the Mekong for years — giving you insider knowledge and perspectives no guidebook can offer.",
+  },
+  {
+    icon: Clock,
+    title: "15+ Years of Experience",
+    description:
+      "More than a decade and a half of crafting unforgettable river journeys has taught us exactly what makes a voyage genuinely extraordinary.",
+  },
+  {
+    icon: Heart,
+    title: "Travel That Gives Back",
+    description:
+      "We partner exclusively with local operators committed to protecting the river's ecology and uplift­ing the communities that call it home.",
+  },
+  {
+    icon: ThumbsUp,
+    title: "98% Would Recommend Us",
+    description:
+      "Guest satisfaction is the only metric we care about. 98% of our travelers recommend us to friends and family without hesitation.",
+  },
+  {
+    icon: Headphones,
+    title: "Always Here for You",
+    description:
+      "Our multilingual support team is available before, during, and after your trip — so no question goes unanswered and no issue goes unresolved.",
+  },
+]
 
-const pillars = [
-  {
-    id: 1,
-    title: "People Who Actually Know the River",
-    description: "Our guides grew up here. They know which temple opens at dawn before the crowds arrive, which family still makes silk by hand, and exactly when the river mist burns off the water. You can't learn that from a textbook.",
-  },
-  {
-    id: 2,
-    title: "Small Ships. On Purpose.",
-    description: "We cap every voyage at 28 guests. Not because we have to — because we choose to. Smaller means slower. Slower means you actually see things. It's a deliberate choice, and our guests feel the difference from the first morning.",
-  },
-  {
-    id: 3,
-    title: "No Two Trips Are Ever The Same",
-    description: "We don't do cookie-cutter itineraries. Every journey is shaped around you — your pace, your curiosity, your idea of a perfect evening. Some guests want to cook with a local family. Others just want to sit on the deck and watch the world drift by. Both are right.",
-  },
+const stats = [
+  { value: "5,000+", label: "Happy Travelers" },
+  { value: "150+", label: "Local Partners" },
+  { value: "4.9★", label: "Average Rating" },
 ]
 
 export function WhyChooseUs() {
   return (
-    <section className="py-24 lg:py-32 bg-[#fbfaf8] overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          
-          {/* Image Column - Narrowed */}
-          <div className="lg:col-span-5 relative">
-            <div className="aspect-[3/4] relative overflow-hidden bg-navy/5">
-              <Image
-                src="/images/why-choose-us-bg.avif"
-                alt="Luxury cruise on Mekong River"
-                fill
-                className="object-cover transition-transform duration-1000 hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-            {/* Decorative offset border */}
-            <div className="absolute -inset-4 border border-gold/30 -z-10 translate-x-4 translate-y-4" />
-          </div>
+    <section className="py-24 lg:py-32 bg-[#faf8f5]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          {/* Content Column - Airy Text */}
-          <div className="lg:col-span-7 lg:pl-6">
-            <span className="text-[#9B7B3B] text-xs tracking-[0.3em] uppercase font-medium block mb-6">
-              Premium Experience
-            </span>
-            <h2 className={`text-3xl md:text-4xl lg:text-5xl text-navy leading-tight mb-14 ${playfair.className}`}>
-              What Makes the Difference
+          {/* ── LEFT: Editorial Text ── */}
+          <div className="lg:sticky lg:top-28">
+            <p className="text-[#9B7B3B] text-[11px] tracking-[0.35em] uppercase font-bold mb-6">
+              Why Travel With Us
+            </p>
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl text-navy leading-tight mb-6 ${playfair.className}`}>
+              Because the Mekong deserves to be experienced the right way
             </h2>
+            <p className="text-navy/65 text-base leading-relaxed mb-8 max-w-md">
+              We are not just a travel company. We are storytellers, connectors, and above all,
+              people who are genuinely in love with this river. Every journey we craft carries that
+              love — along with deep respect for this remarkable land and its people.
+            </p>
 
-            <div className="space-y-12">
-              {pillars.map((pillar, index) => (
-                <div key={pillar.id} className="relative pl-8">
-                  {/* Custom bullet */}
-                  <span className="absolute left-0 top-2.5 w-1.5 h-1.5 bg-gold rounded-full" />
-                  {/* Subtle connecting line */}
-                  {index !== pillars.length - 1 && (
-                    <span className="absolute left-[2.5px] top-6 w-px h-[calc(100%+16px)] bg-gold/20" />
-                  )}
-                  <h3 className="font-serif text-xl lg:text-2xl text-navy mb-4 tracking-wide">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-navy/70 text-sm md:text-base leading-relaxed max-w-lg font-light">
-                    {pillar.description}
-                  </p>
+            {/* Pull quote */}
+            <blockquote className="border-l-2 border-gold pl-5 mb-10">
+              <p className="text-navy/70 italic font-serif text-sm leading-relaxed">
+                "What makes a journey extraordinary is not the places you visit — it is the
+                connections you make and the feelings you carry home."
+              </p>
+              <cite className="block text-[11px] tracking-[0.2em] uppercase text-[#9B7B3B] font-bold mt-3 not-italic">
+                — Founder &amp; CEO
+              </cite>
+            </blockquote>
+
+            {/* Stats row */}
+            <div className="flex gap-10">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <p className={`text-2xl text-gold font-bold ${playfair.className}`}>{s.value}</p>
+                  <p className="text-navy/50 text-xs tracking-wide mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16">
-              <button
-                onClick={() => window.open(REDIRECT_URL, "_blank")}
-                className="text-xs tracking-[0.2em] uppercase font-bold text-[#9B7B3B] border-b border-[#9B7B3B] pb-1 hover:text-gold transition-colors"
+            <div className="mt-10">
+              <Link
+                href="/about-us"
+                className="text-[11px] tracking-[0.25em] uppercase font-bold text-[#9B7B3B] border-b border-[#9B7B3B]/50 pb-1 hover:border-[#9B7B3B] transition-colors"
               >
-                Read Our Story
-              </button>
+                Read Our Story →
+              </Link>
             </div>
+          </div>
+
+          {/* ── RIGHT: Feature Grid ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {features.map(({ icon: Icon, title, description }) => (
+              <div
+                key={title}
+                className="bg-white border border-navy/5 rounded-sm p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                <div className="w-9 h-9 rounded bg-[#faf3e8] flex items-center justify-center mb-4 group-hover:bg-gold/15 transition-colors">
+                  <Icon className="w-4.5 h-4.5 text-[#9B7B3B]" size={18} />
+                </div>
+                <h3 className="font-semibold text-navy text-sm mb-2 leading-snug">{title}</h3>
+                <p className="text-navy/55 text-[13px] leading-relaxed">{description}</p>
+              </div>
+            ))}
           </div>
 
         </div>
