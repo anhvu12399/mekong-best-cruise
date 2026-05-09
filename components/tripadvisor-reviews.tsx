@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { Playfair_Display } from "next/font/google"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -24,7 +24,7 @@ const REVIEWS = [
     initials: "YN",
     location: "Paris, France",
     trip: "The Jahan · Saigon to Siem Reap · 8 nights",
-    text: "We had such a great time on the Jahan Mekong River Cruise. We started in Saigon and slowly made our way up the Mekong to Siem Reap over 8 days and honestly it was one of the most relaxing and interesting trips we've done. The boat was beautiful and very comfortable, the staff were super friendly. What we loved most was seeing real local life along the river.",
+    text: "We had such a great time on the Jahan Mekong River Cruise. We started in Saigon and slowly made our way up the Mekong to Siem Reap over 8 days — honestly it was one of the most relaxing and interesting trips we've done. The boat was beautiful and very comfortable, the staff were super friendly. What we loved most was seeing real local life along the river.",
   },
   {
     id: 3,
@@ -54,23 +54,37 @@ const REVIEWS = [
 
 export function TripAdvisorReviews() {
   const [current, setCurrent] = useState(0)
-  const [parallaxY, setParallaxY] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
+  const rafRef = useRef<number | null>(null)
 
-  // Parallax on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-      const rect = sectionRef.current.getBoundingClientRect()
-      const windowH = window.innerHeight
-      // Map section position to a parallax offset
-      const progress = (windowH - rect.top) / (windowH + rect.height)
-      setParallaxY(Math.round(progress * 80 - 40)) // -40px to +40px
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
+  // ── True parallax: directly mutate DOM via rAF, zero React re-renders ──
+  const updateParallax = useCallback(() => {
+    if (!sectionRef.current || !bgRef.current) return
+    const rect = sectionRef.current.getBoundingClientRect()
+    const windowH = window.innerHeight
+    // progress: 0 when section top = windowBottom, 1 when section bottom = windowTop
+    const progress = (windowH - rect.top) / (windowH + rect.height)
+    // Map progress 0→1 to offset -60px→+60px (bg moves 120px total)
+    const offset = Math.round(progress * 120 - 60)
+    bgRef.current.style.transform = `translateY(${offset}px) scale(1.25)`
   }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(updateParallax)
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true })
+    // Run once on mount to set initial position
+    updateParallax()
+
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [updateParallax])
 
   const prev = () => setCurrent((c) => (c - 1 + REVIEWS.length) % REVIEWS.length)
   const next = () => setCurrent((c) => (c + 1) % REVIEWS.length)
@@ -82,86 +96,109 @@ export function TripAdvisorReviews() {
       ref={sectionRef}
       className="relative overflow-hidden py-28 lg:py-40"
     >
-      {/* ── Parallax Background ── */}
+      {/* ── Parallax Background — position absolute, larger than container so it has room to move ── */}
       <div
-        className="absolute inset-0 w-full h-full"
+        ref={bgRef}
+        aria-hidden="true"
         style={{
+          position: "absolute",
+          inset: "-15% 0",          // extend 15% above and below to prevent white gaps
           backgroundImage: "url('/images/reviews-parallax-bg.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          transform: `translateY(${parallaxY}px) scale(1.15)`,
+          backgroundPosition: "center center",
           willChange: "transform",
-          transition: "transform 0.05s linear",
+          transform: "translateY(0px) scale(1.25)", // initial — JS will update
         }}
       />
-      {/* Darkening overlay */}
-      <div className="absolute inset-0 bg-black/55" />
+
+      {/* Gradient overlay: slightly lighter at center for the card to pop */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 50% 55%, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.65) 100%)",
+        }}
+      />
 
       {/* ── Content ── */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
 
         {/* Label */}
-        <p className="text-white/60 text-[10px] tracking-[0.4em] uppercase font-bold mb-4">
+        <p className="text-white/55 text-[10px] tracking-[0.45em] uppercase font-bold mb-4">
           Traveler Stories
         </p>
 
         {/* Heading */}
-        <h2 className={`text-white text-4xl md:text-5xl mb-14 ${playfair.className}`}>
+        <h2 className={`text-white text-4xl md:text-5xl mb-12 leading-tight ${playfair.className}`}>
           What our guests are saying
         </h2>
 
-        {/* Review Card */}
-        <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-8 md:p-12 text-left shadow-2xl">
-
-          {/* Stars */}
-          <div className="flex gap-1 mb-6">
-            {[1, 2, 3, 4, 5].map((s) => (
-              <span key={s} className="text-gold text-xl">★</span>
-            ))}
+        {/* Review Card — glassmorphism */}
+        <div
+          className="rounded-2xl p-8 md:p-10 text-left shadow-2xl transition-all duration-500"
+          style={{
+            background: "rgba(255,255,255,0.09)",
+            backdropFilter: "blur(18px)",
+            WebkitBackdropFilter: "blur(18px)",
+            border: "1px solid rgba(255,255,255,0.14)",
+          }}
+        >
+          {/* Quote icon + stars */}
+          <div className="flex items-center justify-between mb-5">
+            <span className="text-gold text-4xl font-serif leading-none opacity-70">"</span>
+            <div className="flex gap-0.5">
+              {[1, 2, 3, 4, 5].map((s) => (
+                <span key={s} className="text-gold text-base">★</span>
+              ))}
+            </div>
           </div>
 
-          {/* Quote mark */}
-          <p className={`text-white/90 text-lg md:text-xl leading-relaxed font-serif mb-8`}>
-            "{review.text}"
+          {/* Review text */}
+          <p className="text-white/88 text-base md:text-lg leading-[1.85] font-serif mb-8">
+            {review.text}
           </p>
 
-          {/* Reviewer */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-11 h-11 rounded-full bg-gold/80 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+          {/* Reviewer info */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-5 border-t border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                 {review.initials}
               </div>
               <div>
-                <p className="text-white font-semibold text-sm">{review.name}</p>
-                <p className="text-white/50 text-xs">{review.location}</p>
+                <p className="text-white font-semibold text-sm leading-tight">{review.name}</p>
+                <p className="text-white/45 text-xs mt-0.5">{review.location}</p>
               </div>
             </div>
-            <p className="text-gold text-xs tracking-wide font-medium">{review.trip}</p>
+            <p className="text-gold/80 text-xs tracking-wide font-medium sm:text-right">
+              {review.trip}
+            </p>
           </div>
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-center gap-4 mt-8">
+        <div className="flex items-center justify-center gap-4 mt-7">
           <button
             onClick={prev}
             aria-label="Previous review"
-            className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white hover:border-white/50 transition-all"
           >
-            <ChevronLeft size={16} />
+            <ChevronLeft size={15} />
           </button>
 
           {/* Dots */}
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             {REVIEWS.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                aria-label={`Review ${i + 1}`}
-                className={`transition-all duration-300 rounded-full ${
-                  i === current
-                    ? "w-6 h-2 bg-gold"
-                    : "w-2 h-2 bg-white/30 hover:bg-white/50"
-                }`}
+                aria-label={`Go to review ${i + 1}`}
+                className="transition-all duration-300 rounded-full focus:outline-none"
+                style={{
+                  width: i === current ? "24px" : "8px",
+                  height: "8px",
+                  backgroundColor: i === current ? "var(--color-gold, #C9A84C)" : "rgba(255,255,255,0.28)",
+                }}
               />
             ))}
           </div>
@@ -169,9 +206,9 @@ export function TripAdvisorReviews() {
           <button
             onClick={next}
             aria-label="Next review"
-            className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white hover:border-white/50 transition-all"
           >
-            <ChevronRight size={16} />
+            <ChevronRight size={15} />
           </button>
         </div>
 
@@ -180,9 +217,9 @@ export function TripAdvisorReviews() {
           href={TRIPADVISOR_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-8 text-white/50 text-xs tracking-[0.2em] uppercase hover:text-white/80 transition-colors"
+          className="inline-flex items-center gap-2 mt-8 text-white/40 text-[11px] tracking-[0.2em] uppercase hover:text-white/70 transition-colors"
         >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#34E0A1]">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#34E0A1]">
             <path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 4.075-1.6L12 19.705l1.922-2.09a5.972 5.972 0 0 0 4.072 1.598 6 6 0 0 0 6-5.998 5.982 5.982 0 0 0-1.957-4.432L24 6.648h-4.35a13.573 13.573 0 0 0-7.644-2.353zM12 6.255c1.531 0 3.063.303 4.504.903C13.943 8.138 12 10.43 12 13.1c0-2.671-1.942-4.962-4.504-5.942A11.72 11.72 0 0 1 12 6.256zM6.002 9.157a4.059 4.059 0 1 1 0 8.118 4.059 4.059 0 0 1 0-8.118zm11.992.002a4.057 4.057 0 1 1 .003 8.115 4.057 4.057 0 0 1-.003-8.115zm-11.992 1.93a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256zm11.992 0a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256z" />
           </svg>
           Read all reviews on TripAdvisor · 4.8 / 5.0
