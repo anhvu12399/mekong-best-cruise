@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Playfair_Display } from "next/font/google"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -53,77 +54,71 @@ const REVIEWS = [
 ]
 
 export function TripAdvisorReviews() {
-  const [current, setCurrent] = useState(0)
-  const sectionRef = useRef<HTMLElement>(null)
-  const bgRef = useRef<HTMLDivElement>(null)
-  const rafRef = useRef<number | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
 
-  // ── True parallax: directly mutate DOM via rAF, zero React re-renders ──
-  const updateParallax = useCallback(() => {
-    if (!sectionRef.current || !bgRef.current) return
-    const rect = sectionRef.current.getBoundingClientRect()
-    const windowH = window.innerHeight
-    // progress: 0 when section top = windowBottom, 1 when section bottom = windowTop
-    const progress = (windowH - rect.top) / (windowH + rect.height)
-    // Map progress 0→1 to offset -60px→+60px (bg moves 120px total)
-    const offset = Math.round(progress * 120 - 60)
-    bgRef.current.style.transform = `translateY(${offset}px) scale(1.25)`
-  }, [])
+  const handleScroll = () => {
+    const element = document.getElementById("testimonials-section")
+    if (element) {
+      const elementTop = element.getBoundingClientRect().top
+      const elementBottom = element.getBoundingClientRect().bottom
+      const windowHeight = window.innerHeight
+
+      if (elementBottom > 0 && elementTop < windowHeight) {
+        const relativeScroll = window.scrollY - element.offsetTop
+        setScrollY(relativeScroll)
+      }
+    }
+  }
 
   useEffect(() => {
-    const onScroll = () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-      rafRef.current = requestAnimationFrame(updateParallax)
-    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    // Initial call to set the right scrollY on mount
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    window.addEventListener("scroll", onScroll, { passive: true })
-    // Run once on mount to set initial position
-    updateParallax()
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % REVIEWS.length)
+  }
 
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-    }
-  }, [updateParallax])
+  const prevTestimonial = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + REVIEWS.length) % REVIEWS.length
+    )
+  }
 
-  const prev = () => setCurrent((c) => (c - 1 + REVIEWS.length) % REVIEWS.length)
-  const next = () => setCurrent((c) => (c + 1) % REVIEWS.length)
-
-  const review = REVIEWS[current]
+  const current = REVIEWS[currentIndex]
 
   return (
     <section
-      ref={sectionRef}
+      id="testimonials-section"
       className="relative overflow-hidden py-28 lg:py-40"
     >
-      {/* ── Parallax Background — position absolute, larger than container so it has room to move ── */}
-      <div
-        ref={bgRef}
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: "-15% 0",          // extend 15% above and below to prevent white gaps
-          backgroundImage: "url('/images/reviews-parallax-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          willChange: "transform",
-          transform: "translateY(0px) scale(1.25)", // initial — JS will update
-        }}
-      />
+      {/* Background image with parallax effect */}
+      <div className="absolute inset-0 w-full h-[150%] -top-[25%]">
+        <div
+          style={{
+            transform: `translateY(${scrollY * 0.3}px)`,
+            willChange: "transform",
+          }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <Image
+            src="/images/reviews-parallax-bg.jpg"
+            alt="Mekong River Sunset Parallax Background"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/55" />
 
-      {/* Gradient overlay: slightly lighter at center for the card to pop */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 55%, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.65) 100%)",
-        }}
-      />
-
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-
         {/* Label */}
         <p className="text-white/55 text-[10px] tracking-[0.45em] uppercase font-bold mb-4">
           Traveler Stories
@@ -135,55 +130,50 @@ export function TripAdvisorReviews() {
         </h2>
 
         {/* Review Card — glassmorphism */}
-        <div
-          className="rounded-2xl p-8 md:p-10 text-left shadow-2xl transition-all duration-500"
-          style={{
-            background: "rgba(255,255,255,0.09)",
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
-            border: "1px solid rgba(255,255,255,0.14)",
-          }}
-        >
-          {/* Quote icon + stars */}
-          <div className="flex items-center justify-between mb-5">
-            <span className="text-gold text-4xl font-serif leading-none opacity-70">"</span>
-            <div className="flex gap-0.5">
-              {[1, 2, 3, 4, 5].map((s) => (
-                <span key={s} className="text-gold text-base">★</span>
-              ))}
-            </div>
-          </div>
-
-          {/* Review text */}
-          <p className="text-white/88 text-base md:text-lg leading-[1.85] font-serif mb-8">
-            {review.text}
-          </p>
-
-          {/* Reviewer info */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-5 border-t border-white/10">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                {review.initials}
-              </div>
-              <div>
-                <p className="text-white font-semibold text-sm leading-tight">{review.name}</p>
-                <p className="text-white/45 text-xs mt-0.5">{review.location}</p>
+        <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/15 text-left shadow-2xl transition-all duration-500">
+          
+          <div className="relative z-10">
+            {/* Quote icon + stars */}
+            <div className="flex items-center justify-between mb-5">
+              <span className="text-[#C9A84C] text-4xl font-serif leading-none opacity-70">"</span>
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <span key={s} className="text-[#C9A84C] text-base">★</span>
+                ))}
               </div>
             </div>
-            <p className="text-gold/80 text-xs tracking-wide font-medium sm:text-right">
-              {review.trip}
+
+            {/* Review text */}
+            <p className="text-white/88 text-base md:text-lg leading-[1.85] font-serif mb-8">
+              {current.text}
             </p>
+
+            {/* Reviewer info */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-5 border-t border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#C9A84C] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  {current.initials}
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm leading-tight">{current.name}</p>
+                  <p className="text-white/45 text-xs mt-0.5">{current.location}</p>
+                </div>
+              </div>
+              <p className="text-[#C9A84C]/80 text-xs tracking-wide font-medium sm:text-right">
+                {current.trip}
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Navigation */}
         <div className="flex items-center justify-center gap-4 mt-7">
           <button
-            onClick={prev}
+            onClick={prevTestimonial}
             aria-label="Previous review"
-            className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white hover:border-white/50 transition-all"
+            className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white hover:border-white/50 transition-all bg-transparent"
           >
-            <ChevronLeft size={15} />
+            <ChevronLeft className="h-4 w-4" />
           </button>
 
           {/* Dots */}
@@ -191,24 +181,24 @@ export function TripAdvisorReviews() {
             {REVIEWS.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrent(i)}
+                onClick={() => setCurrentIndex(i)}
                 aria-label={`Go to review ${i + 1}`}
                 className="transition-all duration-300 rounded-full focus:outline-none"
                 style={{
-                  width: i === current ? "24px" : "8px",
+                  width: i === currentIndex ? "24px" : "8px",
                   height: "8px",
-                  backgroundColor: i === current ? "var(--color-gold, #C9A84C)" : "rgba(255,255,255,0.28)",
+                  backgroundColor: i === currentIndex ? "#C9A84C" : "rgba(255,255,255,0.28)",
                 }}
               />
             ))}
           </div>
 
           <button
-            onClick={next}
+            onClick={nextTestimonial}
             aria-label="Next review"
-            className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white hover:border-white/50 transition-all"
+            className="w-8 h-8 rounded-full border border-white/25 flex items-center justify-center text-white/70 hover:bg-white/10 hover:text-white hover:border-white/50 transition-all bg-transparent"
           >
-            <ChevronRight size={15} />
+            <ChevronRight className="h-4 w-4" />
           </button>
         </div>
 
