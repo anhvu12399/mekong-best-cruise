@@ -69,7 +69,14 @@ export default function PlanYourJourneyPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       })
-      setStatus(res.ok ? "success" : "error")
+      if (res.ok) {
+        setStatus("success")
+        if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag('event', 'conversion', {'send_to': 'AW-414204624/ajiYCLH9p4AYENCFwcUB'})
+        }
+      } else {
+        setStatus("error")
+      }
     } catch {
       setStatus("error")
     }
@@ -380,7 +387,15 @@ export default function PlanYourJourneyPage() {
             </div>
             <h3 className="font-serif text-lg text-navy mb-2">Call a Specialist</h3>
             <div className="h-px w-10 bg-gold mx-auto mb-4" />
-            <a href="tel:+13159981998" className="text-navy font-bold text-xl tracking-wide hover:text-gold transition-colors block mb-1">
+            <a 
+              href="tel:+13159981998" 
+              className="text-navy font-bold text-xl tracking-wide hover:text-gold transition-colors block mb-1"
+              onClick={() => {
+                if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+                  (window as any).gtag('event', 'conversion', {'send_to': 'AW-414204624/Z7KECPSKhLcaENCFwcUB'})
+                }
+              }}
+            >
               +1 315 998 1998
             </a>
             <p className="text-navy/45 text-xs">Call us today until 9pm EST</p>

@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from "@/components/header"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import dynamic from 'next/dynamic'
+import Script from 'next/script'
 
 // Lazy-load below-fold layout components
 const Footer = dynamic(() => import('@/components/footer').then(m => ({ default: m.Footer })))
@@ -231,6 +232,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-414204624"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-414204624');
+          `}
+        </Script>
       </head>
       <body className={`${playfair.variable} ${inter.variable} font-sans bg-[#FAF9F5] text-[#1a202c]`}>
         <SmoothScroll />

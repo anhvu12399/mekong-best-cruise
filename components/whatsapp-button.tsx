@@ -10,6 +10,9 @@ export function WhatsAppButton() {
   const [expanded, setExpanded] = useState(false)
 
   const handleChat = () => {
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag('event', 'conversion', {'send_to': 'AW-414204624/DDYFCK79p4AYENCFwcUB'})
+    }
     window.open(WHATSAPP_URL, "_blank")
   }
 
