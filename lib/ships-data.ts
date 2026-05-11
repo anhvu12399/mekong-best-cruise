@@ -40,7 +40,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "An opulent riverboat evoking the romance of former British India.",
     description:
       "Named after one of the Mughal Empire's greatest rulers, The Jahan carries that ambition on water. Carved teak, brass fittings, and a library that smells of old paper. The river slides past your window like a film reel of another century.",
-    image: "/images/the_jahan.png",
+    image: "/images/the_jahan.avif",
     highlights: ["Heritage colonial interiors", "Library & observation lounge", "26 private suites", "Daily cultural immersion programs"],
   },
   {
@@ -68,7 +68,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Every morning on the river is a different movement.",
     description:
       "The Mekong Symphony moves with purpose — spacious cabins, generous deck space, and itineraries that feel composed rather than crowded. For travellers who want the full delta experience without sacrificing comfort.",
-    image: "/images/mekong_symphony.png",
+    image: "/images/mekong_symphony.avif",
     highlights: ["Sun deck with panoramic bar", "30 river-view cabins", "Cooking classes on board", "Village excursions daily"],
   },
   {
@@ -82,7 +82,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "The river's most intimate address.",
     description:
       "Fourteen cabins. Never more. The Mekong Princess earns her name through scale — small enough that the crew knows your coffee order by morning two, graceful enough that you forget you're moving.",
-    image: "/images/mekong_princess.png",
+    image: "/images/mekong_princess.avif",
     highlights: ["14 intimate cabins", "Personalized butler service", "Signature cocktail bar", "Sunset sampan excursions"],
   },
   {
@@ -96,7 +96,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Built from history. Sailed into it.",
     description:
       "Pandaw ships are built to a 1947 Irrawaddy Flotilla blueprint — all teak and polished brass, with the open veranda decks that let the river in at every hour. The Tonle is among the finest of them, named for the great Cambodian lake she loves to explore.",
-    image: "/images/tonle_pandaw.png",
+    image: "/images/tonle_pandaw.avif",
     highlights: ["1947 heritage blueprint design", "All-teak open veranda decks", "Tonle Sap Lake excursions", "Included shore excursions"],
   },
   {
@@ -110,7 +110,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Named for the tributary. Shaped by the river.",
     description:
       "The Bassac Pandaw navigates the quieter arms of the delta — the tributaries and backwaters that larger ships can't reach. Her small scale is her greatest asset.",
-    image: "/images/bassac_pandaw.png",
+    image: "/images/bassac_pandaw.avif",
     highlights: ["Backwater access routes", "16 teak-lined cabins", "Expert naturalist guides", "Bicycle excursion kit"],
   },
   {
@@ -138,7 +138,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Two countries. One river. No two days the same.",
     description:
       "The Indochina Pandaw was built for journeys that cross borders — Vietnam into Cambodia and back again, following the river as it doesn't care about lines on maps. Heritage teak, veranda decks, the daily rhythms of life at water level.",
-    image: "/images/indochina_pandaw.png",
+    image: "/images/indochina_pandaw.avif",
     highlights: ["Cross-border itineraries", "Veranda deck dining", "20 teak cabins", "Border crossing assistance"],
   },
   {
@@ -166,7 +166,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Some ships feel like someone built them with love. This is one.",
     description:
       "A traditional wooden vessel, hand-crafted and intimate. Toum Tiou II carries just 24 guests through the quietest parts of the Mekong — the parts where the water is brown and wide and the silence is absolute.",
-    image: "/images/toum_tiou_ii.png",
+    image: "/images/toum_tiou_ii.avif",
     highlights: ["12 handcrafted wooden cabins", "Traditional boat architecture", "Access to shallow backwaters", "Hammock deck"],
   },
   {
@@ -180,7 +180,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "The river runs through everything she does.",
     description:
       "Inspired by her older sister but with more space, more light, and more time to breathe. The Indochine II is a classic heritage vessel that moves between Vietnam and Cambodia with the unhurried confidence of a ship that knows exactly where it belongs.",
-    image: "/images/indochine_ii.png",
+    image: "/images/indochine_ii.avif",
     highlights: ["Heritage colonial style", "18 climate-controlled cabins", "Panoramic observation deck", "French-Vietnamese cuisine"],
   },
   {
@@ -194,7 +194,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "She's been sailing this river since before it was fashionable.",
     description:
       "The original Indochine — smaller, older, and carrying something the newer ships are still learning: a sense of place. She fits into the Mekong's rhythms the way only time can teach a ship to do.",
-    image: "/images/indochine_i.png",
+    image: "/images/indochine_i.avif",
     highlights: ["14 classic heritage cabins", "Original teak fittings", "Intimate dining room", "Guided village walks"],
   },
   {
@@ -208,7 +208,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Named for the river. Built to understand it.",
     description:
       "There's a reason the Mekong Pandaw shares her name with the waterway. She was designed specifically for this river — for its width, its moods, its hidden tributaries. She knows it the way a local knows their neighbourhood.",
-    image: "/images/mekong_pandaw.png",
+    image: "/images/mekong_pandaw.avif",
     highlights: ["Designed for Mekong navigation", "Open teak deck dining", "20 veranda cabins", "Photography workshops"],
   },
   {
@@ -222,7 +222,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Eight cabins. The whole delta to yourselves.",
     description:
       "A traditional Vietnamese river sampan — small, wooden, and deeply local. The Lan Diep takes just 16 guests into the smallest channels of the Mekong Delta, the ones that appear on no tourist map, where life has been lived the same way for centuries.",
-    image: "/images/lan_diep.png",
+    image: "/images/lan_diep.avif",
     highlights: ["8 authentic wooden cabins", "Delta-exclusive routes", "Daily market visits", "Local family home-stays"],
   },
 ]
@@ -239,7 +239,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "A king's river, sailed with a king's patience.",
     description:
       "Named after the last king of Vientiane, the Anouvong carries a quiet nobility through the upper Mekong. The slow bends of the Laotian river suit her temperament — unhurried, golden, and impossibly serene.",
-    image: "/images/anouvong.png",
+    image: "/images/anouvong.avif",
     highlights: ["14 heritage-style cabins", "Luang Prabang excursions", "Buddhist temple visits at dawn", "Laotian cuisine on board"],
   },
   {
@@ -253,7 +253,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "Inspiration arrives at water level.",
     description:
       "The Bohème attracts a certain kind of traveller — curious, unhurried, with a sketchpad or a camera never far from hand. She moves through Laos's most painterly stretches of river with the spirit of an artist and the comfort of a luxury vessel.",
-    image: "/images/boheme.png",
+    image: "/images/boheme.avif",
     highlights: ["On-board art workshops", "12 design-forward cabins", "Photography excursions", "Curated cultural evenings"],
   },
   {
@@ -267,7 +267,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "The river reveals itself to those who slow down.",
     description:
       "The Mekong Pearl navigates the upper river with elegance — 18 well-appointed cabins, a generous sundeck, and guides who have been walking these villages for years. Laos's ancient rhythm becomes your own.",
-    image: "/images/mekong_pearl.png",
+    image: "/images/mekong_pearl.avif",
     highlights: ["18 river-view cabins", "Sundeck with canopy lounge", "Hill tribe village visits", "Traditional weaving workshops"],
   },
   {
@@ -281,7 +281,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "Teak decks. Open verandas. The river, always within reach.",
     description:
       "A classic Pandaw vessel built to the original 1947 blueprint — all teak and brass, with the open veranda decks that let the Laotian breeze in at all hours. Her itineraries reach the remote northern stretches most ships never attempt.",
-    image: "/images/laos_pandaw.png",
+    image: "/images/laos_pandaw.avif",
     highlights: ["1947 heritage blueprint design", "Northern Laos routes", "20 teak veranda cabins", "All shore excursions included"],
   },
   {
@@ -295,7 +295,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "The frangipani blooms. The river turns gold. You understand.",
     description:
       "Named for the champa flower — Laos's fragrant national bloom — this vessel carries something of that sweetness. She's among the more intimate Pandaw ships, and Laos suits her scale perfectly.",
-    image: "/images/champa_pandaw.png",
+    image: "/images/champa_pandaw.avif",
     highlights: ["16 teak-panelled cabins", "Fragrant garden deck", "Mekong sunrise yoga", "Luang Prabang alms-giving ceremony"],
   },
   {
