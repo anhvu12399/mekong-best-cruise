@@ -49,8 +49,8 @@ export function Header() {
     <>
       {/* Main Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? "bg-navy shadow-lg" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-40 bg-navy transition-all duration-300 ${
+          isScrolled ? "shadow-lg" : ""
         }`}
       >
         <div className="w-full px-6 lg:px-10 relative">

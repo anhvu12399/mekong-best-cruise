@@ -220,7 +220,7 @@ export default function CruisesClient() {
           <div className="grid lg:grid-cols-2 gap-16 items-end">
             {/* Left: Big Title */}
             <div>
-              <h1 className="font-serif text-6xl sm:text-7xl lg:text-8xl xl:text-9xl text-white leading-[0.9] tracking-tight mb-8">
+              <h1 className="font-serif text-4xl sm:text-6xl lg:text-8xl xl:text-9xl text-white leading-[0.9] tracking-tight mb-8">
                 MEKONG<br />RIVER<br />CRUISES
               </h1>
               <div className="w-24 h-px bg-gold mb-8" />
