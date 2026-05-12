@@ -117,8 +117,8 @@ export default function ShipsClient({ data }: { data: ShipData }) {
       </section>
 
       {/* ── MASSIVE PARALLAX / TALL IMAGE ── */}
-      <section className="relative w-full h-[120vh] md:h-[150vh] bg-[#111]">
-        <div className="absolute inset-0">
+      <section className="relative w-full h-[150vh] bg-[#111]">
+        <div className="sticky top-0 w-full h-screen overflow-hidden">
            <Image 
              src={data.gallery[0] || data.heroImage} 
              alt={`${data.name} from the front`} 
@@ -127,11 +127,11 @@ export default function ShipsClient({ data }: { data: ShipData }) {
            />
            {/* Subtle gradient at the bottom to make text readable */}
            <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/80 to-transparent" />
-        </div>
-        <div className="absolute bottom-10 left-6 md:left-12 z-10">
-           <p className="text-white/80 text-[10px] md:text-xs tracking-[0.25em] font-bold uppercase">
-             Unravel ancient mysteries in the Mekong Delta
-           </p>
+           <div className="absolute bottom-10 left-6 md:left-12 z-10">
+             <p className="text-white/80 text-[10px] md:text-xs tracking-[0.25em] font-bold uppercase drop-shadow-md">
+               Unravel ancient mysteries in the Mekong Delta
+             </p>
+           </div>
         </div>
       </section>
 
