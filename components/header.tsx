@@ -43,7 +43,7 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [activeView, setActiveView] = useState<'main' | 'destinations' | 'about'>('main')
+  const [activeView, setActiveView] = useState<'main' | 'destinations' | 'about' | 'travel-ideas'>('main')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -205,9 +205,9 @@ export function Header() {
             {/* 3. Secondary Links */}
             <div className="mb-10">
               <div className="flex flex-col gap-6">
-                <Link href="/destinations/vietnam" onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors group pr-2">
+                <button onClick={() => setActiveView('travel-ideas')} className="w-full flex justify-between items-center text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors group pr-2 text-left">
                   Travel Ideas <ChevronRight size={18} strokeWidth={1.5} className="text-white/30 group-hover:text-gold" />
-                </Link>
+                </button>
                 <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
                   Our Story
                 </Link>
@@ -297,6 +297,30 @@ export function Header() {
               </p>
             </div>
 
+          </div>
+
+          {/* TRAVEL IDEAS SUB-MENU VIEW */}
+          <div className={`absolute top-0 left-0 w-full h-full overflow-y-auto flex flex-col p-8 pt-10 text-white transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+            activeView === 'travel-ideas' ? 'translate-x-0' : 'translate-x-full'
+          }`}>
+            <button 
+              onClick={() => setIsSidebarOpen(false)} 
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-10"
+            >
+              <X size={28} strokeWidth={1.5} />
+            </button>
+            <button onClick={() => setActiveView('main')} className="flex items-center gap-2 text-white/50 hover:text-white mb-10 w-fit group mt-2">
+              <ChevronLeft size={20} strokeWidth={1.5} className="group-hover:-translate-x-1 transition-transform" />
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase">Back</span>
+            </button>
+            <div className="flex flex-col gap-5 pr-2 pb-10">
+              <h4 className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-4">Travel Ideas</h4>
+              {navLinks.find(n => n.label === 'Travel Ideas')?.subLinks?.map((sub) => (
+                <Link key={sub.label} href={sub.href} onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[12px] font-bold tracking-wider uppercase text-white/90 hover:text-gold transition-colors group border-b border-white/5 pb-3">
+                  {sub.label} <ChevronRight size={16} strokeWidth={1.5} className="text-white/30 group-hover:text-gold" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
