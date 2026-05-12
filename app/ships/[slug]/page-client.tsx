@@ -116,24 +116,7 @@ export default function ShipsClient({ data }: { data: ShipData }) {
         </div>
       </section>
 
-      {/* ── MASSIVE PARALLAX / TALL IMAGE ── */}
-      <section className="relative w-full h-[150vh] bg-[#111]">
-        <div className="sticky top-0 w-full h-screen overflow-hidden">
-           <Image 
-             src={data.gallery[0] || data.heroImage} 
-             alt={`${data.name} from the front`} 
-             fill 
-             className="object-cover object-center"
-           />
-           {/* Subtle gradient at the bottom to make text readable */}
-           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/80 to-transparent" />
-           <div className="absolute bottom-10 left-6 md:left-12 z-10">
-             <p className="text-white/80 text-[10px] md:text-xs tracking-[0.25em] font-bold uppercase drop-shadow-md">
-               Unravel ancient mysteries in the Mekong Delta
-             </p>
-           </div>
-        </div>
-      </section>
+
 
       {/* ── OVERVIEW ── */}
       <section id="overview" className="bg-white py-20 lg:py-32">
@@ -398,11 +381,11 @@ export default function ShipsClient({ data }: { data: ShipData }) {
       </section>
 
       {/* ── EARLY BIRD BONUS ── */}
-      <section className="relative py-32 flex items-center justify-center">
-         <div className="absolute inset-0">
-            <Image src={data.heroImage} alt="Early Bird" fill className="object-cover object-bottom" />
-            <div className="absolute inset-0 bg-black/60" />
-         </div>
+      <section 
+        className="relative py-32 flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: `url(${data.heroImage})` }}
+      >
+         <div className="absolute inset-0 bg-black/60" />
          <div className="relative z-10 text-center px-6">
             <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Early Bird Bonus</h2>
             <p className="text-white/80 font-sans font-light text-[15px] mb-10 max-w-xl mx-auto">
