@@ -103,10 +103,10 @@ export default function LuxuryCruisesPage() {
             <Image src="/images/sacred-temples.avif" alt="Temple morning excursion" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/fine-dining-deck.avif" alt="Fine dining on deck" fill className="object-cover" />
+            <Image src="/images/luxury_dining.png" alt="Fine dining on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury-balcony-sunset.avif" alt="Suite balcony at sunset" fill className="object-cover" />
+            <Image src="/images/luxury_sunset_balcony.png" alt="Suite balcony at sunset" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">

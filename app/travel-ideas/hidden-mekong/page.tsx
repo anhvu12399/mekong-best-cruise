@@ -72,7 +72,7 @@ export default function HiddenMekongPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/dest_vietnam.avif"
+          src="/images/hidden_canal.png"
           alt="Quiet canal life in the Mekong Delta"
           fill
           className="object-cover"
@@ -102,10 +102,10 @@ export default function HiddenMekongPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/coconut-forest-boat.avif" alt="Rowboat in a palm canal" fill className="object-cover" />
+            <Image src="/images/hidden_boy.png" alt="Boy fishing at dusk" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/cultural-encounters-new.avif" alt="Local artisan at work" fill className="object-cover" />
+            <Image src="/images/hidden_sampan.png" alt="Sampan on muddy bank" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
             <Image src="/images/monk-temple.avif" alt="Quiet village temple" fill className="object-cover" />

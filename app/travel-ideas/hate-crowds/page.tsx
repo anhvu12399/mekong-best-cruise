@@ -72,7 +72,7 @@ export default function HateCrowdsPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/luxury-balcony-sunset.avif"
+          src="/images/exp_astrology.avif"
           alt="Private moment on a quiet stretch of river"
           fill
           className="object-cover"
@@ -108,7 +108,7 @@ export default function HateCrowdsPage() {
             <Image src="/images/dest_myanmar.avif" alt="Empty waterway at golden hour" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/heritage_longway.avif" alt="Deserted cycling path" fill className="object-cover" />
+            <Image src="/images/dest_thailand.avif" alt="Deserted cycling path" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">

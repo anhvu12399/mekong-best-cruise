@@ -99,7 +99,7 @@ export default function RedefiningLuxuryPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/fine-dining-deck.avif" alt="Dinner on deck" fill className="object-cover" />
+            <Image src="/images/jayavarman_dining.png" alt="Dinner on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
             <Image src="/images/jewel_spa.png" alt="Spa space on a river ship" fill className="object-cover" />

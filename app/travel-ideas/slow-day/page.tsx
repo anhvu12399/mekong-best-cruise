@@ -72,7 +72,7 @@ export default function SlowDayPage() {
       {/* ── SPLIT: AFTERNOON ── */}
       <section className="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="relative aspect-[4/3]">
-          <Image src="/images/1day_tea.avif" alt="Hammock and tea in the afternoon" fill className="object-cover" />
+          <Image src="/images/slow_coffee.png" alt="Vietnamese morning coffee" fill className="object-cover" />
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">02:00 PM — Warm</p>
@@ -113,13 +113,13 @@ export default function SlowDayPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/1day_lunch.avif" alt="Lunch on the river" fill className="object-cover" />
+            <Image src="/images/slow_hammock.png" alt="Relaxing in hammock" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury-balcony-sunset.avif" alt="Sunset from the ship" fill className="object-cover" />
+            <Image src="/images/slow_lanterns.png" alt="Sunset lanterns" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/exp_silent_drift.avif" alt="Drifting at dusk" fill className="object-cover" />
+            <Image src="/images/slow_reading.png" alt="Reading on deck" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">

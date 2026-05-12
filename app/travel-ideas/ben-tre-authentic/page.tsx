@@ -72,7 +72,7 @@ export default function BenTrePage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/heritage_longway.avif"
+          src="/images/bentre_cycling.png"
           alt="Cycling path through coconut groves"
           fill
           className="object-cover"
@@ -105,10 +105,10 @@ export default function BenTrePage() {
             <Image src="/images/vc_day2.avif" alt="Village cycling in Ben Tre" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/1day_tea.avif" alt="Local tea with family" fill className="object-cover" />
+            <Image src="/images/bentre_tea.png" alt="Local tea with family" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/cultural-encounters-v2.avif" alt="Making rice paper by hand" fill className="object-cover" />
+            <Image src="/images/bentre_candy.png" alt="Making coconut candy" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">

@@ -30,7 +30,7 @@ export default function CajuputForestsPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/coconut-forest-boat.avif"
+          src="/images/cajuput_hero.png"
           alt="Paddling through flooded cajuput forest"
           fill
           className="object-cover"
@@ -72,7 +72,7 @@ export default function CajuputForestsPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/dest_vietnam.avif"
+          src="/images/cajuput_birds.png"
           alt="Lush green Vietnam landscape"
           fill
           className="object-cover"
@@ -100,7 +100,7 @@ export default function CajuputForestsPage() {
             </div>
           </div>
           <div className="relative aspect-[4/5]">
-            <Image src="/images/jewel_spa.png" alt="Peaceful river scene" fill className="object-cover" />
+            <Image src="/images/cajuput_boat.png" alt="Small boat in flooded forest" fill className="object-cover" />
           </div>
         </div>
       </section>
