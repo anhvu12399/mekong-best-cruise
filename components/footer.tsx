@@ -2,28 +2,27 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
-
-const REDIRECT_URL = "https://www.toursmekong.com/"
 
 const footerLinks = {
   journeys: [
-    { label: "All Cruises" },
-    { label: "Vietnam & Cambodia" },
-    { label: "Thailand & Laos" },
-    { label: "Private Charters" },
+    { label: "All Cruises", href: "/cruises" },
+    { label: "Vietnam & Cambodia", href: "/itineraries/vietnam-cambodia" },
+    { label: "Thailand & Laos", href: "/destinations/thailand" },
+    { label: "Private Charters", href: "/itineraries/private-charter" },
   ],
   company: [
-    { label: "About Us" },
-    { label: "Our Vessels" },
-    { label: "Sustainability" },
-    { label: "Careers" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Our Vessels", href: "/cruises" },
+    { label: "Sustainability", href: "/sustainability" },
+    { label: "Careers", href: "/careers" },
   ],
   support: [
-    { label: "FAQs" },
-    { label: "Booking Terms" },
-    { label: "Privacy Policy" },
-    { label: "Contact Us" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Booking Terms", href: "/booking-terms" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Contact Us", href: "/contact" },
   ],
 }
 
@@ -69,9 +68,7 @@ export function Footer() {
     setTimeout(() => setResendCooldown(false), 30000)
   }
 
-  const handleLinkClick = () => {
-    window.open(REDIRECT_URL, "_blank")
-  }
+
 
   const firstName = name ? name.trim().split(" ")[0] : ""
 
@@ -199,7 +196,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-14">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
-            <button onClick={handleLinkClick} className="inline-block mb-8 text-left">
+            <Link href="/" className="inline-block mb-8">
               <Image 
                 src="/logo.png" 
                 alt="Mekong River Cruise Logo" 
@@ -207,7 +204,7 @@ export function Footer() {
                 height={140} 
                 className="h-24 w-auto object-contain" 
               />
-            </button>
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm">
               Crafting extraordinary river journeys through Southeast Asia&apos;s 
               most captivating landscapes since 1998.
@@ -238,12 +235,12 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.journeys.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={handleLinkClick}
+                  <Link
+                    href={link.href}
                     className="text-white/60 text-sm hover:text-gold transition-colors duration-200"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -256,12 +253,12 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={handleLinkClick}
+                  <Link
+                    href={link.href}
                     className="text-white/60 text-sm hover:text-gold transition-colors duration-200"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -274,12 +271,12 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={handleLinkClick}
+                  <Link
+                    href={link.href}
                     className="text-white/60 text-sm hover:text-gold transition-colors duration-200"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -293,9 +290,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
             <p>&copy; {new Date().getFullYear()} Mekong River Cruise. All rights reserved.</p>
             <div className="flex items-center gap-8">
-              <button onClick={handleLinkClick} className="hover:text-gold transition-colors">Terms</button>
-              <button onClick={handleLinkClick} className="hover:text-gold transition-colors">Privacy</button>
-              <button onClick={handleLinkClick} className="hover:text-gold transition-colors">Cookies</button>
+              <Link href="/terms-conditions" className="hover:text-gold transition-colors">Terms</Link>
+              <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy</Link>
+              <Link href="/booking-terms" className="hover:text-gold transition-colors">Booking</Link>
             </div>
           </div>
         </div>
