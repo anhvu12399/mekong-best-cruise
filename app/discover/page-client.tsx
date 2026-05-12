@@ -101,14 +101,10 @@ export default function DiscoverClient() {
       {/* 3. Quick chooser */}
       <QuickDecision />
 
-      {/* 4. Narrative intro */}
+      {/* 4. Narrative intro - Replacing the 2 main paragraphs as requested */}
       <section className="py-24 lg:py-36">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className={`text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-8`}>A River Unlike Any Other</p>
-          <h2 className={`text-3xl md:text-5xl text-navy mb-10 leading-tight ${playfair.className}`}>
-            Five thousand kilometers.<br className="hidden md:block" /> Six countries. One river.
-          </h2>
-          <div className="font-serif text-navy/75 text-lg md:text-xl leading-[1.85] space-y-6">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="font-serif text-navy/75 text-lg md:text-xl leading-[1.85] space-y-8">
             <p>
               <span className="float-left text-7xl leading-[0.8] mr-4 text-navy font-bold font-serif">T</span>he Mekong River originates in the mountains of the Tibetan Plateau, where it rises above the five-thousand-meter mark and flows into the South China Sea as a cold, clear stream winding around the colorful flags of Buddhist prayer banners. By the time the river has reached Yunnan, it takes the name Lancang (Turbulent River), with depths rivaling those of the Grand Canyon; in Vietnam, it turns into the Nine Dragons — nine braided waterways flowing into the South China Sea.
             </p>
@@ -122,7 +118,7 @@ export default function DiscoverClient() {
         </div>
       </section>
 
-      {/* 5. Split: Delta */}
+      {/* 5. Split: Delta - Replacing with the second requested block */}
       <section className="py-0">
         <div className="grid lg:grid-cols-2">
           <div className="relative h-[500px] lg:h-auto">
@@ -135,7 +131,6 @@ export default function DiscoverClient() {
             />
           </div>
           <div className="bg-navy text-white px-8 py-20 lg:p-32 flex flex-col justify-center">
-            <span className="text-gold text-xs tracking-[0.3em] uppercase mb-6 font-bold">Field Notes · Cai Rang, 5:47am</span>
             <h3 className={`text-3xl md:text-5xl mb-8 leading-tight ${playfair.className}`}>
               The Market Was Already Underway When You Got There
             </h3>
@@ -154,11 +149,11 @@ export default function DiscoverClient() {
       {/* 6. Highlights */}
       <section className="py-24 lg:py-36 bg-[#fbfaf8]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-20">
-            <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">What the River Holds</p>
+          <div className="mb-20 text-center">
             <h2 className={`text-3xl md:text-5xl text-navy ${playfair.className}`}>
-              Four Dispatches from the Water
+              Highlights of the Journey
             </h2>
+            <div className="w-16 h-px bg-gold mx-auto mt-8" />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {highlights.map((item, i) => (
@@ -180,10 +175,10 @@ export default function DiscoverClient() {
         </div>
       </section>
 
-      {/* 6.5. Heritage scroll */}
+      {/* 7. Heritage scroll */}
       <OurHeritage />
 
-      {/* 7. Pull quote / mid-break */}
+      {/* 8. Breathing image */}
       <section className="relative h-[60vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <Image
           src="/images/banner_1.avif"
@@ -192,83 +187,22 @@ export default function DiscoverClient() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <p className={`text-white text-2xl md:text-4xl lg:text-5xl leading-tight ${playfair.className}`}>
-            &ldquo;The river doesn&apos;t care about your itinerary. That&rsquo;s precisely the point.&rdquo;
-          </p>
-          <p className="text-gold text-[11px] tracking-[0.3em] uppercase mt-8 font-bold">— Field Notes, Somewhere Between Phnom Penh and Siem Reap</p>
-        </div>
+        <div className="absolute inset-0 bg-black/20" />
       </section>
 
-      {/* 8. Expedition cruises */}
+      {/* 9. Expedition cruises */}
       <div className="-mt-12 relative z-20">
         <ExpeditionCruises />
       </div>
-
-      {/* 9. Extended why-travel editorial block */}
-      <section className="py-24 lg:py-36 bg-[#fbfaf8]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-20 lg:gap-32 items-start">
-            <div>
-              <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-8">The Honest Case for Slow Travel</p>
-              <h2 className={`text-3xl md:text-5xl text-navy mb-10 leading-tight ${playfair.className}`}>
-                Why a Boat. Why This River.
-              </h2>
-              <div className="font-serif text-navy/70 text-lg leading-[1.85] space-y-6">
-                <p>
-                  There's a particular kind of travel fatigue that comes from seeing a place from behind a window — bus, taxi, tourist van. You have the postcard version. You've ticked the box. You haven't actually been there.
-                </p>
-                <p>
-                  A river doesn't allow that evasion. When your vessel anchors mid-stream at dusk and the cooking smells drift from the bank, and the family in the stilted house is having the same argument they'll have tomorrow, you understand that this is a place where people actually live. Not for you. Just for themselves, in the same way their grandparents lived here.
-                </p>
-                <p>
-                  The Mekong is the best river in Asia for this kind of travel. It's slow enough that villages appear and recede at a pace you can absorb. It's remote enough that most of what you see hasn't been staged. And it's long enough — five thousand kilometers — that you could spend a year on it and find something new every week.
-                </p>
-                <p>
-                  We've been at this for a long time. We know where to anchor for the best light. We know which monks will let you sit with them in the morning and which market vendors will laugh at your negotiating. We know which canals the guidebooks haven't found yet.
-                </p>
-                <p className="text-navy/85 font-medium">
-                  Our job is to get you close enough to feel it. The rest is up to the river.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-8">
-              <div className="relative aspect-[3/4] overflow-hidden">
-                <Image
-                  src="/images/banner_4.avif"
-                  alt="Life on the Mekong"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { number: "5,000+", label: "Kilometers of navigable river" },
-                  { number: "6", label: "Countries along the Mekong" },
-                  { number: "60M+", label: "People who depend on the river" },
-                  { number: "30+", label: "Years we've called it home" },
-                ].map((stat) => (
-                  <div key={stat.label} className="border-t border-navy/15 pt-6">
-                    <p className={`text-3xl text-navy mb-2 ${playfair.className}`}>{stat.number}</p>
-                    <p className="text-navy/55 text-xs tracking-wide uppercase font-bold">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 10. CTA */}
       <section className="py-24 bg-navy text-center px-6">
         <div className="max-w-3xl mx-auto">
           <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-6">
-            When You're Ready
+            Begin Your Voyage
           </span>
           <h2 className={`text-3xl md:text-5xl text-white mb-8 leading-tight ${playfair.className}`}>
-            The River Is Already Moving.<br className="hidden md:block" /> You Could Be On It.
+            Ready to Explore the Mekong?
           </h2>
           <p className="text-white/65 text-base md:text-lg mb-12 font-serif max-w-xl mx-auto leading-relaxed">
             Tell us how long you have, what kind of traveler you are, and what you're hoping to feel. We'll take it from there.
