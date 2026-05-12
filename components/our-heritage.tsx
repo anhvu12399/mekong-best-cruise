@@ -14,26 +14,26 @@ const playfair = Playfair_Display({ subsets: ["latin"] })
 const sections = [
   {
     id: "began",
-    title: "Our Journey Began in 1993",
-    content: "What started as a single restored rice barge has blossomed into a lifelong dedication to the Mekong. Decades ago, we saw beyond the river's surface to understand its profound connection to the people. Our founding vision was simple yet revolutionary: to offer an intimate, luxurious vantage point into a world untouched by time, honoring local heritage at every bend of the river.",
+    title: "It Started With One Barge. In 1993.",
+    content: "A single restored rice barge, two guides, and the conviction that the right way to know the Mekong was slowly — at the river's own speed. We weren't selling tours. We were learning the river: which bends held the best light at dawn, which villages would let us stop, which markets were worth being up at four in the morning for. We still are.",
     image: "/images/heritage_start.avif"
   },
   {
     id: "long-way",
-    title: "We've Come a Long Way",
-    content: "From those humble beginnings, we have redefined river cruising in Southeast Asia. Today, our fleet represents the pinnacle of boutique luxury, seamlessly blending traditional craftsmanship with contemporary elegance. We've navigated challenges and changing tides, always remaining true to our core philosophy of immersive, slow travel that respects the profound majesty of the Mekong.",
+    title: "The Fleet Grew. The Philosophy Didn't.",
+    content: "Over three decades, the vessels changed — better design, better beds, better kitchens. What didn't change is the refusal to treat the river as a backdrop. We still anchor where the fish are running, still adjust the route when a village festival appears on the calendar, still hire guides from the communities we visit because they know things no itinerary can teach. The river is not our product. It's our host.",
     image: "/images/heritage_longway.avif"
   },
   {
     id: "epic",
-    title: "For Life's Most Epic Adventures",
-    content: "We believe that true luxury lies in exclusive access and unforgettable moments. Whether it's receiving a private blessing from a senior monk in a centuries-old wat, navigating deep into mist-shrouded limestone caves, or anchoring under a canopy of stars in absolute silence, our itineraries are crafted for those who seek the extraordinary. These are not just trips; they are milestone journeys.",
+    title: "The Journeys That Stay With You",
+    content: "A private water-blessing from a 90-year-old monk in a temple no tourist bus has ever stopped at. Anchoring in a limestone canyon so remote the only sound is water on stone. Watching the sun come up over Angkor from a position we'd scouted specifically so you'd have it to yourself. These are not accidents. They take years of relationship-building, and they are the only kind of travel we know how to do.",
     image: "/images/heritage_epic.avif"
   },
   {
     id: "philanthropy",
-    title: "Philanthropy & Community",
-    content: "The river has given us everything, and it is our profound duty to give back. We are deeply committed to the communities we visit, investing in clean water initiatives, supporting local artisans, and ensuring that our presence brings sustainable prosperity. When you travel with us, you become part of a legacy of care, helping to preserve the cultural and environmental sanctity of the Mekong.",
+    title: "We Work for the River Too",
+    content: "The communities along the Mekong gave us everything — their stories, their food, their trust. In return, we invest directly in clean water access, support local artisans by building them into our itineraries rather than gift shops, and work with environmental partners monitoring the river's health. When you travel with us, some of what you pay goes back to the people who made your journey possible. That's not a marketing line. It's the arrangement.",
     image: "/images/heritage_philanthropy.avif"
   }
 ]

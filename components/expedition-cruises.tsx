@@ -59,16 +59,16 @@ export function ExpeditionCruises() {
         
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-24">
+          <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">The Fleet</p>
           <div className="flex items-center justify-center gap-6 mb-8">
             <div className="h-px bg-[#2B3A36]/30 w-16 md:w-40"></div>
             <h2 className={`text-4xl md:text-5xl text-[#2B3A36] ${playfair.className}`}>
-              Expedition Cruises
+              Choose Your Ship
             </h2>
             <div className="h-px bg-[#2B3A36]/30 w-16 md:w-40"></div>
           </div>
-          <p className="text-[#555] max-w-4xl mx-auto leading-relaxed text-base md:text-lg font-serif">
-            Five ships. Five personalities. Each one designed around a different way of loving the river.
-            The question isn&apos;t which is best — it&apos;s which one feels like you.
+          <p className="text-[#555] max-w-3xl mx-auto leading-relaxed text-base md:text-lg font-serif">
+            Five vessels. Five different relationships with the river. Some guests know immediately which one is right for them. Others need a conversation. Either way, we&apos;re here.
           </p>
         </div>
 
