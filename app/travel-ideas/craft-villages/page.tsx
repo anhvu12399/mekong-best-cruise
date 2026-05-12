@@ -13,8 +13,8 @@ export default function CraftVillagesPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/cultural-encounters-v2.avif"
-          alt="Village life in the Mekong Delta"
+          src="/images/travel_craft_hero.jpg"
+          alt="Monkey bridge crossing in the Mekong Delta"
           fill
           className="object-cover"
           priority
@@ -56,13 +56,13 @@ export default function CraftVillagesPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/cultural-encounters-new.avif" alt="Local artisan at work" fill className="object-cover" />
+            <Image src="/images/travel_craft_candy.jpg" alt="Artisan candy making workshop" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/heritage_philanthropy.avif" alt="Village cycling" fill className="object-cover" />
+            <Image src="/images/travel_craft_hero.jpg" alt="Monkey bridge crossing" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/highlights_journey.avif" alt="Delta landscape" fill className="object-cover" />
+            <Image src="/images/travel_craft_lotus.jpg" alt="Blooming lotus fields" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -94,7 +94,7 @@ export default function CraftVillagesPage() {
       {/* ── SPLIT: NIGHT ADVENTURES ── */}
       <section className="max-w-[1200px] mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div className="relative aspect-[4/5]">
-          <Image src="/images/exp_silent_drift.avif" alt="Night on the delta" fill className="object-cover" />
+          <Image src="/images/travel_craft_lotus.jpg" alt="Lotus field at dawn" fill className="object-cover" />
         </div>
         <div>
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">After Dark</p>
@@ -118,7 +118,7 @@ export default function CraftVillagesPage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/heritage_longway.avif)" }}
+        style={{ backgroundImage: "url(/images/travel_craft_candy.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

@@ -13,7 +13,7 @@ export default function SlowDayPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/slow_hero.png"
+          src="/images/travel_slowday_hero.jpg"
           alt="Peaceful morning with coffee on the Mekong"
           fill
           className="object-cover"
@@ -55,7 +55,7 @@ export default function SlowDayPage() {
       {/* ── SPLIT: AFTERNOON ── */}
       <section className="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="relative aspect-[4/3]">
-          <Image src="/images/1day_tea.avif" alt="Hammock and tea in the afternoon" fill className="object-cover" />
+          <Image src="/images/travel_slowday_hammock.jpg" alt="Hammock and tea in the afternoon" fill className="object-cover" />
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">02:00 PM — Warm</p>
@@ -96,13 +96,13 @@ export default function SlowDayPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/1day_lunch.avif" alt="Lunch on the river" fill className="object-cover" />
+            <Image src="/images/travel_slowday_hammock.jpg" alt="Lunch on the river" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury-balcony-sunset.avif" alt="Sunset from the ship" fill className="object-cover" />
+            <Image src="/images/travel_slowday_sunset.jpg" alt="Sunset from the ship" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/exp_silent_drift.avif" alt="Drifting at dusk" fill className="object-cover" />
+            <Image src="/images/travel_luxury_dining.jpg" alt="Dinner at dusk" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -113,7 +113,7 @@ export default function SlowDayPage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/reviews-parallax-bg.avif)" }}
+        style={{ backgroundImage: "url(/images/travel_slowday_sunset.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

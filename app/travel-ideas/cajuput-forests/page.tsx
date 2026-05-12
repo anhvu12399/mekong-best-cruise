@@ -13,7 +13,7 @@ export default function CajuputForestsPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/coconut-forest-boat.avif"
+          src="/images/travel_cajuput_hero.jpg"
           alt="Paddling through flooded cajuput forest"
           fill
           className="object-cover"
@@ -55,8 +55,8 @@ export default function CajuputForestsPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/dest_vietnam.avif"
-          alt="Lush green Vietnam landscape"
+          src="/images/travel_cajuput_birdnest.jpg"
+          alt="Bird colonies in cajuput forest canopy"
           fill
           className="object-cover"
         />
@@ -83,7 +83,7 @@ export default function CajuputForestsPage() {
             </div>
           </div>
           <div className="relative aspect-[4/5]">
-            <Image src="/images/jewel_spa.png" alt="Peaceful river scene" fill className="object-cover" />
+            <Image src="/images/travel_cajuput_kayak.jpg" alt="Kayaking in dark forest waterways" fill className="object-cover" />
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function CajuputForestsPage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/dest_laos.avif)" }}
+        style={{ backgroundImage: "url(/images/travel_cajuput_hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

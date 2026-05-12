@@ -13,7 +13,7 @@ export default function RedefiningLuxuryPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/redefine_hero.png"
+          src="/images/travel_newluxury_hero.jpg"
           alt="Minimalist fruit plate on a teak deck at sunrise"
           fill
           className="object-cover"
@@ -52,7 +52,7 @@ export default function RedefiningLuxuryPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/fine-dining-deck.avif"
+          src="/images/travel_luxury_dining.jpg"
           alt="Fine dining under the stars on a river cruise"
           fill
           className="object-cover"
@@ -82,13 +82,13 @@ export default function RedefiningLuxuryPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/fine-dining-deck.avif" alt="Dinner on deck" fill className="object-cover" />
+            <Image src="/images/travel_luxury_dining.jpg" alt="Dinner on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jewel_spa.png" alt="Spa space on a river ship" fill className="object-cover" />
+            <Image src="/images/travel_slowday_hammock.jpg" alt="Relaxation space on a river ship" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jayavarman_suite.png" alt="Suite with river view" fill className="object-cover" />
+            <Image src="/images/travel_luxury_suite.jpg" alt="Suite with river view" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -99,7 +99,7 @@ export default function RedefiningLuxuryPage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/jahan_dining.png)" }}
+        style={{ backgroundImage: "url(/images/travel_newluxury_hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

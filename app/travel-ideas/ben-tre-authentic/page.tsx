@@ -13,8 +13,8 @@ export default function BenTrePage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/bentre_hero.png"
-          alt="Lush coconut groves of Ben Tre province"
+          src="/images/travel_bentre_hero.jpg"
+          alt="Early morning cycling through Ben Tre coconut groves"
           fill
           className="object-cover"
           priority
@@ -55,7 +55,7 @@ export default function BenTrePage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/heritage_longway.avif"
+          src="/images/travel_bentre_cycling.jpg"
           alt="Cycling path through coconut groves"
           fill
           className="object-cover"
@@ -85,13 +85,13 @@ export default function BenTrePage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/vc_day2.avif" alt="Village cycling in Ben Tre" fill className="object-cover" />
+            <Image src="/images/travel_bentre_cycling.jpg" alt="Village cycling in Ben Tre" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/1day_tea.avif" alt="Local tea with family" fill className="object-cover" />
+            <Image src="/images/travel_bentre_homestay.jpg" alt="Homestay family dinner" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/cultural-encounters-v2.avif" alt="Making rice paper by hand" fill className="object-cover" />
+            <Image src="/images/travel_bentre_hero.jpg" alt="Morning in Ben Tre" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -102,7 +102,7 @@ export default function BenTrePage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/heritage_start.avif)" }}
+        style={{ backgroundImage: "url(/images/travel_bentre_homestay.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

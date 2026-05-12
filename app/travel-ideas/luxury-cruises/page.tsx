@@ -13,7 +13,7 @@ export default function LuxuryCruisesPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/jayavarman_hero.png"
+          src="/images/travel_luxury_hero.jpg"
           alt="Luxury cruise on the Mekong at golden hour"
           fill
           className="object-cover"
@@ -56,8 +56,8 @@ export default function LuxuryCruisesPage() {
       {/* ── FULL-WIDTH IMAGE BREAK ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/jayavarman_deck.png"
-          alt="Couple watching sunset from the observation deck"
+          src="/images/travel_luxury_dining.jpg"
+          alt="Fine dining on observation deck at sunset"
           fill
           className="object-cover"
         />
@@ -83,13 +83,13 @@ export default function LuxuryCruisesPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/sacred-temples.avif" alt="Temple morning excursion" fill className="object-cover" />
+            <Image src="/images/travel_slowday_hammock.jpg" alt="Temple morning excursion" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/fine-dining-deck.avif" alt="Fine dining on deck" fill className="object-cover" />
+            <Image src="/images/travel_luxury_dining.jpg" alt="Fine dining on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury-balcony-sunset.avif" alt="Suite balcony at sunset" fill className="object-cover" />
+            <Image src="/images/travel_luxury_suite.jpg" alt="Suite balcony at sunset" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -118,7 +118,7 @@ export default function LuxuryCruisesPage() {
       {/* ── PARALLAX QUOTE ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/jayavarman_lounge.png)" }}
+        style={{ backgroundImage: "url(/images/travel_luxury_hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

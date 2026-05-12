@@ -13,7 +13,7 @@ export default function FloatingMarketsPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/floating-markets-new.avif"
+          src="/images/travel_markets_hero.jpg"
           alt="Cai Rang floating market at sunrise"
           fill
           className="object-cover"
@@ -55,7 +55,7 @@ export default function FloatingMarketsPage() {
       {/* ── FULL IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/floating-markets-v2.avif"
+          src="/images/travel_markets_fruit.jpg"
           alt="Boats laden with tropical fruit at Cai Rang market"
           fill
           className="object-cover"
@@ -82,7 +82,7 @@ export default function FloatingMarketsPage() {
       <section className="bg-[#f5f5f5]">
         <div className="max-w-[1200px] mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/5]">
-            <Image src="/images/1day_lunch.avif" alt="Fresh fruit from orchards" fill className="object-cover" />
+            <Image src="/images/travel_markets_food.jpg" alt="Pho served from a boat at floating market" fill className="object-cover" />
           </div>
           <div>
             <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">The Afternoon</p>
@@ -107,7 +107,7 @@ export default function FloatingMarketsPage() {
       {/* ── PARALLAX QUOTE ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/1day_tea.avif)" }}
+        style={{ backgroundImage: "url(/images/travel_markets_hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

@@ -13,7 +13,7 @@ export default function HiddenMekongPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/hidden_hero.png"
+          src="/images/travel_hidden_hero.jpg"
           alt="Small wooden boat in a narrow Mekong canal"
           fill
           className="object-cover"
@@ -55,8 +55,8 @@ export default function HiddenMekongPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/dest_vietnam.avif"
-          alt="Quiet canal life in the Mekong Delta"
+          src="/images/travel_hidden_fishtrap.jpg"
+          alt="Traditional fish trap in the Mekong Delta"
           fill
           className="object-cover"
         />
@@ -85,13 +85,13 @@ export default function HiddenMekongPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/coconut-forest-boat.avif" alt="Rowboat in a palm canal" fill className="object-cover" />
+            <Image src="/images/travel_hidden_hero.jpg" alt="Rowboat in a palm canal" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/cultural-encounters-new.avif" alt="Local artisan at work" fill className="object-cover" />
+            <Image src="/images/travel_hidden_fishtrap.jpg" alt="Traditional fishing method" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/monk-temple.avif" alt="Quiet village temple" fill className="object-cover" />
+            <Image src="/images/travel_private_canal.jpg" alt="Quiet village canal" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -102,7 +102,7 @@ export default function HiddenMekongPage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/dest_cambodia.avif)" }}
+        style={{ backgroundImage: "url(/images/travel_hidden_hero.jpg)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
