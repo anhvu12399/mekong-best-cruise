@@ -74,6 +74,60 @@ export default function RedefiningLuxuryPage() {
         </div>
       </section>
 
+      <section className="max-w-[1400px] mx-auto px-6 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/fine-dining-deck.avif" alt="Fine dining presentation" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/jewel_spa.png" alt="Spa and wellness" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/jayavarman_suite.png" alt="Spacious private suite" fill className="object-cover" />
+          </div>
+        </div>
+        <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
+          Thoughtful dining · Wellness spaces · Private sanctuaries
+        </p>
+      </section>
+
+      <section
+        className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url(/images/jahan_dining.png)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-8 max-w-3xl">
+          <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
+            &ldquo;True luxury on the Mekong isn't about escaping the local environment; it is about experiencing it in total comfort.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
+        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+          The New Luxury Standards
+        </h2>
+        <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Space to Guest Ratio</h3>
+            <p>The finest ships prioritize square footage over cabin count. Look for vessels that offer generous common areas and large private balconies.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Culinary Philosophy</h3>
+            <p>Modern luxury cruises employ renowned chefs who source ingredients directly from the river and local markets, ensuring an authentic taste of the region.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Wellness Integration</h3>
+            <p>Spa treatments, yoga sessions on the deck, and fitness centers are seamlessly integrated into the journey without feeling out of place.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Expert Guiding</h3>
+            <p>Luxury extends to the off-ship experiences. Expect highly educated, fluent, and passionate local guides who provide deep cultural context.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Experience the new luxury</h2>

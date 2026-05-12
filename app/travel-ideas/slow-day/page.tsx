@@ -82,6 +82,60 @@ export default function SlowDayPage() {
         </div>
       </section>
 
+      <section className="max-w-[1400px] mx-auto px-6 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/1day_lunch.avif" alt="Unhurried lunch" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/luxury-balcony-sunset.avif" alt="Sunset from balcony" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/exp_silent_drift.avif" alt="Silent drifting" fill className="object-cover" />
+          </div>
+        </div>
+        <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
+          Slow lunches · Sunset balconies · Silent drifting
+        </p>
+      </section>
+
+      <section
+        className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url(/images/reviews-parallax-bg.avif)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-8 max-w-3xl">
+          <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
+            &ldquo;We spent the whole afternoon doing absolutely nothing, and it was the most productive day of the entire year.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
+        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+          How to slow down
+        </h2>
+        <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Leave the Watch Behind</h3>
+            <p>Your itinerary is handled by the crew. There is no need to check the time. You will be gently informed when it's time for an excursion or a meal.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Digital Detox</h3>
+            <p>While ships have Wi-Fi, the signal can be intermittent in remote stretches of the river. Treat this as a feature, not a bug.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Art of the Nap</h3>
+            <p>Embrace the tropical schedule. The hours between 1 PM and 3 PM are meant for resting, reading, or watching the river from a shaded lounger.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">What to Read</h3>
+            <p>Bring a long novel or a book on Indochine history. The rhythm of the boat is perfect for deep, uninterrupted reading.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Embrace Slow Travel</h2>

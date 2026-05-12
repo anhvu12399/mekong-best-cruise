@@ -74,6 +74,60 @@ export default function BenTrePage() {
         </div>
       </section>
 
+      <section className="max-w-[1400px] mx-auto px-6 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/vc_day2.avif" alt="Cycling in Ben Tre" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/1day_tea.avif" alt="Local tea time" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/cultural-encounters-v2.avif" alt="Making rice paper" fill className="object-cover" />
+          </div>
+        </div>
+        <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
+          Village cycling · Afternoon tea · Authentic local craft
+        </p>
+      </section>
+
+      <section
+        className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url(/images/heritage_start.avif)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-8 max-w-3xl">
+          <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
+            &ldquo;There is no museum here, no ticket booth. Ben Tre is just life happening under the shade of a million coconut trees, and for a night, you are invited to be part of it.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
+        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+          Before you stay in Ben Tre
+        </h2>
+        <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Accommodation</h3>
+            <p>Homestays range from very basic to "rustic luxury". Expect clean linens and mosquito nets, but be prepared for open-air bathrooms or sharing space with nature.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Getting Around</h3>
+            <p>Bicycles are the primary mode of transport here. The terrain is completely flat, making it suitable for all fitness levels.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">What to Pack</h3>
+            <p>Mosquito repellent is essential. Bring comfortable, lightweight clothing that covers your knees and shoulders if you plan to visit local temples or schools.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Connectivity</h3>
+            <p>While most homestays have Wi-Fi, it can be spotty. This is the perfect excuse to turn off your phone and enjoy the present moment.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Stay in Ben Tre</h2>

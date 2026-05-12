@@ -74,6 +74,60 @@ export default function HiddenMekongPage() {
         </div>
       </section>
 
+      <section className="max-w-[1400px] mx-auto px-6 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/coconut-forest-boat.avif" alt="Small rowboat in palm canal" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/cultural-encounters-new.avif" alt="Local artisan" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/monk-temple.avif" alt="Quiet village temple" fill className="object-cover" />
+          </div>
+        </div>
+        <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
+          Palm canals · Local artisans · Quiet village temples
+        </p>
+      </section>
+
+      <section
+        className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url(/images/dest_cambodia.avif)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-8 max-w-3xl">
+          <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
+            &ldquo;We left the main river and suddenly the engine was cut. All we could hear was the wind in the nipa palms and the soft splash of the oar. It was the best day of the trip.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
+        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+          Before you go off-grid
+        </h2>
+        <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Vessel Size Matters</h3>
+            <p>Only small boats (sampans) or expedition vessels with shallow drafts can access these hidden canals. Large cruise ships must stay on the main Mekong and Bassac rivers.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Pace Yourself</h3>
+            <p>These experiences are about observation, not ticking boxes. Expect fewer scheduled stops and more time simply watching the world go by.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Best Time to Visit</h3>
+            <p>Early mornings are magical in the narrow canals before the heat of the day sets in and while the locals are most active.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Photography</h3>
+            <p>Bring a lens with a good zoom for wildlife, but also remember to put the camera down. The silence is the main attraction.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Discover the hidden Delta</h2>

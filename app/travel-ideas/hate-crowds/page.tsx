@@ -71,6 +71,60 @@ export default function HateCrowdsPage() {
         </div>
       </section>
 
+      <section className="max-w-[1400px] mx-auto px-6 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/pulse_delta.avif" alt="Small local boat" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/dest_myanmar.avif" alt="Quiet sunset" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[3/4]">
+            <Image src="/images/heritage_longway.avif" alt="Empty cycling path" fill className="object-cover" />
+          </div>
+        </div>
+        <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
+          Private boats · Quiet sunsets · Empty cycling paths
+        </p>
+      </section>
+
+      <section
+        className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url(/images/banner_4.avif)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-8 max-w-3xl">
+          <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
+            &ldquo;We passed the large cruise ships docked at the main port and just kept going. It felt like we had the entire river to ourselves.&rdquo;
+          </blockquote>
+        </div>
+      </section>
+
+      <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
+        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+          How to avoid the crowds
+        </h2>
+        <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Book a Private Charter</h3>
+            <p>If budget allows, chartering a 1- or 2-cabin sampan guarantees absolute privacy and flexibility in your daily schedule.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Choose Smaller Ships</h3>
+            <p>If a private charter isn't an option, look for luxury expedition ships with fewer than 20 cabins. They access smaller ports and off-route moorings.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Timing is Everything</h3>
+            <p>The best private guides know exactly when the large tour buses arrive at a temple or market, and they ensure you are there hours earlier or much later.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Go Deeper</h3>
+            <p>Skip My Tho and Ben Tre city center. Ask your specialist to route you through Tra Vinh, Soc Trang, or the deep canals of An Giang.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Charter your own path</h2>
