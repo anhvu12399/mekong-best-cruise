@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Cajuput Forests & Ecology — Travel Ideas",
-  description: "Paddle through the flooded cajuput forests of Trà Sư, where birds outnumber people and the silence has a color.",
+  title: "Cajuput Forests & Ecology — Tra Su Mekong Travel Ideas",
+  description: "Paddle through the flooded cajuput forests of Trà Sư and U Minh Hạ. Discover where birds outnumber people, lush green ecology, and profound silence in the Mekong.",
+  keywords: ["Mekong cajuput forests", "Tra Su forest", "U Minh Ha forest", "Mekong Delta ecology", "bird watching Vietnam", "flooded forest Mekong", "An Giang nature tour", "Mekong eco travel"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/cajuput-forests",
+  },
+  openGraph: {
+    title: "Cajuput Forests & Ecology — Tra Su Mekong Travel Ideas",
+    description: "Paddle through the flooded cajuput forests of Trà Sư and U Minh Hạ. Discover where birds outnumber people, lush green ecology, and profound silence in the Mekong.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/cajuput-forests",
+    images: [{ url: "https://www.mekongrivercruise.com/images/coconut-forest-boat.avif", width: 1200, height: 630, alt: "Paddling through flooded cajuput forest" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cajuput Forests & Ecology in the Mekong",
+    description: "Paddle through the flooded cajuput forests of Trà Sư.",
+    images: ["https://www.mekongrivercruise.com/images/coconut-forest-boat.avif"],
+  },
 };
 
 export default function CajuputForestsPage() {

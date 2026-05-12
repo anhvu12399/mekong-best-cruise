@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Luxury Mekong River Cruises — Travel Ideas",
-  description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest ships on the Mekong.",
+  title: "Luxury Mekong River Cruises — Travel Ideas & Inspiration",
+  description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest luxury ships on the Mekong River.",
+  keywords: ["luxury Mekong river cruises", "Mekong river cruise luxury", "best Mekong cruises", "Aqua Mekong", "Jayavarman cruise", "Mekong Jewel", "luxury cruise Cambodia Vietnam", "Mekong river inspiration"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/luxury-cruises",
+  },
+  openGraph: {
+    title: "Luxury Mekong River Cruises — Travel Ideas & Inspiration",
+    description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest luxury ships on the Mekong River.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/luxury-cruises",
+    images: [{ url: "https://www.mekongrivercruise.com/images/jayavarman_hero.png", width: 1200, height: 630, alt: "Luxury cruise on the Mekong at golden hour" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Mekong River Cruises",
+    description: "Sunset champagne, temple mornings, and the slow art of doing nothing on the Mekong.",
+    images: ["https://www.mekongrivercruise.com/images/jayavarman_hero.png"],
+  },
 };
 
 export default function LuxuryCruisesPage() {

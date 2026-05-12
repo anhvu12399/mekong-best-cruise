@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "A Slow Day in the Mekong — Travel Ideas",
-  description: "Morning mist, midday hammocks, and evening lanterns. A timeline of doing almost nothing — and remembering all of it.",
+  title: "A Slow Day in the Mekong — Mindful River Travel Ideas",
+  description: "Embrace the slow pace of the Mekong Delta. A complete timeline of a mindful travel day: morning mist, midday hammocks, evening lanterns, and unhurried luxury.",
+  keywords: ["slow travel Mekong", "mindful travel Vietnam", "Mekong river pace", "relaxing Mekong cruise", "Mekong Delta day", "peaceful Vietnam travel", "Mekong luxury travel"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/slow-day",
+  },
+  openGraph: {
+    title: "A Slow Day in the Mekong — Mindful River Travel Ideas",
+    description: "Embrace the slow pace of the Mekong Delta. A complete timeline of a mindful travel day: morning mist, midday hammocks, evening lanterns, and unhurried luxury.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/slow-day",
+    images: [{ url: "https://www.mekongrivercruise.com/images/slow_hero.png", width: 1200, height: 630, alt: "Peaceful morning with coffee on the Mekong" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A Slow Day in the Mekong",
+    description: "Embrace the slow pace of the Mekong Delta with mindful travel.",
+    images: ["https://www.mekongrivercruise.com/images/slow_hero.png"],
+  },
 };
 
 export default function SlowDayPage() {

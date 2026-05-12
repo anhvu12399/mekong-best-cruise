@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Craft Villages & Wild Islets — Travel Ideas",
-  description: "Cycle across monkey bridges, watch coconut candy being made by hand, and discover the Mekong Delta that nobody photographs.",
+  title: "Craft Villages & Wild Islets — Authentic Mekong Travel Ideas",
+  description: "Cycle across monkey bridges, watch coconut candy being made by hand, and discover the authentic craft villages and wild islets of the Mekong Delta.",
+  keywords: ["Mekong craft villages", "coconut candy workshop", "Ben Tre crafts", "monkey bridge Mekong", "Sa Dec village", "Mekong Delta islets", "Con Lan Unicorn Island", "Mekong Delta cycling"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/craft-villages",
+  },
+  openGraph: {
+    title: "Craft Villages & Wild Islets — Authentic Mekong Travel Ideas",
+    description: "Cycle across monkey bridges, watch coconut candy being made by hand, and discover the authentic craft villages and wild islets of the Mekong Delta.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/craft-villages",
+    images: [{ url: "https://www.mekongrivercruise.com/images/cultural-encounters-v2.avif", width: 1200, height: 630, alt: "Village life in the Mekong Delta" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Craft Villages & Wild Islets in the Mekong",
+    description: "Cycle across monkey bridges and watch coconut candy being made by hand.",
+    images: ["https://www.mekongrivercruise.com/images/cultural-encounters-v2.avif"],
+  },
 };
 
 export default function CraftVillagesPage() {

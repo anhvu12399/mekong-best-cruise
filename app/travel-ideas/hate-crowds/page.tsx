@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "For Travelers Who Hate Crowds — Travel Ideas",
-  description: "No megaphones. No matching hats. No forty-person boats. How to see the Mekong Delta without seeing another tourist.",
+  title: "For Travelers Who Hate Crowds — Private Mekong Travel Ideas",
+  description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, hidden waterways, and exclusive luxury experiences.",
+  keywords: ["Mekong without crowds", "private Mekong tour", "uncrowded Mekong Delta", "exclusive Vietnam travel", "private sampan Mekong", "quiet Mekong backwaters", "private Mekong cruise"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/hate-crowds",
+  },
+  openGraph: {
+    title: "For Travelers Who Hate Crowds — Private Mekong Travel Ideas",
+    description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, hidden waterways, and exclusive luxury experiences.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/hate-crowds",
+    images: [{ url: "https://www.mekongrivercruise.com/images/nocrowd_hero.png", width: 1200, height: 630, alt: "Empty stretch of the Mekong with one private boat" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "For Travelers Who Hate Crowds — Private Mekong Travel",
+    description: "How to see the Mekong Delta without the crowds.",
+    images: ["https://www.mekongrivercruise.com/images/nocrowd_hero.png"],
+  },
 };
 
 export default function HateCrowdsPage() {

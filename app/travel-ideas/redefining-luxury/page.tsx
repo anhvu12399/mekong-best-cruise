@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Luxury Isn't What You Think — Travel Ideas",
-  description: "On the Mekong, luxury isn't marble or chandeliers. It's a crew that knows your coffee order by day two, and a sliding door that opens onto the river at night.",
+  title: "Luxury Isn't What You Think — New Mekong River Luxury",
+  description: "Discover a new definition of luxury on the Mekong River. Unparalleled privacy, invisible service, silence, and authentic connections on the finest boutique ships.",
+  keywords: ["Mekong luxury travel", "luxury river cruise Vietnam", "boutique ship Mekong", "5 star Mekong cruise", "high-end Mekong Delta", "premium Vietnam river journey", "luxury Mekong cruise"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/redefining-luxury",
+  },
+  openGraph: {
+    title: "Luxury Isn't What You Think — New Mekong River Luxury",
+    description: "Discover a new definition of luxury on the Mekong River. Unparalleled privacy, invisible service, silence, and authentic connections on the finest boutique ships.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/redefining-luxury",
+    images: [{ url: "https://www.mekongrivercruise.com/images/redefine_hero.png", width: 1200, height: 630, alt: "Minimalist fruit plate on a teak deck at sunrise" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Isn't What You Think — New Mekong River Luxury",
+    description: "Discover a new definition of luxury on the Mekong River.",
+    images: ["https://www.mekongrivercruise.com/images/redefine_hero.png"],
+  },
 };
 
 export default function RedefiningLuxuryPage() {

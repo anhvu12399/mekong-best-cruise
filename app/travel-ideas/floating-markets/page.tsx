@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Floating Markets & River Food — Travel Ideas",
-  description: "Wake before dawn to experience Cái Răng floating market, eat phở from a boat, and taste the Mekong Delta the way locals do.",
+  title: "Floating Markets & River Food — Cai Rang Mekong Tour Ideas",
+  description: "Wake before dawn to experience Cái Răng floating market, eat authentic phở from a boat, and taste the Mekong Delta the way locals do on a river food tour.",
+  keywords: ["Mekong floating markets", "Cai Rang floating market", "Mekong Delta food", "eat on boat Vietnam", "Phong Dien market", "Mekong river food", "Vietnamese floating market tour", "Mekong day trip"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/floating-markets",
+  },
+  openGraph: {
+    title: "Floating Markets & River Food — Cai Rang Mekong Tour Ideas",
+    description: "Wake before dawn to experience Cái Răng floating market, eat authentic phở from a boat, and taste the Mekong Delta the way locals do on a river food tour.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/floating-markets",
+    images: [{ url: "https://www.mekongrivercruise.com/images/floating-markets-new.avif", width: 1200, height: 630, alt: "Cai Rang floating market at sunrise" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Floating Markets & River Food",
+    description: "Experience Cái Răng floating market and eat phở from a boat.",
+    images: ["https://www.mekongrivercruise.com/images/floating-markets-new.avif"],
+  },
 };
 
 export default function FloatingMarketsPage() {

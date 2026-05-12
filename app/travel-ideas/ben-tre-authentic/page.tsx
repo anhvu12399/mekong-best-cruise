@@ -3,8 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Why Ben Tre Feels More Real — Travel Ideas",
-  description: "One province. One bicycle. No schedule. Ben Tre doesn't perform for tourists — it just lives under its coconut palms and invites you to watch.",
+  title: "Why Ben Tre Feels More Real — Authentic Mekong Travel Ideas",
+  description: "Discover authentic Ben Tre, the Coconut Kingdom of the Mekong Delta. Experience cycling under coconut palms, peaceful homestays, and genuine local life.",
+  keywords: ["Ben Tre", "Ben Tre travel", "authentic Mekong Delta", "Mekong homestay", "cycling Ben Tre", "Vietnam slow travel", "Mekong coconut kingdom", "Ben Tre tours"],
+  alternates: {
+    canonical: "https://www.mekongrivercruise.com/travel-ideas/ben-tre-authentic",
+  },
+  openGraph: {
+    title: "Why Ben Tre Feels More Real — Authentic Mekong Travel Ideas",
+    description: "Discover authentic Ben Tre, the Coconut Kingdom of the Mekong Delta. Experience cycling under coconut palms, peaceful homestays, and genuine local life.",
+    type: "article",
+    url: "https://www.mekongrivercruise.com/travel-ideas/ben-tre-authentic",
+    images: [{ url: "https://www.mekongrivercruise.com/images/bentre_hero.png", width: 1200, height: 630, alt: "Lush coconut groves of Ben Tre province" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Why Ben Tre Feels More Real",
+    description: "Discover authentic Ben Tre, the Coconut Kingdom of the Mekong Delta.",
+    images: ["https://www.mekongrivercruise.com/images/bentre_hero.png"],
+  },
 };
 
 export default function BenTrePage() {
