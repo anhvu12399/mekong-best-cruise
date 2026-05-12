@@ -36,6 +36,41 @@ const ideas = [
     image: "/images/cultural-encounters-v2.avif",
     tag: "1–3 DAYS",
   },
+  {
+    slug: "hidden-mekong",
+    title: "The Mekong You Don't See",
+    subtitle: "Small boats, narrow canals, and the quiet rhythm of real life",
+    image: "/images/hidden_hero.png",
+    tag: "OFF THE BEATEN PATH",
+  },
+  {
+    slug: "ben-tre-authentic",
+    title: "Why Ben Tre Feels More Real",
+    subtitle: "Forget the multi-stop tours. Cycle under coconut palms and sleep in a local house.",
+    image: "/images/bentre_hero.png",
+    tag: "AUTHENTIC LOCAL LIFE",
+  },
+  {
+    slug: "slow-day",
+    title: "A Slow Day in the Mekong",
+    subtitle: "Morning mist, afternoon hammocks, and evening lanterns.",
+    image: "/images/slow_hero.png",
+    tag: "MINDFUL TRAVEL",
+  },
+  {
+    slug: "hate-crowds",
+    title: "For Travelers Who Hate Crowds",
+    subtitle: "How to experience the Mekong Delta in total privacy, far from the tourist buses.",
+    image: "/images/nocrowd_hero.png",
+    tag: "PRIVATE & EXCLUSIVE",
+  },
+  {
+    slug: "redefining-luxury",
+    title: "Luxury Isn't What You Think",
+    subtitle: "It is not about gold plating. It is about privacy, time, and flawless local details.",
+    image: "/images/redefine_hero.png",
+    tag: "THE NEW LUXURY",
+  },
 ];
 
 export default function TravelIdeasPage() {
@@ -56,7 +91,7 @@ export default function TravelIdeasPage() {
             Travel Ideas
           </p>
           <h1 className="font-serif text-4xl md:text-6xl text-white leading-tight mb-4">
-            Four ways to fall in love with the Mekong
+            Nine ways to fall in love with the Mekong
           </h1>
           <p className="text-white/80 text-[15px] font-light max-w-xl leading-relaxed">
             The Mekong Delta is not one experience — it&apos;s four, at least. A luxury cruise is not the same journey as a dawn visit to Cái Răng. Kayaking through Trà Sư is nothing like cycling across Cồn Phụng. Choose your adventure. Or better yet, choose all of them.

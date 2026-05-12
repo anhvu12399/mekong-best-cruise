@@ -29,7 +29,12 @@ const navLinks = [
       { label: "Luxury Cruises", href: "/travel-ideas/luxury-cruises" },
       { label: "Floating Markets", href: "/travel-ideas/floating-markets" },
       { label: "Cajuput Forests", href: "/travel-ideas/cajuput-forests" },
-      { label: "Craft Villages", href: "/travel-ideas/craft-villages" }
+      { label: "Craft Villages", href: "/travel-ideas/craft-villages" },
+      { label: "Hidden Mekong", href: "/travel-ideas/hidden-mekong" },
+      { label: "Ben Tre Authentic", href: "/travel-ideas/ben-tre-authentic" },
+      { label: "Slow Day", href: "/travel-ideas/slow-day" },
+      { label: "Hate Crowds?", href: "/travel-ideas/hate-crowds" },
+      { label: "Redefining Luxury", href: "/travel-ideas/redefining-luxury" }
     ]
   },
   { label: "About", href: "/" },
