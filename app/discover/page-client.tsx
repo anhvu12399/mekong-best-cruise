@@ -17,22 +17,22 @@ const highlights = [
   {
     title: "Floating Markets",
     desc: "At Cai Rang, commerce happens on the water at 5am. Vendors steer loaded sampans by nudging them with one bare foot, and the thing hanging off the bamboo pole tells you what's for sale — a pineapple for fruit, a winter melon for vegetables. You buy warm rambutan from a woman who won't stop laughing at your attempts to peel it properly.",
-    image: "/images/dest_vietnam.avif"
+    image: "/images/travel_floating_markets.jpg"
   },
   {
     title: "Riverside Villages",
     desc: "Ban Phanom has been weaving silk on hand looms since before anyone can remember. The sound — that irregular clack-and-thud — comes from every second house in the early morning. A woman in her sixties shows you a pattern she's been building from memory for three weeks. She doesn't need a chart. She learned it at eight.",
-    image: "/images/banner_3.avif"
+    image: "/images/travel_riverside_villages.jpg"
   },
   {
     title: "Ancient Temples",
     desc: "Your guide meets you at Angkor at 4:45am. The towers emerge from the dark slowly, inevitably, as the first orange line appears at the horizon. There are perhaps thirty people in the entire complex. It doesn't feel like a tourist attraction. It feels like something that's been happening every morning for nine hundred years, with or without an audience.",
-    image: "/images/highlights_journey.avif"
+    image: "/images/travel_ancient_temples.jpg"
   },
   {
     title: "Hidden Waterways",
     desc: "On a narrow sampan in the Ben Tre canals, the water coconut palms close overhead until they form a tunnel — green-filtered light, total quiet, the sound of the pole entering the water and withdrawing. A farmhouse appears through the leaves. Someone in a hammock waves. There are no other boats. There hasn't been a guidebook written about this channel yet.",
-    image: "/images/banner_4.avif"
+    image: "/images/travel_hidden_waterways.jpg"
   }
 ]
 
