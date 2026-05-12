@@ -73,21 +73,45 @@ const styles = [
 const ships = [
   {
     name: "Aqua Mekong",
+    slug: "aqua-mekong",
     type: "Ultra-Luxury · 20 suites",
     line: "Floor-to-ceiling glass. Michelin-trained chefs. The Aqua Mekong is the river's finest address.",
     image: "/images/aqua_mekong.avif",
   },
   {
     name: "Jayavarman",
-    type: "Colonial Boutique · 15 cabins",
+    slug: "jayavarman",
+    type: "Colonial Boutique · 27 cabins",
     line: "Teak decks, hand-stitched fabrics, the scent of frangipani. History feels like it's in the next room.",
     image: "/images/jayavarman.avif",
   },
   {
     name: "Mekong Jewel",
-    type: "Intimate Luxury · 28 guests max",
-    line: "The silence on the sundeck at dusk. The light through the balcony door at dawn. Some ships earn their name slowly.",
+    slug: "mekong-jewel",
+    type: "Eco-Luxury · 34 suites",
+    line: "Sustainable splendor. The silence on the sundeck at dusk. Some ships earn their name slowly.",
     image: "/images/mekong_jewel.avif",
+  },
+  {
+    name: "Mekong Princess",
+    slug: "mekong-princess",
+    type: "Exclusive Boutique · 14 suites",
+    line: "An intimacy unmatched by larger vessels. Bringing you closer to the authentic life of the delta.",
+    image: "/images/mekong_princess.avif",
+  },
+  {
+    name: "The Jahan",
+    slug: "the-jahan",
+    type: "Romantic Elegance · 26 cabins",
+    line: "A floating palace combining British-Indian design with unparalleled service on the river.",
+    image: "/images/the_jahan.avif",
+  },
+  {
+    name: "Victoria Mekong",
+    slug: "victoria-mekong",
+    type: "Modern Comfort · 35 cabins",
+    line: "Sleek and contemporary, focusing on offering a fresh approach to river cruising.",
+    image: "/images/victoria_mekong.avif",
   },
 ]
 
@@ -406,33 +430,37 @@ export default function CruisesClient() {
           <div className="text-center mb-16">
             <span className="text-gold text-xs tracking-[0.3em] uppercase font-bold block mb-4">Our Fleet</span>
             <h2 className="font-serif text-4xl lg:text-6xl text-white">
-              Five ships.<br />
-              <span className="italic text-gold">Five ways to love the river.</span>
+              Extraordinary Ships.<br />
+              <span className="italic text-gold">One unforgettable river.</span>
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {ships.map((ship, i) => (
               <div key={i} className="group">
-                <div className="aspect-[4/3] relative overflow-hidden mb-6">
-                  <Image
-                    src={ship.image}
-                    alt={ship.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                </div>
+                <Link href={`/ships/${ship.slug}`} className="block">
+                  <div className="aspect-[4/3] relative overflow-hidden mb-6">
+                    <Image
+                      src={ship.image}
+                      alt={ship.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  </div>
+                </Link>
                 <div className="border-t border-white/10 pt-6">
                   <span className="text-gold text-xs tracking-widest uppercase">{ship.type}</span>
-                  <h3 className="font-serif text-2xl text-white mt-2 mb-3">{ship.name}</h3>
+                  <Link href={`/ships/${ship.slug}`}>
+                    <h3 className="font-serif text-2xl text-white mt-2 mb-3 hover:text-gold transition-colors">{ship.name}</h3>
+                  </Link>
                   <p className="text-white/60 text-sm leading-relaxed">{ship.line}</p>
                   <Link
-                    href="/plan-your-journey"
+                    href={`/ships/${ship.slug}`}
                     className="mt-6 inline-flex items-center gap-2 text-xs tracking-widest uppercase font-bold text-gold hover:gap-4 transition-all duration-200"
                   >
-                    Enquire <ArrowRight size={12} />
+                    Explore Ship <ArrowRight size={12} />
                   </Link>
                 </div>
               </div>
