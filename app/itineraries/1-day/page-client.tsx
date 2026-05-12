@@ -8,65 +8,65 @@ import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "luc
 const NAV_ITEMS = ["Overview", "The Day", "Experiences", "Essentials"]
 
 const HIGHLIGHTS = [
-  "Skip the crowded routes and discover a hidden riverside village.",
-  "Enjoy hot tea and rustic cakes while listening to local stories of the floating season.",
-  "Experience an exclusive mini-market set up just for you in a private garden.",
-  "Savor an upgraded rustic lunch, featuring clay pot fish and seasonal wild flowers.",
-  "Conclude the day with a quiet moment by the river, drinking fresh coconut water at sunset."
+  "A woman named Bảy serves you tea in her garden. She's seventy-three. She planted every tree you're sitting under.",
+  "The canal boat fits four people. The boatman poles standing up. The water is so still you can see the clouds in it.",
+  "Lunch is cá kho tộ in a clay pot that's been used daily for eleven years. The cook's daughter sets the table.",
+  "You pick longan directly from a branch. The farmer counts how many you eat and pretends to charge you extra.",
+  "The last hour is just sitting by the river. No agenda. The coconut water is cold. The light is gold. Nobody talks."
 ]
 
 const WHY_ITEMS = [
-  { icon: "🤎", title: "Emotional Connection", desc: "We sell the feeling of slow living, not a rushed checklist of tourist sights." },
-  { icon: "📸", title: "Aesthetic Lifestyle", desc: "Perfect for photography, with carefully curated 'Mekong lifestyle' moments." },
-  { icon: "🌿", title: "Off the Beaten Path", desc: "We use narrow side-canals and completely avoid the large 45-seat bus routes." },
-  { icon: "🍵", title: "Meaningful Interaction", desc: "Sit down with locals, share tea, and make a traditional craft to take home." },
+  { icon: "🤎", title: "Nobody's in a rush", desc: "We built empty time into the schedule on purpose. Sit. Look. Do nothing for a while. That's the point." },
+  { icon: "📸", title: "The light is real", desc: "No staged moments. But at 3pm the canals look like a painting, and we know exactly where to be." },
+  { icon: "🌿", title: "No tour buses", desc: "A sampan that fits four people. Side canals that don't appear on any tour operator's route sheet." },
+  { icon: "🍵", title: "You'll meet actual people", desc: "Not performers. A tea farmer. A fisherman's wife. A kid who wants to practice his English on you." },
 ]
 
 const TIMELINE = [
   {
     key: "morning",
     label: "Morning",
-    place: "HCMC → Hidden Delta",
-    tagline: "Leaving the noise behind.",
+    place: "HCMC → The Quiet Part of the Delta",
+    tagline: "The city thins out. The green starts.",
     image: "/images/1day_tea.avif",
     part1: {
-      title: "07:30 — The Story Begins",
-      body: "Depart Ho Chi Minh City in a comfortable private vehicle. Along the way, your guide sets the tone: the Mekong is not just a river region, but a region of slow living."
+      title: "07:30 — Leaving Saigon",
+      body: "The van pulls out of your hotel and into morning traffic. Forty minutes later, the buildings give way to rice fields and the air changes — you can actually smell the water. Your guide grew up out here. He points to things you'd miss: a particular shade of green that means the harvest is close, a shrine by the road that's been there since his grandmother was a girl."
     },
     part2: {
-      title: "09:00 — Village Tea Time",
-      body: "Stop at a lesser-known riverside village. Sit down for hot tea and rustic cakes, listening to local residents share intimate stories about life during the floating season."
+      title: "09:00 — Tea at Bảy's Garden",
+      body: "Bảy is seventy-three. She makes tea from a plant in her yard and serves it with bánh tét she wrapped that morning. She tells you about the year the water rose so high she had to move her chickens upstairs. Her granddaughter translates the parts your guide can't keep up with. There is no rush to leave."
     },
     part3: {
-      title: "09:45 — The Quiet Canal",
-      body: "Board a small wooden boat into a narrow side canal. We completely avoid the crowded routes, focusing instead on the stillness of the water, the overarching nipa palms, and the serene riverside gardens."
+      title: "09:45 — Into the Canals",
+      body: "A wooden sampan, narrow enough that you could touch both banks if you stretched. The boatman doesn't use an engine — just a bamboo pole, pushing off the muddy bottom. Nipa palms close overhead. A kingfisher sits on a branch three meters away and doesn't move. You realize you haven't heard a car in twenty minutes."
     },
     part4: {
-      title: "10:30 — The Private Market",
-      body: "Experience a 'mini market' created just for you in a private garden. Taste fresh tropical fruits, raw honey, and traditional hometown treats without the pressure of a commercial setting."
+      title: "10:30 — The Orchard",
+      body: "The farmer hands you a knife and points at a jackfruit. He shows you where to cut. The longan is warm from the sun. He picks a rambutan, peels it with one hand, and gives you the fruit. His dog follows you between the rows. You buy a bag of dried mango from his wife on the way out — she wraps it in newspaper."
     }
   },
   {
     key: "afternoon",
     label: "Afternoon",
-    place: "Mekong Lifestyle",
-    tagline: "Slow food and silent sunsets.",
+    place: "Deep in the Countryside",
+    tagline: "The part you'll remember longest.",
     image: "/images/1day_lunch.avif",
     part1: {
-      title: "11:30 — An Upgraded Rustic Feast",
-      body: "Sit down to a beautifully presented 'mâm quê' (rustic tray). This isn't standard tour food; it's a curated menu featuring caramelized clay pot fish (cá kho tộ), sour soup with river hemp flowers (canh chua bông điên điển), and boiled vegetables with savory dip."
+      title: "11:30 — Lunch in a Garden",
+      body: "A wooden table under a mango tree. Cá kho tộ — catfish caramelized in a clay pot with black pepper and fish sauce. Canh chua with bông điên điển, the yellow river flowers that only grow in flood season. White rice. Rau sống. The woman who cooked it sits at the next table with her husband, eating the same thing. This is not a restaurant."
     },
     part2: {
-      title: "13:00 — Hands-On Workshop",
-      body: "Engage in a short, elegant workshop. Try your hand at making a traditional folk cake or wrapping a beautiful local gift to take home as a memory of the delta."
+      title: "13:00 — Making Something",
+      body: "You wrap bánh ít — sticky rice cakes in banana leaves. The woman teaching you has done this ten thousand times. Yours look terrible. Hers are perfect, identical, fast. She laughs, fixes yours without asking, and they all go into the same steamer. You take three home in a plastic bag."
     },
     part3: {
-      title: "14:00 — Village Wandering",
-      body: "Cycle or walk slowly along the village paths. Stop at a quiet, sun-dappled garden specifically chosen for its 'Mekong lifestyle' aesthetic—perfect for mindful photography."
+      title: "14:00 — Walking the Village",
+      body: "A dirt path between two canals. Jackfruit trees, chicken wire fences, a man repairing a fishing net in his front yard. A temple with a single monk sweeping the courtyard. You can hear the river but you can't see it yet. The light at this hour comes through the leaves at an angle that makes everything look like it was painted."
     },
     part4: {
-      title: "15:00 — Listening to the River",
-      body: "Stop at a scenic riverside spot as the afternoon light softens. Drink fresh coconut water and end the tour with one minute of intentional silence—just listening to the river breathe. By 16:30, you return to Ho Chi Minh City feeling completely refreshed."
+      title: "15:00 — The Last Hour",
+      body: "You sit on a wooden bench at the river's edge. Someone hands you a coconut with a straw in it. The water moves slowly. A boat passes. The driver waves. Nobody says anything for a while, and that's fine — that's the whole idea. By 16:30 you're back in the van, and by 18:00 you're in Saigon. It feels like you were gone for a week."
     }
   }
 ]
@@ -109,10 +109,10 @@ export function OneDayClient() {
         <div className="relative z-10 max-w-4xl px-6">
           <p className="text-[#c9a962] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">1-Day Private Journey</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white mb-6 leading-tight">
-            The Awakened Mekong
+            One Day. No Agenda.
           </h1>
           <p className="text-white/80 text-lg md:text-xl font-serif max-w-2xl mx-auto">
-            A journey of slow living. Less noise, more soul.
+            A garden, a canal, a lunch you didn't plan, and an afternoon you'll think about for years.
           </p>
         </div>
       </section>
@@ -157,10 +157,10 @@ export function OneDayClient() {
       <section className="py-24 bg-[#f7f4ef] text-navy">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight">
-            Not a Tour. <br /> A Practice of Slow Living.
+            What Happens When You<br /> Stop Trying to See Everything
           </h2>
           <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed mb-16">
-            Most single-day tours rush to check off destinations. We do the opposite. This journey is designed to be deeply calming, focusing on the spaces between the sights. From quiet tea times in hidden gardens to drifting silently down untouched canals, this is the Mekong experienced at the pace of a slow exhale.
+            Most one-day trips try to cram in five stops, a lunch, and a selfie at a floating market. This one has four stops, long pauses between them, and at least an hour where the plan is literally "sit somewhere and do nothing." The point is not what you see. The point is what you notice when you stop moving.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-navy/10 pt-12">
@@ -277,9 +277,9 @@ export function OneDayClient() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Local Tea Ritual", desc: "Sit with locals in their garden, sharing tea and stories of the river's changing seasons.", img: "/images/1day_tea.avif" },
-              { title: "Craft Workshop", desc: "Learn to make a traditional folk cake or beautifully wrap a local gift, carrying a piece of the Mekong home.", img: "/images/1day_boat.avif" },
-              { title: "Silent Listening", desc: "A guided minute of absolute silence by the riverbank to truly feel the heartbeat of the delta.", img: "/images/1day_lunch.avif" }
+              { title: "Tea at Somebody's House", desc: "Not a teahouse. An actual house. She grew the tea plant herself. The conversation happens through your guide, but the laughter doesn't need translation.", img: "/images/1day_tea.avif" },
+              { title: "Making Bánh Ít", desc: "Sticky rice, banana leaf, a filling you've never tasted. The woman teaching you does five in the time you do one. Yours falls apart. Hers don't. You take them home anyway.", img: "/images/1day_boat.avif" },
+              { title: "The Quiet Part", desc: "A bench. A river. A coconut with a straw. Ten minutes where nobody talks and the only sound is water. You'll remember this longer than anything else.", img: "/images/1day_lunch.avif" }
             ].map(exp => (
               <div key={exp.title} className="group relative aspect-[4/5] overflow-hidden">
                 <Image src={exp.img} alt={exp.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />

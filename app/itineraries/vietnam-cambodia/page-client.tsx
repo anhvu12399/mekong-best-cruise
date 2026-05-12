@@ -218,13 +218,13 @@ export function VietnamCambodiaClient() {
         
         <div className="relative z-10 max-w-4xl px-6">
           <p className="text-white/80 text-[11px] font-bold tracking-[0.4em] uppercase mb-6">
-            Luxury Pilgrimage
+            7–8 Days · Two Countries · One River
           </p>
           <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
-            Vietnam to Cambodia:<br/>A Spiritual Journey
+            Saigon to Angkor.<br/>The Long Way.
           </h1>
           <p className="text-lg text-white/90 font-serif max-w-2xl mx-auto italic">
-            7 to 8 Days • Ho Chi Minh City, Mekong Delta, Phnom Penh, Siem Reap
+            A week on the Mekong from the delta to the temples. Through border crossings, floating villages, and a silence at Angkor Wat that you'll carry home.
           </p>
         </div>
       </section>
@@ -269,10 +269,10 @@ export function VietnamCambodiaClient() {
       <section className="py-24 bg-[#f7f4ef] text-navy">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight">
-            A Journey of Deep Connection <br /> Across Two Kingdoms
+            You Cross a Border on Day 3.<br /> By Day 6, You've Crossed Several Others.
           </h2>
           <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed mb-16">
-            This isn't a standard tourist trail. This is a carefully curated luxury pilgrimage designed to connect you with the profound spiritual heritage of the Mekong and the Khmer Empire. From private masses at Our Lady of the Mekong to silent sunrises over Angkor Wat, experience Indochina at an unhurried, deeply emotional pace.
+            This trip starts in the chaos of Saigon and ends at Angkor Wat before dawn, and in between you'll cross the Mekong border by limousine, eat on a rooftop overlooking the Tonlé Sap, visit a church on the river that most Cambodians don't know exists, and stand in an Angkor corridor at 5am with nobody else in sight. It's eight days. It covers two countries, three cities, and a few thousand years of history. But the moments that stay with you will be smaller than that — a monk's blessing, a meal cooked by someone's grandmother, a sunset you didn't plan for.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-navy/10 pt-12">
@@ -420,9 +420,9 @@ export function VietnamCambodiaClient() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Private Mass & Prayer", desc: "Arranged hours of prayer at Catholic sanctuaries or quiet meditation in Buddhist temples.", img: "/images/vc_exp1.avif" },
-              { title: "Meditation Dinners", desc: "Dine in complete serenity with soft candlelight and purposeful quiet.", img: "/images/vc_exp2.avif" },
-              { title: "Silent Sunrises", desc: "Experience the magic of Angkor Wat at dawn, far from the crowds.", img: "/images/vc_exp3.avif" }
+              { title: "The Monk's Blessing", desc: "He's ninety-two. He's been at this temple since he was fourteen. He ties a thread around your wrist and says something in Khmer that your guide translates later, in the van, quietly.", img: "/images/vc_exp1.avif" },
+              { title: "Dinner with Nobody Else", desc: "A table on a rooftop in Phnom Penh. The Mekong below. Candlelight. No music except the city. The waiter brings dishes you didn't order because the chef decided you should try them.", img: "/images/vc_exp2.avif" },
+              { title: "Angkor Before the Crowds", desc: "4:45am. The towers are black against an orange sky. There are maybe twenty people in the entire complex. Your guide knows a corridor where the light hits a carved apsara at exactly 5:30. You'll be the only ones there.", img: "/images/vc_exp3.avif" }
             ].map(exp => (
               <div key={exp.title} className="group relative aspect-[4/5] overflow-hidden">
                 <Image src={exp.img} alt={exp.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />

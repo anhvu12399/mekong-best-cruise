@@ -8,61 +8,61 @@ import { ArrowRight, Clock, Users, MapPin } from "lucide-react"
 const NAV_ITEMS = ["Overview", "The Journey", "Experiences", "Essentials"]
 
 const HIGHLIGHTS = [
-  "Avoid rushed itineraries; experience a journey with a distinct, emotional rhythm.",
-  "Enjoy an elegantly plated rustic lunch in a sunlit private garden.",
-  "Experience a 'no phones' night at a traditional homestay, dining by golden lantern light.",
-  "Listen to an intimate, private performance of Don Ca Tai Tu or share stories by the river.",
-  "Wake up early for a misty floating market experience, enjoying breakfast right on the boat."
+  "The homestay has no air conditioning. It has a hammock, a mosquito net, and a view of the river that makes you forget why you'd want air conditioning.",
+  "Dinner is cooked by your host. You help. Your knife skills are evaluated silently and found wanting.",
+  "Someone plays đờ ca tài tử after dinner. The musician is a retired schoolteacher. He plays every night whether guests are there or not.",
+  "At 5:15am on Day 2 you're on a boat at Cái Răng. The coffee is iced, the market is already loud, and nobody is performing for you.",
+  "The artisan who makes kẹo dừa has been doing it for forty years. She can tell whether the coconut milk is right by the sound it makes when she stirs."
 ]
 
 const WHY_ITEMS = [
-  { icon: "⏳", title: "Perfect Pacing", desc: "Day 1 is quiet and local; Day 2 builds to the vibrant climax of the floating market." },
-  { icon: "🏮", title: "Unplugged Nights", desc: "A curated homestay experience designed for genuine connection over screens." },
-  { icon: "✨", title: "Elevated Authenticity", desc: "We take the raw elements of Mekong life and present them with elegance and care." },
-  { icon: "📖", title: "Story-Driven", desc: "Every stop, from the artisan workshops to the local homes, is centered around real human stories." },
+  { icon: "⏳", title: "Two different days", desc: "Day 1 is quiet. Day 2 is loud. The contrast is the whole point — you need the silence to hear the market properly." },
+  { icon: "🏮", title: "An actual night here", desc: "Not a hotel night. A garden-house night. Mosquito net, paper lanterns, the sound of frogs, and a sky full of stars." },
+  { icon: "✨", title: "Real food, real people", desc: "Your host cooks what she was going to cook anyway. You sit at her table. The fish was in the river this morning." },
+  { icon: "📖", title: "Stories, not scripts", desc: "The fisherman talks about his kids. The candy maker talks about her mother's recipe. Nobody is reading from a card." },
 ]
 
 const TIMELINE = [
   {
     key: "day1",
     label: "Day 1",
-    place: "The Calm & The Culture",
-    tagline: "A day of quiet encounters and local living.",
+    place: "The Quiet Day",
+    tagline: "Everything slows down. Including you.",
     image: "/images/luxury-balcony-sunset.avif",
     part1: {
-      title: "Morning — Journey into the Delta",
-      body: "Depart Ho Chi Minh City in a luxury private vehicle. We leave the urban chaos behind and slowly transition into the lush, green embrace of the Mekong, setting a relaxed pace for the days ahead."
+      title: "Morning — The Drive That Changes Your Mood",
+      body: "The highway out of Saigon is ugly for twenty minutes. Then the rice paddies start and the sky opens up and your guide stops talking about logistics and starts pointing at things: a heron standing in shallow water, a woman drying shrimp on a plastic sheet, a bridge that used to be the only way to cross. By the time you reach the delta, the van feels different. Quieter."
     },
     part2: {
-      title: "Noon — Garden Lunch",
-      body: "Arrive at a secluded private garden for lunch. Enjoy traditional countryside dishes that have been elevated through beautiful, minimalist presentation, savoring the flavors of the delta in absolute tranquility."
+      title: "Noon — Lunch You Weren't Expecting",
+      body: "A private garden. A wooden table under a trám tree. The dishes arrive in clay pots and enamel bowls: cá lóc nướng tràm wrapped in lotus leaf, canh chua with tamarind and okra, morning glory with garlic. The woman who cooked it stands in the doorway watching you eat. She nods when you go back for seconds. That's her review system."
     },
     part3: {
-      title: "Afternoon — River Stories",
-      body: "Board a small wooden boat and navigate into the deeply shaded side canals. We visit a local family to hear firsthand accounts of making a living on the river, followed by a light, hands-on activity like fruit picking or crafting."
+      title: "Afternoon — The Canal and the Family",
+      body: "A sampan takes you into canals that don't have names on Google Maps. You stop at a house where a family makes coconut candy the old way — stirring a massive pot over a wood fire until the sugar hits the right temperature. The grandmother explains the timing by sound: a particular bubbling that means 'now.' You try a piece while it's still warm. It tastes nothing like the packaged version."
     },
     part4: {
-      title: "Evening — The Unplugged Night",
-      body: "Settle into a beautifully rustic homestay for our 'Mekong Night Without Phones' concept. Cook dinner alongside your host, dine under the warm glow of yellow lanterns, and end the evening with a private Don Ca Tai Tu music performance or storytelling by a small campfire."
+      title: "Evening — The Night That Matters",
+      body: "The homestay is simple and clean. Teak floor, mosquito net, a porch facing the river. Your host cooks dinner — you help cut the vegetables and she corrects your technique without a word, just by putting her hand over yours and showing you the angle. After dinner, a retired schoolteacher arrives with a đàn kìm and plays đờ ca tài tử for an hour. He does this every evening. You happen to be here tonight."
     }
   },
   {
     key: "day2",
     label: "Day 2",
-    place: "The Floating Climax",
-    tagline: "The vibrant pulse of the river at dawn.",
+    place: "The Loud Morning",
+    tagline: "5am. The river is already working.",
     image: "/images/floating-markets-new.avif",
     part1: {
-      title: "Early Morning — Misty Market & Boat Coffee",
-      body: "Wake up before the sun and head out to the floating market while the mist still hangs over the water. We avoid the later tourist crowds, allowing you to enjoy a hot breakfast and traditional iced coffee right on the boat, surrounded by the authentic chaos of river commerce."
+      title: "Early Morning — Cái Răng at First Light",
+      body: "Your boat leaves the dock at 5:15. The mist is still on the water. By the time you reach the market, the trading has been going for an hour — boats loaded with watermelon, pineapple, and winter melon, the bamboo poles with their samples dangling from the top. A woman hands you a bag of warm bánh mì from her boat. The coffee vendor pulls alongside and pours iced cà phê sữa đá into a plastic cup. You eat breakfast floating."
     },
     part2: {
-      title: "Mid-Morning — Artisan Encounters",
-      body: "Leave the market behind and visit a traditional workshop. Whether it's crafting local sweets or weaving, you will engage directly with the artisans, understanding the generational skills that sustain the delta."
+      title: "Mid-Morning — The Candy Maker",
+      body: "Back on land, you visit a workshop where a woman makes kẹo dừa — coconut candy. She's been doing this for forty years. She can tell whether the batch is ready by the sound the spatula makes against the pot. She lets you stir. You get it wrong. She takes over without comment and finishes the batch in ninety seconds. You buy a kilo on the way out."
     },
     part3: {
-      title: "Afternoon — Return to the City",
-      body: "After a final, leisurely lunch, begin the unhurried journey back to Ho Chi Minh City. You return not just with photographs, but with the distinct, pulsing rhythm of the Mekong River."
+      title: "Afternoon — The Drive Back",
+      body: "One last lunch — bún cá at a roadside place where the broth has been going since 4am. The van takes you back to Saigon. The drive feels shorter this time. You smell like river water and coconut smoke. Your phone has forty-seven photos you actually want to keep. You arrive at your hotel around 4pm with the feeling that you've been somewhere specific, not somewhere generic."
     }
   }
 ]
@@ -105,10 +105,10 @@ export function TwoDaysClient() {
         <div className="relative z-10 max-w-4xl px-6">
           <p className="text-[#c9a962] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">2-Day Private Journey</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white mb-6 leading-tight">
-            The River Pulse
+            One Night Changes Everything
           </h1>
           <p className="text-white/80 text-lg md:text-xl font-serif max-w-2xl mx-auto">
-            A quiet night, a bustling morning. Experience the true rhythm of the delta.
+            A quiet evening in a garden house. A loud morning at the floating market. That's the whole trip. That's enough.
           </p>
         </div>
       </section>
@@ -153,10 +153,10 @@ export function TwoDaysClient() {
       <section className="py-24 bg-[#f7f4ef] text-navy">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight">
-            Two Days, Two Distinct Beats.
+            The Quiet Night. Then the Loud Morning.
           </h2>
           <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed mb-16">
-            This journey refuses to squeeze everything into one day. Instead, it offers a beautifully orchestrated rhythm: the first day is dedicated to stillness, local encounters, and an unplugged evening in the garden. The second day bursts to life early with the vibrant, chaotic beauty of the floating market. It is a journey of contrast and deep emotion.
+            Day 1 is slow on purpose. You eat lunch in a garden, visit a family who makes coconut candy, sleep in a house by the river, and listen to folk music played by a man who does it every night whether anyone is listening or not. Day 2 starts at 5am at the floating market, where the coffee comes from a boat and breakfast happens on the water. The contrast between the two days is the whole point. You need the quiet to hear the chaos properly.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-navy/10 pt-12">
@@ -291,9 +291,9 @@ export function TwoDaysClient() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Unplugged Night", desc: "Leave your phone behind and cook, dine, and share stories under the glow of golden lanterns.", img: "/images/fine-dining-deck.avif" },
-              { title: "Floating Breakfast", desc: "Experience the vibrant floating market at dawn, enjoying hot coffee and breakfast on a local boat.", img: "/images/cultural-encounters-new.avif" },
-              { title: "Folk Traditions", desc: "Listen to the soulful melodies of Don Ca Tai Tu or learn generational crafts directly from artisans.", img: "/images/heritage_epic.avif" }
+              { title: "The Homestay Night", desc: "Teak floor, mosquito net, paper lanterns, the sound of frogs. Your host cooks. You help. Dinner is the best meal of the trip and nobody planned it that way.", img: "/images/fine-dining-deck.avif" },
+              { title: "Breakfast on the Water", desc: "Iced coffee from a floating vendor. Warm bánh mì from a boat. The market around you is already trading. You eat while watching someone's grandmother steer with her feet.", img: "/images/cultural-encounters-new.avif" },
+              { title: "The Musician", desc: "A retired schoolteacher with a đàn kìm. He plays đờ ca tài tử every evening. He's not performing for you. You're just invited to listen.", img: "/images/heritage_epic.avif" }
             ].map(exp => (
               <div key={exp.title} className="group relative aspect-[4/5] overflow-hidden">
                 <Image src={exp.img} alt={exp.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
