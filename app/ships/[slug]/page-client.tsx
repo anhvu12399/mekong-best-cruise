@@ -118,21 +118,45 @@ export default function ShipsClient({ data }: { data: ShipData }) {
 
       {/* ── OVERVIEW ── */}
       <section id="overview" className="bg-white py-20 lg:py-32">
-        <div className="max-w-5xl mx-auto px-6">
-          <span className="text-[#333] text-[13px] font-serif block mb-2">Overview</span>
-          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-12">
-            On board a floating paradise
-          </h2>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[#333] text-[13px] font-serif block mb-2">Overview</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-[#222]">
+              On board a floating paradise
+            </h2>
+          </div>
           
-          <div className="relative aspect-[21/9] w-full mb-12 bg-gray-100">
-            <Image src={data.design.image} alt={data.design.title} fill className="object-cover" />
+          {/* Collage Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-full w-full bg-gray-100">
+              <Image src={data.gallery[0] || data.design.image} alt="Ship Overview 1" fill className="object-cover" />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative aspect-square bg-gray-100">
+                <Image src={data.gallery[1] || data.design.image} alt="Ship Overview 2" fill className="object-cover" />
+              </div>
+              <div className="relative aspect-square bg-gray-100">
+                <Image src={data.gallery[2] || data.design.image} alt="Ship Overview 3" fill className="object-cover" />
+              </div>
+              <div className="relative aspect-square bg-gray-100">
+                <Image src={data.gallery[3] || data.design.image} alt="Ship Overview 4" fill className="object-cover" />
+              </div>
+              <div className="relative aspect-square bg-gray-100 flex items-center justify-center p-6 text-center group cursor-pointer overflow-hidden">
+                <Image src={data.gallery[4] || data.design.image} alt="Ship Overview 5" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
+                <button className="relative z-10 bg-white text-[#222] px-6 py-3 text-[10px] tracking-widest font-bold uppercase">See all photos</button>
+              </div>
+            </div>
           </div>
 
+          <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light max-w-4xl mx-auto mb-16 text-center mt-12 font-bold">
+            Designed with exclusivity in mind, every moment on board {data.name} is one to be remembered.
+          </p>
           <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light max-w-4xl mx-auto mb-16 text-center">
-            {data.design.description}
+            {data.design.description} Enjoy social spaces typical to larger cruise ships such as a lounge, dining room, and an expansive sundeck, all while keeping the peace and personalized service of a small luxury river vessel.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-b border-gray-200 py-12 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-b border-gray-200 py-12 text-center max-w-4xl mx-auto">
              <div>
                 <p className="text-[#777] text-xs tracking-[0.2em] uppercase mb-3">Length</p>
                 <p className="text-[#222] font-serif text-2xl">{data.stats.length}</p>
@@ -155,22 +179,38 @@ export default function ShipsClient({ data }: { data: ShipData }) {
 
       {/* ── SUITES ── */}
       <section id="suites" className="py-20 lg:py-32 bg-[#f5f5f5]">
-        <div className="max-w-6xl mx-auto px-6">
-          <span className="text-[#333] text-[13px] font-serif block mb-2">Suites</span>
-          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-12">
-            A luxurious sanctuary on the mighty Mekong
-          </h2>
-
-          <div className="relative aspect-[16/9] w-full mb-12 bg-gray-100 group">
-            <Image src={data.suites.image} alt={data.suites.title} fill className="object-cover" />
-            <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 text-xs tracking-widest uppercase">
-              {data.suites.title}
-            </div>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[#333] text-[13px] font-serif block mb-2">Suites</span>
+            <h2 className="font-serif text-3xl md:text-5xl text-[#222]">
+              A luxurious sanctuary on the mighty Mekong
+            </h2>
           </div>
 
-          <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light max-w-4xl mb-16">
-            {data.suites.description} When it comes to rest and relaxation, {data.name} cuts no corners. Our {data.stats.cabins} river-facing suites are furnished with inviting hardwood interiors along with premium fittings and bedding.
-          </p>
+          <div className="relative aspect-[21/9] w-full bg-gray-100 group">
+            <Image src={data.suites.image} alt={data.suites.title} fill className="object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-between p-6">
+              <span className="text-white text-xs tracking-widest uppercase">{data.suites.title}</span>
+              <button className="bg-white text-[#222] px-6 py-2 text-[10px] font-bold tracking-widest uppercase hover:bg-gray-100">
+                View Suite Details
+              </button>
+            </div>
+          </div>
+          
+          {/* Thumbnails */}
+          <div className="grid grid-cols-6 gap-2 mt-2 mb-16">
+             {[...Array(6)].map((_, idx) => (
+                <div key={idx} className={`relative aspect-video bg-gray-200 cursor-pointer ${idx === 0 ? 'ring-2 ring-white opacity-100' : 'opacity-60 hover:opacity-100'} transition-opacity`}>
+                   <Image src={data.gallery[idx % data.gallery.length]} alt="Thumbnail" fill className="object-cover" />
+                </div>
+             ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light mb-16 text-center">
+              {data.suites.description} When it comes to rest and relaxation, {data.name} cuts no corners. Our {data.stats.cabins} river-facing suites are furnished with inviting hardwood interiors along with premium fittings and bedding. In the fully air-conditioned comfort of your river cruise suite, gaze at the Mekong panorama and watch an idyllic world float by.
+            </p>
+          </div>
 
           <div className="border-t border-gray-300 pt-8">
             <h3 className="text-xs tracking-[0.2em] uppercase text-[#777] mb-8">Amenities & Details</h3>
@@ -204,32 +244,71 @@ export default function ShipsClient({ data }: { data: ShipData }) {
         </div>
       </section>
 
+      {/* ── EXPEDITION HIGHLIGHTS ── */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <h2 className="font-serif text-2xl text-[#222] mb-8">Expedition highlights</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+            {[
+              { title: "Exceptional speed and comfort", img: data.gallery[0] || "/images/media__1777568799075.png" },
+              { title: "Fully equipped for adventure", img: data.gallery[1] || "/images/media__1777569329220.png" },
+              { title: "World-class cuisine", img: data.gallery[2] || "/images/media__1777571269177.png" },
+              { title: "State of the art design", img: data.gallery[3] || "/images/media__1777571481511.png" },
+              { title: "Expert-led excursions", img: data.gallery[4] || "/images/media__1777572235741.png" },
+              { title: "Cultural experiences", img: data.gallery[5] || "/images/media__1777574051095.png" },
+            ].map((highlight, idx) => (
+              <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-100">
+                <Image src={highlight.img} alt={highlight.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <h3 className="absolute bottom-6 left-6 text-white font-serif text-lg md:text-xl">
+                  {highlight.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CUISINE ── */}
-      <section id="cuisine" className="py-20 lg:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="cuisine" className="py-20 lg:py-32 bg-[#f5f5f5]">
+        <div className="max-w-[1200px] mx-auto px-6">
           <span className="text-[#333] text-[13px] font-serif block mb-2">Cuisine</span>
-          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-12">
-            A world-class culinary experience exploring authentic cuisine
+          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-12 max-w-3xl">
+            A world-class culinary experience exploring authentic Mekong cuisine
           </h2>
 
-          <div className="relative aspect-[21/9] w-full mb-12 bg-gray-100 group">
-            <Image src={data.dining.image} alt={data.dining.title} fill className="object-cover" />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-12">
+            <div className="md:col-span-8 relative aspect-[4/3] md:aspect-auto md:h-[600px] bg-gray-100">
+              <Image src={data.dining.image} alt={data.dining.title} fill className="object-cover" />
+            </div>
+            <div className="md:col-span-4 grid grid-cols-2 md:grid-cols-1 gap-4">
+               <div className="relative aspect-square md:aspect-[4/3] bg-gray-100">
+                  <Image src={data.gallery[2] || data.dining.image} alt="Cuisine Detail" fill className="object-cover" />
+               </div>
+               <div className="relative aspect-square md:aspect-[4/3] bg-gray-100 flex flex-col items-center justify-center p-6 text-center cursor-pointer group overflow-hidden">
+                  <Image src={data.gallery[3] || data.dining.image} alt="Cuisine Detail 2" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
+                  <button className="relative z-10 bg-white text-[#222] px-6 py-3 text-[10px] tracking-widest font-bold uppercase mt-auto mb-4">See all photos</button>
+               </div>
+            </div>
           </div>
 
-          <h3 className="font-serif text-xl text-[#222] mb-4">Flavors of the Mekong</h3>
-          <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light max-w-4xl mb-12">
-            {data.dining.description} Guests can expect seasonal menus showcasing the full repertoire of flavors from the region in refined style. Our chefs use peak season produce and the freshest ingredients from the river.
-          </p>
+          <div className="max-w-4xl">
+            <h3 className="font-serif text-lg font-bold text-[#222] mb-4">Flavors of the Mekong</h3>
+            <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light mb-12">
+              {data.dining.description} Guests can expect seasonal menus showcasing the full repertoire of flavors from Vietnam and Cambodia in refined style. Our chefs use peak season produce and the freshest ingredients from the Mekong river and the region. Some of their signature creations include authentic curries and fresh seafood, most of which are served in a communal dining style authentic to the region's traditions.
+            </p>
 
-          <h3 className="font-serif text-xl text-[#222] mb-4">Special dietary needs</h3>
-          <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light max-w-4xl mb-8">
-            We believe in creating exceptional culinary experiences which cater to every guest's unique needs. Our talented chefs are well-versed in a variety of preparations.
-          </p>
+            <h3 className="font-serif text-lg font-bold text-[#222] mb-4">Special dietary needs</h3>
+            <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light mb-8">
+              We believe in creating exceptional culinary experiences which cater to every guest's unique needs. With cuisine being an integral part of our expeditions, we do our best to accommodate special dietary requirements and preferences. Our talented chefs are well-versed in a variety of preparations.
+            </p>
 
-          <div className="flex gap-8 border-t border-gray-200 pt-8">
-             <div className="flex items-center gap-2 text-[#555] text-sm font-light"><Check className="w-4 h-4 text-[#888]" /> Vegetarian options</div>
-             <div className="flex items-center gap-2 text-[#555] text-sm font-light"><Check className="w-4 h-4 text-[#888]" /> Gluten-free</div>
-             <div className="flex items-center gap-2 text-[#555] text-sm font-light"><Check className="w-4 h-4 text-[#888]" /> Low sodium</div>
+            <div className="flex gap-12 border-t border-gray-200 pt-8">
+              <div className="flex items-center gap-3 text-[#555] text-sm font-light"><Droplets className="w-4 h-4 text-[#888]" /> Vegetarian options</div>
+              <div className="flex items-center gap-3 text-[#555] text-sm font-light"><Check className="w-4 h-4 text-[#888]" /> Gluten-free</div>
+              <div className="flex items-center gap-3 text-[#555] text-sm font-light"><Droplets className="w-4 h-4 text-[#888]" /> Low sodium</div>
+            </div>
           </div>
         </div>
       </section>
