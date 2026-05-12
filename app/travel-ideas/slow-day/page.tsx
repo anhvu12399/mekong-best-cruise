@@ -4,12 +4,13 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "A Slow Day in the Mekong — Travel Ideas",
-  description: "Morning mist, afternoon hammocks, and evening lanterns. How to spend a perfectly unhurried day in the Mekong Delta.",
+  description: "Morning mist, midday hammocks, and evening lanterns. A timeline of doing almost nothing — and remembering all of it.",
 };
 
 export default function SlowDayPage() {
   return (
     <main className="bg-white text-[#222]">
+      {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
           src="/images/slow_hero.png"
@@ -27,78 +28,89 @@ export default function SlowDayPage() {
             A Slow Day<br />in the<br />Mekong
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
-            Stop running from landmark to landmark. The true luxury of the Delta is having the time to watch the water change color.
+            I kept a log of one day on the river. Not what I did — what I noticed. It turned out to be the most detailed diary entry I&apos;ve ever written.
           </p>
         </div>
       </section>
 
+      {/* ── 06:00 ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">06:00 AM — Quiet</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          The mist and the coffee drip.
+          The water was pewter. Then bronze. Then gold.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            The day begins in monochrome. The mist sits heavy on the river, blurring the line between water and sky. The only sound is the metal <em>ping</em> of the phin filter as thick, dark Vietnamese coffee drips slowly over a layer of condensed milk. 
+            I set an alarm for six but my body woke at five-forty. Something about the light — it comes in sideways here, through the sliding glass door, and it has a weight to it, a warmth, even before the sun clears the tree line. The mist was sitting on the river like a held breath. Through it, shapes — a fishing boat, a wooden dock, the silhouette of a woman carrying something on her head.
           </p>
           <p>
-            You sit on the balcony of your cruise suite or the porch of a local homestay. There is no rush to check emails; the Wi-Fi is probably weak anyway, a blessing in disguise. You watch the first wooden boats emerge like ghosts from the fog. This is the quietest the world will be all day.
+            The phin filter was already on the balcony table. Someone had placed it there without knocking — coffee, condensed milk, a small pot of hot water, a plate with four slices of dragon fruit arranged like a fan. The coffee dripped. I counted the drops. Not because I was bored, but because for the first time in months I had nothing competing for my attention. Drip. Drip. Drip. Each one catching the early light like a tiny amber bead.
+          </p>
+          <p>
+            Somewhere far away, a rooster. Closer, the sound of an oar. A man in a conical hat passed the ship in a boat so low it barely displaced water. He was smoking. The smoke trailed behind him, mixing with the mist, and for a moment the whole scene looked like a painting that someone was still finishing.
           </p>
         </div>
       </section>
 
+      {/* ── SPLIT: AFTERNOON ── */}
       <section className="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="relative aspect-[4/3]">
-          <Image src="/images/1day_tea.avif" alt="Afternoon tea and hammock" fill className="object-cover" />
+          <Image src="/images/1day_tea.avif" alt="Hammock and tea in the afternoon" fill className="object-cover" />
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">02:00 PM — Warm</p>
           <h3 className="font-serif text-2xl md:text-3xl leading-tight mb-6">
-            The mandatory hammock hour
+            I fell asleep in a hammock. I have no idea for how long.
           </h3>
           <div className="space-y-4 text-[#444] text-[15px] leading-[1.85] font-light">
             <p>
-              By early afternoon, the heat is a physical weight. The locals know better than to fight it. They retreat to the shade of mango trees, stringing up woven hammocks between the trunks. You should do the same.
+              The heat at two o&apos;clock is not aggressive — it&apos;s persuasive. It doesn&apos;t attack you. It simply makes every alternative to lying down seem unreasonable. The hammock was strung between two mango trees in the garden of a homestay, and there was a breeze off the canal that smelled like mud and lotus and the specific sweetness of fruit that is one day past perfect.
             </p>
             <p>
-              You lie back. A warm breeze comes off the water, smelling of mud and blooming lotus. You open a book, read exactly two pages, and fall into the deep, heavy sleep of the tropics. When you wake up, someone offers you a plate of chilled watermelon. You realize you haven&apos;t checked your watch in six hours.
+              I opened a book. Read a page. Read it again because I hadn&apos;t absorbed a single word. Put the book on my chest. Closed my eyes. The world became sound: wind in the palm fronds, a distant motorbike, the creak of the hammock rope, a chicken making its territorial announcements. I slept. When I woke up, someone had left a plate of chilled watermelon on the stool beside me. I ate it slowly, the juice running down my wrist, and realized I hadn&apos;t looked at my phone since morning.
             </p>
           </div>
         </div>
       </section>
 
+      {/* ── 07:00 PM ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">07:00 PM — Unhurried</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          Lanterns on the water
+          The sun dropped and the river changed its personality.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            The sun drops fast near the equator, leaving behind a sky stained in bruised purples and burnt oranges. The heat breaks. On the deck of the ship, lanterns are lit, casting a warm, flickering glow on the teak wood.
+            Near the equator, sunset is fast. The sky goes from blue to amber to bruised purple in what feels like twenty minutes. The river, which had been brown all day, suddenly held the color like a mirror — streaks of orange and pink that moved with the current, stretching and folding.
           </p>
           <p>
-            Dinner is an event that takes its time. Course after course of local ingredients, served with a cold glass of white wine. You listen to the crickets on the riverbanks. You talk in low voices. Tomorrow, you might go somewhere. But tonight, this is exactly where you need to be.
+            On the deck, someone had lit paper lanterns. They cast a warm, unsteady light on the teak wood, and the shadows of the wine glasses rocked gently with the hull. Dinner came in courses I didn&apos;t count — river prawn, local greens stir-fried with garlic, a clay pot of caramelized catfish that tasted like the river had cooked it itself. I drank a glass of something white and cold. Then another. The crickets started. The stars came out — more of them than I&apos;d seen in years, because there was no city glow to compete with.
+          </p>
+          <p>
+            I stayed on deck for a long time after dinner. Not waiting for anything. Not avoiding anything. Just sitting in a chair, in the dark, on a river in Southeast Asia, listening to water move against wood. I wrote in my journal: <em>Today I did nothing. I noticed everything.</em>
           </p>
         </div>
       </section>
 
+      {/* ── COLLAGE ── */}
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/1day_lunch.avif" alt="Unhurried lunch" fill className="object-cover" />
+            <Image src="/images/1day_lunch.avif" alt="Lunch on the river" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury-balcony-sunset.avif" alt="Sunset from balcony" fill className="object-cover" />
+            <Image src="/images/luxury-balcony-sunset.avif" alt="Sunset from the ship" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/exp_silent_drift.avif" alt="Silent drifting" fill className="object-cover" />
+            <Image src="/images/exp_silent_drift.avif" alt="Drifting at dusk" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
-          Slow lunches · Sunset balconies · Silent drifting
+          River prawn for lunch · The balcony at 6:47 PM · Drifting after dinner
         </p>
       </section>
 
+      {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
         style={{ backgroundImage: "url(/images/reviews-parallax-bg.avif)" }}
@@ -106,41 +118,61 @@ export default function SlowDayPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
           <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
-            &ldquo;We spent the whole afternoon doing absolutely nothing, and it was the most productive day of the entire year.&rdquo;
+            &ldquo;My wife asked what we did all day. I said &apos;nothing.&apos; She asked why I was smiling. I couldn&apos;t explain it. You have to be on the river to understand.&rdquo;
           </blockquote>
         </div>
       </section>
 
+      {/* ── GOOD TO KNOW ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          How to slow down
+          How to do nothing properly
         </h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Leave the Watch Behind</h3>
-            <p>Your itinerary is handled by the crew. There is no need to check the time. You will be gently informed when it's time for an excursion or a meal.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Leave the Watch</h3>
+            <p>The crew will tell you when things happen. Meals appear. Excursions are announced gently. There is no schedule to master — that&apos;s the entire point.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Digital Detox</h3>
-            <p>While ships have Wi-Fi, the signal can be intermittent in remote stretches of the river. Treat this as a feature, not a bug.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Wi-Fi</h3>
+            <p>It exists. It&apos;s intermittent. In the middle of the river, it often drops entirely. After the first hour of panic, you realize this is the most expensive digital detox you&apos;ve ever done — and the most effective.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Art of the Nap</h3>
-            <p>Embrace the tropical schedule. The hours between 1 PM and 3 PM are meant for resting, reading, or watching the river from a shaded lounger.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Hammock Window</h3>
+            <p>Between 1 PM and 3 PM, the world stops. This is not laziness; it&apos;s local wisdom. The heat demands rest. Obey it. You will wake up better.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">What to Read</h3>
-            <p>Bring a long novel or a book on Indochine history. The rhythm of the boat is perfect for deep, uninterrupted reading.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Bring a Book</h3>
+            <p>Something long and slow. A river boat is the only place I&apos;ve ever finished a 600-page novel in three days. The rhythm of the water helps.</p>
           </div>
         </div>
       </section>
 
+      {/* ── ALSO READ ── */}
+      <section className="bg-[#f5f5f5] py-16">
+        <div className="max-w-[720px] mx-auto px-6">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Also Read</p>
+          <div className="space-y-4">
+            <Link href="/travel-ideas/redefining-luxury" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">Luxury Isn&apos;t What You Think</span> — Privacy, time, and the sound of the river at night.
+            </Link>
+            <Link href="/travel-ideas/luxury-cruises" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">The Slow Art of River Luxury</span> — What happens when the clock stops working.
+            </Link>
+            <Link href="/travel-ideas/ben-tre-authentic" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light pb-4">
+              <span className="font-bold">Why Ben Tre Feels More Real</span> — Frogs, spring rolls, and a night with no Wi-Fi.
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Embrace Slow Travel</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Do nothing. Remember everything.</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
-            Our luxury cruises are designed to give you the ultimate luxury: time.
+            Our river cruises are designed around the most luxurious commodity: unscheduled time.
           </p>
           <Link
             href="/cruises"

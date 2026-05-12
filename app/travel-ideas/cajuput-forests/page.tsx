@@ -125,6 +125,24 @@ export default function CajuputForestsPage() {
         </div>
       </section>
 
+      {/* ── ALSO READ ── */}
+      <section className="bg-[#f5f5f5] py-16">
+        <div className="max-w-[720px] mx-auto px-6">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Also Read</p>
+          <div className="space-y-4">
+            <Link href="/travel-ideas/hidden-mekong" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">The Mekong You Don&apos;t See on Tours</span> — Narrow canals and the silence between the palms.
+            </Link>
+            <Link href="/travel-ideas/hate-crowds" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">For Travelers Who Hate Crowds</span> — Private boats and empty waterways.
+            </Link>
+            <Link href="/travel-ideas/floating-markets" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light pb-4">
+              <span className="font-bold">Breakfast Arrives by Boat</span> — Dawn at the floating market, where the phở is still steaming.
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">

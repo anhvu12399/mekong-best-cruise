@@ -154,6 +154,24 @@ export default function LuxuryCruisesPage() {
         </div>
       </section>
 
+      {/* ── ALSO READ ── */}
+      <section className="bg-[#f5f5f5] py-16">
+        <div className="max-w-[720px] mx-auto px-6">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Also Read</p>
+          <div className="space-y-4">
+            <Link href="/travel-ideas/redefining-luxury" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">Luxury Isn&apos;t What You Think</span> — Privacy, invisible service, and the sound of the river at night.
+            </Link>
+            <Link href="/travel-ideas/slow-day" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">A Slow Day in the Mekong</span> — From mist to lanterns, hour by unhurried hour.
+            </Link>
+            <Link href="/travel-ideas/floating-markets" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light pb-4">
+              <span className="font-bold">Breakfast Arrives by Boat</span> — Phở at dawn on the floating market.
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">

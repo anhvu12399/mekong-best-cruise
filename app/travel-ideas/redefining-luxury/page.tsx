@@ -4,16 +4,17 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Luxury Isn't What You Think — Travel Ideas",
-  description: "Redefining luxury on the Mekong: it is not about gold plating, it is about privacy, time, and flawless local details.",
+  description: "On the Mekong, luxury isn't marble or chandeliers. It's a crew that knows your coffee order by day two, and a sliding door that opens onto the river at night.",
 };
 
 export default function RedefiningLuxuryPage() {
   return (
     <main className="bg-white text-[#222]">
+      {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
           src="/images/redefine_hero.png"
-          alt="Elegant minimalist fruit plate on a river cruise"
+          alt="Minimalist fruit plate on a teak deck at sunrise"
           fill
           className="object-cover"
           priority
@@ -27,70 +28,75 @@ export default function RedefiningLuxuryPage() {
             Luxury Isn&apos;t<br />What You<br />Think
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
-            On the Mekong River, true luxury has nothing to do with chandeliers or gold leaf. It is about the scarcity of time, the luxury of space, and access to the authentic.
+            I&apos;ve stayed in hotels with gold-plated faucets that left me feeling nothing. On the Mekong, a plate of dragon fruit on a teak table made me feel like the richest person alive.
           </p>
         </div>
       </section>
 
+      {/* ── CHAPTER ONE ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
-        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Old Way vs. The New Way</p>
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Old Definition</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          Redefining what it means to travel well
+          For years, the travel industry confused luxury with excess. More gold. More marble. More imported everything.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            For a long time, the travel industry confused luxury with excess. If a little was good, more must be better. Bigger ships. Heavier curtains. Menus with ingredients flown in from Paris to be served on a river in Southeast Asia. 
+            I&apos;ve been on ships where the chandeliers were bigger than my apartment. Where the dinner menu featured ingredients flown in from three continents. Where the spa used products from Switzerland in a country that has been making its own medicinal oils for a thousand years. Everything screamed <em>look how much we spent</em>, and the effect was oddly deadening. Like eating too much sugar — impressive at first, nauseating by the third course.
           </p>
           <p>
-            But the definition is shifting. For the modern traveler, luxury is not about what is imported; it is about what is local, perfected. It is a plate of dragon fruit, cut with geometric precision, served at exactly the right temperature on a deck made of sustainable teak. It is the thread count of the sheets, yes, but also the fact that the sliding glass doors open fully so you can hear the river at night.
-          </p>
-          <p>
-            Most importantly, luxury is privacy. It is a ship with 20 suites instead of 100. It is a crew that knows how you take your coffee by the second morning, and brings it to you without you having to ask. It is the ability to shape your own day.
+            The Mekong taught me a different vocabulary. Luxury here is not about importing the world onto a ship. It&apos;s about the ship getting out of the way so you can see what&apos;s already here. The morning light on the water. The sound of an oar. The chef at the market at 5 AM, arguing over the freshness of a catfish with a fisherman who caught it twenty minutes ago. That argument — the insistence on local, on fresh, on <em>this river, this morning, this fish</em> — is more luxurious than any gold faucet I&apos;ve ever seen.
           </p>
         </div>
       </section>
 
+      {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
           src="/images/fine-dining-deck.avif"
-          alt="Fine dining under the stars"
+          alt="Fine dining under the stars on a river cruise"
           fill
           className="object-cover"
         />
       </section>
 
+      {/* ── CHAPTER TWO ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
-        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Details</p>
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Invisible Part</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          Invisible excellence
+          The best luxury on this river is the thing you don&apos;t notice until it&apos;s gone.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            The best luxury is invisible. You don&apos;t notice the mechanics of it; you only feel the result. You don&apos;t notice the noise-canceling engineering of the engine room, you just notice how quiet the cabin is. You don&apos;t see the chef haggling at the morning market, you just taste the impossible freshness of the river prawns at dinner.
+            On the Jayavarman, I noticed something on the third morning. The cabin was quiet. Not quiet like a hotel room — quiet like a library, like a recording studio. I couldn&apos;t hear the engine. I couldn&apos;t hear the corridor. I could hear the river through the open balcony door — the soft, constant whisper of water against the hull — and that was it. The silence wasn&apos;t accidental. It was engineered. The engine room had been insulated with a specific material. The doors had been weighted. The hallway carpet had been chosen for its sound absorption. I only learned this because I asked. The crew just smiled — they&apos;d done their job so well it was invisible.
           </p>
           <p>
-            This is what the finest ships on the Mekong — vessels like the Aqua Mekong and the Jayavarman — understand implicitly. They strip away the unnecessary noise and leave you with the pure, distilled experience of the river, wrapped in flawless comfort.
+            That&apos;s the pattern on the best ships. The coffee that appears on your balcony without you ordering it. The turndown service that happens during dinner, so you never see it, you only feel it when you walk back to find the bed made, the lights dimmed, and a small chocolate on the pillow wrapped in banana leaf. The guide who notices you looking at a temple across the river and quietly arranges a stop there tomorrow — without you having to ask.
+          </p>
+          <p>
+            It&apos;s not flashy. It&apos;s not Instagrammable. But it&apos;s the kind of care that makes you exhale. The kind that makes you stop performing the trip and start living it.
           </p>
         </div>
       </section>
 
+      {/* ── COLLAGE ── */}
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/fine-dining-deck.avif" alt="Fine dining presentation" fill className="object-cover" />
+            <Image src="/images/fine-dining-deck.avif" alt="Dinner on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jewel_spa.png" alt="Spa and wellness" fill className="object-cover" />
+            <Image src="/images/jewel_spa.png" alt="Spa space on a river ship" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jayavarman_suite.png" alt="Spacious private suite" fill className="object-cover" />
+            <Image src="/images/jayavarman_suite.png" alt="Suite with river view" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
-          Thoughtful dining · Wellness spaces · Private sanctuaries
+          Dinner at 8 PM, stars overhead · The treatment room, mid-river · Waking up to this
         </p>
       </section>
 
+      {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
         style={{ backgroundImage: "url(/images/jahan_dining.png)" }}
@@ -98,41 +104,61 @@ export default function RedefiningLuxuryPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
           <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
-            &ldquo;True luxury on the Mekong isn't about escaping the local environment; it is about experiencing it in total comfort.&rdquo;
+            &ldquo;On day three, the steward brought my coffee at exactly 6:12 AM — the time I&apos;d been waking up. I hadn&apos;t told anyone. He just knew. That&apos;s luxury.&rdquo;
           </blockquote>
         </div>
       </section>
 
+      {/* ── GOOD TO KNOW ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
         <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          The New Luxury Standards
+          What to look for in a luxury ship
         </h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Space to Guest Ratio</h3>
-            <p>The finest ships prioritize square footage over cabin count. Look for vessels that offer generous common areas and large private balconies.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Guest-to-Crew Ratio</h3>
+            <p>The best ships have nearly 1:1. This is how the coffee appears before you ask and the guide adjusts tomorrow&apos;s schedule based on a question you asked at dinner.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Culinary Philosophy</h3>
-            <p>Modern luxury cruises employ renowned chefs who source ingredients directly from the river and local markets, ensuring an authentic taste of the region.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Kitchen</h3>
+            <p>Ask where the chef buys ingredients. If the answer is &ldquo;the morning market&rdquo; or &ldquo;from a fisherman alongside the ship,&rdquo; you&apos;re in the right place. If the answer involves a supply chain from Bangkok, keep looking.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Wellness Integration</h3>
-            <p>Spa treatments, yoga sessions on the deck, and fitness centers are seamlessly integrated into the journey without feeling out of place.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Noise</h3>
+            <p>Stand in the cabin with the balcony closed. If you can hear the engine, the ship is cutting corners. The best engineering is the kind you never hear.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Expert Guiding</h3>
-            <p>Luxury extends to the off-ship experiences. Expect highly educated, fluent, and passionate local guides who provide deep cultural context.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Balcony Door</h3>
+            <p>Does it open fully? Can you fall asleep listening to the river? This single detail tells you everything about whether the ship was designed for the Mekong or just dropped onto it.</p>
           </div>
         </div>
       </section>
 
+      {/* ── ALSO READ ── */}
+      <section className="bg-[#f5f5f5] py-16">
+        <div className="max-w-[720px] mx-auto px-6">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Also Read</p>
+          <div className="space-y-4">
+            <Link href="/travel-ideas/luxury-cruises" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">The Slow Art of River Luxury</span> — When the clock stops between Saigon and Phnom Penh.
+            </Link>
+            <Link href="/travel-ideas/slow-day" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
+              <span className="font-bold">A Slow Day in the Mekong</span> — Doing nothing, remembering everything.
+            </Link>
+            <Link href="/travel-ideas/hate-crowds" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light pb-4">
+              <span className="font-bold">For Travelers Who Hate Crowds</span> — Private boats and empty waterways.
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
       <section className="bg-[#505a5f] py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Experience the new luxury</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Experience the quiet kind</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
-            Explore our curated selection of high-end vessels that understand the true meaning of luxury on the Mekong.
+            Ships where the crew knows your name, the chef knows the river, and the balcony door opens all the way.
           </p>
           <Link
             href="/cruises"
