@@ -110,13 +110,13 @@ export default function DiscoverClient() {
           </h2>
           <div className="font-serif text-navy/75 text-lg md:text-xl leading-[1.85] space-y-6">
             <p>
-              <span className="float-left text-7xl leading-[0.8] mr-4 text-navy font-bold font-serif">T</span>he Mekong begins on the Tibetan Plateau at more than five thousand meters, a cold clear stream among prayer flags and yak herds. By the time it reaches Yunnan it has become the Lancang — the Turbulent River — carving gorges deeper than the Grand Canyon. By the time it reaches Vietnam it has fanned into nine braided channels called the Nine Dragons, and it ends there, quietly, in the South China Sea.
+              <span className="float-left text-7xl leading-[0.8] mr-4 text-navy font-bold font-serif">T</span>he Mekong River originates in the mountains of the Tibetan Plateau, where it rises above the five-thousand-meter mark and flows into the South China Sea as a cold, clear stream winding around the colorful flags of Buddhist prayer banners. By the time the river has reached Yunnan, it takes the name Lancang (Turbulent River), with depths rivaling those of the Grand Canyon; in Vietnam, it turns into the Nine Dragons — nine braided waterways flowing into the South China Sea.
             </p>
             <p>
-              In between, it passes through six of the most culturally distinct countries in Asia. It forms borders, feeds rice paddies, floats fishing villages, and has served as the main artery of commerce and faith for civilizations stretching back three thousand years. The Khmer Empire built Angkor on its tributary. The French built their colonial architecture on its banks. And the people who actually live on it — the farmers, the fisherfolk, the monks, the market vendors — have built something more enduring than any of them: a daily life so rooted in the river that the two are barely separable.
+              In the meantime, the river flows across six of the most distinctive nations on the continent of Asia, forming borders, irrigating rice paddies, hosting villages of fishermen, and serving as the lifeblood of civilizations that have existed here for almost three millennia. The Khmer Empire built the ancient city of Angkor along one of the Mekong's tributaries; the French colonists erected their imposing buildings along its banks; and the people that lived on the banks of the Mekong created much more lasting legacy than both civilizations together: an everyday existence intimately linked with the river.
             </p>
             <p>
-              To travel the Mekong slowly — by boat, at the river's own pace — is to be given access to a world that moves differently. Not frozen. Not performing. Just going about its business, with room enough for one more curious traveler.
+              Exploring the Mekong from the slow pace of a traditional river cruise offers unique insights into this world that exists out of sync with our own hectic reality. Neither frozen nor performing, the world of the Mekong simply exists; and there is room for another traveler in that world.
             </p>
           </div>
         </div>
@@ -137,14 +137,14 @@ export default function DiscoverClient() {
           <div className="bg-navy text-white px-8 py-20 lg:p-32 flex flex-col justify-center">
             <span className="text-gold text-xs tracking-[0.3em] uppercase mb-6 font-bold">Field Notes · Cai Rang, 5:47am</span>
             <h3 className={`text-3xl md:text-5xl mb-8 leading-tight ${playfair.className}`}>
-              The Market Was Already Running When You Arrived
+              The Market Was Already Underway When You Got There
             </h3>
             <div className="text-white/70 text-base md:text-lg leading-[1.85] mb-8 font-serif space-y-4 max-w-lg">
               <p>
-                The diesel engines start before four. By the time your sampan rounds the first bend, the floating market is already mid-sentence — fifty boats trading across each other's bows, vendors balancing on the prow, the long bamboo poles with their goods dangling off the end a system so efficient nobody ever thought to replace it.
+                The diesel engines kick in before four. Even before your sampan makes its first turn, the floating market is already halfway through the sentence – fifty boats bargaining among themselves, people selling from the front ends of their boats, the bamboo poles extending forward with their loads dangling from the ends so perfectly that nobody could think of changing anything.
               </p>
               <p>
-                You buy a bag of rambutan for twelve thousand dong and eat them warm, watching someone's grandmother steer a boat loaded with durian using nothing but her feet. A boy of maybe seven is already handling transactions. It is 6am, and this has been going on since before his great-grandmother was born.
+                A bag of rambutan costs twelve thousand dong, which you devour still warm, while watching an old woman rowing a boat of durians without using her hands. The boy who negotiates is no more than seven years old, yet it is already morning, and this has been happening since before his great-grandmother's birth.
               </p>
             </div>
           </div>
