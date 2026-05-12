@@ -56,7 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const travelIdeas = ['luxury-cruises', 'floating-markets', 'cajuput-forests', 'craft-villages', 'hidden-mekong', 'ben-tre-authentic', 'slow-day', 'hate-crowds', 'redefining-luxury']
 
   const travelIdeaPages = [
-    { url: `${BASE_URL}/travel-ideas`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
     ...travelIdeas.map((slug) => ({
       url: `${BASE_URL}/travel-ideas/${slug}`,
       lastModified: now,

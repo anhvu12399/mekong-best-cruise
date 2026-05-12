@@ -24,7 +24,7 @@ const navLinks = [
   },
   {
     label: "Travel Ideas",
-    href: "/travel-ideas",
+    href: "#",
     subLinks: [
       { label: "Luxury Cruises", href: "/travel-ideas/luxury-cruises" },
       { label: "Floating Markets", href: "/travel-ideas/floating-markets" },
