@@ -116,6 +116,25 @@ export default function ShipsClient({ data }: { data: ShipData }) {
         </div>
       </section>
 
+      {/* ── MASSIVE PARALLAX / TALL IMAGE ── */}
+      <section className="relative w-full h-[120vh] md:h-[150vh] bg-[#111]">
+        <div className="absolute inset-0">
+           <Image 
+             src={data.gallery[0] || data.heroImage} 
+             alt={`${data.name} from the front`} 
+             fill 
+             className="object-cover object-center"
+           />
+           {/* Subtle gradient at the bottom to make text readable */}
+           <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black/80 to-transparent" />
+        </div>
+        <div className="absolute bottom-10 left-6 md:left-12 z-10">
+           <p className="text-white/80 text-[10px] md:text-xs tracking-[0.25em] font-bold uppercase">
+             Unravel ancient mysteries in the Mekong Delta
+           </p>
+        </div>
+      </section>
+
       {/* ── OVERVIEW ── */}
       <section id="overview" className="bg-white py-20 lg:py-32">
         <div className="max-w-[1200px] mx-auto px-6">
