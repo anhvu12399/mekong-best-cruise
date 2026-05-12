@@ -184,20 +184,17 @@ export function Header() {
             <div className="mb-10 border-b border-white/10 pb-10">
               <h4 className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-6">Trending</h4>
               <div className="flex flex-col gap-5">
-                <Link href="https://www.toursmekong.com/tailor-made-tours/" target="_blank" className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Tailormade Journeys
+                <Link href="/travel-ideas/hidden-mekong" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  The Mekong You Don&apos;t See
                 </Link>
-                <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Expedition Cruises
+                <Link href="/travel-ideas/ben-tre-authentic" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  Why Ben Tre Feels More Real
                 </Link>
-                <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Luxury Cruises
+                <Link href="/itineraries/mekong-delta" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  3-4 Days Mekong Delta
                 </Link>
-                <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Private Charters
-                </Link>
-                <Link href="/discover" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
-                  Luxury River Cruises
+                <Link href="/itineraries/vietnam-cambodia" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  7-8 Days Cambodia Vietnam
                 </Link>
               </div>
             </div>
