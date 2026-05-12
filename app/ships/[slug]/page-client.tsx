@@ -327,6 +327,168 @@ export default function ShipsClient({ data }: { data: ShipData }) {
         </div>
       </section>
 
+      {/* ── DECK PLAN (Creative Adaptation) ── */}
+      <section id="deck-plan" className="py-20 lg:py-32 bg-white border-t border-gray-200">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <span className="text-[#333] text-[13px] font-serif block mb-2">Deck Plan</span>
+          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-16 max-w-3xl mx-auto">
+            Spread across three decks, {data.name} showcases masterful design and use of space.
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div className="p-8 bg-[#f5f5f5] hover:bg-[#eaeaea] transition-colors">
+              <h3 className="font-serif text-2xl text-[#222] mb-4">Top Deck</h3>
+              <p className="text-[#555] text-sm leading-relaxed font-light mb-6">
+                Opening up to the vast Mekong sky, the top deck on both ends of {data.name} is the highest vantage point aboard the cruise ship with postcard-perfect views. An ideal spot for photography, yoga or meditation.
+              </p>
+              <ul className="text-xs text-[#777] uppercase tracking-widest space-y-3">
+                <li>• Sun Deck & Plunge Pool</li>
+                <li>• Screening Room</li>
+                <li>• Indoor Lounge & Bar</li>
+                <li>• Gym & Spa</li>
+              </ul>
+            </div>
+            
+            <div className="p-8 bg-[#f5f5f5] hover:bg-[#eaeaea] transition-colors">
+              <h3 className="font-serif text-2xl text-[#222] mb-4">Second Deck</h3>
+              <p className="text-[#555] text-sm leading-relaxed font-light mb-6">
+                The second deck houses {Math.floor(Number(data.stats.cabins) / 2)} Design Suites with panoramic windows. This deck also houses the boutique, main dining room, and the interactive galley where guests can observe our chefs.
+              </p>
+              <ul className="text-xs text-[#777] uppercase tracking-widest space-y-3">
+                <li>• {Math.floor(Number(data.stats.cabins) / 2)} Design Suites</li>
+                <li>• Main Dining Restaurant</li>
+                <li>• Lobby & Boutique</li>
+                <li>• Interactive Galley</li>
+              </ul>
+            </div>
+
+            <div className="p-8 bg-[#f5f5f5] hover:bg-[#eaeaea] transition-colors">
+              <h3 className="font-serif text-2xl text-[#222] mb-4">First Deck</h3>
+              <p className="text-[#555] text-sm leading-relaxed font-light mb-6">
+                The first deck features the remaining Design Suites and acts as the main launchpad for all shore excursions via our private tenders, ensuring seamless transitions from ship to shore.
+              </p>
+              <ul className="text-xs text-[#777] uppercase tracking-widest space-y-3">
+                <li>• {Math.ceil(Number(data.stats.cabins) / 2)} Design Suites</li>
+                <li>• Tender Boarding Area</li>
+                <li>• Guest Services</li>
+                <li>• Private Spa Treatment Rooms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EARLY BIRD BONUS ── */}
+      <section className="relative py-32 flex items-center justify-center">
+         <div className="absolute inset-0">
+            <Image src={data.heroImage} alt="Early Bird" fill className="object-cover object-bottom" />
+            <div className="absolute inset-0 bg-black/60" />
+         </div>
+         <div className="relative z-10 text-center px-6">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Early Bird Bonus</h2>
+            <p className="text-white/80 font-sans font-light text-[15px] mb-10 max-w-xl mx-auto">
+               Enjoy 30% off when you book to travel across all departure dates in 2026, 2027, and 2028.
+            </p>
+            <button className="bg-white text-[#222] px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:bg-gray-100 transition-colors">
+               Learn More
+            </button>
+         </div>
+      </section>
+
+      {/* ── CHOOSE YOUR ITINERARY ── */}
+      <section className="py-20 lg:py-32 bg-[#f5f5f5]">
+        <div className="max-w-[1400px] mx-auto px-6 text-center">
+          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-6">Choose your itinerary</h2>
+          <p className="text-[#555] text-[15px] font-light max-w-2xl mx-auto mb-16">
+            {data.name} offers guests the opportunity to embark on the finest river ship experience in Cambodia and Vietnam, with the choice of the following itineraries.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+             {/* Itinerary Card 1 */}
+             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                   <Image src="/images/dest_vietnam.avif" alt="Vietnam Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                   <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">3 Nights</div>
+                </div>
+                <div className="p-8 flex flex-col items-center text-center">
+                   <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Discovery Cruise</h3>
+                   <p className="text-[#777] text-sm font-light mb-6">Ho Chi Minh City ↔ Phnom Penh</p>
+                   <p className="text-[#222] text-xs tracking-widest uppercase mb-8">From $3,360 per adult</p>
+                   <Link href="/itineraries/mekong-delta" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                      Select
+                   </Link>
+                </div>
+             </div>
+
+             {/* Itinerary Card 2 */}
+             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                   <Image src="/images/dest_cambodia.avif" alt="Cambodia Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                   <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">4 Nights</div>
+                </div>
+                <div className="p-8 flex flex-col items-center text-center">
+                   <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Explorer Cruise</h3>
+                   <p className="text-[#777] text-sm font-light mb-6">Phnom Penh ↔ Siem Reap</p>
+                   <p className="text-[#222] text-xs tracking-widest uppercase mb-8">From $4,480 per adult</p>
+                   <Link href="/itineraries/vietnam-cambodia" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                      Select
+                   </Link>
+                </div>
+             </div>
+
+             {/* Itinerary Card 3 */}
+             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                   <Image src="/images/hero_3_sharp.avif" alt="Full Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                   <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">7 Nights</div>
+                </div>
+                <div className="p-8 flex flex-col items-center text-center">
+                   <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Expedition Cruise</h3>
+                   <p className="text-[#777] text-sm font-light mb-6">Ho Chi Minh City ↔ Siem Reap</p>
+                   <p className="text-[#222] text-xs tracking-widest uppercase mb-8">From $7,840 per adult</p>
+                   <Link href="/itineraries/small-ship" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                      Select
+                   </Link>
+                </div>
+             </div>
+          </div>
+          
+          <button className="mt-12 text-[#222] text-[10px] tracking-widest uppercase font-bold border border-[#222] px-8 py-3 hover:bg-[#222] hover:text-white transition-colors">
+            View More Itineraries →
+          </button>
+        </div>
+      </section>
+
+      {/* ── GUEST REVIEWS ── */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-16">What our guests say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-[#f5f5f5] p-10 relative">
+              <span className="font-serif text-6xl text-[#ddd] absolute top-4 left-6">"</span>
+              <p className="text-[#555] font-light text-[15px] italic relative z-10 mb-6">
+                An absolutely unforgettable experience. The staff anticipated our every need, the food was spectacular, and the excursions were perfectly curated.
+              </p>
+              <p className="text-[#222] text-xs tracking-widest uppercase font-bold">— Sarah M., UK</p>
+            </div>
+            <div className="bg-[#f5f5f5] p-10 relative">
+              <span className="font-serif text-6xl text-[#ddd] absolute top-4 left-6">"</span>
+              <p className="text-[#555] font-light text-[15px] italic relative z-10 mb-6">
+                We've traveled on many river cruises, but {data.name} stands in a class of its own. The design of the suite was stunning.
+              </p>
+              <p className="text-[#222] text-xs tracking-widest uppercase font-bold">— James & Linda, USA</p>
+            </div>
+            <div className="bg-[#f5f5f5] p-10 relative">
+              <span className="font-serif text-6xl text-[#ddd] absolute top-4 left-6">"</span>
+              <p className="text-[#555] font-light text-[15px] italic relative z-10 mb-6">
+                From the moment we stepped on board, we were treated like royalty. The culinary journey was a highlight of our trip to Asia.
+              </p>
+              <p className="text-[#222] text-xs tracking-widest uppercase font-bold">— David W., Australia</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA / EARLY BIRD ── */}
       <section className="py-24 bg-[#505a5f] text-center text-white">
         <div className="max-w-3xl mx-auto px-6">
