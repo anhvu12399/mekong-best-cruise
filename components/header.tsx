@@ -22,6 +22,16 @@ const navLinks = [
       { label: "China", href: "/destinations/china" }
     ]
   },
+  {
+    label: "Travel Ideas",
+    href: "/travel-ideas",
+    subLinks: [
+      { label: "Luxury Cruises", href: "/travel-ideas/luxury-cruises" },
+      { label: "Floating Markets", href: "/travel-ideas/floating-markets" },
+      { label: "Cajuput Forests", href: "/travel-ideas/cajuput-forests" },
+      { label: "Craft Villages", href: "/travel-ideas/craft-villages" }
+    ]
+  },
   { label: "About", href: "/" },
 ]
 

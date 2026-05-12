@@ -53,6 +53,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const travelIdeas = ['luxury-cruises', 'floating-markets', 'cajuput-forests', 'craft-villages']
+
+  const travelIdeaPages = [
+    { url: `${BASE_URL}/travel-ideas`, lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
+    ...travelIdeas.map((slug) => ({
+      url: `${BASE_URL}/travel-ideas/${slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+  ]
+
   const legalPages = [
     { url: `${BASE_URL}/terms-conditions`, priority: 0.3, changeFrequency: 'monthly' },
     { url: `${BASE_URL}/privacy-policy`, priority: 0.3, changeFrequency: 'monthly' },
@@ -64,6 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...itineraryPages,
     ...cruiseDestinationPages,
     ...shipPages,
+    ...travelIdeaPages,
     ...legalPages.map(p => ({ ...p, lastModified: now, changeFrequency: p.changeFrequency as any })),
   ]
 }
