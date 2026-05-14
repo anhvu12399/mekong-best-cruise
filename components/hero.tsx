@@ -32,8 +32,8 @@ const heroSlides = [
       </>
     ),
     subheading: "French-colonial design meets the untamed beauty of the river.",
-    details: "FRENCH-COLONIAL ELEGANCE · BOUTIQUE COMFORT · 8-DAY VOYAGES",
-    link: "/ships/mekong-navigator",
+    details: "7–8 DAYS · VIETNAM & CAMBODIA · LUXURY RIVER VOYAGE",
+    link: "/itineraries/vietnam-cambodia",
   },
   {
     image: "/images/enhanced_hero_3_sharp_optimized.avif",
