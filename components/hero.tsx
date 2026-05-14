@@ -22,18 +22,18 @@ const heroSlides = [
     link: "/cruises",
   },
   {
-    image: "/images/enhanced_hero_2_sharp_optimized.avif",
-    title: "Vibrant Floating Markets of the Delta",
+    image: "/images/mekong_navigator.avif",
+    title: "The Timeless Elegance of the Mekong Navigator",
     heading: (
       <>
-        <span className="uppercase tracking-widest text-[0.85em]">THE PULSE of</span>
+        <span className="uppercase tracking-widest text-[0.85em]">THE GRACE of</span>
         <br />
-        <span className="uppercase tracking-widest">THE MEKONG DELTA</span>
+        <span className="uppercase tracking-widest">MEKONG NAVIGATOR</span>
       </>
     ),
-    subheading: "The river doesn't wait — and neither should you.",
-    details: "LIVING MARKETS · BOAT LIFE · MOMENTS MONEY CAN'T MANUFACTURE",
-    link: "/cruises/vietnam",
+    subheading: "French-colonial design meets the untamed beauty of the river.",
+    details: "FRENCH-COLONIAL ELEGANCE · BOUTIQUE COMFORT · 8-DAY VOYAGES",
+    link: "/ships/mekong-navigator",
   },
   {
     image: "/images/enhanced_hero_3_sharp_optimized.avif",
