@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest luxury ships on the Mekong River.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/luxury-cruises",
-    images: [{ url: "https://www.mekongrivercruise.com/images/jayavarman_hero.png", width: 1200, height: 630, alt: "Luxury cruise on the Mekong at golden hour" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/jayavarman_hero.avif", width: 1200, height: 630, alt: "Luxury cruise on the Mekong at golden hour" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Luxury Mekong River Cruises",
     description: "Sunset champagne, temple mornings, and the slow art of doing nothing on the Mekong.",
-    images: ["https://www.mekongrivercruise.com/images/jayavarman_hero.png"],
+    images: ["https://www.mekongrivercruise.com/images/jayavarman_hero.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function LuxuryCruisesPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/jayavarman_hero.png"
+          src="/images/jayavarman_hero.avif"
           alt="Luxury cruise on the Mekong at golden hour"
           fill
           className="object-cover"
@@ -73,7 +73,7 @@ export default function LuxuryCruisesPage() {
       {/* ── FULL-WIDTH IMAGE BREAK ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/jayavarman_deck.png"
+          src="/images/jayavarman_deck.avif"
           alt="Couple watching sunset from the observation deck"
           fill
           className="object-cover"
@@ -103,10 +103,10 @@ export default function LuxuryCruisesPage() {
             <Image src="/images/sacred-temples.avif" alt="Temple morning excursion" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury_dining.png" alt="Fine dining on deck" fill className="object-cover" />
+            <Image src="/images/luxury_dining.avif" alt="Fine dining on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/luxury_sunset_balcony.png" alt="Suite balcony at sunset" fill className="object-cover" />
+            <Image src="/images/luxury_sunset_balcony.avif" alt="Suite balcony at sunset" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -135,7 +135,7 @@ export default function LuxuryCruisesPage() {
       {/* ── PARALLAX QUOTE ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/jayavarman_lounge.png)" }}
+        style={{ backgroundImage: "url(/images/jayavarman_lounge.avif)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">

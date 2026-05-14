@@ -72,7 +72,7 @@ export default function FloatingMarketsPage() {
       {/* ── FULL IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/floating_pho.png"
+          src="/images/floating_pho.avif"
           alt="Boats laden with tropical fruit at Cai Rang market"
           fill
           className="object-cover"
@@ -99,7 +99,7 @@ export default function FloatingMarketsPage() {
       <section className="bg-[#f5f5f5]">
         <div className="max-w-[1200px] mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/5]">
-            <Image src="/images/floating_fruit.png" alt="Fresh fruit from orchards" fill className="object-cover" />
+            <Image src="/images/floating_fruit.avif" alt="Fresh fruit from orchards" fill className="object-cover" />
           </div>
           <div>
             <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">The Afternoon</p>

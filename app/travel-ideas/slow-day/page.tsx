@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Embrace the slow pace of the Mekong Delta. A complete timeline of a mindful travel day: morning mist, midday hammocks, evening lanterns, and unhurried luxury.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/slow-day",
-    images: [{ url: "https://www.mekongrivercruise.com/images/slow_hero.png", width: 1200, height: 630, alt: "Peaceful morning with coffee on the Mekong" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/slow_hero.avif", width: 1200, height: 630, alt: "Peaceful morning with coffee on the Mekong" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "A Slow Day in the Mekong",
     description: "Embrace the slow pace of the Mekong Delta with mindful travel.",
-    images: ["https://www.mekongrivercruise.com/images/slow_hero.png"],
+    images: ["https://www.mekongrivercruise.com/images/slow_hero.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function SlowDayPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/slow_hero.png"
+          src="/images/slow_hero.avif"
           alt="Peaceful morning with coffee on the Mekong"
           fill
           className="object-cover"
@@ -72,7 +72,7 @@ export default function SlowDayPage() {
       {/* ── SPLIT: AFTERNOON ── */}
       <section className="max-w-[1200px] mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="relative aspect-[4/3]">
-          <Image src="/images/slow_coffee.png" alt="Vietnamese morning coffee" fill className="object-cover" />
+          <Image src="/images/slow_coffee.avif" alt="Vietnamese morning coffee" fill className="object-cover" />
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">02:00 PM — Warm</p>
@@ -113,13 +113,13 @@ export default function SlowDayPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/slow_hammock.png" alt="Relaxing in hammock" fill className="object-cover" />
+            <Image src="/images/slow_hammock.avif" alt="Relaxing in hammock" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/slow_lanterns.png" alt="Sunset lanterns" fill className="object-cover" />
+            <Image src="/images/slow_lanterns.avif" alt="Sunset lanterns" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/slow_reading.png" alt="Reading on deck" fill className="object-cover" />
+            <Image src="/images/slow_reading.avif" alt="Reading on deck" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">

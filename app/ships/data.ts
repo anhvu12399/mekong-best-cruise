@@ -70,7 +70,7 @@ export const shipsData: Record<string, ShipData> = {
     slug: "jayavarman",
     name: "The Jayavarman",
     tagline: "Where teak meets twilight, and history pours the drinks",
-    heroImage: "/images/jayavarman_hero.png",
+    heroImage: "/images/jayavarman_hero.avif",
     stats: {
       length: "57.8m",
       cabins: "27",
@@ -84,26 +84,26 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "Colonial bones, Khmer soul",
       description: "The designers raided Saigon's antique shops and Phnom Penh's silk markets. The result is a ship that looks like a French colonial officer's dream filtered through Cambodian warmth. Dark teak panels absorb the light; hand-woven rugs soften the floors. The library has actual books — dog-eared novels about Indochina alongside photography collections. The spa smells like eucalyptus and promises nothing it can't deliver.",
-      image: "/images/jayavarman_lounge.png",
+      image: "/images/jayavarman_lounge.avif",
     },
     suites: {
       title: "Boutique Staterooms",
       description: "No two cabins look exactly alike, which is the first clue that someone cared. One has a carved headboard depicting apsara dancers. Another has vintage maps of the Mekong framed above the desk. All of them have private balconies where you can sit in the early morning dark and listen to monks chanting from a distant pagoda across the water. The beds are draped in silks. The bathrooms are bigger than they need to be, which is exactly the point.",
-      image: "/images/jayavarman_suite.png",
+      image: "/images/jayavarman_suite.avif",
       amenities: ["Private balcony", "French balcony doors", "Mini-bar with local spirits", "Air conditioning", "Premium Egyptian cotton linens"],
     },
     dining: {
       title: "Club 1930 — where the evening starts",
       description: "The dining room is called Club 1930, and it earns the name. Candlelight on white linen. A Vietnamese chef who trained in Saigon but grew up watching his grandmother make bún bò Huế. The Cambodian fish amok arrives in a coconut, and the French onion soup that follows is so good it's almost an insult to the local cuisine. Almost. The wine list leans French — they know their audience — but the cocktails are pure Mekong: tamarind, palm sugar, local rice whiskey.",
-      image: "/images/jayavarman_dining.png",
+      image: "/images/jayavarman_dining.avif",
     },
-    gallery: ["/images/jayavarman_hero.png", "/images/jayavarman_lounge.png", "/images/jayavarman_suite.png", "/images/jayavarman_dining.png", "/images/jayavarman_deck.png", "/images/heritage_epic.avif"],
+    gallery: ["/images/jayavarman_hero.avif", "/images/jayavarman_lounge.avif", "/images/jayavarman_suite.avif", "/images/jayavarman_dining.avif", "/images/jayavarman_deck.avif", "/images/heritage_epic.avif"],
   },
   "mekong-jewel": {
     slug: "mekong-jewel",
     name: "Mekong Jewel",
     tagline: "The newest ship on the oldest river. Built to listen.",
-    heroImage: "/images/jewel_hero.png",
+    heroImage: "/images/jewel_hero.avif",
     stats: {
       length: "80m",
       cabins: "34",
@@ -117,26 +117,26 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "Light, space, and the sound of water",
       description: "The architects gave this ship something most river cruisers lack: breathing room. The two dining venues never feel crowded. The sundeck pool is big enough to actually swim in. The lounge has floor-to-ceiling windows that make the Mekong feel like a living painting — changing color, shifting mood, never the same river twice. The materials are natural: bamboo, reclaimed teak, woven rattan. The palette is earth tones. The effect is calm.",
-      image: "/images/jewel_pool.png",
+      image: "/images/jewel_pool.avif",
     },
     suites: {
       title: "All-Balcony Suites",
       description: "Every single suite on the Jewel has its own balcony. This matters more than you think. At dawn, before the ship wakes, you can stand outside in your robe and watch the mist burn off the river. The egrets come first, then the fishing boats, then the sound of someone frying rice in a village kitchen. Inside, the bed faces the water. The bathroom has a rain shower. The minibar gets restocked with local fruit every afternoon — rambutan, dragon fruit, mangosteen — and someone always remembers to leave the mango last.",
-      image: "/images/jewel_suite.png",
+      image: "/images/jewel_suite.avif",
       amenities: ["Private open-air balcony", "Sitting area with river views", "Rain shower bathroom", "Flat-screen TV", "Daily restocked tropical fruit & water"],
     },
     dining: {
       title: "Two kitchens, one philosophy: fresh",
       description: "The main dining room handles the evening theater — multi-course dinners where the chef explains each dish like a story. But the real magic happens at the alfresco venue upstairs, where lunch is served family-style and the cook might pull you aside to teach you how to roll a proper spring roll. They buy fish from the boats we pass. The herbs come from a small garden on the top deck. The pho at breakfast — with its broth that's been simmering since 4 AM — is reason enough to set an alarm.",
-      image: "/images/jewel_dining.png",
+      image: "/images/jewel_dining.avif",
     },
-    gallery: ["/images/jewel_hero.png", "/images/jewel_suite.png", "/images/jewel_dining.png", "/images/jewel_pool.png", "/images/jewel_spa.png", "/images/luxury-balcony-sunset.avif"],
+    gallery: ["/images/jewel_hero.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif", "/images/jewel_spa.avif", "/images/luxury-balcony-sunset.avif"],
   },
   "mekong-princess": {
     slug: "mekong-princess",
     name: "Mekong Princess",
     tagline: "Fourteen suites. No crowds. Just the river and you.",
-    heroImage: "/images/princess_hero.png",
+    heroImage: "/images/princess_hero.avif",
     stats: {
       length: "61m",
       cabins: "14",
@@ -150,26 +150,26 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "The charm of not trying too hard",
       description: "The Princess doesn't have the glitz of the bigger ships, and she knows it. What she has instead is warmth. The observation lounge feels like someone's living room — mismatched vintage chairs, shelves of actual books, a bar where the bartender has time to talk because there are only twenty-eight guests. The sundeck has the best sunset views on the river because there's nothing above you but sky. No fuss, no production. Just teak, water, and time.",
-      image: "/images/princess_hero.png",
+      image: "/images/princess_hero.avif",
     },
     suites: {
       title: "Rooms that feel like hiding places",
       description: "The suites on the Princess are generous for a ship this size — probably because there are only fourteen of them. French balconies with wrought-iron railings open onto the passing delta. The beds have white cotton and indigo silk, a combination that looks better than it sounds. There's always a vase of lotus flowers, and you're never sure when someone came in to replace them. The writing desk by the window is where most guests end up spending their mornings, journaling or staring at the water. Both are valid.",
-      image: "/images/princess_suite.png",
+      image: "/images/princess_suite.avif",
       amenities: ["French balcony or private veranda", "Premium bath products by L'Occitane", "Silk robes and leather slippers", "Individual climate control"],
     },
     dining: {
       title: "When the chef knows your name",
       description: "With twenty-eight guests, dinner isn't a production — it's a conversation. The chef comes out most evenings, still in his apron, to ask how the fish was. It was perfect, because he bought it six hours ago from a boat that pulled alongside. The menu changes with the river: dry season brings sweeter mangoes and firmer catfish; wet season means wild herbs and the best morning glory you've ever tasted. Some nights, they set up a private table on the bow. The lantern swings. The river is black and silver. You don't want dessert. You want this to never end.",
-      image: "/images/princess_dining.png",
+      image: "/images/princess_dining.avif",
     },
-    gallery: ["/images/princess_hero.png", "/images/princess_suite.png", "/images/princess_dining.png", "/images/dest_vietnam.avif", "/images/dest_cambodia.avif", "/images/heritage_longway.avif"],
+    gallery: ["/images/princess_hero.avif", "/images/princess_suite.avif", "/images/princess_dining.avif", "/images/dest_vietnam.avif", "/images/dest_cambodia.avif", "/images/heritage_longway.avif"],
   },
   "the-jahan": {
     slug: "the-jahan",
     name: "The Jahan",
     tagline: "Named for the emperor who built the Taj Mahal. She lives up to it.",
-    heroImage: "/images/jahan_hero.png",
+    heroImage: "/images/jahan_hero.avif",
     stats: {
       length: "70m",
       cabins: "26",
@@ -183,26 +183,26 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "Mughal dreams on Mekong waters",
       description: "Shah Jahan built monuments to love. This ship borrows his aesthetic without his melancholy. The woodwork is intricate — hand-carved panels that catch the light differently at every hour. The colors are bold: saffron, turquoise, deep crimson. The observatory on the top deck has the best view on the river and the best gin collection. The pool is smaller than the Jewel's but warmer, both literally and in feeling. The spa uses techniques borrowed from Ayurveda. Everything on this ship is a little extra, and that's exactly the point.",
-      image: "/images/jahan_hero.png",
+      image: "/images/jahan_hero.avif",
     },
     suites: {
       title: "Ornate Cabins",
       description: "The four-poster beds have carved headboards that depict different legends — Ganesh on one, a lotus mandala on another. The textiles are hand-embroidered. The balcony doors open onto the river with a theatrical creak that feels intentional. The bathrooms have mosaic tiles in patterns that you'll spend ten minutes tracing with your eyes while the shower warms up. Nothing is minimalist. Nothing is quiet. Everything is chosen, considered, and slightly more beautiful than it needs to be.",
-      image: "/images/jahan_suite.png",
+      image: "/images/jahan_suite.avif",
       amenities: ["Private balcony", "Four-poster carved bed", "Writing desk with stationery", "Mini-bar with premium spirits"],
     },
     dining: {
       title: "The Viceroy Dining Hall",
       description: "The dining hall has crystal chandeliers that throw tiny rainbows across the white tablecloths at sunset. The menu is unapologetically fusion: Cambodian curry alongside lamb kebabs, Vietnamese pho next to naan bread. It shouldn't work, but it does — spectacularly. The chef understands that this river connects cultures, and the food should too. Thursday nights are the captain's dinner, where the long table is set with gold-rimmed china and the conversation lasts until the candles burn down. It's the kind of evening you'll remember in specific, sensory detail years later.",
-      image: "/images/jahan_dining.png",
+      image: "/images/jahan_dining.avif",
     },
-    gallery: ["/images/jahan_hero.png", "/images/jahan_suite.png", "/images/jahan_dining.png", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
+    gallery: ["/images/jahan_hero.avif", "/images/jahan_suite.avif", "/images/jahan_dining.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
   },
   "victoria-mekong": {
     slug: "victoria-mekong",
     name: "Victoria Mekong",
     tagline: "Clean lines, wide views, and the future of river cruising",
-    heroImage: "/images/victoria_hero.png",
+    heroImage: "/images/victoria_hero.avif",
     stats: {
       length: "76.8m",
       cabins: "35",
@@ -216,20 +216,20 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "What happens when you let light in",
       description: "Most river ships are built like hotels that happen to float. The Victoria Mekong is built like a greenhouse that happens to have beds. Light wood finishes replace the dark teak of older vessels. The windows are enormous — not floor-to-ceiling but floor-to-above-ceiling, somehow. The public spaces flow into each other without walls or doors, so the lounge becomes the bar becomes the restaurant becomes the deck. It's open-plan in a way that feels radical on a river where tradition usually wins.",
-      image: "/images/victoria_hero.png",
+      image: "/images/victoria_hero.avif",
     },
     suites: {
       title: "Modern Retreats",
       description: "The cabins are crisp. White walls, light wood, beds that sit lower than you expect — a design choice that frames the river through the balcony door like a painting. The smart TV is there if you want it, but the view is better. The bathrooms have walk-in rain showers with glass walls that let the light pour through. The balcony furniture is minimal: two chairs, a small table, just enough for coffee and the morning. No clutter, no excess, no apology for being contemporary.",
-      image: "/images/jewel_suite.png",
+      image: "/images/jewel_suite.avif",
       amenities: ["Private balcony", "Smart TV with streaming", "Walk-in rain shower", "In-room safe", "Bluetooth speaker"],
     },
     dining: {
       title: "A restaurant with no walls",
       description: "The panoramic restaurant wraps around the ship like a glass embrace. At breakfast, the light is so clean it makes the fruit look like a still life. The menu borrows from everywhere the Mekong touches: Vietnamese bún chả, Cambodian lok lak, Thai-inspired salads that crunch. The sushi bar — a surprising addition — turns out to be the best-kept secret on board, serving nigiri with fish that was in the river that morning. Lunch moves to the upper deck, where the breeze does half the cooking. Dinner is candlelit but casual. No dress codes. No pretense. Just good food and a river that never stops moving.",
-      image: "/images/jewel_dining.png",
+      image: "/images/jewel_dining.avif",
     },
-    gallery: ["/images/victoria_hero.png", "/images/jewel_suite.png", "/images/jewel_dining.png", "/images/jewel_pool.png", "/images/luxury-balcony-sunset.avif", "/images/heritage_longway.avif"],
+    gallery: ["/images/victoria_hero.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif", "/images/luxury-balcony-sunset.avif", "/images/heritage_longway.avif"],
   }
 };
 

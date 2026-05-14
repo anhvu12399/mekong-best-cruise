@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, hidden waterways, and exclusive luxury experiences.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/hate-crowds",
-    images: [{ url: "https://www.mekongrivercruise.com/images/nocrowd_hero.png", width: 1200, height: 630, alt: "Empty stretch of the Mekong with one private boat" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/nocrowd_hero.avif", width: 1200, height: 630, alt: "Empty stretch of the Mekong with one private boat" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "For Travelers Who Hate Crowds — Private Mekong Travel",
     description: "How to see the Mekong Delta without the crowds.",
-    images: ["https://www.mekongrivercruise.com/images/nocrowd_hero.png"],
+    images: ["https://www.mekongrivercruise.com/images/nocrowd_hero.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function HateCrowdsPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/nocrowd_hero.png"
+          src="/images/nocrowd_hero.avif"
           alt="Empty stretch of the Mekong with one private boat"
           fill
           className="object-cover"

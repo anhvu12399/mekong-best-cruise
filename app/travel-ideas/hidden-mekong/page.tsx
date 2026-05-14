@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Experience the authentic Mekong Delta off the beaten path. Discover narrow canals, wooden sampans, and local life past the tour boats.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/hidden-mekong",
-    images: [{ url: "https://www.mekongrivercruise.com/images/hidden_hero.png", width: 1200, height: 630, alt: "Small wooden boat in a narrow Mekong canal" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/hidden_hero.avif", width: 1200, height: 630, alt: "Small wooden boat in a narrow Mekong canal" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "The Mekong You Don't See on Tours",
     description: "Experience the authentic Mekong Delta off the beaten path.",
-    images: ["https://www.mekongrivercruise.com/images/hidden_hero.png"],
+    images: ["https://www.mekongrivercruise.com/images/hidden_hero.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function HiddenMekongPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/hidden_hero.png"
+          src="/images/hidden_hero.avif"
           alt="Small wooden boat in a narrow Mekong canal"
           fill
           className="object-cover"
@@ -72,7 +72,7 @@ export default function HiddenMekongPage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/hidden_canal.png"
+          src="/images/hidden_canal.avif"
           alt="Quiet canal life in the Mekong Delta"
           fill
           className="object-cover"
@@ -102,10 +102,10 @@ export default function HiddenMekongPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/hidden_boy.png" alt="Boy fishing at dusk" fill className="object-cover" />
+            <Image src="/images/hidden_boy.avif" alt="Boy fishing at dusk" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/hidden_sampan.png" alt="Sampan on muddy bank" fill className="object-cover" />
+            <Image src="/images/hidden_sampan.avif" alt="Sampan on muddy bank" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
             <Image src="/images/monk-temple.avif" alt="Quiet village temple" fill className="object-cover" />

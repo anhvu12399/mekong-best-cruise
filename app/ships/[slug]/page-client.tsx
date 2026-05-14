@@ -252,12 +252,12 @@ export default function ShipsClient({ data }: { data: ShipData }) {
           <h2 className="font-serif text-2xl text-[#222] mb-8">Expedition highlights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {[
-              { title: "Exceptional speed and comfort", img: data.gallery[0] || "/images/media__1777568799075.png" },
-              { title: "Fully equipped for adventure", img: data.gallery[1] || "/images/media__1777569329220.png" },
-              { title: "World-class cuisine", img: data.gallery[2] || "/images/media__1777571269177.png" },
-              { title: "State of the art design", img: data.gallery[3] || "/images/media__1777571481511.png" },
-              { title: "Expert-led excursions", img: data.gallery[4] || "/images/media__1777572235741.png" },
-              { title: "Cultural experiences", img: data.gallery[5] || "/images/media__1777574051095.png" },
+              { title: "Exceptional speed and comfort", img: data.gallery[0] || "/images/media__1777568799075.avif" },
+              { title: "Fully equipped for adventure", img: data.gallery[1] || "/images/media__1777569329220.avif" },
+              { title: "World-class cuisine", img: data.gallery[2] || "/images/media__1777571269177.avif" },
+              { title: "State of the art design", img: data.gallery[3] || "/images/media__1777571481511.avif" },
+              { title: "Expert-led excursions", img: data.gallery[4] || "/images/media__1777572235741.avif" },
+              { title: "Cultural experiences", img: data.gallery[5] || "/images/media__1777574051095.avif" },
             ].map((highlight, idx) => (
               <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-100">
                 <Image src={highlight.img} alt={highlight.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -382,7 +382,7 @@ export default function ShipsClient({ data }: { data: ShipData }) {
 
       {/* ── EARLY BIRD BONUS ── */}
       <section 
-        className="relative py-32 flex items-center justify-center bg-fixed bg-center bg-cover"
+        className="relative py-32 flex items-center justify-center bg-center bg-cover"
         style={{ backgroundImage: `url(${data.heroImage})` }}
       >
          <div className="absolute inset-0 bg-black/60" />
@@ -441,7 +441,7 @@ export default function ShipsClient({ data }: { data: ShipData }) {
              {/* Itinerary Card 3 */}
              <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                   <Image src="/images/hero_3_sharp.avif" alt="Full Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                   <Image src="/images/hero-3.avif" alt="Full Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                    <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">7 Nights</div>
                 </div>
                 <div className="p-8 flex flex-col items-center text-center">

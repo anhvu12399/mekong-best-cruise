@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Discover authentic Ben Tre, the Coconut Kingdom of the Mekong Delta. Experience cycling under coconut palms, peaceful homestays, and genuine local life.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/ben-tre-authentic",
-    images: [{ url: "https://www.mekongrivercruise.com/images/bentre_hero.png", width: 1200, height: 630, alt: "Lush coconut groves of Ben Tre province" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/bentre_hero.avif", width: 1200, height: 630, alt: "Lush coconut groves of Ben Tre province" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Why Ben Tre Feels More Real",
     description: "Discover authentic Ben Tre, the Coconut Kingdom of the Mekong Delta.",
-    images: ["https://www.mekongrivercruise.com/images/bentre_hero.png"],
+    images: ["https://www.mekongrivercruise.com/images/bentre_hero.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function BenTrePage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/bentre_hero.png"
+          src="/images/bentre_hero.avif"
           alt="Lush coconut groves of Ben Tre province"
           fill
           className="object-cover"
@@ -72,7 +72,7 @@ export default function BenTrePage() {
       {/* ── FULL-WIDTH IMAGE ── */}
       <section className="relative w-full aspect-[16/7]">
         <Image
-          src="/images/bentre_cycling.png"
+          src="/images/bentre_cycling.avif"
           alt="Cycling path through coconut groves"
           fill
           className="object-cover"
@@ -105,10 +105,10 @@ export default function BenTrePage() {
             <Image src="/images/vc_day2.avif" alt="Village cycling in Ben Tre" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/bentre_tea.png" alt="Local tea with family" fill className="object-cover" />
+            <Image src="/images/bentre_tea.avif" alt="Local tea with family" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/bentre_candy.png" alt="Making coconut candy" fill className="object-cover" />
+            <Image src="/images/bentre_candy.avif" alt="Making coconut candy" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">

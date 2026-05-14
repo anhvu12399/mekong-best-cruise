@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Discover a new definition of luxury on the Mekong River. Unparalleled privacy, invisible service, silence, and authentic connections on the finest boutique ships.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/redefining-luxury",
-    images: [{ url: "https://www.mekongrivercruise.com/images/redefine_hero.png", width: 1200, height: 630, alt: "Minimalist fruit plate on a teak deck at sunrise" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/redefine_hero.avif", width: 1200, height: 630, alt: "Minimalist fruit plate on a teak deck at sunrise" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Luxury Isn't What You Think — New Mekong River Luxury",
     description: "Discover a new definition of luxury on the Mekong River.",
-    images: ["https://www.mekongrivercruise.com/images/redefine_hero.png"],
+    images: ["https://www.mekongrivercruise.com/images/redefine_hero.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function RedefiningLuxuryPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/redefine_hero.png"
+          src="/images/redefine_hero.avif"
           alt="Minimalist fruit plate on a teak deck at sunrise"
           fill
           className="object-cover"
@@ -99,13 +99,13 @@ export default function RedefiningLuxuryPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jayavarman_dining.png" alt="Dinner on deck" fill className="object-cover" />
+            <Image src="/images/jayavarman_dining.avif" alt="Dinner on deck" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jewel_spa.png" alt="Spa space on a river ship" fill className="object-cover" />
+            <Image src="/images/jewel_spa.avif" alt="Spa space on a river ship" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/jayavarman_suite.png" alt="Suite with river view" fill className="object-cover" />
+            <Image src="/images/jayavarman_suite.avif" alt="Suite with river view" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
@@ -116,7 +116,7 @@ export default function RedefiningLuxuryPage() {
       {/* ── PARALLAX ── */}
       <section
         className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/jahan_dining.png)" }}
+        style={{ backgroundImage: "url(/images/jahan_dining.avif)" }}
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
