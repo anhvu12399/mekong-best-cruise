@@ -96,13 +96,13 @@ export default function SlowDayPage() {
       <section className="max-w-[1400px] mx-auto px-6 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative aspect-[3/4]">
-            <Image src="/images/travel_slowday_hammock.jpg" alt="Lunch on the river" fill className="object-cover" />
+            <Image src="/images/cruise_observation_deck.jpg" alt="Afternoon by the river" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/travel_slowday_sunset.jpg" alt="Sunset from the ship" fill className="object-cover" />
+            <Image src="/images/cruise_deck_sunset.jpg" alt="Sunset from the ship" fill className="object-cover" />
           </div>
           <div className="relative aspect-[3/4]">
-            <Image src="/images/travel_luxury_dining.jpg" alt="Dinner at dusk" fill className="object-cover" />
+            <Image src="/images/cruise_fine_dining.jpg" alt="Dinner at dusk" fill className="object-cover" />
           </div>
         </div>
         <p className="text-center text-[#999] text-xs mt-4 tracking-wider">
