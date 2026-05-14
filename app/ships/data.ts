@@ -70,7 +70,7 @@ export const shipsData: Record<string, ShipData> = {
     slug: "jayavarman",
     name: "The Jayavarman",
     tagline: "Where teak meets twilight, and history pours the drinks",
-    heroImage: "/images/jayavarman_hero.avif",
+    heroImage: "/images/new-upload/JAYAVARMAN.avif",
     stats: {
       length: "57.8m",
       cabins: "27",
@@ -97,7 +97,7 @@ export const shipsData: Record<string, ShipData> = {
       description: "The dining room is called Club 1930, and it earns the name. Candlelight on white linen. A Vietnamese chef who trained in Saigon but grew up watching his grandmother make bún bò Huế. The Cambodian fish amok arrives in a coconut, and the French onion soup that follows is so good it's almost an insult to the local cuisine. Almost. The wine list leans French — they know their audience — but the cocktails are pure Mekong: tamarind, palm sugar, local rice whiskey.",
       image: "/images/jayavarman_dining.avif",
     },
-    gallery: ["/images/jayavarman_hero.avif", "/images/jayavarman_lounge.avif", "/images/jayavarman_suite.avif", "/images/jayavarman_dining.avif", "/images/jayavarman_deck.avif", "/images/heritage_epic.avif"],
+    gallery: ["/images/new-upload/JAYAVARMAN.avif", "/images/jayavarman_lounge.avif", "/images/jayavarman_suite.avif", "/images/jayavarman_dining.avif", "/images/jayavarman_deck.avif", "/images/heritage_epic.avif"],
   },
   "mekong-jewel": {
     slug: "mekong-jewel",
@@ -169,7 +169,7 @@ export const shipsData: Record<string, ShipData> = {
     slug: "the-jahan",
     name: "The Jahan",
     tagline: "Named for the emperor who built the Taj Mahal. She lives up to it.",
-    heroImage: "/images/jahan_hero.avif",
+    heroImage: "/images/new-upload/jahan.avif",
     stats: {
       length: "70m",
       cabins: "26",
@@ -183,7 +183,7 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "Mughal dreams on Mekong waters",
       description: "Shah Jahan built monuments to love. This ship borrows his aesthetic without his melancholy. The woodwork is intricate — hand-carved panels that catch the light differently at every hour. The colors are bold: saffron, turquoise, deep crimson. The observatory on the top deck has the best view on the river and the best gin collection. The pool is smaller than the Jewel's but warmer, both literally and in feeling. The spa uses techniques borrowed from Ayurveda. Everything on this ship is a little extra, and that's exactly the point.",
-      image: "/images/jahan_hero.avif",
+      image: "/images/new-upload/jahan.avif",
     },
     suites: {
       title: "Ornate Cabins",
@@ -196,7 +196,7 @@ export const shipsData: Record<string, ShipData> = {
       description: "The dining hall has crystal chandeliers that throw tiny rainbows across the white tablecloths at sunset. The menu is unapologetically fusion: Cambodian curry alongside lamb kebabs, Vietnamese pho next to naan bread. It shouldn't work, but it does — spectacularly. The chef understands that this river connects cultures, and the food should too. Thursday nights are the captain's dinner, where the long table is set with gold-rimmed china and the conversation lasts until the candles burn down. It's the kind of evening you'll remember in specific, sensory detail years later.",
       image: "/images/jahan_dining.avif",
     },
-    gallery: ["/images/jahan_hero.avif", "/images/jahan_suite.avif", "/images/jahan_dining.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
+    gallery: ["/images/new-upload/jahan.avif", "/images/jahan_suite.avif", "/images/jahan_dining.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
   },
   "victoria-mekong": {
     slug: "victoria-mekong",

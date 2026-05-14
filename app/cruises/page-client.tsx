@@ -53,7 +53,7 @@ const styles = [
   {
     title: "Private Charters",
     sub: "The entire ship. Just yours.",
-    image: "/images/jayavarman.avif",
+    image: "/images/new-upload/JAYAVARMAN.avif",
     href: "/cruises/styles/charter",
   },
   {
@@ -83,7 +83,7 @@ const ships = [
     slug: "jayavarman",
     type: "Colonial Boutique · 27 cabins",
     line: "Teak decks, hand-stitched fabrics, the scent of frangipani. History feels like it's in the next room.",
-    image: "/images/jayavarman.avif",
+    image: "/images/new-upload/JAYAVARMAN.avif",
   },
   {
     name: "Mekong Jewel",
@@ -104,7 +104,7 @@ const ships = [
     slug: "the-jahan",
     type: "Romantic Elegance · 26 cabins",
     line: "A floating palace combining British-Indian design with unparalleled service on the river.",
-    image: "/images/the_jahan.avif",
+    image: "/images/new-upload/jahan.avif",
   },
   {
     name: "Victoria Mekong",

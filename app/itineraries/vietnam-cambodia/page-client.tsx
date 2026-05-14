@@ -388,7 +388,7 @@ export function VietnamCambodiaClient() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
               { name: 'Aqua Mekong', type: 'Modern Luxury', tagline: 'A floating sanctuary.', desc: 'Floor-to-ceiling windows and spa facilities to complement your spiritual retreat.', image: '/images/aqua_mekong.avif', guests: 40, cabins: 20 },
-              { name: 'The Jayavarman', type: 'French Colonial', tagline: 'Travel back in time.', desc: 'Boutique luxury with deep roots in Indochine aesthetics and quiet elegance.', image: '/images/jayavarman.avif', guests: 54, cabins: 27 },
+              { name: 'The Jayavarman', type: 'French Colonial', tagline: 'Travel back in time.', desc: 'Boutique luxury with deep roots in Indochine aesthetics and quiet elegance.', image: '/images/new-upload/JAYAVARMAN.avif', guests: 54, cabins: 27 },
               { name: 'Mekong Princess', type: 'Intimate Scale', tagline: 'Exclusive privacy.', desc: 'Only 14 cabins, ensuring the utmost tranquility during your journey.', image: '/images/mekong_princess.avif', guests: 28, cabins: 14 },
             ].map(ship => (
               <div key={ship.name} className="group border border-[#e0d9ce] overflow-hidden bg-[#f7f4ef]">

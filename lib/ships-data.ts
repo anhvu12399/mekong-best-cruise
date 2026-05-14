@@ -40,7 +40,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "An opulent riverboat evoking the romance of former British India.",
     description:
       "Named after one of the Mughal Empire's greatest rulers, The Jahan carries that ambition on water. Carved teak, brass fittings, and a library that smells of old paper. The river slides past your window like a film reel of another century.",
-    image: "/images/the_jahan.avif",
+    image: "/images/new-upload/jahan.avif",
     highlights: ["Heritage colonial interiors", "Library & observation lounge", "26 private suites", "Daily cultural immersion programs"],
   },
   {
@@ -54,7 +54,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "History doesn't feel distant here. It feels like it's in the next room.",
     description:
       "Colonial teak, hand-stitched fabrics, the smell of frangipani at dusk. The Jayavarman is a floating boutique gallery inspired by the golden age of French Indochina and Khmer artistry. Smaller than most, deeper than all of them.",
-    image: "/images/jayavarman.avif",
+    image: "/images/new-upload/JAYAVARMAN.avif",
     highlights: ["Khmer-inspired design details", "Intimate 15-cabin capacity", "Expert cultural guides", "Private balcony suites"],
   },
   {
@@ -124,7 +124,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "All-suite. All yours. Nothing left to chance.",
     description:
       "The Navigator is the grand one — sweeping decks, impeccable service, a kind of calm that only comes when everything has been thought of. Inspired by the French Indochina era but built for today's traveller.",
-    image: "/images/mekong_navigator.avif",
+    image: "/images/new-upload/mekong-navigator-banner.avif",
     highlights: ["24 all-suite accommodations", "French colonial interiors", "Spa & wellness deck", "Champagne welcome"],
   },
   {
@@ -393,7 +393,7 @@ export const SHIPS_BY_STYLE: Record<string, { ships: Ship[]; heroImage: string; 
   charter: {
     title: "Private Charters",
     ships: Array.from(new Set([...allShips.filter(s => s.cabins <= 14), ...allShips])).slice(0, 6),
-    heroImage: "/images/jayavarman.avif",
+    heroImage: "/images/new-upload/JAYAVARMAN.avif",
     description: "The entire ship. Just yours. Gather your family or closest friends and take over a boutique vessel. You set the pace, you choose the stops, and the river is yours alone."
   },
   solo: {
