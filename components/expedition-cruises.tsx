@@ -26,7 +26,7 @@ const ships = [
     name: "Jayavarman",
     subtitle: "Built for Those Who Read Between the Lines",
     description: "Named after the great Khmer king who built Angkor Wat, the Jayavarman carries that weight with grace. Colonial teak, hand-stitched fabrics, the smell of frangipani at dusk. History doesn't feel distant here — it feels like it's in the next room.",
-    image: "/images/new-upload/JAYAVARMAN.avif"
+    image: "/images/jayavarman.avif"
   },
   {
     name: "Victoria Mekong",
@@ -38,7 +38,7 @@ const ships = [
     name: "Mekong Navigator",
     subtitle: "The Grand One. For Good Reason.",
     description: "All-suite. All-inclsive. All yours. The Mekong Navigator is for guests who have seen enough of the world to know exactly what they want from it. Sweeping decks, impeccable service, and a kind of calm that only comes when everything has been thought of.",
-    image: "/images/new-upload/mekong-navigator-banner.avif"
+    image: "/images/mekong_navigator.avif"
   }
 ]
 

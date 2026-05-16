@@ -22,7 +22,7 @@ const heroSlides = [
     link: "/cruises",
   },
   {
-    image: "/images/new-upload/mekong-navigator-banner.avif",
+    image: "/images/mekong_navigator.avif",
     title: "The Timeless Elegance of the Mekong Navigator",
     heading: (
       <>

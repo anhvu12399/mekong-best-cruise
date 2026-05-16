@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest luxury ships on the Mekong River.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/luxury-cruises",
-    images: [{ url: "https://www.mekongrivercruise.com/images/new-upload/JAYAVARMAN.avif", width: 1200, height: 630, alt: "Luxury cruise on the Mekong at golden hour" }],
+    images: [{ url: "https://www.mekongrivercruise.com/images/jayavarman.avif", width: 1200, height: 630, alt: "Luxury cruise on the Mekong at golden hour" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Luxury Mekong River Cruises",
     description: "Sunset champagne, temple mornings, and the slow art of doing nothing on the Mekong.",
-    images: ["https://www.mekongrivercruise.com/images/new-upload/JAYAVARMAN.avif"],
+    images: ["https://www.mekongrivercruise.com/images/jayavarman.avif"],
   },
 };
 
@@ -30,7 +30,7 @@ export default function LuxuryCruisesPage() {
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
-          src="/images/new-upload/JAYAVARMAN.avif"
+          src="/images/jayavarman.avif"
           alt="Luxury cruise on the Mekong at golden hour"
           fill
           className="object-cover"

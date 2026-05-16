@@ -70,7 +70,7 @@ export const shipsData: Record<string, ShipData> = {
     slug: "jayavarman",
     name: "The Jayavarman",
     tagline: "Where teak meets twilight, and history pours the drinks",
-    heroImage: "/images/new-upload/JAYAVARMAN.avif",
+    heroImage: "/images/jayavarman.avif",
     stats: {
       length: "57.8m",
       cabins: "27",
@@ -97,7 +97,7 @@ export const shipsData: Record<string, ShipData> = {
       description: "The dining room is called Club 1930, and it earns the name. Candlelight on white linen. A Vietnamese chef who trained in Saigon but grew up watching his grandmother make bún bò Huế. The Cambodian fish amok arrives in a coconut, and the French onion soup that follows is so good it's almost an insult to the local cuisine. Almost. The wine list leans French — they know their audience — but the cocktails are pure Mekong: tamarind, palm sugar, local rice whiskey.",
       image: "/images/jayavarman_dining.avif",
     },
-    gallery: ["/images/new-upload/JAYAVARMAN.avif", "/images/jayavarman_lounge.avif", "/images/jayavarman_suite.avif", "/images/jayavarman_dining.avif", "/images/jayavarman_deck.avif", "/images/heritage_epic.avif"],
+    gallery: ["/images/jayavarman.avif", "/images/jayavarman_lounge.avif", "/images/jayavarman_suite.avif", "/images/jayavarman_dining.avif", "/images/jayavarman_deck.avif", "/images/heritage_epic.avif"],
   },
   "mekong-jewel": {
     slug: "mekong-jewel",
@@ -130,7 +130,7 @@ export const shipsData: Record<string, ShipData> = {
       description: "The main dining room handles the evening theater — multi-course dinners where the chef explains each dish like a story. But the real magic happens at the alfresco venue upstairs, where lunch is served family-style and the cook might pull you aside to teach you how to roll a proper spring roll. They buy fish from the boats we pass. The herbs come from a small garden on the top deck. The pho at breakfast — with its broth that's been simmering since 4 AM — is reason enough to set an alarm.",
       image: "/images/jewel_dining.avif",
     },
-    gallery: ["/images/jewel_hero.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif", "/images/jewel_spa.avif", "/images/luxury-balcony-sunset.avif"],
+    gallery: ["/images/mekong_jewel.avif", "/images/mekong_jewel_v2.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif", "/images/jewel_spa.avif"],
   },
   "mekong-princess": {
     slug: "mekong-princess",
@@ -169,7 +169,7 @@ export const shipsData: Record<string, ShipData> = {
     slug: "the-jahan",
     name: "The Jahan",
     tagline: "Named for the emperor who built the Taj Mahal. She lives up to it.",
-    heroImage: "/images/new-upload/jahan.avif",
+    heroImage: "/images/the_jahan.avif",
     stats: {
       length: "70m",
       cabins: "26",
@@ -183,7 +183,7 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "Mughal dreams on Mekong waters",
       description: "Shah Jahan built monuments to love. This ship borrows his aesthetic without his melancholy. The woodwork is intricate — hand-carved panels that catch the light differently at every hour. The colors are bold: saffron, turquoise, deep crimson. The observatory on the top deck has the best view on the river and the best gin collection. The pool is smaller than the Jewel's but warmer, both literally and in feeling. The spa uses techniques borrowed from Ayurveda. Everything on this ship is a little extra, and that's exactly the point.",
-      image: "/images/new-upload/jahan.avif",
+      image: "/images/the_jahan.avif",
     },
     suites: {
       title: "Ornate Cabins",
@@ -196,13 +196,13 @@ export const shipsData: Record<string, ShipData> = {
       description: "The dining hall has crystal chandeliers that throw tiny rainbows across the white tablecloths at sunset. The menu is unapologetically fusion: Cambodian curry alongside lamb kebabs, Vietnamese pho next to naan bread. It shouldn't work, but it does — spectacularly. The chef understands that this river connects cultures, and the food should too. Thursday nights are the captain's dinner, where the long table is set with gold-rimmed china and the conversation lasts until the candles burn down. It's the kind of evening you'll remember in specific, sensory detail years later.",
       image: "/images/jahan_dining.avif",
     },
-    gallery: ["/images/new-upload/jahan.avif", "/images/jahan_suite.avif", "/images/jahan_dining.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
+    gallery: ["/images/the_jahan.avif", "/images/jahan_suite.avif", "/images/jahan_dining.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
   },
   "victoria-mekong": {
     slug: "victoria-mekong",
     name: "Victoria Mekong",
     tagline: "Clean lines, wide views, and the future of river cruising",
-    heroImage: "/images/victoria_hero.avif",
+    heroImage: "/images/victoria_mekong.avif",
     stats: {
       length: "76.8m",
       cabins: "35",
@@ -229,7 +229,7 @@ export const shipsData: Record<string, ShipData> = {
       description: "The panoramic restaurant wraps around the ship like a glass embrace. At breakfast, the light is so clean it makes the fruit look like a still life. The menu borrows from everywhere the Mekong touches: Vietnamese bún chả, Cambodian lok lak, Thai-inspired salads that crunch. The sushi bar — a surprising addition — turns out to be the best-kept secret on board, serving nigiri with fish that was in the river that morning. Lunch moves to the upper deck, where the breeze does half the cooking. Dinner is candlelit but casual. No dress codes. No pretense. Just good food and a river that never stops moving.",
       image: "/images/jewel_dining.avif",
     },
-    gallery: ["/images/victoria_hero.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif", "/images/luxury-balcony-sunset.avif", "/images/heritage_longway.avif"],
+    gallery: ["/images/victoria_mekong.avif", "/images/victoria_mekong_v2.avif", "/images/victoria_mekong_v3.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif"],
   }
 };
 
