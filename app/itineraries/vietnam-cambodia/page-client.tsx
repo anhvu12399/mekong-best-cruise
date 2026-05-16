@@ -169,6 +169,36 @@ export function VietnamCambodiaClient() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDay, setActiveDay] = useState(0)
   
+  const scrollToDay = (index: number) => {
+    setActiveDay(index)
+    const container = document.getElementById('itinerary-scroll')
+    const element = document.getElementById(`day-${index}`)
+    if (container && element) {
+      container.scrollTo({ top: element.offsetTop - 60, behavior: 'smooth' })
+    }
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'))
+            setActiveDay(index)
+          }
+        })
+      },
+      { root: document.getElementById('itinerary-scroll'), rootMargin: "-40% 0px -40% 0px", threshold: 0 } 
+    )
+
+    DAYS.forEach((_, i) => {
+      const el = document.getElementById(`day-${i}`)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+  
   const overviewRef = useRef<HTMLDivElement>(null)
   const itineraryRef = useRef<HTMLDivElement>(null)
   const experiencesRef = useRef<HTMLDivElement>(null)
@@ -318,13 +348,13 @@ export function VietnamCambodiaClient() {
           </div>
 
           {/* RIGHT: Scrollable day list */}
-          <div className="w-full lg:w-[38%] h-full overflow-y-auto bg-[#faf8f5] border-l border-[#e0d9ce]">
+          <div id="itinerary-scroll" className="w-full lg:w-[38%] h-full overflow-y-auto bg-[#faf8f5] border-l border-[#e0d9ce] scroll-smooth">
             <div className="sticky top-0 bg-[#faf8f5] border-b border-[#e0d9ce] px-6 pt-6 pb-4 z-10">
               <div className="flex gap-2 flex-wrap">
                 {DAYS.map((d, i) => (
                   <button
                     key={d.key}
-                    onClick={() => setActiveDay(i)}
+                    onClick={() => scrollToDay(i)}
                     className={`px-4 py-2 text-[10px] font-bold tracking-[0.15em] uppercase transition-all ${
                       activeDay === i ? 'bg-[#8B4A2A] text-white' : 'bg-white border border-[#e0d9ce] text-navy/60 hover:border-[#8B4A2A]/40'
                     }`}
@@ -336,7 +366,7 @@ export function VietnamCambodiaClient() {
             </div>
 
             {DAYS.map((day, i) => (
-              <div key={day.key} className={activeDay === i ? 'block' : 'hidden'}>
+              <div key={day.key} id={`day-${i}`} data-index={i} className="block pb-10">
                 <div className="flex items-center gap-3 px-6 py-5 border-b border-[#e0d9ce]">
                   <span className="w-2 h-2 rounded-full bg-[#8B4A2A]" />
                   <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#8B4A2A]">{day.place}</span>
@@ -363,11 +393,11 @@ export function VietnamCambodiaClient() {
                 </div>
 
                 <div className="px-6 pb-8 flex items-center justify-between border-t border-[#e0d9ce] pt-5">
-                  <button onClick={() => setActiveDay(Math.max(0,i-1))} disabled={i===0} className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy disabled:opacity-0">
+                  <button onClick={() => scrollToDay(Math.max(0, i - 1))} disabled={i===0} className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy disabled:opacity-0">
                     <ChevronLeft size={13}/> Prev
                   </button>
-                  <div className="flex gap-1.5">{DAYS.map((_,di)=>(<button key={di} onClick={()=>setActiveDay(di)} className={`h-1.5 rounded-full transition-all ${di===i?'w-5 bg-[#8B4A2A]':'w-1.5 bg-navy/20'}`}/>))}</div>
-                  <button onClick={() => setActiveDay(Math.min(DAYS.length-1,i+1))} disabled={i===DAYS.length-1} className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy disabled:opacity-0">
+                  <div className="flex gap-1.5">{DAYS.map((_,di)=>(<button key={di} onClick={() => scrollToDay(di)} className={`h-1.5 rounded-full transition-all ${di===i?'w-5 bg-[#8B4A2A]':'w-1.5 bg-navy/20'}`}/>))}</div>
+                  <button onClick={() => scrollToDay(Math.min(DAYS.length - 1, i + 1))} disabled={i===DAYS.length-1} className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-navy/40 hover:text-navy disabled:opacity-0">
                     Next <ChevronRight size={13}/>
                   </button>
                 </div>
