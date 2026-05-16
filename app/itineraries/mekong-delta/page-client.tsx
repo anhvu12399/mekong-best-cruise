@@ -191,7 +191,7 @@ export function MekongDeltaClient() {
       </section>
 
       {/* ── STICKY NAV ── */}
-      <div className="sticky top-0 z-30 bg-[#ede9e2]/95 backdrop-blur-sm border-b border-[#d6cfc3]">
+      <div className="sticky top-16 lg:top-20 z-30 bg-[#ede9e2]/95 backdrop-blur-sm border-b border-[#d6cfc3]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center gap-10 h-14 overflow-x-auto scrollbar-hide">
             {NAV_ITEMS.map((item) => (
@@ -288,7 +288,7 @@ export function MekongDeltaClient() {
           {/* RIGHT: Scrollable day list */}
           <div id="itinerary-scroll" className="w-full lg:w-[38%] h-full overflow-y-auto bg-[#faf8f5] border-l border-[#e0d9ce] scroll-smooth">
             {/* Day tabs */}
-            <div className="sticky top-0 bg-[#faf8f5] border-b border-[#e0d9ce] px-6 pt-6 pb-4 z-10">
+            <div className="sticky top-16 lg:top-20 bg-[#faf8f5] border-b border-[#e0d9ce] px-6 pt-6 pb-4 z-10">
               <div className="flex gap-2 flex-wrap">
                 {DAYS.map((d, i) => (
                   <button

@@ -114,7 +114,7 @@ export function TwoDaysClient() {
       </section>
 
       {/* ── STICKY NAV ── */}
-      <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#ede9e2]/95 shadow-lg py-4" : "bg-[#ede9e2]/95 py-6"}`}>
+      <nav className={`sticky top-16 lg:top-20 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#ede9e2]/95 shadow-lg py-4" : "bg-[#ede9e2]/95 py-6"}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex justify-between items-center">
           <div className="hidden md:flex gap-8">
             {NAV_ITEMS.map((item) => (

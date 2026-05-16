@@ -260,7 +260,7 @@ export function VietnamCambodiaClient() {
       </section>
 
       {/* ── STICKY NAV ── */}
-      <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#ede9e2]/95 shadow-lg py-4" : "bg-[#ede9e2]/95 py-6"}`}>
+      <nav className={`sticky top-16 lg:top-20 z-50 w-full transition-all duration-300 ${isScrolled ? "bg-[#ede9e2]/95 shadow-lg py-4" : "bg-[#ede9e2]/95 py-6"}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex justify-between items-center">
           <div className="hidden md:flex gap-8">
             {NAV_ITEMS.map((item) => (
@@ -349,7 +349,7 @@ export function VietnamCambodiaClient() {
 
           {/* RIGHT: Scrollable day list */}
           <div id="itinerary-scroll" className="w-full lg:w-[38%] h-full overflow-y-auto bg-[#faf8f5] border-l border-[#e0d9ce] scroll-smooth">
-            <div className="sticky top-0 bg-[#faf8f5] border-b border-[#e0d9ce] px-6 pt-6 pb-4 z-10">
+            <div className="sticky top-16 lg:top-20 bg-[#faf8f5] border-b border-[#e0d9ce] px-6 pt-6 pb-4 z-10">
               <div className="flex gap-2 flex-wrap">
                 {DAYS.map((d, i) => (
                   <button
