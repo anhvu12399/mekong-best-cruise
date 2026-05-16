@@ -75,11 +75,11 @@ export function OurHeritage() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="relative bg-[#fbfaf8] border-t border-navy/10 h-screen overflow-hidden">
+    <section ref={containerRef} className="relative bg-[#fbfaf8] border-t border-navy/10 h-[100dvh] overflow-hidden">
       <div className="flex flex-col lg:flex-row h-full">
         
         {/* Left Side - Images */}
-        <div className="lg:w-1/2 h-[50vh] lg:h-full relative order-1">
+        <div className="lg:w-1/2 h-[40dvh] lg:h-full relative order-1">
           {sections.map((section, idx) => (
             <div 
               key={section.id}
@@ -100,16 +100,16 @@ export function OurHeritage() {
         </div>
 
         {/* Right Side - Text */}
-        <div className="lg:w-1/2 relative h-[50vh] lg:h-full order-2 bg-[#fbfaf8]">
+        <div className="lg:w-1/2 relative h-[60dvh] lg:h-full order-2 bg-[#fbfaf8]">
           {sections.map((section, idx) => (
             <div 
               key={section.id}
-              className="heritage-text absolute inset-0 flex flex-col justify-center px-8 lg:px-24 bg-[#fbfaf8] z-10"
+              className="heritage-text absolute inset-0 flex flex-col justify-center px-6 md:px-8 lg:px-24 bg-[#fbfaf8] z-10"
             >
-              <h2 className={`text-3xl md:text-5xl text-navy mb-8 leading-tight ${playfair.className}`}>
+              <h2 className={`text-2xl md:text-3xl lg:text-5xl text-navy mb-4 lg:mb-8 leading-tight ${playfair.className}`}>
                 {section.title}
               </h2>
-              <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed max-w-lg">
+              <p className="text-navy/70 text-base md:text-lg lg:text-xl font-serif leading-relaxed max-w-lg">
                 {section.content}
               </p>
             </div>
