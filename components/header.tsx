@@ -131,7 +131,7 @@ export function Header() {
             <div className="flex items-center">
               <Link
                 href="/plan-your-journey"
-                className="inline-flex items-center px-3 py-2 lg:px-5 lg:py-2.5 bg-gold text-navy text-[9px] lg:text-[11px] font-bold tracking-wide hover:bg-gold-light transition-colors duration-200 uppercase text-center"
+                className="inline-flex items-center px-3 py-2 lg:px-5 lg:py-2.5 bg-gold text-navy text-[9px] lg:text-[11px] font-bold tracking-wide hover:bg-gold-light transition-colors duration-200 uppercase text-center -mr-2 lg:mr-0"
               >
                 Plan Your Journey
               </Link>
