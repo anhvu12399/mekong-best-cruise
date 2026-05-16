@@ -84,6 +84,29 @@ export function TwoDaysClient() {
     "Essentials": essentialsRef,
   }
 
+
+  // Scroll spy for navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100)
+
+      const scrollPos = window.scrollY + window.innerHeight / 2
+      if (essentialsRef.current && scrollPos >= essentialsRef.current.offsetTop) {
+        setActiveTab("Essentials")
+      } else if (experiencesRef.current && scrollPos >= experiencesRef.current.offsetTop) {
+        setActiveTab("Experiences")
+      } else if (timelineRef.current && scrollPos >= timelineRef.current.offsetTop) {
+        setActiveTab("The Journey")
+      } else if (overviewRef.current && scrollPos >= overviewRef.current.offsetTop) {
+        setActiveTab("Overview")
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    // Trigger once on mount
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const scrollToSection = (label: string) => {
     setActiveTab(label)
     sectionRefs[label]?.current?.scrollIntoView({ behavior: "smooth", block: "start" })

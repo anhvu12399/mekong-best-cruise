@@ -157,6 +157,28 @@ export function MekongDeltaClient() {
     Essentials: essentialsRef,
   }
 
+
+  // Scroll spy for navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      const scrollPos = window.scrollY + window.innerHeight / 2
+      if (essentialsRef.current && scrollPos >= essentialsRef.current.offsetTop) {
+        setActiveNav("Essentials")
+      } else if (experiencesRef.current && scrollPos >= experiencesRef.current.offsetTop) {
+        setActiveNav("Experiences")
+      } else if (itineraryRef.current && scrollPos >= itineraryRef.current.offsetTop) {
+        setActiveNav("Itinerary")
+      } else if (overviewRef.current && scrollPos >= overviewRef.current.offsetTop) {
+        setActiveNav("Overview")
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    // Trigger once on mount
+    handleScroll()
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const scrollTo = (label: string) => {
     setActiveNav(label)
     refMap[label]?.current?.scrollIntoView({ behavior: "smooth", block: "start" })

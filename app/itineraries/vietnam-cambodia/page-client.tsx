@@ -203,21 +203,28 @@ export function VietnamCambodiaClient() {
   const itineraryRef = useRef<HTMLDivElement>(null)
   const experiencesRef = useRef<HTMLDivElement>(null)
 
+  
+
+
   // Scroll spy for navigation
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100)
 
-      const scrollPos = window.scrollY + 200
-      if (experiencesRef.current && scrollPos >= experiencesRef.current.offsetTop) {
+      const scrollPos = window.scrollY + window.innerHeight / 2
+      if (essentialsRef.current && scrollPos >= essentialsRef.current.offsetTop) {
+        setActiveTab("Essentials")
+      } else if (experiencesRef.current && scrollPos >= experiencesRef.current.offsetTop) {
         setActiveTab("Experiences")
       } else if (itineraryRef.current && scrollPos >= itineraryRef.current.offsetTop) {
         setActiveTab("Itinerary")
-      } else {
+      } else if (overviewRef.current && scrollPos >= overviewRef.current.offsetTop) {
         setActiveTab("Overview")
       }
     }
     window.addEventListener("scroll", handleScroll)
+    // Trigger once on mount
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
