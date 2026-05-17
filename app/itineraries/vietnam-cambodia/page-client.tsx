@@ -202,6 +202,7 @@ export function VietnamCambodiaClient() {
   const overviewRef = useRef<HTMLDivElement>(null)
   const itineraryRef = useRef<HTMLDivElement>(null)
   const experiencesRef = useRef<HTMLDivElement>(null)
+  const essentialsRef = useRef<HTMLDivElement>(null)
 
   
 
@@ -237,6 +238,8 @@ export function VietnamCambodiaClient() {
       window.scrollTo({ top: itineraryRef.current.offsetTop - offset, behavior: "smooth" })
     } else if (tab === "Experiences" && experiencesRef.current) {
       window.scrollTo({ top: experiencesRef.current.offsetTop - offset, behavior: "smooth" })
+    } else if (tab === "Essentials" && essentialsRef.current) {
+      window.scrollTo({ top: essentialsRef.current.offsetTop - offset, behavior: "smooth" })
     }
   }
 
@@ -474,7 +477,8 @@ export function VietnamCambodiaClient() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* ── CTA / ESSENTIALS ── */}
+      <div ref={essentialsRef} className="scroll-mt-14" />
       <section className="py-24 bg-[#f7f4ef] border-t border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-6">Begin Your Pilgrimage</p>

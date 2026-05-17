@@ -457,10 +457,10 @@ export default function CruisesClient() {
                   </Link>
                   <p className="text-white/60 text-sm leading-relaxed">{ship.line}</p>
                   <Link
-                    href={`/ships/${ship.slug}`}
+                    href="/plan-your-journey"
                     className="mt-6 inline-flex items-center gap-2 text-xs tracking-widest uppercase font-bold text-gold hover:gap-4 transition-all duration-200"
                   >
-                    Explore Ship <ArrowRight size={12} />
+                    Enquire Now <ArrowRight size={12} />
                   </Link>
                 </div>
               </div>
