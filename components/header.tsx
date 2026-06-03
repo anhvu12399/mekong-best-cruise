@@ -108,6 +108,14 @@ export function Header() {
                 >
                   About Us
                 </button>
+                <Link
+                  href="https://www.toursmekong.com/contact-us/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
+                >
+                  Contact Us
+                </Link>
               </nav>
             </div>
 
@@ -210,6 +218,15 @@ export function Header() {
                 </Link>
                 <Link href="/our-specialists" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
                   Our Specialists
+                </Link>
+                <Link 
+                  href="https://www.toursmekong.com/contact-us/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  onClick={() => setIsSidebarOpen(false)} 
+                  className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors"
+                >
+                  Contact Us
                 </Link>
               </div>
             </div>

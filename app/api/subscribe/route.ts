@@ -30,7 +30,42 @@ async function sendEmail({
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email } = await request.json()
+    const { name, email, honeypot, turnstileToken } = await request.json()
+
+    // ── Honeypot Detection ────────────────────────────────────────────────
+    if (honeypot && honeypot.trim() !== "") {
+      console.log("Honeypot triggered, silently dropping signup for email:", email)
+      // Mock successful response to trick the bot
+      return NextResponse.json({ success: true })
+    }
+
+    // ── Cloudflare Turnstile Verification ─────────────────────────────────
+    const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY || "1x0000000000000000000000000000000AA"
+    try {
+      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: TURNSTILE_SECRET_KEY,
+          response: turnstileToken || "",
+        }),
+      })
+
+      const verifyData = await verifyRes.json()
+      if (!verifyData.success) {
+        console.warn("Turnstile validation failed for email:", email, verifyData["error-codes"])
+        return NextResponse.json(
+          { error: "Security check failed. Please refresh the page and try again." },
+          { status: 400 }
+        )
+      }
+    } catch (verifyError) {
+      console.error("Turnstile API communication error:", verifyError)
+      return NextResponse.json(
+        { error: "Unable to verify security challenge. Please try again." },
+        { status: 400 }
+      )
+    }
 
     if (!email || !email.includes("@")) {
       return NextResponse.json(

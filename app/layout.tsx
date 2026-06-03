@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Bodoni_Moda, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from "@/components/header"
@@ -13,7 +13,7 @@ const WhatsAppButton = dynamic(() => import('@/components/whatsapp-button').then
 
 import './globals.css'
 
-const playfair = Playfair_Display({
+const playfair = Bodoni_Moda({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
@@ -244,6 +244,10 @@ export default function RootLayout({
             gtag('config', 'AW-414204624');
           `}
         </Script>
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${playfair.variable} ${inter.variable} font-sans bg-[#FAF9F5] text-[#1a202c]`}>
         <SmoothScroll />

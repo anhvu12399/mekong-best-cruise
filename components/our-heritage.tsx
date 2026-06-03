@@ -2,14 +2,14 @@
 
 import { useRef } from "react"
 import Image from "next/image"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const sections = [
   {

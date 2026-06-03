@@ -3,10 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const faqs = [
   { question: "Do I need a visa to enter Cambodia?", answer: "Most nationalities can obtain a tourist e-visa online in advance for around $30 USD. It's valid for 30 days. We handle all the details and can arrange seamless border crossings if you're combining Vietnam and Cambodia on a river journey." },

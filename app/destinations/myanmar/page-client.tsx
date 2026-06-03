@@ -3,10 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const faqs = [
   { question: "When is the best time to visit Bagan?", answer: "October to February. The air is cool enough to walk comfortably between temples, the light is extraordinary, and the balloon season is in full operation. Sunrise from a rooftop with a hundred temples in the foreground and a dozen balloons in the air above them is something you carry with you for the rest of your life." },

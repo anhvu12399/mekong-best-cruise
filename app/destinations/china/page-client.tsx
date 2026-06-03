@@ -3,10 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const faqs = [
   { question: "What is China's relationship to the Mekong River?", answer: "The Mekong begins in China — born as the Lancang Jiang on the Tibetan Plateau, descending through Yunnan Province's dramatic gorges before crossing into Southeast Asia. China controls the river's headwaters and has built a series of dams on its upper reach that profoundly affect water levels and fish populations downstream. Understanding this upstream relationship is essential context for any serious Mekong journey." },

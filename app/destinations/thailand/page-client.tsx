@@ -3,10 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const faqs = [
   { question: "What is Thailand's connection to the Mekong River?", answer: "The Mekong forms Thailand's natural northeastern border with Laos for roughly 1,000 kilometers, running through the Isan region. The area is Thailand at its most authentic — less visited than the beaches and temples of the south, the Mekong communities here maintain a way of life centered on the river, rice farming, and a distinct cultural heritage blending Thai, Lao, and Khmer influences." },

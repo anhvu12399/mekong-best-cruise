@@ -3,10 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const faqs = [
   { question: "What makes Luang Prabang so special?", answer: "It's a UNESCO World Heritage town where French colonial architecture meets golden Buddhist temples, surrounded by mountains and the confluence of the Mekong and Nam Khan rivers. The alms-giving ceremony at dawn — monks in saffron receiving offerings from kneeling townspeople — is one of the most quietly affecting things you'll experience anywhere." },

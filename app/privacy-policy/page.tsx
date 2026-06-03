@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Bodoni_Moda } from 'next/font/google'
 
-const playfair = Playfair_Display({ subsets: ['latin'] })
+const playfair = Bodoni_Moda({ subsets: ['latin'] })
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {

@@ -1,10 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, Calendar, MapPin, Anchor, Clock, Info, CheckCircle2 } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export interface Day {
   day: string;

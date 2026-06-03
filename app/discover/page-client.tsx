@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { QuickDecision } from "@/components/quick-decision"
 import { ExpeditionCruises } from "@/components/expedition-cruises"
 import { OurHeritage } from "@/components/our-heritage"
@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const highlights = [
   {

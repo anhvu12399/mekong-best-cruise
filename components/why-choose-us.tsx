@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import {
   Shield,
   Users,
@@ -11,7 +11,7 @@ import {
   Headphones,
 } from "lucide-react"
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const features = [
   {

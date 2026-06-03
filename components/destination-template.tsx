@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Playfair_Display } from "next/font/google"
+import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, MapPin, Anchor } from "lucide-react"
 import { destinationsData } from "@/lib/destinations-data"
 import { SHIPS_BY_DESTINATION } from "@/lib/ships-data"
@@ -13,7 +13,7 @@ function getRegionForDestination(slug: string): string | null {
   return null
 }
 
-const playfair = Playfair_Display({ subsets: ["latin"] })
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export interface JourneyRef {
   title: string;

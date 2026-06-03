@@ -29,6 +29,7 @@ const footerLinks = {
 export function Footer() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [honeypot, setHoneypot] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [resendCooldown, setResendCooldown] = useState(false)
 
@@ -36,21 +37,36 @@ export function Footer() {
     e.preventDefault()
     if (!email || status === "loading") return
 
+    // Immediately redirect honeypot submissions (bots) to trick them
+    if (honeypot.trim()) {
+      window.location.href = "https://www.mywaytravel.com/mekong-river-cruises/"
+      return
+    }
+
     setStatus("loading")
     try {
-      const res = await fetch("/api/subscribe", {
+      // Get Turnstile token from the form
+      const form = e.currentTarget as HTMLFormElement
+      const formData = new FormData(form)
+      const turnstileToken = formData.get("cf-turnstile-response") as string || ""
+
+      // Fire-and-forget subscription request in the background so it registers
+      fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email: email.trim() }),
-      })
+        body: JSON.stringify({ 
+          name: name.trim(), 
+          email: email.trim(),
+          honeypot: honeypot.trim(),
+          turnstileToken
+        }),
+      }).catch((err) => console.error("Background subscription error:", err))
 
-      if (res.ok) {
-        setStatus("success")
-      } else {
-        setStatus("error")
-      }
+      // Immediately redirect to the requested landing page
+      window.location.href = "https://www.mywaytravel.com/mekong-river-cruises/"
     } catch {
-      setStatus("error")
+      // Fallback redirect just in case
+      window.location.href = "https://www.mywaytravel.com/mekong-river-cruises/"
     }
   }
 
@@ -136,6 +152,25 @@ export function Footer() {
             ) : (
               /* ── Subscription Form ── */
               <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
+                {/* Honeypot field (hidden from screen readers and visual layouts) */}
+                <div style={{ display: "none" }} aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website_url"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
+                {/* Cloudflare Turnstile Invisible Challenge */}
+                <div 
+                  className="cf-turnstile" 
+                  data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+                  data-size="invisible"
+                ></div>
+
                 {/* Row 1: Name */}
                 <input
                   type="text"
