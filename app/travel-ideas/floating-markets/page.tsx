@@ -66,6 +66,13 @@ export default function FloatingMarketsPage() {
           <p>
             The system is elegant. Each boat hoists a sample of its goods on a tall bamboo pole — a pineapple on a stick means &quot;I sell pineapples.&quot; A watermelon means watermelon. A pair of trousers means... well, trousers. You pull alongside, haggle briefly, and the transaction happens mid-river, boats bumping gently while money and mangoes change hands. Nobody falls in. Almost nobody.
           </p>
+          <p>
+            Floating market visits like this are among the most beloved inclusions on a{" "}
+            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
+              Mekong cruise
+            </Link>
+            {" "}— a living window into Delta life that no land-based tour can replicate.
+          </p>
         </div>
       </section>
 
@@ -179,12 +186,20 @@ export default function FloatingMarketsPage() {
           <p className="text-white/70 text-[15px] font-light mb-10">
             Our 1-day and 2-day Mekong Delta itineraries include floating market visits with private boat and English-speaking guide.
           </p>
-          <Link
-            href="/itineraries/1-day"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-          >
-            View 1-Day Itinerary
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/itineraries/1-day"
+              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            >
+              View 1-Day Itinerary
+            </Link>
+            <Link
+              href="/"
+              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
+            >
+              All Mekong Cruise Options
+            </Link>
+          </div>
         </div>
       </section>
     </main>

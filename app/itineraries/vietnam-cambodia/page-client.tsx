@@ -311,8 +311,15 @@ export function VietnamCambodiaClient() {
           <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-tight">
             You Cross a Border on Day 3.<br /> By Day 6, You've Crossed Several Others.
           </h2>
-          <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed mb-16">
+          <p className="text-navy/70 text-lg md:text-xl font-serif leading-relaxed mb-8">
             This trip starts in the chaos of Saigon and ends at Angkor Wat before dawn, and in between you'll cross the Mekong border by limousine, eat on a rooftop overlooking the Tonlé Sap, visit a church on the river that most Cambodians don't know exists, and stand in an Angkor corridor at 5am with nobody else in sight. It's eight days. It covers two countries, three cities, and a few thousand years of history. But the moments that stay with you will be smaller than that — a monk's blessing, a meal cooked by someone's grandmother, a sunset you didn't plan for.
+          </p>
+          <p className="text-navy/70 text-base font-light leading-relaxed mb-16">
+            One of the most celebrated{" "}
+            <Link href="/" className="underline underline-offset-2 text-[#8B4A2A] hover:text-[#c9a962] transition-colors">
+              Mekong River Cruise
+            </Link>
+            {" "}itineraries available — spanning Vietnam and Cambodia in a single, seamless journey.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-navy/10 pt-12">

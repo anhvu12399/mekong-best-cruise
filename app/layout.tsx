@@ -232,6 +232,57 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'What is the best Mekong River Cruise?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The best Mekong River Cruise depends on your travel style. Top luxury options include the Aqua Mekong, the Jayavarman by Heritage Line, the Mekong Jewel, and The Jahan. For intimate boutique experiences, small-ship cruises offer private sampan excursions into narrow canals. Most cruises depart from Ho Chi Minh City (Vietnam) or Siem Reap (Cambodia).',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How long is a Mekong River Cruise?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Mekong River Cruises typically range from 1 day to 14 days. Short day-trips and 2-day cruises explore the Mekong Delta near Ho Chi Minh City. Week-long cruises (7–8 nights) travel the full route between Vietnam and Cambodia, passing through Phnom Penh and reaching Siem Reap near Angkor Wat.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'When is the best time to do a Mekong River Cruise?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The best time for a Mekong River Cruise is October through April during the dry season. November to February offers the most comfortable temperatures and clearest skies. The wet season (May–September) brings higher water levels and lush green scenery, but some canals may be flooded.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How much does a Mekong River Cruise cost?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Mekong River Cruise prices vary widely. Day trips start from around $50–$100 per person. Luxury 7-night cruises on premium ships like the Aqua Mekong or Jayavarman typically cost $3,000–$8,000+ per person including accommodation, meals, and excursions. Private charter options are also available for groups.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What countries does the Mekong River Cruise go through?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'The Mekong River flows through six countries: China, Myanmar, Laos, Thailand, Cambodia, and Vietnam. Most popular cruises operate in the lower Mekong between Vietnam (Ho Chi Minh City / Mekong Delta) and Cambodia (Phnom Penh and Siem Reap near Angkor Wat). Some expedition cruises extend into Laos and Thailand.',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-414204624"
           strategy="afterInteractive"

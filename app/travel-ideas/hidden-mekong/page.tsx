@@ -66,6 +66,13 @@ export default function HiddenMekongPage() {
           <p>
             A woman appeared on a wooden dock, washing lettuce in the canal. She didn&apos;t look up. A dog was asleep on the planks beside her, one ear twitching at flies. Beyond them, a small boy sat on an upturned bucket, fishing with a bamboo rod and a line so thin I couldn&apos;t see it. He caught something small and silver while I watched. He unhooked it, looked at it, and threw it back. Too small. He was maybe seven.
           </p>
+          <p>
+            The{" "}
+            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
+              best Mekong river tours
+            </Link>
+            {" "}know when to turn off the engine and let silence do the guiding.
+          </p>
         </div>
       </section>
 
@@ -180,12 +187,20 @@ export default function HiddenMekongPage() {
           <p className="text-white/70 text-[15px] font-light mb-10">
             Private sampan journeys into the narrow canals. No script. No crowds. Just the river and a wooden oar.
           </p>
-          <Link
-            href="/itineraries/private-charter"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-          >
-            Explore Private Charters
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/itineraries/private-charter"
+              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            >
+              Explore Private Charters
+            </Link>
+            <Link
+              href="/"
+              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
+            >
+              All Mekong Cruise Options
+            </Link>
+          </div>
         </div>
       </section>
     </main>

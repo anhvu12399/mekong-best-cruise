@@ -106,6 +106,13 @@ export default function SlowDayPage() {
           <p>
             I stayed on deck for a long time after dinner. Not waiting for anything. Not avoiding anything. Just sitting in a chair, in the dark, on a river in Southeast Asia, listening to water move against wood. I wrote in my journal: <em>Today I did nothing. I noticed everything.</em>
           </p>
+          <p>
+            This is what every{" "}
+            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
+              Mekong River cruise
+            </Link>
+            {" "}promises and only the truly unhurried ones deliver.
+          </p>
         </div>
       </section>
 
@@ -191,12 +198,20 @@ export default function SlowDayPage() {
           <p className="text-white/70 text-[15px] font-light mb-10">
             Our river cruises are designed around the most luxurious commodity: unscheduled time.
           </p>
-          <Link
-            href="/cruises"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-          >
-            Find Your Ship
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/cruises"
+              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            >
+              Find Your Ship
+            </Link>
+            <Link
+              href="/"
+              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
+            >
+              All Mekong Cruise Options
+            </Link>
+          </div>
         </div>
       </section>
     </main>

@@ -63,6 +63,13 @@ export default function RedefiningLuxuryPage() {
           <p>
             The Mekong taught me a different vocabulary. Luxury here is not about importing the world onto a ship. It&apos;s about the ship getting out of the way so you can see what&apos;s already here. The morning light on the water. The sound of an oar. The chef at the market at 5 AM, arguing over the freshness of a catfish with a fisherman who caught it twenty minutes ago. That argument — the insistence on local, on fresh, on <em>this river, this morning, this fish</em> — is more luxurious than any gold faucet I&apos;ve ever seen.
           </p>
+          <p>
+            This is why the finest{" "}
+            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
+              luxury Mekong River cruise
+            </Link>
+            {" "}experiences don&apos;t compete with the landscape — they frame it.
+          </p>
         </div>
       </section>
 
@@ -177,12 +184,20 @@ export default function RedefiningLuxuryPage() {
           <p className="text-white/70 text-[15px] font-light mb-10">
             Ships where the crew knows your name, the chef knows the river, and the balcony door opens all the way.
           </p>
-          <Link
-            href="/cruises"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-          >
-            Explore Luxury Ships
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/cruises"
+              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            >
+              Explore Luxury Ships
+            </Link>
+            <Link
+              href="/"
+              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
+            >
+              All Mekong Cruise Options
+            </Link>
+          </div>
         </div>
       </section>
     </main>

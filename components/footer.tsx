@@ -240,10 +240,17 @@ export function Footer() {
                 className="h-24 w-auto object-contain" 
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm">
+            <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
               Crafting extraordinary river journeys through Southeast Asia&apos;s 
               most captivating landscapes since 1998.
             </p>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-gold text-sm font-medium hover:text-gold/80 transition-colors mb-8"
+              title="Mekong River Cruise — Luxury River Journeys"
+            >
+              Explore Mekong River Cruises →
+            </Link>
 
             {/* Contact Info */}
             <div className="space-y-4">

@@ -67,6 +67,13 @@ export default function LuxuryCruisesPage() {
           <p>
             The ships that navigate this river have learned this lesson. The best of them — the Aqua Mekong, the Jayavarman, the Mekong Jewel — don&apos;t compete with the landscape. They frame it. Floor-to-ceiling glass. Observation decks that face west for sunset. Plunge pools that hold the sky. The architecture says: <em>look out, not in</em>.
           </p>
+          <p>
+            If you&apos;re discovering{" "}
+            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
+              Mekong River cruises
+            </Link>{" "}
+            for the first time, the hardest part is narrowing down — not because the options are bad, but because they&apos;re each extraordinary in a different way.
+          </p>
         </div>
       </section>
 
@@ -196,12 +203,20 @@ export default function LuxuryCruisesPage() {
           <p className="text-white/70 text-[15px] font-light mb-10">
             Explore our fleet of handpicked luxury vessels, each with its own character and story.
           </p>
-          <Link
-            href="/cruises"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-          >
-            View Our Fleet
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/cruises"
+              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            >
+              View Our Fleet
+            </Link>
+            <Link
+              href="/"
+              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
+            >
+              All Mekong Cruise Options
+            </Link>
+          </div>
         </div>
       </section>
     </main>
