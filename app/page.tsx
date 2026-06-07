@@ -81,6 +81,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main>
+        <h1 className="sr-only">Mekong River Cruise | Luxury River Journeys in Southeast Asia</h1>
         <Hero />
         <QuickDecision />
         <AboutMekong />

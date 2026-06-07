@@ -110,9 +110,9 @@ export function Hero() {
                 href={slide.link} 
                 className="w-full mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-start text-left cursor-pointer group"
               >
-                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] mb-4 drop-shadow-lg tracking-wide group-hover:text-gold transition-colors duration-500">
+                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] mb-4 drop-shadow-lg tracking-wide group-hover:text-gold transition-colors duration-500">
                   {slide.heading}
-                </h1>
+                </h2>
                 
                 <p className="text-base md:text-lg text-white/90 font-serif mb-6 drop-shadow-md tracking-wide">
                   {slide.subheading}
