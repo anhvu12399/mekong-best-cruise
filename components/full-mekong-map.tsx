@@ -3,13 +3,13 @@
 import { useEffect, useRef } from "react"
 
 export const FULL_MEKONG_STOPS = [
-  { label: "Ho Chi Minh City", lat: 10.8231, lng: 106.6297 }, // Day 1
-  { label: "Bến Tre", lat: 10.2438, lng: 106.3752 }, // Day 2
-  { label: "Cần Thơ", lat: 10.0341, lng: 105.7922 }, // Day 3/4
-  { label: "Luang Prabang", lat: 19.8893, lng: 102.1347 }, // Day 4/5/6
-  { label: "Pakbeng", lat: 19.8974, lng: 101.1278 }, // Day 7
-  { label: "Houay Xai", lat: 20.2742, lng: 100.4132 }, // Day 8
-  { label: "Golden Triangle", lat: 20.3541, lng: 100.0831 }, // Day 9/10
+  { label: "Ho Chi Minh City", lat: 10.8231, lng: 106.6297, dir: "right" }, // Day 1
+  { label: "Bến Tre", lat: 10.2438, lng: 106.3752, dir: "right" }, // Day 2
+  { label: "Cần Thơ", lat: 10.0341, lng: 105.7922, dir: "left" }, // Day 3/4
+  { label: "Luang Prabang", lat: 19.8893, lng: 102.1347, dir: "right" }, // Day 4/5/6
+  { label: "Pakbeng", lat: 19.8974, lng: 101.1278, dir: "bottom" }, // Day 7
+  { label: "Houay Xai", lat: 20.2742, lng: 100.4132, dir: "top" }, // Day 8
+  { label: "Golden Triangle", lat: 20.3541, lng: 100.0831, dir: "left" }, // Day 9/10
 ]
 
 interface Props {
@@ -73,8 +73,6 @@ export function FullMekongMap({ activeDay, onDayChange }: Props) {
         
         .marker-label {
           position: absolute;
-          left: 15px;
-          top: -5px;
           white-space: nowrap;
           font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
           font-size: 12px;
@@ -84,6 +82,29 @@ export function FullMekongMap({ activeDay, onDayChange }: Props) {
             1px 1px 2px #fff, -1px -1px 2px #fff, 1px -1px 2px #fff, -1px 1px 2px #fff;
           transition: all 0.3s;
           cursor: pointer;
+        }
+        .marker-label.dir-right {
+          left: 15px;
+          top: -5px;
+        }
+        .marker-label.dir-left {
+          right: 15px;
+          left: auto;
+          top: -5px;
+          text-align: right;
+        }
+        .marker-label.dir-top {
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 15px;
+          top: auto;
+          text-align: center;
+        }
+        .marker-label.dir-bottom {
+          left: 50%;
+          transform: translateX(-50%);
+          top: 15px;
+          text-align: center;
         }
         
         .marker-label.active { font-weight: bold; color: #8B4A2A; }
@@ -133,7 +154,7 @@ export function FullMekongMap({ activeDay, onDayChange }: Props) {
             className: 'custom-marker',
             html: \`
               <div class="marker-dot" id="dot-\${i}"></div>
-              <div class="marker-label" id="label-\${i}" onclick="window.parent.postMessage({type:'DAY_CLICKED', day:\${i}}, '*')">\${stop.label}</div>
+              <div class="marker-label dir-\${stop.dir || 'right'}" id="label-\${i}" onclick="window.parent.postMessage({type:'DAY_CLICKED', day:\${i}}, '*')">\${stop.label}</div>
             \`,
             iconSize: [10, 10], iconAnchor: [5, 5]
           });
