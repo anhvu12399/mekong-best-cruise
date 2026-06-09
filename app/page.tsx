@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Hero } from "@/components/hero"
+import { TrustBar } from "@/components/trust-bar"
 import { QuickDecision } from "@/components/quick-decision"
 
 // Below-the-fold components: lazy loaded to reduce initial JS bundle
@@ -83,6 +84,7 @@ export default function Home() {
       <main>
         <h1 className="sr-only">Mekong River Cruise | Luxury River Journeys in Southeast Asia</h1>
         <Hero />
+        <TrustBar />
         <QuickDecision />
         <AboutMekong />
         <ExploreMekong />
