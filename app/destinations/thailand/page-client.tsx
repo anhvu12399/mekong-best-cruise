@@ -4,21 +4,163 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Bodoni_Moda } from "next/font/google"
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
+import { ArrowRight, ChevronDown, ChevronUp, Clock, Anchor } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 const faqs = [
-  { question: "What is Thailand's connection to the Mekong River?", answer: "The Mekong forms Thailand's natural northeastern border with Laos for roughly 1,000 kilometers, running through the Isan region. The area is Thailand at its most authentic — less visited than the beaches and temples of the south, the Mekong communities here maintain a way of life centered on the river, rice farming, and a distinct cultural heritage blending Thai, Lao, and Khmer influences." },
-  { question: "What is the Golden Triangle?", answer: "The Golden Triangle is the point where Thailand, Laos, and Myanmar meet at the junction of the Mekong and Ruak rivers. Historically notorious for opium production, the area is now home to a fascinating opium museum, luxury river lodges, and elephant sanctuaries. Arriving by boat at dusk, watching the three countries recede simultaneously, is an unforgettable geographic moment." },
-  { question: "Are there luxury accommodation options along the Mekong in Thailand?", answer: "Yes — notably the Anantara Golden Triangle and several boutique river lodges in the Chiang Rai area. We work with properties that offer a genuine sense of place: natural materials, local staff, cuisine that reflects the river and the region." },
-  { question: "What's the best way to combine Thailand's Mekong with the rest of the river journey?", answer: "Fly into Chiang Rai, explore the Golden Triangle area for two to three days, then take the Slow Boat south into Laos and continue to Luang Prabang. It's one of the great river passages in Asia — unhurried, beautiful, and entirely manageable with the right arrangements." },
+  {
+    question: "What is Thailand's connection to the Mekong River?",
+    answer: "The Mekong forms Thailand's natural northeastern border with Laos for roughly 1,000 kilometers, running through the Isan region. The area is Thailand at its most authentic — less visited than the beaches and temples of the south, the Mekong communities here maintain a way of life centered on the river, rice farming, and a distinct cultural heritage blending Thai, Lao, and Khmer influences.",
+  },
+  {
+    question: "What is the Golden Triangle?",
+    answer: "The Golden Triangle is the point where Thailand, Laos, and Myanmar meet at the junction of the Mekong and Ruak rivers. Historically notorious for opium production, the area is now home to a fascinating opium museum, luxury river lodges, and elephant sanctuaries. Arriving by boat at dusk, watching the three countries recede simultaneously, is an unforgettable geographic moment.",
+  },
+  {
+    question: "Are there luxury accommodation options along the Mekong in Thailand?",
+    answer: "Yes — notably the Anantara Golden Triangle and several boutique river lodges in the Chiang Rai area. We work with properties that offer a genuine sense of place: natural materials, local staff, cuisine that reflects the river and the region.",
+  },
+  {
+    question: "What's the best way to combine Thailand's Mekong with the rest of the river journey?",
+    answer: "Fly into Chiang Rai, explore the Golden Triangle area for two to three days, then take the Slow Boat south into Laos and continue to Luang Prabang. It's one of the great river passages in Asia — unhurried, beautiful, and entirely manageable with the right arrangements.",
+  },
 ]
 
 const experiences = [
-  { label: "The Golden Triangle", title: "Where Three Countries Meet", body: "The boat anchors in the channel and the current does nothing — it simply holds you there, at the point where Thailand ends and Laos begins to the north and Myanmar to the west. Three countries. Three flags visible simultaneously. A Lao casino boat moored on the opposite bank. The Mekong, not particularly wide here, running brown and purposeful. Your guide points to the exact spot of the confluence and says nothing, because there's nothing to add. You sit on the deck with a cold Chang and look at the geography of a continent converging in one place. It's quieter than you expected.", image: "/images/thailand_exp_1.avif", tag: "Golden Triangle, Chiang Rai" },
-  { label: "River Commerce", title: "The Border Markets of Isan", body: "Every Saturday morning in Nakhon Phanom, a market appears on the riverside promenade that has been happening in some form since there were boats crossing to Laos. Sticky rice wrapped in banana leaf. Fish sauce in unmarked bottles. Silk from across the river in Laos, sold by women who crossed at 5am by long-tail boat. The vendors and buyers know each other — some have been meeting at this market for twenty years. You buy a packet of dried herbs you can't identify and a small ceramic bowl decorated in the old Isan style, and your guide translates the price negotiation, which takes considerably longer than the actual amount of money involved.", image: "/images/thailand_exp_2.avif", tag: "Saturday market · Nakhon Phanom" },
-  { label: "Temple Country", title: "Wat Phu Thok and the Forest Monks", body: "The forest tradition in Thai Buddhism produced monks who withdrew into the jungle and practiced in isolation — living in caves, meditating under trees, seeking the direct experience of the teachings rather than their institutional form. Wat Phu Thok in Bueng Kan province is built directly into a sandstone cliff, connected by a series of wooden walkways and ladders. Climbing it on a quiet weekday morning, with the forest below and the Mekong visible in the distance, you understand what these monks were looking for. There are very few places where the intersection of landscape and practice is this legible.", image: "/images/thailand_exp_3.avif", tag: "Wat Phu Thok · Bueng Kan" },
+  {
+    label: "The Golden Triangle",
+    title: "Where Three Countries Meet",
+    body: "The boat anchors in the channel and the current does nothing — it simply holds you there, at the point where Thailand ends and Laos begins to the north and Myanmar to the west. Three countries. Three flags visible simultaneously. A Lao casino boat moored on the opposite bank. The Mekong, not particularly wide here, running brown and purposeful. Your guide points to the exact spot of the confluence and says nothing, because there's nothing to add. You sit on the deck with a cold Chang and look at the geography of a continent converging in one place. It's quieter than you expected.",
+    image: "/images/golden_triangle_view.png",
+    tag: "Golden Triangle, Chiang Rai",
+  },
+  {
+    label: "River Commerce",
+    title: "The Border Markets of Isan",
+    body: "Every Saturday morning in Nakhon Phanom, a market appears on the riverside promenade that has been happening in some form since there were boats crossing to Laos. Sticky rice wrapped in banana leaf. Fish sauce in unmarked bottles. Silk from across the river in Laos, sold by women who crossed at 5am by long-tail boat. The vendors and buyers know each other — some have been meeting at this market for twenty years. You buy a packet of dried herbs you can't identify and a small ceramic bowl decorated in the old Isan style, and your guide translates the price negotiation, which takes considerably longer than the actual amount of money involved.",
+    image: "/images/thailand_exp_2.avif",
+    tag: "Saturday market · Nakhon Phanom",
+  },
+  {
+    label: "Temple Country",
+    title: "Wat Phu Thok and the Forest Monks",
+    body: "The forest tradition in Thai Buddhism produced monks who withdrew into the jungle and practiced in isolation — living in caves, meditating under trees, seeking the direct experience of the teachings rather than their institutional form. Wat Phu Thok in Bueng Kan province is built directly into a sandstone cliff, connected by a series of wooden walkways and ladders. Climbing it on a quiet weekday morning, with the forest below and the Mekong visible in the distance, you understand what these monks were looking for. There are very few places where the intersection of landscape and practice is this legible.",
+    image: "/images/thailand_exp_3.avif",
+    tag: "Wat Phu Thok · Bueng Kan",
+  },
+]
+
+const itineraries = [
+  {
+    slug: "small-ship",
+    title: "Small Ship Mekong Expedition",
+    tagline: "The Hidden Tributaries",
+    duration: "5 Days / 4 Nights",
+    route: "Luang Prabang — Golden Triangle",
+    desc: "Navigate the dramatic limestone gorges and remote upper reaches of the Mekong between Luang Prabang and Thailand on an intimate vessel.",
+    image: "/images/dest_laos.avif",
+    highlights: ["Upper Mekong gorges", "Pak Ou Buddha caves", "Golden Triangle convergence"],
+  },
+  {
+    slug: "full-mekong-story",
+    title: "The Full Mekong Story",
+    tagline: "Ten Days. Two Countries. One River.",
+    duration: "10 Days / 9 Nights",
+    route: "Ho Chi Minh City — Golden Triangle",
+    desc: "A grand 10-day private journey tracing the Mekong from the flat green delta of Vietnam to the mountainous borderlands of Laos and the Golden Triangle.",
+    image: "/images/full_mekong_hero.png",
+    highlights: ["Mekong Delta backwaters", "Luang Prabang alms dawn", "Golden Triangle confluence"],
+  },
+  {
+    slug: "rivers-of-indochina",
+    title: "Rivers of Indochina",
+    tagline: "Fifteen Days. Three Countries. One Story.",
+    duration: "15 Days / 14 Nights",
+    route: "Hanoi — Saigon — Phnom Penh — Siem Reap — Luang Prabang",
+    desc: "A magnificent 15-day grand cross-border private pilgrimage tracing the Red River, the Perfume River, the Thu Bon, and the Mekong through Vietnam, Cambodia, and Laos.",
+    image: "/images/indochina_rivers_hero.png",
+    highlights: ["Halong Bay overnight junk", "Angkor Wat 2-day pass", "Mekong cross-border speedboat"],
+  },
+  {
+    slug: "private-charter",
+    title: "Private Mekong River Charter",
+    tagline: "The Ultimate Sanctuary",
+    duration: "Custom Days",
+    route: "Fully Custom Routing",
+    desc: "Absolute privacy and unscripted freedom. Claim an entire luxury vessel for your family or inner circle with a tailored itinerary and dedicated crew.",
+    image: "/images/banner_3.avif",
+    highlights: ["100% exclusive buyout", "Private executive chef", "Bespoke daily scheduling"],
+  },
+]
+
+const featuredShips = [
+  {
+    slug: "anouvong",
+    name: "Anouvong",
+    tagline: "A king's river, sailed with a king's patience.",
+    image: "/images/anouvong.avif",
+    cabins: "14 Cabins",
+    guests: "28 Guests",
+    crew: "20 Crew",
+    length: "45m",
+    vibe: "Quiet Nobility & Fine Laotian Cuisine",
+  },
+  {
+    slug: "boheme",
+    name: "Bohème",
+    tagline: "Inspiration arrives at water level.",
+    image: "/images/boheme.avif",
+    cabins: "12 Cabins",
+    guests: "24 Guests",
+    crew: "18 Crew",
+    length: "40m",
+    vibe: "Artistic Design & Curated Cultural Evenings",
+  },
+  {
+    slug: "mekong-pearl",
+    name: "Mekong Pearl",
+    tagline: "The river reveals itself to those who slow down.",
+    image: "/images/mekong_pearl.avif",
+    cabins: "18 Cabins",
+    guests: "36 Guests",
+    crew: "24 Crew",
+    length: "42m",
+    vibe: "Sundeck Canopy Lounge & Traditional Workshops",
+  },
+  {
+    slug: "laos-pandaw",
+    name: "Laos Pandaw",
+    tagline: "Teak decks. Open verandas. The river, always within reach.",
+    image: "/images/laos_pandaw.avif",
+    cabins: "20 Cabins",
+    guests: "40 Guests",
+    crew: "28 Crew",
+    length: "55m",
+    vibe: "Classic 1947 Heritage Blueprint Design",
+  },
+  {
+    slug: "champa-pandaw",
+    name: "Champa Pandaw",
+    tagline: "The frangipani blooms. The river turns gold.",
+    image: "/images/champa_pandaw.avif",
+    cabins: "16 Cabins",
+    guests: "32 Guests",
+    crew: "22 Crew",
+    length: "48m",
+    vibe: "Fragrant Garden Deck & Sunrise Yoga",
+  },
+  {
+    slug: "mekong-sun",
+    name: "Mekong Sun",
+    tagline: "First light. Last light. Both are yours.",
+    image: "/images/dest_laos.avif",
+    cabins: "15 Cabins",
+    guests: "30 Guests",
+    crew: "20 Crew",
+    length: "40m",
+    vibe: "Sunrise-Facing Cabins & Dawn Meditation Deck",
+  },
 ]
 
 export default function ThailandClient() {
@@ -26,53 +168,91 @@ export default function ThailandClient() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef]">
+
+      {/* ── MAGAZINE HERO ── */}
       <section className="relative w-full h-screen overflow-hidden">
-        <Image src="/images/dest_thailand_hero.avif" alt="Mekong River market, Thailand" fill priority className="object-cover" sizes="100vw" />
+        <Image
+          src="/images/dest_thailand_hero.avif"
+          alt="Mekong River market, Thailand"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/80" />
+
+        {/* Issue line */}
         <div className="absolute top-0 left-0 right-0 z-10 flex justify-between items-center px-8 lg:px-16 py-8 border-b border-white/10">
           <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Destinations</span>
           <span className="text-white/60 text-[10px] tracking-[0.3em] uppercase font-bold">Issue No. 05 · Thailand</span>
         </div>
+
         <div className="absolute inset-0 flex flex-col justify-end pb-16 lg:pb-24 px-8 lg:px-16 z-10">
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase font-bold mb-4">The Land of Smiles</p>
           <h1 className={`text-white text-5xl md:text-7xl lg:text-[6rem] leading-[0.95] mb-6 max-w-4xl ${playfair.className}`}>
-            Where Three Rivers<br /><em className="not-italic text-white/80">Become One Border</em>
+            Where Three Rivers<br />
+            <em className="not-italic text-white/80">Become One Border</em>
           </h1>
           <div className="flex items-end justify-between">
-            <p className="text-white/75 text-lg md:text-xl font-serif max-w-xl leading-relaxed">Thailand's Mekong is the country at its most undiscovered — the northeast coast where the river forms the border and the markets still trade across it by boat.</p>
-            <Link href="/plan-your-journey" className="hidden md:flex items-center gap-3 text-white text-xs tracking-[0.2em] uppercase font-bold border-b border-white/40 pb-1 hover:text-gold hover:border-gold transition-colors">Plan This Journey <ArrowRight size={14} /></Link>
+            <p className="text-white/75 text-lg md:text-xl font-serif max-w-xl leading-relaxed">
+              Thailand's Mekong is the country at its most undiscovered — the northeast coast where the river forms the border and the markets still trade across it by boat.
+            </p>
+            <Link
+              href="/plan-your-journey"
+              className="hidden md:flex items-center gap-3 text-white text-xs tracking-[0.2em] uppercase font-bold border-b border-white/40 pb-1 hover:text-gold hover:border-gold transition-colors"
+            >
+              Plan This Journey <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* ── OPENING DISPATCH ── */}
       <section className="max-w-3xl mx-auto px-6 lg:px-8 py-24 md:py-32">
         <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-8">Dispatch from the Golden Triangle</p>
         <div className="font-serif text-navy/80 text-xl md:text-2xl leading-[1.8] space-y-6">
-          <p><span className="float-left text-8xl leading-[0.75] mr-4 text-navy font-bold">M</span>ost people who visit Thailand never reach the Mekong. They follow the well-worn path — Bangkok, Chiang Mai, the southern islands — and return home with a very partial picture of an extraordinarily complex country. The northeast, the Isan region, where the river forms a thousand kilometers of border with Laos, is Thailand at its most honest: the food spicier, the music older, the people less accustomed to tourists and more genuinely curious about who you are and where you're from.</p>
-          <p>Chiang Rai, in the far north, is the gateway to the Golden Triangle — the legendary meeting point of Thailand, Laos, and Myanmar. The opium trade that made this region infamous in the twentieth century is long replaced by a more complex economy: luxury resorts, elephant sanctuaries, hill tribe villages, and the steady commerce of the river, which has always found ways to move things across borders whether the governments are talking or not.</p>
-          <p>The Mekong here is different from its southern character. Narrower and faster, cutting between steep forested banks, it feels more like a gorge river than the wide, agricultural highway of Vietnam. Standing at the Golden Triangle and watching the three countries recede in three directions, the water running between them, you understand the river's role as both connector and boundary — a line drawn by geology that human politics have spent centuries trying to interpret.</p>
-          <p>The riverside markets of Isan are among the most authentic in Southeast Asia. No concessions to tourism. Sticky rice in bamboo steamers, fresh river fish, silk from across the Lao border, medicinal herbs and rice whiskey and homemade hot sauce. The women running the stalls have been here since long before dawn. They'll be back next Saturday. The river, between their stalls and the Lao bank, makes its own consistent schedule.</p>
-          <p>Thailand's Mekong coast is a journey for travelers who have already done the obvious and are ready for the rewarding. The infrastructure is good, the welcome is genuine, and the food — Isan cuisine, influenced by Lao cooking and profoundly its own thing — is some of the best you'll eat in the entire region.</p>
+          <p>
+            <span className="float-left text-8xl leading-[0.75] mr-4 text-navy font-bold">M</span>ost people who visit Thailand never reach the Mekong. They follow the well-worn path — Bangkok, Chiang Mai, the southern islands — and return home with a very partial picture of an extraordinarily complex country. The northeast, the Isan region, where the river forms a thousand kilometers of border with Laos, is Thailand at its most honest: the food spicier, the music older, the people less accustomed to tourists and more genuinely curiosity about who you are and where you're from.
+          </p>
+          <p>
+            Chiang Rai, in the far north, is the gateway to the Golden Triangle — the legendary meeting point of Thailand, Laos, and Myanmar. The opium trade that made this region infamous in the twentieth century is long replaced by a more complex economy: luxury resorts, elephant sanctuaries, hill tribe villages, and the steady commerce of the river, which has always found ways to move things across borders whether the governments are talking or not.
+          </p>
+          <p>
+            The Mekong here is different from its southern character. Narrower and faster, cutting between steep forested banks, it feels more like a gorge river than the wide, agricultural highway of Vietnam. Standing at the Golden Triangle and watching the three countries recede in three directions, the water running between them, you understand the river's role as both connector and boundary — a line drawn by geology that human politics have spent centuries trying to interpret.
+          </p>
+          <p>
+            The riverside markets of Isan are among the most authentic in Southeast Asia. No concessions to tourism. Sticky rice in bamboo steamers, fresh river fish, silk from across the Lao border, medicinal herbs and rice whiskey and homemade hot sauce. The women running the stalls have been here since long before dawn. They'll be back next Saturday. The river, between their stalls and the Lao bank, makes its own consistent schedule.
+          </p>
+          <p>
+            Thailand's Mekong coast is a journey for travelers who have already done the obvious and are ready for the rewarding. The infrastructure is good, the welcome is genuine, and the food — Isan cuisine, influenced by Lao cooking and profoundly its own thing — is some of the best you'll eat in the entire region.
+          </p>
         </div>
       </section>
 
+      {/* ── PULL QUOTE ── */}
       <section className="bg-navy py-20 px-8 text-center">
-        <p className="text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-4xl mx-auto font-serif italic">"Isan cuisine is what Thai food tastes like before it learned to be polite. We mean this as the highest possible compliment."</p>
+        <p className={`text-white text-2xl md:text-4xl lg:text-5xl leading-tight max-w-4xl mx-auto font-serif italic`}>
+          "Isan cuisine is what Thai food tastes like before it learned to be polite. We mean this as the highest possible compliment."
+        </p>
         <p className="text-gold text-[11px] tracking-[0.3em] uppercase mt-8 font-bold">— Field Notes, Nakhon Phanom</p>
       </section>
 
+      {/* ── THREE EXPERIENCES ── */}
       <section className="py-24 lg:py-32 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">Three Dispatches</p>
             <h2 className={`text-4xl md:text-5xl text-navy ${playfair.className}`}>What Thailand's Mekong Feels Like</h2>
           </div>
+
           <div className="space-y-32">
             {experiences.map((exp, i) => (
               <div key={i} className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                 <div className={`relative aspect-[4/5] ${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <Image src={exp.image} alt={exp.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2"><span className="text-white/80 text-[10px] tracking-[0.25em] uppercase font-bold">{exp.tag}</span></div>
+                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2">
+                    <span className="text-white/80 text-[10px] tracking-[0.25em] uppercase font-bold">{exp.tag}</span>
+                  </div>
                 </div>
                 <div className={i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">{exp.label}</p>
@@ -85,14 +265,174 @@ export default function ThailandClient() {
         </div>
       </section>
 
+      {/* ── FULL-BLEED SECONDARY IMAGE ── */}
       <section className="relative h-[60vh] overflow-hidden">
-        <Image src="/images/dest_thailand_hero.avif" alt="Thailand Mekong" fill className="object-cover" sizes="100vw" />
+        <Image src="/images/dest_thailand.avif" alt="Thailand Mekong" fill className="object-cover object-center" sizes="100vw" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-          <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>"The most interesting part of Thailand is the part nobody bothers to visit. The Mekong will tell you why."</p>
+          <div>
+            <p className="text-white/60 text-[10px] tracking-[0.4em] uppercase mb-4">The Detail That Stays With You</p>
+            <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>
+              "The most interesting part of Thailand is the part nobody bothers to visit. The Mekong will tell you why."
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* ── ITINERARIES SECTION ── */}
+      <section className="py-24 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="text-[#8B4A2A] text-xs tracking-[0.3em] uppercase font-bold block mb-4">
+              Explore the River
+            </span>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl text-navy mb-8 ${playfair.className}`}>
+              Curated Mekong Itineraries
+            </h2>
+            <div className="w-16 h-px bg-[#c9a962] mx-auto mb-8" />
+            <p className="max-w-2xl mx-auto text-navy/70 text-base md:text-lg leading-relaxed font-serif">
+              Navigate remote reaches and the confluence of borders on these hand-crafted private journeys.
+            </p>
+          </div>
+
+          {/* Asymmetric / Creative Layout Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {itineraries.map((itinerary) => (
+              <Link
+                key={itinerary.slug}
+                href={`/itineraries/${itinerary.slug}`}
+                className="group relative flex flex-col md:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+              >
+                {/* Image Section */}
+                <div className="relative w-full md:w-[40%] min-h-[220px] md:min-h-full overflow-hidden bg-navy/5 shrink-0">
+                  <Image
+                    src={itinerary.image}
+                    alt={itinerary.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                    <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                      <Clock size={10} className="stroke-[#c9a962]" />
+                      {itinerary.duration}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 md:p-10 flex flex-col justify-between flex-grow">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                        {itinerary.route}
+                      </span>
+                    </div>
+                    <h3 className={`text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                      {itinerary.title}
+                    </h3>
+                    <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                      {itinerary.desc}
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {itinerary.highlights.map((highlight, idx) => (
+                        <span
+                          key={idx}
+                          className="text-[9px] tracking-[0.1em] uppercase font-semibold bg-[#f7f4ef] text-navy/75 border border-[#e0d9ce] px-2 py-0.5"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                      <span>Explore Route</span>
+                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED SHIPS SECTION ── */}
+      <section className="py-24 bg-[#ede9e2]/30 border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="text-[#8B4A2A] text-xs tracking-[0.3em] uppercase font-bold block mb-4">
+              The Vessels
+            </span>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl text-navy mb-8 ${playfair.className}`}>
+              Featured Boutique Fleet
+            </h2>
+            <div className="w-16 h-px bg-[#c9a962] mx-auto mb-8" />
+            <p className="max-w-2xl mx-auto text-navy/70 text-base md:text-lg leading-relaxed font-serif">
+              Step aboard ships that redefine upper river travel. Teak wood, open air verandas, and unhurried luxury designed to connect you deeply with the Thai and Laotian Mekong.
+            </p>
+          </div>
+
+          {/* Grid Layout that rearranges beautifully */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {featuredShips.map((ship) => (
+              <Link
+                key={ship.slug}
+                href="/plan-your-journey"
+                className="group flex flex-col bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+              >
+                {/* Image Section */}
+                <div className="relative h-[250px] overflow-hidden bg-navy/5">
+                  <Image
+                    src={ship.image}
+                    alt={ship.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  
+                  {/* Floating Specs */}
+                  <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+                    <span className="text-[10px] tracking-[0.15em] uppercase font-bold flex items-center gap-1.5">
+                      <Anchor size={11} className="stroke-white" />
+                      {ship.cabins} / {ship.guests}
+                    </span>
+                    <span className="text-[9px] tracking-[0.1em] uppercase font-medium bg-[#c9a962] text-navy px-2 py-0.5">
+                      {ship.length}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className={`text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-2.5 ${playfair.className}`}>
+                      {ship.name}
+                    </h3>
+                    <p className="text-[#8B4A2A] text-[10px] tracking-[0.2em] uppercase font-bold mb-4">
+                      {ship.tagline}
+                    </p>
+                    <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                      {ship.vibe}
+                    </p>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all self-start mt-auto">
+                    <span>Plan Your Journey</span>
+                    <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRACTICAL NOTES ── */}
       <section className="py-24 bg-white border-t border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
@@ -100,34 +440,60 @@ export default function ThailandClient() {
               <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">What You Need to Know</p>
               <h2 className={`text-4xl text-navy mb-10 ${playfair.className}`}>Before You Go</h2>
               <div className="grid grid-cols-2 gap-x-10 gap-y-8">
-                {[{ label: "Best Season", value: "November – March" }, { label: "Entry", value: "Visa-free for most nationalities, 30 days" }, { label: "Currency", value: "Thai Baht (THB)" }, { label: "Language", value: "Thai · English in tourism areas" }, { label: "Base City", value: "Chiang Rai or Nakhon Phanom" }, { label: "Journey Length", value: "3 to 5 days, combined with Laos" }].map((item) => (
-                  <div key={item.label}><p className="text-[10px] tracking-[0.25em] uppercase font-bold text-gold mb-1">{item.label}</p><p className="font-serif text-navy/80">{item.value}</p></div>
+                {[
+                  { label: "Best Season", value: "November – March" },
+                  { label: "Entry", value: "Visa-free for most nationalities, 30 days" },
+                  { label: "Currency", value: "Thai Baht (THB)" },
+                  { label: "Language", value: "Thai · English in tourism areas" },
+                  { label: "Base City", value: "Chiang Rai or Nakhon Phanom" },
+                  { label: "Journey Length", value: "3 to 5 days, combined with Laos" },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-gold mb-1">{item.label}</p>
+                    <p className="font-serif text-navy/80">{item.value}</p>
+                  </div>
                 ))}
               </div>
             </div>
             <div className="bg-[#f7f4ef] p-10 lg:p-12 flex flex-col justify-between">
               <div>
                 <p className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#8B4A2A] mb-6">Your Thailand Journey</p>
-                <p className={`text-3xl text-navy mb-6 leading-tight ${playfair.className}`}>The Golden Triangle, the border markets, the river that connects three countries.</p>
-                <p className="font-serif text-navy/65 leading-relaxed mb-8">We pair Thailand's Mekong with a Laos extension most often — Chiang Rai to the Golden Triangle, then the Slow Boat into Luang Prabang. It is one of the great river journeys available to travelers today.</p>
+                <p className={`text-3xl text-navy mb-6 leading-tight ${playfair.className}`}>
+                  The Golden Triangle, the border markets, the river that connects three countries.
+                </p>
+                <p className="font-serif text-navy/65 leading-relaxed mb-8">
+                  We pair Thailand's Mekong with a Laos extension most often — Chiang Rai to the Golden Triangle, then the Slow Boat into Luang Prabang. It is one of the great river journeys available to travelers today.
+                </p>
               </div>
-              <Link href="/plan-your-journey" className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-navy text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#8B4A2A] transition-colors duration-300 group">
-                <span>Plan This Journey</span><ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <Link
+                href="/plan-your-journey"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-navy text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#8B4A2A] transition-colors duration-300 group"
+              >
+                <span>Plan This Journey</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── FAQ ── */}
       <section className="max-w-3xl mx-auto px-6 lg:px-8 py-24 border-t border-[#e0d9ce]">
         <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-4">Questions & Answers</p>
         <h2 className={`text-4xl text-navy mb-12 ${playfair.className}`}>What Travelers Ask</h2>
         <div className="divide-y divide-[#e0d9ce]">
           {faqs.map((faq, index) => (
             <div key={index}>
-              <button onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)} className="flex justify-between items-center w-full text-left py-6 group">
-                <span className={`text-xl text-navy group-hover:text-[#8B4A2A] transition-colors pr-6 ${playfair.className}`}>{faq.question}</span>
-                <span className="text-navy/40 flex-shrink-0">{openFaqIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</span>
+              <button
+                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                className="flex justify-between items-center w-full text-left py-6 group"
+              >
+                <span className={`text-xl text-navy group-hover:text-[#8B4A2A] transition-colors pr-6 ${playfair.className}`}>
+                  {faq.question}
+                </span>
+                <span className="text-navy/40 flex-shrink-0">
+                  {openFaqIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </span>
               </button>
               <div className={`overflow-hidden transition-all duration-300 ${openFaqIndex === index ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0"}`}>
                 <p className="font-serif text-navy/65 leading-relaxed text-lg">{faq.answer}</p>
@@ -136,6 +502,7 @@ export default function ThailandClient() {
           ))}
         </div>
       </section>
+
     </main>
   )
 }

@@ -102,15 +102,6 @@ export function Header() {
                 >
                   Destinations
                 </button>
-                <button
-                  onClick={() => {
-                    setIsSidebarOpen(true)
-                    setActiveView('itineraries')
-                  }}
-                  className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
-                >
-                  Itineraries
-                </button>
                 <Link
                   href="/cruises"
                   className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
@@ -121,7 +112,7 @@ export function Header() {
                   href="/best-time-to-travel"
                   className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
                 >
-                  Best Time
+                  Best Time to Visit
                 </Link>
                 <button
                   onClick={() => {
