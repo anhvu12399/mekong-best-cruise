@@ -115,6 +115,16 @@ const itineraries = [
     desc: "A comprehensive cross-border luxury pilgrimage connecting the vibrant Mekong Delta to the ancient stone spires of Angkor Wat.",
     image: "/images/vc_hero.avif",
     highlights: ["Cross-border passage", "Angkor Wat sunrise", "Private pilgrimage blessings"],
+  },
+  {
+    slug: "full-mekong-story",
+    title: "The Full Mekong Story",
+    tagline: "Ten Days. Two Countries. One River.",
+    duration: "10 Days / 9 Nights",
+    route: "Ho Chi Minh City — Golden Triangle",
+    desc: "A grand 10-day private journey tracing the Mekong from the flat green delta of Vietnam to the mountainous borderlands of Laos and the Golden Triangle.",
+    image: "/images/dest_vietnam_hero.avif",
+    highlights: ["Mekong Delta backwaters", "Luang Prabang alms dawn", "Golden Triangle confluence"],
   }
 ]
 
