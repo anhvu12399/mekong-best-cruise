@@ -8,7 +8,7 @@ const TRUST_ITEMS = [
     icon: Star,
     label: "4.9 / 5",
     sub: "Tripadvisor Rating",
-    href: "https://www.tripadvisor.com",
+    href: "https://www.tripadvisor.com/Attraction_Review-g293925-d12051706-Reviews-Mekong_River_Cruise-Ho_Chi_Minh_City.html",
     external: true,
   },
   {
