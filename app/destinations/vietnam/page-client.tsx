@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Bodoni_Moda } from "next/font/google"
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react"
+import { ArrowRight, ChevronDown, ChevronUp, Clock, Anchor } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
@@ -43,7 +43,7 @@ const experiences = [
     label: "Hidden Waterways",
     title: "The Canals Nobody Talks About",
     body: "Every guidebook sends you to the same three waterways. We go somewhere else. On a three-plank sampan so narrow your knees almost touch the banks, your guide poles you into channels shaded completely by water coconut palms — a tunnel of green that filters the light into something quiet and cathedral-like. A farmhouse appears through the leaves. Someone waves from a hammock. Ducks scatter as you pass. There's no commentary, no schedule, no other boats. Just the sound of the pole entering the water and withdrawing, and the particular silence of a place where tourism hasn't quite arrived yet.",
-    image: "/images/cultural-encounters-v2.avif",
+    image: "/images/bentre_waterways.png",
     tag: "10:00am · Ben Tre waterways",
   },
   {
@@ -53,6 +53,138 @@ const experiences = [
     image: "/images/floating-markets-v2.avif",
     tag: "12:30pm · A family home, Vinh Long",
   },
+]
+
+const itineraries = [
+  {
+    slug: "1-day",
+    title: "1-Day Mindful Mekong",
+    tagline: "One Day. No Agenda.",
+    duration: "1 Day",
+    route: "Saigon — Ben Tre Canals",
+    desc: "A slow-paced, deeply connected private journey into the quiet heart of the delta's side canals, away from the tourist path.",
+    image: "/images/1day_hero.avif",
+    highlights: ["Private sampan boat", "Tea in a 73-year-old garden", "Simmered clay-pot lunch"],
+  },
+  {
+    slug: "2-days",
+    title: "2-Day River Pulse",
+    tagline: "One Night Changes Everything",
+    duration: "2 Days / 1 Night",
+    route: "Saigon — Can Tho",
+    desc: "Experience the true contrast of the delta: a peaceful night in a riverside garden homestay followed by the vibrant dawn market.",
+    image: "/images/pulse_delta.avif",
+    highlights: ["Cai Rang floating market", "Traditional live folk music", "Local farmhouse dinner"],
+  },
+  {
+    slug: "mekong-delta",
+    title: "3-4 Day Immersive Delta",
+    tagline: "A Way of Living the Delta",
+    duration: "3–4 Days",
+    route: "Saigon — Vinh Long — Can Tho",
+    desc: "An immersive journey built around local life: private group travel, farmhouse homestays, canal kayaking, and meals with multi-generational families.",
+    image: "/images/dest_vietnam.avif",
+    highlights: ["Farmhouse stays", "Canal kayaking", "Local cooking masterclass"],
+  },
+  {
+    slug: "private-charter",
+    title: "Private Mekong River Charter",
+    tagline: "The Ultimate Sanctuary",
+    duration: "Custom Days",
+    route: "Fully Custom Routing",
+    desc: "Absolute privacy and unscripted freedom. Claim an entire luxury vessel for your family or inner circle with a tailored itinerary and dedicated crew.",
+    image: "/images/banner_3.avif",
+    highlights: ["100% exclusive buyout", "Private executive chef", "Bespoke daily scheduling"],
+  },
+  {
+    slug: "small-ship",
+    title: "Small Ship Mekong Expedition",
+    tagline: "The Hidden Tributaries",
+    duration: "5 Days / 4 Nights",
+    route: "Luang Prabang — Golden Triangle",
+    desc: "Navigate the dramatic limestone gorges and remote upper reaches of the Mekong between Luang Prabang and Thailand on an intimate vessel.",
+    image: "/images/dest_laos.avif",
+    highlights: ["Upper Mekong gorges", "Pak Ou Buddha caves", "Golden Triangle convergence"],
+  },
+  {
+    slug: "vietnam-cambodia",
+    title: "Vietnam to Cambodia Pilgrimage",
+    tagline: "Saigon to Angkor. The Long Way.",
+    duration: "7–8 Days",
+    route: "Saigon — Phnom Penh — Siem Reap",
+    desc: "A comprehensive cross-border luxury pilgrimage connecting the vibrant Mekong Delta to the ancient stone spires of Angkor Wat.",
+    image: "/images/vc_hero.avif",
+    highlights: ["Cross-border passage", "Angkor Wat sunrise", "Private pilgrimage blessings"],
+  }
+]
+
+const featuredShips = [
+  {
+    slug: "aqua-mekong",
+    name: "Aqua Mekong",
+    tagline: "Where the river meets the sky",
+    image: "/images/aqua_mekong.avif",
+    cabins: "20 Cabins",
+    guests: "40 Guests",
+    crew: "40 Crew",
+    length: "62.4m",
+    vibe: "Contemporary Glass Architecture & Michelin Gastronomy",
+  },
+  {
+    slug: "mekong-jewel",
+    name: "Mekong Jewel",
+    tagline: "The newest ship on the oldest river",
+    image: "/images/jewel_hero.avif",
+    cabins: "34 Cabins",
+    guests: "68 Guests",
+    crew: "51 Crew",
+    length: "80m",
+    vibe: "Quiet Luxury & High Sustainability",
+  },
+  {
+    slug: "jayavarman",
+    name: "The Jayavarman",
+    tagline: "Where teak meets twilight",
+    image: "/images/jayavarman.avif",
+    cabins: "27 Cabins",
+    guests: "54 Guests",
+    crew: "40 Crew",
+    length: "57.8m",
+    vibe: "French Colonial Charm & Khmer Soul",
+  },
+  {
+    slug: "the-jahan",
+    name: "The Jahan",
+    tagline: "Mughal dreams on Mekong waters",
+    image: "/images/the_jahan.avif",
+    cabins: "26 Cabins",
+    guests: "52 Guests",
+    crew: "40 Crew",
+    length: "70m",
+    vibe: "Opulent Artistry & Romantic Verandas",
+  },
+  {
+    slug: "victoria-mekong",
+    name: "Victoria Mekong",
+    tagline: "Clean lines, wide views",
+    image: "/images/victoria_mekong.avif",
+    cabins: "35 Cabins",
+    guests: "70 Guests",
+    crew: "45 Crew",
+    length: "76.8m",
+    vibe: "Green Eco-Cruising & Observation Pool",
+  },
+  {
+    slug: "mekong-princess",
+    name: "Mekong Princess",
+    tagline: "Fourteen suites. No crowds.",
+    image: "/images/princess_hero.avif",
+    cabins: "14 Cabins",
+    guests: "28 Guests",
+    crew: "28 Crew",
+    length: "61m",
+    vibe: "Ultra-shallow Draft & Remote Tributaries",
+  }
 ]
 
 export default function VietnamClient() {
@@ -168,6 +300,159 @@ export default function VietnamClient() {
             <p className={`text-white text-3xl md:text-5xl max-w-3xl mx-auto leading-tight ${playfair.className}`}>
               "The sound of the pole going into still water, over and over, until it becomes a kind of meditation."
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ITINERARIES SECTION ── */}
+      <section className="py-24 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="text-[#8B4A2A] text-xs tracking-[0.3em] uppercase font-bold block mb-4">
+              Explore the River
+            </span>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl text-navy mb-8 ${playfair.className}`}>
+              Curated Mekong Itineraries
+            </h2>
+            <div className="w-16 h-px bg-[#c9a962] mx-auto mb-8" />
+            <p className="max-w-2xl mx-auto text-navy/70 text-base md:text-lg leading-relaxed font-serif">
+              From contemplative single-day driftings to epic cross-border pilgrimages, choose the journey that resonates with your pace.
+            </p>
+          </div>
+
+          {/* Asymmetric / Creative Layout Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {itineraries.map((itinerary) => (
+              <Link
+                key={itinerary.slug}
+                href={`/itineraries/${itinerary.slug}`}
+                className="group relative flex flex-col md:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+              >
+                {/* Image Section */}
+                <div className="relative w-full md:w-[40%] min-h-[220px] md:min-h-full overflow-hidden bg-navy/5 shrink-0">
+                  <Image
+                    src={itinerary.image}
+                    alt={itinerary.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                    <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                      <Clock size={10} className="stroke-[#c9a962]" />
+                      {itinerary.duration}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 md:p-10 flex flex-col justify-between flex-grow">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                        {itinerary.route}
+                      </span>
+                    </div>
+                    <h3 className={`text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                      {itinerary.title}
+                    </h3>
+                    <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                      {itinerary.desc}
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {itinerary.highlights.map((highlight, idx) => (
+                        <span
+                          key={idx}
+                          className="text-[9px] tracking-[0.1em] uppercase font-semibold bg-[#f7f4ef] text-navy/75 border border-[#e0d9ce] px-2 py-0.5"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                      <span>Explore Route</span>
+                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED SHIPS SECTION ── */}
+      <section className="py-24 bg-[#ede9e2]/30 border-t border-[#e0d9ce]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-24">
+            <span className="text-[#8B4A2A] text-xs tracking-[0.3em] uppercase font-bold block mb-4">
+              The Vessels
+            </span>
+            <h2 className={`text-4xl md:text-5xl lg:text-6xl text-navy mb-8 ${playfair.className}`}>
+              Featured Boutique Fleet
+            </h2>
+            <div className="w-16 h-px bg-[#c9a962] mx-auto mb-8" />
+            <p className="max-w-2xl mx-auto text-navy/70 text-base md:text-lg leading-relaxed font-serif">
+              Step aboard ships that redefine river travel. Architectural windows, local handcrafts, and an unhurried luxury designed to connect you deeply with the Mekong.
+            </p>
+          </div>
+
+          {/* Grid Layout that rearranges beautifully */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {featuredShips.map((ship) => (
+              <Link
+                key={ship.slug}
+                href={`/ships/${ship.slug}`}
+                className="group flex flex-col bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+              >
+                {/* Image Section */}
+                <div className="relative h-[250px] overflow-hidden bg-navy/5">
+                  <Image
+                    src={ship.image}
+                    alt={ship.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  
+                  {/* Floating Specs */}
+                  <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+                    <span className="text-[10px] tracking-[0.15em] uppercase font-bold flex items-center gap-1.5">
+                      <Anchor size={11} className="stroke-white" />
+                      {ship.cabins} / {ship.guests}
+                    </span>
+                    <span className="text-[9px] tracking-[0.1em] uppercase font-medium bg-[#c9a962] text-navy px-2 py-0.5">
+                      {ship.length}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className={`text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-2.5 ${playfair.className}`}>
+                      {ship.name}
+                    </h3>
+                    <p className="text-[#8B4A2A] text-[10px] tracking-[0.2em] uppercase font-bold mb-4">
+                      {ship.tagline}
+                    </p>
+                    <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                      {ship.vibe}
+                    </p>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all self-start mt-auto">
+                    <span>View Cabin Details</span>
+                    <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
