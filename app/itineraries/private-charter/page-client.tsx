@@ -370,7 +370,7 @@ export function PrivateCharterClient() {
         <div className="grid lg:grid-cols-12">
           
           {/* Map Column (Sticky on Desktop) */}
-          <div className="lg:col-span-5 h-[400px] lg:h-screen lg:sticky lg:top-[128px] border-b lg:border-b-0 lg:border-r border-[#e0d9ce] z-10">
+          <div className="hidden lg:block lg:col-span-5 lg:h-[80vh] lg:sticky lg:top-[140px] lg:border-r border-[#e0d9ce] z-10">
             <PrivateCharterMap activeDay={activeDay} onDayChange={scrollToDay} />
           </div>
 
