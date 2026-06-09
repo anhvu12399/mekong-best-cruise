@@ -20,7 +20,8 @@ export const destinationsData = [
     journeys: [
       { title: "The Imperial River", duration: "8 Days / 7 Nights", href: "/itineraries/vietnam-cambodia" },
       { title: "The Delta Discovery", duration: "4 Days / 3 Nights", href: "/itineraries/mekong-delta" },
-      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" }
+      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   },
   {
@@ -43,7 +44,8 @@ export const destinationsData = [
     editorialImages: ["/images/dest_vietnam.avif", "/images/banner_4.avif"],
     journeys: [
       { title: "The Delta Discovery", duration: "4 Days / 3 Nights", href: "/itineraries/mekong-delta" },
-      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" }
+      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   },
   {
@@ -111,7 +113,8 @@ export const destinationsData = [
     ],
     editorialImages: ["/images/banner_1.avif", "/images/dest_cambodia.avif"],
     journeys: [
-      { title: "The Imperial River", duration: "8 Days / 7 Nights", href: "/itineraries/vietnam-cambodia" }
+      { title: "The Imperial River", duration: "8 Days / 7 Nights", href: "/itineraries/vietnam-cambodia" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   },
   {
@@ -133,7 +136,8 @@ export const destinationsData = [
     ],
     editorialImages: ["/images/dest_cambodia.avif"],
     journeys: [
-      { title: "The Imperial River", duration: "8 Days / 7 Nights", href: "/itineraries/vietnam-cambodia" }
+      { title: "The Imperial River", duration: "8 Days / 7 Nights", href: "/itineraries/vietnam-cambodia" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   },
   {
@@ -178,7 +182,8 @@ export const destinationsData = [
     editorialImages: ["/images/dest_laos.avif", "/images/banner_4.avif"],
     journeys: [
       { title: "The Hidden Tributaries", duration: "5 Days / 4 Nights", href: "/itineraries/small-ship" },
-      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" }
+      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   },
   {
@@ -245,7 +250,8 @@ export const destinationsData = [
     editorialImages: ["/images/dest_thailand.avif", "/images/banner_1.avif"],
     journeys: [
       { title: "The Hidden Tributaries", duration: "5 Days / 4 Nights", href: "/itineraries/small-ship" },
-      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" }
+      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   },
   {
@@ -268,7 +274,8 @@ export const destinationsData = [
     editorialImages: ["/images/dest_thailand.avif"],
     journeys: [
       { title: "The Hidden Tributaries", duration: "5 Days / 4 Nights", href: "/itineraries/small-ship" },
-      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" }
+      { title: "The Full Mekong Story", duration: "10 Days / 9 Nights", href: "/itineraries/full-mekong-story" },
+      { title: "Rivers of Indochina", duration: "15 Days / 14 Nights", href: "/itineraries/rivers-of-indochina" }
     ]
   }
 ];

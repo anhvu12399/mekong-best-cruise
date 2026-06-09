@@ -125,6 +125,16 @@ const itineraries = [
     desc: "A grand 10-day private journey tracing the Mekong from the flat green delta of Vietnam to the mountainous borderlands of Laos and the Golden Triangle.",
     image: "/images/full_mekong_hero.png",
     highlights: ["Mekong Delta backwaters", "Luang Prabang alms dawn", "Golden Triangle confluence"],
+  },
+  {
+    slug: "rivers-of-indochina",
+    title: "Rivers of Indochina",
+    tagline: "Fifteen Days. Three Countries. One Story.",
+    duration: "15 Days / 14 Nights",
+    route: "Hanoi — Saigon — Phnom Penh — Siem Reap — Luang Prabang",
+    desc: "A magnificent 15-day grand cross-border private pilgrimage tracing the Red River, the Perfume River, the Thu Bon, and the Mekong through Vietnam, Cambodia, and Laos.",
+    image: "/images/indochina_rivers_hero.png",
+    highlights: ["Halong Bay overnight junk", "Angkor Wat 2-day pass", "Mekong cross-border speedboat"],
   }
 ]
 

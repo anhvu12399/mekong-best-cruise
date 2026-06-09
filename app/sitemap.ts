@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   const destinations = ['vietnam', 'cambodia', 'laos', 'thailand', 'myanmar', 'china']
-  const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days', 'small-ship', 'private-charter', 'full-mekong-story']
+  const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days', 'small-ship', 'private-charter', 'full-mekong-story', 'rivers-of-indochina']
   const ships = [
     "aqua-mekong", "jayavarman", "mekong-jewel", "mekong-princess",
     "the-jahan", "victoria-mekong", "anouvong", "bassac-pandaw",
