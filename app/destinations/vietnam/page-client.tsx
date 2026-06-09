@@ -406,7 +406,7 @@ export default function VietnamClient() {
             {featuredShips.map((ship) => (
               <Link
                 key={ship.slug}
-                href={`/ships/${ship.slug}`}
+                href="/plan-your-journey"
                 className="group flex flex-col bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
               >
                 {/* Image Section */}
@@ -447,7 +447,7 @@ export default function VietnamClient() {
                   </div>
 
                   <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all self-start mt-auto">
-                    <span>View Cabin Details</span>
+                    <span>Plan Your Journey</span>
                     <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
