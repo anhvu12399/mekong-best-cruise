@@ -1,17 +1,21 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { Bodoni_Moda } from "next/font/google"
+import { Clock, ArrowRight } from "lucide-react"
+
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Craft Villages & Wild Islets — Authentic Mekong Travel Ideas",
-  description: "Cycle across monkey bridges, watch coconut candy being made by hand, and discover the authentic craft villages and wild islets of the Mekong Delta.",
-  keywords: ["Mekong craft villages", "coconut candy workshop", "Ben Tre crafts", "monkey bridge Mekong", "Sa Dec village", "Mekong Delta islets", "Con Lan Unicorn Island", "Mekong Delta cycling"],
+  description: "Cycle across monkey bridges, discover mat weaving in Định Yên, Lãnh Mỹ A silk in Tân Châu, and experience authentic craft villages in the Mekong Delta.",
+  keywords: ["Mekong craft villages", "Lãnh Mỹ A silk", "Tân Châu silk", "Định Yên mat weaving", "Sa Dec village", "Mekong Delta islets", "Huỳnh Thủy Lê Old House", "Mekong Delta cycling"],
   alternates: {
     canonical: "https://www.mekongrivercruise.com/travel-ideas/craft-villages",
   },
   openGraph: {
     title: "Craft Villages & Wild Islets — Authentic Mekong Travel Ideas",
-    description: "Cycle across monkey bridges, watch coconut candy being made by hand, and discover the authentic craft villages and wild islets of the Mekong Delta.",
+    description: "Cycle across monkey bridges, discover mat weaving in Định Yên, Lãnh Mỹ A silk in Tân Châu, and experience authentic craft villages in the Mekong Delta.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/craft-villages",
     images: [{ url: "https://www.mekongrivercruise.com/images/cultural-encounters-v2.avif", width: 1200, height: 630, alt: "Village life in the Mekong Delta" }],
@@ -19,10 +23,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Craft Villages & Wild Islets in the Mekong",
-    description: "Cycle across monkey bridges and watch coconut candy being made by hand.",
+    description: "Cycle across monkey bridges and discover traditional silk and mat weaving workshops.",
     images: ["https://www.mekongrivercruise.com/images/cultural-encounters-v2.avif"],
   },
-};
+}
 
 export default function CraftVillagesPage() {
   return (
@@ -39,13 +43,13 @@ export default function CraftVillagesPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
         <div className="relative z-10 px-8 md:px-16 pb-20 max-w-3xl">
           <p className="text-white/60 text-[10px] tracking-[0.35em] uppercase font-bold mb-5">
-            Travel Ideas · 1–3 Days
+            Travel Ideas · Craft & Tradition
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
-            Monkey<br />Bridges<br />&amp; Coconut<br />Candy
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 ${playfair.className}`}>
+            Weaving<br />Time into<br />the Delta
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
-            The Mekong Delta is made of islands. Thousands of them. And each one holds a different version of Vietnamese life.
+            The Mekong Delta is a living workshop. In hidden communes and riverside islets, artisans preserve centuries-old techniques that define the region's soul.
           </p>
         </div>
       </section>
@@ -53,18 +57,18 @@ export default function CraftVillagesPage() {
       {/* ── OPENING ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Islets</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           Cồn Lân is twenty minutes from Mỹ Tho and two hundred years from anywhere else.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            The boat drops you at a muddy bank and a kid in school uniform waves you toward a path that disappears into fruit trees. This is Cồn Lân — Unicorn Island — and despite its fairy-tale name, it&apos;s stubbornly, beautifully real. The path winds between longan orchards and coconut groves, past houses with corrugated iron roofs and gardens where chickens outnumber people. A dog follows you for exactly three hundred meters, then loses interest.
+            The boat drops you at a muddy bank and a kid in school uniform waves you toward a path that disappears into fruit trees. This is Cồn Lân — Unicorn Island — and despite its fairy-tale name, it&apos;s stubbornly, beautifully real. The path winds between longan orchards and coconut groves, past houses with corrugated iron roofs and gardens where chickens outnumber people.
           </p>
           <p>
-            The monkey bridge is where most visitors experience a minor crisis of confidence. It&apos;s a single log — sometimes two logs, if you&apos;re lucky — spanning a canal about four meters wide. There is no railing. There is no safety net. There is only the log, your feet, and the quiet certainty that the woman crossing ahead of you with a basket of fruit on her head has done this every day of her life. You follow. You wobble. You make it. You feel absurdly proud.
+            The monkey bridge (cầu khỉ) is where most visitors experience a minor crisis of confidence. It&apos;s a single log — sometimes two logs, if you&apos;re lucky — spanning a canal about four meters wide. There is no railing, only a bamboo handrail. There is only the log, your feet, and the quiet certainty that the woman crossing ahead of you with a basket of fruit on her head has done this every day of her life. You follow. You wobble. You make it.
           </p>
           <p>
-            Cồn Phụng — Phoenix Island — is stranger. It was once the headquarters of a religious sect called the Coconut Religion, founded by a man who allegedly meditated for three years eating only coconuts. His temple remains: a bizarre, colorful structure with a dragon-entwined column, a globe, and a rocket ship (yes, really). The caretaker shows you around with the nonchalance of someone who stopped finding it weird decades ago.
+            Further down, the Định Yên mat weaving commune (làng chiếu Định Yên) in Đồng Tháp province unfolds a different canvas. The village paths are lined with bundles of sedge grass dyed in vibrant shades of green, red, and purple, laid out under the sun like modern art. The rhythmic sound of handlooms echoes from open doorways. In the past, the village held the famous "ghost market" (chợ ma) at midnight, when weavers traded mats under oil lamps. While the night market has faded, the dedication to hand-weaving sedge mats remains unchanged.
           </p>
         </div>
       </section>
@@ -91,18 +95,18 @@ export default function CraftVillagesPage() {
       <section className="bg-[#f5f5f5]">
         <div className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Crafts</p>
-          <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-            Kẹo dừa and the art of doing one thing perfectly
+          <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
+            Lãnh Mỹ A and the black gold of Tân Châu
           </h2>
           <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
             <p>
-              The coconut candy workshop in Sa Đéc is small, hot, and smells like heaven. Two women stand over a brass vat, stirring a bubbling mixture of coconut milk, sugar, and malt with wooden paddles the size of oars. The mixture turns from liquid to taffy in about twenty minutes, and the timing has to be exact — too early and it&apos;s too soft, too late and it shatters. They get it right every time.
+              In the town of Tân Châu in An Giang province, a handful of families preserve the secret of Lãnh Mỹ A silk, the most prestigious fabric in Vietnam. The silk is dyed using the resin of the mặc nưa fruit, a local wild berry that must be harvested between June and December.
             </p>
             <p>
-              The candy is cut by hand, wrapped in rice paper, and packed into bags that you will open on the bus home and finish before you reach Ho Chi Minh City. The durian-flavored version is an acquired taste (like durian itself). The peanut version is universally loved. The plain coconut version is the one you&apos;ll dream about.
+              The silk is dipped in the black resin, then trodden in the river mud, washed, and dried on grass fields. This process is repeated up to a hundred times over several months. The result is a fabric of remarkable properties: it is cool in summer, warm in winter, and has a deep, lustrous black sheen that gets shinier the more it is washed. Watching the weavers throw the wooden shuttles on old looms is like watching a synchronized dance where time is the principal dancer.
             </p>
             <p>
-              Nearby, the old house of Bình Thủy — a stunning French colonial villa that appeared in &quot;The Lover&quot; (1992) — sits behind a garden of bonsai trees that a single family has tended for five generations. The house is full of antique porcelain, carved furniture, and photographs of people who look both stern and somehow familiar. It&apos;s the kind of place where you touch the doorframe and feel the weight of time.
+              Further downstream in Sa Đéc, the historic Huỳnh Thủy Lê Old House — built in 1895, blending Southern Vietnamese, French colonial, and Chinese architectural elements — stands as a monument to the region&apos;s rich heritage. The house was the setting for the passionate love affair between the young French writer Marguerite Duras and the wealthy Chinese heir Huỳnh Thủy Lê, immortalized in her novel &quot;The Lover&quot;.
             </p>
           </div>
         </div>
@@ -115,18 +119,18 @@ export default function CraftVillagesPage() {
         </div>
         <div>
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">After Dark</p>
-          <h3 className="font-serif text-2xl md:text-3xl leading-tight mb-8">
-            Soi ba khía: the strangest thing you&apos;ll do on this trip
+          <h3 className={`text-2xl md:text-3xl leading-tight mb-8 text-navy ${playfair.className}`}>
+            Soi ba khía: the delta after sunset
           </h3>
           <div className="space-y-5 text-[#444] text-[15px] leading-[1.85] font-light">
             <p>
-              Ba khía are small, salt-marsh crabs that emerge from the mud at night during specific tidal conditions. &quot;Soi ba khía&quot; means hunting them with a headlamp, wading through ankle-deep mud in the dark, chasing creatures that are surprisingly fast and entirely indifferent to your dignity.
+              Ba khía are small, three-striped salt-marsh crabs that emerge from the mud and mangrove roots at night. &quot;Soi ba khía&quot; means hunting them with a headlamp, wading through ankle-deep mud in the dark, chasing creatures that are surprisingly fast and entirely indifferent to your dignity.
             </p>
             <p>
-              The locals do this with the casual expertise of people who have been catching crabs since childhood. You will slip. You will get muddy. You will catch fewer crabs than the twelve-year-old next to you. But when the crabs are cleaned, salted, and served the next morning with rice porridge and sliced chili, you will understand why people do this in the dark, in the mud, laughing.
+              The locals do this with the casual expertise of people who have been catching crabs since childhood. You will slip. You will get muddy. But when the crabs are cleaned, salted, and served the next morning with rice porridge and sliced chili, you will understand why people do this in the dark, laughing.
             </p>
             <p>
-              If crabs aren&apos;t your thing, the lotus fields of Tháp Mười in blooming season (June through August) offer a gentler alternative. At dawn, the flowers open — thousands of them, pink and white across a flooded plain that stretches to the horizon. The smell is extraordinary: sweet, clean, almost narcotic. You can pick lotus seeds and eat them raw. They taste like nothing. They taste like everything.
+              If crabs aren&apos;t your thing, the lotus fields of Tháp Mười in blooming season (June through August) offer a gentler alternative. At dawn, the flowers open — thousands of them, pink and white across a flooded plain. You can pick lotus seeds and eat them raw, tasting their clean, nutty flavor.
             </p>
           </div>
         </div>
@@ -140,7 +144,7 @@ export default function CraftVillagesPage() {
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-8 max-w-3xl">
           <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
-            &ldquo;You don&apos;t discover the Mekong Delta. It discovers you — in a coconut candy workshop, on a monkey bridge, knee-deep in mud chasing crabs at midnight.&rdquo;
+            &ldquo;You don&apos;t discover the Mekong Delta. It discovers you — in the rustle of Lãnh Mỹ A silk, on a monkey bridge, knee-deep in mud chasing crabs at midnight.&rdquo;
           </blockquote>
         </div>
       </section>
@@ -148,24 +152,82 @@ export default function CraftVillagesPage() {
       {/* ── PRACTICAL ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">Planning your visit</h2>
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>Planning your visit</h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Duration</h3>
-            <p>One day covers Cồn Lân and the candy workshop. Two days adds Sa Đéc, Bình Thủy, and a homestay. Three days means you can do everything slowly — which is the point.</p>
+            <p>One day covers Cồn Lân and the Sa Đéc flower village. Two to three days adds the silk weavers of Tân Châu and the mat weavers of Định Yên.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Getting There</h3>
-            <p>Mỹ Tho is 90 minutes from HCMC. Sa Đéc is another 2 hours south. Tháp Mười&apos;s lotus fields are 2.5 hours from Saigon. All work as extensions to a Cần Thơ-based trip.</p>
+            <p>Mỹ Tho is 90 minutes from HCMC. Sa Đéc and Tân Châu are farther south and west — best integrated into a multi-day itinerary with an overnight stay in Cần Thơ.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Lotus Season</h3>
-            <p>June through August. Dawn is essential — the flowers close by 9 AM. Tháp Mười is the most dramatic spot, but Đồng Tháp province has smaller, more intimate fields.</p>
+            <p>June through August. Dawn is essential — the flowers close by 9 AM. Tháp Mười is the most dramatic spot, but Dong Thap province has smaller, more intimate fields.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Homestay</h3>
             <p>Skip the hotels. A delta homestay — sleeping in a wooden house on stilts, eating dinner cooked by the family matriarch, waking to roosters — is worth more than any five-star night.</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── RECOMMENDED ITINERARY ── */}
+      <section className="py-20 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-[720px] mx-auto px-6">
+          <span className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">
+            Recommended Route
+          </span>
+          <h2 className={`font-serif text-3xl md:text-4xl text-navy mb-10 ${playfair.className}`}>
+            How to Experience This
+          </h2>
+
+          <Link
+            href="/itineraries/mekong-delta"
+            className="group relative flex flex-col sm:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+          >
+            {/* Image Section */}
+            <div className="relative w-full sm:w-[35%] min-h-[200px] sm:min-h-full overflow-hidden bg-navy/5 shrink-0">
+              <Image
+                src="/images/vc_day1.avif"
+                alt="Immersive Mekong Delta"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+              <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                  <Clock size={10} className="stroke-[#c9a962]" />
+                  3-4 Days
+                </span>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="p-8 flex flex-col justify-between flex-grow">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                    Ben Tre — Sa Dec — Can Tho
+                  </span>
+                </div>
+                <h3 className={`font-serif text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                  Immersive Mekong Delta
+                </h3>
+                <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                  A deep dive into local culture, craft villages, and floating markets of Vietnam&apos;s fertile delta.
+                </p>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                  <span>Explore Route</span>
+                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -175,7 +237,7 @@ export default function CraftVillagesPage() {
           <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Also Read</p>
           <div className="space-y-4">
             <Link href="/travel-ideas/floating-markets" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
-              <span className="font-bold">Breakfast Arrives by Boat</span> — Phở at dawn, crabs at midnight, everything in between.
+              <span className="font-bold">Breakfast Arrives by Boat</span> — Dawn at the floating market, where the phở is still steaming.
             </Link>
             <Link href="/travel-ideas/ben-tre-authentic" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
               <span className="font-bold">Why Ben Tre Feels More Real</span> — Cycling under coconut palms, sleeping with the frogs.
@@ -188,20 +250,21 @@ export default function CraftVillagesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#505a5f] py-20 text-center">
+      <section className="bg-navy py-24 text-center border-t border-white/10">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">See it for yourself</h2>
+          <h2 className={`font-serif text-3xl md:text-4xl text-white mb-6 ${playfair.className}`}>Meet the Makers</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
-            Our Mekong Delta itineraries include village visits, cycling, and authentic homestay experiences with private guide.
+            Our multi-day Delta itineraries feature private visits to master weavers and local artisans, letting you see how the delta&apos;s traditions are kept alive.
           </p>
           <Link
             href="/itineraries/mekong-delta"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors duration-300 group"
           >
-            View Mekong Delta Itinerary
+            <span>Explore Immersive Route</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
     </main>
-  );
+  )
 }

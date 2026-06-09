@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
+import { ItineraryBottomSections } from "@/components/itinerary-bottom-sections"
 
 const NAV_ITEMS = ["Overview", "The Day", "Experiences", "Essentials"]
 
@@ -316,6 +317,8 @@ export function OneDayClient() {
           </div>
         </div>
       </section>
+
+      <ItineraryBottomSections currentSlug="1-day" />
 
       {/* ── ESSENTIALS ── */}
       <div ref={essentialsRef} className="scroll-mt-14" />

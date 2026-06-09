@@ -133,13 +133,13 @@ export function AboutUsClient() {
           <div className="grid lg:grid-cols-2 min-h-[600px]">
             {/* Image side */}
             <div className="relative min-h-[400px] lg:min-h-0">
-              <Image src="/images/about_specialist.avif" alt="Our Mekong Specialist" fill className="object-cover" />
+              <Image src="/images/specialist_emily.png" alt="Our Mekong Specialist" fill className="object-cover" />
               {/* Floating quote card */}
               <div className="absolute bottom-8 left-8 right-8 md:right-auto md:max-w-xs bg-[#1a3a4a]/90 backdrop-blur-sm p-6 text-white">
                 <p className="font-serif text-sm italic leading-relaxed mb-4">
                   &ldquo;What I love most is the moment a client sends me a photo from a canal I recommended — somewhere they never would have found on their own. That&apos;s when I know we got it right.&rdquo;
                 </p>
-                <p className="text-[10px] tracking-widest uppercase text-[#c9a962] font-bold">— Linh, Mekong Delta Specialist</p>
+                <p className="text-[10px] tracking-widest uppercase text-[#c9a962] font-bold">— Emily, Mekong Delta Specialist</p>
                 <a href="/our-specialists" className="mt-4 text-[10px] tracking-[0.2em] uppercase font-bold border border-white/50 px-4 py-2 hover:bg-white hover:text-navy transition-colors inline-block">
                   Meet Our Team
                 </a>
@@ -180,7 +180,7 @@ export function AboutUsClient() {
       <section id="philosophy" ref={(el) => { sectionRefs.current.philosophy = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] relative">
         {/* Full-bleed image with overlay */}
         <div className="relative h-[60vh] flex items-end">
-          <Image src="/images/luxury-balcony-sunset.avif" alt="Meaningful connections" fill className="object-cover" />
+          <Image src="/images/ceo_john.png" alt="John, Founder & CEO" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="relative z-10 max-w-lg p-10 lg:p-16">
             <p className="text-[#c9a962] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">Our Philosophy</p>
@@ -190,7 +190,7 @@ export function AboutUsClient() {
             <p className="text-white/75 font-serif text-base leading-relaxed">
               &ldquo;Rather than just focus on the highlights, we make sure you get a true taste of your destination. We want to create experiences that give you a deeper perspective.&rdquo;
             </p>
-            <p className="text-[#c9a962] text-[10px] tracking-widest uppercase font-bold mt-4">— Anh, Regional Director</p>
+            <p className="text-[#c9a962] text-[10px] tracking-widest uppercase font-bold mt-4">— John, Founder & CEO</p>
           </div>
         </div>
 

@@ -1,17 +1,21 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { Bodoni_Moda } from "next/font/google"
+import { Clock, ArrowRight } from "lucide-react"
+
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "For Travelers Who Hate Crowds — Private Mekong Travel Ideas",
-  description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, hidden waterways, and exclusive luxury experiences.",
-  keywords: ["Mekong without crowds", "private Mekong tour", "uncrowded Mekong Delta", "exclusive Vietnam travel", "private sampan Mekong", "quiet Mekong backwaters", "private Mekong cruise"],
+  description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, Vĩnh Tế Canal, and Cù Lao Dung islet.",
+  keywords: ["Mekong without crowds", "Vĩnh Tế Canal", "Cù Lao Dung", "dầu rái resin", "private sampan Mekong", "quiet Mekong backwaters", "private Mekong cruise"],
   alternates: {
     canonical: "https://www.mekongrivercruise.com/travel-ideas/hate-crowds",
   },
   openGraph: {
     title: "For Travelers Who Hate Crowds — Private Mekong Travel Ideas",
-    description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, hidden waterways, and exclusive luxury experiences.",
+    description: "How to see the Mekong Delta without the crowds. Skip the tourist traps and discover private sampans, Vĩnh Tế Canal, and Cù Lao Dung islet.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/hate-crowds",
     images: [{ url: "https://www.mekongrivercruise.com/images/nocrowd_hero.avif", width: 1200, height: 630, alt: "Empty stretch of the Mekong with one private boat" }],
@@ -22,7 +26,7 @@ export const metadata: Metadata = {
     description: "How to see the Mekong Delta without the crowds.",
     images: ["https://www.mekongrivercruise.com/images/nocrowd_hero.avif"],
   },
-};
+}
 
 export default function HateCrowdsPage() {
   return (
@@ -41,11 +45,11 @@ export default function HateCrowdsPage() {
           <p className="text-white/60 text-[10px] tracking-[0.35em] uppercase font-bold mb-5">
             Travel Ideas · Private &amp; Uncrowded
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 ${playfair.className}`}>
             For Travelers<br />Who Hate<br />Crowds
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
-            You&apos;ve seen the TripAdvisor reviews. Packed boats. Scripted stops. Matching hats. You swore you&apos;d never do the Mekong. Here&apos;s why you were almost right — and how to do it differently.
+            You&apos;ve seen the reviews. Packed boats. Scripted stops. Matching hats. You swore you&apos;d never do the Mekong. Here&apos;s how to do it differently.
           </p>
         </div>
       </section>
@@ -53,18 +57,18 @@ export default function HateCrowdsPage() {
       {/* ── CHAPTER ONE ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Fear</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           I&apos;ve been on the bad tour. I know what you&apos;re afraid of.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            I need to be honest. The first time I visited the Mekong Delta, I hated it. I was on a boat with thirty-seven other people. A guide with a microphone pointed at things and said their names in a voice that suggested he had said those names eleven thousand times before. We docked at an island. We walked single-file through a coconut candy workshop. We sat in a row and listened to traditional music played for the eighteenth time that day. We ate elephant ear fish. We bought souvenirs. We got back on the bus.
+            I need to be honest. The first time I visited the Mekong Delta, I hated it. I was on a boat with thirty-seven other people. A guide with a microphone pointed at things and said their names in a voice that suggested he had said those names eleven thousand times before. We docked at an island. We walked single-file through a coconut candy workshop. We sat in a row and bought souvenirs. We got back on the bus.
           </p>
           <p>
-            I remember almost nothing from that day except the feeling of being processed. Like luggage on a conveyor belt — picked up, moved, put down, picked up again. The Delta itself — the water, the light, the people who actually live there — was a backdrop. Set dressing. I left thinking: <em>well, that&apos;s ticked off the list</em>. It was the loneliest thought I&apos;ve ever had on a trip.
+            I remember almost nothing from that day except the feeling of being processed. Like luggage on a conveyor belt. The Delta itself — the water, the light, the people who actually live there — was a backdrop. I left thinking: <em>well, that&apos;s ticked off the list</em>.
           </p>
           <p>
-            So I understand the fear. Crowded. Commercialized. Scripted. If that&apos;s the Mekong, who needs it? But here&apos;s the thing I didn&apos;t know then: the Mekong Delta is 39,000 square kilometers. That bad tour covered about 0.001% of it. The rest of it was just waiting, empty, for someone willing to show up without a checklist.
+            So I understand the fear. Crowded. Commercialized. Scripted. If that&apos;s the Mekong, who needs it? But here&apos;s the thing: the Mekong Delta is 39,000 square kilometers. That bad tour covered about 0.001% of it. The rest of it is waiting, empty, for those willing to show up without a checklist.
           </p>
         </div>
       </section>
@@ -82,18 +86,18 @@ export default function HateCrowdsPage() {
       {/* ── CHAPTER TWO ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Fix</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           A private boat changes everything. Not just the route — the entire feeling.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            The second time I went, I had a sampan and a guide named Tùng. Just us. Tùng grew up on the river — his family farms catfish near Vĩnh Long — and he knew every canal, every shortcut, every house where the grandmother makes the best spring rolls. We left at 6 AM while the tour boats were still loading at the dock.
+            The second time I went, I had a sampan and a guide named Tùng. Just us. Tùng grew up on the river — his family farms catfish near Vĩnh Long — and he knew every canal. We navigated using a traditional wooden sampan, its hull sealed with sticky &quot;dầu rái&quot; (dipterocarpus alatus wood resin) to make it waterproof, smelling of dry wood and forest oils. We left at 6 AM while the tour boats were still loading at the dock.
           </p>
           <p>
-            By 7 AM we were in a canal so narrow the palm fronds brushed the gunwales. No engine — Tùng paddled. The only sound was the oar, the water, and a rooster somewhere behind the trees. We stopped at a fish trap and watched a man pull up the bamboo weir. We stopped at a house where a woman was making rice paper on a cloth stretched over a steaming pot. She offered us tea without being asked. We drank it sitting on a wooden bench, watching the canal traffic — two boats in forty minutes, both loaded with coconuts.
+            By 7 AM we were in a canal so narrow the palm fronds brushed the gunwales. No engine — Tùng paddled. The only sound was the oar, the water, and a rooster. We bypassed the busy tourist channels and headed towards the Vĩnh Tế Canal in An Giang, a historic waterway hand-dug in the early 19th century that stretches along the Cambodian border.
           </p>
           <p>
-            Nobody pointed a microphone at anything. Nobody herded us toward a souvenir shop. Nobody told us to take a photo. The Delta, without the crowd, is not the same place. It&apos;s quieter, slower, and strangely more generous — as if the people who live there can only relax when there are fewer of us.
+            Later, we sailed to Cù Lao Dung islet near the mouth of the river. It is a world of mangroves and quiet nipa palm forests where the delta dissolves into the East Sea. There are no souvenir stands. Just small shrimp farming villages and dirt roads. We stopped at a house where a woman was making rice paper. She offered us tea. We drank it sitting on a wooden bench, watching the canal traffic — two boats in forty minutes, both loaded with coconuts.
           </p>
         </div>
       </section>
@@ -132,13 +136,13 @@ export default function HateCrowdsPage() {
       {/* ── GOOD TO KNOW ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           How to avoid every tourist
         </h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Go Private</h3>
-            <p>A private sampan (2–4 people) costs more than a group tour, but the difference in experience is not linear — it&apos;s exponential. You control the route, the stops, the pace.</p>
+            <p>A private sampan (2–4 people) costs more than a group tour, but the difference in experience is exponential. You control the route, the stops, and the pace.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Go Small</h3>
@@ -146,12 +150,70 @@ export default function HateCrowdsPage() {
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Go Early</h3>
-            <p>Tour buses leave Saigon at 8 AM and arrive in the Delta by 10. If you&apos;re already on the water at 6, you have a four-hour head start on everyone.</p>
+            <p>Tour buses leave Saigon at 8 AM. If you&apos;re already on the water at 6, you have a four-hour head start on everyone.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Go Deep</h3>
-            <p>Skip Mỹ Tho and the main islands. Ask your guide about Trà Vinh, Sóc Trăng, or the backwaters of An Giang. These places have no souvenir shops because nobody comes here to buy souvenirs.</p>
+            <p>Skip Mỹ Tho. Ask your guide about Cù Lao Dung, Vũng Liêm, or the backwaters of An Giang. These places have no souvenir shops because nobody comes here to buy souvenirs.</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── RECOMMENDED ITINERARY ── */}
+      <section className="py-20 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-[720px] mx-auto px-6">
+          <span className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">
+            Recommended Route
+          </span>
+          <h2 className={`font-serif text-3xl md:text-4xl text-navy mb-10 ${playfair.className}`}>
+            How to Experience This
+          </h2>
+
+          <Link
+            href="/itineraries/private-charter"
+            className="group relative flex flex-col sm:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+          >
+            {/* Image Section */}
+            <div className="relative w-full sm:w-[35%] min-h-[200px] sm:min-h-full overflow-hidden bg-navy/5 shrink-0">
+              <Image
+                src="/images/pulse_delta.avif"
+                alt="Private Mekong River Charter"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+              <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                  <Clock size={10} className="stroke-[#c9a962]" />
+                  3-5 Days
+                </span>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="p-8 flex flex-col justify-between flex-grow">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                    Saigon — Ben Tre Canals — Can Tho
+                  </span>
+                </div>
+                <h3 className={`font-serif text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                  Private Mekong River Charter
+                </h3>
+                <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                  For those who value privacy and custom routes. A private floating villa just for your family.
+                </p>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                  <span>Explore Route</span>
+                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -174,20 +236,21 @@ export default function HateCrowdsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#505a5f] py-20 text-center">
+      <section className="bg-navy py-24 text-center border-t border-white/10">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Have the river to yourself</h2>
+          <h2 className={`font-serif text-3xl md:text-4xl text-white mb-6 ${playfair.className}`}>Have the River to Yourself</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
-            Private charters. Small ships. Guides who know the back canals. No megaphones involved.
+            Our private charters and small ships bypass commercial docks, offering unhurried access to the delta&apos;s quietest corners.
           </p>
           <Link
             href="/itineraries/private-charter"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors duration-300 group"
           >
-            View Private Charters
+            <span>Explore Private Charter</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
     </main>
-  );
+  )
 }

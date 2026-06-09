@@ -7,14 +7,14 @@ import { ArrowRight, MapPin, Star, ChevronLeft, ChevronRight } from "lucide-reac
 
 const SPECIALISTS = [
   {
-    id: "linh",
-    name: "Linh Nguyen",
+    id: "emily",
+    name: "Emily Nguyen",
     role: "Mekong Delta Specialist",
     location: "Can Tho, Vietnam",
     years: 11,
-    img: "/images/specialist_linh.avif",
+    img: "/images/specialist_emily.png",
     highlight: "Born on the delta, returned to share it.",
-    bio: "Linh grew up in Ben Tre, where the river was her backyard. After studying tourism in Ho Chi Minh City, she spent three years working on local fishing boats before joining our team. She knows which canal to take at 6am, which garden café serves the best ca phe sua da, and which family will invite you to lunch like you've known each other for years.",
+    bio: "Emily grew up in Ben Tre, where the river was her backyard. After studying tourism in Ho Chi Minh City, she spent three years working on local fishing boats before joining our team. She knows which canal to take at 6am, which garden café serves the best ca phe sua da, and which family will invite you to lunch like you've known each other for years.",
     quote: "The Mekong isn't a destination — it's a rhythm. Once you feel it, you don't want to leave.",
     tags: ["Mekong Delta", "Vietnam", "Cultural Immersion", "Food & Markets"],
   },
@@ -60,8 +60,8 @@ const PHILOSOPHY_PANELS = [
   {
     title: "Our travels shape yours.",
     quote: "It starts with a conversation to understand what you want. I've lived along this river for over a decade, so when you ask 'What should we do?' — I already have ideas that are uniquely suited to you.",
-    attr: "— Linh, Mekong Delta Specialist",
-    img: "/images/specialist_linh.avif",
+    attr: "— Emily, Mekong Delta Specialist",
+    img: "/images/specialist_emily.png",
     imgLeft: false,
   },
   {
@@ -85,7 +85,7 @@ export function SpecialistsClient() {
   const [galleryIdx, setGalleryIdx] = useState(0)
 
   const galleryImages = [
-    { src: "/images/specialist_linh.avif", caption: "Linh on the Mekong canals, Ben Tre" },
+    { src: "/images/specialist_emily.png", caption: "Emily on the Mekong canals, Ben Tre" },
     { src: "/images/specialist_tom.avif", caption: "Tom at Angkor Wat, dawn reconnaissance" },
     { src: "/images/specialist_mai.avif", caption: "Mai at the Tonle Sap floating market" },
     { src: "/images/specialist_sokha.avif", caption: "Sokha at Preah Khan Temple, Siem Reap" },
@@ -298,7 +298,7 @@ export function SpecialistsClient() {
           <h2 className="font-serif text-4xl text-navy mb-12">Words about our specialists.</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { text: "Linh showed us canals we never would have found on Google. We felt like we were discovering the Mekong for the first time.", author: "James & Claire, Australia" },
+              { text: "Emily showed us canals we never would have found on Google. We felt like we were discovering the Mekong for the first time.", author: "James & Claire, Australia" },
               { text: "Tom spent three hours explaining Angkor to us. By the end, we understood it. Not just photographed it — understood it.", author: "Helena, Germany" },
               { text: "Mai had us at the floating market before sunrise. The colours, the noise, the smells — it was the most alive I've felt on any trip.", author: "Michael T., United States" },
             ].map((r, i) => (

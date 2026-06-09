@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import { MekongDeltaMap } from "@/components/mekong-delta-map"
+import { ItineraryBottomSections } from "@/components/itinerary-bottom-sections"
 
 const NAV_ITEMS = ["Overview", "Itinerary", "Experiences", "Essentials"]
 
@@ -375,43 +376,7 @@ export function MekongDeltaClient() {
 
 
 
-      {/* ── FEATURED CRUISES ── */}
-      <section className="py-24 bg-white border-t border-[#e0d9ce]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-4">Continue by River</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-navy mb-4">Ships for This Journey</h2>
-            <p className="text-navy/55 font-serif max-w-xl mx-auto">Extend your delta experience aboard one of these vessels — each chosen for their intimate scale and deep connection to the Vietnamese Mekong.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {[
-              { name: 'Mekong Princess', type: 'Romantic Boutique', tagline: 'The river\'s most intimate address.', desc: 'Fourteen cabins. The crew knows your coffee order by morning two.', image: '/images/mekong_princess.avif', guests: 28, cabins: 14 },
-              { name: 'Lan Diep', type: 'Traditional Sampan', tagline: 'Eight cabins. The whole delta to yourselves.', desc: 'A traditional Vietnamese sampan into channels that appear on no tourist map.', image: '/images/lan_diep.avif', guests: 16, cabins: 8 },
-              { name: 'Victoria Mekong', type: 'Cultural Immersion', tagline: 'If you travel to be changed — this is your ship.', desc: 'Markets at dawn. Cooking classes. The best sunset seat on the delta.', image: '/images/victoria_mekong.avif', guests: 36, cabins: 18 },
-            ].map(ship => (
-              <div key={ship.name} className="group border border-[#e0d9ce] overflow-hidden bg-[#f7f4ef]">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image src={ship.image} alt={ship.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw"/>
-                </div>
-                <div className="p-7">
-                  <p className="text-[10px] tracking-widest uppercase font-bold text-[#c9a962] mb-2">{ship.type}</p>
-                  <h3 className="font-serif text-xl text-navy mb-2">{ship.name}</h3>
-                  <p className="text-navy/60 text-sm font-serif mb-5 leading-relaxed">{ship.desc}</p>
-                  <div className="flex justify-between text-[10px] tracking-widest uppercase font-bold text-navy/40 border-t border-[#e8e2d9] pt-4">
-                    <span>{ship.guests} Guests</span>
-                    <span>{ship.cabins} Cabins</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <a href="/cruises/vietnam" className="inline-flex items-center gap-3 px-8 py-3 border border-navy text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-navy hover:text-white transition-all duration-300">
-              View All Vietnam Cruises <ArrowRight size={14}/>
-            </a>
-          </div>
-        </div>
-      </section>
+      <ItineraryBottomSections currentSlug="mekong-delta" />
 
       {/* ── EXPERIENCES ── */}
       <div ref={experiencesRef} className="scroll-mt-14" />

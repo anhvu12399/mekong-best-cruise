@@ -1,17 +1,21 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { Bodoni_Moda } from "next/font/google"
+import { Clock, ArrowRight } from "lucide-react"
+
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Luxury Isn't What You Think — New Mekong River Luxury",
-  description: "Discover a new definition of luxury on the Mekong River. Unparalleled privacy, invisible service, silence, and authentic connections on the finest boutique ships.",
-  keywords: ["Mekong luxury travel", "luxury river cruise Vietnam", "boutique ship Mekong", "5 star Mekong cruise", "high-end Mekong Delta", "premium Vietnam river journey", "luxury Mekong cruise"],
+  description: "Discover a new definition of luxury on the Mekong River. Learn about traditional sao wood construction, Tân Châu weavers, and wild forest honey.",
+  keywords: ["Mekong luxury travel", "luxury river cruise Vietnam", "boutique ship Mekong", "sao wood construction", "Tan Chau silk", "wild forest honey", "Mekong private charter"],
   alternates: {
     canonical: "https://www.mekongrivercruise.com/travel-ideas/redefining-luxury",
   },
   openGraph: {
     title: "Luxury Isn't What You Think — New Mekong River Luxury",
-    description: "Discover a new definition of luxury on the Mekong River. Unparalleled privacy, invisible service, silence, and authentic connections on the finest boutique ships.",
+    description: "Discover a new definition of luxury on the Mekong River. Learn about traditional sao wood construction, Tân Châu weavers, and wild forest honey.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/redefining-luxury",
     images: [{ url: "https://www.mekongrivercruise.com/images/redefine_hero.avif", width: 1200, height: 630, alt: "Minimalist fruit plate on a teak deck at sunrise" }],
@@ -22,7 +26,7 @@ export const metadata: Metadata = {
     description: "Discover a new definition of luxury on the Mekong River.",
     images: ["https://www.mekongrivercruise.com/images/redefine_hero.avif"],
   },
-};
+}
 
 export default function RedefiningLuxuryPage() {
   return (
@@ -41,11 +45,11 @@ export default function RedefiningLuxuryPage() {
           <p className="text-white/60 text-[10px] tracking-[0.35em] uppercase font-bold mb-5">
             Travel Ideas · The New Luxury
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 ${playfair.className}`}>
             Luxury Isn&apos;t<br />What You<br />Think
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
-            I&apos;ve stayed in hotels with gold-plated faucets that left me feeling nothing. On the Mekong, a plate of dragon fruit on a teak table made me feel like the richest person alive.
+            I&apos;ve stayed in hotels with gold-plated faucets that left me feeling nothing. On the Mekong, a plate of dragon fruit on a star-wood table made me feel like the richest person alive.
           </p>
         </div>
       </section>
@@ -53,22 +57,18 @@ export default function RedefiningLuxuryPage() {
       {/* ── CHAPTER ONE ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Old Definition</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          For years, the travel industry confused luxury with excess. More gold. More marble. More imported everything.
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
+          The luxury of the materials that tell a story.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            I&apos;ve been on ships where the chandeliers were bigger than my apartment. Where the dinner menu featured ingredients flown in from three continents. Where the spa used products from Switzerland in a country that has been making its own medicinal oils for a thousand years. Everything screamed <em>look how much we spent</em>, and the effect was oddly deadening. Like eating too much sugar — impressive at first, nauseating by the third course.
+            Traditional boat builders in the Mekong Delta do not build with imported pine or steel. They use gỗ sao (star wood) — a dense, local ironwood that has been harvested for centuries. Star wood resists river rot and pests naturally, and as it ages, its grain darkens to a beautiful deep mahogany color. Walking barefoot on a deck constructed of sao wood, you feel the cool density of a tree that grew in the very soil feeding this river.
           </p>
           <p>
-            The Mekong taught me a different vocabulary. Luxury here is not about importing the world onto a ship. It&apos;s about the ship getting out of the way so you can see what&apos;s already here. The morning light on the water. The sound of an oar. The chef at the market at 5 AM, arguing over the freshness of a catfish with a fisherman who caught it twenty minutes ago. That argument — the insistence on local, on fresh, on <em>this river, this morning, this fish</em> — is more luxurious than any gold faucet I&apos;ve ever seen.
+            Inside the cabins, the linens and drapery tell another story. These are crafted by the master weavers of Tân Châu, a town legendary for its Lãnh Mỹ A silk. The deep black color is not synthetic; it comes from the sap of the mặc nưa fruit, which is dyed and beaten by hand into the silk fiber over weeks. It is incredibly soft to the skin, cool in the midday heat, and carries the faint, sweet scent of the forest fruit.
           </p>
           <p>
-            This is why the finest{" "}
-            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
-              luxury Mekong River cruise
-            </Link>
-            {" "}experiences don&apos;t compete with the landscape — they frame it.
+            This is the vocabulary of river luxury. Not imported marble, but native wood and hand-beaten silk.
           </p>
         </div>
       </section>
@@ -85,19 +85,19 @@ export default function RedefiningLuxuryPage() {
 
       {/* ── CHAPTER TWO ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
-        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Invisible Part</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          The best luxury on this river is the thing you don&apos;t notice until it&apos;s gone.
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Invisible Care</p>
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
+          The breakfast details that reveal the forest.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            On the Jayavarman, I noticed something on the third morning. The cabin was quiet. Not quiet like a hotel room — quiet like a library, like a recording studio. I couldn&apos;t hear the engine. I couldn&apos;t hear the corridor. I could hear the river through the open balcony door — the soft, constant whisper of water against the hull — and that was it. The silence wasn&apos;t accidental. It was engineered. The engine room had been insulated with a specific material. The doors had been weighted. The hallway carpet had been chosen for its sound absorption. I only learned this because I asked. The crew just smiled — they&apos;d done their job so well it was invisible.
+            On the boutique charters, luxury is expressed in details you might miss if you are rushing. At breakfast, alongside freshly baked croissants, the crew serves wild forest honey harvested directly from the cajuput forests of the Delta. This honey (mật ong hoa tràm) has a distinct herbal, slightly salty undertone that comes from the blossoms of the tràm trees. It is rich, medicinal, and represents the wilderness of the wetlands in a single teaspoon.
           </p>
           <p>
-            That&apos;s the pattern on the best ships. The coffee that appears on your balcony without you ordering it. The turndown service that happens during dinner, so you never see it, you only feel it when you walk back to find the bed made, the lights dimmed, and a small chocolate on the pillow wrapped in banana leaf. The guide who notices you looking at a temple across the river and quietly arranges a stop there tomorrow — without you having to ask.
+            This is the pattern on the best private charters. The tea that appears on your balcony without you ordering it. The guide who notices you looking at a temple across the river and quietly coordinates a landing there tomorrow. The absolute privacy of having a vessel entirely to yourself and your loved ones, navigating the waters on your own terms.
           </p>
           <p>
-            It&apos;s not flashy. It&apos;s not Instagrammable. But it&apos;s the kind of care that makes you exhale. The kind that makes you stop performing the trip and start living it.
+            It&apos;s the kind of care that makes you exhale. The kind that makes you stop performing the trip and start living it.
           </p>
         </div>
       </section>
@@ -136,26 +136,82 @@ export default function RedefiningLuxuryPage() {
       {/* ── GOOD TO KNOW ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           What to look for in a luxury ship
         </h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Guest-to-Crew Ratio</h3>
-            <p>The best ships have nearly 1:1. This is how the coffee appears before you ask and the guide adjusts tomorrow&apos;s schedule based on a question you asked at dinner.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Wood Quality</h3>
+            <p>A vessel constructed from authentic gỗ sao (star wood) feels solid underfoot and creates a natural barrier against engine noise and vibration. The dark grain also absorbs light, keeping the cabins feeling calm and grounded.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Kitchen</h3>
-            <p>Ask where the chef buys ingredients. If the answer is &ldquo;the morning market&rdquo; or &ldquo;from a fisherman alongside the ship,&rdquo; you&apos;re in the right place. If the answer involves a supply chain from Bangkok, keep looking.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Local Silks</h3>
+            <p>Authentic Tân Châu silk (Lãnh Mỹ A) dyed with mặc nưa fruit is highly prized. If the ship utilizes local fabrics rather than imported polyester, it shows a commitment to preservation and craftsmanship.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Noise</h3>
-            <p>Stand in the cabin with the balcony closed. If you can hear the engine, the ship is cutting corners. The best engineering is the kind you never hear.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Private Charter Exclusivity</h3>
+            <p>For the ultimate privacy, a private charter allows you to bypass the fixed cruise schedules and customize every stop, every meal, and every sunrise.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Balcony Door</h3>
-            <p>Does it open fully? Can you fall asleep listening to the river? This single detail tells you everything about whether the ship was designed for the Mekong or just dropped onto it.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Wild Ingredients</h3>
+            <p>Look for menus featuring local wild-caught fish and tràm forest honey. These wild ingredients link the culinary experience directly to the biology of the Delta.</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── RECOMMENDED ITINERARY ── */}
+      <section className="py-20 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-[720px] mx-auto px-6">
+          <span className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">
+            Recommended Route
+          </span>
+          <h2 className={`font-serif text-3xl md:text-4xl text-navy mb-10 ${playfair.className}`}>
+            How to Experience This
+          </h2>
+
+          <Link
+            href="/itineraries/private-charter"
+            className="group relative flex flex-col sm:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+          >
+            <div className="relative w-full sm:w-[35%] min-h-[200px] sm:min-h-full overflow-hidden bg-navy/5 shrink-0">
+              <Image
+                src="/images/full_mekong_hero.avif"
+                alt="Private Charter Expedition"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+              <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                  <Clock size={10} className="stroke-[#c9a962]" />
+                  Custom Days
+                </span>
+              </div>
+            </div>
+
+            <div className="p-8 flex flex-col justify-between flex-grow">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                    Saigon — Mekong Canals — Angkor
+                  </span>
+                </div>
+                <h3 className={`font-serif text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                  Private Charter Expedition
+                </h3>
+                <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                  A completely private bespoke voyage on the waterways. Customize your itinerary, dine on local delicacies, and enjoy absolute exclusivity.
+                </p>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                  <span>Explore Route</span>
+                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -178,28 +234,21 @@ export default function RedefiningLuxuryPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#505a5f] py-20 text-center">
+      <section className="bg-navy py-24 text-center border-t border-white/10">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Experience the quiet kind</h2>
+          <h2 className={`font-serif text-3xl md:text-4xl text-white mb-6 ${playfair.className}`}>Experience absolute exclusivity</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
-            Ships where the crew knows your name, the chef knows the river, and the balcony door opens all the way.
+            For those who value privacy above all else, our custom private charter expeditions are tailored down to the last star-wood plank.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/cruises"
-              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-            >
-              Explore Luxury Ships
-            </Link>
-            <Link
-              href="/"
-              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
-            >
-              All Mekong Cruise Options
-            </Link>
-          </div>
+          <Link
+            href="/itineraries/private-charter"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors duration-300 group"
+          >
+            <span>Explore Private Charter</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
     </main>
-  );
+  )
 }

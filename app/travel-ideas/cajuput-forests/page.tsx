@@ -1,6 +1,10 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { Bodoni_Moda } from "next/font/google"
+import { Clock, ArrowRight } from "lucide-react"
+
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Cajuput Forests & Ecology — Tra Su Mekong Travel Ideas",
@@ -22,7 +26,7 @@ export const metadata: Metadata = {
     description: "Paddle through the flooded cajuput forests of Trà Sư.",
     images: ["https://www.mekongrivercruise.com/images/coconut-forest-boat.avif"],
   },
-};
+}
 
 export default function CajuputForestsPage() {
   return (
@@ -41,7 +45,7 @@ export default function CajuputForestsPage() {
           <p className="text-white/60 text-[10px] tracking-[0.35em] uppercase font-bold mb-5">
             Travel Ideas · 1–2 Days
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 ${playfair.className}`}>
             Where<br />Green<br />Becomes a Sound
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
@@ -53,18 +57,18 @@ export default function CajuputForestsPage() {
       {/* ── OPENING ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Trà Sư</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           The boat is a metal tub. The forest is a cathedral. The birds are the choir.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            Trà Sư is in An Giang province, near the Cambodian border, and getting there is part of the experience. The road narrows from highway to village lane to dirt track, and then the water starts — seeping up through the earth, filling the ditches, turning the fields into mirrors. You transfer from car to motorboat to a flat-bottomed sampan paddled by a woman in a conical hat who does not need to speak because the forest does all the talking.
+            Trà Sư is in An Giang province, specifically in Tịnh Biên district near the Cambodia border, framed by the mystical Seven Mountains (Thất Sơn) range. Getting there is part of the experience. The road narrows from highway to village lane to dirt track, and then the water starts — seeping up through the earth, filling the ditches, turning the fields into mirrors. You transfer from car to motorboat to a flat-bottomed sampan paddled by a woman in a conical hat who does not need to speak because the forest does all the talking.
           </p>
           <p>
             The cajuput trees — called tràm in Vietnamese — grow straight out of the water, their pale trunks ghostly against the green duckweed that covers the surface like a carpet. The effect is otherworldly: you are paddling through a flooded forest where the water is chartreuse, the trunks are silver, and the air smells like eucalyptus and mud and something ancient. Dragonflies the size of your thumb hover at eye level. A water monitor lizard slides off a log without a sound.
           </p>
           <p>
-            And then the birds. Trà Sư is home to one of the largest nesting colonies in Southeast Asia — storks, cormorants, egrets, herons — and at certain times of year, the treetops are white with them. Not white like snow. White like something alive and moving and noisy. The sound is extraordinary: a constant, layered chatter that rises and falls like applause. You crane your neck. You count species. You give up counting.
+            And then the birds. Trà Sư is home to one of the largest nesting colonies in Southeast Asia — with approximately 70 bird species, including the rare and endangered Painted Stork (Giang Sen) and Oriental Darter (Điêng Điểng) nesting high in the melaleuca branches. The treetops are white with them, a constant, layered chatter that rises and falls like applause. You crane your neck, you count species, you give up counting.
           </p>
         </div>
       </section>
@@ -84,18 +88,18 @@ export default function CajuputForestsPage() {
         <div className="max-w-[1200px] mx-auto px-6 py-24 lg:py-32 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-6">U Minh Hạ</p>
-            <h3 className="font-serif text-2xl md:text-3xl leading-tight mb-8">
+            <h3 className={`text-2xl md:text-3xl leading-tight mb-8 text-navy ${playfair.className}`}>
               The other forest — wilder, darker, less polished
             </h3>
             <div className="space-y-5 text-[#444] text-[15px] leading-[1.85] font-light">
               <p>
-                If Trà Sư is the concert hall, U Minh Hạ is the jazz club. It&apos;s in Cà Mau province, at the very tip of Vietnam where the land gives up trying to be land and becomes something else: mangrove, mudflat, open sea. The melaleuca forest here is darker and denser. The channels are narrower. Your guide uses a machete to clear overhanging branches.
+                If Trà Sư is the concert hall, U Minh Hạ is the jazz club. It&apos;s in Cà Mau province (primarily Trần Văn Thời and U Minh districts), at the very tip of Vietnam where the land gives up trying to be land and becomes something else: mangrove, peat swamp, mudflat, open sea.
               </p>
               <p>
-                Kayaking is the best way in. The paddle enters the water without a splash — the surface is so still it feels like gelatin. Mudskippers sit on exposed roots, watching you with eyes that shouldn&apos;t work but do. A kingfisher — electric blue, impossibly fast — crosses your bow and disappears. You paddle deeper. The light changes. The forest closes in. And for a few minutes, you are genuinely, beautifully lost.
+                The melaleuca forest here is darker and denser. What makes U Minh Hạ legendary is a traditional profession called &quot;gác kèo ong&quot; (trellis wild honeybee farming) recognized as a National Intangible Cultural Heritage in 2019. Local beekeepers construct wooden trellises using melaleuca trunks in sunlit clearings to lure wild honeybees. Between January and June, when the melaleuca flowers bloom, the honey is harvested at its purest.
               </p>
               <p>
-                The coffee stop afterward is non-negotiable. In the village on the forest&apos;s edge, a woman brews cà phê sữa đá (iced Vietnamese coffee) so thick and sweet it could qualify as dessert. You drink it in a hammock. A cat sleeps on the table. The forest hums behind you. This is the Mekong Delta that nobody photographs, because photographs can&apos;t hold the humidity, the silence, the weight of green.
+                Kayaking here is the best way in. Mudskippers sit on exposed roots, watching you with eyes that shouldn&apos;t work but do. You paddle deeper. The light changes. The forest closes in. And for a few minutes, you are genuinely, beautifully lost. The coffee stop afterward is non-negotiable. You drink thick cà phê sữa đá in a hammock while the forest hums behind you.
               </p>
             </div>
           </div>
@@ -121,11 +125,11 @@ export default function CajuputForestsPage() {
       {/* ── PRACTICAL ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">Planning your visit</h2>
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>Planning your visit</h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Best Time</h3>
-            <p>August through November, when the floodwaters are highest and the forest is fully submerged. The bird populations peak in October. The duckweed is greenest after rain.</p>
+            <p>August through November, during the high floodwaters when the forest is fully submerged. The bird populations peak in October. The honey season in U Minh Hạ runs from January to June.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Getting There</h3>
@@ -139,6 +143,64 @@ export default function CajuputForestsPage() {
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Combine With</h3>
             <p>A floating market visit in Cần Thơ makes a perfect two-day pairing. Market at dawn, forest at noon, hammock by evening.</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── RECOMMENDED ITINERARY ── */}
+      <section className="py-20 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-[720px] mx-auto px-6">
+          <span className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">
+            Recommended Route
+          </span>
+          <h2 className={`font-serif text-3xl md:text-4xl text-navy mb-10 ${playfair.className}`}>
+            How to Experience This
+          </h2>
+
+          <Link
+            href="/itineraries/2-days"
+            className="group relative flex flex-col sm:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+          >
+            {/* Image Section */}
+            <div className="relative w-full sm:w-[35%] min-h-[200px] sm:min-h-full overflow-hidden bg-navy/5 shrink-0">
+              <Image
+                src="/images/pulse_delta.avif"
+                alt="2-Day River Pulse"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+              <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                  <Clock size={10} className="stroke-[#c9a962]" />
+                  2 Days
+                </span>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="p-8 flex flex-col justify-between flex-grow">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                    Saigon — Can Tho
+                  </span>
+                </div>
+                <h3 className={`font-serif text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                  2-Day River Pulse
+                </h3>
+                <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                  Experience the true contrast of the delta: a peaceful night in a riverside garden homestay followed by the vibrant dawn market.
+                </p>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                  <span>Explore Route</span>
+                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -161,20 +223,21 @@ export default function CajuputForestsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#505a5f] py-20 text-center">
+      <section className="bg-navy py-24 text-center border-t border-white/10">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Explore with us</h2>
+          <h2 className={`font-serif text-3xl md:text-4xl text-white mb-6 ${playfair.className}`}>Explore with us</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
             Our 2-day Mekong Delta itinerary includes Trà Sư forest, floating markets, and private homestay accommodation.
           </p>
           <Link
             href="/itineraries/2-days"
-            className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors duration-300 group"
           >
-            View 2-Day Itinerary
+            <span>View 2-Day Itinerary</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
     </main>
-  );
+  )
 }

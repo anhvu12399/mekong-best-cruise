@@ -1,17 +1,21 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { Bodoni_Moda } from "next/font/google"
+import { Clock, ArrowRight } from "lucide-react"
+
+const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Luxury Mekong River Cruises — Travel Ideas & Inspiration",
-  description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest luxury ships on the Mekong River.",
-  keywords: ["luxury Mekong river cruises", "Mekong river cruise luxury", "best Mekong cruises", "Aqua Mekong", "Jayavarman cruise", "Mekong Jewel", "luxury cruise Cambodia Vietnam", "Mekong river inspiration"],
+  description: "Experience the slow art of river luxury. Discover the Vĩnh Xương border crossing, taste authentic Cambodian fish amok, and savor beef lok lak with Kampot pepper.",
+  keywords: ["luxury Mekong river cruises", "Mekong river cruise luxury", "best Mekong cruises", "Aqua Mekong", "Jayavarman cruise", "Mekong Jewel", "luxury cruise Cambodia Vietnam", "Vinh Xuong border crossing", "Kampot pepper"],
   alternates: {
     canonical: "https://www.mekongrivercruise.com/travel-ideas/luxury-cruises",
   },
   openGraph: {
     title: "Luxury Mekong River Cruises — Travel Ideas & Inspiration",
-    description: "Sunset champagne on the observation deck, temple mornings in Cambodia, and the slow art of doing nothing aboard the finest luxury ships on the Mekong River.",
+    description: "Experience the slow art of river luxury. Discover the Vĩnh Xương border crossing, taste authentic Cambodian fish amok, and savor beef lok lak with Kampot pepper.",
     type: "article",
     url: "https://www.mekongrivercruise.com/travel-ideas/luxury-cruises",
     images: [{ url: "https://www.mekongrivercruise.com/images/jayavarman.avif", width: 1200, height: 630, alt: "Luxury cruise on the Mekong at golden hour" }],
@@ -22,7 +26,7 @@ export const metadata: Metadata = {
     description: "Sunset champagne, temple mornings, and the slow art of doing nothing on the Mekong.",
     images: ["https://www.mekongrivercruise.com/images/jayavarman.avif"],
   },
-};
+}
 
 export default function LuxuryCruisesPage() {
   return (
@@ -39,22 +43,21 @@ export default function LuxuryCruisesPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="relative z-10 px-8 md:px-16 pb-20 max-w-3xl">
           <p className="text-white/60 text-[10px] tracking-[0.35em] uppercase font-bold mb-5">
-            Travel Ideas · 2–7 Nights
+            Travel Ideas · 7 Nights
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+          <h1 className={`text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 ${playfair.className}`}>
             The Slow<br />Art of<br />River Luxury
           </h1>
           <p className="text-white/75 text-[15px] font-light leading-relaxed max-w-lg">
-            A Mekong cruise doesn&apos;t take you somewhere.
-            It takes something away — the noise, the schedule, the need to be anywhere else.
+            A Mekong cruise doesn&apos;t take you somewhere. It takes something away — the noise, the schedule, the need to be anywhere else.
           </p>
         </div>
       </section>
 
-      {/* ── OPENING ESSAY ── */}
+      {/* ── CHAPTER ONE ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Chapter One</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           Somewhere between Ho Chi Minh City and Phnom Penh, the clock stops working.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
@@ -62,17 +65,10 @@ export default function LuxuryCruisesPage() {
             You notice it on the second morning. The alarm you set out of habit goes off, and you realize you have absolutely nowhere to be. The ship is already moving. Coffee appears on the private balcony — nobody knocked, nobody asked, it&apos;s just there, steaming, alongside a small plate of fruit that someone arranged like a still life.
           </p>
           <p>
-            Outside, the Mekong is doing what it always does: being itself. A fisherman casts a net in a perfect circle. A woman paddles past in a boat so low it barely breaks the surface. Somewhere in the distance, a temple bell rings — thin and clear and completely indifferent to your existence. This is what luxury means on this river. Not marble. Not chandeliers. Just the gift of being unscheduled in a world that never stops scheduling.
+            One of the most extraordinary transitions of this journey is crossing the international border at Vĩnh Xương (Vietnam) and Kaam Samnor (Cambodia). On standard land tours, border crossings are a chaotic maze of queues and paperwork. Here, it is an exercise in leisure. You sit on the observation deck with a chilled glass of lemongrass tea while the ship&apos;s purser handles all customs and visa formalities. The river simply widens, and you find yourself in Cambodia.
           </p>
           <p>
-            The ships that navigate this river have learned this lesson. The best of them — the Aqua Mekong, the Jayavarman, the Mekong Jewel — don&apos;t compete with the landscape. They frame it. Floor-to-ceiling glass. Observation decks that face west for sunset. Plunge pools that hold the sky. The architecture says: <em>look out, not in</em>.
-          </p>
-          <p>
-            If you&apos;re discovering{" "}
-            <Link href="/" className="underline underline-offset-2 hover:text-[#b8860b] transition-colors">
-              Mekong River cruises
-            </Link>{" "}
-            for the first time, the hardest part is narrowing down — not because the options are bad, but because they&apos;re each extraordinary in a different way.
+            The ships that navigate this river have learned this lesson. The best of them — the Aqua Mekong, the Jahan, the Mekong Jewel — don&apos;t compete with the landscape. They frame it. Floor-to-ceiling glass. Observation decks that face west for sunset. Plunge pools that hold the sky. The architecture says: <em>look out, not in</em>.
           </p>
         </div>
       </section>
@@ -87,18 +83,21 @@ export default function LuxuryCruisesPage() {
         />
       </section>
 
-      {/* ── THE RHYTHM ── */}
+      {/* ── CHAPTER TWO ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Chapter Two</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-          The rhythm of a river day
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
+          The taste of two nations
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
           <p>
-            Dawn comes early and gently. The light turns the water from pewter to bronze to gold, and if you&apos;re awake for it — which you should be, at least once — you&apos;ll see the delta come alive like a theater curtain rising. Fishing boats emerge from the mist. Smoke rises from village kitchens. A rooster crows from a bankside garden that you&apos;ll never see again.
+            As you cross from Vietnam into Cambodia, the flavors on board evolve. The light, herb-heavy pho of the Vietnamese mornings gives way to the aromatic, spice-rich dishes of Cambodia.
           </p>
           <p>
-            Breakfast is unhurried. The good ships serve phở alongside eggs Benedict, and the smart money is on the phở — the broth has been simmering since 4 AM, and the herbs were picked that morning from a kitchen garden on the top deck. After that, the excursions begin, but &quot;excursion&quot; is the wrong word for what actually happens. You climb into a smaller boat, glide through a narrow canal, and find yourself in someone&apos;s actual life.
+            The culinary highlight of the Cambodian stretch is Fish Amok — a delicate national dish made of fresh river catfish, steamed in coconut milk and a rich kroeung herb paste, wrapped inside a folded banana leaf. It is soft, fragrant, and slightly sweet. Alongside it, chefs serve traditional Beef Lok Lak: tender cubes of beef stir-fried in a savory soy-garlic glaze, served with a essential dipping sauce of fresh lime juice and crushed Kampot pepper, prized worldwide for its floral aroma and clean heat.
+          </p>
+          <p>
+            This is not hotel dining. This is river dining — fresh, local, and deeply reflective of the changing banks outside your window.
           </p>
         </div>
       </section>
@@ -121,60 +120,85 @@ export default function LuxuryCruisesPage() {
         </p>
       </section>
 
-      {/* ── THE FOOD ── */}
-      <section className="bg-[#f5f5f5]">
-        <div className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
-          <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Chapter Three</p>
-          <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
-            The food is the other destination
-          </h2>
-          <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
-            <p>
-              The chef on the Jayavarman buys fish from a boat that pulls alongside at 6 AM. He doesn&apos;t know what he&apos;ll serve for dinner until he sees what&apos;s in the net. This isn&apos;t farm-to-table — it&apos;s river-to-plate, and the difference matters. The catfish is so fresh it barely needs cooking. The morning glory is stir-fried with garlic that still has dirt on it. The amok curry arrives in a banana leaf and tastes like Cambodia.
-            </p>
-            <p>
-              On the Aqua Mekong, the approach is different but equally obsessive. A consulting chef with Michelin connections has built a menu that reads like poetry: &quot;deconstructed spring roll with Kampot pepper foam,&quot; &quot;Mekong prawn ceviche with green mango.&quot; It sounds pretentious until you taste it, and then it just sounds right. The observation deck becomes a dining room at night. Candles. Stars. The soft sound of the river against the hull. You order another glass of Sancerre and wonder why you ever eat indoors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PARALLAX QUOTE ── */}
-      <section
-        className="relative py-40 flex items-center justify-center bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url(/images/jayavarman_lounge.avif)" }}
-      >
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center px-8 max-w-3xl">
-          <blockquote className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic">
-            &ldquo;The river is patient. It was here before the temples, before the empires, before us. A good cruise understands this: you are the guest, not the main event.&rdquo;
-          </blockquote>
-        </div>
-      </section>
-
-      {/* ── THE DETAILS ── */}
+      {/* ── GOOD TO KNOW ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">Good to Know</p>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-10">
+        <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           Before you book
         </h2>
         <div className="space-y-8 text-[#444] text-[15px] leading-[1.85] font-light">
           <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Best Season</h3>
-            <p>October through April. The dry season means calmer waters and clearer skies. November is arguably perfect — the rains have just stopped, and everything is impossibly green.</p>
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Border Formalities</h3>
+            <p>At the Vĩnh Xương / Kaam Samnor river border, the ship&apos;s crew takes your passports to the border post. There is no need for you to disembark. You can read, relax, or watch the river traffic pass.</p>
+          </div>
+          <div className="border-l-2 border-[#222] pl-6">
+            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">The Culinary Journey</h3>
+            <p>Every menu features both Vietnamese and Cambodian dishes, with a heavy emphasis on fresh local herbs, Kampot pepper, and freshwater fish caught by local fishermen alongside the vessel.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">Duration</h3>
-            <p>Most itineraries run 3 to 7 nights. Three nights gives you the highlights; seven nights gives you the silences. We recommend at least four.</p>
-          </div>
-          <div className="border-l-2 border-[#222] pl-6">
-            <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">From Ho Chi Minh City</h3>
-            <p>Most cruises depart from Mỹ Tho, about 90 minutes from central Saigon. The drive through the delta is part of the experience — rice paddies, fruit orchards, the world getting flatter and greener.</p>
+            <p>A full cross-border cruise takes 7 nights to connect Saigon and Siem Reap (or vice versa). Shorter 3 or 4-night segments are also available between Saigon and Phnom Penh.</p>
           </div>
           <div className="border-l-2 border-[#222] pl-6">
             <h3 className="font-bold text-[#222] text-sm uppercase tracking-wider mb-2">What to Pack</h3>
-            <p>Light linen. A good hat. Sunscreen that smells like nothing. Binoculars if you care about birds (you should). A journal — not for Instagram, for yourself.</p>
+            <p>Light linen clothing is essential. A good hat and polarized sunglasses for the glare off the water. Proper attire (shoulders and knees covered) for temple visits in Cambodia.</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── RECOMMENDED ITINERARY ── */}
+      <section className="py-20 bg-[#faf8f5] border-t border-[#e0d9ce]">
+        <div className="max-w-[720px] mx-auto px-6">
+          <span className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">
+            Recommended Route
+          </span>
+          <h2 className={`font-serif text-3xl md:text-4xl text-navy mb-10 ${playfair.className}`}>
+            How to Experience This
+          </h2>
+
+          <Link
+            href="/itineraries/vietnam-cambodia"
+            className="group relative flex flex-col sm:flex-row bg-white border border-[#e0d9ce] hover:border-[#c9a962] hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
+          >
+            <div className="relative w-full sm:w-[35%] min-h-[200px] sm:min-h-full overflow-hidden bg-navy/5 shrink-0">
+              <Image
+                src="/images/vc_day1.avif"
+                alt="Vietnam to Cambodia Pilgrimage"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+              <div className="absolute top-4 left-4 bg-navy/80 backdrop-blur-sm px-3 py-1.5 border border-[#c9a962]/30">
+                <span className="text-[#c9a962] text-[9px] tracking-[0.2em] uppercase font-bold flex items-center gap-1.5">
+                  <Clock size={10} className="stroke-[#c9a962]" />
+                  8 Days / 7 Nights
+                </span>
+              </div>
+            </div>
+
+            <div className="p-8 flex flex-col justify-between flex-grow">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[#8B4A2A] text-[9px] tracking-[0.2em] uppercase font-bold">
+                    Vietnam — Cambodia Border Crossings
+                  </span>
+                </div>
+                <h3 className={`font-serif text-2xl text-navy group-hover:text-[#c9a962] transition-colors duration-300 mb-3 ${playfair.className}`}>
+                  Vietnam to Cambodia Pilgrimage
+                </h3>
+                <p className="text-navy/70 text-sm leading-relaxed mb-6 font-serif">
+                  A comprehensive 8-day cross-border cruise connecting Saigon, the rural Mekong Delta, Phnom Penh, and the temples of Angkor.
+                </p>
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase font-bold text-navy border-b border-navy/20 pb-0.5 group-hover:text-[#8B4A2A] group-hover:border-[#8B4A2A] transition-all">
+                  <span>Explore Route</span>
+                  <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -187,7 +211,7 @@ export default function LuxuryCruisesPage() {
               <span className="font-bold">Luxury Isn&apos;t What You Think</span> — Privacy, invisible service, and the sound of the river at night.
             </Link>
             <Link href="/travel-ideas/slow-day" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light border-b border-[#e5e5e5] pb-4">
-              <span className="font-bold">A Slow Day in the Mekong</span> — From mist to lanterns, hour by unhurried hour.
+              <span className="font-bold">A Slow Day in the Mekong</span> — Doing nothing, remembering everything.
             </Link>
             <Link href="/travel-ideas/floating-markets" className="block text-[15px] text-[#222] hover:text-[#b8860b] transition-colors font-light pb-4">
               <span className="font-bold">Breakfast Arrives by Boat</span> — Phở at dawn on the floating market.
@@ -197,28 +221,21 @@ export default function LuxuryCruisesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#505a5f] py-20 text-center">
+      <section className="bg-navy py-24 text-center border-t border-white/10">
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Ready to drift?</h2>
+          <h2 className={`font-serif text-3xl md:text-4xl text-white mb-6 ${playfair.className}`}>Ready to drift across borders?</h2>
           <p className="text-white/70 text-[15px] font-light mb-10">
-            Explore our fleet of handpicked luxury vessels, each with its own character and story.
+            Explore our fleet of handpicked luxury vessels sailing between Vietnam and Cambodia. Savor the slow flow of the river.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/cruises"
-              className="inline-block bg-white text-[#222] px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-gray-100 transition-colors"
-            >
-              View Our Fleet
-            </Link>
-            <Link
-              href="/"
-              className="inline-block border border-white text-white px-10 py-4 text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-white/10 transition-colors"
-            >
-              All Mekong Cruise Options
-            </Link>
-          </div>
+          <Link
+            href="/itineraries/vietnam-cambodia"
+            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-gold-light transition-colors duration-300 group"
+          >
+            <span>Explore Pilgrimage Cruise</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
     </main>
-  );
+  )
 }

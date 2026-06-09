@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, Clock, MapPin, Info, CheckCircle2, Shield, Anchor } from "lucide-react"
 import { RiversOfIndochinaMap } from "@/components/rivers-of-indochina-map"
+import { ItineraryBottomSections } from "@/components/itinerary-bottom-sections"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
@@ -671,6 +672,8 @@ export function RiversOfIndochinaClient() {
           </div>
         </div>
       </section>
+
+      <ItineraryBottomSections currentSlug="rivers-of-indochina" />
 
       {/* ── CALL TO ACTION ── */}
       <section className="py-24 bg-navy text-center px-6 border-t border-white/10">

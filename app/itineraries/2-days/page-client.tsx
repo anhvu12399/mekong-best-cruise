@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock, Users, MapPin } from "lucide-react"
+import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
+import { ItineraryBottomSections } from "@/components/itinerary-bottom-sections"
 
 const NAV_ITEMS = ["Overview", "The Journey", "Experiences", "Essentials"]
 
@@ -330,6 +331,8 @@ export function TwoDaysClient() {
           </div>
         </div>
       </section>
+
+      <ItineraryBottomSections currentSlug="2-days" />
 
       {/* ── ESSENTIALS ── */}
       <div ref={essentialsRef} className="scroll-mt-14" />

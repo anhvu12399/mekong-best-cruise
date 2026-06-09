@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import { VietnamCambodiaMap } from "@/components/vietnam-cambodia-map"
+import { ItineraryBottomSections } from "@/components/itinerary-bottom-sections"
 
 const NAV_ITEMS = ["Overview", "Itinerary", "Experiences", "Essentials"]
 
@@ -424,38 +425,7 @@ export function VietnamCambodiaClient() {
         </div>
       </section>
 
-      {/* ── FEATURED CRUISES (If they want to combine with a cruise) ── */}
-      <section className="py-24 bg-white border-t border-[#e0d9ce]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <p className="text-[11px] tracking-[0.3em] uppercase font-bold text-[#8B4A2A] mb-4">Extend on Water</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-navy mb-4">Recommended Vessels</h2>
-            <p className="text-navy/55 font-serif max-w-xl mx-auto">Enhance your land pilgrimage with a few days aboard the region's most serene ships.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {[
-              { name: 'Aqua Mekong', type: 'Modern Luxury', tagline: 'A floating sanctuary.', desc: 'Floor-to-ceiling windows and spa facilities to complement your spiritual retreat.', image: '/images/aqua_mekong.avif', guests: 40, cabins: 20 },
-              { name: 'The Jayavarman', type: 'French Colonial', tagline: 'Travel back in time.', desc: 'Boutique luxury with deep roots in Indochine aesthetics and quiet elegance.', image: '/images/jayavarman.avif', guests: 54, cabins: 27 },
-              { name: 'Mekong Princess', type: 'Intimate Scale', tagline: 'Exclusive privacy.', desc: 'Only 14 cabins, ensuring the utmost tranquility during your journey.', image: '/images/mekong_princess.avif', guests: 28, cabins: 14 },
-            ].map(ship => (
-              <div key={ship.name} className="group border border-[#e0d9ce] overflow-hidden bg-[#f7f4ef]">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image src={ship.image} alt={ship.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
-                </div>
-                <div className="p-7">
-                  <p className="text-[10px] tracking-widest uppercase font-bold text-[#c9a962] mb-2">{ship.type}</p>
-                  <h3 className="font-serif text-xl text-navy mb-2">{ship.name}</h3>
-                  <p className="text-navy/60 text-sm font-serif mb-5 leading-relaxed">{ship.desc}</p>
-                  <div className="flex justify-between text-[10px] tracking-widest uppercase font-bold text-navy/40 border-t border-[#e8e2d9] pt-4">
-                    <span>{ship.guests} Guests</span>
-                    <span>{ship.cabins} Cabins</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ItineraryBottomSections currentSlug="vietnam-cambodia" />
 
       {/* ── EXPERIENCES ── */}
       <div ref={experiencesRef} className="scroll-mt-14" />
