@@ -117,6 +117,12 @@ export function Header() {
                 >
                   Cruises
                 </Link>
+                <Link
+                  href="/best-time-to-travel"
+                  className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
+                >
+                  Best Time
+                </Link>
                 <button
                   onClick={() => {
                     setIsSidebarOpen(true)
@@ -195,6 +201,9 @@ export function Header() {
               </button>
               <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
                 Cruises
+              </Link>
+              <Link href="/best-time-to-travel" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
+                Best Time to Travel
               </Link>
               <button onClick={() => setActiveView('about')} className="flex justify-between items-center text-[28px] font-serif text-white hover:text-gold transition-colors group text-left">
                 About Us <ChevronRight size={20} strokeWidth={1} className="text-white/30 group-hover:text-gold" />

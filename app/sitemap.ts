@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/our-specialists`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${BASE_URL}/plan-your-journey`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${BASE_URL}/cruises`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${BASE_URL}/best-time-to-travel`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${BASE_URL}/contact`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${BASE_URL}/faqs`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE_URL}/sustainability`, priority: 0.6, changeFrequency: 'monthly' },

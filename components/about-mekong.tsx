@@ -37,7 +37,7 @@ export function AboutMekong() {
   }, [])
 
   const handleButtonClick = () => {
-    router.push("/discover")
+    router.push("/best-time-to-travel")
   }
 
   return (
@@ -84,7 +84,7 @@ export function AboutMekong() {
             onClick={handleButtonClick}
             className="inline-flex items-center gap-3 px-8 py-3 border border-gold/80 text-gold text-xs font-medium tracking-[0.2em] uppercase hover:bg-gold hover:text-navy transition-all duration-300"
           >
-            <span>Take Me There</span>
+            <span>Best Time to Travel</span>
             <ArrowRight size={14} />
           </button>
         </div>
