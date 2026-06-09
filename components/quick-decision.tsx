@@ -1,11 +1,13 @@
+"use client"
+
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 const decisions = [
   {
-    title: "3–4 Day Mekong Delta",
+    title: "5-Day Boutique Expedition",
     cta: "View itinerary",
-    href: "/itineraries/mekong-delta"
+    href: "/itineraries/small-ship"
   },
   {
     title: "7–8 Day Vietnam – Cambodia",
@@ -13,18 +15,22 @@ const decisions = [
     href: "/itineraries/vietnam-cambodia"
   },
   {
-    title: "1-Day Mindful Mekong",
+    title: "10-Day The Full Mekong Story",
     cta: "View itinerary",
-    href: "/itineraries/1-day"
+    href: "/itineraries/full-mekong-story"
   },
   {
-    title: "2-Day River Pulse",
+    title: "15-Day Rivers of Indochina",
     cta: "View itinerary",
-    href: "/itineraries/2-days"
+    href: "/itineraries/rivers-of-indochina"
   }
 ]
 
 export function QuickDecision() {
+  const handleOpenItineraries = () => {
+    window.dispatchEvent(new CustomEvent("open-itineraries-menu"))
+  }
+
   return (
     <section className="bg-navy border-b border-white/10 relative z-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -42,6 +48,17 @@ export function QuickDecision() {
               </div>
             </Link>
           ))}
+        </div>
+        
+        {/* All Itineraries Button */}
+        <div className="flex justify-center pb-8 pt-2 border-t border-white/5">
+          <button
+            onClick={handleOpenItineraries}
+            className="inline-flex items-center gap-2 border border-gold/45 text-gold hover:border-gold hover:bg-gold hover:text-navy text-[10px] font-bold tracking-[0.25em] uppercase px-8 py-3.5 transition-all duration-300 rounded-sm"
+          >
+            <span>All Itineraries</span>
+            <ArrowRight size={14} />
+          </button>
         </div>
       </div>
     </section>

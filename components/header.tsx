@@ -43,7 +43,7 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [activeView, setActiveView] = useState<'main' | 'destinations' | 'about' | 'travel-ideas'>('main')
+  const [activeView, setActiveView] = useState<'main' | 'destinations' | 'about' | 'travel-ideas' | 'itineraries'>('main')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +51,15 @@ export function Header() {
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const handleOpenItineraries = () => {
+      setIsSidebarOpen(true)
+      setActiveView('itineraries')
+    }
+    window.addEventListener("open-itineraries-menu", handleOpenItineraries)
+    return () => window.removeEventListener("open-itineraries-menu", handleOpenItineraries)
   }, [])
 
   useEffect(() => {
@@ -93,6 +102,15 @@ export function Header() {
                 >
                   Destinations
                 </button>
+                <button
+                  onClick={() => {
+                    setIsSidebarOpen(true)
+                    setActiveView('itineraries')
+                  }}
+                  className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
+                >
+                  Itineraries
+                </button>
                 <Link
                   href="/cruises"
                   className="text-[12px] font-bold tracking-[0.1em] text-white hover:text-gold transition-colors duration-200 uppercase"
@@ -108,7 +126,6 @@ export function Header() {
                 >
                   About Us
                 </button>
-
               </nav>
             </div>
 
@@ -172,6 +189,9 @@ export function Header() {
             <div className="flex flex-col gap-6 mb-10 border-b border-white/10 pb-10 mt-6 pr-8">
               <button onClick={() => setActiveView('destinations')} className="flex justify-between items-center text-[28px] font-serif text-white hover:text-gold transition-colors group text-left">
                 Destinations <ChevronRight size={20} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
+              </button>
+              <button onClick={() => setActiveView('itineraries')} className="flex justify-between items-center text-[28px] font-serif text-white hover:text-gold transition-colors group text-left">
+                Itineraries <ChevronRight size={20} strokeWidth={1} className="text-white/30 group-hover:text-gold" />
               </button>
               <Link href="/cruises" onClick={() => setIsSidebarOpen(false)} className="flex items-center text-[28px] font-serif text-white hover:text-gold transition-colors group">
                 Cruises
@@ -260,6 +280,47 @@ export function Header() {
               ].map((sub) => (
                 <Link key={sub.label} href={sub.href} onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[13px] font-bold tracking-wider uppercase text-white/90 hover:text-gold transition-colors group">
                   {sub.label} <ChevronRight size={18} strokeWidth={1.5} className="text-white/30 group-hover:text-gold" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* ITINERARIES SUB-MENU VIEW */}
+          <div className={`absolute top-0 left-0 w-full h-full overflow-y-auto flex flex-col p-8 pt-10 text-white transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+            activeView === 'itineraries' ? 'translate-x-0' : 'translate-x-full'
+          }`}>
+            <button 
+              onClick={() => setIsSidebarOpen(false)} 
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-10"
+            >
+              <X size={28} strokeWidth={1.5} />
+            </button>
+
+            <button onClick={() => setActiveView('main')} className="flex items-center gap-2 text-white/50 hover:text-white mb-10 w-fit group mt-2">
+              <ChevronLeft size={20} strokeWidth={1.5} className="group-hover:-translate-x-1 transition-transform" />
+              <span className="text-[11px] font-bold tracking-[0.15em] uppercase">Back</span>
+            </button>
+
+            <h4 className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-6">All Itineraries</h4>
+
+            <div className="flex flex-col gap-6 pr-2">
+              {[
+                { label: "15-Day Rivers of Indochina", href: "/itineraries/rivers-of-indochina" },
+                { label: "10-Day The Full Mekong Story", href: "/itineraries/full-mekong-story" },
+                { label: "7-8 Day Vietnam - Cambodia", href: "/itineraries/vietnam-cambodia" },
+                { label: "5-Day Boutique Expedition", href: "/itineraries/small-ship" },
+                { label: "3-4 Day Mekong Delta", href: "/itineraries/mekong-delta" },
+                { label: "2-Day River Pulse", href: "/itineraries/2-days" },
+                { label: "1-Day Mindful Mekong", href: "/itineraries/1-day" },
+                { label: "Private Mekong River Charter", href: "/itineraries/private-charter" }
+              ].map((itinerary) => (
+                <Link 
+                  key={itinerary.label} 
+                  href={itinerary.href} 
+                  onClick={() => setIsSidebarOpen(false)} 
+                  className="flex justify-between items-center text-[13px] font-bold tracking-wider uppercase text-white/90 hover:text-gold transition-colors group"
+                >
+                  {itinerary.label} <ChevronRight size={18} strokeWidth={1.5} className="text-white/30 group-hover:text-gold" />
                 </Link>
               ))}
             </div>
