@@ -180,7 +180,7 @@ export function AboutUsClient() {
       <section id="philosophy" ref={(el) => { sectionRefs.current.philosophy = el }} className="scroll-mt-[120px] lg:scroll-mt-[136px] relative">
         {/* Full-bleed image with overlay */}
         <div className="relative h-[60vh] flex items-end">
-          <Image src="/images/ceo_john.png" alt="John, Founder & CEO" fill className="object-cover object-top" />
+          <Image src="/images/ceo_john.png" alt="John, Founder & CEO" fill className="object-cover object-[center_30%]" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           <div className="relative z-10 max-w-lg p-10 lg:p-16">
             <p className="text-[#c9a962] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">Our Philosophy</p>
