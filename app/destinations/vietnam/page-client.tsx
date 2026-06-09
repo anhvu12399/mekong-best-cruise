@@ -123,7 +123,7 @@ const itineraries = [
     duration: "10 Days / 9 Nights",
     route: "Ho Chi Minh City — Golden Triangle",
     desc: "A grand 10-day private journey tracing the Mekong from the flat green delta of Vietnam to the mountainous borderlands of Laos and the Golden Triangle.",
-    image: "/images/dest_vietnam_hero.avif",
+    image: "/images/full_mekong_hero.png",
     highlights: ["Mekong Delta backwaters", "Luang Prabang alms dawn", "Golden Triangle confluence"],
   }
 ]

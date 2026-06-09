@@ -74,7 +74,7 @@ const DAYS = [
     label: "Day 3",
     place: "Floating Market & Slow Mekong Life",
     tagline: "Sunrise floating market & noodle workshop",
-    image: "/images/1day_hero.avif",
+    image: "/images/floating_market_dawn.png",
     info: "Overnight: Can Tho · Breakfast, Lunch, Dinner",
     morning: {
       body: "Wake at 5:00am. This is not negotiable — the floating market is at its best before 7:00am and gone by 9:00. Board a small private boat in the pre-dawn darkness and head toward Cai Rang, the largest floating market in the Mekong Delta, where boats piled with dragon fruit, watermelon, pineapple, and vegetables have been trading since before most cities woke up. The market is a working commercial hub, not a tourist attraction. Vendor boats sell hot noodle soup and coffee directly from the water — your guide will flag one down and order breakfast. Eat on the boat."
@@ -110,7 +110,7 @@ const DAYS = [
     label: "Day 5",
     place: "The Hidden City",
     tagline: "Alms ceremony & craft villages",
-    image: "/images/about_hero.avif",
+    image: "/images/luang_prabang_alms.png",
     info: "Overnight: Luang Prabang · Breakfast",
     morning: {
       body: "An early start gives you Luang Prabang at its best. At 5:30am, your guide positions you quietly along the main road of the old town for the alms ceremony — monks in saffron walking barefoot while local families kneel and offer sticky rice. You observe from a respectful distance, without flash photography. After the ceremony, continue to the morning market on Kitsalat Road — local wet market where families buy fresh produce. Walk through at your own pace, then find breakfast at a small local spot nearby. The morning continues with the old town's two most important temples: Wat Xieng Thong and the former Royal Palace."
@@ -146,7 +146,7 @@ const DAYS = [
     label: "Day 7",
     place: "The River Begins: Mekong Upstream to Pak Ou",
     tagline: "Pak Ou Caves & Pakbeng Sunset",
-    image: "/images/dest_laos.avif",
+    image: "/images/upper_mekong_boat.png",
     info: "Overnight: Pakbeng · Breakfast, Lunch, Dinner",
     morning: {
       body: "The journey's third chapter begins this morning. After an early breakfast, board a private boat at the Luang Prabang pier and head upstream on the Mekong. The city fades quickly and the river takes over. Mid-morning, the boat pulls into a small landing at the foot of a cliff where two openings mark the entrance to the Pak Ou Caves. Inside, thousands of Buddha images fill every ledge and hollow, accumulated across five centuries of offering."
@@ -182,7 +182,7 @@ const DAYS = [
     label: "Day 9",
     place: "The Golden Triangle",
     tagline: "Frontier meeting point & Hall of Opium",
-    image: "/images/dest_laos_hero.avif",
+    image: "/images/golden_triangle_view.png",
     info: "Overnight: Golden Triangle area or Chiang Rai · Breakfast, Lunch, Dinner",
     morning: {
       body: "The final chapter of the journey. Cross the Mekong by ferry from Houay Xai to Chiang Khong, then transfer toward the Golden Triangle — the point where the Mekong bends and the borders of Laos, Thailand, and Myanmar converge. Your guide leads a conversation at the Mekong confluence about the region's geography and history: trade routes, the opium economy, and the meeting borders."
@@ -330,7 +330,7 @@ export function FullMekongStoryClient() {
       {/* ── HERO ── */}
       <section className="relative h-[85vh] w-full flex items-end pb-24 justify-center text-center">
         <Image 
-          src="/images/dest_vietnam_hero.avif" 
+          src="/images/full_mekong_hero.png" 
           alt="The Mekong River" 
           fill 
           className="object-cover" 
