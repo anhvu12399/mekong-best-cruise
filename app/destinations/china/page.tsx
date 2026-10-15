@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'China Upper Mekong Cruise | Mekong Best Cruise',
+    title: 'China Upper Mekong Cruise | Mekong River Cruise',
     description: 'Discover Yunnan\'s Lijiang Ancient Town, Tiger Leaping Gorge, and the Lancang River on an extraordinary luxury cruise through southwest China.',
     images: [{ url: '/images/dest_china.avif', width: 1200, height: 630, alt: 'Yunnan China Upper Mekong Luxury Cruise' }],
   },

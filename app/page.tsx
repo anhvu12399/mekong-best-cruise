@@ -15,7 +15,7 @@ const TripAdvisorReviews = dynamic(() => import("@/components/tripadvisor-review
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
-  title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+  title: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
   keywords: [
     'Mekong River Cruise',
     'luxury river cruise Southeast Asia',
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
     'Mekong river journey'
 ],
   description:
-    'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
+    'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Curated partner vessels, verified pricing, and dedicated local specialists.',
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
     url: BASE_URL,
-    title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+    title: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
     description:
-      'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China.',
-    images: [{ url: '/images/og-image.avif', width: 1200, height: 630, alt: 'Mekong Best Cruise' }],
+      'Curated luxury river journeys through Vietnam, Cambodia, Laos, Thailand & China. Verified pricing, authorized partner ships, and bespoke travel design.',
+    images: [{ url: '/images/og-image.avif', width: 1200, height: 630, alt: 'Mekong River Cruise' }],
   },
 }
 
@@ -62,10 +62,10 @@ const jsonLd = {
   '@type': 'WebPage',
   '@id': `${BASE_URL}/#webpage`,
   url: BASE_URL,
-  name: 'Mekong Best Cruise — Home',
+  name: 'Mekong River Cruise — Luxury River Journeys',
   isPartOf: { '@id': `${BASE_URL}/#website` },
   description:
-    'Bespoke luxury river cruises along the Mekong River through Vietnam, Cambodia, Laos, Thailand, Myanmar and China.',
+    'Curated luxury river cruises along the Mekong River through Vietnam, Cambodia, Laos, Thailand, Myanmar and China.',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [

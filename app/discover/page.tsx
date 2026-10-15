@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'Discover the Mekong | Mekong Best Cruise',
+    title: 'Discover the Mekong | Mekong River Cruise',
     description: 'Explore floating markets, ancient temples, and riverside villages on a luxury Mekong cruise.',
     images: [{ url: '/images/about-mekong-bg.avif', width: 1200, height: 630, alt: 'Discover the Mekong River' }],
   },

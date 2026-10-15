@@ -5,7 +5,7 @@ const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/itineraries/mekong-delta`
 
 export const metadata: Metadata = {
-  title: 'Mekong By Locals: 3–4 Day Immersive Delta Journey | Mekong Best Cruise',
+  title: 'Mekong By Locals: 3–4 Day Immersive Delta Journey | Mekong River Cruise',
   keywords: [
     'Mekong Delta itinerary',
     'luxury Mekong Delta tour',

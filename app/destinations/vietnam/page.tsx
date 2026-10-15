@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'Vietnam Mekong River Cruise | Mekong Best Cruise',
+    title: 'Vietnam Mekong River Cruise | Mekong River Cruise',
     description: 'Discover the Mekong Delta\'s floating markets, hidden canals, and silk weaving villages on a bespoke luxury river cruise in Vietnam.',
     images: [{ url: '/images/dest_vietnam.avif', width: 1200, height: 630, alt: 'Vietnam Mekong Delta Luxury Cruise' }],
   },

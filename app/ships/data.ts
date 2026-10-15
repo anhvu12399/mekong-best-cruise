@@ -1,8 +1,20 @@
+export type ShipPricing = {
+  threeNight: { from: number; route: string };
+  fourNight: { from: number; route: string };
+  sevenNight: { from: number; route: string };
+  basis: string;
+  inclusions: string;
+  lastVerified: string;
+};
+
 export type ShipData = {
   slug: string;
   name: string;
+  operator: string;
+  operatorNote: string;
   tagline: string;
   heroImage: string;
+  pricing: ShipPricing;
   stats: {
     length: string;
     cabins: string;
@@ -36,8 +48,18 @@ export const shipsData: Record<string, ShipData> = {
   "aqua-mekong": {
     slug: "aqua-mekong",
     name: "Aqua Mekong",
+    operator: "Aqua Expeditions",
+    operatorNote: "Designed and operated by Aqua Expeditions. Booked through Mekong River Cruise with Best Price Guarantee.",
     tagline: "Where the river meets the sky, and the sky never ends",
     heroImage: "/images/aqua_mekong.avif",
+    pricing: {
+      threeNight: { from: 4350, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 5800, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 9800, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share First Deck Design Suite (all-inclusive)",
+      inclusions: "All meals by consulting master chefs, premium house wines & beer, private skiff excursions, biking & kayaking, port fees.",
+      lastVerified: "October 2026",
+    },
     stats: {
       length: "62.4m",
       cabins: "20",
@@ -69,8 +91,18 @@ export const shipsData: Record<string, ShipData> = {
   "jayavarman": {
     slug: "jayavarman",
     name: "The Jayavarman",
+    operator: "Heritage Line",
+    operatorNote: "Built and operated by Heritage Line. Curated and booked by Mekong River Cruise with Best Price Guarantee and verified cabin allocations.",
     tagline: "Where teak meets twilight, and history pours the drinks",
     heroImage: "/images/jayavarman.avif",
+    pricing: {
+      threeNight: { from: 1260, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 1680, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 2403, route: "Ho Chi Minh City ↔ Siem Reap (The Lost Civilization)" },
+      basis: "Per person, twin-share Superior Stateroom",
+      inclusions: "All onboard gourmet meals, daily shore excursions with English guide, entrance fees, transfers during tours, mineral water, coffee/tea, port fees.",
+      lastVerified: "October 2026",
+    },
     stats: {
       length: "57.8m",
       cabins: "27",
@@ -102,8 +134,18 @@ export const shipsData: Record<string, ShipData> = {
   "mekong-jewel": {
     slug: "mekong-jewel",
     name: "Mekong Jewel",
+    operator: "Lotus Cruises",
+    operatorNote: "Operated by Lotus Cruises. Curated and booked by Mekong River Cruise with Best Price Guarantee.",
     tagline: "The newest ship on the oldest river. Built to listen.",
     heroImage: "/images/jewel_hero.avif",
+    pricing: {
+      threeNight: { from: 1650, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 2200, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 3850, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Deluxe Balcony Suite",
+      inclusions: "All meals onboard, complimentary house beverages during lunch and dinner, guided daily shore excursions, port charges.",
+      lastVerified: "October 2026",
+    },
     stats: {
       length: "80m",
       cabins: "34",
@@ -135,8 +177,18 @@ export const shipsData: Record<string, ShipData> = {
   "mekong-princess": {
     slug: "mekong-princess",
     name: "Mekong Princess",
+    operator: "Viet Princess Cruises",
+    operatorNote: "Operated by Viet Princess Cruises. Curated and booked by Mekong River Cruise with Best Price Guarantee.",
     tagline: "Fourteen suites. No crowds. Just the river and you.",
     heroImage: "/images/princess_hero.avif",
+    pricing: {
+      threeNight: { from: 1580, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 2100, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 3680, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Junior Suite",
+      inclusions: "All gourmet meals, private butler service, daily excursions, house wine with dinner, port charges.",
+      lastVerified: "October 2026",
+    },
     stats: {
       length: "61m",
       cabins: "14",
@@ -168,8 +220,18 @@ export const shipsData: Record<string, ShipData> = {
   "the-jahan": {
     slug: "the-jahan",
     name: "The Jahan",
+    operator: "Heritage Line",
+    operatorNote: "Heritage Line's flagship vessel. Curated and booked by Mekong River Cruise with Best Price Guarantee.",
     tagline: "Named for the emperor who built the Taj Mahal. She lives up to it.",
     heroImage: "/images/the_jahan.avif",
+    pricing: {
+      threeNight: { from: 1380, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 1840, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 2640, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Superior Balcony Stateroom",
+      inclusions: "All meals onboard, guided shore excursions, onboard lectures, mineral water, coffee/tea, port fees.",
+      lastVerified: "October 2026",
+    },
     stats: {
       length: "70m",
       cabins: "26",
@@ -201,8 +263,18 @@ export const shipsData: Record<string, ShipData> = {
   "victoria-mekong": {
     slug: "victoria-mekong",
     name: "Victoria Mekong",
+    operator: "Victoria Mekong Cruises",
+    operatorNote: "Operated by Victoria Mekong Cruises (Thien Minh Group). Curated and booked by Mekong River Cruise with Best Price Guarantee.",
     tagline: "Clean lines, wide views, and the future of river cruising",
     heroImage: "/images/victoria_mekong.avif",
+    pricing: {
+      threeNight: { from: 790, route: "Can Tho ↔ Phnom Penh" },
+      fourNight: { from: 990, route: "Phnom Penh ↔ Can Tho" },
+      sevenNight: { from: 1690, route: "Can Tho ↔ Siem Reap" },
+      basis: "Per person, twin-share Deluxe Stateroom",
+      inclusions: "All meals onboard, free flow local beer and soft drinks, guided shore excursions, entrance fees, transfers.",
+      lastVerified: "October 2026",
+    },
     stats: {
       length: "76.8m",
       cabins: "35",
@@ -237,8 +309,18 @@ export const shipsData: Record<string, ShipData> = {
 export const defaultShipData = (slug: string, name: string): ShipData => ({
   slug,
   name,
+  operator: "Official Partner Vessel",
+  operatorNote: "Curated and booked by Mekong River Cruise with Best Price Guarantee.",
   tagline: "An unforgettable journey on the Mekong",
   heroImage: `/images/${slug.replace(/-/g, '_')}.avif`,
+  pricing: {
+    threeNight: { from: 1250, route: "Ho Chi Minh City ↔ Phnom Penh" },
+    fourNight: { from: 1750, route: "Phnom Penh ↔ Siem Reap" },
+    sevenNight: { from: 2850, route: "Ho Chi Minh City ↔ Siem Reap" },
+    basis: "Per person, twin-share basis",
+    inclusions: "All meals onboard, guided excursions, entrance fees, and port charges.",
+    lastVerified: "October 2026",
+  },
   stats: {
     length: "60m",
     cabins: "20",

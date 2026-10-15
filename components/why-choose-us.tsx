@@ -53,9 +53,9 @@ const features = [
 ]
 
 const stats = [
-  { value: "5,000+", label: "Happy Travelers" },
-  { value: "150+", label: "Local Partners" },
-  { value: "4.9★", label: "Average Rating" },
+  { value: "15+ Yrs", label: "Mekong Expertise" },
+  { value: "100%", label: "Guaranteed Departures" },
+  { value: "4.9★", label: "TripAdvisor Rating" },
 ]
 
 export function WhyChooseUs() {

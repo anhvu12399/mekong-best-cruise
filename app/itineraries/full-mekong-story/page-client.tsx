@@ -466,9 +466,9 @@ export function FullMekongStoryClient() {
                       )}
                     </div>
 
-                    {day.specs && (
+                    {(day as any).specs && (
                       <div className="mt-6 text-[10px] tracking-wide uppercase font-bold text-navy/40 border-t border-navy/5 pt-4">
-                        {day.specs}
+                        {(day as any).specs}
                       </div>
                     )}
                   </div>

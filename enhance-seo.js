@@ -132,9 +132,9 @@ const SEOMap = {
   // --- Pages ---
   'app/about-us/page.tsx': {
     keywords: [
-      "about Mekong Best Cruise", "Mekong river travel experts", "luxury travel agency Southeast Asia",
+      "about Mekong River Cruise", "Mekong river travel experts", "luxury travel agency Southeast Asia",
       "Mekong cruise specialists", "bespoke tour operator Vietnam", "sustainable travel Mekong",
-      "our story Mekong Best Cruise", "award winning Mekong operator"
+      "our story Mekong River Cruise", "trusted Mekong operator"
     ]
   },
   'app/our-specialists/page.tsx': {
@@ -147,7 +147,7 @@ const SEOMap = {
     keywords: [
       "plan Mekong cruise", "book luxury Mekong tour", "tailor made Mekong itinerary",
       "Mekong cruise inquiry", "custom Southeast Asia river cruise", "Mekong travel planner",
-      "contact Mekong Best Cruise"
+      "contact Mekong River Cruise"
     ]
   }
 };

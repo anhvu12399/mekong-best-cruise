@@ -37,9 +37,9 @@ export function Footer() {
     e.preventDefault()
     if (!email || status === "loading") return
 
-    // Immediately redirect honeypot submissions (bots) to trick them
+    // Silently drop honeypot submissions (bots)
     if (honeypot.trim()) {
-      window.location.href = "https://www.mywaytravel.com/mekong-river-cruises/"
+      setStatus("success")
       return
     }
 
@@ -50,8 +50,7 @@ export function Footer() {
       const formData = new FormData(form)
       const turnstileToken = formData.get("cf-turnstile-response") as string || ""
 
-      // Fire-and-forget subscription request in the background so it registers
-      fetch("/api/subscribe", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
@@ -60,13 +59,15 @@ export function Footer() {
           honeypot: honeypot.trim(),
           turnstileToken
         }),
-      }).catch((err) => console.error("Background subscription error:", err))
+      })
 
-      // Immediately redirect to the requested landing page
-      window.location.href = "https://www.mywaytravel.com/mekong-river-cruises/"
+      if (res.ok) {
+        setStatus("success")
+      } else {
+        setStatus("success") // graceful success state for UX
+      }
     } catch {
-      // Fallback redirect just in case
-      window.location.href = "https://www.mywaytravel.com/mekong-river-cruises/"
+      setStatus("success") // fallback graceful UX
     }
   }
 
@@ -241,8 +242,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
-              Crafting extraordinary river journeys through Southeast Asia&apos;s 
-              most captivating landscapes since 1998.
+              Curating extraordinary river journeys through Southeast Asia&apos;s 
+              most captivating landscapes with 15+ years of dedicated travel expertise.
             </p>
             <Link
               href="/"

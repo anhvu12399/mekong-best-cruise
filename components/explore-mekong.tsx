@@ -3,8 +3,6 @@
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps"
 import { useState, useEffect } from "react"
 
-const REDIRECT_URL = "https://www.toursmekong.com/"
-
 import { useRouter } from "next/navigation"
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"

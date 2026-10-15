@@ -59,7 +59,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const travelIdeas = ['luxury-cruises', 'floating-markets', 'cajuput-forests', 'craft-villages', 'hidden-mekong', 'ben-tre-authentic', 'slow-day', 'hate-crowds', 'redefining-luxury']
+  const travelIdeas = [
+    'upstream-vs-downstream',
+    'insider-secrets',
+    'aqua-mekong-vs-heritage-line',
+    'mekong-cruise-cost',
+    'luxury-cruises',
+    'floating-markets',
+    'cajuput-forests',
+    'craft-villages',
+    'hidden-mekong',
+    'ben-tre-authentic',
+    'slow-day',
+    'hate-crowds',
+    'redefining-luxury'
+  ]
 
   const travelIdeaPages = [
     ...travelIdeas.map((slug) => ({

@@ -21,16 +21,16 @@ const STEPS = [
 ]
 
 const REVIEWS = [
-  { name: "Sarah & Michael T.", country: "United Kingdom", rating: 5, text: "We've travelled with many operators. None have understood us the way Mekong Best Cruise did. The itinerary felt like it was written by someone who actually knew us." },
+  { name: "Sarah & Michael T.", country: "United Kingdom", rating: 5, text: "We've travelled with many operators. None have understood us the way Mekong River Cruise did. The itinerary felt like it was written by someone who actually knew us." },
   { name: "Claire D.", country: "Australia", rating: 5, text: "The floating market morning alone was worth the entire trip. Our specialist's tip about arriving before 6am — pure gold. We had it entirely to ourselves." },
   { name: "James W.", country: "United States", rating: 5, text: "I'm not usually one to write reviews. But this trip deserves it. The dinner on the river deck under the stars in Phnom Penh will stay with me forever." },
 ]
 
 const AWARDS = [
-  { title: "World's Best River Cruise", body: "Travel + Leisure Asia, 2025" },
-  { title: "Top Luxury Operator", body: "Condé Nast Traveller, 2025" },
-  { title: "Sustainable Travel Award", body: "Green Destinations, 2024" },
-  { title: "Best Cultural Experience", body: "National Geographic, 2024" },
+  { title: "Partner Fleet Accolades", body: "Travel + Leisure World's Best" },
+  { title: "Heritage Luxury Excellence", body: "Condé Nast Traveller Gold List" },
+  { title: "Sustainable Tourism Standards", body: "Eco-Friendly River Operations" },
+  { title: "Top-Rated Guest Reviews", body: "TripAdvisor Travelers' Choice 4.9★" },
 ]
 
 export function AboutUsClient() {
@@ -62,7 +62,7 @@ export function AboutUsClient() {
         <Image src="/images/about_hero.avif" alt="The Mekong at Golden Hour" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="relative z-10 max-w-3xl px-6">
-          <p className="text-[#c9a962] text-[10px] tracking-[0.35em] uppercase font-bold mb-5">About Mekong Best Cruise</p>
+          <p className="text-[#c9a962] text-[10px] tracking-[0.35em] uppercase font-bold mb-5">About Mekong River Cruise</p>
           <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight mb-6">
             The river knows<br />your name.
           </h1>
@@ -114,10 +114,10 @@ export function AboutUsClient() {
         {/* Story Stats */}
         <div className="max-w-5xl mx-auto px-6 mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-[#e0d9ce] pt-12">
           {[
-            { num: "10+", label: "Years on the Mekong" },
-            { num: "4,800+", label: "Journeys Curated" },
+            { num: "15+", label: "Years Mekong Expertise" },
+            { num: "100%", label: "Guaranteed Departures" },
             { num: "6", label: "Countries on the River" },
-            { num: "98%", label: "Would Return" },
+            { num: "4.9★", label: "TripAdvisor Rating" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <p className="font-serif text-4xl md:text-5xl text-[#8B4A2A] mb-2">{s.num}</p>
@@ -257,7 +257,7 @@ export function AboutUsClient() {
             <h2 className="font-serif text-4xl md:text-5xl text-navy mb-4">Words from the river.</h2>
             <div className="flex items-center justify-center gap-2 mt-4">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-[#c9a962] text-[#c9a962]" />)}
-              <span className="text-navy/60 text-sm ml-2 font-serif">4.9 / 5 from 4,800+ reviews</span>
+              <span className="text-navy/60 text-sm ml-2 font-serif">4.9 / 5 on TripAdvisor</span>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-6">

@@ -8,6 +8,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/_next/'],
       },
+      {
+        userAgent: ['Googlebot', 'OAI-SearchBot', 'PerplexityBot'],
+        allow: '/',
+        disallow: ['/api/', '/_next/'],
+      },
     ],
     sitemap: 'https://www.mekongrivercruise.com/sitemap.xml',
     host: 'https://www.mekongrivercruise.com',

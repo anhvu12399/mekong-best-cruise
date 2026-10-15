@@ -14,14 +14,14 @@ const playfair = Bodoni_Moda({ subsets: ["latin"] })
 const sections = [
   {
     id: "began",
-    title: "It Started With One Barge. In 1993.",
-    content: "A single restored rice barge, two guides, and the conviction that the right way to know the Mekong was slowly — at the river's own speed. We weren't selling tours. We were learning the river: which bends held the best light at dawn, which villages would let us stop, which markets were worth being up at four in the morning for. We still are.",
+    title: "It Started With a Passion for Slow Travel.",
+    content: "Guided by the conviction that the right way to know the Mekong was slowly — at the river's own speed. We didn't set out to sell mass tours. We set out to truly understand the river: which bends held the best light at dawn, which boutique operators maintained genuine standards of elegance, and which villages welcomed respectful cultural exchange. We still do.",
     image: "/images/heritage_start.avif"
   },
   {
     id: "long-way",
-    title: "The Fleet Grew. The Philosophy Didn't.",
-    content: "Over three decades, the vessels changed — better design, better beds, better kitchens. What didn't change is the refusal to treat the river as a backdrop. We still anchor where the fish are running, still adjust the route when a village festival appears on the calendar, still hire guides from the communities we visit because they know things no itinerary can teach. The river is not our product. It's our host.",
+    title: "Curating Excellence. Honoring the River.",
+    content: "Over fifteen years of dedicated travel design, we handpicked the finest vessels — partnering with world-class operators who share our refusal to treat the river as a backdrop. We select ships that anchor where authentic life unfolds, coordinate private shore excursions, and pair our travelers with the region's top local guides. The river is not a commodity. It's our host.",
     image: "/images/heritage_longway.avif"
   },
   {

@@ -5,8 +5,8 @@ const playfair = Bodoni_Moda({ subsets: ['latin'] })
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Mekong Best Cruise',
-  description: 'Privacy policy for Mekong Best Cruise. We protect your personal data.',
+  title: 'Privacy Policy | Mekong River Cruise',
+  description: 'Privacy policy for Mekong River Cruise. We protect your personal data.',
   alternates: {
     canonical: `${BASE_URL}/privacy-policy`,
   },
@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
       <div className="max-w-4xl mx-auto">
         <h1 className={`text-4xl md:text-5xl text-navy mb-12 ${playfair.className}`}>Privacy Policy</h1>
         <div className="prose prose-navy max-w-none font-serif text-navy/80 space-y-6">
-          <p>At Mekong Best Cruise, we are committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your personal information.</p>
+          <p>At Mekong River Cruise, we are committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your personal information.</p>
           <h2 className="text-2xl text-navy">1. Information Collection</h2>
           <p>We collect information you provide directly to us when booking a tour or contacting our customer service.</p>
           <h2 className="text-2xl text-navy">2. Use of Information</h2>

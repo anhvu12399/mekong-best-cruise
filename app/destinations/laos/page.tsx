@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'Laos Mekong River Cruise | Mekong Best Cruise',
+    title: 'Laos Mekong River Cruise | Mekong River Cruise',
     description: 'Discover Luang Prabang, Vientiane, and the Golden Triangle on a bespoke luxury Mekong cruise through the heart of Laos.',
     images: [{ url: '/images/dest_laos.avif', width: 1200, height: 630, alt: 'Luang Prabang Laos Mekong Cruise' }],
   },

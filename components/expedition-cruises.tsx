@@ -7,38 +7,48 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
-const REDIRECT_URL = "https://www.toursmekong.com/"
+import Link from "next/link"
 
 const ships = [
   {
+    slug: "aqua-mekong",
     name: "Aqua Mekong",
+    operator: "Operated by Aqua Expeditions",
     subtitle: "Where the River Meets the Future",
-    description: "The Aqua Mekong is unlike anything else on the water. Floor-to-ceiling glass, Michelin-trained chefs, and a design so considered it feels almost architectural. But step outside at sunrise and the river has the last word.",
+    description: "The Aqua Mekong is unlike anything else on the water. Floor-to-ceiling glass, Michelin-consulted dining, and an architectural design that brings the river into every suite. Curated by our specialists with private skiff excursions.",
     image: "/images/aqua_mekong.avif"
   },
   {
+    slug: "mekong-jewel",
     name: "Mekong Jewel",
+    operator: "Operated by Lotus Cruises",
     subtitle: "Quiet Luxury. No Compromise.",
-    description: "Not everything beautiful needs to announce itself. The Mekong Jewel earns its name slowly — in the quality of the silence on the sundeck, the way the light falls through your balcony door, the unhurried pace that reminds you why you came.",
+    description: "All-suite, eco-conscious river cruising. The Mekong Jewel earns its acclaim quietly — in the silence on the sundeck, private balconies in every suite, and an unhurried pace designed for discerning travelers.",
     image: "/images/mekong_jewel.avif"
   },
   {
-    name: "Jayavarman",
-    subtitle: "Built for Those Who Read Between the Lines",
-    description: "Named after the great Khmer king who built Angkor Wat, the Jayavarman carries that weight with grace. Colonial teak, hand-stitched fabrics, the smell of frangipani at dusk. History doesn't feel distant here — it feels like it's in the next room.",
+    slug: "jayavarman",
+    name: "The Jayavarman",
+    operator: "Operated by Heritage Line",
+    subtitle: "Built for Those Who Cherish Heritage",
+    description: "Named after Angkor's visionary king and masterfully operated by Heritage Line. French Indochine design, handcrafted teak, antique art, and an intimate 27-cabin sanctuary sailing the classic Saigon–Siem Reap route.",
     image: "/images/jayavarman.avif"
   },
   {
+    slug: "victoria-mekong",
     name: "Victoria Mekong",
-    subtitle: "For the Ones Who Want to Feel It All",
-    description: "The Victoria Mekong doesn't let you stay passive. Markets at dawn, cooking classes by afternoon, the best seat on the sundeck for golden hour. If you travel to be changed rather than just impressed, this is your ship.",
+    operator: "Operated by Victoria Mekong Cruises",
+    subtitle: "Contemporary Eco-Luxury on the Delta",
+    description: "State-of-the-art green propulsion, 360-degree observation decks, infinity pool, and fresh contemporary design. An active, immersive river experience exploring pristine tributaries.",
     image: "/images/victoria_mekong.avif"
   },
   {
-    name: "Mekong Navigator",
-    subtitle: "The Grand One. For Good Reason.",
-    description: "All-suite. All-inclsive. All yours. The Mekong Navigator is for guests who have seen enough of the world to know exactly what they want from it. Sweeping decks, impeccable service, and a kind of calm that only comes when everything has been thought of.",
-    image: "/images/mekong_navigator.avif"
+    slug: "the-jahan",
+    name: "The Jahan",
+    operator: "Operated by Heritage Line",
+    subtitle: "The Romantic British-India Era",
+    description: "Heritage Line's flagship vessel on the Mekong. British-Indian colonial grandeur, 26 opulent private balcony suites, dedicated butler service, and daily cultural lectures as you traverse between Vietnam and Cambodia.",
+    image: "/images/the_jahan.avif"
   }
 ]
 
@@ -59,16 +69,16 @@ export function ExpeditionCruises() {
         
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-24">
-          <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">The Fleet</p>
+          <p className="text-[#8B4A2A] text-[10px] tracking-[0.4em] uppercase font-bold mb-6">Curated Partner Fleet</p>
           <div className="flex items-center justify-center gap-6 mb-8">
             <div className="h-px bg-[#2B3A36]/30 w-16 md:w-40"></div>
             <h2 className={`text-4xl md:text-5xl text-[#2B3A36] ${playfair.className}`}>
-              Choose Your Ship
+              Handpicked Luxury Vessels
             </h2>
             <div className="h-px bg-[#2B3A36]/30 w-16 md:w-40"></div>
           </div>
           <p className="text-[#555] max-w-3xl mx-auto leading-relaxed text-base md:text-lg font-serif">
-            Five vessels. Five different relationships with the river. Some guests know immediately which one is right for them. Others need a conversation. Either way, we&apos;re here.
+            As authorized luxury cruise specialists, we handpick and audit the Mekong&apos;s most prestigious vessels. Each voyage is paired with our Best Price Guarantee, verified cabin allocations, and dedicated concierge planning.
           </p>
         </div>
 
@@ -119,9 +129,14 @@ export function ExpeditionCruises() {
 
                 {/* Overlapping Text Card (Left aligned) */}
                 <div className="relative z-10 w-[90%] md:w-[80%] lg:w-[45%] mt-[280px] lg:mt-0 mx-auto lg:mx-0 lg:ml-8 bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-t-4 border-gold">
-                  <span className="block text-[#9B7B3B] text-xs tracking-[0.2em] uppercase font-bold mb-4">
-                    {ship.name}
-                  </span>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="block text-[#9B7B3B] text-xs tracking-[0.2em] uppercase font-bold">
+                      {ship.name}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-navy/5 text-navy/70 rounded font-sans">
+                      {ship.operator}
+                    </span>
+                  </div>
                   <h3 className={`text-3xl md:text-4xl text-navy mb-6 leading-tight ${playfair.className}`}>
                     {ship.subtitle}
                   </h3>
@@ -129,13 +144,13 @@ export function ExpeditionCruises() {
                     {ship.description}
                   </p>
                   
-                  <button 
-                    onClick={() => window.open(REDIRECT_URL, "_blank")}
+                  <Link 
+                    href={`/ships/${ship.slug}`}
                     className="group inline-flex items-center gap-3 text-sm font-bold tracking-[0.15em] uppercase text-navy hover:text-gold transition-colors"
                   >
-                    <span>Check Availability</span>
+                    <span>View Ship Details & Pricing</span>
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

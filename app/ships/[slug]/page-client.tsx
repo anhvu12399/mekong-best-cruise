@@ -104,14 +104,17 @@ export default function ShipsClient({ data }: { data: ShipData }) {
       {/* ── INTRO TEXT ── */}
       <section className="py-20 lg:py-32 bg-[#f5f5f5]">
         <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#8B4A2A]/10 text-[#8B4A2A] text-[11px] uppercase tracking-widest font-bold rounded-full mb-6">
+            Operated by {data.operator || "Official Fleet Partner"} · Curated by Mekong River Cruise
+          </div>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[42px] text-[#222] mb-10 leading-tight">
             Luxury sailing in Cambodia & Vietnam
           </h2>
           <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light text-left md:text-center">
-            A magnificent presence on the Mekong river, {data.name} showcases modern architecture and exquisite interiors. 
-            As part of our carefully curated fleet, this river cruise ship features {data.stats.cabins} spacious suites that offer spectacular panoramas of the ever-changing scenery.
+            A magnificent presence on the Mekong river, {data.name} showcases authentic maritime architecture and exquisite interiors. 
+            Operated by {data.operator || "our licensed partner"}, this vessel features {data.stats.cabins} suites offering spectacular panoramas of the river.
             <br/><br/>
-            As the {data.name} charts a luxurious passage, onboard guests embark on an inspiring journey of local flavors with a world-class dining experience. The ship guarantees utmost safety, comfort, and exclusivity for off-shore excursions, bringing guests on highly personalized day trips to explore the region.
+            As authorized luxury cruise specialists, we provide direct access to verified cabin allocations with our Best Price Guarantee, dedicated pre-trip concierge, and seamless door-to-ship private transfers.
           </p>
         </div>
       </section>
@@ -400,64 +403,104 @@ export default function ShipsClient({ data }: { data: ShipData }) {
       {/* ── CHOOSE YOUR ITINERARY ── */}
       <section className="py-20 lg:py-32 bg-[#f5f5f5]">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-6">Choose your itinerary</h2>
+          <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-6">Verified Itineraries & Tariff</h2>
           <p className="text-[#555] text-[15px] font-light max-w-2xl mx-auto mb-16">
-            {data.name} offers guests the opportunity to embark on the finest river ship experience in Cambodia and Vietnam, with the choice of the following itineraries.
+            {data.name} sails key route segments across Vietnam and Cambodia. Select an itinerary below to view schedules or check cabin availability with our specialist.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
              {/* Itinerary Card 1 */}
-             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                   <Image src="/images/dest_vietnam.avif" alt="Vietnam Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                   <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">3 Nights</div>
+             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow flex flex-col justify-between">
+                <div>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                     <Image src="/images/dest_vietnam.avif" alt="Vietnam Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                     <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">3 Nights</div>
+                  </div>
+                  <div className="p-8 flex flex-col items-center text-center">
+                     <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Discovery</h3>
+                     <p className="text-[#777] text-sm font-light mb-4">{data.pricing?.threeNight?.route || "Ho Chi Minh City ↔ Phnom Penh"}</p>
+                     <p className="text-[#8B4A2A] text-sm font-bold tracking-widest uppercase mb-1">
+                       From ${data.pricing?.threeNight?.from?.toLocaleString() || "1,260"}
+                     </p>
+                     <p className="text-[#999] text-[11px] mb-8">per person (twin-share)</p>
+                  </div>
                 </div>
-                <div className="p-8 flex flex-col items-center text-center">
-                   <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Discovery Cruise</h3>
-                   <p className="text-[#777] text-sm font-light mb-6">Ho Chi Minh City ↔ Phnom Penh</p>
-                   <p className="text-[#222] text-xs tracking-widest uppercase mb-8">From $3,360 per adult</p>
-                   <Link href="/itineraries/mekong-delta" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
-                      Select
-                   </Link>
+                <div className="px-8 pb-8">
+                  <Link href="/plan-your-journey" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                     Inquire Availability
+                  </Link>
                 </div>
              </div>
 
              {/* Itinerary Card 2 */}
-             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                   <Image src="/images/dest_cambodia.avif" alt="Cambodia Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                   <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">4 Nights</div>
+             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow flex flex-col justify-between">
+                <div>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                     <Image src="/images/dest_cambodia.avif" alt="Cambodia Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                     <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">4 Nights</div>
+                  </div>
+                  <div className="p-8 flex flex-col items-center text-center">
+                     <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Explorer</h3>
+                     <p className="text-[#777] text-sm font-light mb-4">{data.pricing?.fourNight?.route || "Phnom Penh ↔ Siem Reap"}</p>
+                     <p className="text-[#8B4A2A] text-sm font-bold tracking-widest uppercase mb-1">
+                       From ${data.pricing?.fourNight?.from?.toLocaleString() || "1,680"}
+                     </p>
+                     <p className="text-[#999] text-[11px] mb-8">per person (twin-share)</p>
+                  </div>
                 </div>
-                <div className="p-8 flex flex-col items-center text-center">
-                   <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Explorer Cruise</h3>
-                   <p className="text-[#777] text-sm font-light mb-6">Phnom Penh ↔ Siem Reap</p>
-                   <p className="text-[#222] text-xs tracking-widest uppercase mb-8">From $4,480 per adult</p>
-                   <Link href="/itineraries/vietnam-cambodia" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
-                      Select
-                   </Link>
+                <div className="px-8 pb-8">
+                  <Link href="/plan-your-journey" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                     Inquire Availability
+                  </Link>
                 </div>
              </div>
 
              {/* Itinerary Card 3 */}
-             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                   <Image src="/images/hero-3.avif" alt="Full Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                   <div className="absolute top-4 left-4 bg-[#222] text-white text-[10px] tracking-widest uppercase px-3 py-1">7 Nights</div>
+             <div className="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition-shadow flex flex-col justify-between border-2 border-gold/40">
+                <div>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                     <Image src="/images/hero-3.avif" alt="Full Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                     <div className="absolute top-4 left-4 bg-gold text-white text-[10px] tracking-widest uppercase px-3 py-1 font-bold">7 Nights · Classic</div>
+                  </div>
+                  <div className="p-8 flex flex-col items-center text-center">
+                     <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Expedition</h3>
+                     <p className="text-[#777] text-sm font-light mb-4">{data.pricing?.sevenNight?.route || "Ho Chi Minh City ↔ Siem Reap"}</p>
+                     <p className="text-[#8B4A2A] text-sm font-bold tracking-widest uppercase mb-1">
+                       From ${data.pricing?.sevenNight?.from?.toLocaleString() || "2,403"}
+                     </p>
+                     <p className="text-[#999] text-[11px] mb-8">per person (twin-share)</p>
+                  </div>
                 </div>
-                <div className="p-8 flex flex-col items-center text-center">
-                   <h3 className="font-serif text-xl text-[#222] mb-2">{data.name} Expedition Cruise</h3>
-                   <p className="text-[#777] text-sm font-light mb-6">Ho Chi Minh City ↔ Siem Reap</p>
-                   <p className="text-[#222] text-xs tracking-widest uppercase mb-8">From $7,840 per adult</p>
-                   <Link href="/itineraries/small-ship" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
-                      Select
-                   </Link>
+                <div className="px-8 pb-8">
+                  <Link href="/plan-your-journey" className="w-full bg-navy text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-gold transition-colors block text-center">
+                     Book With Best Price Guarantee
+                  </Link>
                 </div>
              </div>
           </div>
           
-          <button className="mt-12 text-[#222] text-[10px] tracking-widest uppercase font-bold border border-[#222] px-8 py-3 hover:bg-[#222] hover:text-white transition-colors">
-            View More Itineraries →
-          </button>
+          {/* Price Transparency & Inclusions Box */}
+          <div className="mt-12 bg-white p-8 border border-[#e0d9ce] max-w-3xl mx-auto text-left shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#e0d9ce] pb-3 mb-4 gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#222]">
+                Price Transparency & Inclusions
+              </span>
+              <span className="text-[10px] uppercase tracking-wider text-[#777]">
+                Verified: {data.pricing?.lastVerified || "October 2026"}
+              </span>
+            </div>
+            <ul className="text-xs text-[#555] space-y-2.5 leading-relaxed font-sans">
+              <li>• <strong>Pricing Basis:</strong> {data.pricing?.basis || "Per person based on twin-share occupancy."}</li>
+              <li>• <strong>What is Included:</strong> {data.pricing?.inclusions || "Onboard suite accommodation, all gourmet meals, daily guided shore excursions, entrance fees, and port charges."}</li>
+              <li>• <strong>Operator Direct Guarantee:</strong> {data.operatorNote || `Booked under official ${data.operator || 'partner'} tariff rates with Best Price Guarantee, dedicated local specialist support, and no booking fees.`}</li>
+            </ul>
+          </div>
+
+          <div className="mt-10">
+            <Link href="/itineraries/vietnam-cambodia" className="text-[#222] text-[10px] tracking-widest uppercase font-bold border border-[#222] px-8 py-3 hover:bg-[#222] hover:text-white transition-colors inline-block">
+              Compare All Mekong Itineraries →
+            </Link>
+          </div>
         </div>
       </section>
 

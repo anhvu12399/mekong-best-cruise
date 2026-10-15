@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, Calendar, MapPin, Anchor, Clock, Info, CheckCircle2 } from "lucide-react"
 
@@ -185,13 +186,13 @@ export function ItineraryTemplate(props: ItineraryProps) {
               <p className="text-white/70 font-serif leading-relaxed mb-10 text-lg">
                 {props.practicalInfo.customization}
               </p>
-              <button 
-                onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
+              <Link 
+                href="/plan-your-journey"
                 className="w-full group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300"
               >
                 <span>Request Availability</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

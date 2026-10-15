@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'Cambodia Mekong Cruise | Mekong Best Cruise',
+    title: 'Cambodia Mekong Cruise | Mekong River Cruise',
     description: 'Explore Angkor Wat, Phnom Penh, and the floating villages of Tonle Sap on a bespoke luxury Mekong river cruise through Cambodia.',
     images: [{ url: '/images/dest_cambodia.avif', width: 1200, height: 630, alt: 'Cambodia Mekong Cruise — Angkor Wat' }],
   },

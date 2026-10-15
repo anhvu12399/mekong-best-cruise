@@ -5,8 +5,6 @@ import Image from "next/image"
 import { Menu, X, ChevronRight, ChevronLeft, Phone } from "lucide-react"
 import Link from "next/link"
 
-const REDIRECT_URL = "https://www.toursmekong.com/"
-
 const navLinks = [
   { label: "Journeys", href: "/journeys" },
   { label: "Experience", href: "/experiences" },
@@ -26,6 +24,10 @@ const navLinks = [
     label: "Travel Ideas",
     href: "#",
     subLinks: [
+      { label: "Upstream vs Downstream", href: "/travel-ideas/upstream-vs-downstream" },
+      { label: "Aqua Mekong vs Heritage Line", href: "/travel-ideas/aqua-mekong-vs-heritage-line" },
+      { label: "Cruise Cost & Pricing Guide", href: "/travel-ideas/mekong-cruise-cost" },
+      { label: "Insider River Secrets", href: "/travel-ideas/insider-secrets" },
       { label: "Luxury Cruises", href: "/travel-ideas/luxury-cruises" },
       { label: "Floating Markets", href: "/travel-ideas/floating-markets" },
       { label: "Cajuput Forests", href: "/travel-ideas/cajuput-forests" },
@@ -353,7 +355,7 @@ export function Header() {
             </div>
             <div className="mt-12 pt-12 border-t border-white/10">
               <p className="text-[13px] text-white/50 leading-relaxed font-serif italic">
-                "Crafting extraordinary river journeys through Southeast Asia's most captivating landscapes since 1993."
+                "Curating extraordinary river journeys through Southeast Asia's most captivating landscapes with bespoke local expertise."
               </p>
             </div>
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'Thailand Mekong River Cruise | Mekong Best Cruise',
+    title: 'Thailand Mekong River Cruise | Mekong River Cruise',
     description: 'Explore Chiang Rai and the legendary Golden Triangle on a bespoke luxury Mekong River cruise through northern Thailand.',
     images: [{ url: '/images/dest_thailand.avif', width: 1200, height: 630, alt: 'Chiang Rai Golden Triangle Mekong Cruise' }],
   },

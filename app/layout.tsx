@@ -30,11 +30,11 @@ const BASE_URL = 'https://www.mekongrivercruise.com'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
-    template: '%s | Mekong Best Cruise',
+    default: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
+    template: '%s | Mekong River Cruise',
   },
   description:
-    'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
+    'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Curated partner vessels, verified pricing, and dedicated local specialists.',
   keywords: [
     // Core high-volume keywords
     'Mekong River Cruise', 'luxury river cruise Southeast Asia', 'Mekong luxury cruise',
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     'Saigon to Phnom Penh boat', 'Luang Prabang river cruise', 'Golden Triangle cruise Thailand',
     'Upper Mekong China cruise', 'Irrawaddy river cruise Myanmar', 'Tonle Sap lake cruise'
   ],
-  authors: [{ name: 'Mekong Best Cruise', url: BASE_URL }],
-  creator: 'Mekong Best Cruise',
-  publisher: 'Mekong Best Cruise',
+  authors: [{ name: 'Mekong River Cruise', url: BASE_URL }],
+  creator: 'Mekong River Cruise',
+  publisher: 'Mekong River Cruise',
   category: 'Travel & Tourism',
   robots: {
     index: true,
@@ -83,27 +83,27 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: BASE_URL,
-    siteName: 'Mekong Best Cruise',
-    title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+    siteName: 'Mekong River Cruise',
+    title: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
     description:
-      'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand, Myanmar & China. Private excursions, Michelin-inspired dining, and unparalleled 5-star service.',
+      'Curated luxury river journeys through Vietnam, Cambodia, Laos, Thailand & China. Verified pricing, authorized partner ships, and bespoke travel design.',
     images: [
       {
         url: '/images/og-image.avif',
         width: 1200,
         height: 630,
-        alt: 'Mekong Best Cruise — Luxury River Journeys',
+        alt: 'Mekong River Cruise — Luxury River Journeys',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mekong Best Cruise | Luxury River Journeys in Southeast Asia',
+    title: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
     description:
-      'Discover the Mekong River on a bespoke luxury cruise through Vietnam, Cambodia, Laos, Thailand & more.',
+      'Curated luxury river journeys through Vietnam, Cambodia, Laos, Thailand & China. Verified pricing, authorized partner ships, and bespoke travel design.',
     images: ['/images/og-image.avif'],
-    creator: '@mekongbestcruise',
+    creator: '@mekongrivercruise',
   },
   icons: {
     icon: [
@@ -138,7 +138,8 @@ export default function RootLayout({
       {
         '@type': 'TravelAgency',
         '@id': `${BASE_URL}/#organization`,
-        name: 'Mekong Best Cruise',
+        name: 'Mekong River Cruise',
+        legalName: 'Mekong River Cruise Co., Ltd',
         url: BASE_URL,
         logo: {
           '@type': 'ImageObject',
@@ -147,20 +148,23 @@ export default function RootLayout({
           height: 140,
         },
         description:
-          'Luxury river cruise operator offering bespoke journeys along the Mekong River through Vietnam, Cambodia, Laos, Thailand, Myanmar and China.',
+          'Curated luxury river cruise specialist and authorized booking agency offering bespoke voyages along the Mekong River across Vietnam, Cambodia, Laos, and Southeast Asia.',
         address: {
           '@type': 'PostalAddress',
+          streetAddress: '139 Nguyen Cu Trinh St, District 1',
+          addressLocality: 'Ho Chi Minh City',
           addressCountry: 'VN',
-          addressRegion: 'Ho Chi Minh City',
         },
+        telephone: '+1 315 998 1998',
+        email: 'sales@mekongrivercruise.com',
         contactPoint: {
           '@type': 'ContactPoint',
+          telephone: '+1 315 998 1998',
           contactType: 'customer service',
           availableLanguage: ['English', 'Vietnamese'],
-          url: 'https://www.toursmekong.com/tailor-made-tours/',
         },
         sameAs: [
-          'https://www.toursmekong.com/',
+          'https://www.tripadvisor.com/Attraction_Review-g293925-d12051706-Reviews-Mekong_River_Cruise-Ho_Chi_Minh_City.html',
         ],
         areaServed: [
           { '@type': 'Country', name: 'Vietnam' },
@@ -170,36 +174,12 @@ export default function RootLayout({
           { '@type': 'Country', name: 'Myanmar' },
           { '@type': 'Country', name: 'China' },
         ],
-        hasOfferCatalog: {
-          '@type': 'OfferCatalog',
-          name: 'Mekong Luxury Cruise Packages',
-          itemListElement: [
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'TouristTrip',
-                name: 'Mekong Delta Vietnam Luxury Cruise',
-                description: 'Explore the iconic floating markets, hidden canals and rich culture of the Mekong Delta on a private luxury river cruise.',
-                touristType: 'Luxury Travelers',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'TouristTrip',
-                name: 'Cambodia & Angkor Mekong Cruise',
-                description: 'Sail from Phnom Penh to Siem Reap and discover Angkor Wat, Tonle Sap Lake and the ancient Khmer civilization on the Mekong.',
-                touristType: 'Luxury Travelers',
-              },
-            },
-          ],
-        },
       },
       {
         '@type': 'WebSite',
         '@id': `${BASE_URL}/#website`,
         url: BASE_URL,
-        name: 'Mekong Best Cruise',
+        name: 'Mekong River Cruise',
         publisher: { '@id': `${BASE_URL}/#organization` },
         potentialAction: {
           '@type': 'SearchAction',
@@ -231,57 +211,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                {
-                  '@type': 'Question',
-                  name: 'What is the best Mekong River Cruise?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'The best Mekong River Cruise depends on your travel style. Top luxury options include the Aqua Mekong, the Jayavarman by Heritage Line, the Mekong Jewel, and The Jahan. For intimate boutique experiences, small-ship cruises offer private sampan excursions into narrow canals. Most cruises depart from Ho Chi Minh City (Vietnam) or Siem Reap (Cambodia).',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'How long is a Mekong River Cruise?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Mekong River Cruises typically range from 1 day to 14 days. Short day-trips and 2-day cruises explore the Mekong Delta near Ho Chi Minh City. Week-long cruises (7–8 nights) travel the full route between Vietnam and Cambodia, passing through Phnom Penh and reaching Siem Reap near Angkor Wat.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'When is the best time to do a Mekong River Cruise?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'The best time for a Mekong River Cruise is October through April during the dry season. November to February offers the most comfortable temperatures and clearest skies. The wet season (May–September) brings higher water levels and lush green scenery, but some canals may be flooded.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'How much does a Mekong River Cruise cost?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Mekong River Cruise prices vary widely. Day trips start from around $50–$100 per person. Luxury 7-night cruises on premium ships like the Aqua Mekong or Jayavarman typically cost $3,000–$8,000+ per person including accommodation, meals, and excursions. Private charter options are also available for groups.',
-                  },
-                },
-                {
-                  '@type': 'Question',
-                  name: 'What countries does the Mekong River Cruise go through?',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'The Mekong River flows through six countries: China, Myanmar, Laos, Thailand, Cambodia, and Vietnam. Most popular cruises operate in the lower Mekong between Vietnam (Ho Chi Minh City / Mekong Delta) and Cambodia (Phnom Penh and Siem Reap near Angkor Wat). Some expedition cruises extend into Laos and Thailand.',
-                  },
-                },
-              ],
-            }),
-          }}
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-414204624"

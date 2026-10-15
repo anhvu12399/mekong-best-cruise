@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Bodoni_Moda } from "next/font/google"
 import { ArrowRight, MapPin, Anchor } from "lucide-react"
 import { destinationsData } from "@/lib/destinations-data"
@@ -177,13 +178,13 @@ export function DestinationTemplate(props: DestinationProps) {
             <p className="text-white/60 font-serif mb-8 max-w-lg mx-auto">
               Our travel artisans can tailor any itinerary to spend more time discovering the secrets of {props.name}.
             </p>
-            <button 
-              onClick={() => window.open("https://www.toursmekong.com/tailor-made-tours/", "_blank")}
+            <Link 
+              href="/plan-your-journey"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-navy text-xs font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300"
             >
               <span>Design Your bespoke journey</span>
               <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     url: PAGE_URL,
-    title: 'Myanmar Luxury River Cruise | Mekong Best Cruise',
+    title: 'Myanmar Luxury River Cruise | Mekong River Cruise',
     description: 'Discover Bagan\'s 2,000 ancient temples and Mandalay\'s royal courts on a bespoke luxury river cruise through Myanmar.',
     images: [{ url: '/images/dest_myanmar.avif', width: 1200, height: 630, alt: 'Bagan Myanmar Luxury River Cruise' }],
   },
