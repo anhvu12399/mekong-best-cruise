@@ -24,6 +24,10 @@ const navLinks = [
     label: "Travel Ideas",
     href: "#",
     subLinks: [
+      { label: "Best Cruises for Seniors (Elevator & Stairs)", href: "/travel-ideas/best-mekong-river-cruise-for-seniors" },
+      { label: "Is Mekong Cruise Worth It? (True Cost)", href: "/travel-ideas/is-mekong-river-cruise-worth-it" },
+      { label: "Guide Francophone (Avis & Prix)", href: "/travel-ideas/croisiere-mekong-comparatif-prix" },
+      { label: "Deutscher Kreuzfahrt-Guide (DACH)", href: "/travel-ideas/mekong-flusskreuzfahrt-vergleich-preise" },
       { label: "Upstream vs Downstream", href: "/travel-ideas/upstream-vs-downstream" },
       { label: "Aqua Mekong vs Heritage Line", href: "/travel-ideas/aqua-mekong-vs-heritage-line" },
       { label: "Cruise Cost & Pricing Guide", href: "/travel-ideas/mekong-cruise-cost" },

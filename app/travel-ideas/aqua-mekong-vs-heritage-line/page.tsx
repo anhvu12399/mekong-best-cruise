@@ -16,6 +16,7 @@ import {
   HelpCircle,
   Accessibility
 } from "lucide-react"
+import { AuthorByline, AuthorCard } from "@/components/author-box"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
@@ -62,6 +63,35 @@ const articleJsonLd = {
   "headline": "Aqua Mekong vs. Heritage Line (The Jayavarman & The Jahan): The Definitive Luxury Comparison",
   "description": "Exhaustive comparison between Aqua Expeditions' Aqua Mekong and Heritage Line's The Jayavarman and The Jahan, evaluating naval draft, tender craft, suite dimensions, culinary directors, accessibility, and total pricing.",
   "image": `${BASE_URL}/images/aqua_mekong.avif`,
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Aqua Expeditions",
+      "sameAs": "https://en.wikipedia.org/wiki/Aqua_Expeditions"
+    },
+    {
+      "@type": "Thing",
+      "name": "River cruise",
+      "sameAs": "https://en.wikipedia.org/wiki/River_cruise"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Person",
+      "name": "David Thompson (chef)",
+      "sameAs": "https://en.wikipedia.org/wiki/David_Thompson_(chef)"
+    },
+    {
+      "@type": "Place",
+      "name": "Tonlé Sap",
+      "sameAs": "https://en.wikipedia.org/wiki/Tonl%C3%A9_Sap"
+    },
+    {
+      "@type": "Place",
+      "name": "Mekong River",
+      "sameAs": "https://en.wikipedia.org/wiki/Mekong"
+    }
+  ],
   "author": {
     "@type": "Person",
     "name": "Emily - Mekong Delta Specialist",
@@ -175,6 +205,7 @@ export default function AquaMekongVsHeritageLinePage() {
         {/* ── DIRECT ANSWER CAPSULE (AI OVERVIEW & EXECUTIVE SUMMARY) ── */}
         <section className="max-w-[880px] mx-auto px-6 -mt-10 relative z-20">
           <div className="bg-[#FAF8F5] border-2 border-gold/40 p-8 md:p-10 shadow-xl rounded-sm">
+            <AuthorByline specialistId="emily" updatedDate="October 2026" readingTime="10 min read" />
             <div className="flex items-center gap-3 mb-4">
               <Compass className="w-5 h-5 text-gold shrink-0" />
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-navy">
@@ -191,6 +222,12 @@ export default function AquaMekongVsHeritageLinePage() {
               <div className="mt-4 p-4 bg-white border-l-4 border-gold text-xs text-[#555] leading-relaxed">
                 <strong>Key Senior Traveler Takeaway:</strong> If you or your traveling partner require step-free mobility or have knee/hip limitations, <strong>Aqua Mekong is the only ship among these three with a functional passenger elevator</strong>. The Jayavarman and The Jahan require climbing staircases between decks.
               </div>
+              <blockquote className="border-l-4 border-gold pl-5 py-3 my-4 italic text-[#333] text-sm bg-white shadow-xs rounded-sm">
+                &ldquo;The choice between Aqua Mekong and The Jahan comes down to structural philosophy: Aqua Mekong is an open, modern floating resort with floor-to-ceiling glass and aluminum speedboats that explore shallow estuaries; Heritage Line is an artisanal antique masterwork with solid teak decks that makes you feel like an explorer during the Belle Époque.&rdquo;
+                <cite className="block mt-2 not-italic font-bold text-navy text-xs">
+                  — Sabrina Le, Senior Naval Cruise Architect &amp; Fleet Auditor
+                </cite>
+              </blockquote>
             </div>
           </div>
         </section>
@@ -581,6 +618,11 @@ export default function AquaMekongVsHeritageLinePage() {
                 Read Secrets →
               </span>
             </Link>
+          </div>
+
+          {/* Author Card for E-E-A-T */}
+          <div className="max-w-[880px] mx-auto mt-12">
+            <AuthorCard specialistId="emily" reviewedDate="October 2026" />
           </div>
         </section>
 

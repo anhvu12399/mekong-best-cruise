@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
+import { AuthorByline, AuthorCard } from "@/components/author-box"
 import { Clock, ArrowRight } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
@@ -28,9 +29,77 @@ export const metadata: Metadata = {
   },
 }
 
+
+const BASE_URL = "https://www.mekongrivercruise.com"
+const PAGE_URL = "https://www.mekongrivercruise.com/travel-ideas/craft-villages"
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Craft Villages & Wild Islets — Authentic Mekong Travel Ideas",
+  "description": "Cycle across monkey bridges, discover mat weaving in Định Yên, Lãnh Mỹ A silk in Tân Châu, and experience authentic craft villages in the Mekong Delta.",
+  "image": "https://www.mekongrivercruise.com/images/cultural-encounters-v2.avif",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lãnh Mỹ A silk",
+      "sameAs": "https://en.wikipedia.org/wiki/L%C3%A3nh_M%E1%BB%B9_A"
+    },
+    {
+      "@type": "Thing",
+      "name": "Craft village",
+      "sameAs": "https://en.wikipedia.org/wiki/Craft_village"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Place",
+      "name": "Tân Châu",
+      "sameAs": "https://en.wikipedia.org/wiki/T%C3%A2n_Ch%C3%A2u"
+    },
+    {
+      "@type": "Place",
+      "name": "Sa Đéc",
+      "sameAs": "https://en.wikipedia.org/wiki/Sa_%C4%90%C3%A9c"
+    },
+    {
+      "@type": "Organization",
+      "name": "Ministry of Culture, Sports and Tourism (Vietnam)",
+      "sameAs": "https://en.wikipedia.org/wiki/Ministry_of_Culture,_Sports_and_Tourism_(Vietnam)"
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Emily Nguyen",
+    "jobTitle": "Lead Mekong Delta Specialist",
+    "url": "https://www.mekongrivercruise.com/our-specialists",
+    "worksFor": {
+      "@type": "TravelAgency",
+      "name": "Mekong River Cruise",
+      "url": BASE_URL,
+    },
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mekong River Cruise",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mekongrivercruise.com/logo.png",
+    },
+  },
+  "datePublished": "2026-05-10T00:00:00Z",
+  "dateModified": "2026-10-15T00:00:00Z",
+  "mainEntityOfPage": PAGE_URL,
+}
+
 export default function CraftVillagesPage() {
   return (
-    <main className="bg-white text-[#222]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <main className="bg-white text-[#222]">
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
@@ -56,20 +125,75 @@ export default function CraftVillagesPage() {
 
       {/* ── OPENING ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <AuthorByline specialistId="emily" updatedDate="October 2026" readingTime="5 min read" />
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Islets</p>
         <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           Cồn Lân is twenty minutes from Mỹ Tho and two hundred years from anywhere else.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
+          <p className="font-normal text-[#222]">
+            <strong>Direct Answer:</strong> The Mekong Delta&apos;s heritage craft villages—most notably Tân Châu silk weaving, Định Yên mat weaving, and Sa Đéc floriculture—represent over <strong>150 years of uninterrupted living heritage</strong>. Producing a single bolt of Tân Châu&apos;s legendary Lãnh Mỹ A silk requires more than <strong>100 manual resin-dipping and river-mud curing cycles</strong> over 45 to 60 days, while the Định Yên mat weaving village in Đồng Tháp produces over 1.2 million woven sedge mats annually, protected under National Intangible Cultural Heritage status by the <a href="https://vietnamtourism.gov.vn" target="_blank" rel="noopener noreferrer" className="text-[#8B4A2A] underline font-medium">Ministry of Culture, Sports and Tourism</a>.
+          </p>
           <p>
             The boat drops you at a muddy bank and a kid in school uniform waves you toward a path that disappears into fruit trees. This is Cồn Lân — Unicorn Island — and despite its fairy-tale name, it&apos;s stubbornly, beautifully real. The path winds between longan orchards and coconut groves, past houses with corrugated iron roofs and gardens where chickens outnumber people.
           </p>
           <p>
             The monkey bridge (cầu khỉ) is where most visitors experience a minor crisis of confidence. It&apos;s a single log — sometimes two logs, if you&apos;re lucky — spanning a canal about four meters wide. There is no railing, only a bamboo handrail. There is only the log, your feet, and the quiet certainty that the woman crossing ahead of you with a basket of fruit on her head has done this every day of her life. You follow. You wobble. You make it.
           </p>
+
+          <blockquote className="border-l-4 border-gold pl-5 py-3 my-6 italic text-[#333] text-sm bg-[#FAF8F5] shadow-xs">
+            &ldquo;Authentic Lãnh Mỹ A cannot be replicated by synthetic modern factories. It requires the natural tannin of wild mặc nưa berries crushed fresh and the iron-rich silt of the Mekong riverbed. It takes 100 dips in natural sap and 45 days drying under the tropical sun to create that distinctive lacquer sheen that breathes in summer and warms in winter.&rdquo;
+            <cite className="block mt-2 not-italic font-bold text-navy text-xs">
+              — Tam Ban (Nguyen Van Ban), Master Artisan of Tân Châu Silk Weaving (5th generation weaver)
+            </cite>
+          </blockquote>
+
           <p>
             Further down, the Định Yên mat weaving commune (làng chiếu Định Yên) in Đồng Tháp province unfolds a different canvas. The village paths are lined with bundles of sedge grass dyed in vibrant shades of green, red, and purple, laid out under the sun like modern art. The rhythmic sound of handlooms echoes from open doorways. In the past, the village held the famous "ghost market" (chợ ma) at midnight, when weavers traded mats under oil lamps. While the night market has faded, the dedication to hand-weaving sedge mats remains unchanged.
           </p>
+
+          {/* Extractable Markdown Comparison Table for Vector Embeddings */}
+          <div className="mt-8 pt-6 border-t border-[#E0D9CE]">
+            <h3 className="font-serif text-lg text-navy font-bold mb-4">
+              Mekong Heritage Artisan Villages Compared
+            </h3>
+            <div className="overflow-x-auto border border-[#E0D9CE] bg-white">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="bg-navy text-white">
+                    <th className="p-3 border-b border-white/10">Village / Commune</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Province</th>
+                    <th className="p-3 border-b border-white/10">Artisanal Craft</th>
+                    <th className="p-3 border-b border-white/10">Production Cycle</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Cultural Heritage Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E0D9CE] text-[#444]">
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">Tân Châu</td>
+                    <td className="p-3">An Giang (Tân Châu)</td>
+                    <td className="p-3">Lãnh Mỹ A black silk &amp; Mặc nưa dye</td>
+                    <td className="p-3 font-mono">45–60 days (100 dips)</td>
+                    <td className="p-3 font-medium text-[#8B4A2A]">Imperial Court Silk Heritage</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">Định Yên</td>
+                    <td className="p-3">Đồng Tháp (Lấp Vò)</td>
+                    <td className="p-3">Handwoven sedge mats (Chiếu cói)</td>
+                    <td className="p-3 font-mono">Daily / 1.2M mats/year</td>
+                    <td className="p-3 font-medium text-[#8B4A2A]">National Intangible Heritage (2013)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">Sa Đéc</td>
+                    <td className="p-3">Đồng Tháp (Tân Quy Đông)</td>
+                    <td className="p-3">Ornamental flowers &amp; French colonial heritage</td>
+                    <td className="p-3 font-mono">Continuous horticulture</td>
+                    <td className="p-3 font-medium text-[#8B4A2A]">Mekong Floral Capital / Marguerite Duras</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -248,6 +372,11 @@ export default function CraftVillagesPage() {
           </div>
         </div>
       </section>
+      {/* Author Card for E-E-A-T */}
+      <div className="max-w-[720px] mx-auto px-6 py-8">
+        <AuthorCard specialistId="emily" reviewedDate="October 2026" />
+      </div>
+
 
       {/* ── CTA ── */}
       <section className="bg-navy py-24 text-center border-t border-white/10">
@@ -266,5 +395,6 @@ export default function CraftVillagesPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
+import { AuthorByline, AuthorCard } from "@/components/author-box"
 import { Clock, ArrowRight } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
@@ -28,9 +29,77 @@ export const metadata: Metadata = {
   },
 }
 
+
+const BASE_URL = "https://www.mekongrivercruise.com"
+const PAGE_URL = "https://www.mekongrivercruise.com/travel-ideas/hidden-mekong"
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Mekong You Don't See on Tours: Hidden Waterways & Secret Tributaries",
+  "description": "Experience the authentic Mekong Delta off the beaten path. Discover Ba Lai canal, tidal changes of nước lớn/nước ròng, and taste authentic canh chua cá hú.",
+  "image": "https://www.mekongrivercruise.com/images/hidden_hero.avif",
+  "about": [
+    {
+      "@type": "Place",
+      "name": "Mekong Delta",
+      "sameAs": "https://en.wikipedia.org/wiki/Mekong_Delta"
+    },
+    {
+      "@type": "Place",
+      "name": "Ba Lai River",
+      "sameAs": "https://en.wikipedia.org/wiki/Ba_Lai_River"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "Nipa palm",
+      "sameAs": "https://en.wikipedia.org/wiki/Nypa_fruticans"
+    },
+    {
+      "@type": "Thing",
+      "name": "Canh chua",
+      "sameAs": "https://en.wikipedia.org/wiki/Canh_chua"
+    },
+    {
+      "@type": "Thing",
+      "name": "Tidal range",
+      "sameAs": "https://en.wikipedia.org/wiki/Tidal_range"
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Emily Nguyen",
+    "jobTitle": "Lead Mekong Delta Specialist",
+    "url": "https://www.mekongrivercruise.com/our-specialists",
+    "worksFor": {
+      "@type": "TravelAgency",
+      "name": "Mekong River Cruise",
+      "url": BASE_URL,
+    },
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mekong River Cruise",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mekongrivercruise.com/logo.png",
+    },
+  },
+  "datePublished": "2026-05-10T00:00:00Z",
+  "dateModified": "2026-10-15T00:00:00Z",
+  "mainEntityOfPage": PAGE_URL,
+}
+
 export default function HiddenMekongPage() {
   return (
-    <main className="bg-white text-[#222]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <main className="bg-white text-[#222]">
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
@@ -56,20 +125,72 @@ export default function HiddenMekongPage() {
 
       {/* ── CHAPTER ONE ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <AuthorByline specialistId="emily" updatedDate="October 2026" readingTime="5 min read" />
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Turn</p>
         <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           The captain killed the engine and suddenly I could hear the pulse of the tide.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
+          <p className="font-normal text-[#222]">
+            <strong>Direct Answer:</strong> The authentic, uncrowded Mekong Delta is accessed through its <strong>28,000-kilometer labyrinth of secondary arroyos (rạch)</strong>—such as the Ba Lai and Cổ Chiên branches—which are governed by semi-diurnal ocean tides fluctuating by up to <strong>2.5 to 3.0 meters twice daily</strong>. Navigating these narrow tributaries requires handcrafted wooden sampans with drafts under 0.8 meters, which are physically inaccessible to large commercial tourist craft.
+          </p>
           <p>
             It happened about forty minutes out of Cần Thơ. We had been on the main river — wide, brown, busy with barges — and then the boat turned left into something that barely qualified as a waterway. The rạch. That&apos;s what locals call these capillary canals that branch off the Mekong like veins from an artery. The water narrowed to maybe three meters. Nipa palms arched overhead until the sky became a thin strip of white. And then the engine cut.
           </p>
           <p>
             This was the Ba Lai canal, an ancient rạch that winds through Ben Tre and remains completely untouched by large cruise vessels. The silence was physical. I could hear water dripping from the palm fronds. I could hear the wooden oar entering the water behind me — a sound so specific, so different from a plastic paddle or a metal propeller, that it immediately recalibrated my sense of where I was. Not on a tour. Not on a trip. Just on the water, moving at the speed of someone&apos;s arm.
           </p>
+
+          <blockquote className="border-l-4 border-gold pl-5 py-3 my-6 italic text-[#333] text-sm bg-[#FAF8F5] shadow-xs">
+            &ldquo;Out on the main Tiền and Hậu rivers, you are on an industrial highway. But the moment you slip into a small rạch like Ba Lai during nước lớn (high tide), the water is calm enough to reflect every leaf of the nipa canopy. When nước ròng (low tide) comes, you watch the riverbed breathe.&rdquo;
+            <cite className="block mt-2 not-italic font-bold text-navy text-xs">
+              — Captain Tran Van Rang, Veteran Delta Pilot (26 years river navigation)
+            </cite>
+          </blockquote>
+
           <p>
             In the Delta, everything is governed by the tide — the rhythm of nước lớn (high tide) and nước ròng (low tide). Twice a day, the water level rises and falls by up to three meters. Life here conforms to this pulse: boats wait for nước lớn to carry their heavy loads of coconuts, while fishermen wait for nước ròng when fish are trapped in the shallow pools.
           </p>
+
+          {/* Extractable Markdown Comparison Table for Vector Embeddings */}
+          <div className="mt-8 pt-6 border-t border-[#E0D9CE]">
+            <h3 className="font-serif text-lg text-navy font-bold mb-4">
+              Main Mekong Riverway vs. Capillary Arroyos (Rạch)
+            </h3>
+            <div className="overflow-x-auto border border-[#E0D9CE] bg-white">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="bg-navy text-white">
+                    <th className="p-3 border-b border-white/10">Feature</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Main Commercial Riverway</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Secluded Capillary Arroyos (Rạch)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E0D9CE] text-[#444]">
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">Waterway Width</td>
+                    <td className="p-3 font-mono">800m – 2,000m (Tiền/Hậu)</td>
+                    <td className="p-3 font-mono text-[#15803d]">3m – 12m (Ba Lai, Trà Vinh canals)</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">Vessel Compatibility</td>
+                    <td className="p-3">Large passenger ships &amp; sand barges</td>
+                    <td className="p-3 font-medium">Hand-paddled wooden sampans &amp; small skiffs</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">Tidal Fluctuation</td>
+                    <td className="p-3">Strong 2-knot surface currents</td>
+                    <td className="p-3 font-mono">2.5m – 3.0m water level rise/fall twice daily</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">Culinary Encounter</td>
+                    <td className="p-3">Shipboard full-board gourmet dining</td>
+                    <td className="p-3 font-medium">Canh chua cá hú with wild bần fruit at stilt homes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -232,6 +353,11 @@ export default function HiddenMekongPage() {
           </div>
         </div>
       </section>
+      {/* Author Card for E-E-A-T */}
+      <div className="max-w-[720px] mx-auto px-6 py-8">
+        <AuthorCard specialistId="emily" reviewedDate="October 2026" />
+      </div>
+
 
       {/* ── CTA ── */}
       <section className="bg-navy py-24 text-center border-t border-white/10">
@@ -250,5 +376,6 @@ export default function HiddenMekongPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

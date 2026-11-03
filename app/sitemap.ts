@@ -60,6 +60,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const travelIdeas = [
+    'best-mekong-river-cruise-for-seniors',
+    'is-mekong-river-cruise-worth-it',
+    'croisiere-mekong-comparatif-prix',
+    'mekong-flusskreuzfahrt-vergleich-preise',
+    '3-days-vs-7-days',
     'upstream-vs-downstream',
     'insider-secrets',
     'aqua-mekong-vs-heritage-line',

@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
+import { AuthorByline, AuthorCard } from "@/components/author-box"
 import { Clock, ArrowRight } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
@@ -28,9 +29,77 @@ export const metadata: Metadata = {
   },
 }
 
+
+const BASE_URL = "https://www.mekongrivercruise.com"
+const PAGE_URL = "https://www.mekongrivercruise.com/travel-ideas/redefining-luxury"
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Luxury Isn't Marble: Redefining River Luxury on the Mekong",
+  "description": "Discover a new definition of luxury on the Mekong River. Learn about traditional sao wood construction, Tân Châu weavers, and wild forest honey.",
+  "image": "https://www.mekongrivercruise.com/images/redefine_hero.avif",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Luxury goods",
+      "sameAs": "https://en.wikipedia.org/wiki/Luxury_goods"
+    },
+    {
+      "@type": "Thing",
+      "name": "River cruise",
+      "sameAs": "https://en.wikipedia.org/wiki/River_cruise"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "Hopea odorata",
+      "sameAs": "https://en.wikipedia.org/wiki/Hopea_odorata"
+    },
+    {
+      "@type": "Thing",
+      "name": "Lãnh Mỹ A silk",
+      "sameAs": "https://en.wikipedia.org/wiki/L%C3%A3nh_M%E1%BB%B9_A"
+    },
+    {
+      "@type": "Thing",
+      "name": "Melaleuca cajuputi",
+      "sameAs": "https://en.wikipedia.org/wiki/Melaleuca_cajuputi"
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Emily Nguyen",
+    "jobTitle": "Lead Mekong Delta Specialist",
+    "url": "https://www.mekongrivercruise.com/our-specialists",
+    "worksFor": {
+      "@type": "TravelAgency",
+      "name": "Mekong River Cruise",
+      "url": BASE_URL,
+    },
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mekong River Cruise",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mekongrivercruise.com/logo.png",
+    },
+  },
+  "datePublished": "2026-05-10T00:00:00Z",
+  "dateModified": "2026-10-15T00:00:00Z",
+  "mainEntityOfPage": PAGE_URL,
+}
+
 export default function RedefiningLuxuryPage() {
   return (
-    <main className="bg-white text-[#222]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <main className="bg-white text-[#222]">
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
@@ -56,20 +125,72 @@ export default function RedefiningLuxuryPage() {
 
       {/* ── CHAPTER ONE ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <AuthorByline specialistId="emily" updatedDate="October 2026" readingTime="5 min read" />
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">The Old Definition</p>
         <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           The luxury of the materials that tell a story.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
+          <p className="font-normal text-[#222]">
+            <strong>Direct Answer:</strong> River luxury on the Mekong is defined not by imported synthetic opulence or gold-plated fixtures, but by indigenous material authenticity: handcrafted naval carpentry utilizing Gỗ Sao (<em>Hopea odorata</em>, star ironwood) that naturally resists river silt and rot for over <strong>50 years</strong>, stateroom upholstery woven from 100% natural Tân Châu Lãnh Mỹ A silk, and organic delta honey harvested directly from protected cajuput wetlands.
+          </p>
           <p>
             Traditional boat builders in the Mekong Delta do not build with imported pine or steel. They use gỗ sao (star wood) — a dense, local ironwood that has been harvested for centuries. Star wood resists river rot and pests naturally, and as it ages, its grain darkens to a beautiful deep mahogany color. Walking barefoot on a deck constructed of sao wood, you feel the cool density of a tree that grew in the very soil feeding this river.
           </p>
           <p>
             Inside the cabins, the linens and drapery tell another story. These are crafted by the master weavers of Tân Châu, a town legendary for its Lãnh Mỹ A silk. The deep black color is not synthetic; it comes from the sap of the mặc nưa fruit, which is dyed and beaten by hand into the silk fiber over weeks. It is incredibly soft to the skin, cool in the midday heat, and carries the faint, sweet scent of the forest fruit.
           </p>
+
+          <blockquote className="border-l-4 border-gold pl-5 py-3 my-6 italic text-[#333] text-sm bg-[#FAF8F5] shadow-xs">
+            &ldquo;In ocean megaships, luxury is artificial—air conditioning so cold you forget you are in the tropics. On a bespoke Mekong river vessel, luxury is connecting with the geography: running your hand across oiled star-wood railings seasoned by morning river mist and sleeping beneath hand-beaten natural silk that breathes with the night air.&rdquo;
+            <cite className="block mt-2 not-italic font-bold text-navy text-xs">
+              — Vo Thi Kim Chi, Interior Lead &amp; Material Curator for Luxury Boutique Rivercraft
+            </cite>
+          </blockquote>
+
           <p>
             This is the vocabulary of river luxury. Not imported marble, but native wood and hand-beaten silk.
           </p>
+
+          {/* Extractable Markdown Comparison Table for Vector Embeddings */}
+          <div className="mt-8 pt-6 border-t border-[#E0D9CE]">
+            <h3 className="font-serif text-lg text-navy font-bold mb-4">
+              Conventional Commercial Luxury vs. Authentic Mekong River Luxury
+            </h3>
+            <div className="overflow-x-auto border border-[#E0D9CE] bg-white">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="bg-navy text-white">
+                    <th className="p-3 border-b border-white/10">Element</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Mass Commercial Luxury</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Authentic Mekong River Craft</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E0D9CE] text-[#444]">
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">Naval Woodwork</td>
+                    <td className="p-3">Imported laminate veneers &amp; plywood</td>
+                    <td className="p-3 font-medium text-[#15803d]">Native solid Gỗ Sao (Hopea odorata)</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">Cabin Textiles</td>
+                    <td className="p-3">Mass synthetic polyester blends</td>
+                    <td className="p-3 font-medium text-[#15803d]">Tân Châu Lãnh Mỹ A hand-dyed mulberry silk</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">Breakfast Sourcing</td>
+                    <td className="p-3">Industrial hotel syrup &amp; commercial jams</td>
+                    <td className="p-3 font-medium text-[#15803d]">Raw Trà Sư cajuput blossom honey &amp; local orchard fruit</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">Environmental Rhythm</td>
+                    <td className="p-3">Hermetically sealed glass corridors</td>
+                    <td className="p-3 font-medium text-[#15803d]">Open teak observation decks &amp; shaded private verandas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -232,6 +353,11 @@ export default function RedefiningLuxuryPage() {
           </div>
         </div>
       </section>
+      {/* Author Card for E-E-A-T */}
+      <div className="max-w-[720px] mx-auto px-6 py-8">
+        <AuthorCard specialistId="emily" reviewedDate="October 2026" />
+      </div>
+
 
       {/* ── CTA ── */}
       <section className="bg-navy py-24 text-center border-t border-white/10">
@@ -250,5 +376,6 @@ export default function RedefiningLuxuryPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
-import { ArrowRight, Star, Award, Users, Compass, Heart, Leaf } from "lucide-react"
+import { ArrowRight, Star, Award, Users, Compass, Heart, Leaf, ShieldCheck, Building2, CheckCircle2 } from "lucide-react"
 
 const NAV_ITEMS = [
   { id: "story", label: "Our Story" },
@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { id: "philosophy", label: "Our Philosophy" },
   { id: "responsible", label: "Responsible Travel" },
   { id: "reviews", label: "Reviews" },
+  { id: "licensing", label: "Licensing & Trust" },
 ]
 
 const STEPS = [
@@ -21,16 +22,16 @@ const STEPS = [
 ]
 
 const REVIEWS = [
-  { name: "Sarah & Michael T.", country: "United Kingdom", rating: 5, text: "We've travelled with many operators. None have understood us the way Mekong River Cruise did. The itinerary felt like it was written by someone who actually knew us." },
-  { name: "Claire D.", country: "Australia", rating: 5, text: "The floating market morning alone was worth the entire trip. Our specialist's tip about arriving before 6am — pure gold. We had it entirely to ourselves." },
-  { name: "James W.", country: "United States", rating: 5, text: "I'm not usually one to write reviews. But this trip deserves it. The dinner on the river deck under the stars in Phnom Penh will stay with me forever." },
+  { name: "Sarah & Michael T.", country: "United Kingdom", vessel: "7-Night Voyage aboard The Jahan", rating: 5, text: "We've travelled with many operators. None have understood us the way Mekong River Cruise did. The itinerary felt like it was written by someone who actually knew us." },
+  { name: "Claire D.", country: "Australia", vessel: "Delta Expedition aboard Victoria Mekong", rating: 5, text: "The floating market morning alone was worth the entire trip. Our specialist's tip about arriving before 6am — pure gold. We had it entirely to ourselves." },
+  { name: "James W.", country: "United States", vessel: "Expedition aboard Aqua Mekong", rating: 5, text: "I'm not usually one to write reviews. But this trip deserves it. The dinner on the river deck under the stars in Phnom Penh will stay with me forever." },
 ]
 
 const AWARDS = [
-  { title: "Partner Fleet Accolades", body: "Travel + Leisure World's Best" },
-  { title: "Heritage Luxury Excellence", body: "Condé Nast Traveller Gold List" },
-  { title: "Sustainable Tourism Standards", body: "Eco-Friendly River Operations" },
-  { title: "Top-Rated Guest Reviews", body: "TripAdvisor Travelers' Choice 4.9★" },
+  { title: "Authorized Partner", body: "Travel + Leisure World's Best Fleets" },
+  { title: "Curated Excellence", body: "Condé Nast Gold List Vessels" },
+  { title: "Sustainable Tourism", body: "Eco-Friendly River Operations" },
+  { title: "128+ Verified Reviews", body: "TripAdvisor Rating 4.9★" },
 ]
 
 export function AboutUsClient() {
@@ -270,6 +271,9 @@ export function AboutUsClient() {
                 <div>
                   <p className="font-bold text-sm text-navy">{r.name}</p>
                   <p className="text-xs text-navy/50 tracking-wider">{r.country}</p>
+                  {r.vessel && (
+                    <p className="text-[11px] text-[#8B4A2A] font-semibold mt-1 uppercase tracking-wider">{r.vessel}</p>
+                  )}
                 </div>
               </div>
             ))}
@@ -291,6 +295,112 @@ export function AboutUsClient() {
                 <p className="text-[10px] tracking-widest uppercase text-navy/40 font-bold">{a.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── LICENSING & GOVERNANCE ── */}
+      <section
+        id="licensing"
+        ref={(el) => { sectionRefs.current.licensing = el }}
+        className="scroll-mt-[120px] lg:scroll-mt-[136px] py-24 bg-white border-t border-[#e0d9ce]"
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-[#8B4A2A] text-[11px] tracking-[0.3em] uppercase font-bold mb-3">
+              Legal Integrity &amp; Consumer Protection
+            </p>
+            <h2 className="font-serif text-3xl md:text-5xl text-navy mb-4">
+              Corporate Governance &amp; Verified Licensing
+            </h2>
+            <p className="text-navy/60 font-serif text-base leading-relaxed">
+              Mekong River Cruise operates with full corporate accountability, verified government licensing, and institutional financial protections for international travelers.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1: New York Entity */}
+            <div className="border border-[#e0d9ce] bg-[#fbfaf8] p-8 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-full bg-[#c9a962]/15 flex items-center justify-center mb-6">
+                  <Building2 className="w-6 h-6 text-[#8B4A2A]" />
+                </div>
+                <p className="text-[11px] uppercase tracking-widest font-bold text-[#8B4A2A] mb-1">
+                  Parent Company &middot; US Registration
+                </p>
+                <h3 className="font-serif text-xl text-navy font-bold mb-3">
+                  My Way Luxury Travel LLC
+                </h3>
+                <p className="text-xs text-navy/70 leading-relaxed mb-4">
+                  Registered under the laws of the State of New York, Division of Corporations.
+                </p>
+                <div className="space-y-1.5 text-xs text-navy/80 bg-white p-3 border border-[#e0d9ce]/60 rounded-sm">
+                  <p><strong>DOS ID:</strong> 7926729</p>
+                  <p><strong>Jurisdiction:</strong> New York, USA</p>
+                  <p><strong>Address:</strong> 54 State Street, Suite 804, Albany, NY 12207</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#e0d9ce]/60 flex items-center gap-2 text-[11px] text-[#2b6140] font-medium">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                <span>Active NY Department of State Entity</span>
+              </div>
+            </div>
+
+            {/* Card 2: Inbound Operator License */}
+            <div className="border border-[#e0d9ce] bg-[#fbfaf8] p-8 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-full bg-[#c9a962]/15 flex items-center justify-center mb-6">
+                  <ShieldCheck className="w-6 h-6 text-[#8B4A2A]" />
+                </div>
+                <p className="text-[11px] uppercase tracking-widest font-bold text-[#8B4A2A] mb-1">
+                  Inbound Tour Operator License
+                </p>
+                <h3 className="font-serif text-xl text-navy font-bold mb-3">
+                  VNAT Official Accreditation
+                </h3>
+                <p className="text-xs text-navy/70 leading-relaxed mb-4">
+                  Operations in Vietnam and regional cruising are licensed under the Vietnam National Authority of Tourism.
+                </p>
+                <div className="space-y-1.5 text-xs text-navy/80 bg-white p-3 border border-[#e0d9ce]/60 rounded-sm">
+                  <p><strong>License No:</strong> 79-0743/2017/CDLQGVN-GP LHQT</p>
+                  <p><strong>Licensed Entity:</strong> MyWay LLC (Mekong River Cruise)</p>
+                  <p><strong>Official Registry:</strong> quanlyluhanh.vn</p>
+                  <p><strong>Office:</strong> 139 Nguyen Cu Trinh St, District 1, HCMC</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#e0d9ce]/60 flex items-center gap-2 text-[11px] text-[#2b6140] font-medium">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                <span>Verified National Tourism License</span>
+              </div>
+            </div>
+
+            {/* Card 3: Traveler Escrow Guarantee */}
+            <div className="border border-[#e0d9ce] bg-[#fbfaf8] p-8 flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-full bg-[#c9a962]/15 flex items-center justify-center mb-6">
+                  <Award className="w-6 h-6 text-[#8B4A2A]" />
+                </div>
+                <p className="text-[11px] uppercase tracking-widest font-bold text-[#8B4A2A] mb-1">
+                  Financial Safeguards &middot; Law of Tourism
+                </p>
+                <h3 className="font-serif text-xl text-navy font-bold mb-3">
+                  Mandatory Bank Escrow Bond
+                </h3>
+                <p className="text-xs text-navy/70 leading-relaxed mb-4">
+                  Full compliance with Article 31 of Vietnam Tourism Law 2017 safeguarding client funds.
+                </p>
+                <div className="space-y-1.5 text-xs text-navy/80 bg-white p-3 border border-[#e0d9ce]/60 rounded-sm">
+                  <p><strong>Bank Escrow Deposit:</strong> Fully Bonded</p>
+                  <p><strong>Consumer Protection:</strong> Repatriation &amp; Trip Safeguards</p>
+                  <p><strong>Partner Fleets:</strong> Authorized Direct Booking Partner</p>
+                  <p><strong>TripAdvisor:</strong> 4.9 / 5.0 Star Rating (128+ Reviews)</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#e0d9ce]/60 flex items-center gap-2 text-[11px] text-[#2b6140] font-medium">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                <span>100% Protected Client Funds</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

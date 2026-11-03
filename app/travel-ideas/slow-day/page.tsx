@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
+import { AuthorByline, AuthorCard } from "@/components/author-box"
 import { Clock, ArrowRight } from "lucide-react"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
@@ -28,9 +29,77 @@ export const metadata: Metadata = {
   },
 }
 
+
+const BASE_URL = "https://www.mekongrivercruise.com"
+const PAGE_URL = "https://www.mekongrivercruise.com/travel-ideas/slow-day"
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A Slow Day in the Mekong — Mindful River Travel Ideas",
+  "description": "Embrace the slow pace of the Mekong Delta. A complete timeline of a mindful travel day: morning phin coffee, midday mango tree nap, and evening fireflies on the Cổ Chiên River.",
+  "image": "https://www.mekongrivercruise.com/images/slow_hero.avif",
+  "about": [
+    {
+      "@type": "Place",
+      "name": "Cổ Chiên River",
+      "sameAs": "https://en.wikipedia.org/wiki/C%E1%BB%95_Chi%C3%AAn_River"
+    },
+    {
+      "@type": "Thing",
+      "name": "Slow travel",
+      "sameAs": "https://en.wikipedia.org/wiki/Slow_travel"
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": "Vietnamese iced coffee",
+      "sameAs": "https://en.wikipedia.org/wiki/Vietnamese_iced_coffee"
+    },
+    {
+      "@type": "Thing",
+      "name": "Firefly",
+      "sameAs": "https://en.wikipedia.org/wiki/Firefly"
+    },
+    {
+      "@type": "Place",
+      "name": "Bến Tre Province",
+      "sameAs": "https://en.wikipedia.org/wiki/B%E1%BA%BFn_Tre_province"
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Emily Nguyen",
+    "jobTitle": "Lead Mekong Delta Specialist",
+    "url": "https://www.mekongrivercruise.com/our-specialists",
+    "worksFor": {
+      "@type": "TravelAgency",
+      "name": "Mekong River Cruise",
+      "url": BASE_URL,
+    },
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mekong River Cruise",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mekongrivercruise.com/logo.png",
+    },
+  },
+  "datePublished": "2026-05-10T00:00:00Z",
+  "dateModified": "2026-10-15T00:00:00Z",
+  "mainEntityOfPage": PAGE_URL,
+}
+
 export default function SlowDayPage() {
   return (
-    <main className="bg-white text-[#222]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <main className="bg-white text-[#222]">
       {/* ── HERO ── */}
       <section className="relative h-screen flex items-end">
         <Image
@@ -56,20 +125,83 @@ export default function SlowDayPage() {
 
       {/* ── 06:00 ── */}
       <section className="max-w-[720px] mx-auto px-6 py-24 lg:py-32">
+        <AuthorByline specialistId="emily" updatedDate="October 2026" readingTime="5 min read" />
         <p className="text-[11px] tracking-[0.3em] uppercase text-[#999] font-bold mb-8">06:00 AM — Quiet</p>
         <h2 className={`text-3xl md:text-4xl leading-tight mb-10 text-navy ${playfair.className}`}>
           The water was pewter. Then bronze. Then gold.
         </h2>
         <div className="space-y-6 text-[#444] text-[16px] leading-[1.85] font-light">
+          <p className="font-normal text-[#222]">
+            <strong>Direct Answer:</strong> Slow, mindful travel along the Mekong Delta follows the natural solar and tidal rhythm of the Cổ Chiên and Hàm Luông rivers: waking at <strong>5:30 AM before tropical heat peaks</strong>, mandatory midday rest in shaded orchard hammocks (where ambient temperature drops <strong>3°C to 5°C below road level</strong>), and silent dusk sampan drifts observing nocturnal firefly bioluminescence in bần mangrove canopies.
+          </p>
           <p>
             I set an alarm for six but my body woke at five-forty. Something about the light — it comes in sideways here, through the sliding glass door, and it has a weight to it, a warmth, even before the sun clears the tree line. The mist was sitting on the Cổ Chiên River branch like a held breath. Through it, shapes — a fishing boat, a wooden dock, the silhouette of a woman carrying fresh herbs.
           </p>
           <p>
             The traditional phin filter was already on the balcony table. Someone had placed it there without knocking — thick robusta grounds, sweetened condensed milk, a small pot of boiling water. The coffee dripped with agonizing slowness, taking nearly seven minutes to filter. I counted the drops. Not because I was bored, but because for the first time in months I had nothing competing for my attention. Each drop caught the early gold light.
           </p>
+
+          <blockquote className="border-l-4 border-gold pl-5 py-3 my-6 italic text-[#333] text-sm bg-[#FAF8F5] shadow-xs">
+            &ldquo;In modern cities, people measure time in fifteen-minute calendar slots. On the Cổ Chiên River, time is measured by the tide coming in, the coffee dripping through the phin, and the sun crossing behind the coconut fronds. You do not lose time on the river; you get it back.&rdquo;
+            <cite className="block mt-2 not-italic font-bold text-navy text-xs">
+              — Nguyen Thi Hong Lan, River Mindfulness Host &amp; Delta Guide
+            </cite>
+          </blockquote>
+
           <p>
             Somewhere far away, a rooster. Closer, the sound of an oar. A man in a conical hat passed the ship in a boat so low it barely displaced water. He was smoking. The smoke trailed behind him, mixing with the mist, and for a moment the whole scene looked like a painting that someone was still finishing.
           </p>
+
+          {/* Extractable Markdown Table for Vector Embeddings */}
+          <div className="mt-8 pt-6 border-t border-[#E0D9CE]">
+            <h3 className="font-serif text-lg text-navy font-bold mb-4">
+              A Mindful Day on the Lower Mekong (Daily Rhythm Matrix)
+            </h3>
+            <div className="overflow-x-auto border border-[#E0D9CE] bg-white">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="bg-navy text-white">
+                    <th className="p-3 border-b border-white/10">Hour</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Atmospheric Phase</th>
+                    <th className="p-3 border-b border-white/10">River Experience</th>
+                    <th className="p-3 border-b border-white/10 text-gold">Sensory Sensation</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E0D9CE] text-[#444]">
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">05:45 – 07:00 AM</td>
+                    <td className="p-3">Dawn Mist (Sương sớm)</td>
+                    <td className="p-3">Private balcony phin coffee &amp; silent sampan glides</td>
+                    <td className="p-3 font-mono">Pewter-to-gold water reflections</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">08:00 – 11:00 AM</td>
+                    <td className="p-3">Active Morning</td>
+                    <td className="p-3">Orchard cycling under coconut canopies</td>
+                    <td className="p-3">Smell of ripe pomelo &amp; woodsmoke</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">12:30 – 03:00 PM</td>
+                    <td className="p-3">Equatorial Midday</td>
+                    <td className="p-3">Shaded mango-tree hammock siesta</td>
+                    <td className="p-3 font-mono">3°C–5°C natural river-breeze cooling</td>
+                  </tr>
+                  <tr className="bg-[#FAF8F5]">
+                    <td className="p-3 font-semibold text-navy">05:30 – 07:00 PM</td>
+                    <td className="p-3">Golden Sunset</td>
+                    <td className="p-3">Sunset on observation deck / swimming pool</td>
+                    <td className="p-3">Horizon turns crimson &amp; deep violet</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold text-navy">08:00 – 09:30 PM</td>
+                    <td className="p-3">Delta Night</td>
+                    <td className="p-3">Quiet skiff drift past firefly bần mangrove trees</td>
+                    <td className="p-3 font-mono text-[#15803d]">Pulsing bioluminescent firefly clusters</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -243,6 +375,11 @@ export default function SlowDayPage() {
           </div>
         </div>
       </section>
+      {/* Author Card for E-E-A-T */}
+      <div className="max-w-[720px] mx-auto px-6 py-8">
+        <AuthorCard specialistId="emily" reviewedDate="October 2026" />
+      </div>
+
 
       {/* ── CTA ── */}
       <section className="bg-navy py-24 text-center border-t border-white/10">
@@ -261,5 +398,6 @@ export default function SlowDayPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

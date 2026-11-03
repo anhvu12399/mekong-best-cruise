@@ -54,6 +54,10 @@ export default function BookingTermsPage() {
           <h2 className="font-serif text-2xl mb-4">7. Complaints</h2>
           <p>If something goes wrong during your journey, please raise it with your guide or the ship&apos;s manager immediately so it can be addressed. Written complaints should be sent to <a href="mailto:sales@mekongrivercruise.com" className="text-[#b8860b] hover:underline">sales@mekongrivercruise.com</a> within 30 days of your return.</p>
         </div>
+        <div>
+          <h2 className="font-serif text-2xl mb-4">8. Company Registration &amp; Licensing</h2>
+          <p>Mekong River Cruise is a subsidiary division of My Way Travel (My Way Luxury Travel LLC, registered with the New York Department of State, DOS ID: 7926729, 54 State Street, Suite 804, Albany, NY 12207). Vietnam and regional operations are licensed under Vietnam International Tour Operator License No. 79-0743/2017/CDLQGVN-GP LHQT issued by the Vietnam National Authority of Tourism (VNAT) with registered office at 139 Nguyen Cu Trinh St, District 1, Ho Chi Minh City, Vietnam. Fully bonded with statutory bank escrow guarantee.</p>
+        </div>
       </section>
     </main>
   );

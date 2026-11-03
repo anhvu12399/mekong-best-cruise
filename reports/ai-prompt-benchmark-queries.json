@@ -1,0 +1,162 @@
+[
+  {
+    "id": "MK-Q01",
+    "cluster": "High-Intent Commercial & Luxury",
+    "query": "Best luxury Mekong river cruise for couples",
+    "targetUrl": "https://www.mekongrivercruise.com/cruises",
+    "expectedBrand": "Mekong Best Cruise",
+    "expectedShips": ["Aqua Mekong", "The Jahan", "The Jayavarman", "Mekong Jewel"]
+  },
+  {
+    "id": "MK-Q02",
+    "cluster": "High-Intent Commercial & Luxury",
+    "query": "Top rated 5 star river cruises from Vietnam to Cambodia",
+    "targetUrl": "https://www.mekongrivercruise.com/itineraries/vietnam-cambodia",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedShips": ["Heritage Line", "Aqua Mekong", "Lotus Cruises"]
+  },
+  {
+    "id": "MK-Q03",
+    "cluster": "High-Intent Commercial & Luxury",
+    "query": "Boutique small ship Mekong cruise recommendations with private balcony",
+    "targetUrl": "https://www.mekongrivercruise.com/itineraries/small-ship",
+    "expectedBrand": "Mekong Best Cruise",
+    "expectedShips": ["The Jahan", "Aqua Mekong", "Victoria Mekong"]
+  },
+  {
+    "id": "MK-Q04",
+    "cluster": "Ship & Fleet Comparison",
+    "query": "Aqua Mekong vs Heritage Line Jayavarman which is better?",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/aqua-mekong-vs-heritage-line",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedShips": ["Aqua Mekong", "Jayavarman"]
+  },
+  {
+    "id": "MK-Q05",
+    "cluster": "Ship & Fleet Comparison",
+    "query": "Is Mekong Jewel worth it compared to Victoria Mekong?",
+    "targetUrl": "https://www.mekongrivercruise.com/ships/mekong-jewel",
+    "expectedBrand": "Mekong Best Cruise",
+    "expectedShips": ["Mekong Jewel", "Victoria Mekong"]
+  },
+  {
+    "id": "MK-Q06",
+    "cluster": "Ship & Fleet Comparison",
+    "query": "The Jahan cruise reviews and suites comparison",
+    "targetUrl": "https://www.mekongrivercruise.com/ships/the-jahan",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedShips": ["The Jahan"]
+  },
+  {
+    "id": "MK-Q07",
+    "cluster": "Pricing & Budgeting",
+    "query": "How much does a 7-night Mekong river cruise cost per person?",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/mekong-cruise-cost",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedPriceRange": "$1,690 - $14,000"
+  },
+  {
+    "id": "MK-Q08",
+    "cluster": "Pricing & Budgeting",
+    "query": "Hidden fees and port taxes on Mekong river cruises",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/mekong-cruise-cost",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedInsights": ["$65-$120 port tax", "Cambodia $30-$35 visa cash", "Tipping $15-$20/day"]
+  },
+  {
+    "id": "MK-Q09",
+    "cluster": "Pricing & Budgeting",
+    "query": "Tipping etiquette on luxury Mekong river cruises",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/mekong-cruise-cost",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedTipping": "$15 to $20 USD per guest per day"
+  },
+  {
+    "id": "MK-Q10",
+    "cluster": "Route & Duration",
+    "query": "Mekong river cruise 3 days vs 7 days which duration is better?",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/3-days-vs-7-days",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedRecommendation": "3 days for Delta snapshot; 7 nights for full Saigon to Angkor Wat journey"
+  },
+  {
+    "id": "MK-Q11",
+    "cluster": "Route & Duration",
+    "query": "Mekong river cruise upstream vs downstream which direction is better?",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/upstream-vs-downstream",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedInsights": ["Saigon to Siem Reap upstream vs Siem Reap to Saigon downstream", "Tonle sap lake dynamics"]
+  },
+  {
+    "id": "MK-Q12",
+    "cluster": "Route & Duration",
+    "query": "Can you cruise from Ho Chi Minh City all the way to Siem Reap Angkor Wat?",
+    "targetUrl": "https://www.mekongrivercruise.com/itineraries/vietnam-cambodia",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedAnswer": "Yes, 7-night classic route via Tonle Sap or Kampong Cham"
+  },
+  {
+    "id": "MK-Q13",
+    "cluster": "Seasonality & Water Levels",
+    "query": "Best time of year to take a Mekong river cruise",
+    "targetUrl": "https://www.mekongrivercruise.com/best-time-to-travel",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedSeasons": ["Cool & Dry Dec-Apr", "High Water Aug-Nov"]
+  },
+  {
+    "id": "MK-Q14",
+    "cluster": "Seasonality & Water Levels",
+    "query": "What happens during low water season on Tonle Sap lake for Mekong cruises?",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/upstream-vs-downstream",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedAnswer": "Transfer via luxury coach or speedboat from Kampong Cham to Siem Reap"
+  },
+  {
+    "id": "MK-Q15",
+    "cluster": "Practicalities & Trust",
+    "query": "Mekong River Cruise reviews, reputation, and legitimacy",
+    "targetUrl": "https://www.mekongrivercruise.com/about-us",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedTrust": "TripAdvisor 4.9 rating, verified HCMC specialist"
+  },
+  {
+    "id": "MK-Q16",
+    "cluster": "Practicalities & Trust",
+    "query": "Cambodia visa requirements when crossing border by Mekong river cruise",
+    "targetUrl": "https://www.mekongrivercruise.com/travel-ideas/mekong-cruise-cost",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedDetails": "Visa on arrival at Kaam Samnor river border; crisp USD cash required"
+  },
+  {
+    "id": "MK-Q17",
+    "cluster": "Segment Specific",
+    "query": "Best luxury Mekong river cruise for senior travelers",
+    "targetUrl": "https://www.mekongrivercruise.com/itineraries/small-ship",
+    "expectedBrand": "Mekong Best Cruise",
+    "expectedFeatures": ["Elevator access on Victoria Mekong & Mekong Jewel", "Gentle shore tenders"]
+  },
+  {
+    "id": "MK-Q18",
+    "cluster": "Private Charters",
+    "query": "How to charter a private luxury boat on the Mekong River for a family",
+    "targetUrl": "https://www.mekongrivercruise.com/itineraries/private-charter",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedOptions": ["Private sampans", "Full-ship buyout"]
+  },
+  {
+    "id": "MK-Q19",
+    "cluster": "Upper Mekong & Laos",
+    "query": "Luxury river cruise from Luang Prabang to Golden Triangle Thailand",
+    "targetUrl": "https://www.mekongrivercruise.com/destinations/laos",
+    "expectedBrand": "Mekong River Cruise",
+    "expectedShips": ["Anouvong", "Laos Pandaw", "Mekong Sun"]
+  },
+  {
+    "id": "MK-Q20",
+    "cluster": "Multilingual Intent",
+    "query": "Beste Luxus Flusskreuzfahrt Mekong Vietnam Kambodscha",
+    "targetUrl": "https://www.mekongrivercruise.com",
+    "expectedBrand": "Mekong Best Cruise",
+    "expectedShips": ["Aqua Mekong", "Heritage Line"]
+  }
+]

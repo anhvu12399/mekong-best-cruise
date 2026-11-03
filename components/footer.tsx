@@ -15,8 +15,11 @@ const footerLinks = {
   company: [
     { label: "About Us", href: "/about-us" },
     { label: "Our Vessels", href: "/cruises" },
+    { label: "Senior Travel Guide", href: "/travel-ideas/best-mekong-river-cruise-for-seniors" },
+    { label: "Is Cruise Worth It?", href: "/travel-ideas/is-mekong-river-cruise-worth-it" },
+    { label: "Guide Français (Avis)", href: "/travel-ideas/croisiere-mekong-comparatif-prix" },
+    { label: "Kreuzfahrt Ratgeber (DE)", href: "/travel-ideas/mekong-flusskreuzfahrt-vergleich-preise" },
     { label: "Sustainability", href: "/sustainability" },
-    { label: "Careers", href: "/careers" },
   ],
   support: [
     { label: "FAQs", href: "/faqs" },
@@ -330,12 +333,19 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
-            <p>&copy; {new Date().getFullYear()} Mekong River Cruise. All rights reserved.</p>
-            <div className="flex items-center gap-8">
-              <Link href="/terms-conditions" className="hover:text-gold transition-colors">Terms</Link>
-              <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy</Link>
-              <Link href="/booking-terms" className="hover:text-gold transition-colors">Booking</Link>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
+            <div className="space-y-1.5 max-w-3xl">
+              <p className="font-medium text-white/80">
+                &copy; {new Date().getFullYear()} Mekong River Cruise Co., Ltd. A subsidiary of My Way Travel (My Way Luxury Travel LLC, New York DOS ID: 7926729).
+              </p>
+              <p className="text-[11px] text-white/45 leading-relaxed">
+                Authorized Luxury River Cruise Agency &amp; Inbound Specialist · Tours operated under Vietnam International Tour Operator License No. <strong className="text-white/60 font-semibold">79-0743/2017/CDLQGVN-GP LHQT</strong> (issued by VNAT) · Registered Office: 139 Nguyen Cu Trinh St, District 1, Ho Chi Minh City, Vietnam.
+              </p>
+            </div>
+            <div className="flex items-center gap-6 shrink-0 text-white/60">
+              <Link href="/terms-conditions" className="hover:text-gold transition-colors">Terms &amp; Conditions</Link>
+              <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+              <Link href="/booking-terms" className="hover:text-gold transition-colors">Booking &amp; Refunds</Link>
             </div>
           </div>
         </div>

@@ -20,9 +20,53 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'TouristTrip',
+      '@id': `${PAGE_URL}/#trip`,
+      name: 'The Full Mekong Story (10-Day Vietnam & Laos Expedition)',
+      description: 'A 10-day luxury cross-border journey exploring both the Lower Mekong Delta and the mystical Upper Mekong river gorges in Luang Prabang, Laos.',
+      touristType: ['Luxury Explorers', 'Cultural Travelers', 'Photographers'],
+      itinerary: [
+        { '@type': 'TouristAttraction', name: 'Ho Chi Minh City & Saigon River' },
+        { '@type': 'TouristAttraction', name: 'Mekong Delta Channels & Cai Rang Market' },
+        { '@type': 'TouristAttraction', name: 'Luang Prabang UNESCO World Heritage Center' },
+        { '@type': 'TouristAttraction', name: 'Pak Ou Sacred Caves' },
+        { '@type': 'TouristAttraction', name: 'Kuang Si Waterfalls & Golden Triangle' },
+      ],
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'USD',
+        price: '3450',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2026-01-01',
+      },
+      provider: {
+        '@type': 'TravelAgency',
+        name: 'Mekong River Cruise',
+        url: BASE_URL,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Itineraries', item: `${BASE_URL}/cruises` },
+        { '@type': 'ListItem', position: 3, name: 'The Full Mekong Story', item: PAGE_URL },
+      ],
+    },
+  ],
+}
+
 export default function FullMekongStoryPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main>
         <FullMekongStoryClient />

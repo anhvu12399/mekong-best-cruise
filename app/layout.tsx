@@ -139,7 +139,44 @@ export default function RootLayout({
         '@type': 'TravelAgency',
         '@id': `${BASE_URL}/#organization`,
         name: 'Mekong River Cruise',
+        alternateName: ['Mekong Best Cruise', 'Mekong Luxury River Cruises'],
         legalName: 'Mekong River Cruise Co., Ltd',
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'My Way Luxury Travel LLC',
+          identifier: 'New York DOS ID: 7926729',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '54 State Street, Suite 804',
+            addressLocality: 'Albany',
+            addressRegion: 'NY',
+            postalCode: '12207',
+            addressCountry: 'US',
+          },
+        },
+        hasCredential: [
+          {
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'government license',
+            name: 'International Tour Operator License',
+            identifier: '79-0743/2017/CDLQGVN-GP LHQT',
+            recognizedBy: {
+              '@type': 'GovernmentOrganization',
+              name: 'Vietnam National Authority of Tourism (VNAT)',
+              url: 'https://quanlyluhanh.vn',
+            },
+          },
+          {
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'corporate registration',
+            name: 'New York Department of State Business Entity',
+            identifier: 'DOS ID: 7926729',
+            recognizedBy: {
+              '@type': 'GovernmentOrganization',
+              name: 'New York Department of State, Division of Corporations',
+            },
+          },
+        ],
         url: BASE_URL,
         logo: {
           '@type': 'ImageObject',
@@ -155,8 +192,23 @@ export default function RootLayout({
           addressLocality: 'Ho Chi Minh City',
           addressCountry: 'VN',
         },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 10.7634,
+          longitude: 106.6896,
+        },
         telephone: '+1 315 998 1998',
         email: 'sales@mekongrivercruise.com',
+        priceRange: '$$$',
+        currenciesAccepted: 'USD, EUR, GBP, AUD',
+        paymentAccepted: 'Credit Card, Bank Transfer',
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '128',
+          bestRating: '5',
+          worstRating: '1',
+        },
         contactPoint: {
           '@type': 'ContactPoint',
           telephone: '+1 315 998 1998',
@@ -165,6 +217,7 @@ export default function RootLayout({
         },
         sameAs: [
           'https://www.tripadvisor.com/Attraction_Review-g293925-d12051706-Reviews-Mekong_River_Cruise-Ho_Chi_Minh_City.html',
+          'https://wa.me/13159981998',
         ],
         areaServed: [
           { '@type': 'Country', name: 'Vietnam' },
