@@ -443,7 +443,7 @@ export const shipsData: Record<string, ShipData> = {
     operator: "Victoria Mekong Cruises",
     operatorNote: "Operated by Victoria Mekong Cruises (Thien Minh Group). Curated and booked by Mekong River Cruise with Best Price Guarantee.",
     tagline: "Clean lines, wide views, and the future of river cruising",
-    heroImage: "/images/victoria_mekong.avif",
+    heroImage: "/images/victoria_mekong_sideview.jpg",
     pricing: {
       threeNight: { from: 790, route: "Can Tho ↔ Phnom Penh" },
       fourNight: { from: 990, route: "Phnom Penh ↔ Can Tho" },
@@ -470,7 +470,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Modern Retreats",
       description: "The cabins are crisp. White walls, light wood, beds that sit lower to frame the river through the balcony door like a painting. Bathrooms have walk-in rain showers with glass walls that let the morning light pour through.",
-      image: "/images/jewel_suite.avif",
+      image: "/images/victoria_mekong_deluxe_cabin.jpg",
       amenities: ["Private balcony", "Smart TV with streaming", "Walk-in rain shower", "In-room safe", "Bluetooth speaker"],
     },
     cabins: [
@@ -482,7 +482,7 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Private Step-out Balcony with table & chairs",
         bedOrientation: "Low-profile modern bed facing river panorama",
         bathroom: "Walk-in rain shower with glass enclosure",
-        image: "/images/victoria_mekong.avif",
+        image: "/images/victoria_mekong_deluxe_cabin.jpg",
         imageAlt: "Victoria Mekong Deluxe Balcony Stateroom with contemporary eco-design and river balcony",
         description: "Light, airy contemporary design with floor-to-ceiling sliding glass doors opening onto your private balcony. Features clean Scandinavian-influenced aesthetics, smart TV, and walk-in rain shower.",
         features: ["Private step-out balcony with chairs", "Low-profile river-facing bed", "Walk-in glass rain shower", "Eco-friendly solar powered features", "Free-flow local beer & soft drinks"]
@@ -494,12 +494,12 @@ export const shipsData: Record<string, ShipData> = {
       image: "/images/jewel_dining.avif",
     },
     gallery: [
+      "/images/victoria_mekong_sideview.jpg",
+      "/images/victoria_mekong_deluxe_cabin.jpg",
       "/images/victoria_mekong.avif",
       "/images/victoria_mekong_v2.avif",
       "/images/victoria_mekong_v3.avif",
-      "/images/victoria_hero.avif",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif"
+      "/images/victoria_hero.avif"
     ],
   },
   "scenic-spirit": {
@@ -508,7 +508,7 @@ export const shipsData: Record<string, ShipData> = {
     operator: "Scenic Luxury Cruises & Tours",
     operatorNote: "Operated by Scenic. 100% all-inclusive luxury river cruising with private butler service.",
     tagline: "Ultra-luxury all-inclusive with private Sun Lounge balconies",
-    heroImage: "/images/scenic_spirit_deluxe_suite.webp",
+    heroImage: "/images/scenic_spirit_exterior.jpg",
     pricing: {
       threeNight: { from: 3100, route: "Ho Chi Minh City ↔ Phnom Penh" },
       fourNight: { from: 4200, route: "Phnom Penh ↔ Siem Reap" },
@@ -585,12 +585,12 @@ export const shipsData: Record<string, ShipData> = {
       image: "/images/luxury_dining.avif",
     },
     gallery: [
+      "/images/scenic_spirit_exterior.jpg",
+      "/images/scenic_spirit_overview.jpg",
       "/images/scenic_spirit_deluxe_suite.webp",
       "/images/scenic_spirit_grand_deluxe_suite.webp",
       "/images/scenic_spirit_deck_layout.webp",
-      "/images/luxury_dining.avif",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif"
+      "/images/luxury_dining.avif"
     ],
   },
   "anouvong": {
@@ -833,11 +833,11 @@ export const shipsData: Record<string, ShipData> = {
     },
     gallery: [
       "/images/viking_saigon_exterior.jpg",
+      "/images/viking_saigon_render.jpg",
       "/images/luxury-balcony-sunset.avif",
       "/images/fine-dining-deck.avif",
       "/images/luxury_dining.avif",
-      "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif"
+      "/images/dest_vietnam.avif"
     ],
   },
   "emerald-harmony": {
@@ -901,6 +901,331 @@ export const shipsData: Record<string, ShipData> = {
       "/images/luxury-balcony-sunset.avif",
       "/images/fine-dining-deck.avif",
       "/images/luxury_dining.avif",
+      "/images/dest_vietnam.avif",
+      "/images/dest_cambodia.avif"
+    ],
+  },
+  "amadara": {
+    slug: "amadara",
+    name: "AmaDara",
+    operator: "AmaWaterways",
+    operatorNote: "Operated by AmaWaterways. Renowned for culinary excellence and Twin Balcony staterooms.",
+    tagline: "French colonial grace with AmaWaterways' signature Twin Balconies",
+    heroImage: "/images/amadara_exterior.jpg",
+    pricing: {
+      threeNight: { from: 1699, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 2299, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 3999, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Twin Balcony Stateroom",
+      inclusions: "All meals onboard, complimentary wine, beer and soft drinks with lunch/dinner, daily excursions, Wi-Fi.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "92m",
+      cabins: "62",
+      guests: "124",
+      crew: "52",
+    },
+    overview: {
+      title: "French Colonial Charm on the Grand Mekong",
+      description: "Custom-built in Vietnam in 2015, AmaDara marries French colonial elegance with rich wood carvings and woven textiles. Featuring AmaWaterways' signature Twin Balconies — both a French balcony and an outside step-out balcony in every stateroom.",
+    },
+    design: {
+      title: "Twin-Balcony Innovation & Carved Woods",
+      description: "Spacious staterooms adorned with authentic local wood crafts, a Sun Deck pool with bar, fitness room, and two distinct dining venues.",
+      image: "/images/amadara_exterior.jpg",
+    },
+    suites: {
+      title: "Signature Twin Balcony Accommodations",
+      description: "Enjoy fresh river air on your private step-out balcony while keeping a climate-controlled French balcony sitting nook inside.",
+      image: "/images/luxury_sunset_balcony.avif",
+      amenities: ["Signature Twin Balconies", "Multi-jet massage shower", "Complimentary Wi-Fi", "Individually controlled A/C", "Bathrobes & slippers"],
+    },
+    cabins: [
+      {
+        id: "twin-balcony-stateroom",
+        name: "Twin Balcony Stateroom (Cat A & B)",
+        deck: "Saigon & Tonle Decks (56 Cabins)",
+        size: "23.3 m² (251 sq ft)",
+        balconyType: "Signature Twin Balcony (French Balcony + Outside Step-out Balcony)",
+        bedOrientation: "River-facing hotel bed",
+        bathroom: "Spacious bathroom with multi-jet shower & premium bath products",
+        image: "/images/amadara_exterior.jpg",
+        imageAlt: "AmaDara Twin Balcony Stateroom with French balcony and private outside veranda",
+        description: "Features AmaWaterways' trademark Twin Balcony design with both a French balcony and a private step-out balcony offering unhindered Mekong views.",
+        features: ["Signature Twin Balconies (French + Step-out)", "Multi-jet shower massage system", "Complimentary Wi-Fi & movie infotainment", "Individually controlled air conditioning", "Robes & slippers provided"]
+      }
+    ],
+    dining: {
+      title: "The Main Restaurant & The Chef's Table",
+      description: "Fine dining featuring regional Vietnamese and Cambodian specialties alongside classic Western menus, with complimentary free-flowing regional wines.",
+      image: "/images/luxury_dining.avif",
+    },
+    gallery: [
+      "/images/amadara_exterior.jpg",
+      "/images/luxury-balcony-sunset.avif",
+      "/images/fine-dining-deck.avif",
+      "/images/luxury_dining.avif",
+      "/images/dest_vietnam.avif",
+      "/images/dest_cambodia.avif"
+    ],
+  },
+  "avalon-saigon": {
+    slug: "avalon-saigon",
+    name: "Avalon Saigon",
+    operator: "Avalon Waterways",
+    operatorNote: "Operated by Avalon Waterways. Featuring Suite Ship design with beds facing the river view.",
+    tagline: "Signature Open-Air Balconies with wall-to-wall river views",
+    heroImage: "/images/avalon_saigon_exterior.jpg",
+    pricing: {
+      threeNight: { from: 1750, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 2350, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 4100, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Panorama Suite",
+      inclusions: "All meals onboard, regional wines and beers with meals, certified Avalon local guides, all shore excursions.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "53m",
+      cabins: "18",
+      guests: "36",
+      crew: "24",
+    },
+    overview: {
+      title: "Intimate Suite-Ship Architecture",
+      description: "Hosting just 36 guests, Avalon Saigon is an intimate boutique ship designed specifically for the Mekong. Features 14-foot wall-to-wall, floor-to-ceiling panoramic windows that slide open 9 feet to turn your entire suite into an Open-Air Balcony.",
+    },
+    design: {
+      title: "Beds Facing the View & Open-Air Lounging",
+      description: "Unlike conventional cruise cabins where beds face interior walls, Avalon's Comfort-Collection beds are oriented 100% outward to watch the river unfold.",
+      image: "/images/avalon_saigon_exterior.jpg",
+    },
+    suites: {
+      title: "All-Panorama Suite Comfort",
+      description: "245 sq ft of living space with marble bathroom, large glass shower, and motorized wall-to-wall open-air sliding doors.",
+      image: "/images/luxury_sunset_balcony.avif",
+      amenities: ["Motorized Open-Air Balcony", "Direct river-facing beds", "Marble bathroom", "L'Occitane bath amenities", "Nightly turndown"],
+    },
+    cabins: [
+      {
+        id: "panorama-suite",
+        name: "Panorama Suite (Tonle & Mekong Decks)",
+        deck: "Tonle (Cat A) & Mekong (Cat B) Decks (18 Suites)",
+        size: "22.8 m² (245 sq ft)",
+        balconyType: "Avalon Open-Air Balcony (9-foot motorized panoramic opening)",
+        bedOrientation: "100% Direct River-Facing bed (Beds Face the View)",
+        bathroom: "Full marble bathroom with walk-in shower & L'Occitane toiletries",
+        image: "/images/avalon_saigon_exterior.jpg",
+        imageAlt: "Avalon Saigon Panorama Suite with direct river-facing beds and wall-to-wall Open-Air Balcony",
+        description: "Avalon's revolutionary Suite Ship concept: comfort-collection beds oriented directly towards the river, with giant sliding glass doors creating an open-air pavilion.",
+        features: ["Motorized 9-foot wall-to-wall Open-Air Balcony", "Direct river-facing Comfort-Collection beds", "Marble bathroom with premium L'Occitane amenities", "Only 36 guests onboard for ultimate intimacy", "Nightly port lectures & cultural entertainment"]
+      }
+    ],
+    dining: {
+      title: "Panoramic Dining Room & Panorama Lounge",
+      description: "Fresh local ingredients prepared by executive chefs, paired with complimentary wines, beer, and soft drinks with lunch and dinner.",
+      image: "/images/fine-dining-deck.avif",
+    },
+    gallery: [
+      "/images/avalon_saigon_exterior.jpg",
+      "/images/luxury-balcony-sunset.avif",
+      "/images/fine-dining-deck.avif",
+      "/images/luxury_dining.avif",
+      "/images/dest_vietnam.avif",
+      "/images/dest_cambodia.avif"
+    ],
+  },
+  "mekong-navigator": {
+    slug: "mekong-navigator",
+    name: "Mekong Navigator",
+    operator: "Lotus Cruises",
+    operatorNote: "Operated by Lotus Cruises. French colonial grandeur inspired by Old Saigon aristocrats.",
+    tagline: "Timeless French Indochine grandeur with boutique all-suite service",
+    heroImage: "/images/mekong_navigator_exterior.jpg",
+    pricing: {
+      threeNight: { from: 1550, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 2050, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 3600, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Superior / Vista Suite",
+      inclusions: "All meals onboard, regional beer and house spirits, daily guided excursions, passenger elevator access.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "70m",
+      cabins: "34",
+      guests: "68",
+      crew: "42",
+    },
+    overview: {
+      title: "Old Saigon Nobility on the Water",
+      description: "Evoking the romance of 1930s French Indochina with rich mahogany wood, French balconies, clawfoot soaking tubs in Grand Suites, and an internal passenger elevator connecting cabin decks.",
+    },
+    design: {
+      title: "Colonial Manor Architecture & Passenger Lift",
+      description: "Atmospheric interior salons, Le Salon lounge, La Vie spa, and an onboard passenger elevator serving residential decks.",
+      image: "/images/mekong_navigator_exterior.jpg",
+    },
+    suites: {
+      title: "Grand & Prestige Suites",
+      description: "Opulent suites with French double doors, individual climate control, and dedicated butler attention in premium categories.",
+      image: "/images/luxury_sunset_balcony.avif",
+      amenities: ["French balcony", "Passenger elevator access", "En-suite marble bathroom", "Butler service (select suites)", "Pillow menu"],
+    },
+    cabins: [
+      {
+        id: "prestige-suite",
+        name: "Prestige & Signature Suites",
+        deck: "Orchid & Lotus Decks (34 All-Suite Accommodations)",
+        size: "27 m² - 36 m² (291 - 387 sq ft)",
+        balconyType: "French Balcony with double opening doors",
+        bedOrientation: "Boutique Indochine queen/twin beds",
+        bathroom: "Custom marble bathroom with clawfoot tub or walk-in rainfall shower",
+        image: "/images/mekong_navigator_profile.jpg",
+        imageAlt: "Mekong Navigator Prestige Suite with French colonial mahogany furnishings and French balcony",
+        description: "Handcrafted Indochine furnishings, French double doors opening to river panoramas, and personalized white-glove service.",
+        features: ["French balcony with river views", "Internal passenger elevator between residential decks", "Butler service for premium suite categories", "La Vie Spa and Le Salon library onboard", "Fine dining at Le Marché restaurant"]
+      }
+    ],
+    dining: {
+      title: "Le Marché Restaurant",
+      description: "Fine dining featuring multi-course French-Indochinese culinary creations alongside Western standards, paired with regional beverages.",
+      image: "/images/fine-dining-deck.avif",
+    },
+    gallery: [
+      "/images/mekong_navigator_exterior.jpg",
+      "/images/mekong_navigator_profile.jpg",
+      "/images/luxury-balcony-sunset.avif",
+      "/images/fine-dining-deck.avif",
+      "/images/luxury_dining.avif",
+      "/images/dest_vietnam.avif"
+    ],
+  },
+  "toum-tiou-ii": {
+    slug: "toum-tiou-ii",
+    name: "RV Toum Tiou II",
+    operator: "CF Mekong / CroisiEurope",
+    operatorNote: "Operated by CF Mekong & CroisiEurope. Shallow-draft pioneer navigating direct to Siem Reap.",
+    tagline: "Authentic teak charm and shallow draft reaching remote waterways",
+    heroImage: "/images/toum_tiou_ii_exterior.jpg",
+    pricing: {
+      threeNight: { from: 890, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 1190, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 1990, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Main/Upper Deck Cabin",
+      inclusions: "All meals onboard, guided excursions with local experts, entrance fees, authentic small-group touring.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "38m",
+      cabins: "14",
+      guests: "28",
+      crew: "18",
+    },
+    overview: {
+      title: "Boutique Riverboat Pioneer",
+      description: "Crafted from noble tropical woods, RV Toum Tiou II is a low-draft boutique vessel capable of crossing Tonle Sap lake directly into Siem Reap harbor during high-water season, avoiding long coach transfers.",
+    },
+    design: {
+      title: "Noble Wood Craft & Shallow Draft",
+      description: "Traditional riverboat aesthetic with teak decks, open-air observation lounge, and friendly, personalized crew hospitality.",
+      image: "/images/toum_tiou_ii_exterior.jpg",
+    },
+    suites: {
+      title: "Authentic Teak Wood Cabins",
+      description: "14 cozy cabins paneled in exotic hardwoods, with large opening picture windows and en-suite private bathrooms.",
+      image: "/images/toum_tiou_ii_cabin.jpg",
+      amenities: ["En-suite bathroom with shower", "Individual climate control", "Panoramic river window", "Direct promenade deck access"],
+    },
+    cabins: [
+      {
+        id: "upper-deck-cabin",
+        name: "Upper Deck Boutique Cabin",
+        deck: "Upper Deck (6 Cabins) & Main Deck (8 Cabins)",
+        size: "11 m² - 12 m² (120 - 130 sq ft)",
+        balconyType: "Panoramic River Windows / Teak Promenade Access",
+        bedOrientation: "Twin or double bed with riverside window",
+        bathroom: "Private en-suite bathroom with shower and amenities",
+        image: "/images/toum_tiou_ii_cabin.jpg",
+        imageAlt: "RV Toum Tiou II wood-paneled cabin with picture window overlooking the Mekong",
+        description: "Cozy, authentic wood-paneled cabin with polished teak walls, large riverview picture windows, and air conditioning.",
+        features: ["Direct access to open teak promenade deck", "Polished natural wood construction", "Shallow draft navigation into remote tributaries", "Individual air conditioning & en-suite shower", "Intimate family-style hospitality for 28 guests"]
+      }
+    ],
+    dining: {
+      title: "Panoramic Indoor & Outdoor Restaurant",
+      description: "Delicious French-Khmer fusion dishes prepared with market-fresh vegetables and local river fish, served in a relaxed communal setting.",
+      image: "/images/fine-dining-deck.avif",
+    },
+    gallery: [
+      "/images/toum_tiou_ii_exterior.jpg",
+      "/images/toum_tiou_ii_cabin.jpg",
+      "/images/luxury-balcony-sunset.avif",
+      "/images/fine-dining-deck.avif",
+      "/images/dest_vietnam.avif",
+      "/images/dest_cambodia.avif"
+    ],
+  },
+  "lan-diep": {
+    slug: "lan-diep",
+    name: "RV Lan Diep",
+    operator: "CF Mekong / CroisiEurope",
+    operatorNote: "Operated by CF Mekong & CroisiEurope. Traditional Cambodian river design with wood craftsmanship.",
+    tagline: "Traditional Asian craftsmanship with colonial river heritage",
+    heroImage: "/images/lan_diep_exterior.jpg",
+    pricing: {
+      threeNight: { from: 950, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 1250, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 2100, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Main/Upper Deck Cabin",
+      inclusions: "All meals onboard, guided excursions, entrance fees, local cultural performances.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "50m",
+      cabins: "22",
+      guests: "44",
+      crew: "22",
+    },
+    overview: {
+      title: "Cambodian Wood Architecture on the Delta",
+      description: "Built in 2007 in traditional colonial styling, RV Lan Diep accommodates 44 guests with warm teak and mahogany paneling, open sundecks, and panoramic river cruising.",
+    },
+    design: {
+      title: "Rich Teakwood Heritage & Open Promenade",
+      description: "Traditional Southeast Asian riverboat architecture with broad wooden sun decks, bar lounge, and shaded wicker loungers.",
+      image: "/images/lan_diep_exterior.jpg",
+    },
+    suites: {
+      title: "Warm Wood River Staterooms",
+      description: "All 22 outside cabins feature authentic handcrafted woods, brass nautical fixtures, individual A/C, and en-suite bathrooms.",
+      image: "/images/lan_diep_cabin.jpg",
+      amenities: ["En-suite bathroom with hot shower", "Opening picture windows", "Air conditioning", "Safe & wardrobe"],
+    },
+    cabins: [
+      {
+        id: "colonial-river-cabin",
+        name: "Colonial Riverview Cabin",
+        deck: "Upper & Main Decks (22 Cabins)",
+        size: "15 m² (161 sq ft)",
+        balconyType: "Panoramic Riverview Windows & Teak Walkway",
+        bedOrientation: "Handcrafted wooden beds facing riverside",
+        bathroom: "Private en-suite bathroom with hot shower",
+        image: "/images/lan_diep_cabin.jpg",
+        imageAlt: "RV Lan Diep handcrafted colonial cabin with polished wood finishes and large windows",
+        description: "Richly grained wood paneling, brass fittings, and panoramic windows opening to the Mekong delta scenery.",
+        features: ["Authentic colonial wood aesthetic", "Large opening picture windows", "Open-air panoramic dining and lounge", "Traditional riverboat navigation into narrow canals", "En-suite bathroom with hot water & toiletries"]
+      }
+    ],
+    dining: {
+      title: "Colonial Dining Hall & River Bar",
+      description: "Family-style French and Indochinese meals served with warmth and genuine Cambodian hospitality.",
+      image: "/images/fine-dining-deck.avif",
+    },
+    gallery: [
+      "/images/lan_diep_exterior.jpg",
+      "/images/lan_diep_cabin.jpg",
+      "/images/luxury-balcony-sunset.avif",
+      "/images/fine-dining-deck.avif",
       "/images/dest_vietnam.avif",
       "/images/dest_cambodia.avif"
     ],

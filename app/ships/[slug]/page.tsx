@@ -13,6 +13,8 @@ const allShipSlugs = [
   "victoria-mekong",
   "viking-saigon",
   "emerald-harmony",
+  "amadara",
+  "avalon-saigon",
   "anouvong",
   "bassac-pandaw",
   "boheme",
