@@ -66,7 +66,7 @@ export const shipsData: Record<string, ShipData> = {
     operator: "Aqua Expeditions",
     operatorNote: "Designed and operated by Aqua Expeditions. Booked through Mekong River Cruise with Best Price Guarantee.",
     tagline: "Where the river meets the sky, and the sky never ends",
-    heroImage: "/images/aqua_mekong.avif",
+    heroImage: "/images/aqua_mekong_banner.jpg",
     pricing: {
       threeNight: { from: 4350, route: "Ho Chi Minh City ↔ Phnom Penh" },
       fourNight: { from: 5800, route: "Phnom Penh ↔ Siem Reap" },
@@ -143,11 +143,11 @@ export const shipsData: Record<string, ShipData> = {
       image: "/images/cultural-encounters-new.avif",
     },
     gallery: [
-      "/images/aqua_mekong.avif",
       "/images/aqua_mekong_suite_balcony.webp",
-      "/images/aqua_mekong_bathroom.webp",
       "/images/aqua_mekong_suite_panoramic.webp",
+      "/images/aqua_mekong_bathroom.webp",
       "/images/aqua_mekong_banner.jpg",
+      "/images/aqua_mekong_exterior_frontview.webp",
       "/images/aqua_mekong_suite_panoramic.webp"
     ],
   },

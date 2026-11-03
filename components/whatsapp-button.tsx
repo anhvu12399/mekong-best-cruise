@@ -17,10 +17,10 @@ export function WhatsAppButton() {
   }
 
   return (
-    <div className="fixed bottom-8 left-8 z-50 flex flex-col items-start">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Expanded tooltip card */}
       {expanded && (
-        <div className="absolute bottom-16 left-0 bg-[#0f172a] border border-[#c9a962]/30 text-white shadow-2xl p-5 w-64 mb-4 origin-bottom-left animate-in fade-in zoom-in-95 duration-200">
+        <div className="absolute bottom-16 right-0 bg-[#0f172a] border border-[#c9a962]/30 text-white shadow-2xl p-5 w-64 mb-4 origin-bottom-right animate-in fade-in zoom-in-95 duration-200">
           <button
             onClick={() => setExpanded(false)}
             className="absolute top-3 right-3 text-white/40 hover:text-white transition-colors"

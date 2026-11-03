@@ -27,6 +27,7 @@ const allShipSlugs = [
   "mekong-navigator",
   "mekong-pandaw",
   "mekong-pearl",
+  "mekong-sun",
   "mekong-symphony",
   "tonle-pandaw",
   "toum-tiou-ii"

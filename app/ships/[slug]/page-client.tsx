@@ -10,22 +10,24 @@ export default function ShipsClient({ data }: { data: ShipData }) {
   const [activeSection, setActiveSection] = useState("overview")
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // Priority list: Put suite images and cabin images together, ensure 6 items
-  const suiteImages = (data.gallery && data.gallery.length >= 6)
-    ? data.gallery.slice(0, 6)
+  // Priority list: Suite image first, then cabin category photos, then gallery photos
+  const cabinPhotos = (data.cabins || []).map((c) => c.image).filter(Boolean)
+  const combinedPhotos = [
+    data.suites.image,
+    ...cabinPhotos,
+    ...(data.gallery || []),
+  ]
+  // Deduplicate while strictly maintaining order
+  const uniquePhotos = Array.from(new Set(combinedPhotos)).filter(Boolean)
+  const suiteImages = uniquePhotos.length >= 6
+    ? uniquePhotos.slice(0, 6)
     : [
-        data.suites.image,
-        ...(data.gallery || []).filter((img) => img !== data.suites.image),
-        "/images/luxury-balcony-sunset.avif",
-        "/images/fine-dining-deck.avif",
+        ...uniquePhotos,
+        "/images/full_mekong_hero.png",
+        "/images/halong_junk_cruise.png",
       ].slice(0, 6)
 
-  // Find initial index matching data.suites.image if present
-  const initialIndex = suiteImages.indexOf(data.suites.image) >= 0 
-    ? suiteImages.indexOf(data.suites.image) 
-    : 0
-
-  const [activeSuiteIdx, setActiveSuiteIdx] = useState(initialIndex)
+  const [activeSuiteIdx, setActiveSuiteIdx] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxImg, setLightboxImg] = useState("")
 

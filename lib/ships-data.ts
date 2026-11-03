@@ -26,8 +26,92 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Floor-to-ceiling glass. The river has no walls here.",
     description:
       "A vessel designed like a gallery and sailed like a secret. The Aqua Mekong brought a new visual language to the Mekong — one of open space, natural light, and the kind of quiet that only comes when everything around you has been thought through. Michelin-trained chefs. A pool on the sundeck. The river, always present.",
-    image: "/images/aqua_mekong.avif",
+    image: "/images/aqua_mekong_exterior_frontview.webp",
     highlights: ["20 suites with river-view windows", "Infinity pool on sundeck", "Michelin-inspired dining", "Private excursion kayaks"],
+  },
+  {
+    id: "scenic-spirit",
+    name: "Scenic Spirit",
+    type: "All-Inclusive Ultra-Luxury",
+    style: "European five-star space and butler service",
+    guests: 68,
+    cabins: 34,
+    regions: ["Vietnam Mekong", "Cambodia Mekong"],
+    tagline: "Ultra-luxury all-inclusive with private Sun Lounge balconies.",
+    description:
+      "Custom-built to deliver five-star European luxury to the Mekong. With only 68 guests served by 56 crew members, the passenger-to-space ratio is among the highest of any ship in Southeast Asia. 100% all-balcony suites with personal butler service and passenger elevator.",
+    image: "/images/scenic_spirit_overview.jpg",
+    highlights: ["Scenic Sun Lounge convertible balcony", "Passenger elevator connecting 3 decks", "100% all-inclusive with 24/7 butler", "Sun Deck pool, steam sauna & spa"],
+  },
+  {
+    id: "viking-saigon",
+    name: "Viking Saigon",
+    type: "Scandinavian Luxury",
+    style: "Understated Nordic serenity",
+    guests: 80,
+    cabins: 40,
+    regions: ["Vietnam Mekong", "Cambodia Mekong"],
+    tagline: "Understated Scandinavian elegance on the storied Mekong.",
+    description:
+      "Custom-built in 2021, Viking Saigon reflects the clean lines and understated serenity of Scandinavian design. Hosting 80 guests in all-outside staterooms, the ship offers passenger elevator access across all residential decks and heated bathroom floors.",
+    image: "/images/viking_saigon_exterior.jpg",
+    highlights: ["Heated bathroom floors (unique on Mekong)", "Scandinavian clean-lined luxury aesthetics", "Passenger elevator across residential decks", "Infinity plunge pool at ship's stern"],
+  },
+  {
+    id: "emerald-harmony",
+    name: "Emerald Harmony",
+    type: "Contemporary Urban Luxury",
+    style: "Direct central Saigon docking",
+    guests: 84,
+    cabins: 42,
+    regions: ["Vietnam Mekong", "Cambodia Mekong"],
+    tagline: "Purpose-built modern luxury that sails straight into central Saigon.",
+    description:
+      "Unlike most larger Mekong vessels that must dock 1.5 to 2 hours south in Mỹ Tho, Emerald Harmony was custom-engineered with low air draft to sail directly up the Saigon River to dock at central Saigon (District 4 / Nhà Rồng).",
+    image: "/images/emerald_harmony_exterior.jpg",
+    highlights: ["Docks directly at central Saigon (District 4)", "Electronic drop-down balcony windows", "Horizon Deck infinity swimming pool", "ESPA luxury bath amenities"],
+  },
+  {
+    id: "amadara",
+    name: "AmaDara",
+    type: "French Colonial Luxury",
+    style: "Authentic Twin Balcony elegance",
+    guests: 124,
+    cabins: 62,
+    regions: ["Vietnam Mekong", "Cambodia Mekong"],
+    tagline: "French Colonial elegance with signature Twin Balconies.",
+    description:
+      "AmaWaterways' flagship on the Mekong features authentic French Colonial architecture, rich wood carvings, and signature Twin Balconies combining an outside step-out balcony with a French balcony.",
+    image: "/images/amadara_exterior.jpg",
+    highlights: ["Signature Twin Balconies in every stateroom", "Separate bathtub and rain shower in all rooms", "The Chef's Table specialty dining", "Sun deck pool with swim-up bar"],
+  },
+  {
+    id: "avalon-saigon",
+    name: "Avalon Saigon",
+    type: "Suite Ship River Cruise",
+    style: "Beds facing the river panorama",
+    guests: 36,
+    cabins: 18,
+    regions: ["Vietnam Mekong", "Cambodia Mekong"],
+    tagline: "Open-Air Balconies with beds facing the water.",
+    description:
+      "Avalon Waterways' custom-designed suite ship on the Mekong features wall-to-wall, floor-to-ceiling panoramic windows that slide open 9 feet, transforming the entire stateroom into a massive Open-Air Balcony.",
+    image: "/images/avalon_saigon_exterior.jpg",
+    highlights: ["Beds face 100% directly towards the river", "14-foot wall-to-wall panoramic windows", "Open-Air Balcony design", "Intimate 36-passenger capacity"],
+  },
+  {
+    id: "mekong-jewel",
+    name: "Mekong Jewel",
+    type: "All-Suite Eco-Luxury",
+    style: "Sustainable modern luxury on the delta",
+    guests: 68,
+    cabins: 34,
+    regions: ["Vietnam Mekong", "Cambodia Mekong"],
+    tagline: "The newest ship on the oldest river. Built to listen.",
+    description:
+      "All-suite eco-conscious river cruising operated by Lotus Cruises and Uniworld. Reclaimed timber interiors, private balconies in every suite, swimming pool on the top deck, and passenger elevator.",
+    image: "/images/mekong_jewel_royal_suite.jpg",
+    highlights: ["100% all-suite accommodations with private balconies", "Passenger elevator across cabin decks", "Sundeck swimming pool & spa", "Advanced eco-friendly water purification"],
   },
   {
     id: "the-jahan",
@@ -40,7 +124,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "An opulent riverboat evoking the romance of former British India.",
     description:
       "Named after one of the Mughal Empire's greatest rulers, The Jahan carries that ambition on water. Carved teak, brass fittings, and a library that smells of old paper. The river slides past your window like a film reel of another century.",
-    image: "/images/the_jahan.avif",
+    image: "/images/the_jahan_banner.jpg",
     highlights: ["Heritage colonial interiors", "Library & observation lounge", "26 private suites", "Daily cultural immersion programs"],
   },
   {
@@ -54,7 +138,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "History doesn't feel distant here. It feels like it's in the next room.",
     description:
       "Colonial teak, hand-stitched fabrics, the smell of frangipani at dusk. The Jayavarman is a floating boutique gallery inspired by the golden age of French Indochina and Khmer artistry. Smaller than most, deeper than all of them.",
-    image: "/images/jayavarman.avif",
+    image: "/images/jayavarman_banner.jpg",
     highlights: ["Khmer-inspired design details", "Intimate 15-cabin capacity", "Expert cultural guides", "Private balcony suites"],
   },
   {
@@ -82,7 +166,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "The river's most intimate address.",
     description:
       "Fourteen cabins. Never more. The Mekong Princess earns her name through scale — small enough that the crew knows your coffee order by morning two, graceful enough that you forget you're moving.",
-    image: "/images/mekong_princess.avif",
+    image: "/images/mekong_princess_saigon_suite.jpg",
     highlights: ["14 intimate cabins", "Personalized butler service", "Signature cocktail bar", "Sunset sampan excursions"],
   },
   {
@@ -110,7 +194,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Named for the tributary. Shaped by the river.",
     description:
       "The Bassac Pandaw navigates the quieter arms of the delta — the tributaries and backwaters that larger ships can't reach. Her small scale is her greatest asset.",
-    image: "/images/bassac_pandaw.avif",
+    image: "/images/bassac_pandaw_header.webp",
     highlights: ["Backwater access routes", "16 teak-lined cabins", "Expert naturalist guides", "Bicycle excursion kit"],
   },
   {
@@ -124,7 +208,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "All-suite. All yours. Nothing left to chance.",
     description:
       "The Navigator is the grand one — sweeping decks, impeccable service, a kind of calm that only comes when everything has been thought of. Inspired by the French Indochina era but built for today's traveller.",
-    image: "/images/mekong_navigator.avif",
+    image: "/images/mekong_navigator_exterior.jpg",
     highlights: ["24 all-suite accommodations", "French colonial interiors", "Spa & wellness deck", "Champagne welcome"],
   },
   {
@@ -152,7 +236,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "If you travel to be changed, not just impressed — this is your ship.",
     description:
       "Markets at dawn. Cooking classes by afternoon. The best seat on the sundeck for golden hour. The Victoria Mekong doesn't let you stay passive — it pulls you into the delta's life with both hands.",
-    image: "/images/victoria_mekong.avif",
+    image: "/images/victoria_mekong_sideview.jpg",
     highlights: ["Daily cultural immersion program", "On-board cooking school", "18 river-view suites", "Local artisan workshops"],
   },
   {
@@ -166,7 +250,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Some ships feel like someone built them with love. This is one.",
     description:
       "A traditional wooden vessel, hand-crafted and intimate. Toum Tiou II carries just 24 guests through the quietest parts of the Mekong — the parts where the water is brown and wide and the silence is absolute.",
-    image: "/images/toum_tiou_ii.avif",
+    image: "/images/toum_tiou_ii_exterior.jpg",
     highlights: ["12 handcrafted wooden cabins", "Traditional boat architecture", "Access to shallow backwaters", "Hammock deck"],
   },
   {
@@ -208,7 +292,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Named for the river. Built to understand it.",
     description:
       "There's a reason the Mekong Pandaw shares her name with the waterway. She was designed specifically for this river — for its width, its moods, its hidden tributaries. She knows it the way a local knows their neighbourhood.",
-    image: "/images/mekong_pandaw.avif",
+    image: "/images/mekong_pandaw_header.webp",
     highlights: ["Designed for Mekong navigation", "Open teak deck dining", "20 veranda cabins", "Photography workshops"],
   },
   {
@@ -222,7 +306,7 @@ const ALL_VIETNAM_CAMBODIA_SHIPS: Ship[] = [
     tagline: "Eight cabins. The whole delta to yourselves.",
     description:
       "A traditional Vietnamese river sampan — small, wooden, and deeply local. The Lan Diep takes just 16 guests into the smallest channels of the Mekong Delta, the ones that appear on no tourist map, where life has been lived the same way for centuries.",
-    image: "/images/lan_diep.avif",
+    image: "/images/lan_diep_exterior.jpg",
     highlights: ["8 authentic wooden cabins", "Delta-exclusive routes", "Daily market visits", "Local family home-stays"],
   },
 ]
@@ -239,7 +323,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "A king's river, sailed with a king's patience.",
     description:
       "Named after the last king of Vientiane, the Anouvong carries a quiet nobility through the upper Mekong. The slow bends of the Laotian river suit her temperament — unhurried, golden, and impossibly serene.",
-    image: "/images/anouvong.avif",
+    image: "/images/anouvong_signature_suite.jpg",
     highlights: ["14 heritage-style cabins", "Luang Prabang excursions", "Buddhist temple visits at dawn", "Laotian cuisine on board"],
   },
   {
@@ -253,7 +337,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "Inspiration arrives at water level.",
     description:
       "The Bohème attracts a certain kind of traveller — curious, unhurried, with a sketchpad or a camera never far from hand. She moves through Laos's most painterly stretches of river with the spirit of an artist and the comfort of a luxury vessel.",
-    image: "/images/boheme.avif",
+    image: "/images/boheme_drone_exterior.jpg",
     highlights: ["On-board art workshops", "12 design-forward cabins", "Photography excursions", "Curated cultural evenings"],
   },
   {
@@ -267,7 +351,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "The river reveals itself to those who slow down.",
     description:
       "The Mekong Pearl navigates the upper river with elegance — 18 well-appointed cabins, a generous sundeck, and guides who have been walking these villages for years. Laos's ancient rhythm becomes your own.",
-    image: "/images/mekong_pearl.avif",
+    image: "/images/mekong_pearl_exterior.jpg",
     highlights: ["18 river-view cabins", "Sundeck with canopy lounge", "Hill tribe village visits", "Traditional weaving workshops"],
   },
   {
@@ -281,7 +365,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "Teak decks. Open verandas. The river, always within reach.",
     description:
       "A classic Pandaw vessel built to the original 1947 blueprint — all teak and brass, with the open veranda decks that let the Laotian breeze in at all hours. Her itineraries reach the remote northern stretches most ships never attempt.",
-    image: "/images/laos_pandaw.avif",
+    image: "/images/mekong_pandaw_header.webp",
     highlights: ["1947 heritage blueprint design", "Northern Laos routes", "20 teak veranda cabins", "All shore excursions included"],
   },
   {
@@ -323,7 +407,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "The Laotian greeting given freely. This ship lives up to it.",
     description:
       "Sabaidee is the Laotian word for hello — but said with warmth, it means far more. This vessel carries that spirit: open, generous, at ease with itself and with the river. Her itineraries reach from Vientiane to the misty hills of the north.",
-    image: "/images/laos_pandaw.avif",
+    image: "/images/mekong_pandaw_header.webp",
     highlights: ["18 welcoming veranda cabins", "Laotian cooking school", "Monk blessing ceremony", "Full Vientiane to Luang Prabang route"],
   },
   {
@@ -337,7 +421,7 @@ const LAOS_SHIPS: Ship[] = [
     tagline: "The Mekong at dawn is a different river entirely. Wake up early.",
     description:
       "The Mekong Sun is oriented around light — her cabin windows face east for sunrise, her sundeck faces west for dusk. It sounds simple. It changes everything. Fifteen cabins, thirty guests, and the kind of morning that makes you reconsider your whole relationship with alarm clocks.",
-    image: "/images/dest_laos.avif",
+    image: "/images/mekong_sun_exterior.jpg",
     highlights: ["East-facing sunrise cabins", "15 light-filled staterooms", "Dawn meditation deck", "Golden hour photography cruises"],
   },
 ]
