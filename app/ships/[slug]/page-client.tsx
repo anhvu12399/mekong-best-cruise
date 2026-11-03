@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown, Check, User, Grid, Link2, Droplets, Wind, Coffee, Lock, Speaker, Scissors } from "lucide-react"
+import { ChevronDown, Check, User, Grid, Link2, Droplets, Wind, Coffee, Lock, Speaker, Scissors, Bed, Bath, ArrowRight, Sparkles, Maximize2 } from "lucide-react"
 import { ShipData } from "../data"
 
 export default function ShipsClient({ data }: { data: ShipData }) {
@@ -184,65 +184,207 @@ export default function ShipsClient({ data }: { data: ShipData }) {
 
       {/* ── SUITES ── */}
       <section id="suites" className="py-20 lg:py-32 bg-[#f5f5f5]">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1300px] mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-[#333] text-[13px] font-serif block mb-2">Suites</span>
-            <h2 className="font-serif text-3xl md:text-5xl text-[#222]">
-              A luxurious sanctuary on the mighty Mekong
+            <span className="text-gold text-[11px] tracking-[0.3em] uppercase font-bold block mb-2">
+              Cabins & Suites
+            </span>
+            <h2 className="font-serif text-3xl md:text-5xl text-[#222] mb-4">
+              Private Sanctuaries on the Mekong
             </h2>
+            <p className="text-[#666] text-base leading-relaxed max-w-3xl mx-auto font-light">
+              Every stateroom aboard {data.name} is engineered to keep you intimately connected with the river. Featuring direct river-facing beds, private verandas, and spa-grade en-suite bathrooms.
+            </p>
           </div>
 
-          <div className="relative aspect-[21/9] w-full bg-gray-100 group">
-            <Image src={data.suites.image} alt={data.suites.title} fill className="object-cover" />
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-between p-6">
-              <span className="text-white text-xs tracking-widest uppercase">{data.suites.title}</span>
-              <button className="bg-white text-[#222] px-6 py-2 text-[10px] font-bold tracking-widest uppercase hover:bg-gray-100">
-                View Suite Details
-              </button>
+          {/* Hero Suite Showcase */}
+          <div className="relative aspect-[21/9] w-full bg-gray-100 group overflow-hidden shadow-lg mb-4">
+            <Image
+              src={data.suites.image}
+              alt={`${data.name} - ${data.suites.title}`}
+              fill
+              className="object-cover group-hover:scale-102 transition-transform duration-700"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              priority
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-end justify-between p-6 md:p-8">
+              <div>
+                <span className="text-gold text-[10px] tracking-[0.2em] uppercase font-bold block mb-1">
+                  Signature Living
+                </span>
+                <span className="text-white text-base md:text-xl font-serif">{data.suites.title}</span>
+              </div>
+              <Link
+                href={`/plan-your-journey?vessel=${data.slug}`}
+                className="bg-gold text-navy px-6 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-white transition-colors"
+              >
+                Reserve This Suite
+              </Link>
             </div>
           </div>
           
           {/* Thumbnails */}
-          <div className="grid grid-cols-6 gap-2 mt-2 mb-16">
+          <div className="grid grid-cols-6 gap-2 mb-16">
              {[...Array(6)].map((_, idx) => (
-                <div key={idx} className={`relative aspect-video bg-gray-200 cursor-pointer ${idx === 0 ? 'ring-2 ring-white opacity-100' : 'opacity-60 hover:opacity-100'} transition-opacity`}>
-                   <Image src={data.gallery[idx % data.gallery.length]} alt="Thumbnail" fill className="object-cover" />
+                <div key={idx} className={`relative aspect-video bg-gray-200 overflow-hidden ${idx === 0 ? 'ring-2 ring-gold opacity-100' : 'opacity-70 hover:opacity-100'} transition-all`}>
+                   <Image
+                     src={data.gallery[idx % data.gallery.length] || "/images/luxury-balcony-sunset.avif"}
+                     alt={`${data.name} Cabin detail view ${idx + 1}`}
+                     fill
+                     className="object-cover"
+                   />
                 </div>
              ))}
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <p className="text-[#555] text-[15px] leading-relaxed font-sans font-light mb-16 text-center">
-              {data.suites.description} When it comes to rest and relaxation, {data.name} cuts no corners. Our {data.stats.cabins} river-facing suites are furnished with inviting hardwood interiors along with premium fittings and bedding. In the fully air-conditioned comfort of your river cruise suite, gaze at the Mekong panorama and watch an idyllic world float by.
-            </p>
-          </div>
+          {/* ── DETAILED CABIN CATEGORIES BREAKDOWN ── */}
+          {data.cabins && data.cabins.length > 0 && (
+            <div className="mb-20">
+              <div className="border-b border-gray-300 pb-4 mb-10 flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <span className="text-gold text-[10px] tracking-[0.25em] uppercase font-bold block mb-1">
+                    Verified Stateroom Inventory
+                  </span>
+                  <h3 className="font-serif text-2xl lg:text-3xl text-[#222]">
+                    Explore Room Categories & Floor Plans
+                  </h3>
+                </div>
+                <span className="text-xs text-[#777] font-sans">
+                  {data.cabins.length} Verified {data.cabins.length === 1 ? 'Category' : 'Categories'} Available
+                </span>
+              </div>
 
-          <div className="border-t border-gray-300 pt-8">
-            <h3 className="text-xs tracking-[0.2em] uppercase text-[#777] mb-8">Amenities & Details</h3>
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-              <div className="flex items-start gap-4">
-                <Check className="w-5 h-5 text-[#888] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[#555] text-sm font-light">Spacious en-suite bathrooms with premium fittings</span>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {data.cabins.map((cabin) => (
+                  <div
+                    key={cabin.id}
+                    className="group bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden"
+                  >
+                    {/* Cabin Photo with SEO Alt Tag */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                      <Image
+                        src={cabin.image}
+                        alt={cabin.imageAlt || `${data.name} ${cabin.name}`}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                      
+                      <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                        <span className="bg-navy/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1">
+                          {cabin.deck}
+                        </span>
+                        <span className="bg-gold text-navy text-[10px] font-bold tracking-wider uppercase px-3 py-1">
+                          {cabin.size}
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-3 left-4 right-4 text-white/90 text-xs font-serif italic truncate">
+                        {cabin.imageAlt}
+                      </div>
+                    </div>
+
+                    {/* Cabin Details */}
+                    <div className="p-6 md:p-8 flex flex-col flex-1">
+                      <h4 className="font-serif text-2xl text-navy mb-3 group-hover:text-gold transition-colors">
+                        {cabin.name}
+                      </h4>
+                      <p className="text-[#666] text-sm leading-relaxed mb-6 font-light">
+                        {cabin.description}
+                      </p>
+
+                      {/* Technical Specs Matrix */}
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-[#fafafa] border border-gray-100 rounded-sm mb-6 text-xs">
+                        <div>
+                          <span className="text-[#888] font-bold uppercase tracking-wider block text-[9px] mb-1">
+                            Balcony / Window
+                          </span>
+                          <span className="text-[#333] font-medium leading-tight block">
+                            {cabin.balconyType}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-[#888] font-bold uppercase tracking-wider block text-[9px] mb-1">
+                            Bed Orientation
+                          </span>
+                          <span className="text-[#333] font-medium leading-tight block">
+                            {cabin.bedOrientation}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-[#888] font-bold uppercase tracking-wider block text-[9px] mb-1">
+                            Bathroom Setup
+                          </span>
+                          <span className="text-[#333] font-medium leading-tight block">
+                            {cabin.bathroom}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Key Features Chips */}
+                      {cabin.features && cabin.features.length > 0 && (
+                        <div className="mb-6 flex flex-wrap gap-1.5">
+                          {cabin.features.map((feature, fIdx) => (
+                            <span
+                              key={fIdx}
+                              className="inline-flex items-center gap-1 text-[11px] bg-gray-100 text-[#555] px-2.5 py-1 rounded-sm"
+                            >
+                              <Check size={10} className="text-gold" />
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Action CTA */}
+                      <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                        <span className="text-xs text-[#888]">
+                          Best Price Guaranteed
+                        </span>
+                        <Link
+                          href={`/plan-your-journey?vessel=${data.slug}&cabin=${encodeURIComponent(cabin.name)}`}
+                          className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase bg-navy text-white px-5 py-3 hover:bg-gold hover:text-navy transition-all duration-300"
+                        >
+                          Enquire Cabin <ArrowRight size={12} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-start gap-4">
-                <Wind className="w-5 h-5 text-[#888] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[#555] text-sm font-light">Fully air-conditioned with individual climate control</span>
+            </div>
+          )}
+
+          {/* Standard Suite Amenities */}
+          <div className="border-t border-gray-300 pt-10">
+            <h3 className="text-xs tracking-[0.2em] uppercase text-[#777] mb-8 text-center font-bold">
+              Standard Stateroom Inclusions on {data.name}
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="flex items-start gap-3 bg-white p-4 border border-gray-200/80">
+                <Check className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={2} />
+                <span className="text-[#444] text-sm font-light">Spacious en-suite bathrooms with premium hot rain showers</span>
               </div>
-              <div className="flex items-start gap-4">
-                <Grid className="w-5 h-5 text-[#888] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[#555] text-sm font-light">Panoramic floor-to-ceiling windows</span>
+              <div className="flex items-start gap-3 bg-white p-4 border border-gray-200/80">
+                <Wind className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={2} />
+                <span className="text-[#444] text-sm font-light">Individually controlled silent climate air conditioning</span>
               </div>
-              <div className="flex items-start gap-4">
-                <Coffee className="w-5 h-5 text-[#888] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[#555] text-sm font-light">In-room coffee and tea making facilities</span>
+              <div className="flex items-start gap-3 bg-white p-4 border border-gray-200/80">
+                <Grid className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={2} />
+                <span className="text-[#444] text-sm font-light">Direct river-view windows and private balcony verandas</span>
               </div>
-              <div className="flex items-start gap-4">
-                <Lock className="w-5 h-5 text-[#888] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[#555] text-sm font-light">Electronic safe for valuables</span>
+              <div className="flex items-start gap-3 bg-white p-4 border border-gray-200/80">
+                <Coffee className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={2} />
+                <span className="text-[#444] text-sm font-light">Daily artisanal tea & coffee service and purified drinking water</span>
               </div>
-              <div className="flex items-start gap-4">
-                <Scissors className="w-5 h-5 text-[#888] shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[#555] text-sm font-light">Professional hairdryer & premium bath amenities</span>
+              <div className="flex items-start gap-3 bg-white p-4 border border-gray-200/80">
+                <Lock className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={2} />
+                <span className="text-[#444] text-sm font-light">In-room electronic digital safe for passports and valuables</span>
+              </div>
+              <div className="flex items-start gap-3 bg-white p-4 border border-gray-200/80">
+                <Scissors className="w-5 h-5 text-gold shrink-0 mt-0.5" strokeWidth={2} />
+                <span className="text-[#444] text-sm font-light">Organic botanical amenities, plush bathrobes and slippers</span>
               </div>
             </div>
           </div>
@@ -252,24 +394,43 @@ export default function ShipsClient({ data }: { data: ShipData }) {
       {/* ── EXPEDITION HIGHLIGHTS ── */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
-          <h2 className="font-serif text-2xl text-[#222] mb-8">Expedition highlights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+          <div className="flex items-end justify-between mb-8 border-b border-gray-100 pb-4">
+            <div>
+              <span className="text-gold text-[10px] tracking-[0.25em] uppercase font-bold block mb-1">
+                Life on the Water
+              </span>
+              <h2 className="font-serif text-2xl md:text-3xl text-[#222]">Expedition highlights</h2>
+            </div>
+            <span className="text-xs text-[#888] font-sans">
+              Curated daily experiences aboard {data.name}
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
             {[
-              { title: "Exceptional speed and comfort", img: data.gallery[0] || "/images/media__1777568799075.avif" },
-              { title: "Fully equipped for adventure", img: data.gallery[1] || "/images/media__1777569329220.avif" },
-              { title: "World-class cuisine", img: data.gallery[2] || "/images/media__1777571269177.avif" },
-              { title: "State of the art design", img: data.gallery[3] || "/images/media__1777571481511.avif" },
-              { title: "Expert-led excursions", img: data.gallery[4] || "/images/media__1777572235741.avif" },
-              { title: "Cultural experiences", img: data.gallery[5] || "/images/media__1777574051095.avif" },
-            ].map((highlight, idx) => (
-              <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-100">
-                <Image src={highlight.img} alt={highlight.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <h3 className="absolute bottom-6 left-6 text-white font-serif text-lg md:text-xl">
-                  {highlight.title}
-                </h3>
-              </div>
-            ))}
+              { title: "Exceptional speed and comfort", fallback: "/images/luxury-balcony-sunset.avif" },
+              { title: "Fully equipped for adventure", fallback: "/images/cultural-encounters-new.avif" },
+              { title: "World-class cuisine", fallback: "/images/fine-dining-deck.avif" },
+              { title: "State of the art design", fallback: "/images/luxury_dining.avif" },
+              { title: "Expert-led excursions", fallback: "/images/dest_vietnam.avif" },
+              { title: "Cultural experiences", fallback: "/images/dest_cambodia.avif" },
+            ].map((highlight, idx) => {
+              const imageSrc = data.gallery[idx] || highlight.fallback
+              return (
+                <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-100 shadow-sm">
+                  <Image
+                    src={imageSrc}
+                    alt={`${data.name} - ${highlight.title}`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <h3 className="absolute bottom-6 left-6 right-6 text-white font-serif text-lg md:text-xl">
+                    {highlight.title}
+                  </h3>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>

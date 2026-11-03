@@ -25,7 +25,7 @@ function ShipCard({ ship, index }: { ship: Ship; index: number }) {
     return (
       <div className="col-span-full grid lg:grid-cols-2 gap-0 group bg-navy overflow-hidden">
         {/* Image */}
-        <div className="relative h-72 lg:h-auto min-h-[360px] overflow-hidden">
+        <Link href={`/ships/${ship.id}`} className="relative h-72 lg:h-auto min-h-[360px] overflow-hidden block">
           <Image
             src={ship.image}
             alt={ship.name}
@@ -39,16 +39,18 @@ function ShipCard({ ship, index }: { ship: Ship; index: number }) {
               Featured
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Content */}
         <div className="p-10 lg:p-14 flex flex-col justify-center">
           <span className="text-gold text-[10px] tracking-[0.3em] uppercase font-bold block mb-3">
             {ship.type}
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl text-white leading-tight mb-2">
-            {ship.name}
-          </h2>
+          <Link href={`/ships/${ship.id}`} className="group/title inline-block">
+            <h2 className="font-serif text-4xl lg:text-5xl text-white leading-tight mb-2 group-hover/title:text-gold transition-colors">
+              {ship.name}
+            </h2>
+          </Link>
           <p className="text-white/40 text-sm italic mb-6">{ship.style}</p>
           <p className="text-white/60 text-base leading-relaxed mb-8 font-serif">
             "{ship.tagline}"
@@ -66,14 +68,20 @@ function ShipCard({ ship, index }: { ship: Ship; index: number }) {
             ))}
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="text-white/30 text-xs">
+          <div className="flex flex-wrap items-center gap-4 mt-auto">
+            <div className="text-white/30 text-xs mr-auto">
               <span className="font-bold text-white/70">{ship.guests}</span> guests ·{" "}
               <span className="font-bold text-white/70">{ship.cabins}</span> cabins
             </div>
             <Link
-              href="/plan-your-journey"
-              className="ml-auto inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-gold border border-gold/40 px-6 py-3 hover:bg-gold hover:text-navy transition-all duration-300"
+              href={`/ships/${ship.id}`}
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-white bg-white/10 hover:bg-white hover:text-navy border border-white/20 px-6 py-3 transition-all duration-300"
+            >
+              View Ship <ArrowRight size={12} />
+            </Link>
+            <Link
+              href={`/plan-your-journey?vessel=${ship.id}`}
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-bold text-gold border border-gold/40 px-6 py-3 hover:bg-gold hover:text-navy transition-all duration-300"
             >
               Enquire <ArrowUpRight size={12} />
             </Link>
@@ -86,7 +94,7 @@ function ShipCard({ ship, index }: { ship: Ship; index: number }) {
   // Standard card
   return (
     <div className="group flex flex-col bg-white border border-navy/8 hover:border-gold/30 transition-colors duration-300">
-      <div className="relative aspect-[16/10] overflow-hidden">
+      <Link href={`/ships/${ship.id}`} className="relative aspect-[16/10] overflow-hidden block">
         <Image
           src={ship.image}
           alt={ship.name}
@@ -100,11 +108,13 @@ function ShipCard({ ship, index }: { ship: Ship; index: number }) {
             {ship.type}
           </span>
         </div>
-      </div>
+      </Link>
 
       <div className="p-6 lg:p-8 flex flex-col flex-1">
         <p className="text-gold text-[9px] tracking-[0.3em] uppercase font-bold mb-2">{ship.style}</p>
-        <h3 className="font-serif text-2xl lg:text-3xl text-navy mb-3 leading-tight">{ship.name}</h3>
+        <Link href={`/ships/${ship.id}`}>
+          <h3 className="font-serif text-2xl lg:text-3xl text-navy mb-3 leading-tight hover:text-gold transition-colors">{ship.name}</h3>
+        </Link>
         <p className="text-navy/50 text-sm italic mb-4 font-serif">"{ship.tagline}"</p>
         <p className="text-navy/60 text-sm leading-relaxed flex-1">{ship.description.substring(0, 140)}...</p>
 
@@ -113,12 +123,21 @@ function ShipCard({ ship, index }: { ship: Ship; index: number }) {
             <span className="font-bold text-navy/70">{ship.guests}</span> guests ·{" "}
             <span className="font-bold text-navy/70">{ship.cabins}</span> cabins
           </div>
-          <Link
-            href="/plan-your-journey"
-            className="inline-flex items-center gap-1.5 text-[9px] tracking-[0.2em] uppercase font-bold text-gold hover:gap-3 transition-all duration-200"
-          >
-            Enquire <ArrowRight size={10} />
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link
+              href={`/ships/${ship.id}`}
+              className="inline-flex items-center gap-1 text-[9px] tracking-[0.2em] uppercase font-bold text-navy/70 hover:text-gold transition-colors duration-200"
+            >
+              View Ship <ArrowRight size={10} />
+            </Link>
+            <span className="text-navy/20">·</span>
+            <Link
+              href={`/plan-your-journey?vessel=${ship.id}`}
+              className="inline-flex items-center gap-1 text-[9px] tracking-[0.2em] uppercase font-bold text-gold hover:text-gold/80 transition-colors duration-200"
+            >
+              Enquire <ArrowUpRight size={10} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -56,5 +56,67 @@ export default async function ShipPage({ params }: { params: Promise<{ slug: str
     notFound()
   }
 
-  return <ShipsClient data={data} />
+  const cabinSchema = data.cabins?.map((cabin) => ({
+    "@type": "HotelRoom",
+    "name": `${data.name} - ${cabin.name}`,
+    "description": cabin.description,
+    "image": `https://www.mekongrivercruise.com${cabin.image}`,
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "maxValue": 2
+    },
+    "bed": {
+      "@type": "BedDetails",
+      "description": cabin.bedOrientation
+    },
+    "amenityFeature": cabin.features.map(f => ({
+      "@type": "LocationFeatureSpecification",
+      "name": f,
+      "value": true
+    }))
+  })) || []
+
+  const imageObjects = data.gallery.map((imgUrl, i) => ({
+    "@type": "ImageObject",
+    "contentUrl": `https://www.mekongrivercruise.com${imgUrl}`,
+    "url": `https://www.mekongrivercruise.com${imgUrl}`,
+    "name": `${data.name} Mekong river cruise stateroom & deck photograph ${i + 1}`,
+    "caption": `${data.name} - Luxury Mekong River Cruise vessel and suites`
+  }))
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TouristAttraction",
+        "@id": `https://www.mekongrivercruise.com/ships/${data.slug}#ship`,
+        "name": data.name,
+        "description": data.overview.description,
+        "image": `https://www.mekongrivercruise.com${data.heroImage}`,
+        "provider": {
+          "@type": "TravelAgency",
+          "name": "Mekong River Cruise",
+          "url": "https://www.mekongrivercruise.com"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": data.pricing.threeNight.from,
+          "priceCurrency": "USD",
+          "priceValidUntil": "2027-12-31"
+        }
+      },
+      ...cabinSchema,
+      ...imageObjects
+    ]
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ShipsClient data={data} />
+    </>
+  )
 }
