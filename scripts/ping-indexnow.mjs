@@ -63,6 +63,7 @@ const URLS = [
   `https://${HOST}/travel-ideas/redefining-luxury`,
   // Core Ships
   `https://${HOST}/ships/aqua-mekong`,
+  `https://${HOST}/ships/scenic-spirit`,
   `https://${HOST}/ships/jayavarman`,
   `https://${HOST}/ships/the-jahan`,
   `https://${HOST}/ships/mekong-jewel`,

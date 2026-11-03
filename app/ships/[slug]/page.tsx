@@ -5,11 +5,14 @@ import { shipsData, defaultShipData } from "../data"
 
 const allShipSlugs = [
   "aqua-mekong",
+  "scenic-spirit",
   "jayavarman",
   "mekong-jewel",
   "mekong-princess",
   "the-jahan",
   "victoria-mekong",
+  "viking-saigon",
+  "emerald-harmony",
   "anouvong",
   "bassac-pandaw",
   "boheme",

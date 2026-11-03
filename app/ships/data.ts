@@ -78,7 +78,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Panoramic Suites",
       description: "Thirty square meters of calm. The beds face the windows because whoever designed these rooms understood that waking up to the Mekong at dawn is worth more than any headboard. The bathrooms have dual sinks and organic products that smell like lemongrass and something you can't quite name. There's a daybed by the glass where most people end up spending their afternoons with a book they never finish.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/aqua_mekong_suite_balcony.webp",
       amenities: ["En-suite bathroom with dual sinks", "Organic bath amenities", "Large daybed", "Air conditioning", "Complimentary laundry"],
     },
     dining: {
@@ -86,7 +86,14 @@ export const shipsData: Record<string, ShipData> = {
       description: "Forget what you think you know about cruise ship dining. The Aqua Mekong's consulting chef sources ingredients from the villages we pass — morning glory from a woman who waves at us every Tuesday, river prawns so fresh they're practically still swimming. The amok curry served in banana leaves at dinner is the kind of dish that makes you close your eyes. Some guests eat on the observation deck under the stars. Others prefer the indoor restaurant where the air conditioning meets the candlelight.",
       image: "/images/cultural-encounters-new.avif",
     },
-    gallery: ["/images/aqua_mekong.avif", "/images/luxury-balcony-sunset.avif", "/images/fine-dining-deck.avif", "/images/cultural-encounters-new.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif"],
+    gallery: [
+      "/images/aqua_mekong.avif",
+      "/images/aqua_mekong_suite_balcony.webp",
+      "/images/aqua_mekong_bathroom.webp",
+      "/images/aqua_mekong_suite_panoramic.webp",
+      "/images/aqua_mekong_banner.jpg",
+      "/images/luxury-balcony-sunset.avif"
+    ],
   },
   "jayavarman": {
     slug: "jayavarman",
@@ -121,7 +128,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Boutique Staterooms",
       description: "No two cabins look exactly alike, which is the first clue that someone cared. One has a carved headboard depicting apsara dancers. Another has vintage maps of the Mekong framed above the desk. All of them have private balconies where you can sit in the early morning dark and listen to monks chanting from a distant pagoda across the water. The beds are draped in silks. The bathrooms are bigger than they need to be, which is exactly the point.",
-      image: "/images/jayavarman_suite.avif",
+      image: "/images/jayavarman_deluxe_cabin.jpg",
       amenities: ["Private balcony", "French balcony doors", "Mini-bar with local spirits", "Air conditioning", "Premium Egyptian cotton linens"],
     },
     dining: {
@@ -129,7 +136,14 @@ export const shipsData: Record<string, ShipData> = {
       description: "The dining room is called Club 1930, and it earns the name. Candlelight on white linen. A Vietnamese chef who trained in Saigon but grew up watching his grandmother make bún bò Huế. The Cambodian fish amok arrives in a coconut, and the French onion soup that follows is so good it's almost an insult to the local cuisine. Almost. The wine list leans French — they know their audience — but the cocktails are pure Mekong: tamarind, palm sugar, local rice whiskey.",
       image: "/images/jayavarman_dining.avif",
     },
-    gallery: ["/images/jayavarman.avif", "/images/jayavarman_lounge.avif", "/images/jayavarman_suite.avif", "/images/jayavarman_dining.avif", "/images/jayavarman_deck.avif", "/images/heritage_epic.avif"],
+    gallery: [
+      "/images/jayavarman.avif",
+      "/images/jayavarman_deluxe_cabin.jpg",
+      "/images/jayavarman_signature_suite.jpg",
+      "/images/jayavarman_banner.jpg",
+      "/images/jayavarman_lounge.avif",
+      "/images/jayavarman_dining.avif"
+    ],
   },
   "mekong-jewel": {
     slug: "mekong-jewel",
@@ -250,7 +264,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Ornate Cabins",
       description: "The four-poster beds have carved headboards that depict different legends — Ganesh on one, a lotus mandala on another. The textiles are hand-embroidered. The balcony doors open onto the river with a theatrical creak that feels intentional. The bathrooms have mosaic tiles in patterns that you'll spend ten minutes tracing with your eyes while the shower warms up. Nothing is minimalist. Nothing is quiet. Everything is chosen, considered, and slightly more beautiful than it needs to be.",
-      image: "/images/jahan_suite.avif",
+      image: "/images/the_jahan_superior_cabin.jpg",
       amenities: ["Private balcony", "Four-poster carved bed", "Writing desk with stationery", "Mini-bar with premium spirits"],
     },
     dining: {
@@ -258,7 +272,14 @@ export const shipsData: Record<string, ShipData> = {
       description: "The dining hall has crystal chandeliers that throw tiny rainbows across the white tablecloths at sunset. The menu is unapologetically fusion: Cambodian curry alongside lamb kebabs, Vietnamese pho next to naan bread. It shouldn't work, but it does — spectacularly. The chef understands that this river connects cultures, and the food should too. Thursday nights are the captain's dinner, where the long table is set with gold-rimmed china and the conversation lasts until the candles burn down. It's the kind of evening you'll remember in specific, sensory detail years later.",
       image: "/images/jahan_dining.avif",
     },
-    gallery: ["/images/the_jahan.avif", "/images/jahan_suite.avif", "/images/jahan_dining.avif", "/images/heritage_epic.avif", "/images/heritage_start.avif", "/images/cultural-encounters-new.avif"],
+    gallery: [
+      "/images/the_jahan.avif",
+      "/images/the_jahan_superior_cabin.jpg",
+      "/images/jahan_suite.avif",
+      "/images/the_jahan_banner.jpg",
+      "/images/jahan_dining.avif",
+      "/images/cultural-encounters-new.avif"
+    ],
   },
   "victoria-mekong": {
     slug: "victoria-mekong",
@@ -302,6 +323,149 @@ export const shipsData: Record<string, ShipData> = {
       image: "/images/jewel_dining.avif",
     },
     gallery: ["/images/victoria_mekong.avif", "/images/victoria_mekong_v2.avif", "/images/victoria_mekong_v3.avif", "/images/jewel_suite.avif", "/images/jewel_dining.avif", "/images/jewel_pool.avif"],
+  },
+  "scenic-spirit": {
+    slug: "scenic-spirit",
+    name: "Scenic Spirit",
+    operator: "Scenic Luxury Cruises & Tours",
+    operatorNote: "Operated by Scenic. 100% all-inclusive luxury river cruising with private butler service.",
+    tagline: "Ultra-luxury all-inclusive with private Sun Lounge balconies",
+    heroImage: "/images/scenic_spirit_deluxe_suite.webp",
+    pricing: {
+      threeNight: { from: 3100, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 4200, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 7800, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Deluxe Suite (All-inclusive 24/7)",
+      inclusions: "Unlimited premium spirits & wine 24/7, personal butler, private transfers, guided excursions, tipping.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "85m",
+      cabins: "34",
+      guests: "68",
+      crew: "56",
+    },
+    overview: {
+      title: "Five-Star Space and Sanctuary",
+      description: "Scenic Spirit was custom-built to deliver five-star European luxury to the Mekong. With only 68 guests served by 56 crew members, the passenger-to-space ratio is among the highest of any ship in Southeast Asia.",
+    },
+    design: {
+      title: "Transformative Sun Lounge Architecture",
+      description: "Every suite on board features Scenic's innovative Sun Lounge system: at the push of a button, floor-to-ceiling glass windows retract, converting your climate-controlled lounge into an open-air teak balcony.",
+      image: "/images/scenic_spirit_deck_layout.webp",
+    },
+    suites: {
+      title: "All-Balcony Suites with Butler Service",
+      description: "Starting at an expansive 32 square meters, suites feature river-facing Slumber Beds, marble bathrooms with walk-in rain showers, and dedicated private butler service.",
+      image: "/images/scenic_spirit_grand_deluxe_suite.webp",
+      amenities: ["Scenic Sun Lounge balcony", "Private butler service", "Walk-in rain shower", "Complimentary mini-bar restocked daily", "L'Occitane bath amenities"],
+    },
+    dining: {
+      title: "Crystal Dining & River Café",
+      description: "From regional Khmer and Vietnamese delicacies to refined Western classics, all paired with complimentary sommelier-selected wines and premium cocktails around the clock.",
+      image: "/images/luxury_dining.avif",
+    },
+    gallery: [
+      "/images/scenic_spirit_deluxe_suite.webp",
+      "/images/scenic_spirit_grand_deluxe_suite.webp",
+      "/images/scenic_spirit_deck_layout.webp"
+    ],
+  },
+  "anouvong": {
+    slug: "anouvong",
+    name: "Anouvong",
+    operator: "Heritage Line",
+    operatorNote: "Operated by Heritage Line. Boutique ultra-luxury expedition on the Upper Mekong in Laos.",
+    tagline: "A king's vessel on the golden waters of Laos",
+    heroImage: "/images/anouvong.avif",
+    pricing: {
+      threeNight: { from: 1850, route: "Huay Xai ↔ Luang Prabang" },
+      fourNight: { from: 2450, route: "Luang Prabang ↔ Vientiane" },
+      sevenNight: { from: 4350, route: "Huay Xai ↔ Vientiane (Golden Triangle to Capital)" },
+      basis: "Per person, twin-share Deluxe Stateroom",
+      inclusions: "All gourmet onboard meals, daily expert-led cultural excursions, port fees, mineral water, coffee/tea.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "48m",
+      cabins: "10",
+      guests: "20",
+      crew: "22",
+    },
+    overview: {
+      title: "The Ultimate Upper Mekong Retreat",
+      description: "Named after King Anouvong, this intimate 10-cabin vessel brings bespoke elegance to Laos's misty mountain gorges. With only 20 guests, each journey feels like a private aristocratic expedition.",
+    },
+    design: {
+      title: "Laotian Artistry & Heritage Teak",
+      description: "Handcrafted Laotian textiles, gold-leaf Buddhist motifs, and deep teak woods evoke the royal heritage of Lan Xang. Designed with a shallow 1.2m draft to safely glide through the granite rapids of northern Laos.",
+      image: "/images/anouvong_terrace_deck.jpg",
+    },
+    suites: {
+      title: "Handcrafted River Sanctuaries",
+      description: "Floor-to-ceiling French balconies showcase dramatic cliff landscapes. Signature Suites feature a forward private terrace and an in-room Jacuzzi bath looking directly out onto the river.",
+      image: "/images/anouvong_signature_suite.jpg",
+      amenities: ["French balcony or private terrace", "Artisanal botanical amenities", "Individually controlled climate", "Panoramic river views", "Jacuzzi tub in Signature Suites"],
+    },
+    dining: {
+      title: "De-Dining & Mountain Terrace",
+      description: "Savor aromatic Laotian cuisine — fresh river fish with fragrant lemongrass, sticky rice in bamboo baskets, and French colonial-influenced fine dining under the stars.",
+      image: "/images/anouvong_deluxe_cabin.jpg",
+    },
+    gallery: [
+      "/images/anouvong.avif",
+      "/images/anouvong_signature_suite.jpg",
+      "/images/anouvong_deluxe_cabin.jpg",
+      "/images/anouvong_deluxe_executive.jpg",
+      "/images/anouvong_terrace_deck.jpg"
+    ],
+  },
+  "bassac-pandaw": {
+    slug: "bassac-pandaw",
+    name: "RV Bassac Pandaw",
+    operator: "Pandaw Expeditions",
+    operatorNote: "Operated by Pandaw Expeditions. Classic teak river exploration.",
+    tagline: "Handcrafted teak, brass fittings, and the pure romance of the river",
+    heroImage: "/images/bassac_pandaw_header.webp",
+    pricing: {
+      threeNight: { from: 1350, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 1800, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 2950, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Standard Stateroom",
+      inclusions: "All meals onboard, local transfers, English-speaking guide, entrance fees, crew gratuities.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "54.5m",
+      cabins: "28",
+      guests: "56",
+      crew: "32",
+    },
+    overview: {
+      title: "Pure River Expedition",
+      description: "Built to the classic 1947 Irrawaddy Flotilla blueprints, RV Bassac Pandaw is wrapped in rich Burmese teak and polished maritime brass. There are no televisions and no stiff dress codes — only the river, fine dining, and unhurried exploration.",
+    },
+    design: {
+      title: "Promenade Deck Living",
+      description: "Pandaw's signature open-plan promenade decks wrap completely around the vessel. French doors open directly onto wide wooden decks where guests can sit outside their stateroom in handcrafted rattan chairs.",
+      image: "/images/bassac_pandaw.avif",
+    },
+    suites: {
+      title: "Teak & Brass Staterooms",
+      description: "Clad in native teak with traditional brass fittings, comfortable twin or double beds, air conditioning, and en-suite bathrooms with powerful hot-water showers.",
+      image: "/images/bassac_pandaw_premium_cabin.webp",
+      amenities: ["French doors to promenade deck", "En-suite teak bathroom", "Pandaw eco-flask & kimonos", "Air conditioning", "Nightly turndown service"],
+    },
+    dining: {
+      title: "Al-Fresco Dining on the Upper Deck",
+      description: "Bistro-style dining featuring locally sourced river fish, tropical fruits, and Vietnamese-Cambodian curries served on open-air shaded decks.",
+      image: "/images/bassac_pandaw_header.webp",
+    },
+    gallery: [
+      "/images/bassac_pandaw_header.webp",
+      "/images/bassac_pandaw_premium_cabin.webp",
+      "/images/bassac_pandaw.avif"
+    ],
   }
 };
 
