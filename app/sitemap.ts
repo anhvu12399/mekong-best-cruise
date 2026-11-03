@@ -8,12 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const destinations = ['vietnam', 'cambodia', 'laos', 'thailand', 'myanmar', 'china']
   const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days', 'small-ship', 'private-charter', 'full-mekong-story', 'rivers-of-indochina']
   const ships = [
-    "aqua-mekong", "jayavarman", "mekong-jewel", "mekong-princess",
-    "the-jahan", "victoria-mekong", "anouvong", "bassac-pandaw",
-    "boheme", "champa-pandaw", "indochina-pandaw", "indochine-i",
-    "indochine-ii", "lan-diep", "laos-pandaw", "mekong-navigator",
-    "mekong-pandaw", "mekong-pearl", "mekong-symphony", "tonle-pandaw",
-    "toum-tiou-ii"
+    "aqua-mekong", "scenic-spirit", "viking-saigon", "emerald-harmony",
+    "amadara", "avalon-saigon", "mekong-jewel", "the-jahan", "jayavarman",
+    "mekong-navigator", "victoria-mekong", "toum-tiou-ii", "lan-diep",
+    "anouvong", "boheme", "mekong-pearl", "mekong-sun", "bassac-pandaw",
+    "mekong-pandaw", "tonle-pandaw", "indochina-pandaw", "laos-pandaw",
+    "champa-pandaw", "indochine-i", "indochine-ii", "mekong-princess",
+    "mekong-symphony"
   ]
 
   const staticPages = [
@@ -60,6 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const travelIdeas = [
+    '20-essential-mekong-cruise-questions-answered',
     'mekong-river-cruise-ships-compared-ranking',
     'best-mekong-river-cruise-for-seniors',
     'is-mekong-river-cruise-worth-it',
