@@ -88,7 +88,7 @@ export const shipsData: Record<string, ShipData> = {
     design: {
       title: "Built to disappear into the landscape",
       description: "The architects understood something essential: on this river, the scenery is the main event. So they wrapped the ship in glass — floor to ceiling, wall to wall — and then stepped back. The lounge feels like a living room someone actually lives in. The observation deck has a plunge pool that catches the sunset and holds it. Even the cinema room, tucked behind the bar, feels like a secret you stumbled onto rather than an amenity on a brochure.",
-      image: "/images/luxury-balcony-sunset.avif",
+      image: "/images/aqua_mekong_suite_panoramic.webp",
     },
     suites: {
       title: "Panoramic Design Suites",
@@ -148,7 +148,7 @@ export const shipsData: Record<string, ShipData> = {
       "/images/aqua_mekong_bathroom.webp",
       "/images/aqua_mekong_suite_panoramic.webp",
       "/images/aqua_mekong_banner.jpg",
-      "/images/luxury-balcony-sunset.avif"
+      "/images/aqua_mekong_suite_panoramic.webp"
     ],
   },
   "jayavarman": {
@@ -262,22 +262,48 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "All-Balcony Suites",
       description: "Every single suite on the Jewel has its own balcony. This matters more than you think. At dawn, before the ship wakes, you can stand outside in your robe and watch the mist burn off the river. Inside, the bed faces the water. The bathroom has a rain shower.",
-      image: "/images/jewel_suite.avif",
+      image: "/images/mekong_jewel_royal_suite.jpg",
       amenities: ["Private open-air balcony", "Sitting area with river views", "Rain shower bathroom", "Flat-screen TV", "Daily restocked tropical fruit & water"],
     },
     cabins: [
       {
         id: "deluxe-balcony-suite",
-        name: "Deluxe Balcony Suite",
+        name: "Deluxe Balcony Suite (Lotus Deck)",
         deck: "Lotus & Orchid Decks (28 Suites)",
         size: "30 m² to 31.5 m² (323 - 339 sq ft)",
         balconyType: "Private Step-out Teak Balcony with rattan armchairs",
         bedOrientation: "Direct River-Facing upholstered bed",
         bathroom: "Marble en-suite bathroom with walk-in rain shower",
-        image: "/images/jewel_suite.avif",
-        imageAlt: "Mekong Jewel Deluxe Balcony Suite with private open-air balcony and river-facing bed",
+        image: "/images/mekong_jewel_lotus_suite.jpg",
+        imageAlt: "Mekong Jewel Deluxe Balcony Suite on Lotus Deck with private open-air balcony and river-facing bed",
         description: "Modern eco-luxury with reclaimed timbers, woven bamboo accents, and floor-to-ceiling glass leading to a private outdoor balcony. Includes daily restocked tropical fruit basket.",
         features: ["Private open-air balcony", "Direct river-facing king bed", "Marble walk-in rain shower", "Complimentary minibar restocked daily", "Eco-friendly purified tap water system"]
+      },
+      {
+        id: "grand-suite",
+        name: "Grand Suite (Sun & Pool Deck)",
+        deck: "Sun Deck (4 Suites)",
+        size: "51 m² (549 sq ft)",
+        balconyType: "Expansive Private Veranda with sun loungers",
+        bedOrientation: "Forward river-facing king bed with panoramic floor-to-ceiling glass",
+        bathroom: "Luxury marble bath with standalone soaking tub & rainfall shower",
+        image: "/images/mekong_jewel_grand_suite.jpg",
+        imageAlt: "Mekong Jewel Grand Suite featuring spacious lounge and sweeping river views",
+        description: "Expansive luxury living with separate parlor seating, dedicated butler service, and complimentary laundry. Floor-to-ceiling glass wall opens onto a generous private veranda.",
+        features: ["51 m² expansive floor plan with parlor", "Private furnished sun veranda", "Standalone soaking tub overlooking river", "Personal butler service & free laundry", "Daily evening canapés & sparkling wine"]
+      },
+      {
+        id: "royal-suite",
+        name: "Royal Suite (Upper Deck Bow)",
+        deck: "Upper Deck Bow (2 Grand Suites)",
+        size: "85 m² (915 sq ft)",
+        balconyType: "Monumental Forward-Facing Private Veranda with outdoor Jacuzzi",
+        bedOrientation: "Grand master bedroom with panoramic forward river views",
+        bathroom: "Palatial marble master bath with Jacuzzi tub, dual rain showers & twin vanities",
+        image: "/images/mekong_jewel_royal_suite.jpg",
+        imageAlt: "Mekong Jewel Royal Suite with private forward veranda and master bedroom",
+        description: "The grandest suite on the Mekong. Boasts a forward-facing private terrace with private whirlpool Jacuzzi, separate dining area, walk-in dressing room, and dedicated 24-hour butler service.",
+        features: ["85 m² palatial suite with forward terrace", "Private outdoor whirlpool Jacuzzi", "Separate dining salon & living parlor", "24-hour dedicated butler service", "Unlimited complimentary laundry & minibar"]
       }
     ],
     dining: {
@@ -287,11 +313,11 @@ export const shipsData: Record<string, ShipData> = {
     },
     gallery: [
       "/images/mekong_jewel.avif",
-      "/images/mekong_jewel_v2.avif",
-      "/images/jewel_suite.avif",
+      "/images/mekong_jewel_royal_suite.jpg",
+      "/images/mekong_jewel_grand_suite.jpg",
+      "/images/mekong_jewel_lotus_suite.jpg",
       "/images/jewel_dining.avif",
-      "/images/jewel_pool.avif",
-      "/images/jewel_spa.avif"
+      "/images/jewel_pool.avif"
     ],
   },
   "mekong-princess": {
@@ -327,22 +353,35 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Rooms that feel like hiding places",
       description: "The suites on the Princess are generous for a ship this size — probably because there are only fourteen of them. French balconies with wrought-iron railings open onto the passing delta. The beds have white cotton and indigo silk. There's always a vase of fresh lotus flowers.",
-      image: "/images/princess_suite.avif",
+      image: "/images/mekong_princess_saigon_suite.jpg",
       amenities: ["French balcony or private veranda", "Premium bath products by L'Occitane", "Silk robes and leather slippers", "Individual climate control"],
     },
     cabins: [
       {
-        id: "junior-saigon-suite",
-        name: "Junior & Saigon Suite",
-        deck: "Mekong & Bassac Decks (14 Suites Only)",
-        size: "24 m² to 30 m² (258 - 323 sq ft)",
-        balconyType: "French Balcony with wrought-iron railings or private veranda",
+        id: "saigon-suite",
+        name: "Saigon Suite",
+        deck: "Bassac Deck Forward (2 Master Suites)",
+        size: "46 m² (495 sq ft)",
+        balconyType: "Private Forward Veranda with outdoor seating",
+        bedOrientation: "Royal portrait headboard facing private river veranda",
+        bathroom: "French colonial natural stone bath with clawfoot bathtub & separate shower",
+        image: "/images/mekong_princess_saigon_suite.jpg",
+        imageAlt: "Mekong Princess Saigon Suite with Nam Phuong Queen portrait, French colonial decor and private veranda",
+        description: "The premier stateroom aboard Mekong Princess. Features authentic Indochine royal portraits, antique hardwood floors, a private forward veranda, and an indulgent clawfoot soaking tub.",
+        features: ["Private step-out forward veranda", "Clawfoot bathtub & separate rain shower", "Dedicated private butler service", "Complimentary daily laundry & mini-bar", "L'Occitane en Provence amenities"]
+      },
+      {
+        id: "apsara-suite",
+        name: "Apsara Suite",
+        deck: "Mekong Deck (4 Suites)",
+        size: "24 m² (258 sq ft)",
+        balconyType: "French Balcony with floor-to-ceiling glass doors",
         bedOrientation: "River-facing classic French colonial bed with indigo silks",
         bathroom: "Natural stone bathroom with rain shower and luxury L'Occitane amenities",
-        image: "/images/princess_suite.avif",
-        imageAlt: "Mekong Princess Junior Suite with French balcony and colonial indigo silk bedding",
-        description: "An intimate sanctuary on a 14-suite boutique vessel. Features floor-to-ceiling French doors, custom-carved wood desks, fresh lotus blossoms daily, and dedicated private butler service.",
-        features: ["French doors opening to river breeze", "Dedicated private butler service", "L'Occitane en Provence bath amenities", "Silk bathrobes & leather slippers", "Fresh lotus flowers replenished daily"]
+        image: "/images/mekong_princess_apsara_suite.jpg",
+        imageAlt: "Mekong Princess Apsara Suite with hand-carved Khmer bas-relief and French balcony",
+        description: "An intimate sanctuary celebrating Khmer craftsmanship with authentic carved apsara artwork, floor-to-ceiling French doors, and gentle river breezes.",
+        features: ["French doors opening to river breeze", "Authentic carved Khmer apsara art", "Dedicated private butler service", "Silk bathrobes & leather slippers", "Fresh lotus flowers replenished daily"]
       }
     ],
     dining: {
@@ -352,11 +391,11 @@ export const shipsData: Record<string, ShipData> = {
     },
     gallery: [
       "/images/princess_hero.avif",
-      "/images/princess_suite.avif",
+      "/images/mekong_princess_saigon_suite.jpg",
+      "/images/mekong_princess_apsara_suite.jpg",
       "/images/princess_dining.avif",
       "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif",
-      "/images/luxury-balcony-sunset.avif"
+      "/images/dest_cambodia.avif"
     ],
   },
   "the-jahan": {
@@ -417,10 +456,23 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Elevated Private Teak Veranda",
         bedOrientation: "Four-poster colonial bed draped in fine linens",
         bathroom: "Handcrafted mosaic bath; Signature Suites feature private in-room Jacuzzi tub",
-        image: "/images/the_jahan_banner.jpg",
+        image: "/images/the_jahan_signature_suite.jpg",
         imageAlt: "The Jahan Signature Suite with private Jacuzzi spa tub and four-poster colonial bed",
         description: "Situated on the Upper Deck with elevated panoramic vistas. Signature Suites boast antique Raj artifacts, a four-poster bed, and a private Jacuzzi tub with river views.",
         features: ["Upper Deck prime river panorama", "Four-poster carved colonial bed", "Private Jacuzzi spa tub in Signature Suites", "Butler service & daily laundry", "Hand-painted artwork & Raj antiques"]
+      },
+      {
+        id: "taj-noble-suite",
+        name: "Noble Suite (The Taj & Lord Byron)",
+        deck: "Upper Deck Bow (2 Monumental Suites)",
+        size: "51 m² (549 sq ft)",
+        balconyType: "Monumental Forward-Facing Private Veranda with outdoor Jacuzzi",
+        bedOrientation: "Grand Indian-colonial four-poster bed facing forward river panorama",
+        bathroom: "Palatial en-suite bathroom with handcrafted marble whirlpool spa tub",
+        image: "/images/the_jahan_taj_suite.jpg",
+        imageAlt: "The Jahan Noble Suite The Taj with hand-inlaid Indian artwork and four-poster bed",
+        description: "The crown jewel of The Jahan. Evoking the courtly romance of Emperor Shah Jahan with antique Indian tapestries, camel-bone inlaid tables, a palatial private veranda, and outdoor whirlpool Jacuzzi.",
+        features: ["51 m² palatial suite with forward veranda", "Private outdoor whirlpool Jacuzzi", "Hand-inlaid camel bone furnishings & Raj art", "Personal butler service & daily laundry", "Complimentary sparkling wine & minibar"]
       }
     ],
     dining: {
@@ -431,8 +483,8 @@ export const shipsData: Record<string, ShipData> = {
     gallery: [
       "/images/the_jahan.avif",
       "/images/the_jahan_superior_cabin.jpg",
-      "/images/the_jahan_banner.jpg",
-      "/images/jahan_suite.avif",
+      "/images/the_jahan_signature_suite.jpg",
+      "/images/the_jahan_taj_suite.jpg",
       "/images/jahan_dining.avif",
       "/images/cultural-encounters-new.avif"
     ],
@@ -681,7 +733,7 @@ export const shipsData: Record<string, ShipData> = {
       "/images/anouvong_deluxe_cabin.jpg",
       "/images/anouvong_deluxe_executive.jpg",
       "/images/anouvong_terrace_deck.jpg",
-      "/images/luxury-balcony-sunset.avif"
+      "/images/anouvong_signature_suite.jpg"
     ],
   },
   "bassac-pandaw": {
@@ -742,8 +794,8 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Promenade Veranda (direct walk-out access to shaded teak deck)",
         bedOrientation: "Twin or double bed with sliding glass windows",
         bathroom: "En-suite teak bathroom with hot power shower and eco-toiletry kit",
-        image: "/images/bassac_pandaw_header.webp",
-        imageAlt: "RV Bassac Pandaw handcrafted teak riverboat sailing shallow waters of the Mekong Delta",
+        image: "/images/bassac_pandaw_twin_cabin.webp",
+        imageAlt: "RV Bassac Pandaw handcrafted teak twin stateroom with French doors and brass fittings",
         description: "Classic colonial expedition cabin with French doors opening to the 360-degree teak promenade deck. Features individual air conditioning, kimono bathrobes, and Pandaw refillable water flasks.",
         features: ["French doors opening to teak promenade deck", "Dedicated rattan chairs outside your cabin", "Ultra-low 1.5m draft reaching remote canals", "Informal, authentic expedition atmosphere", "Nightly turndown service & briefing"]
       }
@@ -751,15 +803,15 @@ export const shipsData: Record<string, ShipData> = {
     dining: {
       title: "Al-Fresco Dining on the Upper Deck",
       description: "Bistro-style dining featuring locally sourced river fish, tropical fruits, and Vietnamese-Cambodian curries served on open-air shaded decks.",
-      image: "/images/bassac_pandaw_header.webp",
+      image: "/images/bassac_pandaw_dining.webp",
     },
     gallery: [
       "/images/bassac_pandaw_header.webp",
       "/images/bassac_pandaw_premium_cabin.webp",
+      "/images/bassac_pandaw_twin_cabin.webp",
+      "/images/bassac_pandaw_dining.webp",
       "/images/bassac_pandaw.avif",
-      "/images/mekong_pandaw_header.webp",
-      "/images/fine-dining-deck.avif",
-      "/images/luxury-balcony-sunset.avif"
+      "/images/mekong_pandaw_header.webp"
     ],
   },
   "viking-saigon": {
@@ -795,7 +847,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "All-Outside Staterooms & Suites",
       description: "All 40 staterooms feature hotel-style beds, private verandas or French balconies, and heated bathroom floors — an exclusive Viking amenity on the Mekong.",
-      image: "/images/luxury-balcony-sunset.avif",
+      image: "/images/viking_saigon_veranda_stateroom.jpg",
       amenities: ["Private step-out veranda", "Heated bathroom floor", "Anti-fog mirror", "Freyja bath amenities", "Passenger elevator access"],
     },
     cabins: [
@@ -807,7 +859,7 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Private Step-out Teak Veranda with armchairs",
         bedOrientation: "Direct River-Facing hotel bed",
         bathroom: "Heated bathroom floors, anti-fog mirror, walk-in glass shower & Freyja amenities",
-        image: "/images/viking_saigon_exterior.jpg",
+        image: "/images/viking_saigon_veranda_stateroom.jpg",
         imageAlt: "Viking Saigon Veranda Stateroom with private step-out teak balcony and Scandinavian hotel bed",
         description: "Features a full step-out teak veranda with river views, premium Scandinavian hotel bedding, and Viking's signature heated bathroom floors.",
         features: ["Private step-out veranda with armchairs", "Heated bathroom floors (unique on Mekong)", "Anti-fog mirrors & Freyja amenities", "Elevator access across all three decks", "Direct river-facing king bed"]
@@ -820,24 +872,36 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Floor-to-ceiling sliding glass doors with French balcony",
         bedOrientation: "River-facing king or twin beds",
         bathroom: "Heated tile bathroom floors, glass shower stall, plush robes",
-        image: "/images/luxury-balcony-sunset.avif",
+        image: "/images/viking_saigon_french_balcony.jpg",
         imageAlt: "Viking Saigon French Balcony Stateroom with floor-to-ceiling sliding glass doors",
         description: "Floor-to-ceiling sliding glass doors bring river breezes and views right into your stateroom. Equipped with individual climate control, mini-fridge, and heated bathroom floors.",
         features: ["Floor-to-ceiling sliding glass doors", "Heated bathroom floor & anti-fog mirror", "Individual silent climate control", "Hotel-style bed with luxury linens", "Daily housekeeping & shoe shine"]
+      },
+      {
+        id: "explorer-suite",
+        name: "Explorer Suite",
+        deck: "Upper Deck (2 Master Suites)",
+        size: "50 m² (538 sq ft)",
+        balconyType: "Wrap-Around Veranda with private sundeck loungers",
+        bedOrientation: "Master bedroom suite with panoramic river view",
+        bathroom: "Master bathroom with heated floors, walk-in shower & premium Freyja cosmetics",
+        image: "/images/viking_saigon_suite.jpg",
+        imageAlt: "Viking Saigon Explorer Suite with wrap-around private veranda and Scandinavian living room",
+        description: "Two-room suite with separate living area, expansive wrap-around teak veranda, complimentary laundry, and daily in-room champagne service.",
+        features: ["Two-room suite with private parlor", "Expansive wrap-around veranda", "Heated bathroom floor & anti-fog mirror", "Complimentary laundry & minibar replenishment", "Priority excursion reservations"]
       }
     ],
     dining: {
       title: "The Restaurant & Aquavit Terrace",
       description: "Regional Vietnamese-Cambodian dishes and familiar Western classics prepared with fresh ingredients sourced from ports along the river.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/viking_saigon_render.jpg",
     },
     gallery: [
       "/images/viking_saigon_exterior.jpg",
-      "/images/viking_saigon_render.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/luxury_dining.avif",
-      "/images/dest_vietnam.avif"
+      "/images/viking_saigon_veranda_stateroom.jpg",
+      "/images/viking_saigon_french_balcony.jpg",
+      "/images/viking_saigon_suite.jpg",
+      "/images/viking_saigon_render.jpg"
     ],
   },
   "emerald-harmony": {
@@ -873,7 +937,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "All-Balcony Living",
       description: "Featuring Emerald's innovative all-weather balcony system with drop-down glass windows, premium ESPA toiletries, and hotel bedding.",
-      image: "/images/luxury-balcony-sunset.avif",
+      image: "/images/emerald_harmony_panorama_suite.jpg",
       amenities: ["Electronic drop-down balcony window", "ESPA bath products", "Infotainment system", "Individual climate control", "Aft swimming pool access"],
     },
     cabins: [
@@ -885,24 +949,34 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Electronic push-button drop-down balcony window",
         bedOrientation: "Direct River-Facing hotel bed",
         bathroom: "Walk-in glass shower, luxury ESPA amenities, plush bathrobes",
-        image: "/images/emerald_harmony_exterior.jpg",
+        image: "/images/emerald_harmony_panorama_suite.jpg",
         imageAlt: "Emerald Harmony Panorama Balcony Suite with electronic drop-down balcony window and river views",
         description: "Features Emerald's signature drop-down glass window that converts your seating area into an open-air riverfront balcony at the press of a button.",
         features: ["Push-button drop-down balcony window", "ESPA luxury bath amenities", "Direct river-facing hotel bed", "Complimentary Wi-Fi & minibar", "Infotainment system with movies"]
+      },
+      {
+        id: "grand-balcony-suite",
+        name: "Grand Balcony Suite",
+        deck: "Horizon Deck (4 Suites)",
+        size: "37 m² (398 sq ft)",
+        balconyType: "Wrap-around outdoor teak veranda & interior drop-down balcony",
+        bedOrientation: "King hotel bed with sweeping river views",
+        bathroom: "Spacious bathroom with walk-in shower & premium ESPA cosmetics",
+        image: "/images/emerald_harmony_grand_suite.jpg",
+        imageAlt: "Emerald Harmony Grand Balcony Suite with wrap-around outdoor veranda and separate sitting area",
+        description: "The most prestigious suite on Emerald Harmony, featuring a separate bedroom, spacious lounge area, private wrap-around veranda, and complimentary daily laundry service.",
+        features: ["Spacious 37 m² layout with separate living area", "Private wrap-around outdoor veranda", "Complimentary daily laundry service", "Continental breakfast served in suite", "Welcome bottle of champagne"]
       }
     ],
     dining: {
       title: "Reflections Restaurant",
       description: "Enjoy chef-crafted Asian and European menus paired with complimentary wines, followed by cocktails in the Horizon Bar & Lounge.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/emerald_harmony_exterior.jpg",
     },
     gallery: [
       "/images/emerald_harmony_exterior.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/luxury_dining.avif",
-      "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif"
+      "/images/emerald_harmony_panorama_suite.jpg",
+      "/images/emerald_harmony_grand_suite.jpg"
     ],
   },
   "amadara": {
@@ -938,7 +1012,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Signature Twin Balcony Accommodations",
       description: "Enjoy fresh river air on your private step-out balcony while keeping a climate-controlled French balcony sitting nook inside.",
-      image: "/images/luxury_sunset_balcony.avif",
+      image: "/images/amadara_twin_balcony_stateroom.jpg",
       amenities: ["Signature Twin Balconies", "Multi-jet massage shower", "Complimentary Wi-Fi", "Individually controlled A/C", "Bathrobes & slippers"],
     },
     cabins: [
@@ -950,24 +1024,36 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Signature Twin Balcony (French Balcony + Outside Step-out Balcony)",
         bedOrientation: "River-facing hotel bed",
         bathroom: "Spacious bathroom with multi-jet shower & premium bath products",
-        image: "/images/amadara_exterior.jpg",
+        image: "/images/amadara_twin_balcony_stateroom.jpg",
         imageAlt: "AmaDara Twin Balcony Stateroom with French balcony and private outside veranda",
         description: "Features AmaWaterways' trademark Twin Balcony design with both a French balcony and a private step-out balcony offering unhindered Mekong views.",
         features: ["Signature Twin Balconies (French + Step-out)", "Multi-jet shower massage system", "Complimentary Wi-Fi & movie infotainment", "Individually controlled air conditioning", "Robes & slippers provided"]
+      },
+      {
+        id: "luxury-suite",
+        name: "Luxury Suite",
+        deck: "Saigon Deck (2 Master Suites)",
+        size: "46.6 m² (502 sq ft)",
+        balconyType: "Extended Private Veranda & French Balcony",
+        bedOrientation: "King master bedroom with French balcony river views",
+        bathroom: "Full bath with whirlpool bathtub, separate shower & double sinks",
+        image: "/images/amadara_suite_living.jpg",
+        imageAlt: "AmaDara Luxury Suite with spacious parlor living room and French colonial woodwork",
+        description: "The grandest suite aboard AmaDara. Offers a separate living room parlor, whirlpool bath, extended private step-out veranda, and complimentary daily laundry.",
+        features: ["Spacious 46.6 m² layout with living room", "Whirlpool tub & separate multi-jet shower", "Extended private step-out veranda", "Complimentary laundry & butler attention", "French colonial artisanal carved woodwork"]
       }
     ],
     dining: {
       title: "The Main Restaurant & The Chef's Table",
       description: "Fine dining featuring regional Vietnamese and Cambodian specialties alongside classic Western menus, with complimentary free-flowing regional wines.",
-      image: "/images/luxury_dining.avif",
+      image: "/images/amadara_fusion_restaurant.jpg",
     },
     gallery: [
       "/images/amadara_exterior.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/luxury_dining.avif",
-      "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif"
+      "/images/amadara_twin_balcony_stateroom.jpg",
+      "/images/amadara_suite_living.jpg",
+      "/images/amadara_fusion_restaurant.jpg",
+      "/images/amadara_saigon_lounge.jpg"
     ],
   },
   "avalon-saigon": {
@@ -1003,7 +1089,7 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "All-Panorama Suite Comfort",
       description: "245 sq ft of living space with marble bathroom, large glass shower, and motorized wall-to-wall open-air sliding doors.",
-      image: "/images/luxury_sunset_balcony.avif",
+      image: "/images/avalon_saigon_panorama_suite.jpg",
       amenities: ["Motorized Open-Air Balcony", "Direct river-facing beds", "Marble bathroom", "L'Occitane bath amenities", "Nightly turndown"],
     },
     cabins: [
@@ -1015,24 +1101,48 @@ export const shipsData: Record<string, ShipData> = {
         balconyType: "Avalon Open-Air Balcony (9-foot motorized panoramic opening)",
         bedOrientation: "100% Direct River-Facing bed (Beds Face the View)",
         bathroom: "Full marble bathroom with walk-in shower & L'Occitane toiletries",
-        image: "/images/avalon_saigon_exterior.jpg",
+        image: "/images/avalon_saigon_panorama_suite.jpg",
         imageAlt: "Avalon Saigon Panorama Suite with direct river-facing beds and wall-to-wall Open-Air Balcony",
         description: "Avalon's revolutionary Suite Ship concept: comfort-collection beds oriented directly towards the river, with giant sliding glass doors creating an open-air pavilion.",
         features: ["Motorized 9-foot wall-to-wall Open-Air Balcony", "Direct river-facing Comfort-Collection beds", "Marble bathroom with premium L'Occitane amenities", "Only 36 guests onboard for ultimate intimacy", "Nightly port lectures & cultural entertainment"]
+      },
+      {
+        id: "comfort-stateroom-bed",
+        name: "Comfort Collection Bed & View",
+        deck: "Tonle & Mekong Decks",
+        size: "Panorama Suite Interior View",
+        balconyType: "Direct outward facing panoramic window",
+        bedOrientation: "River-facing Comfort Collection bed",
+        bathroom: "Adjoining marble en-suite bathroom",
+        image: "/images/avalon_saigon_stateroom_bed.jpg",
+        imageAlt: "Avalon Saigon Comfort Collection hotel bed oriented towards the panoramic Mekong River",
+        description: "Beds face the view: Avalon placed the beds directly facing the 14-foot wall-to-wall windows so you wake up to the river and drifting floating markets every morning.",
+        features: ["100% river-facing orientation", "Egyptian super-combed cotton linens", "Choice of firm or soft pillows", "Individual bedside USB charging", "Writing desk & reading lighting"]
+      },
+      {
+        id: "marble-ensuite-bathroom",
+        name: "Designer Marble En-Suite Bathroom",
+        deck: "All Panorama Suites",
+        size: "Full Marble Stateroom Bathroom",
+        balconyType: "Contemporary glass-enclosed bathroom",
+        bedOrientation: "En-suite bathroom layout",
+        bathroom: "Spacious glass-door shower with overhead rain showerhead and L'Occitane bath essentials",
+        image: "/images/avalon_saigon_bathroom.jpg",
+        imageAlt: "Avalon Saigon full marble bathroom with glass-enclosed shower and premium L'Occitane amenities",
+        description: "Contemporary styling with polished marble tiles, premium vanity mirrors, spacious walk-in shower stall, and luxury French L'Occitane en Provence soaps and lotions.",
+        features: ["Polished marble surfaces", "Large glass-door shower stall", "L'Occitane en Provence amenities", "Plush bathrobes and extra-thick towels", "Heated mirror & hairdryer"]
       }
     ],
     dining: {
       title: "Panoramic Dining Room & Panorama Lounge",
       description: "Fresh local ingredients prepared by executive chefs, paired with complimentary wines, beer, and soft drinks with lunch and dinner.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/avalon_saigon_panorama_suite.jpg",
     },
     gallery: [
       "/images/avalon_saigon_exterior.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/luxury_dining.avif",
-      "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif"
+      "/images/avalon_saigon_panorama_suite.jpg",
+      "/images/avalon_saigon_stateroom_bed.jpg",
+      "/images/avalon_saigon_bathroom.jpg"
     ],
   },
   "mekong-navigator": {
@@ -1068,36 +1178,61 @@ export const shipsData: Record<string, ShipData> = {
     suites: {
       title: "Grand & Prestige Suites",
       description: "Opulent suites with French double doors, individual climate control, and dedicated butler attention in premium categories.",
-      image: "/images/luxury_sunset_balcony.avif",
+      image: "/images/mekong_navigator_prestige_suite.jpg",
       amenities: ["French balcony", "Passenger elevator access", "En-suite marble bathroom", "Butler service (select suites)", "Pillow menu"],
     },
     cabins: [
       {
         id: "prestige-suite",
-        name: "Prestige & Signature Suites",
-        deck: "Orchid & Lotus Decks (34 All-Suite Accommodations)",
-        size: "27 m² - 36 m² (291 - 387 sq ft)",
+        name: "Prestige Suite",
+        deck: "Lotus Deck (16 Suites)",
+        size: "36 m² (387 sq ft)",
         balconyType: "French Balcony with double opening doors",
-        bedOrientation: "Boutique Indochine queen/twin beds",
-        bathroom: "Custom marble bathroom with clawfoot tub or walk-in rainfall shower",
-        image: "/images/mekong_navigator_profile.jpg",
+        bedOrientation: "Boutique Indochine queen/twin beds facing river",
+        bathroom: "Custom marble bathroom with clawfoot tub & separate walk-in shower",
+        image: "/images/mekong_navigator_prestige_suite.jpg",
         imageAlt: "Mekong Navigator Prestige Suite with French colonial mahogany furnishings and French balcony",
-        description: "Handcrafted Indochine furnishings, French double doors opening to river panoramas, and personalized white-glove service.",
-        features: ["French balcony with river views", "Internal passenger elevator between residential decks", "Butler service for premium suite categories", "La Vie Spa and Le Salon library onboard", "Fine dining at Le Marché restaurant"]
+        description: "Handcrafted Indochine furnishings, French double doors opening to river panoramas, clawfoot soaking tub, and personalized white-glove service.",
+        features: ["French balcony with river views", "Clawfoot soaking tub & walk-in shower", "Internal passenger elevator between residential decks", "Butler service & daily laundry", "Fine dining at Le Marché restaurant"]
+      },
+      {
+        id: "signature-suite",
+        name: "Signature Suite",
+        deck: "Orchid Deck (14 Suites)",
+        size: "27 m² (291 sq ft)",
+        balconyType: "French Balcony with panoramic glass doors",
+        bedOrientation: "Colonial wood bed facing river breeze",
+        bathroom: "Polished marble bathroom with rainfall shower",
+        image: "/images/mekong_navigator_signature_suite.jpg",
+        imageAlt: "Mekong Navigator Signature Suite with French balcony and colonial decor",
+        description: "Spacious colonial sanctuary with floor-to-ceiling French windows, antique French Indochina artwork, and elevator access.",
+        features: ["Floor-to-ceiling French balcony", "Polished marble rainfall shower", "Elevator access across decks", "Individually controlled climate", "Complimentary daily laundry"]
+      },
+      {
+        id: "grande-suite",
+        name: "Grande Suite (Upper Deck Bow)",
+        deck: "Orchid Deck Bow (2 Grand Suites)",
+        size: "54 m² (581 sq ft)",
+        balconyType: "Monumental Private Veranda with sun loungers",
+        bedOrientation: "King master bedroom with forward-facing river panorama",
+        bathroom: "Palatial marble bath with clawfoot bathtub and separate shower",
+        image: "/images/mekong_navigator_grand_suite.jpg",
+        imageAlt: "Mekong Navigator Grande Suite with expansive private veranda and forward river views",
+        description: "The premier stateroom aboard Mekong Navigator. Features a separate sitting parlor, extended private step-out veranda, in-suite dining, and 24-hour butler service.",
+        features: ["54 m² layout with separate parlor", "Expansive private step-out veranda", "Clawfoot soaking tub overlooking the river", "Dedicated 24-hour butler service", "Complimentary sparkling wine & minibar"]
       }
     ],
     dining: {
       title: "Le Marché Restaurant",
       description: "Fine dining featuring multi-course French-Indochinese culinary creations alongside Western standards, paired with regional beverages.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/mekong_navigator_prestige_suite.jpg",
     },
     gallery: [
       "/images/mekong_navigator_exterior.jpg",
-      "/images/mekong_navigator_profile.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/luxury_dining.avif",
-      "/images/dest_vietnam.avif"
+      "/images/mekong_navigator_prestige_suite.jpg",
+      "/images/mekong_navigator_signature_suite.jpg",
+      "/images/mekong_navigator_grand_suite.jpg",
+      "/images/mekong_navigator_profile.jpg"
     ],
   },
   "toum-tiou-ii": {
@@ -1154,15 +1289,13 @@ export const shipsData: Record<string, ShipData> = {
     dining: {
       title: "Panoramic Indoor & Outdoor Restaurant",
       description: "Delicious French-Khmer fusion dishes prepared with market-fresh vegetables and local river fish, served in a relaxed communal setting.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/toum_tiou_ii_cabin.jpg",
     },
     gallery: [
       "/images/toum_tiou_ii_exterior.jpg",
       "/images/toum_tiou_ii_cabin.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif"
+      "/images/toum_tiou_ii_exterior.jpg",
+      "/images/toum_tiou_ii_cabin.jpg"
     ],
   },
   "lan-diep": {
@@ -1219,15 +1352,314 @@ export const shipsData: Record<string, ShipData> = {
     dining: {
       title: "Colonial Dining Hall & River Bar",
       description: "Family-style French and Indochinese meals served with warmth and genuine Cambodian hospitality.",
-      image: "/images/fine-dining-deck.avif",
+      image: "/images/lan_diep_cabin.jpg",
     },
     gallery: [
       "/images/lan_diep_exterior.jpg",
       "/images/lan_diep_cabin.jpg",
-      "/images/luxury-balcony-sunset.avif",
-      "/images/fine-dining-deck.avif",
-      "/images/dest_vietnam.avif",
-      "/images/dest_cambodia.avif"
+      "/images/lan_diep_exterior.jpg",
+      "/images/lan_diep_cabin.jpg"
+    ],
+  },
+  "boheme": {
+    slug: "boheme",
+    name: "Bohème",
+    operator: "Mekong Kingdoms",
+    operatorNote: "Operated by Mekong Kingdoms (Minor Hotels). Ultra-luxury bespoke boutique cruiser on the Upper Mekong in Laos.",
+    tagline: "Pure bespoke luxury gliding through the mountain gorges of Laos",
+    heroImage: "/images/boheme_drone_exterior.jpg",
+    pricing: {
+      threeNight: { from: 1950, route: "Luang Prabang ↔ Chiang Khong" },
+      fourNight: { from: 2600, route: "Luang Prabang ↔ Vientiane" },
+      sevenNight: { from: 4800, route: "Chiang Khong ↔ Vientiane (Golden Triangle to Capital)" },
+      basis: "Per person, twin-share Deluxe Suite",
+      inclusions: "All gourmet onboard dining, guided shore excursions, premium wines & house spirits, private transfers.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "42m",
+      cabins: "13",
+      guests: "26",
+      crew: "24",
+    },
+    overview: {
+      title: "Bohemian Elegance on the Wild Mekong",
+      description: "With only 13 bespoke suites accommodating 26 discerning travelers, Bohème delivers private yacht-style exploration through northern Laos's dramatic limestone gorges and sacred riverside caves.",
+    },
+    design: {
+      title: "Quiet Luxury & Natural Teak Craftsmanship",
+      description: "Rich blonde wood parquet, custom Laotian silk Ikat throws, floor-to-ceiling panoramic sliding doors, and open-air riverside observation salons designed by Minor Hotels.",
+      image: "/images/boheme_drone_exterior.jpg",
+    },
+    suites: {
+      title: "Bespoke Suites with Private Balconies",
+      description: "Every suite aboard Bohème features direct river-facing beds, expansive private balconies with daybeds, and en-suite bathrooms equipped with rain showers or freestanding soaking tubs.",
+      image: "/images/boheme_bedroom_suite.jpg",
+      amenities: ["Private step-out balcony with daybed", "Direct river-facing king bed", "Rain shower & luxury toiletries", "Nespresso machine & high-end sound system", "Complimentary laundry & butler attention"],
+    },
+    cabins: [
+      {
+        id: "deluxe-suite",
+        name: "Deluxe Suite (Private Balcony)",
+        deck: "Lower & Main Decks (10 Suites)",
+        size: "30 m² (323 sq ft)",
+        balconyType: "Private Step-out Teak Balcony with exterior daybed",
+        bedOrientation: "100% Direct River-Facing king bed",
+        bathroom: "Designer en-suite with walk-in glass rain shower and luxury amenities",
+        image: "/images/boheme_bedroom_suite.jpg",
+        imageAlt: "Bohème Deluxe Suite with private outdoor balcony daybed and river-facing king bed",
+        description: "Thirty square meters of bohemian sophistication. Features warm teak floors, floor-to-ceiling glass sliding doors opening to a private wooden balcony with an exterior daybed directly overlooking the waters of Laos.",
+        features: ["Private step-out balcony with daybed", "100% direct river-facing bed", "Walk-in glass rain shower", "Nespresso coffee machine & premium minibar", "Daily fresh tropical fruits & evening turndown"]
+      },
+      {
+        id: "royal-suite",
+        name: "Royal Suite",
+        deck: "Upper Deck Bow (2 Grand Suites)",
+        size: "60 m² (646 sq ft)",
+        balconyType: "Expansive Forward Veranda with panoramic daybed",
+        bedOrientation: "King master bedroom with 180° forward river views",
+        bathroom: "Freestanding luxury bathtub positioned next to window with scenic river panorama",
+        image: "/images/boheme_bedroom_suite.jpg",
+        imageAlt: "Bohème Royal Suite with expansive private terrace and freestanding window bathtub",
+        description: "The pinnacle of Upper Mekong luxury. Boasts an expansive forward veranda, freestanding soaking bathtub framed by scenic river windows, separate sitting lounge, and dedicated private butler service.",
+        features: ["60 m² grand suite with forward terrace", "Freestanding window soaking bathtub", "Dedicated private butler service", "Complimentary laundry & unlimited minibar", "Priority private shore excursions"]
+      }
+    ],
+    dining: {
+      title: "Artisan Dining Salon & River Lounge Bar",
+      description: "Gourmet French-Lao fusion dining crafted from regional organic farm produce, enjoyed in the open-air dining pavilion or riverside bar salon.",
+      image: "/images/boheme_dining_area.jpg",
+    },
+    gallery: [
+      "/images/boheme_drone_exterior.jpg",
+      "/images/boheme_bedroom_suite.jpg",
+      "/images/boheme_dining_area.jpg"
+    ],
+  },
+  "mekong-pearl": {
+    slug: "mekong-pearl",
+    name: "Mekong Pearl",
+    operator: "Lernidee Erlebnisreisen",
+    operatorNote: "Operated by Lernidee Erlebnisreisen. German-engineered boutique expedition vessel on the Upper Mekong in Laos.",
+    tagline: "Boutique luxury cruising the untamed waters of northern Laos",
+    heroImage: "/images/mekong_pearl_exterior.jpg",
+    pricing: {
+      threeNight: { from: 1650, route: "Huay Xai ↔ Luang Prabang" },
+      fourNight: { from: 2150, route: "Luang Prabang ↔ Vientiane" },
+      sevenNight: { from: 3850, route: "Golden Triangle ↔ Vientiane (Laos Explorer)" },
+      basis: "Per person, twin-share Superior Cabin",
+      inclusions: "All meals onboard, expert German/English-speaking tour director, shore excursions, entrance fees.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "44m",
+      cabins: "15",
+      guests: "29",
+      crew: "18",
+    },
+    overview: {
+      title: "German Engineering Meets Laotian Charm",
+      description: "Custom-built in 2017 to navigate the Upper Mekong's challenging granite rapids and wild river landscapes between the Golden Triangle and Vientiane with shallow draft and exceptional stability.",
+    },
+    design: {
+      title: "Noble Teak Wood & Modern Comfort",
+      description: "Classic riverboat design incorporating rich teak and rosewood paneling, open observation deck, spa treatment room, and panoramic indoor/outdoor dining lounge.",
+      image: "/images/mekong_pearl_exterior.jpg",
+    },
+    suites: {
+      title: "Boutique Teak Cabins with River Views",
+      description: "All 15 cabins feature outside river views, authentic teak and rosewood interior woodwork, individual silent air conditioning, and en-suite private bathrooms.",
+      image: "/images/mekong_pearl_deluxe_cabin.jpg",
+      amenities: ["Private balcony (Deluxe)", "French balcony (Superior)", "En-suite bathroom with shower", "Individual climate control", "Safe & wardrobe"],
+    },
+    cabins: [
+      {
+        id: "deluxe-balcony-cabin",
+        name: "Deluxe Cabin with Private Balcony",
+        deck: "Upper Deck (2 Cabins)",
+        size: "20 m² (215 sq ft)",
+        balconyType: "Private Step-out Teak Balcony",
+        bedOrientation: "Direct River-Facing twin or double bed",
+        bathroom: "Private en-suite bathroom with walk-in shower",
+        image: "/images/mekong_pearl_deluxe_cabin.jpg",
+        imageAlt: "Mekong Pearl Deluxe Cabin with private step-out teak balcony overlooking northern Laos",
+        description: "The two premier cabins on the Upper Deck feature private step-out teak balconies, panoramic windows, and fine Laotian silk accents.",
+        features: ["Private step-out teak balcony", "Elevated Upper Deck panorama", "En-suite bathroom with shower", "Individual silent air conditioning", "Minibar & safe"]
+      },
+      {
+        id: "superior-cabin",
+        name: "Superior Cabin (French Balcony)",
+        deck: "Main & Upper Deck (13 Cabins)",
+        size: "16 m² (172 sq ft)",
+        balconyType: "French Balcony with panoramic opening windows",
+        bedOrientation: "Riverside twin or double bed",
+        bathroom: "Private en-suite bathroom with hot shower",
+        image: "/images/mekong_pearl_superior_cabin.jpg",
+        imageAlt: "Mekong Pearl Superior Cabin with authentic teak paneling and panoramic opening window",
+        description: "Finished in warm native teak with French balcony opening windows bringing the crisp morning air of the Lao highlands directly into your stateroom.",
+        features: ["French balcony opening windows", "Warm teakwood craftsmanship", "En-suite bathroom with hot shower", "Quiet boutique atmosphere", "Daily bottled drinking water"]
+      }
+    ],
+    dining: {
+      title: "Panoramic Restaurant & Sun Deck Bar",
+      description: "Authentic Laotian specialties, French culinary touches, and Western dishes prepared with fresh ingredients and served in a relaxed, convivial setting.",
+      image: "/images/mekong_pearl_deluxe_cabin.jpg",
+    },
+    gallery: [
+      "/images/mekong_pearl_exterior.jpg",
+      "/images/mekong_pearl_deluxe_cabin.jpg",
+      "/images/mekong_pearl_superior_cabin.jpg"
+    ],
+  },
+  "mekong-sun": {
+    slug: "mekong-sun",
+    name: "Mekong Sun",
+    operator: "Lernidee Erlebnisreisen",
+    operatorNote: "Operated by Lernidee Erlebnisreisen. The legendary pioneer boutique river cruiser of northern Laos.",
+    tagline: "The iconic boutique riverboat of the Upper Mekong in Laos",
+    heroImage: "/images/mekong_sun_superior_cabin.jpg",
+    pricing: {
+      threeNight: { from: 1550, route: "Huay Xai ↔ Luang Prabang" },
+      fourNight: { from: 2050, route: "Luang Prabang ↔ Vientiane" },
+      sevenNight: { from: 3650, route: "Golden Triangle ↔ Vientiane" },
+      basis: "Per person, twin-share Classic Cabin",
+      inclusions: "All meals onboard, English/German-speaking cruise director, guided daily shore excursions, port charges.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "40m",
+      cabins: "14",
+      guests: "28",
+      crew: "16",
+    },
+    overview: {
+      title: "The Pioneer of Upper Mekong Exploration",
+      description: "Launched in 2006 as the very first boutique river vessel built to navigate the wild upper reaches of the Mekong in Laos. Mekong Sun combines classic colonial charm with intimate 14-cabin exclusivity.",
+    },
+    design: {
+      title: "Authentic Teak Cruiser Architecture",
+      description: "Two-deck timber construction featuring a shaded sun deck, panoramic restaurant salon, open-air bar, and authentic handcrafted teakwood throughout.",
+      image: "/images/mekong_sun_deckplan.png",
+    },
+    suites: {
+      title: "Classic & Superior Teak Cabins",
+      description: "14 outside-facing staterooms with polished hardwood walls, individual air conditioning, and private en-suite bathrooms with hot water showers.",
+      image: "/images/mekong_sun_superior_cabin.jpg",
+      amenities: ["Private balcony (Superior)", "Opening French window (Classic)", "En-suite bathroom with shower", "Individual climate control", "Daily housekeeping"],
+    },
+    cabins: [
+      {
+        id: "superior-balcony-cabin",
+        name: "Superior Cabin with Private Balcony",
+        deck: "Upper Deck (3 Cabins)",
+        size: "18 m² (194 sq ft)",
+        balconyType: "Private Step-out Teak Balcony",
+        bedOrientation: "Direct River-Facing double or twin bed",
+        bathroom: "Private en-suite bathroom with shower and amenities",
+        image: "/images/mekong_sun_superior_cabin.jpg",
+        imageAlt: "Mekong Sun Superior Cabin with private step-out teak balcony overlooking Lao riverbanks",
+        description: "Situated on the Upper Deck with a private step-out wooden balcony, floor-to-ceiling glass doors, and warm teakwood wainscoting.",
+        features: ["Private step-out teak balcony", "Floor-to-ceiling glass doors", "En-suite bathroom with hot shower", "Upper deck elevated views", "Individual climate control"]
+      },
+      {
+        id: "classic-cabin",
+        name: "Classic Riverview Cabin",
+        deck: "Main Deck (11 Cabins)",
+        size: "14 m² (151 sq ft)",
+        balconyType: "Panoramic French Window",
+        bedOrientation: "Riverside twin or double bed",
+        bathroom: "Private en-suite bathroom with shower",
+        image: "/images/mekong_sun_classic_cabin.jpg",
+        imageAlt: "Mekong Sun Classic Cabin with opening French window and authentic teakwood paneling",
+        description: "Cozy and authentic, featuring large opening French windows that bring river breezes and views of misty Laotian hills into your stateroom.",
+        features: ["Opening French windows", "Handcrafted teakwood finishes", "En-suite bathroom with shower", "Individual air conditioning", "Daily bottled drinking water"]
+      }
+    ],
+    dining: {
+      title: "Riverside Dining Salon",
+      description: "Flavorful Lao, Thai, and European meals served in the panoramic indoor restaurant or on the open-air covered sun deck.",
+      image: "/images/mekong_sun_superior_cabin.jpg",
+    },
+    gallery: [
+      "/images/mekong_sun_superior_cabin.jpg",
+      "/images/mekong_sun_classic_cabin.jpg",
+      "/images/mekong_sun_deckplan.png"
+    ],
+  },
+  "mekong-pandaw": {
+    slug: "mekong-pandaw",
+    name: "RV Mekong Pandaw",
+    operator: "Pandaw Expeditions",
+    operatorNote: "Operated by Pandaw Expeditions. Traditional teak river vessel with 360-degree promenade decks.",
+    tagline: "Classic colonial river expeditions on the waterways of Indochina",
+    heroImage: "/images/mekong_pandaw_header.webp",
+    pricing: {
+      threeNight: { from: 1350, route: "Ho Chi Minh City ↔ Phnom Penh" },
+      fourNight: { from: 1800, route: "Phnom Penh ↔ Siem Reap" },
+      sevenNight: { from: 2950, route: "Ho Chi Minh City ↔ Siem Reap" },
+      basis: "Per person, twin-share Upper/Main Deck Stateroom",
+      inclusions: "All meals onboard, local transfers, English-speaking guide, entrance fees, crew gratuities.",
+      lastVerified: "November 2026",
+    },
+    stats: {
+      length: "60m",
+      cabins: "24",
+      guests: "48",
+      crew: "28",
+    },
+    overview: {
+      title: "The Spirit of Irrawaddy Flotilla on the Mekong",
+      description: "Finished with hand-rubbed native teak, maritime brass, and open promenade decks, RV Mekong Pandaw offers an authentic river expedition experience with ultra-shallow draft navigation.",
+    },
+    design: {
+      title: "Promenade Deck Living",
+      description: "Signature wraparound teak decks where French doors open directly to private rattan chairs outside your cabin.",
+      image: "/images/mekong_pandaw_header.webp",
+    },
+    suites: {
+      title: "Handcrafted Teak Staterooms",
+      description: "Clad in native teak with traditional brass hardware, individual climate control, and en-suite private bathrooms with hot power showers.",
+      image: "/images/bassac_pandaw_twin_cabin.webp",
+      amenities: ["French doors to promenade deck", "En-suite teak bathroom", "Pandaw eco-flask & kimonos", "Air conditioning", "Nightly turndown service"],
+    },
+    cabins: [
+      {
+        id: "twin-stateroom",
+        name: "Main & Upper Deck Teak Stateroom",
+        deck: "Main Deck & Upper Deck (24 Cabins)",
+        size: "16 m² (170 sq ft)",
+        balconyType: "Promenade Veranda (direct walk-out access to shaded teak deck)",
+        bedOrientation: "Twin or double bed with sliding glass windows",
+        bathroom: "En-suite teak bathroom with hot power shower and eco-toiletry kit",
+        image: "/images/bassac_pandaw_twin_cabin.webp",
+        imageAlt: "RV Mekong Pandaw handcrafted teak twin stateroom with French doors and brass fittings",
+        description: "Classic colonial expedition cabin with French doors opening to the 360-degree teak promenade deck. Features individual air conditioning, kimono bathrobes, and Pandaw refillable water flasks.",
+        features: ["French doors opening to teak promenade deck", "Dedicated rattan chairs outside your cabin", "Ultra-low draft reaching remote canals", "Informal, authentic expedition atmosphere", "Nightly turndown service & briefing"]
+      },
+      {
+        id: "premium-bow-cabin",
+        name: "Premium Bow Stateroom",
+        deck: "Upper Deck Bow",
+        size: "19.2 m² (205 sq ft)",
+        balconyType: "French doors opening to covered teak promenade deck with private rattan chairs",
+        bedOrientation: "Wraparound panoramic forward & side river views",
+        bathroom: "En-suite with maritime brass fixtures and walk-in power shower",
+        image: "/images/bassac_pandaw_premium_cabin.webp",
+        imageAlt: "RV Mekong Pandaw Premium Bow Stateroom with brass nautical fittings and teak promenade access",
+        description: "Positioned at the forward bow of the Upper Deck with wraparound windows. Finished in handcrafted Burmese teak and maritime brass, with French doors stepping directly onto the shaded teak promenade.",
+        features: ["Forward bow wraparound panoramic windows", "Direct access to covered teak promenade deck", "Handcrafted teak woodwork throughout", "Colonial maritime brass hardware", "All-inclusive local beer, soft drinks & excursions"]
+      }
+    ],
+    dining: {
+      title: "Al-Fresco Dining on the Upper Deck",
+      description: "Bistro-style dining featuring locally sourced river fish, tropical fruits, and Vietnamese-Cambodian curries served on open-air shaded decks.",
+      image: "/images/bassac_pandaw_dining.webp",
+    },
+    gallery: [
+      "/images/mekong_pandaw_header.webp",
+      "/images/bassac_pandaw_twin_cabin.webp",
+      "/images/bassac_pandaw_premium_cabin.webp",
+      "/images/bassac_pandaw_dining.webp"
     ],
   },
 };
@@ -1261,12 +1693,12 @@ export const defaultShipData = (slug: string, name: string): ShipData => ({
   design: {
     title: "Thoughtful Design",
     description: `The ${name} is designed to maximize your connection with the river, featuring open decks and panoramic windows.`,
-    image: "/images/luxury-balcony-sunset.avif",
+    image: "/images/the_jahan_superior_cabin.jpg",
   },
   suites: {
     title: "Comfortable Suites",
     description: "Relax in your private sanctuary after a day of exploring. All suites are designed for maximum comfort.",
-    image: "/images/luxury_sunset_balcony.avif",
+    image: "/images/the_jahan_superior_cabin.jpg",
     amenities: ["En-suite bathroom", "Air conditioning", "Premium bedding"],
   },
   cabins: [
@@ -1278,7 +1710,7 @@ export const defaultShipData = (slug: string, name: string): ShipData => ({
       balconyType: "Panoramic River Window / French Balcony",
       bedOrientation: "River-facing panoramic view",
       bathroom: "En-suite bathroom with walk-in hot shower & premium amenities",
-      image: "/images/luxury_sunset_balcony.avif",
+      image: "/images/the_jahan_superior_cabin.jpg",
       imageAlt: `${name} Deluxe Riverview Stateroom with panoramic Mekong River views`,
       description: `Spacious, air-conditioned stateroom featuring custom woodwork, fine linens, and sweeping river views aboard ${name}.`,
       features: ["Individual climate control", "En-suite bathroom with hot shower", "Panoramic river views", "Daily housekeeping & turndown"]
@@ -1287,14 +1719,12 @@ export const defaultShipData = (slug: string, name: string): ShipData => ({
   dining: {
     title: "Local and International Flavors",
     description: "Enjoy a variety of dishes prepared by our expert chefs, using the freshest ingredients.",
-    image: "/images/fine-dining-deck.avif",
+    image: "/images/amadara_fusion_restaurant.jpg",
   },
   gallery: [
-    "/images/luxury-balcony-sunset.avif",
-    "/images/fine-dining-deck.avif",
-    "/images/cultural-encounters-new.avif",
-    "/images/luxury_sunset_balcony.avif",
-    "/images/dest_vietnam.avif",
-    "/images/dest_cambodia.avif"
+    "/images/the_jahan_superior_cabin.jpg",
+    "/images/amadara_fusion_restaurant.jpg",
+    "/images/scenic_spirit_deluxe_suite.webp",
+    "/images/aqua_mekong_suite_balcony.webp"
   ],
 });
