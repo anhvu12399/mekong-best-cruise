@@ -3,12 +3,40 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown, Check, User, Grid, Link2, Droplets, Wind, Coffee, Lock, Speaker, Scissors, Bed, Bath, ArrowRight, Sparkles, Maximize2 } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, Check, User, Grid, Link2, Droplets, Wind, Coffee, Lock, Speaker, Scissors, Bed, Bath, ArrowRight, Sparkles, Maximize2, X, Camera } from "lucide-react"
 import { ShipData } from "../data"
 
 export default function ShipsClient({ data }: { data: ShipData }) {
   const [activeSection, setActiveSection] = useState("overview")
   const [isScrolled, setIsScrolled] = useState(false)
+
+  // Priority list: Put suite images and cabin images together, ensure 6 items
+  const suiteImages = (data.gallery && data.gallery.length >= 6)
+    ? data.gallery.slice(0, 6)
+    : [
+        data.suites.image,
+        ...(data.gallery || []).filter((img) => img !== data.suites.image),
+        "/images/luxury-balcony-sunset.avif",
+        "/images/fine-dining-deck.avif",
+      ].slice(0, 6)
+
+  // Find initial index matching data.suites.image if present
+  const initialIndex = suiteImages.indexOf(data.suites.image) >= 0 
+    ? suiteImages.indexOf(data.suites.image) 
+    : 0
+
+  const [activeSuiteIdx, setActiveSuiteIdx] = useState(initialIndex)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxImg, setLightboxImg] = useState("")
+
+  const currentShowcaseImg = suiteImages[activeSuiteIdx] || suiteImages[0]
+
+  const getImageCaption = (imgSrc: string, index: number) => {
+    const matchedCabin = data.cabins?.find((c) => c.image === imgSrc)
+    if (matchedCabin) return matchedCabin.name
+    if (imgSrc === data.suites.image) return data.suites.title
+    return `${data.name} - Suite View ${index + 1}`
+  }
 
   // Handle scroll spy and sticky nav
   useEffect(() => {
@@ -146,10 +174,13 @@ export default function ShipsClient({ data }: { data: ShipData }) {
               <div className="relative aspect-square bg-gray-100">
                 <Image src={data.gallery[3] || data.design.image} alt="Ship Overview 4" fill className="object-cover" />
               </div>
-              <div className="relative aspect-square bg-gray-100 flex items-center justify-center p-6 text-center group cursor-pointer overflow-hidden">
+              <div
+                onClick={() => scrollToSection('gallery')}
+                className="relative aspect-square bg-gray-100 flex items-center justify-center p-6 text-center group cursor-pointer overflow-hidden"
+              >
                 <Image src={data.gallery[4] || data.design.image} alt="Ship Overview 5" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
-                <button className="relative z-10 bg-white text-[#222] px-6 py-3 text-[10px] tracking-widest font-bold uppercase">See all photos</button>
+                <button type="button" className="relative z-10 bg-white text-[#222] px-6 py-3 text-[10px] tracking-widest font-bold uppercase group-hover:bg-gold group-hover:text-navy transition-colors">See all photos</button>
               </div>
             </div>
           </div>
@@ -198,43 +229,111 @@ export default function ShipsClient({ data }: { data: ShipData }) {
           </div>
 
           {/* Hero Suite Showcase */}
-          <div className="relative aspect-[21/9] w-full bg-gray-100 group overflow-hidden shadow-lg mb-4">
+          <div className="relative aspect-[21/9] w-full bg-gray-900 group overflow-hidden shadow-xl mb-3 rounded-sm">
+            {/* The Active Main Image */}
             <Image
-              src={data.suites.image}
-              alt={`${data.name} - ${data.suites.title}`}
+              key={currentShowcaseImg}
+              src={currentShowcaseImg}
+              alt={getImageCaption(currentShowcaseImg, activeSuiteIdx)}
               fill
-              className="object-cover group-hover:scale-102 transition-transform duration-700"
+              className="object-cover transition-all duration-500 group-hover:scale-102"
               sizes="(max-width: 1200px) 100vw, 1200px"
               priority
             />
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex items-end justify-between p-6 md:p-8">
-              <div>
+            
+            {/* Top Bar with photo counter and fullscreen button */}
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/75 via-black/20 to-transparent flex items-start justify-between p-4 md:p-6 z-20 pointer-events-none">
+              <div className="pointer-events-auto flex items-center gap-2">
+                <span className="bg-navy/85 backdrop-blur-md text-gold text-[10px] tracking-widest font-bold uppercase px-3 py-1.5 rounded-sm border border-gold/30 flex items-center gap-1.5 shadow-sm">
+                  <Camera size={12} className="text-gold" />
+                  <span>Photo {activeSuiteIdx + 1} of {suiteImages.length}</span>
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setLightboxImg(currentShowcaseImg)
+                  setLightboxOpen(true)
+                }}
+                className="pointer-events-auto bg-black/60 hover:bg-gold hover:text-navy text-white text-xs px-3.5 py-1.5 rounded-sm backdrop-blur-sm transition-all duration-200 flex items-center gap-1.5 font-sans shadow-md border border-white/20"
+                title="Expand fullscreen view"
+              >
+                <Maximize2 size={13} />
+                <span className="hidden sm:inline text-[11px] uppercase tracking-wider font-bold">Fullscreen</span>
+              </button>
+            </div>
+
+            {/* Left / Right Arrow Navigation Buttons */}
+            <button
+              type="button"
+              aria-label="Previous photograph"
+              onClick={() => setActiveSuiteIdx((prev) => (prev === 0 ? suiteImages.length - 1 : prev - 1))}
+              className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 hover:bg-gold hover:text-navy text-white flex items-center justify-center transition-all duration-300 backdrop-blur-md z-20 shadow-lg border border-white/10"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next photograph"
+              onClick={() => setActiveSuiteIdx((prev) => (prev === suiteImages.length - 1 ? 0 : prev + 1))}
+              className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 hover:bg-gold hover:text-navy text-white flex items-center justify-center transition-all duration-300 backdrop-blur-md z-20 shadow-lg border border-white/10"
+            >
+              <ChevronRight size={22} />
+            </button>
+
+            {/* Bottom Info Bar with dynamic caption */}
+            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end justify-between p-6 md:p-8 z-20">
+              <div className="max-w-xl">
                 <span className="text-gold text-[10px] tracking-[0.2em] uppercase font-bold block mb-1">
                   Signature Living
                 </span>
-                <span className="text-white text-base md:text-xl font-serif">{data.suites.title}</span>
+                <span className="text-white text-lg md:text-2xl font-serif block leading-snug">
+                  {getImageCaption(currentShowcaseImg, activeSuiteIdx)}
+                </span>
               </div>
               <Link
                 href={`/plan-your-journey?vessel=${data.slug}`}
-                className="bg-gold text-navy px-6 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-white transition-colors"
+                className="bg-gold text-navy px-6 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-white transition-colors shrink-0 ml-4 shadow-sm"
               >
                 Reserve This Suite
               </Link>
             </div>
           </div>
           
-          {/* Thumbnails */}
-          <div className="grid grid-cols-6 gap-2 mb-16">
-             {[...Array(6)].map((_, idx) => (
-                <div key={idx} className={`relative aspect-video bg-gray-200 overflow-hidden ${idx === 0 ? 'ring-2 ring-gold opacity-100' : 'opacity-70 hover:opacity-100'} transition-all`}>
-                   <Image
-                     src={data.gallery[idx % data.gallery.length] || "/images/luxury-balcony-sunset.avif"}
-                     alt={`${data.name} Cabin detail view ${idx + 1}`}
-                     fill
-                     className="object-cover"
-                   />
-                </div>
-             ))}
+          {/* Interactive Clickable Thumbnails Grid */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-3 mb-16">
+            {suiteImages.map((img, idx) => {
+              const isActive = activeSuiteIdx === idx
+              return (
+                <button
+                  type="button"
+                  key={idx}
+                  onClick={() => setActiveSuiteIdx(idx)}
+                  className={`group/thumb relative aspect-video bg-gray-200 overflow-hidden cursor-pointer rounded-sm transition-all duration-300 text-left focus:outline-none ${
+                    isActive
+                      ? "ring-2 ring-gold ring-offset-2 ring-offset-[#f5f5f5] scale-[1.02] shadow-md opacity-100"
+                      : "opacity-60 hover:opacity-100 hover:scale-[1.01]"
+                  }`}
+                  aria-label={`View photograph ${idx + 1}`}
+                >
+                  <Image
+                    src={img}
+                    alt={`${data.name} thumbnail ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 33vw, 16vw"
+                  />
+                  <div
+                    className={`absolute inset-0 transition-colors duration-200 ${
+                      isActive ? "bg-transparent" : "bg-black/10 group-hover/thumb:bg-transparent"
+                    }`}
+                  />
+                  {isActive && (
+                    <div className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-gold shadow-sm ring-1 ring-black/40" />
+                  )}
+                </button>
+              )
+            })}
           </div>
 
           {/* ── DETAILED CABIN CATEGORIES BREAKDOWN ── */}
@@ -451,10 +550,13 @@ export default function ShipsClient({ data }: { data: ShipData }) {
                <div className="relative aspect-square md:aspect-[4/3] bg-gray-100">
                   <Image src={data.gallery[2] || data.dining.image} alt="Cuisine Detail" fill className="object-cover" />
                </div>
-               <div className="relative aspect-square md:aspect-[4/3] bg-gray-100 flex flex-col items-center justify-center p-6 text-center cursor-pointer group overflow-hidden">
+               <div
+                  onClick={() => scrollToSection('gallery')}
+                  className="relative aspect-square md:aspect-[4/3] bg-gray-100 flex flex-col items-center justify-center p-6 text-center cursor-pointer group overflow-hidden"
+               >
                   <Image src={data.gallery[3] || data.dining.image} alt="Cuisine Detail 2" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
-                  <button className="relative z-10 bg-white text-[#222] px-6 py-3 text-[10px] tracking-widest font-bold uppercase mt-auto mb-4">See all photos</button>
+                  <button type="button" className="relative z-10 bg-white text-[#222] px-6 py-3 text-[10px] tracking-widest font-bold uppercase mt-auto mb-4 group-hover:bg-gold group-hover:text-navy transition-colors">See all photos</button>
                </div>
             </div>
           </div>
@@ -710,6 +812,41 @@ export default function ShipsClient({ data }: { data: ShipData }) {
           </Link>
         </div>
       </section>
+
+      {/* ── FULLSCREEN LIGHTBOX MODAL ── */}
+      {lightboxOpen && lightboxImg && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-8"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-6 right-6 text-white/80 hover:text-white p-2.5 rounded-full bg-white/10 hover:bg-gold hover:text-navy transition-all duration-200 z-50"
+            aria-label="Close fullscreen view"
+          >
+            <X size={24} />
+          </button>
+          
+          <div
+            className="relative w-full max-w-5xl h-[70vh] md:h-[80vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={lightboxImg}
+              alt={`${data.name} full view`}
+              fill
+              className="object-contain"
+              sizes="100vw"
+              priority
+            />
+          </div>
+          
+          <div className="text-white/90 text-sm md:text-base mt-4 font-serif text-center px-4">
+            {getImageCaption(lightboxImg, activeSuiteIdx)}
+          </div>
+        </div>
+      )}
 
     </main>
   )
