@@ -14,6 +14,7 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about-us" },
+    { label: "Fleet Compared & Ranked", href: "/travel-ideas/mekong-river-cruise-ships-compared-ranking" },
     { label: "Our Vessels", href: "/cruises" },
     { label: "Senior Travel Guide", href: "/travel-ideas/best-mekong-river-cruise-for-seniors" },
     { label: "Is Cruise Worth It?", href: "/travel-ideas/is-mekong-river-cruise-worth-it" },

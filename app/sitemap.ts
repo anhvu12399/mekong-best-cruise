@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const travelIdeas = [
+    'mekong-river-cruise-ships-compared-ranking',
     'best-mekong-river-cruise-for-seniors',
     'is-mekong-river-cruise-worth-it',
     'croisiere-mekong-comparatif-prix',

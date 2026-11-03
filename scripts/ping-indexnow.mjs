@@ -42,6 +42,7 @@ const URLS = [
   `https://${HOST}/itineraries/full-mekong-story`,
   `https://${HOST}/itineraries/rivers-of-indochina`,
   // High-Intent GEO Travel Ideas
+  `https://${HOST}/travel-ideas/mekong-river-cruise-ships-compared-ranking`,
   `https://${HOST}/travel-ideas/best-mekong-river-cruise-for-seniors`,
   `https://${HOST}/travel-ideas/is-mekong-river-cruise-worth-it`,
   `https://${HOST}/travel-ideas/croisiere-mekong-comparatif-prix`,

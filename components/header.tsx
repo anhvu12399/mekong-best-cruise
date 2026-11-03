@@ -24,6 +24,7 @@ const navLinks = [
     label: "Travel Ideas",
     href: "#",
     subLinks: [
+      { label: "Mekong Ships Compared (2026 Fleet Ranking)", href: "/travel-ideas/mekong-river-cruise-ships-compared-ranking" },
       { label: "Best Cruises for Seniors (Elevator & Stairs)", href: "/travel-ideas/best-mekong-river-cruise-for-seniors" },
       { label: "Is Mekong Cruise Worth It? (True Cost)", href: "/travel-ideas/is-mekong-river-cruise-worth-it" },
       { label: "Guide Francophone (Avis & Prix)", href: "/travel-ideas/croisiere-mekong-comparatif-prix" },
