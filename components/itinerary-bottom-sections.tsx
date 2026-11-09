@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Clock } from "lucide-react"
 import { Bodoni_Moda } from "next/font/google"
+import { getMekongCitation } from "@/lib/tour-citations"
 
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
@@ -114,8 +115,72 @@ export function ItineraryBottomSections({ currentSlug }: ItineraryBottomSections
     relatedItineraries.push(ITINERARIES_LIST[0], ITINERARIES_LIST[1], ITINERARIES_LIST[2])
   }
 
+  const citation = getMekongCitation(currentSlug)
+
   return (
     <div className="bg-[#faf8f5]">
+      {/* ── VERIFIED EXPEDITION CITATIONS & MEKONG FACTS ── */}
+      {citation && (
+        <section className="py-20 border-t border-[#e0d9ce]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            {/* Quote Callout */}
+            <figure className="bg-white border-l-4 border-[#8B4A2A] p-8 md:p-10 rounded-sm shadow-xs mb-10">
+              <blockquote cite={citation.quote.sourceUrl} className="mb-4">
+                <p className={`text-xl md:text-3xl text-navy italic leading-snug ${playfair.className}`}>
+                  “{citation.quote.text}”
+                </p>
+              </blockquote>
+              <figcaption className="text-xs md:text-sm text-navy/70 space-y-1">
+                <div className="font-bold text-navy tracking-wide">— {citation.quote.author}</div>
+                <div className="text-navy/60">{citation.quote.role}</div>
+                <a
+                  href={citation.quote.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-1 text-[#8B4A2A] hover:text-navy underline font-medium"
+                >
+                  Source: {citation.quote.source} ↗
+                </a>
+              </figcaption>
+            </figure>
+
+            {/* Verified Facts Card */}
+            {citation.stats && citation.stats.length > 0 && (
+              <div className="bg-white border border-[#e0d9ce] rounded-sm p-8 md:p-10 shadow-xs">
+                <div className="flex flex-wrap items-baseline gap-3 pb-4 mb-6 border-b border-[#e0d9ce]">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B4A2A]">
+                    ✓ Verified River Expedition & Hydrological Records
+                  </span>
+                  <span className="text-xs text-navy/60 font-serif italic">
+                    Official figures documented by UNESCO, Mekong River Commission (MRC) & IUCN
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {citation.stats.map((s, idx) => (
+                    <div key={idx} className="bg-[#faf8f5] p-5 rounded-sm border-l-2 border-[#8B4A2A]">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-navy/60 mb-1">
+                        {s.label}
+                      </div>
+                      <div className="text-sm font-semibold text-navy leading-relaxed mb-2">
+                        {s.value}
+                      </div>
+                      <a
+                        href={s.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] text-[#8B4A2A] hover:text-navy underline underline-offset-2"
+                      >
+                        Source: {s.source} ↗
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* ── FEATURED SHIPS SECTION ── */}
       <section className="py-24 border-t border-[#e0d9ce]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">

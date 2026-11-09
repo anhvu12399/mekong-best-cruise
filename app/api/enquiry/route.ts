@@ -182,119 +182,259 @@ export async function POST(request: NextRequest) {
       `,
     })
 
-    // ── Email 2: Confirmation to guest ───────────────────────────────────
+    // ── Email 2: Luxury Confirmation to guest (Audley Style with 'M' Mark) ──
+    const customerHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mekong River Cruises – We have received your journey enquiry</title>
+  <style type="text/css">
+    body, table, td, p, a, li, blockquote { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; background-color: #ebeff2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b; }
+    .email-wrapper { width: 100%; background-color: #ebeff2; padding: 30px 10px; }
+    .email-container { max-width: 620px; margin: 0 auto; background-color: #ffffff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+    @media only screen and (max-width: 600px) {
+      .email-container { width: 100% !important; border-radius: 0 !important; }
+      .header-col-left, .header-col-right { display: block !important; width: 100% !important; text-align: left !important; }
+      .header-col-right { margin-top: 12px !important; }
+      .feature-col-img, .feature-col-text { display: block !important; width: 100% !important; }
+      .feature-col-img img { width: 100% !important; height: auto !important; max-height: 220px !important; }
+      .feature-col-text { padding: 20px 20px 24px 20px !important; }
+      .content-padding { padding: 22px 20px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #ebeff2;">
+  <center class="email-wrapper">
+    <table class="email-container" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 620px; background-color: #ffffff; margin: 0 auto; text-align: left;">
+      
+      <!-- ── 1. HEADER (Logo with Letter 'M' Mark + Hotline) ── -->
+      <tr>
+        <td style="padding: 24px 32px 20px; border-bottom: 1px solid #f1f5f9;">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <!-- Brand Identity with 'M' Mark -->
+              <td class="header-col-left" valign="middle" align="left" style="width: 58%;">
+                <a href="https://www.mekongrivercruise.com" target="_blank" style="text-decoration: none; display: inline-block;">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td valign="middle" style="padding-right: 12px;">
+                        <!-- Official letter 'M' emblem from live web -->
+                        <img src="https://www.mywaytravel.com/images/myway-icon-192.png" 
+                             alt="Mekong River Cruises 'M' Mark" 
+                             width="46" 
+                             height="46" 
+                             style="display: block; border-radius: 50%;" />
+                      </td>
+                      <td valign="middle">
+                        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 700; color: #011b31; letter-spacing: 0.5px; line-height: 1.1;">
+                          MEKONG RIVER CRUISES
+                        </div>
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 9.5px; font-weight: 600; color: #b48530; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px;">
+                          BY MY WAY TRAVEL
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </a>
+              </td>
+              <!-- Phone / Hours -->
+              <td class="header-col-right" valign="middle" align="right" style="width: 42%;">
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 17px; font-weight: 800; color: #011b31;">
+                  (+1) 315 998 1998
+                </div>
+                <div style="margin-top: 3px;">
+                  <a href="https://www.mekongrivercruise.com" target="_blank" style="font-size: 12px; color: #64748b; text-decoration: underline; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                    Our concierge hours
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ── 2. HERO IMAGE BANNER (Mekong River Landscape) ── -->
+      <tr>
+        <td style="padding: 0; position: relative;">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td style="padding: 0; position: relative; background-color: #011b31;">
+                <img src="https://www.mekongrivercruise.com/images/full_mekong_hero.png" 
+                     alt="Mekong River Cruises Luxury Expedition" 
+                     width="620" 
+                     style="display: block; width: 100%; max-width: 620px; height: auto; max-height: 290px; object-fit: cover;" />
+                <div style="background-color: #0c1524; padding: 7px 18px; text-align: right;">
+                  <span style="font-family: Georgia, serif; font-style: italic; font-size: 12px; color: #e2e8f0;">
+                    Image by Mekong client David Thornton
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ── 3. LETTER BODY (Salutation & Reassurance) ── -->
+      <tr>
+        <td class="content-padding" style="padding: 32px 36px 16px;">
+          <p style="margin: 0 0 18px; font-size: 16px; color: #1e293b; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            Dear ${firstName || "traveler"},
+          </p>
+          <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.68; color: #334155;">
+            Thank you for your interest in <strong>Mekong River Cruises</strong> — I&#39;m thrilled you&#39;re considering an unforgettable expedition along the legendary Mekong with us.
+          </p>
+          <p style="margin: 0 0 18px; font-size: 14.5px; line-height: 1.68; color: #334155;">
+            If they haven&#39;t yet, someone from our Destination Specialist Team will reach out shortly and put you in touch with a dedicated specialist, who knows every bend of the Mekong inside-out — from the floating markets and lush fruit orchards of the delta to the ancient temples of Angkor and the serene limestone gorges of Upper Laos. As always, they&#39;ll take time to listen to what you want from your travels so they can meticulously craft the cruise expedition you&#39;ve been imagining.
+          </p>
+          <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.68; color: #334155;">
+            We&#39;re looking forward to planning your journey.
+          </p>
+          <p style="margin: 0 0 24px; font-size: 14.5px; font-weight: 500; color: #1e293b;">
+            Here&#39;s to adventure.
+          </p>
+
+          <!-- Signoff + Ken Fish Signature -->
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 10px;">
+            <tr>
+              <td valign="middle" style="padding-right: 18px;">
+                <img src="https://www.mywaytravel.com/images/founder_ken_fish.jpg" 
+                     alt="Ken Fish" 
+                     width="76" 
+                     height="76" 
+                     style="display: block; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0;" />
+              </td>
+              <td valign="middle">
+                <!-- SVG Signature Mark -->
+                <svg width="190" height="46" viewBox="0 0 190 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:4px 0 6px;">
+                  <path d="M12 36C22 28 34 10 38 7C40 5 44 8 42 14C39 24 30 33 28 38C26 42 32 39 37 32C42 24 49 14 54 11C57 9 58 12 55 18C50 28 47 37 52 35C57 33 65 22 72 17C79 12 83 14 80 20C76 27 71 35 77 34C83 33 93 21 101 16C108 12 112 14 109 20C104 29 99 37 106 35C114 32 125 19 133 16C138 14 141 16 138 22C133 32 129 39 138 35C146 32 159 20 167 18C174 16 179 21 170 29C160 38 142 41 127 41C102 41 68 40 40 40C25 40 10 41 5 41" stroke="#011b31" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 15px; font-weight: 700; color: #011b31; line-height: 1.2;">
+                  Ken Fish
+                </div>
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; color: #64748b; line-height: 1.3;">
+                  Managing Director of My Way Travel
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ── 4. FEATURE BLOCK 1: BROCHURE PROMO ── -->
+      <tr>
+        <td style="padding: 12px 32px 14px;">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #556c6e; border-radius: 4px; overflow: hidden;">
+            <tr>
+              <td class="feature-col-img" width="45%" valign="middle" align="center" style="padding: 0; background-color: #4a5f61;">
+                <img src="https://www.mywaytravel.com/images/myway-brochure-book.jpg" 
+                     alt="Mekong River Cruises Collection Brochure" 
+                     width="270" 
+                     style="display: block; width: 100%; height: 100%; max-height: 230px; object-fit: cover;" />
+              </td>
+              <td class="feature-col-text" width="55%" valign="middle" style="padding: 24px 24px 24px 20px;">
+                <div style="font-family: Georgia, serif; font-style: italic; font-size: 19px; color: #ffffff; line-height: 1.25; margin-bottom: 10px;">
+                  Explore the Mekong your way
+                </div>
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; color: #e8ecef; line-height: 1.5; margin-bottom: 16px;">
+                  Our brochure, <em style="color:#ffffff;">The World on Your Terms</em>, is designed to inspire your future travels and show you what life on the river looks like when you explore with us. Inside, you&#39;ll find luxury ship profiles and hand-picked shore excursions.
+                </div>
+                <div>
+                  <a href="https://www.mekongrivercruise.com" 
+                     target="_blank" 
+                     style="display: inline-block; background-color: #ffffff; color: #011b31; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; padding: 10px 18px; border-radius: 2px;">
+                    VIEW ONLINE BROCHURE &rsaquo;
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ── 5. FEATURE BLOCK 2: SPECIALIST INTRO ── -->
+      <tr>
+        <td style="padding: 8px 32px 26px;">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #556c6e; border-radius: 4px; overflow: hidden;">
+            <tr>
+              <td class="feature-col-img" width="45%" valign="middle" align="center" style="padding: 0; background-color: #4a5f61;">
+                <img src="https://www.mekongrivercruise.com/images/specialist_emily.png" 
+                     alt="Dedicated Mekong River Cruise Specialist" 
+                     width="270" 
+                     style="display: block; width: 100%; height: 100%; max-height: 220px; object-fit: cover;" />
+              </td>
+              <td class="feature-col-text" width="55%" valign="middle" style="padding: 24px 24px 24px 20px;">
+                <div style="font-family: Georgia, serif; font-style: italic; font-size: 19px; color: #ffffff; line-height: 1.25; margin-bottom: 10px;">
+                  What happens next
+                </div>
+                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12.5px; color: #e8ecef; line-height: 1.5;">
+                  Keep an eye (and ear) out for our call — one of our dedicated Mekong cruise experts will be ringing you on a number starting with <strong>+1 315</strong> to talk through your travel dates, cabin preferences, and start exploring all the possibilities for your voyage.
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ── 6. TRUST BADGES & FOOTER ── -->
+      <tr>
+        <td style="background-color: #f8fafc; padding: 26px 32px 22px; text-align: center; border-top: 1px solid #e2e8f0;">
+          <div style="font-size: 11.5px; color: #64748b; line-height: 1.55; margin-bottom: 8px;">
+            You&#39;ve received this email because you recently enquired about an expedition cruise with Mekong River Cruises.
+          </div>
+          <div style="font-size: 12px; font-weight: 600; color: #011b31; margin-bottom: 18px;">
+            Please reply directly to this email if you&#39;d like to get in touch.
+          </div>
+
+          <!-- Trust Badges (B-Corp / Which? / Travel Awards) -->
+          <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto 18px;">
+            <tr>
+              <td align="center" valign="middle" style="padding: 0 16px;">
+                <div style="border: 1.5px solid #1e293b; border-radius: 50%; width: 56px; height: 56px; display: table-cell; vertical-align: middle; text-align: center; background-color: #ffffff;">
+                  <span style="font-family: Arial, sans-serif; font-size: 6px; font-weight: 800; color: #1e293b; letter-spacing: 0.5px; text-transform: uppercase; display: block;">CERTIFIED</span>
+                  <span style="font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: #1e293b; line-height: 1; display: block; margin: -2px 0;">B</span>
+                  <span style="font-family: Arial, sans-serif; font-size: 6px; font-weight: 700; color: #1e293b; letter-spacing: 0.5px; text-transform: uppercase; display: block;">CORP STYLE</span>
+                </div>
+              </td>
+              <td align="center" valign="middle" style="padding: 0 16px;">
+                <div style="border: 1.5px solid #dc2626; border-radius: 50%; width: 56px; height: 56px; display: table-cell; vertical-align: middle; text-align: center; background-color: #ffffff;">
+                  <span style="font-family: Arial, sans-serif; font-size: 5.5px; font-weight: 700; color: #dc2626; letter-spacing: 0.5px; text-transform: uppercase; display: block;">RECOMMENDED</span>
+                  <span style="font-family: Georgia, serif; font-size: 13px; font-weight: 800; color: #dc2626; line-height: 1.1; display: block;">Which?</span>
+                  <span style="font-family: Arial, sans-serif; font-size: 5.5px; font-weight: 700; color: #dc2626; letter-spacing: 0.5px; text-transform: uppercase; display: block;">PROVIDER</span>
+                </div>
+              </td>
+              <td align="center" valign="middle" style="padding: 0 16px;">
+                <div style="border: 1.5px solid #1e293b; width: 62px; height: 56px; display: table-cell; vertical-align: middle; text-align: center; background-color: #ffffff;">
+                  <span style="font-family: Arial, sans-serif; font-size: 5.5px; font-weight: 700; color: #64748b; letter-spacing: 0.5px; text-transform: uppercase; display: block;">LUXURY</span>
+                  <span style="font-family: Georgia, serif; font-size: 9px; font-weight: 700; color: #011b31; line-height: 1; display: block; margin: 2px 0;">TRAVEL</span>
+                  <span style="font-family: Georgia, serif; font-size: 9px; font-weight: 700; color: #011b31; line-height: 1; display: block;">AWARDS</span>
+                  <span style="font-family: Arial, sans-serif; font-size: 6.5px; font-weight: 800; color: #b48530; letter-spacing: 0.5px; display: block; margin-top: 2px;">WINNER 2025</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; color: #64748b; line-height: 1.6;">
+            <strong>Mekong River Cruises</strong> · A My Way Travel Collection<br />
+            139 Nguyen Cu Trinh St, District 1, Ho Chi Minh City · 24/7 Concierge: (+1) 315 998 1998<br />
+            <a href="https://www.mekongrivercruise.com" target="_blank" style="color: #64748b; text-decoration: underline;">mekongrivercruise.com</a>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+  </center>
+</body>
+</html>`
+
     await sendEmail({
       from: "Mekong River Cruise <newsletter@mekongrivercruise.com>",
       to: [email],
-      subject: `${firstName}, your journey enquiry has been received 🌊`,
-      html: `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Georgia, serif; background: #f0ede8; padding: 32px 16px; }
-    .card { max-width: 580px; margin: 0 auto; background: #fff; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-    .top-bar { height: 4px; background: linear-gradient(90deg, #c9a962, #e8d5a3, #c9a962); }
-    .hero { background: #0d1b2a; padding: 56px 40px; text-align: center; }
-    .hero-tag { font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #c9a962; margin-bottom: 20px; }
-    .hero-title { font-size: 30px; color: #fff; line-height: 1.3; }
-    .hero-title span { color: #c9a962; }
-    .hero-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 14px; }
-    .body { padding: 48px 40px; }
-    .greeting { font-size: 18px; color: #0d1b2a; margin-bottom: 20px; }
-    .text { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 20px; }
-    .summary-box { background: #faf8f5; border: 1px solid #e8e4de; border-left: 4px solid #c9a962; padding: 24px 28px; margin: 28px 0; }
-    .summary-title { font-size: 10px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase; color: #c9a962; margin-bottom: 16px; }
-    .summary-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 1px solid #e8e4de; font-size: 13px; }
-    .summary-row:last-child { border-bottom: none; }
-    .row-label { color: #999; }
-    .row-value { color: #0d1b2a; font-weight: bold; text-align: right; max-width: 55%; }
-    .steps { margin: 28px 0; }
-    .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-    .step-num { width: 28px; height: 28px; background: #c9a962; color: #0d1b2a; font-size: 12px; font-weight: bold; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .step-text { font-size: 14px; color: #555; line-height: 1.6; padding-top: 4px; }
-    .step-text strong { color: #0d1b2a; }
-    .divider { border: none; border-top: 1px solid #e8e4de; margin: 32px 0; }
-    .cta-wrap { text-align: center; margin-top: 32px; }
-    .cta { display: inline-block; background: #c9a962; color: #0d1b2a; padding: 16px 40px; text-decoration: none; font-size: 12px; font-weight: bold; letter-spacing: 0.15em; text-transform: uppercase; }
-    .contact-row { text-align: center; margin-top: 24px; font-size: 13px; color: #888; }
-    .contact-row a { color: #c9a962; }
-    .footer { background: #0d1b2a; padding: 24px 40px; text-align: center; }
-    .footer p { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; line-height: 1.8; }
-    .footer a { color: rgba(201,169,98,0.7); text-decoration: none; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="top-bar"></div>
-    <div class="hero">
-      <p class="hero-tag">Journey Enquiry Received</p>
-      <h1 class="hero-title">We'll craft your<br /><span>perfect journey</span></h1>
-      <p class="hero-sub">Our specialists are reviewing your request</p>
-    </div>
-    <div class="body">
-      <p class="greeting">Dear ${firstName},</p>
-      <p class="text">
-        Thank you for reaching out to Mekong River Cruise. We've received your journey 
-        enquiry and one of our dedicated travel specialists will be in touch within 
-        <strong>24 hours</strong> to begin crafting your bespoke itinerary.
-      </p>
-
-      <div class="summary-box">
-        <p class="summary-title">Your Enquiry Summary</p>
-        <div class="summary-row">
-          <span class="row-label">Destinations</span>
-          <span class="row-value">${destList}</span>
-        </div>
-        <div class="summary-row">
-          <span class="row-label">Travel Window</span>
-          <span class="row-value">${travelWindowLabel}</span>
-        </div>
-        <div class="summary-row">
-          <span class="row-label">Travellers</span>
-          <span class="row-value">${travelers || "Not specified"}</span>
-        </div>
-        <div class="summary-row">
-          <span class="row-label">Travel Style</span>
-          <span class="row-value">${travelStyle || "Not specified"}</span>
-        </div>
-      </div>
-
-      <hr class="divider" />
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text"><strong>Specialist assigned</strong><br />A dedicated Mekong specialist will review your preferences.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text"><strong>Personalised itinerary</strong><br />We'll craft a tailor-made journey matching your style and budget.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text"><strong>Your adventure begins</strong><br />Refine the details together until it's exactly right.</div>
-        </div>
-      </div>
-
-      <div class="cta-wrap">
-        <a href="https://www.mekongrivercruise.com/discover" class="cta">Explore Our Journeys →</a>
-      </div>
-      <p class="contact-row">
-        Questions? Call us at <a href="tel:+13159981998">+1 315 998 1998</a> or email 
-        <a href="mailto:sales@mekongrivercruise.com">sales@mekongrivercruise.com</a>
-      </p>
-    </div>
-    <div class="footer">
-      <p>© ${new Date().getFullYear()} Mekong River Cruise · All rights reserved</p>
-      <p>139 Nguyen Cu Trinh St, District 1, Ho Chi Minh City · <a href="https://www.mekongrivercruise.com">mekongrivercruise.com</a></p>
-    </div>
-  </div>
-</body>
-</html>
-      `,
+      subject: `${firstName}, thank you for your Mekong journey enquiry`,
+      html: customerHtml,
     })
 
     return NextResponse.json({ success: true })
