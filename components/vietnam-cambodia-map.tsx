@@ -103,8 +103,9 @@ export function VietnamCambodiaMap({ activeDay, onDayChange }: Props) {
           doubleClickZoom: false, boxZoom: false
         });
         
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
-          maxZoom: 19
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: '&copy; Esri',
+          maxZoom: 18
         }).addTo(map);
 
         const bounds = L.latLngBounds(STOPS.map(s => [s.lat, s.lng]));

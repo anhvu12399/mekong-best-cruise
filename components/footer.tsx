@@ -169,11 +169,11 @@ export function Footer() {
                   />
                 </div>
 
-                {/* Cloudflare Turnstile Invisible Challenge */}
+                {/* Cloudflare Turnstile Challenge */}
                 <div 
                   className="cf-turnstile" 
                   data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
-                  data-size="invisible"
+                  data-size="flexible"
                 ></div>
 
                 {/* Row 1: Name */}
