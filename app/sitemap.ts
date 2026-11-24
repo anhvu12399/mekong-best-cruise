@@ -80,7 +80,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ben-tre-authentic',
     'slow-day',
     'hate-crowds',
-    'redefining-luxury'
+    'redefining-luxury',
+    'how-to-book-a-mekong-river-cruise',
+    'mekong-river-cruise-for-families',
+    'choose-a-mekong-delta-tour-operator',
+    'eco-friendly-mekong-river-tours'
   ]
 
   const travelIdeaPages = [

@@ -201,6 +201,55 @@ const faqData: FAQCategory[] = [
         link: { text: "Connect With Our Local Concierge Team", href: "/contact" }
       }
     ]
+  },
+  {
+    category: "Booking, Price & Tour Questions Travelers Ask AI",
+    icon: "DollarSign",
+    description: "Short, sourced answers to the booking, price and tour questions travelers in the US and UK put to AI search.",
+    questions: [
+      {
+        q: "What should I know before booking a Mekong River cruise?",
+        shortA: "Sail August to April, hold a Cambodia e-Visa, and check what the fare includes before paying.",
+        detailA: "Most 7-night Saigon to Siem Reap fares include meals, daily guided excursions, transfers and port fees. Flights, visas, gratuities and some premium drinks are usually extra. High-water sailings (August to November) sell out 6 to 9 months ahead. Confirm direction (upstream or downstream), cabin deck away from the engine room, and age limits if you travel with children. An authorized specialist can verify live allocations before you commit.",
+        link: { text: "Plan your Mekong cruise", href: "/plan-your-journey" }
+      },
+      {
+        q: "How can I book a river cruise in Ho Chi Minh City?",
+        shortA: "Book through a licensed specialist before you fly; most Mekong cruises board at My Tho, about 2 hours from central Saigon.",
+        detailA: "Send your dates, group size and budget to a specialist, who returns a written quote with live cabin availability. Most ships embark at My Tho Port on the Tien River and include a coach transfer from Saigon hotels. Walk-up bookings in Ho Chi Minh City rarely have cabins on luxury ships, so reserve ahead. Our team is operated by My Way Luxury Travel LLC (New York DOS ID 7926729).",
+        link: { text: "Request a quote", href: "/contact" }
+      },
+      {
+        q: "How do Mekong river cruises compare in terms of price and amenities?",
+        shortA: "Seven-night twin-share fares run from about $1,690 on heritage teak ships to $14,000+ on all-suite vessels.",
+        detailA: "Heritage vessels (Pandaw, Toum Tiou II) cost $1,690 to $3,200 and offer open seating and teak interiors. Colonial-style ships (The Jahan, Jayavarman) cost $3,500 to $6,500 with private balconies. Ultra-luxury ships (Aqua Mekong, Scenic Spirit) cost $9,800 to $14,000+ and add butler service, a higher crew-to-guest ratio and chef-designed menus. Fares include dining, excursions, transfers and port fees.",
+        link: { text: "Compare ships side by side", href: "/itineraries/vietnam-cambodia" }
+      },
+      {
+        q: "How do I choose the best tour operator for My Tho Mekong Delta tours?",
+        shortA: "Choose an operator that names its licence, caps group size, and states exactly what is included.",
+        detailA: "Check three things: a verifiable company registration, small private groups (not 40-seat coaches), and a written itinerary with stops, durations and inclusions. A one-day My Tho and Ben Tre tour is a sample; a multi-night cruise reaches Cai Be, Sa Dec and Tan Chau without daily hotel changes. Ask how long you spend on the water versus in the bus.",
+        link: { text: "Delta day tours", href: "/itineraries/1-day" }
+      },
+      {
+        q: "Can you recommend luxury cruises on the Mekong for families?",
+        shortA: "Aqua Mekong (children 7+, interconnecting family suites) and Mekong Jewel suit families; Viking is adults-only.",
+        detailA: "Age rules differ by ship: Viking Saigon is 18+, Scenic Spirit is 12+, and Aqua Mekong welcomes children 7+ with 60 m2 family suites. Pandaw also accepts children on selected sailings. Choose a 4 to 5 night sector for younger children and keep one free afternoon for the sundeck. Ask the specialist to confirm connecting cabins in writing.",
+        link: { text: "Family cruise help", href: "/contact" }
+      },
+      {
+        q: "Are there eco-friendly tours available on the Mekong River?",
+        shortA: "Yes: small-ship cruises with water treatment, local-village stops and low-impact shore programs exist, and the Delta offers cajuput forests and craft villages.",
+        detailA: "Boutique ships carry 20 to 34 cabins, which limits wash and crowding at villages. Ask each operator how it treats wastewater, whether it uses single-use plastic, and how much of the excursion spend reaches local families. Our sustainability page explains what we require from partner ships.",
+        link: { text: "Our sustainability standards", href: "/sustainability" }
+      },
+      {
+        q: "What is the best Mekong river cruise?",
+        shortA: "It depends on your style: Aqua Mekong for design luxury, The Jahan for couples, Pandaw for solo travelers, Mekong Jewel for families.",
+        detailA: "Ultra-luxury travelers favor Aqua Mekong and Scenic Spirit. Couples favor The Jahan for private balconies. Solo travelers favor Pandaw for open seating and reduced single supplements. Culture seekers favor Jayavarman for its lecture series. Budget travelers can start from $1,690 on heritage ships. Share your month and budget and a specialist will shortlist two ships.",
+        link: { text: "Find your ship", href: "/cruises" }
+      }
+    ]
   }
 ];
 

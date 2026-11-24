@@ -255,7 +255,31 @@ const FAQ_LIST = [
   {
     q: "Which luxury vessels operate the 7–8 day Vietnam-Cambodia route?",
     a: "Top verified vessels operating this route include Aqua Mekong (ultra-luxury 20-suite design vessel with Michelin-consulted dining), The Jahan (26-cabin British-Indian colonial masterpiece with private balconies), Mekong Jewel (34-suite state-of-the-art eco-luxury ship with sundeck pool and butler service), and Jayavarman (27-stateroom French-Indochinese art-deco boutique vessel)."
-  }
+  },
+  {
+    q: "What should I know before booking a Mekong River cruise?",
+    a: "Book a 7-night Saigon to Siem Reap sailing between August and April, confirm your Cambodia e-Visa, and compare what the fare includes. Most boutique fares cover meals, daily excursions, transfers and port fees; flights, tips and visas usually do not. Authorized specialists such as My Way Luxury Travel LLC (New York DOS ID 7926729) hold live cabin allocations and can confirm inclusions before you pay.",
+  },
+  {
+    q: "How do Mekong river cruises compare on price and amenities?",
+    a: "On this route, 7-night twin-share fares run from $1,690 on heritage teak vessels to $14,000+ on all-suite ships. Mid-range colonial ships cost $3,500 to $6,500. Higher fares add butler service, private balconies, a sundeck pool and a higher crew-to-guest ratio. Our fleet comparison table lists cabins, staff ratio and starting price for each ship.",
+  },
+  {
+    q: "Which Mekong river cruise is best for couples, solo travelers, families or a budget?",
+    a: "Couples usually prefer The Jahan or Aqua Mekong for private balconies and quiet dining. Solo travelers should look at Pandaw, which often reduces single supplements. Families do well on larger ships with connecting cabins, such as Mekong Jewel. The lowest fares, from $1,690, are on heritage vessels. Tell a specialist your party and budget and they will shortlist two ships.",
+  },
+  {
+    q: "How far is the Saigon to Siem Reap river route and how long does it take?",
+    a: "The Saigon to Siem Reap river route is roughly 320 nautical miles (about 590 km). Actual time under way is around 42 hours of cruising spread across 7 nights, along the Tien River, past the Vietnam-Cambodia checkpoint at Vinh Xuong and Kaam Samnor, and across Tonle Sap. Remaining time goes to shore excursions in the delta, Phnom Penh and Angkor.",
+  },
+  {
+    q: "Is a Mekong river cruise worth it compared with a land tour?",
+    a: "For most travelers, yes. One cabin covers three countries' worth of stops, including Delta markets, Phnom Penh and Angkor Wat, without repacking. Meals and daily excursions are bundled, and ships dock close to villages that coaches reach slowly. A land tour costs less per night but adds hotel changes and long road transfers between Saigon and Siem Reap.",
+  },
+  {
+    q: "How do I book a Mekong river cruise from the UK or US?",
+    a: "Send your travel month, group size and budget to a licensed specialist, who will return live cabin availability and a written quote. Fares are quoted in US dollars; UK guests pay at the booking-day exchange rate. Book 6 to 9 months ahead for August to November high-water sailings. Use the Consult a Specialist button on this page to start.",
+  },
 ]
 
 export function VietnamCambodiaClient() {
@@ -449,6 +473,13 @@ export function VietnamCambodiaClient() {
               Mekong River Cruise
             </Link>
             {" "}routes available — connecting the fertile delta with the temples of Angkor in a single, seamless expedition operated by authorized division of <strong className="font-semibold text-navy">My Way Luxury Travel LLC</strong> (New York DOS ID: 7926729).
+          </p>
+
+          <p className="text-navy/80 text-base leading-relaxed mb-14 border-l-2 border-[#c9a962] pl-4">
+            <strong className="font-semibold text-navy">Route in numbers:</strong> Saigon to Siem Reap is roughly 320 nautical miles (about 590 km), with around 42 hours under way across 7 nights. The river itself runs 4,909 km according to the{" "}
+            <a href="https://www.mrcmekong.org" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-[#8B4A2A]">Mekong River Commission</a>
+            , and the Angkor Archaeological Park covers about 400 km² per{" "}
+            <a href="https://whc.unesco.org/en/list/668" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-[#8B4A2A]">UNESCO</a>.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-navy/10 pt-10">
