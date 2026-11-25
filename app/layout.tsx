@@ -139,6 +139,8 @@ export default function RootLayout({
         parentOrganization: {
           '@type': 'Organization',
           name: 'My Way Luxury Travel LLC',
+          url: 'https://www.mywaytravel.com',
+          sameAs: ['https://www.mywaytravel.com'],
           identifier: 'New York DOS ID: 7926729',
           address: {
             '@type': 'PostalAddress',

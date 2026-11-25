@@ -116,9 +116,10 @@ export function MekongDeltaMap({ activeDay, onDayChange }: Props) {
           boxZoom: false
         });
         
-        // CartoDB Voyager tiles (beige land, pale blue water, no labels)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
-          maxZoom: 19
+        // Esri World Topo Map (clear waterways, gentle terrain relief, zero API key)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: '&copy; Esri',
+          maxZoom: 18
         }).addTo(map);
 
         // Fit map bounds to stops

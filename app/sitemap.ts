@@ -114,6 +114,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'slow-day',
     'hate-crowds',
     'redefining-luxury',
+    'how-to-book-a-mekong-river-cruise',
+    'mekong-river-cruise-for-families',
+    'choose-a-mekong-delta-tour-operator',
+    'eco-friendly-mekong-river-tours',
   ]
 
   const travelIdeaPages = travelIdeas.map((slug) => ({

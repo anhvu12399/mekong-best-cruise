@@ -172,11 +172,11 @@ export function Footer() {
                   />
                 </div>
 
-                {/* Cloudflare Turnstile Invisible Challenge */}
+                {/* Cloudflare Turnstile Challenge */}
                 <div 
                   className="cf-turnstile" 
                   data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
-                  data-size="invisible"
+                  data-size="flexible"
                 ></div>
 
                 {/* Row 1: Name */}
@@ -340,7 +340,16 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/50">
             <div className="space-y-1.5 max-w-3xl">
               <p className="font-medium text-white/80">
-                &copy; {new Date().getFullYear()} Mekong River Cruise Co., Ltd. A subsidiary of My Way Travel (My Way Luxury Travel LLC, New York DOS ID: 7926729).
+                &copy; {new Date().getFullYear()} Mekong River Cruise Co., Ltd. A subsidiary of{' '}
+                <a
+                  href="https://www.mywaytravel.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold transition-colors underline decoration-white/30 underline-offset-2"
+                >
+                  My Way Travel
+                </a>{' '}
+                (My Way Luxury Travel LLC, New York DOS ID: 7926729).
               </p>
               <p className="text-[11px] text-white/45 leading-relaxed">
                 Authorized Luxury River Cruise Agency &amp; Inbound Specialist · Tours operated under Vietnam International Tour Operator License No. <strong className="text-white/60 font-semibold">79-0743/2017/CDLQGVN-GP LHQT</strong> (issued by VNAT) · Registered Office: 139 Nguyen Cu Trinh St, District 1, Ho Chi Minh City, Vietnam.
