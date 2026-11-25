@@ -29,6 +29,7 @@ const footerLinks = {
     { label: "Booking Terms", href: "/booking-terms" },
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Contact Us", href: "/contact" },
+    { label: "API Documentation", href: "/docs" },
     { label: "AI & API Access", href: "/ai-access" },
   ],
 }
@@ -105,9 +106,9 @@ export function Footer() {
             <span className="inline-block text-gold text-sm tracking-[0.3em] uppercase mb-6">
               Stay Inspired
             </span>
-            <h3 className="font-serif text-2xl md:text-3xl text-navy mb-6">
+            <h2 className="font-serif text-2xl md:text-3xl text-navy mb-6">
               Join Our Exclusive Mailing List
-            </h3>
+            </h2>
             <p className="text-navy/55 mb-10">
               Be the first to receive new itineraries, exclusive offers, and
               inspiring stories from the Mekong.
@@ -279,9 +280,9 @@ export function Footer() {
 
           {/* Links Columns */}
           <div>
-            <h4 className="text-white font-medium mb-6 text-sm tracking-wider uppercase">
+            <p className="text-white font-medium mb-6 text-sm tracking-wider uppercase">
               Journeys
-            </h4>
+            </p>
             <ul className="space-y-4">
               {footerLinks.journeys.map((link) => (
                 <li key={link.label}>
@@ -297,9 +298,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-6 text-sm tracking-wider uppercase">
+            <p className="text-white font-medium mb-6 text-sm tracking-wider uppercase">
               Company
-            </h4>
+            </p>
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -315,9 +316,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-6 text-sm tracking-wider uppercase">
+            <p className="text-white font-medium mb-6 text-sm tracking-wider uppercase">
               Support
-            </h4>
+            </p>
             <ul className="space-y-4">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>

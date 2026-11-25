@@ -7,6 +7,7 @@ import {
   CONTACT_EMAIL,
   CONTACT_PHONE,
   ENTITY_FACTS,
+  PUBLIC_API_HEADERS,
   SITE_URL,
   VERIFIED_SHIPS,
   VERIFIED_SHIP_MAP,
@@ -161,27 +162,27 @@ export const apiCatalog = () => ({
     {
       anchor: `${SITE}/api/ships`,
       "service-desc": [{ href: `${SITE}/openapi.json`, type: "application/openapi+json" }],
-      "service-doc": [{ href: `${SITE}/ai-access`, type: "text/html" }],
+      "service-doc": [{ href: `${SITE}/docs`, type: "text/html" }],
     },
     {
       anchor: `${SITE}/api/estimate`,
       "service-desc": [{ href: `${SITE}/openapi.json`, type: "application/openapi+json" }],
-      "service-doc": [{ href: `${SITE}/ai-access`, type: "text/html" }],
+      "service-doc": [{ href: `${SITE}/docs`, type: "text/html" }],
     },
     {
       anchor: `${SITE}/ask`,
       "service-desc": [{ href: `${SITE}/openapi.json`, type: "application/openapi+json" }],
-      "service-doc": [{ href: `${SITE}/ai-access`, type: "text/html" }],
+      "service-doc": [{ href: `${SITE}/docs`, type: "text/html" }],
     },
     {
       anchor: `${SITE}/mcp`,
       "service-desc": [{ href: `${SITE}/.well-known/mcp/server-card.json`, type: "application/json" }],
-      "service-doc": [{ href: `${SITE}/ai-access`, type: "text/html" }],
+      "service-doc": [{ href: `${SITE}/docs`, type: "text/html" }],
     },
     {
       anchor: `${SITE}/a2a`,
       "service-desc": [{ href: `${SITE}/.well-known/agent-card.json`, type: "application/json" }],
-      "service-doc": [{ href: `${SITE}/llms.txt`, type: "text/plain" }],
+      "service-doc": [{ href: `${SITE}/docs`, type: "text/html" }],
     },
   ],
 })
@@ -350,8 +351,8 @@ export function jsonResp(body: unknown, init: ResponseInit = {}, contentType = "
   return new Response(JSON.stringify(body, null, 2), {
     ...init,
     headers: {
+      ...PUBLIC_API_HEADERS,
       "content-type": contentType,
-      "access-control-allow-origin": "*",
       ...(init.headers || {}),
     },
   })
@@ -481,7 +482,7 @@ export async function handleMcpRequest(request: Request): Promise<Response> {
   }
   const batch = Array.isArray(body)
   const out = (await Promise.all((batch ? body : [body]).map((m: any) => mcpDispatch(m)))).filter(Boolean)
-  if (!out.length) return new Response(null, { status: 202, headers: { "access-control-allow-origin": "*" } })
+  if (!out.length) return new Response(null, { status: 202, headers: PUBLIC_API_HEADERS })
   return jsonResp(batch ? out : out[0])
 }
 

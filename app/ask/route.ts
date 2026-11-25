@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server"
 import {
   BRAND_NAME,
+  PUBLIC_API_HEADERS,
   SITE_URL,
   VERIFIED_SHIPS,
   buildQuoteLink,
@@ -160,8 +161,8 @@ function handleAsk(query: string, limit = 6) {
     },
     {
       headers: {
+        ...PUBLIC_API_HEADERS,
         "cache-control": "public, max-age=900",
-        "access-control-allow-origin": "*",
       },
     },
   )
@@ -171,9 +172,9 @@ export function OPTIONS() {
   return new Response(null, {
     status: 204,
     headers: {
-      "access-control-allow-origin": "*",
+      ...PUBLIC_API_HEADERS,
       "access-control-allow-methods": "GET, POST, OPTIONS",
-      "access-control-allow-headers": "*",
+      "access-control-allow-headers": "Content-Type, Accept, X-API-Version",
     },
   })
 }

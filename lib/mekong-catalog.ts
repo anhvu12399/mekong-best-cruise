@@ -8,6 +8,17 @@
 import { shipsData, type ShipData } from "@/app/ships/data"
 
 export const SITE_URL = "https://www.mekongrivercruise.com"
+export const API_VERSION = "2026-11"
+export const PUBLIC_API_HEADERS: Record<string, string> = {
+  "API-Version": API_VERSION,
+  "RateLimit-Limit": "120",
+  "RateLimit-Remaining": "119",
+  "RateLimit-Reset": "60",
+  "RateLimit-Policy": "120;w=60",
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Expose-Headers":
+    "API-Version, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, RateLimit-Policy, Deprecation, Sunset",
+}
 export const BRAND_NAME = "Mekong River Cruise"
 export const BRAND_ALTERNATE = "Mekong Best Cruise"
 export const CONTACT_EMAIL = "sales@mekongrivercruise.com"
@@ -670,8 +681,8 @@ export function problemJson(
     {
       status,
       headers: {
+        ...PUBLIC_API_HEADERS,
         "content-type": "application/problem+json; charset=utf-8",
-        "access-control-allow-origin": "*",
         "cache-control": "no-store",
       },
     },

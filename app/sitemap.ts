@@ -45,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/our-specialists`, priority: 0.8, changeFrequency: 'monthly' as const },
     { url: `${BASE_URL}/contact`, priority: 0.8, changeFrequency: 'monthly' as const },
     { url: `${BASE_URL}/faqs`, priority: 0.75, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/docs`, priority: 0.75, changeFrequency: 'monthly' as const },
     { url: `${BASE_URL}/ai-access`, priority: 0.7, changeFrequency: 'monthly' as const },
     { url: `${BASE_URL}/sustainability`, priority: 0.6, changeFrequency: 'monthly' as const },
     { url: `${BASE_URL}/careers`, priority: 0.5, changeFrequency: 'monthly' as const },

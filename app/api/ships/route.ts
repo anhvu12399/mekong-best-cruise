@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server"
 import {
   BRAND_NAME,
+  PUBLIC_API_HEADERS,
   SITE_URL,
   filterShips,
   normalizeRouteParam,
@@ -13,9 +14,9 @@ export function OPTIONS() {
   return new Response(null, {
     status: 204,
     headers: {
-      "access-control-allow-origin": "*",
+      ...PUBLIC_API_HEADERS,
       "access-control-allow-methods": "GET, OPTIONS",
-      "access-control-allow-headers": "*",
+      "access-control-allow-headers": "Content-Type, Accept, X-API-Version",
     },
   })
 }
@@ -131,11 +132,11 @@ export function GET(request: NextRequest) {
       count: ships.length,
       ships,
       costComparisonUrl: `${SITE_URL}/mekong-cruise-cost-comparison`,
-      documentationUrl: `${SITE_URL}/ai-access`,
+      documentationUrl: `${SITE_URL}/docs`,
     },
     {
       headers: {
-        "access-control-allow-origin": "*",
+        ...PUBLIC_API_HEADERS,
         "cache-control": "public, max-age=900",
       },
     },

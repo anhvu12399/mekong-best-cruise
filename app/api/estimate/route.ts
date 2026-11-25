@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server"
 import {
+  PUBLIC_API_HEADERS,
   VERIFIED_SHIP_MAP,
   estimateCruiseBudget,
   normalizeRouteParam,
@@ -12,9 +13,9 @@ export function OPTIONS() {
   return new Response(null, {
     status: 204,
     headers: {
-      "access-control-allow-origin": "*",
+      ...PUBLIC_API_HEADERS,
       "access-control-allow-methods": "GET, OPTIONS",
-      "access-control-allow-headers": "*",
+      "access-control-allow-headers": "Content-Type, Accept, X-API-Version",
     },
   })
 }
@@ -92,7 +93,7 @@ export function GET(request: NextRequest) {
 
   return Response.json(estimate, {
     headers: {
-      "access-control-allow-origin": "*",
+      ...PUBLIC_API_HEADERS,
       "cache-control": "public, max-age=900",
     },
   })

@@ -210,7 +210,7 @@ export function Header() {
 
             {/* 2. TRENDING */}
             <div className="mb-10 border-b border-white/10 pb-10">
-              <h4 className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-6">Trending</h4>
+              <p className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-6">Trending</p>
               <div className="flex flex-col gap-5">
                 <Link href="/travel-ideas/hidden-mekong" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
                   The Mekong You Don&apos;t See
@@ -251,7 +251,7 @@ export function Header() {
 
             {/* 4. Speak To Us Box */}
             <div className="bg-white/5 p-8 mt-auto border border-white/10 shrink-0">
-              <h4 className="text-[11px] font-bold tracking-[0.15em] uppercase mb-4 text-white/80">Speak to Us</h4>
+              <p className="text-[11px] font-bold tracking-[0.15em] uppercase mb-4 text-white/80">Speak to Us</p>
               <div className="flex items-center gap-3 mb-4 text-white">
                 <Phone size={18} strokeWidth={1.5} />
                 <span className="font-bold text-[15px] tracking-wide">+1 315 998 1998</span>
@@ -314,7 +314,7 @@ export function Header() {
               <span className="text-[11px] font-bold tracking-[0.15em] uppercase">Back</span>
             </button>
 
-            <h4 className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-6">All Itineraries</h4>
+            <p className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-6">All Itineraries</p>
 
             <div className="flex flex-col gap-6 pr-2">
               {[
@@ -387,7 +387,7 @@ export function Header() {
               <span className="text-[11px] font-bold tracking-[0.15em] uppercase">Back</span>
             </button>
             <div className="flex flex-col gap-5 pr-2 pb-10">
-              <h4 className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-4">Travel Ideas</h4>
+              <p className="text-[11px] font-bold text-gold tracking-[0.15em] uppercase mb-4">Travel Ideas</p>
               {navLinks.find(n => n.label === 'Travel Ideas')?.subLinks?.map((sub) => (
                 <Link key={sub.label} href={sub.href} onClick={() => setIsSidebarOpen(false)} className="flex justify-between items-center text-[12px] font-bold tracking-wider uppercase text-white/90 hover:text-gold transition-colors group border-b border-white/5 pb-3">
                   {sub.label} <ChevronRight size={16} strokeWidth={1.5} className="text-white/30 group-hover:text-gold" />

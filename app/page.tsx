@@ -49,11 +49,14 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Mekong River Cruise',
     url: BASE_URL,
     title: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
     description:
       'Curated luxury river journeys through Vietnam, Cambodia, Laos, Thailand & China. Verified pricing, authorized partner ships, and bespoke travel design.',
-    images: [{ url: '/images/og-image.avif', width: 1200, height: 630, alt: 'Mekong River Cruise' }],
+    images: [{ url: '/images/the_jahan_banner.jpg', width: 1200, height: 630, alt: 'Mekong River Cruise', type: 'image/jpeg' }],
   },
 }
 
