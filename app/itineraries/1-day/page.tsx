@@ -2,7 +2,8 @@ import { Metadata } from "next"
 import { OneDayClient } from "./page-client"
 
 export const metadata: Metadata = {
-  title: "1-Day Mindful Mekong | Mekong River Cruise",
+  title: "1-Day Mindful Mekong Delta Cruise",
+  alternates: { canonical: "https://www.mekongrivercruise.com/itineraries/1-day" },
   keywords: [
     '1 day Mekong cruise',
     'Mekong Delta day trip',

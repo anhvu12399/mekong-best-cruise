@@ -3,11 +3,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Tối ưu images: ưu tiên AVIF → WebP, cho phép ảnh từ Unsplash
   images: {
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 31536000, // Cache ảnh 1 năm
-    // Các breakpoints cho Mobile/Tablet/Desktop
+    minimumCacheTTL: 31536000,
     deviceSizes: [390, 768, 1024, 1280, 1440, 1920],
     imageSizes: [64, 128, 256, 384, 640],
     remotePatterns: [
@@ -17,69 +15,88 @@ const nextConfig = {
       },
     ],
   },
-  // Nén output để giảm bundle size
   compress: true,
-  // Tắt X-Powered-By header (bảo mật + nhẹ hơn)
   poweredByHeader: false,
-  // Tối ưu CSS để tránh render blocking (yêu cầu gói critters)
   experimental: {
     optimizeCss: true,
+  },
+  async headers() {
+    return [
+      {
+        source: '/((?!_next/|images/|api/|\\.well-known/|mcp|a2a|ask|openapi\\.json|robots\\.txt|sitemap\\.xml|llms\\.txt|llms-full\\.txt|auth\\.md).*)',
+        headers: [
+          {
+            key: 'Vary',
+            value: 'Accept',
+          },
+        ],
+      },
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'Vary',
+            value: 'Accept',
+          },
+        ],
+      },
+    ]
   },
   async redirects() {
     return [
       {
-        source: '/tours/cambodias-lake-rivers-mountains/',
-        destination: '/',
+        source: '/tours/cambodias-lake-rivers-mountains',
+        destination: '/destinations/cambodia',
         permanent: true,
       },
       {
-        source: '/family-cruises/',
-        destination: '/',
+        source: '/family-cruises',
+        destination: '/cruises/styles/family',
         permanent: true,
       },
       {
-        source: '/cruises/gypsy/',
-        destination: '/',
+        source: '/cruises/gypsy',
+        destination: '/cruises/laos',
         permanent: true,
       },
       {
-        source: '/cruises/the-jahan/',
-        destination: '/',
+        source: '/cruises/the-jahan',
+        destination: '/ships/the-jahan',
         permanent: true,
       },
       {
-        source: '/what-countries-does-the-mekong-river-pass-through/',
-        destination: '/',
+        source: '/what-countries-does-the-mekong-river-pass-through',
+        destination: '/discover',
         permanent: true,
       },
       {
-        source: '/deals/',
-        destination: '/',
+        source: '/deals',
+        destination: '/mekong-cruise-cost-comparison',
         permanent: true,
       },
       {
-        source: '/travel-insurance/',
-        destination: '/',
+        source: '/travel-insurance',
+        destination: '/faqs',
         permanent: true,
       },
       {
-        source: '/cruises/mekong-navigator/',
-        destination: '/',
+        source: '/cruises/mekong-navigator',
+        destination: '/ships/mekong-navigator',
         permanent: true,
       },
       {
-        source: '/tours/family-adventure-holiday-vietnam/',
-        destination: '/',
+        source: '/tours/family-adventure-holiday-vietnam',
+        destination: '/cruises/styles/family',
         permanent: true,
       },
       {
-        source: '/cruises/family-adventure-holiday-vietnam/',
-        destination: '/',
+        source: '/cruises/family-adventure-holiday-vietnam',
+        destination: '/cruises/styles/family',
         permanent: true,
       },
       {
-        source: '/cruises/stellar-of-the-seas/',
-        destination: '/',
+        source: '/cruises/stellar-of-the-seas',
+        destination: '/cruises',
         permanent: true,
       },
       {
@@ -88,13 +105,43 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/charter-cruises/',
-        destination: '/',
+        source: '/charter-cruises',
+        destination: '/itineraries/private-charter',
         permanent: true,
       },
       {
         source: '/family-private-cruise.html',
-        destination: '/',
+        destination: '/itineraries/private-charter',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/experiences',
+        destination: '/cruises',
+        permanent: true,
+      },
+      {
+        source: '/journeys',
+        destination: '/itineraries/vietnam-cambodia',
+        permanent: true,
+      },
+      {
+        source: '/cruises/thailand',
+        destination: '/destinations/thailand',
+        permanent: true,
+      },
+      {
+        source: '/cruises/myanmar',
+        destination: '/destinations/myanmar',
+        permanent: true,
+      },
+      {
+        source: '/cruises/china',
+        destination: '/destinations/china',
         permanent: true,
       },
     ]

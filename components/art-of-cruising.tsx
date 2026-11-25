@@ -77,10 +77,10 @@ export function ArtOfCruising() {
             {/* CTA */}
             <div className="mt-12">
               <a 
-                href="/experiences"
+                href="/cruises"
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-navy text-white text-xs font-medium tracking-[0.2em] uppercase hover:bg-gold hover:text-navy transition-all duration-300"
               >
-                <span>View Deck Plans</span>
+                <span>Explore Cruise Fleet</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from "@/components/header"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { AiAttribution } from "@/components/ai-attribution"
 import dynamic from 'next/dynamic'
 import Script from 'next/script'
 
@@ -73,12 +74,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      'en-US': BASE_URL,
-    },
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -89,7 +84,7 @@ export const metadata: Metadata = {
       'Curated luxury river journeys through Vietnam, Cambodia, Laos, Thailand & China. Verified pricing, authorized partner ships, and bespoke travel design.',
     images: [
       {
-        url: '/images/og-image.avif',
+        url: '/images/the_jahan_banner.jpg',
         width: 1200,
         height: 630,
         alt: 'Mekong River Cruise — Luxury River Journeys',
@@ -102,7 +97,7 @@ export const metadata: Metadata = {
     title: 'Mekong River Cruise | Luxury River Journeys in Southeast Asia',
     description:
       'Curated luxury river journeys through Vietnam, Cambodia, Laos, Thailand & China. Verified pricing, authorized partner ships, and bespoke travel design.',
-    images: ['/images/og-image.avif'],
+    images: ['/images/the_jahan_banner.jpg'],
     creator: '@mekongrivercruise',
   },
   icons: {
@@ -238,9 +233,9 @@ export default function RootLayout({
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: `${BASE_URL}/destinations/{destination}`,
+            urlTemplate: `${BASE_URL}/api/ships?q={search_term_string}`,
           },
-          'query-input': 'required name=destination',
+          'query-input': 'required name=search_term_string',
         },
       },
     ],
@@ -249,6 +244,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${playfair.variable} ${inter.variable}`}>
       <head>
+        {/* AI Agent Discovery */}
+        <link rel="ai-catalog" href="/.well-known/ai-catalog.json" />
         {/* Preconnect to speed up Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -287,6 +284,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <AiAttribution />
         <WhatsAppButton />
 
         {process.env.NODE_ENV === 'production' && (

@@ -6,8 +6,8 @@ import { Menu, X, ChevronRight, ChevronLeft, Phone } from "lucide-react"
 import Link from "next/link"
 
 const navLinks = [
-  { label: "Journeys", href: "/journeys" },
-  { label: "Experience", href: "/experiences" },
+  { label: "Journeys", href: "/itineraries/vietnam-cambodia" },
+  { label: "Cruises", href: "/cruises" },
   { 
     label: "Destinations", 
     href: "/destinations/vietnam",
@@ -238,6 +238,12 @@ export function Header() {
                 </Link>
                 <Link href="/our-specialists" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
                   Our Specialists
+                </Link>
+                <Link href="/mekong-cruise-cost-comparison" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-white/80 hover:text-gold transition-colors">
+                  20-Ship Cost Comparison
+                </Link>
+                <Link href="/review-my-itinerary" onClick={() => setIsSidebarOpen(false)} className="text-[13px] font-bold tracking-wider uppercase text-gold hover:text-white transition-colors">
+                  Free Ship &amp; Itinerary Check
                 </Link>
 
               </div>

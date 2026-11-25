@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mekong-river-cruise-site",
+      "type": "skill-md",
+      "description": "Use when a traveler compares luxury or boutique Mekong River cruise ships in Vietnam, Cambodia, or Laos, checks 3/4/7-night USD cabin tariffs, asks about Tonle Sap water levels or onboard elevators, or wants a pre-filled quote or free 24-hour specialist itinerary check. Do not use for ocean mega-ships, budget backpacker ferries, flight-only bookings, or river cruises outside Southeast Asia.",
+      "url": "/.well-known/agent-skills/mekong-river-cruise-site/SKILL.md",
+      "digest": "sha256:f6901e7b34e45d3d03caeb9c528de3405376c884729395a0accc92457c2510fd"
+    }
+  ]
+}

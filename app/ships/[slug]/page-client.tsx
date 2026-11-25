@@ -691,7 +691,10 @@ export default function ShipsClient({ data }: { data: ShipData }) {
                   </div>
                 </div>
                 <div className="px-8 pb-8">
-                  <Link href="/plan-your-journey" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                  <Link
+                    href={`/plan-your-journey?ship=${data.slug}&route=${encodeURIComponent(data.pricing?.threeNight?.route || "Ho Chi Minh City ↔ Phnom Penh")}&nights=3`}
+                    className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center"
+                  >
                      Inquire Availability
                   </Link>
                 </div>
@@ -714,7 +717,10 @@ export default function ShipsClient({ data }: { data: ShipData }) {
                   </div>
                 </div>
                 <div className="px-8 pb-8">
-                  <Link href="/plan-your-journey" className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center">
+                  <Link
+                    href={`/plan-your-journey?ship=${data.slug}&route=${encodeURIComponent(data.pricing?.fourNight?.route || "Phnom Penh ↔ Siem Reap")}&nights=4`}
+                    className="w-full bg-[#505a5f] text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-[#3d4549] transition-colors block text-center"
+                  >
                      Inquire Availability
                   </Link>
                 </div>
@@ -737,7 +743,10 @@ export default function ShipsClient({ data }: { data: ShipData }) {
                   </div>
                 </div>
                 <div className="px-8 pb-8">
-                  <Link href="/plan-your-journey" className="w-full bg-navy text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-gold transition-colors block text-center">
+                  <Link
+                    href={`/plan-your-journey?ship=${data.slug}&route=${encodeURIComponent(data.pricing?.sevenNight?.route || "Ho Chi Minh City ↔ Siem Reap")}&nights=7`}
+                    className="w-full bg-navy text-white py-3 text-[10px] font-bold tracking-widest uppercase hover:bg-gold transition-colors block text-center"
+                  >
                      Book With Best Price Guarantee
                   </Link>
                 </div>
@@ -751,7 +760,7 @@ export default function ShipsClient({ data }: { data: ShipData }) {
                 Price Transparency & Inclusions
               </span>
               <span className="text-[10px] uppercase tracking-wider text-[#777]">
-                Verified: {data.pricing?.lastVerified || "October 2026"}
+                Verified: {data.pricing?.lastVerified || "November 2026"}
               </span>
             </div>
             <ul className="text-xs text-[#555] space-y-2.5 leading-relaxed font-sans">
@@ -759,11 +768,45 @@ export default function ShipsClient({ data }: { data: ShipData }) {
               <li>• <strong>What is Included:</strong> {data.pricing?.inclusions || "Onboard suite accommodation, all gourmet meals, daily guided shore excursions, entrance fees, and port charges."}</li>
               <li>• <strong>Operator Direct Guarantee:</strong> {data.operatorNote || `Booked under official ${data.operator || 'partner'} tariff rates with Best Price Guarantee, dedicated local specialist support, and no booking fees.`}</li>
             </ul>
+
+            {/* Ask AI to Compare This Ship */}
+            <div className="mt-6 pt-5 border-t border-[#e0d9ce]">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#777] mb-3">
+                Compare {data.name} with AI or Our Specialists
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                <a
+                  href={`https://chatgpt.com/?q=${encodeURIComponent(`Compare ${data.name} (https://www.mekongrivercruise.com/ships/${data.slug}) against other Mekong River cruise ships on cabin specs, elevator access, Tonle Sap seasonal transfers, and verified USD tariffs from mekongrivercruise.com.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase px-3.5 py-2 border border-navy/20 text-navy hover:border-gold hover:bg-gold/10 transition-colors"
+                >
+                  Ask ChatGPT to Compare
+                </a>
+                <a
+                  href={`https://www.perplexity.ai/search?q=${encodeURIComponent(`Compare ${data.name} (https://www.mekongrivercruise.com/ships/${data.slug}) vs alternative Mekong River cruise vessels using verified tariffs and mobility specs on mekongrivercruise.com`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase px-3.5 py-2 border border-navy/20 text-navy hover:border-gold hover:bg-gold/10 transition-colors"
+                >
+                  Ask Perplexity to Compare
+                </a>
+                <Link
+                  href={`/review-my-itinerary?ship=${data.slug}`}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-wider uppercase px-3.5 py-2 bg-navy text-white hover:bg-gold hover:text-navy transition-colors"
+                >
+                  Free 24h Specialist Ship Check →
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-10">
-            <Link href="/itineraries/vietnam-cambodia" className="text-[#222] text-[10px] tracking-widest uppercase font-bold border border-[#222] px-8 py-3 hover:bg-[#222] hover:text-white transition-colors inline-block">
-              Compare All Mekong Itineraries →
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link href="/mekong-cruise-cost-comparison" className="text-[#222] text-[10px] tracking-widest uppercase font-bold border border-[#222] px-8 py-3 hover:bg-[#222] hover:text-white transition-colors inline-block">
+              Compare All 20 Ship Prices →
+            </Link>
+            <Link href="/itineraries/vietnam-cambodia" className="text-[#222] text-[10px] tracking-widest uppercase font-bold border border-[#222]/40 px-8 py-3 hover:border-[#222] transition-colors inline-block">
+              View Classic 7-Night Route →
             </Link>
           </div>
         </div>
@@ -807,7 +850,7 @@ export default function ShipsClient({ data }: { data: ShipData }) {
             Contact our specialists to check availability and start planning your Mekong journey on the {data.name}. Enjoy special offers on select departure dates.
           </p>
           <Link
-            href="/plan-your-journey"
+            href={`/plan-your-journey?ship=${data.slug}&nights=7`}
             className="inline-block px-10 py-4 bg-white text-[#505a5f] text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-gray-100 transition-colors duration-300"
           >
             Enquire Now

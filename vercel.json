@@ -1,0 +1,22 @@
+{
+  "headers": [
+    {
+      "source": "/((?!_next/|images/|api/|\\.well-known/|mcp|a2a|ask|openapi\\.json|robots\\.txt|sitemap\\.xml|llms\\.txt|llms-full\\.txt|auth\\.md).*)",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept"
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,8 @@ import { MapPin, Phone, Mail, ArrowRight } from "lucide-react"
 const footerLinks = {
   journeys: [
     { label: "All Cruises", href: "/cruises" },
+    { label: "20-Ship Cost Comparison", href: "/mekong-cruise-cost-comparison" },
+    { label: "Free Itinerary Check", href: "/review-my-itinerary" },
     { label: "Vietnam & Cambodia", href: "/itineraries/vietnam-cambodia" },
     { label: "Thailand & Laos", href: "/destinations/thailand" },
     { label: "Private Charters", href: "/itineraries/private-charter" },
@@ -27,6 +29,7 @@ const footerLinks = {
     { label: "Booking Terms", href: "/booking-terms" },
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Contact Us", href: "/contact" },
+    { label: "AI & API Access", href: "/ai-access" },
   ],
 }
 

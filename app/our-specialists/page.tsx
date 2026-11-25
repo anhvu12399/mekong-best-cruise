@@ -2,7 +2,8 @@ import { Metadata } from "next"
 import { SpecialistsClient } from "./page-client"
 
 export const metadata: Metadata = {
-  title: "Our Specialists | Mekong River Cruise",
+  title: "Our Mekong River Specialists",
+  alternates: { canonical: "https://www.mekongrivercruise.com/our-specialists" },
   keywords: [
     'Mekong travel specialists',
     'expert guides Southeast Asia',

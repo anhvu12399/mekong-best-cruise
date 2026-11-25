@@ -440,7 +440,7 @@ export default function IsMekongCruiseWorthItPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link 
-                href="/contact-us"
+                href="/plan-your-journey"
                 className="px-6 py-3 bg-[#1A2B49] text-white rounded-lg text-sm font-semibold hover:bg-[#2C3E50] transition inline-flex items-center gap-2"
               >
                 Plan My Itinerary <ArrowRight className="w-4 h-4" />

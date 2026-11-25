@@ -1,63 +1,96 @@
 import { MetadataRoute } from 'next'
+import { destinationsData } from '@/lib/destinations-data'
+import { SHIPS_BY_STYLE } from '@/lib/ships-data'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
-  const destinations = ['vietnam', 'cambodia', 'laos', 'thailand', 'myanmar', 'china']
-  const itineraries = ['vietnam-cambodia', 'mekong-delta', '1-day', '2-days', 'small-ship', 'private-charter', 'full-mekong-story', 'rivers-of-indochina']
+  const countryDestinations = ['vietnam', 'cambodia', 'laos', 'thailand', 'myanmar', 'china']
+  const cruiseCorridors = ['vietnam', 'cambodia', 'laos']
+  const cruiseStyles = Object.keys(SHIPS_BY_STYLE)
+  const portDestinations = destinationsData.map((d) => d.slug)
+
+  const itineraries = [
+    'vietnam-cambodia',
+    'mekong-delta',
+    '1-day',
+    '2-days',
+    'small-ship',
+    'private-charter',
+    'full-mekong-story',
+    'rivers-of-indochina',
+  ]
+
   const ships = [
-    "aqua-mekong", "scenic-spirit", "viking-saigon", "emerald-harmony",
-    "amadara", "avalon-saigon", "mekong-jewel", "the-jahan", "jayavarman",
-    "mekong-navigator", "victoria-mekong", "toum-tiou-ii", "lan-diep",
-    "anouvong", "boheme", "mekong-pearl", "mekong-sun", "bassac-pandaw",
-    "mekong-pandaw", "tonle-pandaw", "indochina-pandaw", "laos-pandaw",
-    "champa-pandaw", "indochine-i", "indochine-ii", "mekong-princess",
-    "mekong-symphony"
+    'aqua-mekong', 'scenic-spirit', 'viking-saigon', 'emerald-harmony',
+    'amadara', 'avalon-saigon', 'mekong-jewel', 'the-jahan', 'jayavarman',
+    'mekong-navigator', 'victoria-mekong', 'toum-tiou-ii', 'lan-diep',
+    'anouvong', 'boheme', 'mekong-pearl', 'mekong-sun', 'bassac-pandaw',
+    'mekong-pandaw', 'tonle-pandaw', 'indochina-pandaw', 'laos-pandaw',
+    'champa-pandaw', 'indochine-i', 'indochine-ii', 'mekong-princess',
+    'mekong-symphony',
   ]
 
   const staticPages = [
-    { url: BASE_URL, priority: 1.0, changeFrequency: 'daily' },
-    { url: `${BASE_URL}/discover`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${BASE_URL}/about-us`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/our-specialists`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/plan-your-journey`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${BASE_URL}/cruises`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${BASE_URL}/best-time-to-travel`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${BASE_URL}/contact`, priority: 0.8, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/faqs`, priority: 0.7, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/sustainability`, priority: 0.6, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/careers`, priority: 0.5, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/booking-terms`, priority: 0.5, changeFrequency: 'monthly' },
+    { url: BASE_URL, priority: 1.0, changeFrequency: 'daily' as const },
+    { url: `${BASE_URL}/cruises`, priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: `${BASE_URL}/mekong-cruise-cost-comparison`, priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: `${BASE_URL}/review-my-itinerary`, priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: `${BASE_URL}/plan-your-journey`, priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: `${BASE_URL}/best-time-to-travel`, priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: `${BASE_URL}/discover`, priority: 0.85, changeFrequency: 'weekly' as const },
+    { url: `${BASE_URL}/about-us`, priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/our-specialists`, priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/contact`, priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/faqs`, priority: 0.75, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/ai-access`, priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/sustainability`, priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/careers`, priority: 0.5, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/booking-terms`, priority: 0.5, changeFrequency: 'monthly' as const },
   ]
 
-  const destinationPages = destinations.map((dest) => ({
+  const destinationPages = countryDestinations.map((dest) => ({
     url: `${BASE_URL}/destinations/${dest}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
 
+  const portDestinationPages = portDestinations.map((slug) => ({
+    url: `${BASE_URL}/destinations/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   const itineraryPages = itineraries.map((slug) => ({
     url: `${BASE_URL}/itineraries/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }))
+
+  const cruiseDestinationPages = cruiseCorridors.map((dest) => ({
+    url: `${BASE_URL}/cruises/${dest}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
 
-  const cruiseDestinationPages = destinations.map((dest) => ({
-    url: `${BASE_URL}/cruises/${dest}`,
+  const cruiseStylePages = cruiseStyles.map((slug) => ({
+    url: `${BASE_URL}/cruises/styles/${slug}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.75,
   }))
 
   const shipPages = ships.map((slug) => ({
     url: `${BASE_URL}/ships/${slug}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.85,
   }))
 
   const travelIdeas = [
@@ -80,30 +113,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ben-tre-authentic',
     'slow-day',
     'hate-crowds',
-    'redefining-luxury'
+    'redefining-luxury',
   ]
 
-  const travelIdeaPages = [
-    ...travelIdeas.map((slug) => ({
-      url: `${BASE_URL}/travel-ideas/${slug}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    })),
-  ]
+  const travelIdeaPages = travelIdeas.map((slug) => ({
+    url: `${BASE_URL}/travel-ideas/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
 
   const legalPages = [
-    { url: `${BASE_URL}/terms-conditions`, priority: 0.3, changeFrequency: 'monthly' },
-    { url: `${BASE_URL}/privacy-policy`, priority: 0.3, changeFrequency: 'monthly' },
+    { url: `${BASE_URL}/terms-conditions`, priority: 0.3, changeFrequency: 'monthly' as const },
+    { url: `${BASE_URL}/privacy-policy`, priority: 0.3, changeFrequency: 'monthly' as const },
   ]
 
   return [
-    ...staticPages.map(p => ({ ...p, lastModified: now, changeFrequency: p.changeFrequency as any })),
+    ...staticPages.map((p) => ({ ...p, lastModified: now })),
     ...destinationPages,
+    ...portDestinationPages,
     ...itineraryPages,
     ...cruiseDestinationPages,
+    ...cruiseStylePages,
     ...shipPages,
     ...travelIdeaPages,
-    ...legalPages.map(p => ({ ...p, lastModified: now, changeFrequency: p.changeFrequency as any })),
+    ...legalPages.map((p) => ({ ...p, lastModified: now })),
   ]
 }

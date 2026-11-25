@@ -1,8 +1,9 @@
 import { Metadata } from "next";
+import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Mekong River Cruise",
-  description: "Get in touch with our Mekong River cruise specialists. Ask about itineraries, request a custom quote, or plan your private charter journey.",
+  title: "Contact Us",
+  description: "Contact our Ho Chi Minh City Mekong River cruise specialists for verified ship tariffs, cabin availability, or private river charters.",
   keywords: ["contact Mekong cruise", "Mekong cruise quote", "book Mekong cruise", "Mekong travel specialist"],
   alternates: { canonical: "https://www.mekongrivercruise.com/contact" },
 };
@@ -65,58 +66,7 @@ export default function ContactPage() {
           {/* RIGHT: Quick Form */}
           <div className="bg-[#f5f5f5] p-10">
             <h2 className="font-serif text-2xl mb-6">Send Us a Message</h2>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="contact-name" className="block text-sm font-bold uppercase tracking-wider mb-2">Name</label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  placeholder="Your full name"
-                  className="w-full h-12 px-4 bg-white border border-[#ddd] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:border-[#b8860b] transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-email" className="block text-sm font-bold uppercase tracking-wider mb-2">Email</label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  placeholder="your@email.com"
-                  className="w-full h-12 px-4 bg-white border border-[#ddd] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:border-[#b8860b] transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-subject" className="block text-sm font-bold uppercase tracking-wider mb-2">Subject</label>
-                <select
-                  id="contact-subject"
-                  className="w-full h-12 px-4 bg-white border border-[#ddd] text-[#222] focus:outline-none focus:border-[#b8860b] transition-colors"
-                >
-                  <option>General Inquiry</option>
-                  <option>Booking a Cruise</option>
-                  <option>Custom Itinerary Request</option>
-                  <option>Private Charter</option>
-                  <option>Group / Corporate Travel</option>
-                  <option>Travel Agent Partnership</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="contact-message" className="block text-sm font-bold uppercase tracking-wider mb-2">Message</label>
-                <textarea
-                  id="contact-message"
-                  rows={5}
-                  placeholder="Tell us about your dream journey..."
-                  className="w-full px-4 py-3 bg-white border border-[#ddd] text-[#222] placeholder:text-[#aaa] focus:outline-none focus:border-[#b8860b] transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full h-12 bg-[#0f1a2b] text-white text-[11px] tracking-[0.2em] uppercase font-bold hover:bg-[#1a2a40] transition-colors"
-              >
-                Send Message
-              </button>
-              <p className="text-[#999] text-xs text-center">
-                We typically respond within 24 hours during business days.
-              </p>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

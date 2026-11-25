@@ -19,8 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!dest) return { title: 'Not Found' }
 
   return {
-    title: `${dest.name} | Mekong River Destinations`,
+    title: `${dest.name} Mekong River Guide`,
     description: dest.narrative,
+    alternates: { canonical: `https://www.mekongrivercruise.com/destinations/${slug}` },
   }
 }
 

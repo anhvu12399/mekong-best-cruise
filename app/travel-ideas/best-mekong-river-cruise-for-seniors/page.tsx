@@ -435,7 +435,7 @@ export default function SeniorCruisingPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link 
-                href="/contact-us"
+                href="/plan-your-journey?notes=Senior+mobility+and+elevator+cabin+advice"
                 className="px-6 py-3 bg-[#1A2B49] text-white rounded-lg text-sm font-semibold hover:bg-[#2C3E50] transition inline-flex items-center gap-2"
               >
                 Request a Mobility Consultation <ArrowRight className="w-4 h-4" />

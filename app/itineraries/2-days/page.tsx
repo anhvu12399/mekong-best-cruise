@@ -2,7 +2,8 @@ import { Metadata } from "next"
 import { TwoDaysClient } from "./page-client"
 
 export const metadata: Metadata = {
-  title: "2-Day River Pulse | Mekong River Cruise",
+  title: "2-Day Mekong River Pulse Cruise",
+  alternates: { canonical: "https://www.mekongrivercruise.com/itineraries/2-days" },
   keywords: [
     '2 days Mekong cruise',
     'overnight Mekong cruise',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     'private overnight sampan Mekong',
     '2 day Vietnam river cruise'
 ],
-  description: "Experience the true rhythm of the Mekong: a quiet local night followed by the bustling early morning floating market.",
+  description: "Sail overnight through the Mekong Delta from Saigon to Can Tho, pairing a quiet river evening with Cai Rang's dawn floating market.",
 }
 
 export default function TwoDaysPage() {
