@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { detectFormSpam, isAllowedOrigin } from "@/lib/spam-guard"
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || ""
 
@@ -30,12 +31,20 @@ async function sendEmail({
 
 export async function POST(request: NextRequest) {
   try {
+    if (!isAllowedOrigin(request)) {
+      return NextResponse.json({ error: "Forbidden origin" }, { status: 403 })
+    }
     const { name, email, honeypot, turnstileToken } = await request.json()
 
-    // ── Honeypot Detection ────────────────────────────────────────────────
+    // ── Honeypot & Spam Detection ─────────────────────────────────────────
     if (honeypot && honeypot.trim() !== "") {
       console.log("Honeypot triggered, silently dropping signup for email:", email)
       // Mock successful response to trick the bot
+      return NextResponse.json({ success: true })
+    }
+    const spam = detectFormSpam({ name: String(name || ""), email: String(email || "") })
+    if (spam.isSpam) {
+      console.warn("[MRC Subscribe] Silently dropped spam:", spam.reason, email)
       return NextResponse.json({ success: true })
     }
 

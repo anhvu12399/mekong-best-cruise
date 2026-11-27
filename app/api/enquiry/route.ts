@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { detectFormSpam, isAllowedOrigin } from "@/lib/spam-guard"
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY || ""
 
@@ -43,6 +44,9 @@ async function sendEmail({
 
 export async function POST(request: NextRequest) {
   try {
+    if (!isAllowedOrigin(request)) {
+      return NextResponse.json({ error: "Forbidden origin" }, { status: 403 })
+    }
     const body = await request.json()
     // Honeypot check
     if (body.company && String(body.company).trim()) {
@@ -83,6 +87,22 @@ export async function POST(request: NextRequest) {
         { error: "Please provide your name and a valid email address." },
         { status: 400 },
       )
+    }
+
+    // Multilingual B2B / directory / PR / SEO spam shield: silent 200 drop (no sales mail, no auto-reply)
+    const spam = detectFormSpam({
+      name: cleanName,
+      email: cleanEmail,
+      message: String(notes || ""),
+      extraText: [
+        String(ship || ""),
+        String(route || ""),
+        Array.isArray(destinations) ? destinations.join(", ") : String(destinations || ""),
+      ],
+    })
+    if (spam.isSpam) {
+      console.warn("[MRC Enquiry] Silently dropped spam:", spam.reason, cleanEmail)
+      return NextResponse.json({ success: true })
     }
 
     const greetingFirstName = String(firstName || cleanName.split(/\s+/)[0] || "Traveler").trim()
