@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import MyanmarClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/myanmar`
 
 export const metadata: Metadata = {
-  title: 'Myanmar Irrawaddy & Mekong Cruise | Bagan, Mandalay Luxury River Journey',
+  title: buildTitle("Myanmar Irrawaddy & Mekong River Cruise | Bagan & Mandalay"),
   description:
     'Sail Myanmar\'s legendary waterways on a luxury river cruise. Discover Bagan\'s ancient temples, Mandalay\'s royal palaces, and the sacred monasteries of the Irrawaddy River.',
   keywords: [

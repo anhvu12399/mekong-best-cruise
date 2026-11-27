@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -8,7 +9,7 @@ import { Clock, ArrowRight } from "lucide-react"
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Craft Villages & Wild Islets — Authentic Mekong Travel Ideas",
+  title: buildTitle("Mekong Craft Villages & Wild Islets"),
   description: "Cycle across monkey bridges, discover mat weaving in Định Yên, Lãnh Mỹ A silk in Tân Châu, and experience authentic craft villages in the Mekong Delta.",
   keywords: ["Mekong craft villages", "Lãnh Mỹ A silk", "Tân Châu silk", "Định Yên mat weaving", "Sa Dec village", "Mekong Delta islets", "Huỳnh Thủy Lê Old House", "Mekong Delta cycling"],
   alternates: {

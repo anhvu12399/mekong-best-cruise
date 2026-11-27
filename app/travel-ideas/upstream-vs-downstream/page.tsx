@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -11,7 +12,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/upstream-vs-downstream`
 
 export const metadata: Metadata = {
-  title: "Upstream vs Downstream Mekong River Cruise: Which Direction Is Better?",
+  title: buildTitle("Upstream vs Downstream Mekong River Cruise: Which Direction?"),
   description:
     "A definitive comparison of Upstream (Saigon to Siem Reap) vs Downstream (Siem Reap to Saigon) Mekong cruises. Local water level realities, Tonle Sap dry season logistics, and essential advice for US travelers.",
   keywords: [

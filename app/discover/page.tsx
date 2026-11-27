@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import DiscoverClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/discover`
 
 export const metadata: Metadata = {
-  title: 'Discover the Mekong | Luxury River Journey Highlights',
+  title: buildTitle("Discover the Mekong | River Highlights"),
   description:
     'Explore the lifeblood of Southeast Asia. Discover floating markets, ancient temples, riverside villages, and the authentic pulse of the Mekong River on a luxury cruise.',
   alternates: { canonical: PAGE_URL },

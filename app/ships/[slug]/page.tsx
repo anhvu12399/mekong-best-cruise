@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import ShipsClient from "./page-client"
 import { shipsData, defaultShipData } from "../data"
 import { KNOWN_SHIP_SLUGS, SITE_URL, VERIFIED_SHIP_MAP } from "@/lib/mekong-catalog"
+import { buildTitle } from "@/lib/seo"
 
 const allShipSlugs = Array.from(KNOWN_SHIP_SLUGS)
 
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const description = `${data.name} (${data.operator}) — ${data.stats.cabins} cabins, ${data.stats.guests} guests.${priceSnippet} ${data.tagline}`.slice(0, 160)
 
   return {
-    title: `${data.name} — Ship Specs, Cabins & Tariffs`,
+    title: buildTitle(`${data.name} — Ship Specs & Tariffs`),
     description,
     alternates: { canonical: canonicalUrl },
     openGraph: {

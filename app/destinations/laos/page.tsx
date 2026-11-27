@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import LaosClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/laos`
 
 export const metadata: Metadata = {
-  title: 'Laos Mekong River Cruise | Luang Prabang, Vientiane & Golden Triangle',
+  title: buildTitle("Laos Mekong River Cruise | Luang Prabang & Golden Triangle"),
   description:
     'Cruise the Upper Mekong through Laos on a luxury river journey. Explore the UNESCO heritage city of Luang Prabang, the Golden Triangle, the Pak Ou Buddha Caves, and pristine Laotian villages.',
   keywords: [

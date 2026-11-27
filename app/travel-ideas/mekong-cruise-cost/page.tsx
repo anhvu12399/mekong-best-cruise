@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -22,7 +23,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/mekong-cruise-cost`
 
 export const metadata: Metadata = {
-  title: "Mekong River Cruise Cost Guide 2026: Pricing, Inclusions & Hidden Fees",
+  title: buildTitle("Mekong River Cruise Cost Guide 2026: Pricing & Hidden Fees"),
   description:
     "An honest, transparent price breakdown for Vietnam and Cambodia Mekong river cruises. Real cabin rates by luxury tier, mandatory port taxes, visa fees, tipping customs, and Cambodian dollar rules.",
   keywords: [

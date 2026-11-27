@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import {
   ENTITY_FACTS,
@@ -8,7 +9,7 @@ import {
 } from "@/lib/mekong-catalog"
 
 export const metadata: Metadata = {
-  title: "Mekong River Cruise Cost Comparison (20 Verified Ships)",
+  title: buildTitle("Mekong River Cruise Cost Comparison (20 Verified Ships)"),
   description:
     "Compare verified 3-, 4-, and 7-night USD cabin tariffs across 20 Lower Mekong (Vietnam–Cambodia) and Upper Mekong (Laos) cruise ships, plus port fees, visas, and elevator access.",
   alternates: { canonical: `${SITE_URL}/mekong-cruise-cost-comparison` },

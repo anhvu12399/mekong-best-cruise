@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import { MekongDeltaClient } from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/itineraries/mekong-delta`
 
 export const metadata: Metadata = {
-  title: 'Mekong By Locals: 3–4 Day Immersive Delta Journey | Mekong River Cruise',
+  title: buildTitle("3–4 Day Mekong Delta Journey"),
   keywords: [
     'Mekong Delta itinerary',
     'luxury Mekong Delta tour',

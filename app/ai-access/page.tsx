@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import { ApiDocsView } from "@/components/api-docs-view"
 import { SITE_URL } from "@/lib/mekong-catalog"
+import { buildTitle } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "API, OpenAPI 3.1, MCP Server & AI Data Access",
+  title: buildTitle("API, OpenAPI 3.1 & MCP Server Access"),
   description:
     "Public no-auth REST API, OpenAPI 3.1 spec, NLWeb /ask endpoint, MCP server, A2A advisor, and Markdown negotiation for 20 verified Mekong River cruise vessels.",
   alternates: { canonical: `${SITE_URL}/ai-access` },

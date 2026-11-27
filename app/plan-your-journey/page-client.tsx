@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { Suspense, useCallback, useEffect, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { Phone, Mail, Clock, ChevronDown, Check, ArrowRight, ShieldCheck } from "lucide-react"
@@ -71,14 +71,29 @@ const INITIAL: FormData = {
   company: "",
 }
 
-export default function PlanYourJourneyClient({ shipOptions }: { shipOptions: ShipOption[] }) {
-  const searchParams = useSearchParams()
-  const [form, setForm] = useState<FormData>(INITIAL)
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
-  const [errors, setErrors] = useState<Partial<Record<"name" | "email", string>>>({})
-  const [prefillSummary, setPrefillSummary] = useState<string>("")
+type PlanPrefill = {
+  summary: string
+  ship: string
+  cabin: string
+  route: string
+  nights: string
+  guests: string
+  month: string
+  budget: string
+  travelStyle: string
+  notes: string
+  destinations: string[]
+}
 
-  // Hydrate form from URL query parameters (?ship=, ?vessel=, ?cabin=, ?route=, ?nights=, ?guests=, ?travelers=, ?month=, ?notes=, ?budget=, ?style=)
+function PlanSearchParamsHydrator({
+  shipOptions,
+  onHydrate,
+}: {
+  shipOptions: ShipOption[]
+  onHydrate: (vals: PlanPrefill) => void
+}) {
+  const searchParams = useSearchParams()
+
   useEffect(() => {
     const shipParam = (searchParams.get("ship") || searchParams.get("vessel") || "").trim()
     const cabinParam = (searchParams.get("cabin") || "").trim()
@@ -114,24 +129,49 @@ export default function PlanYourJourneyClient({ shipOptions }: { shipOptions: Sh
       monthParam,
     ].filter(Boolean)
 
-    if (parts.length > 0) {
-      setPrefillSummary(parts.join(" · "))
-    }
+    onHydrate({
+      summary: parts.join(" · "),
+      ship: matchedShip ? matchedShip.slug : shipParam,
+      cabin: cabinParam,
+      route: routeParam,
+      nights: nightsParam,
+      guests: guestsParam,
+      month: monthParam,
+      budget: budgetParam,
+      travelStyle: styleParam,
+      notes: notesParam,
+      destinations: inferredDests,
+    })
+  }, [searchParams, shipOptions, onHydrate])
 
+  return null
+}
+
+export default function PlanYourJourneyClient({ shipOptions }: { shipOptions: ShipOption[] }) {
+  const [form, setForm] = useState<FormData>(INITIAL)
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [errors, setErrors] = useState<Partial<Record<"name" | "email", string>>>({})
+  const [prefillSummary, setPrefillSummary] = useState<string>("")
+
+  // Hydrate form from URL query parameters (?ship=, ?vessel=, ?cabin=, ?route=, ?nights=, ?guests=, ?travelers=, ?month=, ?notes=, ?budget=, ?style=)
+  const handleHydrate = useCallback((vals: PlanPrefill) => {
+    if (vals.summary) {
+      setPrefillSummary(vals.summary)
+    }
     setForm((prev) => ({
       ...prev,
-      ship: matchedShip ? matchedShip.slug : shipParam || prev.ship,
-      cabin: cabinParam || prev.cabin,
-      route: routeParam || prev.route,
-      nights: nightsParam || prev.nights,
-      guests: guestsParam || prev.guests,
-      month: monthParam || prev.month,
-      budget: budgetParam || prev.budget,
-      travelStyle: styleParam || prev.travelStyle,
-      notes: notesParam || prev.notes,
-      destinations: inferredDests.length ? inferredDests : prev.destinations,
+      ship: vals.ship || prev.ship,
+      cabin: vals.cabin || prev.cabin,
+      route: vals.route || prev.route,
+      nights: vals.nights || prev.nights,
+      guests: vals.guests || prev.guests,
+      month: vals.month || prev.month,
+      budget: vals.budget || prev.budget,
+      travelStyle: vals.travelStyle || prev.travelStyle,
+      notes: vals.notes || prev.notes,
+      destinations: vals.destinations.length ? vals.destinations : prev.destinations,
     }))
-  }, [searchParams, shipOptions])
+  }, [])
 
   const set = (key: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }))
@@ -241,6 +281,9 @@ export default function PlanYourJourneyClient({ shipOptions }: { shipOptions: Sh
 
   return (
     <main className="min-h-screen bg-[#f5f3ef] -mt-24">
+      <Suspense fallback={null}>
+        <PlanSearchParamsHydrator shipOptions={shipOptions} onHydrate={handleHydrate} />
+      </Suspense>
       <div className="bg-navy px-6 pt-44 pb-16 text-center relative overflow-hidden">
         <div className="relative max-w-2xl mx-auto">
           <span className="text-gold text-xs tracking-[0.35em] uppercase block mb-4">

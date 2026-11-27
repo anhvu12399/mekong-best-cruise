@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -29,7 +30,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/mekong-river-cruise-ships-compared-ranking`
 
 export const metadata: Metadata = {
-  title: "Mekong River Cruise Ships Compared: 2026 Fleet Ranking, Hidden Flaws & Specs",
+  title: buildTitle("Mekong River Cruise Ships Compared: 2026 Fleet Ranking"),
   description:
     "An objective, technical comparison of the top 10 Mekong cruise ships. Comparing Aqua Mekong, Scenic Spirit, The Jahan, AmaDara, Viking Saigon, Emerald Harmony, Avalon Saigon, and Victoria Mekong on elevators, balconies, Saigon docking, and true all-inclusive pricing.",
   keywords: [

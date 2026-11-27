@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -25,7 +26,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/is-mekong-river-cruise-worth-it`
 
 export const metadata: Metadata = {
-  title: "Is a Mekong River Cruise Worth It? 2026 Honest Cost & Reality Analysis",
+  title: buildTitle("Is a Mekong River Cruise Worth It? 2026 Cost & Reality"),
   description:
     "An unfiltered, data-backed assessment of whether a 7-night Mekong cruise is worth $2,500–$12,000+. Land tour vs. river cruise ROI, hidden port taxes, tipping standards, and seasonal Tonle Sap low water facts.",
   keywords: [

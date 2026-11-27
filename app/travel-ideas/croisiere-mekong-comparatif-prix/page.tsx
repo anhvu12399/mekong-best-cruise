@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -27,7 +28,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/croisiere-mekong-comparatif-prix`
 
 export const metadata: Metadata = {
-  title: "Croisière Mékong : Comparatif des Bateaux de Luxe, Prix Réels & Avis 2026",
+  title: buildTitle("Croisière Mékong : Comparatif Bateaux & Prix Réels 2026"),
   description:
     "Comparatif objectif des croisières fluviales d'exception sur le Mékong (Vietnam & Cambodge). CroisiEurope vs Heritage Line vs Aqua Mekong, niveau d'eau du Tonlé Sap, taxes portuaires et pourboires.",
   keywords: [

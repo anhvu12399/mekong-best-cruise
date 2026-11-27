@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import { BestTimeToTravelClient } from "./page-client"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -7,7 +8,7 @@ const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/best-time-to-travel`
 
 export const metadata: Metadata = {
-  title: "Best Time to Travel Mekong | Monthly Weather & Season Guide",
+  title: buildTitle("Best Time for a Mekong River Cruise | Monthly Weather Guide"),
   keywords: [
     'best time to travel mekong',
     'mekong river cruise weather',

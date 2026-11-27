@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -25,7 +26,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/best-mekong-river-cruise-for-seniors`
 
 export const metadata: Metadata = {
-  title: "Best Mekong River Cruises for Seniors: Mobility, Elevators & Stair Guide",
+  title: buildTitle("Best Mekong River Cruises for Seniors: Elevators & Stairs"),
   description:
     "An objective, medical-informed guide to senior travel on the Mekong. Elevator availability, stair dimensions, tender boat safety, medical protocols, and cabin selection for older adults.",
   keywords: [

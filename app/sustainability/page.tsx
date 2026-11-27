@@ -1,8 +1,9 @@
 import { Metadata } from "next";
+import { buildTitle } from "@/lib/seo"
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Sustainability — Mekong River Cruise",
+  title: buildTitle("Sustainability"),
   description: "Our commitment to responsible travel on the Mekong River. Learn about our environmental practices, community partnerships, and cultural preservation efforts.",
   keywords: ["sustainable Mekong cruise", "responsible travel Vietnam", "eco-friendly river cruise", "Mekong community tourism"],
   alternates: { canonical: "https://www.mekongrivercruise.com/sustainability" },

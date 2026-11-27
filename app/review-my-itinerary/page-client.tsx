@@ -1,10 +1,47 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { Suspense, useCallback, useEffect, useState } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { ArrowRight, Check, ShieldCheck } from "lucide-react"
 import { readLeadAttribution } from "@/lib/attribution"
+
+type ReviewPrefill = {
+  fromPage?: string
+  ship?: string
+  travelersMonth?: string
+  draft?: string
+}
+
+function ReviewSearchParamsHydrator({ onHydrate }: { onHydrate: (vals: ReviewPrefill) => void }) {
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    const spShip = (searchParams.get("ship") || searchParams.get("vessel") || "").trim()
+    const spRoute = (searchParams.get("route") || "").trim()
+    const spNights = (searchParams.get("nights") || "").trim()
+    const spGuests = (searchParams.get("guests") || searchParams.get("travelers") || "").trim()
+    const spMonth = (searchParams.get("month") || "").trim()
+    const spNotes = (searchParams.get("notes") || "").trim()
+    const spFrom = (searchParams.get("from") || "").trim()
+
+    const tm = [
+      spGuests ? `${spGuests} guests` : "",
+      spNights ? `${spNights} nights` : "",
+      spMonth,
+      spRoute,
+    ].filter(Boolean)
+
+    onHydrate({
+      fromPage: spFrom || undefined,
+      ship: spShip ? spShip.toLowerCase() : undefined,
+      travelersMonth: tm.length ? tm.join(" · ") : undefined,
+      draft: spNotes || undefined,
+    })
+  }, [searchParams, onHydrate])
+
+  return null
+}
 
 type ShipItem = {
   slug: string
@@ -28,7 +65,6 @@ type Props = {
 }
 
 export default function ReviewItineraryClient({ shipList, faqs, entity }: Props) {
-  const searchParams = useSearchParams()
   const [draft, setDraft] = useState("")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -41,27 +77,12 @@ export default function ReviewItineraryClient({ shipList, faqs, entity }: Props)
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [errorMsg, setErrorMsg] = useState("")
 
-  useEffect(() => {
-    const spShip = (searchParams.get("ship") || searchParams.get("vessel") || "").trim()
-    const spRoute = (searchParams.get("route") || "").trim()
-    const spNights = (searchParams.get("nights") || "").trim()
-    const spGuests = (searchParams.get("guests") || searchParams.get("travelers") || "").trim()
-    const spMonth = (searchParams.get("month") || "").trim()
-    const spNotes = (searchParams.get("notes") || "").trim()
-    const spFrom = (searchParams.get("from") || "").trim()
-
-    if (spFrom) setFromPage(spFrom)
-    if (spShip) setShip(spShip.toLowerCase())
-
-    const tm = [
-      spGuests ? `${spGuests} guests` : "",
-      spNights ? `${spNights} nights` : "",
-      spMonth,
-      spRoute,
-    ].filter(Boolean)
-    if (tm.length) setTravelersMonth(tm.join(" · "))
-    if (spNotes) setDraft(spNotes)
-  }, [searchParams])
+  const handleHydrate = useCallback((vals: ReviewPrefill) => {
+    if (vals.fromPage) setFromPage(vals.fromPage)
+    if (vals.ship) setShip(vals.ship)
+    if (vals.travelersMonth) setTravelersMonth(vals.travelersMonth)
+    if (vals.draft) setDraft(vals.draft)
+  }, [])
 
   const matchedShip = shipList.find((s) => s.slug === ship)
 
@@ -110,6 +131,9 @@ export default function ReviewItineraryClient({ shipList, faqs, entity }: Props)
 
   return (
     <main className="bg-[#FAF9F5] text-navy min-h-screen">
+      <Suspense fallback={null}>
+        <ReviewSearchParamsHydrator onHydrate={handleHydrate} />
+      </Suspense>
       {/* Hero */}
       <section className="bg-navy text-white pt-36 pb-16 px-6">
         <div className="max-w-5xl mx-auto">

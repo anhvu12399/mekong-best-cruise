@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SHIPS_BY_STYLE } from '@/lib/ships-data'
 import ShipsClient from '@/app/cruises/[destination]/page-client'
+import { buildTitle } from '@/lib/seo'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return {}
   
   return {
-    title: `${data.title} | Mekong River Cruises`,
+    title: buildTitle(data.title),
     description: data.description,
     alternates: { canonical: `${BASE_URL}/cruises/styles/${slug}` },
     openGraph: {

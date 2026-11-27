@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import { Bodoni_Moda } from 'next/font/google'
 import Link from 'next/link'
 
@@ -6,7 +7,7 @@ const playfair = Bodoni_Moda({ subsets: ['latin'] })
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Mekong River Cruise',
+  title: buildTitle("Privacy Policy"),
   description: 'Privacy Policy and Data Protection standards for Mekong River Cruise Co., Ltd. How we collect, handle, and protect your passport, booking, and personal data.',
   alternates: {
     canonical: `${BASE_URL}/privacy-policy`,

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -8,7 +9,7 @@ import { Clock, ArrowRight } from "lucide-react"
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Luxury Isn't What You Think — New Mekong River Luxury",
+  title: buildTitle("Luxury Isn't What You Think — New Mekong River Luxury"),
   description: "Discover a new definition of luxury on the Mekong River. Learn about traditional sao wood construction, Tân Châu weavers, and wild forest honey.",
   keywords: ["Mekong luxury travel", "luxury river cruise Vietnam", "boutique ship Mekong", "sao wood construction", "Tan Chau silk", "wild forest honey", "Mekong private charter"],
   alternates: {

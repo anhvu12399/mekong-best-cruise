@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import VietnamClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/vietnam`
 
 export const metadata: Metadata = {
-  title: 'Vietnam Mekong River Cruise | Floating Markets & Delta Luxury',
+  title: buildTitle("Vietnam Mekong River Cruise | Delta & Floating Markets"),
   description:
     'Sail Vietnam\'s legendary Mekong Delta on a luxury river cruise. Discover Cai Rang floating market, hidden canals, sacred pagodas, and Michelin-inspired dining between Ho Chi Minh City and Can Tho.',
   keywords: [

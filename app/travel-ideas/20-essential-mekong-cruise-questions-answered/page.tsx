@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import { buildTitle } from "@/lib/seo"
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, AlertTriangle, ShieldCheck, HelpCircle, Anchor, Navigation, Compass, HeartPulse, DollarSign, Calendar, Clock, User, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "20 Essential Mekong River Cruise Questions Answered (2026/2027 Guide)",
+  title: buildTitle("20 Essential Mekong River Cruise Questions (2026/2027)"),
   description: "The definitive insider guide to 20 crucial Mekong River cruise questions: Upstream vs Downstream, Tonle Sap low water bus transfers, Scenic vs Viking vs Aqua Mekong, elevator accessibility, hidden tipping costs, and CPAP machines.",
   keywords: [
     "Mekong cruise FAQ",

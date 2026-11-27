@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -22,7 +23,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/3-days-vs-7-days`
 
 export const metadata: Metadata = {
-  title: "3 Days vs 7 Days Mekong River Cruise: Which Duration Is Right for You?",
+  title: buildTitle("3 Days vs 7 Days Mekong River Cruise: Which Is Better?"),
   description:
     "An expert comparison between a 3-4 day Mekong Delta short cruise and a full 7-8 night Vietnam to Cambodia trans-border luxury voyage. Pricing, routes, cultural depth, and itinerary recommendations.",
   keywords: [

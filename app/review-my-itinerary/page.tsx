@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Suspense } from "react"
 import ReviewItineraryClient from "./page-client"
 import { ENTITY_FACTS, SITE_URL, VERIFIED_SHIPS } from "@/lib/mekong-catalog"
+import { buildTitle } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Free Mekong Ship Match & Draft Itinerary Check",
+  title: buildTitle("Free Mekong Ship Match & Itinerary Check"),
   description:
     "Comparing Mekong River cruise ships or checking an AI-drafted itinerary? Submit your draft for a free 24-hour check on Tonle Sap water levels, elevators, and verified USD cabin rates.",
   alternates: { canonical: `${SITE_URL}/review-my-itinerary` },
@@ -92,9 +92,7 @@ export default function ReviewMyItineraryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Suspense fallback={<div className="min-h-screen bg-[#FAF9F5]" />}>
-        <ReviewItineraryClient shipList={shipList} faqs={FAQS} entity={ENTITY_FACTS} />
-      </Suspense>
+      <ReviewItineraryClient shipList={shipList} faqs={FAQS} entity={ENTITY_FACTS} />
     </>
   )
 }

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -8,7 +9,7 @@ import { Clock, ArrowRight } from "lucide-react"
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "A Slow Day in the Mekong — Mindful River Travel Ideas",
+  title: buildTitle("A Slow Day on the Mekong River — Mindful Travel Ideas"),
   description: "Embrace the slow pace of the Mekong Delta. A complete timeline of a mindful travel day: morning phin coffee, midday mango tree nap, and evening fireflies on the Cổ Chiên River.",
   keywords: ["slow travel Mekong", "mindful travel Vietnam", "Mekong river pace", "relaxing Mekong cruise", "Mekong Delta day", "phin coffee", "Co Chien river", "fireflies ban trees"],
   alternates: {

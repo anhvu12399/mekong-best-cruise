@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import ChinaClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/china`
 
 export const metadata: Metadata = {
-  title: 'China Upper Mekong Cruise | Yunnan Province Luxury River Journey',
+  title: buildTitle("China Upper Mekong River Cruise | Yunnan Luxury Journeys"),
   description:
     'Embark on a rare luxury cruise through Yunnan Province on the Upper Mekong (Lancang River). Explore Lijiang\'s ancient town, Tiger Leaping Gorge, and the untouched ethnic minority villages of southwest China.',
   keywords: [

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -8,7 +9,7 @@ import { Clock, ArrowRight } from "lucide-react"
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Why Ben Tre Feels More Real — Authentic Mekong Travel Ideas",
+  title: buildTitle("Why Ben Tre Feels More Real — Authentic Mekong Guide"),
   description: "Discover authentic Ben Tre, the Coconut Kingdom of the Mekong Delta. Experience cycling under coconut palms, peaceful homestays, and genuine local life.",
   keywords: ["Ben Tre", "Ben Tre travel", "authentic Mekong Delta", "Mekong homestay", "cycling Ben Tre", "Vietnam slow travel", "Mekong coconut kingdom", "Ben Tre tours"],
   alternates: {

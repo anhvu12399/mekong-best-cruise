@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -11,7 +12,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/insider-secrets`
 
 export const metadata: Metadata = {
-  title: "8 Mekong River Cruise Secrets Nobody Tells You: Local River Truths & Insider Facts",
+  title: buildTitle("8 Mekong River Cruise Secrets Nobody Tells You (2026)"),
   description:
     "Rare insider knowledge about cruising the Mekong River between Vietnam and Cambodia. Why cruises leave from My Tho instead of Saigon, the floating border crossing reality, ice safety, and drone rules.",
   keywords: [

@@ -65,8 +65,8 @@ export function ApiDocsView({ heading = "Mekong River Cruise Public API, MCP Ser
                 </tr>
                 <tr>
                   <th scope="row" className="px-4 py-3.5 font-semibold">NLWeb Search</th>
-                  <td className="px-4 py-3.5"><a href="/ask?query=7+night+vietnam+cambodia+cruise+with+elevator" className="underline text-[#8B4A2A]"><code>GET / POST /ask</code></a></td>
-                  <td className="px-4 py-3.5 text-navy/80">Natural-language Mekong search returning Schema.org <code>TouristTrip</code> items and action links.</td>
+                  <td className="px-4 py-3.5"><code>GET / POST /ask</code> (<a href="/openapi.json" className="underline text-[#8B4A2A]">OpenAPI</a>)</td>
+                  <td className="px-4 py-3.5 text-navy/80">Natural-language Mekong search (pass <code>?query=...</code> or JSON body) returning Schema.org <code>TouristTrip</code> items and action links.</td>
                 </tr>
                 <tr>
                   <th scope="row" className="px-4 py-3.5 font-semibold">MCP Server (Streamable HTTP)</th>
@@ -153,7 +153,15 @@ export function ApiDocsView({ heading = "Mekong River Cruise Public API, MCP Ser
           </div>
           <div>
             <h3 className="font-bold text-sm uppercase tracking-wider text-navy/70 mb-2">
-              3. Call the MCP server (Streamable HTTP JSON-RPC)
+              3. Query the NLWeb natural-language endpoint
+            </h3>
+            <pre className="bg-navy text-[#FAF9F5] p-4 overflow-x-auto text-xs leading-relaxed">
+              <code>{`curl -s "${SITE_URL}/ask?query=7+night+vietnam+cambodia+cruise+with+elevator"`}</code>
+            </pre>
+          </div>
+          <div>
+            <h3 className="font-bold text-sm uppercase tracking-wider text-navy/70 mb-2">
+              4. Call the MCP server (Streamable HTTP JSON-RPC)
             </h3>
             <pre className="bg-navy text-[#FAF9F5] p-4 overflow-x-auto text-xs leading-relaxed">
               <code>{`curl -s -X POST "${SITE_URL}/mcp" \\
@@ -163,7 +171,7 @@ export function ApiDocsView({ heading = "Mekong River Cruise Public API, MCP Ser
           </div>
           <div>
             <h3 className="font-bold text-sm uppercase tracking-wider text-navy/70 mb-2">
-              4. Request Markdown for any page (200 or 404)
+              5. Request Markdown for any page (200 or 404)
             </h3>
             <pre className="bg-navy text-[#FAF9F5] p-4 overflow-x-auto text-xs leading-relaxed">
               <code>{`curl -s -H "Accept: text/markdown" "${SITE_URL}/ships/the-jahan"`}</code>

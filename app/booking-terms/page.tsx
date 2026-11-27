@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import { buildTitle } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Booking Terms — Mekong River Cruise",
+  title: buildTitle("Booking Terms"),
   description: "Booking terms and conditions for Mekong River Cruise including payment, cancellation, and refund policies.",
   alternates: { canonical: "https://www.mekongrivercruise.com/booking-terms" },
 };

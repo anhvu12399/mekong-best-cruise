@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { destinationsData } from '@/lib/destinations-data'
 import { DestinationTemplate } from '@/components/destination-template'
+import { buildTitle } from '@/lib/seo'
 
 export function generateStaticParams() {
   return destinationsData.map((dest) => ({
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!dest) return { title: 'Not Found' }
 
   return {
-    title: `${dest.name} Mekong River Guide`,
+    title: buildTitle(`${dest.name} Mekong River Guide`),
     description: dest.narrative,
     alternates: { canonical: `https://www.mekongrivercruise.com/destinations/${slug}` },
   }

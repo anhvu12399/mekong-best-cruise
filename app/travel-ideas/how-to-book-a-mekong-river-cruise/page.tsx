@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import { LeadArticle, buildLeadArticleJsonLd, SITE_URL, type LeadArticleData } from "@/components/lead-article"
 
 const title = "How to Book a Mekong River Cruise: 2026 Checklist (US & UK)"
@@ -160,7 +161,7 @@ const data: LeadArticleData = {
 }
 
 export const metadata: Metadata = {
-  title,
+  title: buildTitle(title),
   description,
   keywords: ["how to book a mekong river cruise", "what should I know before booking a mekong river cruise", "book river cruise ho chi minh city", "mekong river cruise price", "mekong cruise booking uk"],
   alternates: { canonical: `${SITE_URL}/travel-ideas/${data.slug}` },

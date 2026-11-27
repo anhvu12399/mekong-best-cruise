@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SHIPS_BY_DESTINATION } from '@/lib/ships-data'
 import ShipsClient from './page-client'
+import { buildTitle } from '@/lib/seo'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const label = LABELS[destination]
   if (!label) return {}
   return {
-    title: `${label} Mekong River Cruises | Boutique Ships & Itineraries`,
+    title: buildTitle(`${label} Mekong River Cruises | Boutique Ships & Routes`),
     description: `Discover the finest ${label} Mekong river cruise ships. Compare boutique vessels, cabin styles, and bespoke itineraries. No pricing pressure — just expert advice.`,
     alternates: { canonical: `${BASE_URL}/cruises/${destination}` },
     openGraph: {

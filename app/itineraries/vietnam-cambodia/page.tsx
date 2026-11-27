@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import { VietnamCambodiaClient } from "./page-client"
 import { Header } from "@/components/header"
 
@@ -6,7 +7,7 @@ const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/itineraries/vietnam-cambodia`
 
 export const metadata: Metadata = {
-  title: "Vietnam to Cambodia Pilgrimage | Indochina Luxury Cruises",
+  title: buildTitle("Vietnam to Cambodia Mekong River Cruise | 7-Night Route"),
   keywords: [
     'Vietnam to Cambodia cruise itinerary',
     'Ho Chi Minh to Siem Reap boat',

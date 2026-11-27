@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Suspense } from "react"
 import PlanYourJourneyClient from "./page-client"
 import { SITE_URL, VERIFIED_SHIPS } from "@/lib/mekong-catalog"
+import { buildTitle } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Plan Your Mekong River Cruise — Free Verified Quote",
+  title: buildTitle("Plan Your Mekong River Cruise — Free Verified Quote"),
   description:
     "Request live cabin availability and verified USD quotes across 20 Mekong River cruise vessels. Only your name and email are required; Ho Chi Minh City specialists reply within 24 hours.",
   alternates: { canonical: `${SITE_URL}/plan-your-journey` },
@@ -39,9 +39,7 @@ export default function PlanYourJourneyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Suspense fallback={<div className="min-h-screen bg-[#f5f3ef]" />}>
-        <PlanYourJourneyClient shipOptions={shipOptions} />
-      </Suspense>
+      <PlanYourJourneyClient shipOptions={shipOptions} />
     </>
   )
 }

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -27,7 +28,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/mekong-flusskreuzfahrt-vergleich-preise`
 
 export const metadata: Metadata = {
-  title: "Mekong Flusskreuzfahrt: Schiffsvergleich, Echte Kosten & Tonle Sap Fakten 2026",
+  title: buildTitle("Mekong Flusskreuzfahrt 2026: Schiffsvergleich & Preise"),
   description:
     "Unabhängiger Schiffsvergleich für Mekong Flusskreuzfahrten in Vietnam & Kambodscha. Aqua Mekong vs The Jahan vs Phoenix Reisen, Tonle Sap Niedrigwasser, Nebenkosten & Senioren-Fakten.",
   keywords: [

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -24,7 +25,7 @@ const BASE_URL = "https://www.mekongrivercruise.com"
 const PAGE_URL = `${BASE_URL}/travel-ideas/aqua-mekong-vs-heritage-line`
 
 export const metadata: Metadata = {
-  title: "Aqua Mekong vs. Heritage Line (The Jayavarman & The Jahan): 2026 Comparison",
+  title: buildTitle("Aqua Mekong vs Heritage Line (2026 Cruise Comparison)"),
   description:
     "An unfiltered, data-backed comparison between Aqua Mekong and Heritage Line (The Jayavarman & The Jahan). Naval specs, cabin layouts, elevator accessibility, culinary programs, and pricing breakdown for discerning travelers.",
   keywords: [

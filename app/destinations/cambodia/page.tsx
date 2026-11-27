@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import CambodiaClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/cambodia`
 
 export const metadata: Metadata = {
-  title: 'Cambodia Mekong Cruise | Angkor Wat, Phnom Penh & Tonle Sap',
+  title: buildTitle("Cambodia Mekong River Cruise | Angkor Wat & Phnom Penh"),
   description:
     'Sail the Mekong through Cambodia on a luxury river cruise. Explore Angkor Wat, Phnom Penh\'s Silver Pagoda, the floating villages of Tonle Sap Lake, and the ancient Khmer civilization.',
   keywords: [

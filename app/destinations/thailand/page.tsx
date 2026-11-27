@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import ThailandClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/destinations/thailand`
 
 export const metadata: Metadata = {
-  title: 'Thailand Mekong River Cruise | Chiang Rai & Golden Triangle Luxury',
+  title: buildTitle("Thailand Mekong River Cruise | Chiang Rai & Golden Triangle"),
   description:
     'Discover northern Thailand\'s Mekong River by luxury cruise. Explore Chiang Rai, the Golden Triangle, opium-free hill-tribe villages, and serene jungle riverscapes.',
   keywords: [

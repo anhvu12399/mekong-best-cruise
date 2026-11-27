@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import { PrivateCharterClient } from './page-client'
 import { Header } from "@/components/header"
 
@@ -6,7 +7,7 @@ const BASE_URL = 'https://www.mekongrivercruise.com'
 const PAGE_URL = `${BASE_URL}/itineraries/private-charter`
 
 export const metadata: Metadata = {
-  title: 'Private Mekong River Charter | Absolute Luxury & Privacy',
+  title: buildTitle("Private Mekong River Cruise Charter | Bespoke Luxury"),
   keywords: [
     'private Mekong charter',
     'charter a boat Mekong river',

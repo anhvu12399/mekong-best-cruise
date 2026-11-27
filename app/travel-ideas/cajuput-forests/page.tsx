@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { buildTitle } from "@/lib/seo"
 import Link from "next/link"
 import Image from "next/image"
 import { Bodoni_Moda } from "next/font/google"
@@ -8,7 +9,7 @@ import { Clock, ArrowRight } from "lucide-react"
 const playfair = Bodoni_Moda({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Cajuput Forests & Ecology — Tra Su Mekong Travel Ideas",
+  title: buildTitle("Tra Su Cajuput Forests & Ecology"),
   description: "Paddle through the flooded cajuput forests of Trà Sư and U Minh Hạ. Discover where birds outnumber people, lush green ecology, and profound silence in the Mekong.",
   keywords: ["Mekong cajuput forests", "Tra Su forest", "U Minh Ha forest", "Mekong Delta ecology", "bird watching Vietnam", "flooded forest Mekong", "An Giang nature tour", "Mekong eco travel"],
   alternates: {

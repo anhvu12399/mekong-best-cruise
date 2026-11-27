@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { buildTitle } from "@/lib/seo"
 import CruisesClient from './page-client'
 
 const BASE_URL = 'https://www.mekongrivercruise.com'
 
 export const metadata: Metadata = {
-  title: 'Mekong River Cruises | Luxury Riverboat Voyages in Southeast Asia',
+  title: buildTitle("Mekong River Cruises | Luxury Southeast Asia Voyages"),
   description:
     'Discover the finest Mekong River cruises through Vietnam, Cambodia, Laos & beyond. Intimate boutique vessels, bespoke itineraries, and 25 years of river expertise. Book your luxury voyage today.',
   keywords: [
